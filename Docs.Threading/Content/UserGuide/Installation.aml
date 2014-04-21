@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="3304f46f-a7d2-4af6-8b5a-11f9931ba72e" revisionNumber="1">
+  <developerConceptualDocument
+    xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <introduction>
+      <para>
+        This page describes the distribution process for releases of this library, and the
+        installation process to enable your project to use the library features.
+      </para>
+    </introduction>
+
+    <section address="Distribution">
+      <title>Distribution</title>
+      <content>
+        <para>
+          Releases of this library are distributed through <externalLink>
+            <linkText>NuGet</linkText>
+            <linkAlternateText>NuGet Package Manager Home</linkAlternateText>
+            <linkUri>https://www.nuget.org</linkUri>
+          </externalLink> with the package ID <externalLink>
+            <linkText>Rackspace.Threading</linkText>
+            <linkUri>https://www.nuget.org/packages/Rackspace.Threading</linkUri>
+          </externalLink>.  In addition to the release binaries, symbol files and source code
+          are published to <externalLink>
+            <linkText>SymbolSource</linkText>
+            <linkUri>https://www.symbolsource.org/</linkUri>
+          </externalLink>. By <externalLink>
+            <linkText>configuring Visual Studio (or another supported debugger)</linkText>
+            <linkUri>https://www.symbolsource.org/Public/Wiki/Using</linkUri>
+          </externalLink> to use SymbolSource for debugging symbols, library users will be
+          able to automatically step into the source code for this library if necessary during
+          debugging.
+        </para>
+      </content>
+    </section>
+
+    <section address="Installation">
+      <title>Installation</title>
+      <content></content>
+      <sections>
+        <section>
+          <title>Visual Studio 2012 and Newer</title>
+          <content>
+            <para>
+              The easiest way to install NuGet packages in Visual Studio 2012 and newer is using the
+              NuGet Package Manager extension for Visual Studio.
+            </para>
+            <list class="ordered">
+              <listItem>
+                <para>
+                  Right click the top-level solution node in <ui>Solution Explorer</ui> and select
+                  <ui>Manage NuGet Packages for Solution...</ui>
+                </para>
+              </listItem>
+              <listItem>
+                <para>
+                  In the left pane, click the <ui>Online</ui> node and select <ui>nuget.org</ui>.
+                </para>
+              </listItem>
+              <listItem>
+                <para>
+                  In the search box in the top right, enter <userInput>Rackspace.Threading</userInput>.
+                </para>
+              </listItem>
+              <listItem>
+                <para>
+                  In the search results, locate and select the <ui>Rackspace Threading Library</ui> package.
+                  Verify that the <ui>Id</ui> listed in the right hand pane is <literal>Rackspace.Threading</literal>.
+                </para>
+              </listItem>
+              <listItem>
+                <para>
+                  Click the <ui>Install</ui> button. When the <ui>Select Projects</ui> window appears, check
+                  the box(es) for the projects in which you wish to reference the Threading library.
+                  Note that if you ever need to make changes to this selection, you can follow these steps
+                  again but choose the <ui>Installed packages</ui> node in the left pane instead of the
+                  <ui>Online</ui> node.
+                </para>
+              </listItem>
+            </list>
+          </content>
+        </section>
+        <section>
+          <title>Visual Studio 2010 Professional, Premium, or Ultimate</title>
+          <content>
+            <para>
+              The commercial editions of Visual Studio 2010 are able to use the NuGet Package Manager
+              extension for Visual Studio. For these editions, follow the same steps as Visual Studio
+              2012 and Newer, shown above.
+            </para>
+          </content>
+        </section>
+        <section>
+          <title>Visual Studio 2010 Express Edition</title>
+          <content>
+            <para>
+              The express editions of Visual Studio 2010 do not have access to the NuGet Package
+              Manager extension for Visual Studio. Users with these editions must use the NuGet
+              command line tools instead. Follow the same steps as users without Visual Studio, shown
+              below.
+            </para>
+          </content>
+        </section>
+        <section>
+          <title>Visual Studio 2008 and Earlier</title>
+          <content>
+            <para>
+              The NuGet Package Manager extension for Visual Studio does not support Visual Studio 2008.
+              Users with these versions must use the NuGet command line tools instead. Follow the same
+              steps as users without Visual Studio, shown below.
+            </para>
+          </content>
+        </section>
+        <section>
+          <title>Users without Visual Studio</title>
+          <content>
+            <para>
+              The manual installation process describes file system paths containing references to several
+              variables.
+            </para>
+            <definitionTable>
+              <definedTerm>
+                $(SolutionDir)
+              </definedTerm>
+              <definition>
+                <para>
+                  The path to your solution file if one is used; otherwise, the path to the root folder
+                  of your project structure.
+                </para>
+              </definition>
+              <definedTerm>
+                $(Version)
+              </definedTerm>
+              <definition>
+                <para>
+                  The version of this library which is installed for the project. This version number
+                  is reported by the command line tool when the <system>install</system> command is
+                  executed.
+                </para>
+              </definition>
+              <definedTerm>
+                <localUri>$(Framework)</localUri>
+              </definedTerm>
+              <definition>
+                <para>
+                  The version of the .NET Framework relevant to your library. Since the specific
+                  framework builds provided by this package could change over time, users are encouraged
+                  to choose from the contents available after the <system>install</system> command is
+                  executed.
+                </para>
+              </definition>
+            </definitionTable>
+            <para>
+              The following steps describe the manual installation process for this package using the
+              NuGet command line tool.
+            </para>
+            <list class="ordered">
+              <listItem>
+                <para>
+                  Download the NuGet command line utility. The latest version of the utility is always
+                  available at this <externalLink>
+                    <linkText>direct download</linkText>
+                    <linkUri>http://nuget.org/nuget.exe</linkUri>
+                  </externalLink> address.
+                </para>
+              </listItem>
+              <listItem>
+                <para>
+                  Open a command line prompt to the directory where external libraries used by your
+                  project are stored. At this location, execute the following command. For the remaining
+                  steps, I'll assume the directory is <localUri>$(SolutionDir)\lib</localUri>.
+                </para>
+                <para>
+                  <system>nuget.exe install Rackspace.Threading</system>
+                </para>
+              </listItem>
+              <listItem>
+                <para>
+                  In your project, add a reference to the following assembly.
+                </para>
+                <para>
+                  <localUri>$(SolutionDir)\lib\Rackspace.Threading-$(Version)\lib\$(Framework)\Rackspace.Threading.dll</localUri>
+                </para>
+              </listItem>
+            </list>
+          </content>
+        </section>
+      </sections>
+    </section>
+    <relatedTopics>
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

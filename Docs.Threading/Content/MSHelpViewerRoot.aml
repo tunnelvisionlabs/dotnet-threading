@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="1fae0098-7351-4567-bf25-713298f07bdc" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <introduction>
+      <para>Welcome to the Rackspace Threading API Reference</para>
+    </introduction>
+
+    <section>
+      <content>
+        <para>Select a topic from the table of contents.</para>
+      </content>
+    </section>
+
+    <relatedTopics>
+      <link xlink:href="50d028db-e522-4750-91a6-4ae6c97c2610"/>
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

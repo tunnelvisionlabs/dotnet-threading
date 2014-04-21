@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Topics>
+  <Topic id="1fae0098-7351-4567-bf25-713298f07bdc" visible="False" isMSHVRoot="true" isSelected="true" title="Threading API">
+    <HelpKeywords>
+      <HelpKeyword index="K" term="Threading API" />
+    </HelpKeywords>
+  </Topic>
+  <Topic id="50d028db-e522-4750-91a6-4ae6c97c2610" visible="True" isDefault="true" title="Welcome">
+    <HelpKeywords>
+      <HelpKeyword index="K" term="Welcome" />
+    </HelpKeywords>
+  </Topic>
+  <Topic id="42ba1007-d64f-410e-af6c-169426597465" visible="True" title="License Agreement">
+    <HelpKeywords>
+      <HelpKeyword index="K" term="license agreement" />
+    </HelpKeywords>
+  </Topic>
+  <Topic id="e02b9881-f06b-4420-aace-71b176d635db" visible="True" title="Preliminary Features" />
+  <Topic id="0a33afc9-793d-448a-950f-f03a2ca156d2" visible="True" isExpanded="true" title="User Guide">
+    <Topic id="3304f46f-a7d2-4af6-8b5a-11f9931ba72e" visible="True" title="Installation" />
+  </Topic>
+</Topics>

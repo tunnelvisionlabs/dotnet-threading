@@ -22,6 +22,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{030616
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Docs.Threading.net35", "Docs.Threading\Docs.Threading.net35.shfbproj", "{A2D73067-50E8-42F8-AEB1-3B6BDE900850}"
+EndProject
+Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Docs.Threading.net40", "Docs.Threading\Docs.Threading.net40.shfbproj", "{E0F959CE-80B6-4FAC-BF98-FE04F0A09396}"
+EndProject
+Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Docs.Threading.net45", "Docs.Threading\Docs.Threading.net45.shfbproj", "{47B1188C-3AA9-470C-B8CB-244A028C2CDB}"
+EndProject
+Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Docs.Threading.netcore45", "Docs.Threading\Docs.Threading.netcore45.shfbproj", "{E21976FF-B7C5-4D5E-992E-F59760CCC1AB}"
+EndProject
+Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Docs.Threading.portable-net40+sl4+wp7+win8", "Docs.Threading\Docs.Threading.portable-net40+sl4+wp7+win8.shfbproj", "{E9EFECCD-C484-4B4B-A6DD-8480570D1EE6}"
+EndProject
+Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Docs.Threading.portable-net45+wp80+win8", "Docs.Threading\Docs.Threading.portable-net45+wp80+win8.shfbproj", "{70569826-141E-416D-B52B-EDC9B5F4301B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,6 +64,24 @@ Global
 		{5C1D10F9-A716-4EC0-BC10-1E3654666799}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C1D10F9-A716-4EC0-BC10-1E3654666799}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C1D10F9-A716-4EC0-BC10-1E3654666799}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2D73067-50E8-42F8-AEB1-3B6BDE900850}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2D73067-50E8-42F8-AEB1-3B6BDE900850}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2D73067-50E8-42F8-AEB1-3B6BDE900850}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0F959CE-80B6-4FAC-BF98-FE04F0A09396}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0F959CE-80B6-4FAC-BF98-FE04F0A09396}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0F959CE-80B6-4FAC-BF98-FE04F0A09396}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47B1188C-3AA9-470C-B8CB-244A028C2CDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47B1188C-3AA9-470C-B8CB-244A028C2CDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47B1188C-3AA9-470C-B8CB-244A028C2CDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E21976FF-B7C5-4D5E-992E-F59760CCC1AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E21976FF-B7C5-4D5E-992E-F59760CCC1AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E21976FF-B7C5-4D5E-992E-F59760CCC1AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9EFECCD-C484-4B4B-A6DD-8480570D1EE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9EFECCD-C484-4B4B-A6DD-8480570D1EE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9EFECCD-C484-4B4B-A6DD-8480570D1EE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70569826-141E-416D-B52B-EDC9B5F4301B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70569826-141E-416D-B52B-EDC9B5F4301B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70569826-141E-416D-B52B-EDC9B5F4301B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
