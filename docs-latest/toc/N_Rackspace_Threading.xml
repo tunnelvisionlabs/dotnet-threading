@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOCNode Title="Rackspace.Threading" Url="html/N_Rackspace_Threading.htm">
+  <HelpTOCNode Title="CompletedTask Class" Url="html/T_Rackspace_Threading_CompletedTask.htm" HasChildren="true" />
+  <HelpTOCNode Title="CoreTaskExtensions Class" Url="html/T_Rackspace_Threading_CoreTaskExtensions.htm" HasChildren="true" />
+  <HelpTOCNode Title="WebRequestExtensions Class" Url="html/T_Rackspace_Threading_WebRequestExtensions.htm" HasChildren="true" />
+</HelpTOCNode>

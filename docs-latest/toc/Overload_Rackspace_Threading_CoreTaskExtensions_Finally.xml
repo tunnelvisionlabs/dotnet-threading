@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOCNode Title="Finally Method " Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Finally.htm">
+  <HelpTOCNode Title="Finally Method (Task, Action(Task))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Finally.htm" />
+  <HelpTOCNode Title="Finally Method (Task, Func(Task, Task))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Finally_1.htm" />
+  <HelpTOCNode Title="Finally(TResult) Method (Task(TResult), Action(Task(TResult)))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Finally__1.htm" />
+  <HelpTOCNode Title="Finally(TResult) Method (Task(TResult), Func(Task(TResult), Task))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Finally__1_1.htm" />
+</HelpTOCNode>

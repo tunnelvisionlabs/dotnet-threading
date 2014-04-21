@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOCNode Title="Select Method " Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Select.htm">
+  <HelpTOCNode Title="Select Method (Task, Action(Task))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Select.htm" />
+  <HelpTOCNode Title="Select(TResult) Method (Task, Func(Task, TResult))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Select__1.htm" />
+  <HelpTOCNode Title="Select(TSource) Method (Task(TSource), Action(Task(TSource)))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Select__1_2.htm" />
+  <HelpTOCNode Title="Select(TSource, TResult) Method (Task(TSource), Func(Task(TSource), TResult))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Select__2.htm" />
+  <HelpTOCNode Title="Select Method (Task, Action(Task), Boolean)" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Select_1.htm" />
+  <HelpTOCNode Title="Select(TResult) Method (Task, Func(Task, TResult), Boolean)" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Select__1_1.htm" />
+  <HelpTOCNode Title="Select(TSource) Method (Task(TSource), Action(Task(TSource)), Boolean)" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Select__1_3.htm" />
+  <HelpTOCNode Title="Select(TSource, TResult) Method (Task(TSource), Func(Task(TSource), TResult), Boolean)" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Select__2_1.htm" />
+</HelpTOCNode>

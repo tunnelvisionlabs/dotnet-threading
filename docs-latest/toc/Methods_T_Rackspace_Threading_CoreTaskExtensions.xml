@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOCNode Title="CoreTaskExtensions Methods" Url="html/Methods_T_Rackspace_Threading_CoreTaskExtensions.htm">
+  <HelpTOCNode Title="Finally Method " Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Finally.htm" HasChildren="true" />
+  <HelpTOCNode Title="Select Method " Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Select.htm" HasChildren="true" />
+  <HelpTOCNode Title="Then Method " Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Then.htm" HasChildren="true" />
+  <HelpTOCNode Title="Using Method " Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Using.htm" HasChildren="true" />
+  <HelpTOCNode Title="While Method " Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_While.htm" HasChildren="true" />
+</HelpTOCNode>

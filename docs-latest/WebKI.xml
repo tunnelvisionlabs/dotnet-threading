@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+  <HelpKINode Title="Canceled method" Url="html/Overload_Rackspace_Threading_CompletedTask_Canceled.htm" />
+  <HelpKINode Title="CompletedTask class">
+    <HelpKINode Title="CompletedTask Class" Url="html/T_Rackspace_Threading_CompletedTask.htm" />
+    <HelpKINode Title="about CompletedTask class" Url="html/T_Rackspace_Threading_CompletedTask.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Rackspace_Threading_CompletedTask.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Rackspace_Threading_CompletedTask.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CompletedTask.Canceled method" Url="html/Overload_Rackspace_Threading_CompletedTask_Canceled.htm" />
+  <HelpKINode Title="CompletedTask.Default property" Url="html/P_Rackspace_Threading_CompletedTask_Default.htm" />
+  <HelpKINode Title="CompletedTask.FromResult(Of TResult) method" Url="html/M_Rackspace_Threading_CompletedTask_FromResult__1.htm" />
+  <HelpKINode Title="CompletedTask.FromResult&lt;TResult&gt; method" Url="html/M_Rackspace_Threading_CompletedTask_FromResult__1.htm" />
+  <HelpKINode Title="CoreTaskExtensions class">
+    <HelpKINode Title="CoreTaskExtensions Class" Url="html/T_Rackspace_Threading_CoreTaskExtensions.htm" />
+    <HelpKINode Title="about CoreTaskExtensions class" Url="html/T_Rackspace_Threading_CoreTaskExtensions.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Rackspace_Threading_CoreTaskExtensions.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CoreTaskExtensions.Finally method" Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Finally.htm" />
+  <HelpKINode Title="CoreTaskExtensions.Select method" Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Select.htm" />
+  <HelpKINode Title="CoreTaskExtensions.Then method" Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Then.htm" />
+  <HelpKINode Title="CoreTaskExtensions.Using method" Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Using.htm" />
+  <HelpKINode Title="CoreTaskExtensions.While method" Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_While.htm" />
+  <HelpKINode Title="Default property" Url="html/P_Rackspace_Threading_CompletedTask_Default.htm" />
+  <HelpKINode Title="Finally method" Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Finally.htm" />
+  <HelpKINode Title="FromResult(Of TResult) method" Url="html/M_Rackspace_Threading_CompletedTask_FromResult__1.htm" />
+  <HelpKINode Title="FromResult&lt;TResult&gt; method" Url="html/M_Rackspace_Threading_CompletedTask_FromResult__1.htm" />
+  <HelpKINode Title="GetResponseAsync method" Url="html/Overload_Rackspace_Threading_WebRequestExtensions_GetResponseAsync.htm" />
+  <HelpKINode Title="license agreement" Url="html/42ba1007-d64f-410e-af6c-169426597465.htm" />
+  <HelpKINode Title="Rackspace.Threading namespace" Url="html/N_Rackspace_Threading.htm" />
+  <HelpKINode Title="Rackspace.Threading.CompletedTask class" Url="html/T_Rackspace_Threading_CompletedTask.htm" />
+  <HelpKINode Title="Rackspace.Threading.CoreTaskExtensions class" Url="html/T_Rackspace_Threading_CoreTaskExtensions.htm" />
+  <HelpKINode Title="Rackspace.Threading.WebRequestExtensions class" Url="html/T_Rackspace_Threading_WebRequestExtensions.htm" />
+  <HelpKINode Title="Select method" Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Select.htm" />
+  <HelpKINode Title="Then method" Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Then.htm" />
+  <HelpKINode Title="Threading API" Url="html/1fae0098-7351-4567-bf25-713298f07bdc.htm" />
+  <HelpKINode Title="Using method" Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Using.htm" />
+  <HelpKINode Title="WebRequestExtensions class">
+    <HelpKINode Title="WebRequestExtensions Class" Url="html/T_Rackspace_Threading_WebRequestExtensions.htm" />
+    <HelpKINode Title="about WebRequestExtensions class" Url="html/T_Rackspace_Threading_WebRequestExtensions.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Rackspace_Threading_WebRequestExtensions.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WebRequestExtensions.GetResponseAsync method" Url="html/Overload_Rackspace_Threading_WebRequestExtensions_GetResponseAsync.htm" />
+  <HelpKINode Title="Welcome" Url="html/50d028db-e522-4750-91a6-4ae6c97c2610.htm" />
+  <HelpKINode Title="While method" Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_While.htm" />
+</HelpKI>

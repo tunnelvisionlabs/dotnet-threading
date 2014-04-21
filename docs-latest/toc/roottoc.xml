@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+  <HelpTOCNode Title="Welcome" Url="html/50d028db-e522-4750-91a6-4ae6c97c2610.htm" />
+  <HelpTOCNode Title="License Agreement" Url="html/42ba1007-d64f-410e-af6c-169426597465.htm" />
+  <HelpTOCNode Title="Preliminary Features" Url="html/e02b9881-f06b-4420-aace-71b176d635db.htm" />
+  <HelpTOCNode Title="User Guide" Url="html/0a33afc9-793d-448a-950f-f03a2ca156d2.htm" HasChildren="true" />
+  <HelpTOCNode Title="API Reference" Url="html/R_Project_Threading_API_Reference.htm" HasChildren="true" />
+</HelpTOC>

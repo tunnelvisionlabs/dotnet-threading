@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOCNode Title="GetResponseAsync Method " Url="html/Overload_Rackspace_Threading_WebRequestExtensions_GetResponseAsync.htm">
+  <HelpTOCNode Title="GetResponseAsync Method (WebRequest, CancellationToken)" Url="html/M_Rackspace_Threading_WebRequestExtensions_GetResponseAsync_1.htm" />
+  <HelpTOCNode Title="GetResponseAsync Method (WebRequest, Boolean, CancellationToken)" Url="html/M_Rackspace_Threading_WebRequestExtensions_GetResponseAsync.htm" />
+</HelpTOCNode>

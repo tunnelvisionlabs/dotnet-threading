@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOCNode Title="Using Method " Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Using.htm">
+  <HelpTOCNode Title="Using(TResource, TResult) Method (Func(Task(TResource)), Func(Task(TResource), Task(TResult)))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Using__2.htm" />
+  <HelpTOCNode Title="Using(TResource) Method (Func(Task(TResource)), Func(Task(TResource), Task))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Using__1.htm" />
+</HelpTOCNode>

@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Title="Welcome" Url="html/50d028db-e522-4750-91a6-4ae6c97c2610.htm" />
+  <HelpTOCNode Title="License Agreement" Url="html/42ba1007-d64f-410e-af6c-169426597465.htm" />
+  <HelpTOCNode Title="Preliminary Features" Url="html/e02b9881-f06b-4420-aace-71b176d635db.htm" />
+  <HelpTOCNode Id="264a5f5b-f6ba-4b96-aeba-96ddf7f33180" Title="User Guide" Url="html/0a33afc9-793d-448a-950f-f03a2ca156d2.htm">
+    <HelpTOCNode Title="Installation" Url="html/3304f46f-a7d2-4af6-8b5a-11f9931ba72e.htm" />
+  </HelpTOCNode>
+  <HelpTOCNode Id="989a30ee-775b-4281-b18c-0bdbcd8ad85e" Title="API Reference" Url="html/R_Project_Threading_API_Reference.htm">
+    <HelpTOCNode Id="01e1eec6-87a7-4fa9-a0b8-b23223fd1650" Title="Rackspace.Threading" Url="html/N_Rackspace_Threading.htm">
+      <HelpTOCNode Id="ac572964-0970-43b5-a611-e96ee8ac1542" Title="CompletedTask Class" Url="html/T_Rackspace_Threading_CompletedTask.htm">
+        <HelpTOCNode Id="ffad9250-9f8b-414e-9ef4-d44338e35f1f" Title="CompletedTask Methods" Url="html/Methods_T_Rackspace_Threading_CompletedTask.htm">
+          <HelpTOCNode Id="c08d9a1d-2f74-46dd-808d-30d39b8fbdde" Title="Canceled Method " Url="html/Overload_Rackspace_Threading_CompletedTask_Canceled.htm">
+            <HelpTOCNode Title="Canceled Method " Url="html/M_Rackspace_Threading_CompletedTask_Canceled.htm" />
+            <HelpTOCNode Title="Canceled(TResult) Method " Url="html/M_Rackspace_Threading_CompletedTask_Canceled__1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Title="FromResult(TResult) Method " Url="html/M_Rackspace_Threading_CompletedTask_FromResult__1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="4746bc59-0878-4fb4-9c33-41f404be0623" Title="CompletedTask Properties" Url="html/Properties_T_Rackspace_Threading_CompletedTask.htm">
+          <HelpTOCNode Title="Default Property " Url="html/P_Rackspace_Threading_CompletedTask_Default.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="2b70a59c-3757-48a2-ada3-72407b5960de" Title="CoreTaskExtensions Class" Url="html/T_Rackspace_Threading_CoreTaskExtensions.htm">
+        <HelpTOCNode Id="c98a6459-e6f4-4373-9710-8a6f9c09b9aa" Title="CoreTaskExtensions Methods" Url="html/Methods_T_Rackspace_Threading_CoreTaskExtensions.htm">
+          <HelpTOCNode Id="bfdc3d32-da14-4008-8021-9844eba82483" Title="Finally Method " Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Finally.htm">
+            <HelpTOCNode Title="Finally Method (Task, Action(Task))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Finally.htm" />
+            <HelpTOCNode Title="Finally Method (Task, Func(Task, Task))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Finally_1.htm" />
+            <HelpTOCNode Title="Finally(TResult) Method (Task(TResult), Action(Task(TResult)))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Finally__1.htm" />
+            <HelpTOCNode Title="Finally(TResult) Method (Task(TResult), Func(Task(TResult), Task))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Finally__1_1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Id="d0817a69-f57f-4a8a-b7b6-35640b0d47f5" Title="Select Method " Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Select.htm">
+            <HelpTOCNode Title="Select Method (Task, Action(Task))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Select.htm" />
+            <HelpTOCNode Title="Select(TResult) Method (Task, Func(Task, TResult))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Select__1.htm" />
+            <HelpTOCNode Title="Select(TSource) Method (Task(TSource), Action(Task(TSource)))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Select__1_2.htm" />
+            <HelpTOCNode Title="Select(TSource, TResult) Method (Task(TSource), Func(Task(TSource), TResult))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Select__2.htm" />
+            <HelpTOCNode Title="Select Method (Task, Action(Task), Boolean)" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Select_1.htm" />
+            <HelpTOCNode Title="Select(TResult) Method (Task, Func(Task, TResult), Boolean)" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Select__1_1.htm" />
+            <HelpTOCNode Title="Select(TSource) Method (Task(TSource), Action(Task(TSource)), Boolean)" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Select__1_3.htm" />
+            <HelpTOCNode Title="Select(TSource, TResult) Method (Task(TSource), Func(Task(TSource), TResult), Boolean)" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Select__2_1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Id="b98dd271-cdcb-447d-b091-f9b525ce1cb4" Title="Then Method " Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Then.htm">
+            <HelpTOCNode Title="Then(TResult) Method (Task, Func(Task, Task(TResult)))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Then__1.htm" />
+            <HelpTOCNode Title="Then Method (Task, Func(Task, Task))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Then.htm" />
+            <HelpTOCNode Title="Then(TSource, TResult) Method (Task(TSource), Func(Task(TSource), Task(TResult)))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Then__2.htm" />
+            <HelpTOCNode Title="Then(TSource) Method (Task(TSource), Func(Task(TSource), Task))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Then__1_2.htm" />
+            <HelpTOCNode Title="Then(TResult) Method (Task, Func(Task, Task(TResult)), Boolean)" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Then__1_1.htm" />
+            <HelpTOCNode Title="Then Method (Task, Func(Task, Task), Boolean)" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Then_1.htm" />
+            <HelpTOCNode Title="Then(TSource, TResult) Method (Task(TSource), Func(Task(TSource), Task(TResult)), Boolean)" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Then__2_1.htm" />
+            <HelpTOCNode Title="Then(TSource) Method (Task(TSource), Func(Task(TSource), Task), Boolean)" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Then__1_3.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Id="28c2eee1-b476-4f14-9e36-b912ed762953" Title="Using Method " Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Using.htm">
+            <HelpTOCNode Title="Using(TResource, TResult) Method (Func(Task(TResource)), Func(Task(TResource), Task(TResult)))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Using__2.htm" />
+            <HelpTOCNode Title="Using(TResource) Method (Func(Task(TResource)), Func(Task(TResource), Task))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Using__1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Id="e4a40a7a-8aee-4ddd-b12c-895b79b2d4c3" Title="While Method " Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_While.htm">
+            <HelpTOCNode Title="While Method (Func(Boolean), Func(Task))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_While.htm" />
+            <HelpTOCNode Title="While Method (Func(Task(Boolean)), Func(Task))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_While_1.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="e5e08e94-e1ff-44bd-b380-7a53f70daad0" Title="WebRequestExtensions Class" Url="html/T_Rackspace_Threading_WebRequestExtensions.htm">
+        <HelpTOCNode Id="8c4dd6e4-dd9f-4a61-b8c3-466c5d367c21" Title="WebRequestExtensions Methods" Url="html/Methods_T_Rackspace_Threading_WebRequestExtensions.htm">
+          <HelpTOCNode Id="a7953e89-d1dd-4a3e-a1ac-8ac82e39fe3c" Title="GetResponseAsync Method " Url="html/Overload_Rackspace_Threading_WebRequestExtensions_GetResponseAsync.htm">
+            <HelpTOCNode Title="GetResponseAsync Method (WebRequest, CancellationToken)" Url="html/M_Rackspace_Threading_WebRequestExtensions_GetResponseAsync_1.htm" />
+            <HelpTOCNode Title="GetResponseAsync Method (WebRequest, Boolean, CancellationToken)" Url="html/M_Rackspace_Threading_WebRequestExtensions_GetResponseAsync.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+</HelpTOC>
