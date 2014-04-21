@@ -1,3 +1,6 @@
+# NuGet Packages Folder
+/packages/
+
 # Build output
 obj/
 bin/

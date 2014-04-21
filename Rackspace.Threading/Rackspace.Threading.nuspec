@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Rackspace.Threading</id>
+    <version>0.0.0</version>
+    <title>Rackspace.Threading</title>
+    <authors>Sam Harwell</authors>
+    <owners>Sam Harwell</owners>
+    <licenseUrl>https://raw.github.com/rackerlabs/dotnet-threading/v$version$/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/rackerlabs/dotnet-threading</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Utility library to simplify writing asynchronous code which supports .NET 3.5 and newer.</description>
+    <releaseNotes>https://github.com/rackerlabs/dotnet-threading/releases/v$version$</releaseNotes>
+    <copyright></copyright>
+    <tags>threading tasks tpl async await</tags>
+    <dependencies>
+      <group targetFramework="3.5">
+        <dependency id="TaskParallelLibrary" version="1.0.2856.0" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+
+    <!-- Runtime libraries -->
+    <file src="bin\net35\$Configuration$\Rackspace.Threading.dll" target="lib\net35"/>
+    <file src="bin\net35\$Configuration$\Rackspace.Threading.pdb" target="lib\net35"/>
+    <file src="bin\net35\$Configuration$\Rackspace.Threading.xml" target="lib\net35"/>
+
+    <file src="bin\net40\$Configuration$\Rackspace.Threading.dll" target="lib\net40"/>
+    <file src="bin\net40\$Configuration$\Rackspace.Threading.pdb" target="lib\net40"/>
+    <file src="bin\net40\$Configuration$\Rackspace.Threading.xml" target="lib\net40"/>
+
+    <file src="bin\net45\$Configuration$\Rackspace.Threading.dll" target="lib\net45"/>
+    <file src="bin\net45\$Configuration$\Rackspace.Threading.pdb" target="lib\net45"/>
+    <file src="bin\net45\$Configuration$\Rackspace.Threading.xml" target="lib\net45"/>
+
+    <file src="bin\netcore45\$Configuration$\Rackspace.Threading.dll" target="lib\netcore45"/>
+    <file src="bin\netcore45\$Configuration$\Rackspace.Threading.pdb" target="lib\netcore45"/>
+    <file src="bin\netcore45\$Configuration$\Rackspace.Threading.xml" target="lib\netcore45"/>
+
+    <file src="bin\portable-net40+sl4+wp7+win8\$Configuration$\Rackspace.Threading.dll" target="lib\portable-net40+sl4+wp7+win8"/>
+    <file src="bin\portable-net40+sl4+wp7+win8\$Configuration$\Rackspace.Threading.pdb" target="lib\portable-net40+sl4+wp7+win8"/>
+    <file src="bin\portable-net40+sl4+wp7+win8\$Configuration$\Rackspace.Threading.xml" target="lib\portable-net40+sl4+wp7+win8"/>
+
+    <file src="bin\portable-net45+wp80+win8\$Configuration$\Rackspace.Threading.dll" target="lib\portable-net45+wp80+win8"/>
+    <file src="bin\portable-net45+wp80+win8\$Configuration$\Rackspace.Threading.pdb" target="lib\portable-net45+wp80+win8"/>
+    <file src="bin\portable-net45+wp80+win8\$Configuration$\Rackspace.Threading.xml" target="lib\portable-net45+wp80+win8"/>
+
+    <!-- Source code -->
+    <file src="**\*.cs" target="src" />
+
+  </files>
+</package>
