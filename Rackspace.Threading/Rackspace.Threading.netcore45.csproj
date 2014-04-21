@@ -11,6 +11,7 @@
     <RootNamespace>Rackspace.Threading</RootNamespace>
     <AssemblyName>Rackspace.Threading</AssemblyName>
     <FileAlignment>512</FileAlignment>
+    <DefaultLanguage>en-US</DefaultLanguage>
     <BaseIntermediateOutputPath>obj\netcore45\</BaseIntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -18,7 +19,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\netcore45\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;WINRT;NET45;NET45PLUS;NET40PLUS;NET35PLUS</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;PORTABLE;WINRT;NET45;NET45PLUS;NET40PLUS;NET35PLUS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\netcore45\Debug\Rackspace.Threading.xml</DocumentationFile>
@@ -27,7 +28,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\netcore45\Release\</OutputPath>
-    <DefineConstants>TRACE;WINRT;NET45;NET45PLUS;NET40PLUS;NET35PLUS</DefineConstants>
+    <DefineConstants>TRACE;PORTABLE;WINRT;NET45;NET45PLUS;NET40PLUS;NET35PLUS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\netcore45\Release\Rackspace.Threading.xml</DocumentationFile>

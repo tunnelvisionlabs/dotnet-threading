@@ -1,5 +1,6 @@
 param (
-	[switch]$Debug
+	[switch]$Debug,
+	[string]$VisualStudioVersion = "12.0"
 )
 
 # build the solution
@@ -22,7 +23,7 @@ If ($Debug) {
 # build the main project
 $msbuild = "$env:windir\Microsoft.NET\Framework64\v4.0.30319\msbuild.exe"
 
-&$msbuild '/nologo' '/m' '/nr:false' '/t:rebuild' "/p:Configuration=$BuildConfig" $SolutionPath
+&$msbuild '/nologo' '/m' '/nr:false' '/t:rebuild' "/p:Configuration=$BuildConfig" "/p:VisualStudioVersion=$VisualStudioVersion" $SolutionPath
 if ($LASTEXITCODE -ne 0) {
 	echo "Build failed, aborting!"
 	exit $p.ExitCode
