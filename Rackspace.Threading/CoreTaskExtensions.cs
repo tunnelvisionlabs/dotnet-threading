@@ -9,6 +9,8 @@ namespace Rackspace.Threading
     /// Provides extension methods for efficiently creating <see cref="Task"/> continuations,
     /// with automatic handling of faulted and canceled antecedent tasks.
     /// </summary>
+    /// <threadsafety static="true" instance="false"/>
+    /// <preliminary/>
     public static class CoreTaskExtensions
     {
         /// <summary>

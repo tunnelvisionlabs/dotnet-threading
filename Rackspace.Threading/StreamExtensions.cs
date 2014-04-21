@@ -12,6 +12,8 @@ namespace Rackspace.Threading
     /// <summary>
     /// Provides extension methods for the <see cref="Stream"/> class.
     /// </summary>
+    /// <threadsafety static="true" instance="false"/>
+    /// <preliminary/>
     public static class StreamExtensions
     {
         /// <summary>
