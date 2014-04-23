@@ -17,6 +17,9 @@
       <group targetFramework="3.5">
         <dependency id="TaskParallelLibrary" version="1.0.2856.0" />
       </group>
+      <group targetFramework="4.0">
+        <!-- Only the .NET Framework 3.5 needs a dependency. All other frameworks use this empty group. -->
+      </group>
     </dependencies>
   </metadata>
   <files>
