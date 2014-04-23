@@ -23,7 +23,7 @@
       <DocumentationSource sourceFile="..\Rackspace.Threading\Rackspace.Threading.portable-net45+wp80+win8.csproj" />
     </DocumentationSources>
     <BuildAssemblerVerbosity>OnlyWarningsAndErrors</BuildAssemblerVerbosity>
-    <HelpFileFormat>HtmlHelp1, MSHelpViewer, Website</HelpFileFormat>
+    <HelpFileFormat>Website</HelpFileFormat>
     <IndentHtml>True</IndentHtml>
     <KeepLogFile>True</KeepLogFile>
     <DisableCodeBlockComponent>False</DisableCodeBlockComponent>
@@ -32,7 +32,7 @@
     <SyntaxFilters>Standard</SyntaxFilters>
     <SdkLinkTarget>Blank</SdkLinkTarget>
     <RootNamespaceContainer>True</RootNamespaceContainer>
-    <PresentationStyle>VS2013</PresentationStyle>
+    <PresentationStyle>VS2013Alt</PresentationStyle>
     <Preliminary>False</Preliminary>
     <NamingMethod>MemberName</NamingMethod>
     <HelpTitle>Threading API Reference</HelpTitle>
@@ -80,6 +80,14 @@
       <PlugInConfig id="Lightweight TOC" enabled="True">
         <configuration />
       </PlugInConfig>
+      <PlugInConfig id="Version Builder" enabled="True">
+        <configuration>
+          <currentProject label="Portable Class Library" version="Portable Class Library" ripOldApis="False" />
+          <versions>
+            <version label=".NET Framework" version="3.5" helpFileProject="Docs.Threading.net35.shfbproj" />
+          </versions>
+        </configuration>
+      </PlugInConfig>
     </PlugInConfigurations>
     <BuildLogFile />
     <HtmlHelp1xCompilerPath />
@@ -109,6 +117,12 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Win32' ">
   </PropertyGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Docs.Threading\Docs.Threading.net35.shfbproj">
+      <Name>Docs.Threading.net35</Name>
+      <Project>{a2d73067-50e8-42f8-aeb1-3b6bde900850}</Project>
+      <Private>False</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
     <ProjectReference Include="..\Rackspace.Threading\Rackspace.Threading.portable-net45+wp80+win8.csproj">
       <Name>Rackspace.Threading.portable-net45+wp80+win8</Name>
       <Project>{5c1d10f9-a716-4ec0-bc10-1e3654666799}</Project>

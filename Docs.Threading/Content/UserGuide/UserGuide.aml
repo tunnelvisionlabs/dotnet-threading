@@ -60,6 +60,143 @@
       </content>
     </section>
 
+    <section address="Features">
+      <title>Features</title>
+      <content>
+        <para>
+          The basic features of this library can be described as the following.
+        </para>
+        <list class="bullet">
+          <listItem>
+            <para>
+              <newTerm>Extensions for legacy code</newTerm>: These extension methods provide
+              select features which were added to the Task Parallel Library in .NET 4.5 as extension methods
+              for .NET 3.5 and .NET 4.0 users.
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <newTerm>Extensions for task continuations</newTerm>: These extension methods allow developers to
+              write task continuations in asynchronous code that behave in similarly to
+              <languageKeyword>async</languageKeyword>/<languageKeyword>await</languageKeyword> while maintaining
+              support for .NET 3.5 and .NET 4.0.
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <newTerm>Task building blocks</newTerm>: These utility methods
+              allow developers to write efficient asynchronous code using high-level block constructs that
+              resemble the methods produced by the <languageKeyword>async</languageKeyword> keyword
+              while maintaining support for .NET 3.5 and .NET 4.0.
+            </para>
+          </listItem>
+        </list>
+      </content>
+      <sections>
+        <section>
+          <title>Extension Methods for Legacy Code</title>
+          <content>
+            <para>
+              The .NET Framework 4.5 introduces several new methods to simplify the use of the Task Parallel
+              Library in common scenarios. This library provides extension methods for some of the most
+              frequently used cases, allowing use of the functionality in .NET 3.5 and .NET 4.0. These methods
+              are provided by the following classes.
+            </para>
+            <list class="bullet">
+              <listItem>
+                <para>
+                  <codeEntityReference>T:Rackspace.Threading.CancellationTokenSourceExtensions</codeEntityReference>
+                </para>
+              </listItem>
+              <listItem>
+                <para>
+                  <codeEntityReference>T:Rackspace.Threading.StreamExtensions</codeEntityReference>
+                </para>
+              </listItem>
+              <listItem>
+                <para>
+                  <codeEntityReference>T:Rackspace.Threading.WebRequestExtensions</codeEntityReference>
+                </para>
+              </listItem>
+            </list>
+            <para>
+              In addition to the extension methods, the
+              <codeEntityReference>T:Rackspace.Threading.CompletedTask</codeEntityReference> class provides
+              static methods and properties for cases where code needs to return a
+              <codeEntityReference>T:System.Threading.Tasks.Task</codeEntityReference> which has already
+              entered a completed state (either successfully or canceled).
+            </para>
+          </content>
+        </section>
+        <section>
+          <title>Extension Methods for Task Continuations</title>
+          <content>
+            <para>
+              The <codeEntityReference>Overload:System.Threading.Tasks.Task.ContinueWith</codeEntityReference>
+              methods provide comprehensive options for writing task continuations, but introduce a number
+              of concerns regarding faulted and canceled tasks. Developers must also be careful regarding
+              the use of the <codeEntityReference>Overload:System.Threading.Tasks.TaskExtensions.Unwrap</codeEntityReference>
+              method. While the <languageKeyword>async</languageKeyword>/<languageKeyword>await</languageKeyword>
+              keywords introduced in C# 5 (and similar keywords in other select programming languages) provide
+              a cleaner development experience, they are not available for users of earlier versions of the
+              language and/or framework. This library provides extension methods to simplify the creation
+              of efficient, "well-behaved" task continuations without requiring the use of
+              <languageKeyword>async</languageKeyword>/<languageKeyword>await</languageKeyword>.
+            </para>
+            <para>
+              Each of the extension methods provided by this library is implemented in a manner that
+              propagates exceptions and/or cancellation closely matching the behavior of code written with
+              <languageKeyword>async</languageKeyword>/<languageKeyword>await</languageKeyword>. In
+              particular, care is taken to not wrap single exceptions inside multiple layers of
+              <codeEntityReference>T:System.AggregateException</codeEntityReference>.
+            </para>
+            <list class="bullet">
+              <listItem>
+                <para>
+                  <codeEntityReference>Overload:Rackspace.Threading.CoreTaskExtensions.Select</codeEntityReference>:
+                  This extension method is intended for cases where code needs to run in-line following
+                  the completion of another task (called the <newTerm>antecedent</newTerm> task).
+                </para>
+              </listItem>
+              <listItem>
+                <para>
+                  <codeEntityReference>Overload:Rackspace.Threading.CoreTaskExtensions.Then</codeEntityReference>:
+                  This extension method is intended for cases where another
+                  <codeEntityReference>T:System.Threading.Tasks.Task</codeEntityReference> needs to run following
+                  the completion of an antecedent task. The extension method automatically calls
+                  <codeEntityReference>Overload:System.Threading.Tasks.TaskExtensions.Unwrap</codeEntityReference>,
+                  providing an experience similar to using the <languageKeyword>await</languageKeyword> keyword
+                  on the call.
+                </para>
+              </listItem>
+              <listItem>
+                <para>
+                  <codeEntityReference>Overload:Rackspace.Threading.CoreTaskExtensions.Finally</codeEntityReference>:
+                  This extension method is intended for cases where cleanup code needs to run following the
+                  completion of an antecedent task, regardless of whether the antecedent succeeded, faulted, or
+                  was canceled. Much like a <languageKeyword>finally</languageKeyword> block in code, this method
+                  does not alter the result provided by the antecedent task unless an exception is thrown within
+                  the <languageKeyword>finally</languageKeyword> block itself.
+                </para>
+              </listItem>
+            </list>
+          </content>
+        </section>
+        <section>
+          <title>Task Building Blocks</title>
+          <content>
+            <para>
+              Task building blocks provide support for block-level programming constructs in asynchronous
+              code. The resulting execution resembles the behavior of the state machines created by the C#
+              compiler to support the <languageKeyword>async</languageKeyword>/<languageKeyword>await</languageKeyword>
+              keywords, but does not depend on these features being available. As a result, .NET 3.5 and
+              .NET 4.0 developers can enjoy clean, efficient asynchronous code.
+            </para>
+          </content>
+        </section>
+      </sections>
+    </section>
+
     <relatedTopics>
     </relatedTopics>
   </developerConceptualDocument>

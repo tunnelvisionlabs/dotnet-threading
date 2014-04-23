@@ -23,7 +23,7 @@
       <DocumentationSource sourceFile="..\Rackspace.Threading\Rackspace.Threading.netcore45.csproj" />
     </DocumentationSources>
     <BuildAssemblerVerbosity>OnlyWarningsAndErrors</BuildAssemblerVerbosity>
-    <HelpFileFormat>HtmlHelp1, MSHelpViewer, Website</HelpFileFormat>
+    <HelpFileFormat>Website</HelpFileFormat>
     <IndentHtml>True</IndentHtml>
     <KeepLogFile>True</KeepLogFile>
     <DisableCodeBlockComponent>False</DisableCodeBlockComponent>
@@ -32,7 +32,7 @@
     <SyntaxFilters>Standard</SyntaxFilters>
     <SdkLinkTarget>Blank</SdkLinkTarget>
     <RootNamespaceContainer>True</RootNamespaceContainer>
-    <PresentationStyle>VS2013</PresentationStyle>
+    <PresentationStyle>VS2013Alt</PresentationStyle>
     <Preliminary>False</Preliminary>
     <NamingMethod>MemberName</NamingMethod>
     <HelpTitle>Threading API Reference</HelpTitle>
@@ -80,6 +80,18 @@
       <PlugInConfig id="Lightweight TOC" enabled="True">
         <configuration />
       </PlugInConfig>
+      <PlugInConfig id="Version Builder" enabled="True">
+        <configuration>
+          <currentProject label=".NET for Windows Store apps" version="Windows 8" ripOldApis="False" />
+          <versions>
+            <version label=".NET Framework" version="3.5" helpFileProject="Docs.Threading.net35.shfbproj" />
+            <version label=".NET Framework" version="4.0" helpFileProject="Docs.Threading.net40.shfbproj" />
+            <version label=".NET Framework" version="4.5" helpFileProject="Docs.Threading.net45.shfbproj" />
+            <version label="Portable Class Library" version="Portable Class Library (Legacy)" helpFileProject="Docs.Threading.portable-net40+sl4+wp7+win8.shfbproj" />
+            <version label="Portable Class Library" version="Portable Class Library" helpFileProject="Docs.Threading.portable-net45+wp80+win8.shfbproj" />
+          </versions>
+        </configuration>
+      </PlugInConfig>
     </PlugInConfigurations>
     <BuildLogFile />
     <HtmlHelp1xCompilerPath />
@@ -109,6 +121,36 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Win32' ">
   </PropertyGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Docs.Threading\Docs.Threading.net35.shfbproj">
+      <Name>Docs.Threading.net35</Name>
+      <Project>{a2d73067-50e8-42f8-aeb1-3b6bde900850}</Project>
+      <Private>False</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Docs.Threading\Docs.Threading.net40.shfbproj">
+      <Name>Docs.Threading.net40</Name>
+      <Project>{e0f959ce-80b6-4fac-bf98-fe04f0a09396}</Project>
+      <Private>False</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Docs.Threading\Docs.Threading.net45.shfbproj">
+      <Name>Docs.Threading.net45</Name>
+      <Project>{47b1188c-3aa9-470c-b8cb-244a028c2cdb}</Project>
+      <Private>False</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Docs.Threading\Docs.Threading.portable-net40+sl4+wp7+win8.shfbproj">
+      <Name>Docs.Threading.portable-net40+sl4+wp7+win8</Name>
+      <Project>{e9efeccd-c484-4b4b-a6dd-8480570d1ee6}</Project>
+      <Private>False</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Docs.Threading\Docs.Threading.portable-net45+wp80+win8.shfbproj">
+      <Name>Docs.Threading.portable-net45+wp80+win8</Name>
+      <Project>{70569826-141e-416d-b52b-edc9b5f4301b}</Project>
+      <Private>False</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
     <ProjectReference Include="..\Rackspace.Threading\Rackspace.Threading.netcore45.csproj">
       <Name>Rackspace.Threading.netcore45</Name>
       <Project>{0a5117fd-5e6d-4538-a749-17358bb796ba}</Project>
