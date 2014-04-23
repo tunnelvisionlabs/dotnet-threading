@@ -80,6 +80,14 @@
       <PlugInConfig id="Lightweight TOC" enabled="True">
         <configuration />
       </PlugInConfig>
+      <PlugInConfig id="Version Builder" enabled="True">
+        <configuration>
+          <currentProject label=".NET Framework" version="4.5" ripOldApis="False" />
+          <versions>
+            <version label=".NET Framework" version="3.5" helpFileProject="Docs.Threading.net35.shfbproj" />
+          </versions>
+        </configuration>
+      </PlugInConfig>
     </PlugInConfigurations>
     <BuildLogFile />
     <HtmlHelp1xCompilerPath />
@@ -109,6 +117,12 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Win32' ">
   </PropertyGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Docs.Threading\Docs.Threading.net35.shfbproj">
+      <Name>Docs.Threading.net35</Name>
+      <Project>{a2d73067-50e8-42f8-aeb1-3b6bde900850}</Project>
+      <Private>False</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
     <ProjectReference Include="..\Rackspace.Threading\Rackspace.Threading.net45.csproj">
       <Name>Rackspace.Threading.net45</Name>
       <Project>{808f5d89-ff4f-43d5-8ba7-e558ad4945d7}</Project>
