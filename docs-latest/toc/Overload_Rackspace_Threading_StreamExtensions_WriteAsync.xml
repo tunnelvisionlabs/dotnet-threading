@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOCNode Title="WriteAsync Method " Url="html/Overload_Rackspace_Threading_StreamExtensions_WriteAsync.htm">
+  <HelpTOCNode Title="WriteAsync Method (Stream, Byte[], Int32, Int32)" Url="html/M_Rackspace_Threading_StreamExtensions_WriteAsync.htm" />
+  <HelpTOCNode Title="WriteAsync Method (Stream, Byte[], Int32, Int32, CancellationToken)" Url="html/M_Rackspace_Threading_StreamExtensions_WriteAsync_1.htm" />
+</HelpTOCNode>

@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOCNode Title="ReadAsync Method " Url="html/Overload_Rackspace_Threading_StreamExtensions_ReadAsync.htm">
+  <HelpTOCNode Title="ReadAsync Method (Stream, Byte[], Int32, Int32)" Url="html/M_Rackspace_Threading_StreamExtensions_ReadAsync.htm" />
+  <HelpTOCNode Title="ReadAsync Method (Stream, Byte[], Int32, Int32, CancellationToken)" Url="html/M_Rackspace_Threading_StreamExtensions_ReadAsync_1.htm" />
+</HelpTOCNode>

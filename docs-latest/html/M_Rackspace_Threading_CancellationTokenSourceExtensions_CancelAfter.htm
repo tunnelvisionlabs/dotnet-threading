@@ -1,0 +1,98 @@
+﻿<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="shortcut icon" href="../icons/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../styles/branding.css">
+    <link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css"><script type="text/javascript" src="../scripts/branding.js"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>CancellationTokenSourceExtensions.CancelAfter Method </title><meta name="Language" content="en-us">
+        <meta name="System.Keywords" content="CancelAfter method">
+        <meta name="System.Keywords" content="CancellationTokenSourceExtensions.CancelAfter method">
+        <meta name="Microsoft.Help.F1" content="Rackspace.Threading.CancellationTokenSourceExtensions.CancelAfter">
+        <meta name="Microsoft.Help.Id" content="M:Rackspace.Threading.CancellationTokenSourceExtensions.CancelAfter(System.Threading.CancellationTokenSource,System.TimeSpan)">
+        <meta name="Description" content="Schedules a operation on a after the specified time span.">
+        <meta name="Microsoft.Help.ContentType" content="Reference">
+        <meta name="BrandingAware" content="'true'">
+        <meta name="container" content="Rackspace.Threading">
+        <meta name="file" content="M_Rackspace_Threading_CancellationTokenSourceExtensions_CancelAfter">
+        <meta name="guid" content="M_Rackspace_Threading_CancellationTokenSourceExtensions_CancelAfter">
+          <meta name="SelfBranded" content="true"></head><body onload="onLoad()"><header class="ux-header"><div class="header-top-bar">Threading API Reference</div></header><div class="OH_outerDiv" style="padding: 35px 20px 0 20px;">
+                  <div class="OH_leftNav" id="LeftNav">
+  <div id="tocnav">
+    <div class="toclevel0" data-toclevel="0" style="padding-left: 0px;"><a class="toc_collapsed" onclick="javascript: Toggle(this);" href="#!"></a><a data-tochassubtree="true" href="50d028db-e522-4750-91a6-4ae6c97c2610.htm" title="Threading API" tocid="roottoc">Threading API</a></div><div class="toclevel0" data-toclevel="0" style="padding-left: 0px;"><a class="toc_collapsed" onclick="javascript: Toggle(this);" href="#!"></a><a data-tochassubtree="true" href="R_Project_Threading_API_Reference.htm" title="API Reference" tocid="R_Project_Threading_API_Reference">API Reference</a></div><div class="toclevel0" data-toclevel="0" style="padding-left: 0px;"><a class="toc_collapsed" onclick="javascript: Toggle(this);" href="#!"></a><a data-tochassubtree="true" href="N_Rackspace_Threading.htm" title="Rackspace.Threading" tocid="N_Rackspace_Threading">Rackspace.Threading</a></div><div class="toclevel0" data-toclevel="0" style="padding-left: 0px;"><a class="toc_collapsed" onclick="javascript: Toggle(this);" href="#!"></a><a data-tochassubtree="true" href="T_Rackspace_Threading_CancellationTokenSourceExtensions.htm" title="CancellationTokenSourceExtensions Class" tocid="T_Rackspace_Threading_CancellationTokenSourceExtensions">CancellationTokenSourceExtensions Class</a></div><div class="toclevel1" data-toclevel="1" style="padding-left: 13px;" data-childrenloaded="true"><a class="toc_expanded" onclick="javascript: Toggle(this);" href="#!"></a><a data-tochassubtree="true" href="Methods_T_Rackspace_Threading_CancellationTokenSourceExtensions.htm" title="CancellationTokenSourceExtensions Methods" tocid="Methods_T_Rackspace_Threading_CancellationTokenSourceExtensions">CancellationTokenSourceExtensions Methods</a></div><div class="toclevel2 current" data-toclevel="2" style="padding-left: 26px;"><span class="toc_empty"></span><a data-tochassubtree="false" href="M_Rackspace_Threading_CancellationTokenSourceExtensions_CancelAfter.htm" title="CancelAfter Method " tocid="M_Rackspace_Threading_CancellationTokenSourceExtensions_CancelAfter">CancelAfter Method </a></div></div></div><div id="TocResize" class="OH_TocResize"><img id="ResizeImageIncrease" src="../icons/open.gif" onclick="onIncreaseToc()" alt="Expand" title="Expand"><img id="ResizeImageReset" src="../icons/close.gif" style="display:none" onclick="onResetToc()" alt="Minimize" title="Minimize"></div><div class="OH_outerContent" id="OuterContent" style="margin-left: 280px;">
+                    <h1 class="title">CancellationTokenSourceExtensions<span id="ID0EBBABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EBBABAA?vb=.|cpp=::|cs=.|fs=.|nu=.");
+				</script>CancelAfter Method </h1><div id="mainSection">
+                            <div id="mainBody"><span class="introStyle"></span><div class="preliminary">[This documentation is preliminary and is subject to change.]</div><div class="summary">
+            Schedules a <a href="http://msdn2.microsoft.com/en-us/library/dd321955" target="_blank">Cancel<span id="ID0EADMAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EADMAAABAA?vb=|cpp=()|cs=()|fs=()|nu=()");
+				</script></a> operation on a <a href="http://msdn2.microsoft.com/en-us/library/dd321629" target="_blank">CancellationTokenSource</a>
+            after the specified time span.
+            </div><p></p><strong>Namespace:</strong> <a href="N_Rackspace_Threading.htm">Rackspace.Threading</a><br><strong>Assembly:</strong> Rackspace.Threading (in Rackspace.Threading.dll) Version: 1.0.0.0-beta002<div class="OH_CollapsibleAreaRegion">
+                                                      <div class="OH_regiontitle">Syntax</div></div><div id="snippetGroup_Syntax" class="code">
+                                                          <div id="ID0EDLEAAABAA" class="codeSnippetContainer">
+                                                            <div class="codeSnippetContainerTabs" id="ID0EDLEAAABAA_tabs">
+                                                              <div id="ID0EDLEAAABAA_tab1" class="codeSnippetContainerTabActive" dir="ltr" EnableCopyCode="true"><a href="#" onclick="javascript:ChangeTab('ID0EDLEAAABAA','C#','1','4');return false;">C#</a></div><div id="ID0EDLEAAABAA_tab2" class="codeSnippetContainerTab" dir="ltr" EnableCopyCode="true"><a href="#" onclick="javascript:ChangeTab('ID0EDLEAAABAA','Visual C++','2','4');return false;">C++</a></div><div id="ID0EDLEAAABAA_tab3" class="codeSnippetContainerTab" dir="ltr" EnableCopyCode="true"><a href="#" onclick="javascript:ChangeTab('ID0EDLEAAABAA','F#','3','4');return false;">F#</a></div><div id="ID0EDLEAAABAA_tab4" class="codeSnippetContainerTab" dir="ltr" EnableCopyCode="true"><a href="#" onclick="javascript:ChangeTab('ID0EDLEAAABAA','Visual Basic','4','4');return false;">VB</a></div></div><div id="ID0EDLEAAABAA_codecollection" class="codeSnippetContainerCodeContainer">
+                                                                                <div class="codeSnippetToolBar">
+                                                                                  <div class="codeSnippetToolBarText"><a id="ID0EDLEAAABAA_copycode" href="#" onclick="javascript:CopyToClipboard('ID0EDLEAAABAA','4')" title="Copy to Clipboard">Copy to Clipboard</a><a id="ID0EDLEAAABAA_PrintText" class="OH_PrintText" href="#" onclick="javascript:Print('ID0EDLEAAABAA','4')" title="Print">Print</a></div></div><div id="ID0EDLEAAABAA_code_Div1" class="codeSnippetContainerCode" style="display: block">
+                                                                                          <pre><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="identifier">CancelAfter</span>(
+	<span class="keyword">this</span> <span class="identifier">CancellationTokenSource</span> <span class="parameter">cts</span>,
+	<span class="identifier">TimeSpan</span> <span class="parameter">delay</span>
+)</pre></div><div id="ID0EDLEAAABAA_code_Plain_Div1" class="codeSnippetContainerCode" style="display: none">
+                                                                                                                <pre>public static void CancelAfter(
+	this CancellationTokenSource cts,
+	TimeSpan delay
+)</pre></div><div id="ID0EDLEAAABAA_code_Div2" class="codeSnippetContainerCode" style="display: none">
+                                                                                                                    <pre><span class="keyword">public</span>:
+[<span class="identifier">ExtensionAttribute</span>]
+<span class="keyword">static</span> <span class="keyword">void</span> <span class="identifier">CancelAfter</span>(
+	<span class="identifier">CancellationTokenSource</span>^ <span class="parameter">cts</span>, 
+	<span class="identifier">TimeSpan</span> <span class="parameter">delay</span>
+)</pre></div><div id="ID0EDLEAAABAA_code_Plain_Div2" class="codeSnippetContainerCode" style="display: none">
+                                                                                                                                          <pre>public:
+[ExtensionAttribute]
+static void CancelAfter(
+	CancellationTokenSource^ cts, 
+	TimeSpan delay
+)</pre></div><div id="ID0EDLEAAABAA_code_Div3" class="codeSnippetContainerCode" style="display: none">
+                                                                                                                                              <pre><span class="keyword">static</span> <span class="keyword">member</span> <span class="identifier">CancelAfter</span> : 
+        <span class="parameter">cts</span> : <span class="identifier">CancellationTokenSource</span> * 
+        <span class="parameter">delay</span> : <span class="identifier">TimeSpan</span> <span class="keyword">-&gt;</span> <span class="keyword">unit</span> 
+</pre></div><div id="ID0EDLEAAABAA_code_Plain_Div3" class="codeSnippetContainerCode" style="display: none">
+                                                                                                                                                                    <pre>static member CancelAfter : 
+        cts : CancellationTokenSource * 
+        delay : TimeSpan -&gt; unit 
+</pre></div><div id="ID0EDLEAAABAA_code_Div4" class="codeSnippetContainerCode" style="display: none">
+                                                                                                                                                                        <pre>&lt;<span class="identifier">ExtensionAttribute</span>&gt; 
+<span class="keyword">Public</span> <span class="keyword">Shared</span> <span class="keyword">Sub</span> <span class="identifier">CancelAfter</span> ( 
+	<span class="parameter">cts</span> <span class="keyword">As</span> <span class="identifier">CancellationTokenSource</span>,
+	<span class="parameter">delay</span> <span class="keyword">As</span> <span class="identifier">TimeSpan</span>
+)</pre></div><div id="ID0EDLEAAABAA_code_Plain_Div4" class="codeSnippetContainerCode" style="display: none">
+                                                                                                                                                                                                  <pre>&lt;ExtensionAttribute&gt; 
+Public Shared Sub CancelAfter ( 
+	cts As CancellationTokenSource,
+	delay As TimeSpan
+)</pre></div></div></div><script>addSpecificTextLanguageTagSet('ID0EDLEAAABAA');</script></div><h4 class="subHeading">Parameters</h4><dl paramName="cts">
+                                                                                                                                                                                                          <dt><span class="parameter">cts</span></dt><dd>Type: <a href="http://msdn2.microsoft.com/en-us/library/dd321629" target="_blank">System.Threading<span id="ID0EBCAJEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EBCAJEAAABAA?vb=.|cpp=::|cs=.|fs=.|nu=.");
+				</script>CancellationTokenSource</a><br><span>The <a href="http://msdn2.microsoft.com/en-us/library/dd321629" target="_blank">CancellationTokenSource</a> to cancel after a delay.</span></dd></dl><dl paramName="delay">
+                                                                                                                                                                                                                            <dt><span class="parameter">delay</span></dt><dd>Type: <a href="http://msdn2.microsoft.com/en-us/library/269ew577" target="_blank">System<span id="ID0EBCAIEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EBCAIEAAABAA?vb=.|cpp=::|cs=.|fs=.|nu=.");
+				</script>TimeSpan</a><br><span>The time span to wait before canceling the <a href="http://msdn2.microsoft.com/en-us/library/dd321629" target="_blank">CancellationTokenSource</a>.</span></dd></dl><h4 class="subHeading">Usage Note</h4>In Visual Basic and C#, you can call this method as an instance method on any object of type <a href="http://msdn2.microsoft.com/en-us/library/dd321629" target="_blank">CancellationTokenSource</a>. When you use instance method syntax to call this method, omit the first parameter. For more information, see <a href="http://msdn.microsoft.com/en-us/library/bb384936.aspx" target="_blank">Extension Methods (Visual Basic)</a> or <a href="http://msdn.microsoft.com/en-us/library/bb383977.aspx" target="_blank">Extension Methods (C# Programming Guide)</a>.<div class="OH_CollapsibleAreaRegion">
+                                                                                                                                                                                                                                                      <div class="OH_regiontitle">Exceptions</div></div><div class="tableSection">
+                                                                                                                                                                                                                                                          <table>
+                                                                                                                                                                                                                                                            <tr>
+                                                                                                                                                                                                                                                              <th class="ps_exceptionNameColumn">Exception</th><th class="ps_exceptionConditionColumn">Condition</th></tr><tr>
+                                                                                                                                                                                                                                                                    <td><a href="http://msdn2.microsoft.com/en-us/library/27426hcy" target="_blank">ArgumentNullException</a></td><td>If <span class="parameter">cts</span> is <span class="input"><span id="ID0EABACAADAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EABACAADAAABAA?vb=Nothing|cpp=nullptr|cs=null|fs=null|nu=null");
+				</script></span>.</td></tr><tr>
+                                                                                                                                                                                                                                                                                    <td><a href="http://msdn2.microsoft.com/en-us/library/y31w16ca" target="_blank">ObjectDisposedException</a></td><td>If <span class="parameter">cts</span> has been disposed.</td></tr><tr>
+                                                                                                                                                                                                                                                                                              <td><a href="http://msdn2.microsoft.com/en-us/library/8xt94y6e" target="_blank">ArgumentOutOfRangeException</a></td><td>If <span class="parameter">delay</span> is less than -1 (milliseconds) or greater than <a href="http://msdn2.microsoft.com/en-us/library/92chhbf3" target="_blank">MaxValue</a>.</td></tr></table></div><div class="OH_CollapsibleAreaRegion">
+                                                                                                                                                                                                                                                                                                          <div class="OH_regiontitle">Version Information</div></div><h4 class="subHeading">.NET Framework</h4>Supported in: 4.0, 3.5<br><h4 class="subHeading">Portable Class Library</h4>Supported in: Portable Class Library (Legacy)<br><a name="seeAlsoSection"></a><div class="OH_CollapsibleAreaRegion">
+                                                                                                                                                                                                                                                                                                                    <div class="OH_regiontitle">See Also</div></div><h4 class="subHeading">Reference</h4><div class="seeAlsoStyle"><a href="T_Rackspace_Threading_CancellationTokenSourceExtensions.htm">CancellationTokenSourceExtensions Class</a></div><div class="seeAlsoStyle"><a href="N_Rackspace_Threading.htm">Rackspace.Threading Namespace</a></div></div></div></div></div><div id="OH_footer" class="OH_footer">
+                                                                                                                                                                                                                                                                                                                                  <div class="OH_feedbacklink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:sam.harwell%40rackspace.com?Subject=Threading API Reference">sam.harwell@rackspace.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div><script src="//code.jquery.com/jquery-1.11.0.min.js"></script><script type="text/javascript">$(document).ready(function () {DocumentReady();});</script></body></html>

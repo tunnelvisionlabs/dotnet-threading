@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOCNode Title="FlushAsync Method " Url="html/Overload_Rackspace_Threading_StreamExtensions_FlushAsync.htm">
+  <HelpTOCNode Title="FlushAsync Method (Stream)" Url="html/M_Rackspace_Threading_StreamExtensions_FlushAsync.htm" />
+  <HelpTOCNode Title="FlushAsync Method (Stream, CancellationToken)" Url="html/M_Rackspace_Threading_StreamExtensions_FlushAsync_1.htm" />
+</HelpTOCNode>

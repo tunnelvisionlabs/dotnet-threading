@@ -1,17 +1,9 @@
-﻿<html xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp">
+﻿<html>
   <head>
     <META http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link rel="SHORTCUT ICON" href="./../icons/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="./../styles/branding.css">
-    <link rel="stylesheet" type="text/css" href="./../styles/branding-en-US.css">
-    <style type="text/css">
-			body
-			{
-			border-left:5px solid #e6e6e6;
-			overflow-x:scroll;
-			overflow-y:scroll;
-			}
-		</style><script src="./../scripts/branding.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" href="../icons/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../styles/branding.css">
+    <link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css"><script type="text/javascript" src="../scripts/branding.js"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <title>CoreTaskExtensions Class</title><meta name="Language" content="en-us">
         <meta name="System.Keywords" content="CoreTaskExtensions class">
         <meta name="System.Keywords" content="Rackspace.Threading.CoreTaskExtensions class">
@@ -23,8 +15,8 @@
         <meta name="BrandingAware" content="'true'">
         <meta name="container" content="Rackspace.Threading">
         <meta name="file" content="T_Rackspace_Threading_CoreTaskExtensions">
-        <meta name="guid" content="T_Rackspace_Threading_CoreTaskExtensions"><link type="text/css" rel="stylesheet" href="ms-help://Hx/HxRuntime/HxLink.css">
-          <meta name="SelfBranded" content="true"></head><body onload="onLoad()" class="primary-mtps-offline-document"><header class="ux-header"><div class="header-top-bar">Threading API Reference</div></header><div class="OH_outerDiv" style="padding: 35px 20px 0 20px;">
+        <meta name="guid" content="T_Rackspace_Threading_CoreTaskExtensions">
+          <meta name="SelfBranded" content="true"></head><body onload="onLoad()"><header class="ux-header"><div class="header-top-bar">Threading API Reference</div></header><div class="OH_outerDiv" style="padding: 35px 20px 0 20px;">
                   <div class="OH_leftNav" id="LeftNav">
   <div id="tocnav">
     <div class="toclevel0" data-toclevel="0" style="padding-left: 0px;"><a class="toc_collapsed" onclick="javascript: Toggle(this);" href="#!"></a><a data-tochassubtree="true" href="50d028db-e522-4750-91a6-4ae6c97c2610.htm" title="Threading API" tocid="roottoc">Threading API</a></div><div class="toclevel0" data-toclevel="0" style="padding-left: 0px;"><a class="toc_collapsed" onclick="javascript: Toggle(this);" href="#!"></a><a data-tochassubtree="true" href="R_Project_Threading_API_Reference.htm" title="API Reference" tocid="R_Project_Threading_API_Reference">API Reference</a></div><div class="toclevel0" data-toclevel="0" style="padding-left: 0px;"><a class="toc_collapsed" onclick="javascript: Toggle(this);" href="#!"></a><a data-tochassubtree="true" href="N_Rackspace_Threading.htm" title="Rackspace.Threading" tocid="N_Rackspace_Threading">Rackspace.Threading</a></div><div class="toclevel1 current" data-toclevel="1" style="padding-left: 13px;" data-childrenloaded="true"><a class="toc_expanded" onclick="javascript: Toggle(this);" href="#!"></a><a data-tochassubtree="true" href="T_Rackspace_Threading_CoreTaskExtensions.htm" title="CoreTaskExtensions Class" tocid="T_Rackspace_Threading_CoreTaskExtensions">CoreTaskExtensions Class</a></div><div class="toclevel2" data-toclevel="2" style="padding-left: 26px; display: block;"><a class="toc_collapsed" onclick="javascript: Toggle(this);" href="#!"></a><a data-tochassubtree="true" href="Methods_T_Rackspace_Threading_CoreTaskExtensions.htm" title="CoreTaskExtensions Methods" tocid="Methods_T_Rackspace_Threading_CoreTaskExtensions">CoreTaskExtensions Methods</a></div></div></div><div id="TocResize" class="OH_TocResize"><img id="ResizeImageIncrease" src="../icons/open.gif" onclick="onIncreaseToc()" alt="Expand" title="Expand"><img id="ResizeImageReset" src="../icons/close.gif" style="display:none" onclick="onResetToc()" alt="Minimize" title="Minimize"></div><div class="OH_outerContent" id="OuterContent" style="margin-left: 280px;">
@@ -33,489 +25,495 @@
             Provides extension methods for efficiently creating <a href="http://msdn2.microsoft.com/en-us/library/dd235678" target="_blank">Task</a> continuations,
             with automatic handling of faulted and canceled antecedent tasks.
             </div><div class="OH_CollapsibleAreaRegion">
-                                    <div class="OH_regiontitle">Inheritance Hierarchy</div></div><a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">System<span id="ID0EBEOAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EBEOAAAAA?vb=.|cpp=::|cs=.|fs=.|nu=.");
-				</script>Object</a><br>  <span class="selflink">Rackspace.Threading<span id="ID0EBBOAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EBBOAAAAA?vb=.|cpp=::|cs=.|fs=.|nu=.");
-				</script>CoreTaskExtensions</span><br><p></p><strong>Namespace:</strong> <a href="N_Rackspace_Threading.htm" target="">Rackspace.Threading</a><br><strong>Assembly:</strong> <span sdata="assembly">Rackspace.Threading</span> (in Rackspace.Threading.dll) Version: 1.0.0.0-beta001<div class="OH_CollapsibleAreaRegion">
-                                                              <div class="OH_regiontitle">Syntax</div></div><div id="snippetGroup_Syntax" class="code">
-                                                                  <div id="ID0EDAEAAAAA" class="codeSnippetContainer">
-                                                                    <div class="codeSnippetContainerTabs" id="ID0EDAEAAAAA_tabs">
-                                                                      <div id="ID0EDAEAAAAA_tab1" class="codeSnippetContainerTabActive" dir="ltr" EnableCopyCode="true"><a href="#" onclick="javascript:ChangeTab('ID0EDAEAAAAA','C#','1','4');return false;">C#</a></div><div id="ID0EDAEAAAAA_tab2" class="codeSnippetContainerTab" dir="ltr" EnableCopyCode="true"><a href="#" onclick="javascript:ChangeTab('ID0EDAEAAAAA','Visual C++','2','4');return false;">C++</a></div><div id="ID0EDAEAAAAA_tab3" class="codeSnippetContainerTab" dir="ltr" EnableCopyCode="true"><a href="#" onclick="javascript:ChangeTab('ID0EDAEAAAAA','F#','3','4');return false;">F#</a></div><div id="ID0EDAEAAAAA_tab4" class="codeSnippetContainerTab" dir="ltr" EnableCopyCode="true"><a href="#" onclick="javascript:ChangeTab('ID0EDAEAAAAA','Visual Basic','4','4');return false;">VB</a></div></div><div id="ID0EDAEAAAAA_codecollection" class="codeSnippetContainerCodeContainer">
-                                                                                        <div class="codeSnippetToolBar">
-                                                                                          <div class="codeSnippetToolBarText"><a id="ID0EDAEAAAAA_ViewColorized" href="#" onclick="javascript:ExchangeTitleContent('ID0EDAEAAAAA','4')" title="View Colorized" style="display: none">View Colorized</a><a id="ID0EDAEAAAAA_copycode" href="#" onclick="javascript:CopyToClipboard('ID0EDAEAAAAA','4')" title="Copy to Clipboard">Copy to Clipboard</a><a id="ID0EDAEAAAAA_PrintText" class="OH_PrintText" href="#" onclick="javascript:Print('ID0EDAEAAAAA','4')" title="Print">Print</a></div></div><div id="ID0EDAEAAAAA_code_Div1" class="codeSnippetContainerCode" style="display: block">
-                                                                                                    <pre><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="identifier">CoreTaskExtensions</span></pre></div><div id="ID0EDAEAAAAA_code_Plain_Div1" class="codeSnippetContainerCode" style="display: none">
-                                                                                                                <pre>public static class CoreTaskExtensions</pre></div><div id="ID0EDAEAAAAA_code_Div2" class="codeSnippetContainerCode" style="display: none">
-                                                                                                                    <pre>[<span class="identifier">ExtensionAttribute</span>]
-<span class="keyword">public</span> <span class="keyword">ref class</span> <span class="identifier">CoreTaskExtensions</span> <span class="keyword">abstract</span> <span class="keyword">sealed</span></pre></div><div id="ID0EDAEAAAAA_code_Plain_Div2" class="codeSnippetContainerCode" style="display: none">
-                                                                                                                                    <pre>[ExtensionAttribute]
-public ref class CoreTaskExtensions abstract sealed</pre></div><div id="ID0EDAEAAAAA_code_Div3" class="codeSnippetContainerCode" style="display: none">
-                                                                                                                                        <pre>[&lt;<span class="identifier">AbstractClassAttribute</span>&gt;]
+                                    <div class="OH_regiontitle">Inheritance Hierarchy</div></div><a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">System<span id="ID0EBENAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EBENAAABAA?vb=.|cpp=::|cs=.|fs=.|nu=.");
+				</script>Object</a><br>  <span class="selflink">Rackspace.Threading<span id="ID0EBBNAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EBBNAAABAA?vb=.|cpp=::|cs=.|fs=.|nu=.");
+				</script>CoreTaskExtensions</span><br><p></p><strong>Namespace:</strong> <a href="N_Rackspace_Threading.htm">Rackspace.Threading</a><br><strong>Assembly:</strong> Rackspace.Threading (in Rackspace.Threading.dll) Version: 1.0.0.0-beta002<div class="OH_CollapsibleAreaRegion">
+                                                            <div class="OH_regiontitle">Syntax</div></div><div id="snippetGroup_Syntax" class="code">
+                                                                <div id="ID0EDAFAAABAA" class="codeSnippetContainer">
+                                                                  <div class="codeSnippetContainerTabs" id="ID0EDAFAAABAA_tabs">
+                                                                    <div id="ID0EDAFAAABAA_tab1" class="codeSnippetContainerTabActive" dir="ltr" EnableCopyCode="true"><a href="#" onclick="javascript:ChangeTab('ID0EDAFAAABAA','C#','1','4');return false;">C#</a></div><div id="ID0EDAFAAABAA_tab2" class="codeSnippetContainerTab" dir="ltr" EnableCopyCode="true"><a href="#" onclick="javascript:ChangeTab('ID0EDAFAAABAA','Visual C++','2','4');return false;">C++</a></div><div id="ID0EDAFAAABAA_tab3" class="codeSnippetContainerTab" dir="ltr" EnableCopyCode="true"><a href="#" onclick="javascript:ChangeTab('ID0EDAFAAABAA','F#','3','4');return false;">F#</a></div><div id="ID0EDAFAAABAA_tab4" class="codeSnippetContainerTab" dir="ltr" EnableCopyCode="true"><a href="#" onclick="javascript:ChangeTab('ID0EDAFAAABAA','Visual Basic','4','4');return false;">VB</a></div></div><div id="ID0EDAFAAABAA_codecollection" class="codeSnippetContainerCodeContainer">
+                                                                                      <div class="codeSnippetToolBar">
+                                                                                        <div class="codeSnippetToolBarText"><a id="ID0EDAFAAABAA_copycode" href="#" onclick="javascript:CopyToClipboard('ID0EDAFAAABAA','4')" title="Copy to Clipboard">Copy to Clipboard</a><a id="ID0EDAFAAABAA_PrintText" class="OH_PrintText" href="#" onclick="javascript:Print('ID0EDAFAAABAA','4')" title="Print">Print</a></div></div><div id="ID0EDAFAAABAA_code_Div1" class="codeSnippetContainerCode" style="display: block">
+                                                                                                <pre><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="identifier">CoreTaskExtensions</span></pre></div><div id="ID0EDAFAAABAA_code_Plain_Div1" class="codeSnippetContainerCode" style="display: none">
+                                                                                                            <pre>public static class CoreTaskExtensions</pre></div><div id="ID0EDAFAAABAA_code_Div2" class="codeSnippetContainerCode" style="display: none">
+                                                                                                                <pre>[<span class="identifier">ExtensionAttribute</span>]
+<span class="keyword">public</span> <span class="keyword">ref class</span> <span class="identifier">CoreTaskExtensions</span> <span class="keyword">abstract</span> <span class="keyword">sealed</span></pre></div><div id="ID0EDAFAAABAA_code_Plain_Div2" class="codeSnippetContainerCode" style="display: none">
+                                                                                                                                <pre>[ExtensionAttribute]
+public ref class CoreTaskExtensions abstract sealed</pre></div><div id="ID0EDAFAAABAA_code_Div3" class="codeSnippetContainerCode" style="display: none">
+                                                                                                                                    <pre>[&lt;<span class="identifier">AbstractClassAttribute</span>&gt;]
 [&lt;<span class="identifier">SealedAttribute</span>&gt;]
-<span class="keyword">type</span> <span class="identifier">CoreTaskExtensions</span> =  <span class="keyword">class</span> <span class="keyword">end</span></pre></div><div id="ID0EDAEAAAAA_code_Plain_Div3" class="codeSnippetContainerCode" style="display: none">
-                                                                                                                                                        <pre>[&lt;AbstractClassAttribute&gt;]
+<span class="keyword">type</span> <span class="identifier">CoreTaskExtensions</span> =  <span class="keyword">class</span> <span class="keyword">end</span></pre></div><div id="ID0EDAFAAABAA_code_Plain_Div3" class="codeSnippetContainerCode" style="display: none">
+                                                                                                                                                    <pre>[&lt;AbstractClassAttribute&gt;]
 [&lt;SealedAttribute&gt;]
-type CoreTaskExtensions =  class end</pre></div><div id="ID0EDAEAAAAA_code_Div4" class="codeSnippetContainerCode" style="display: none">
-                                                                                                                                                            <pre>&lt;<span class="identifier">ExtensionAttribute</span>&gt; 
-<span class="keyword">Public</span> <span class="keyword">NotInheritable</span> <span class="keyword">Class</span> <span class="identifier">CoreTaskExtensions</span></pre></div><div id="ID0EDAEAAAAA_code_Plain_Div4" class="codeSnippetContainerCode" style="display: none">
-                                                                                                                                                                          <pre>&lt;ExtensionAttribute&gt; 
-Public NotInheritable Class CoreTaskExtensions</pre></div></div></div><script>addSpecificTextLanguageTagSet('ID0EDAEAAAAA');</script></div><div class="OH_CollapsibleAreaRegion">
-                                                                                                                                                                                <div class="OH_regiontitle">Methods</div></div><table id="memberList" class="members">
-                                                                                                                                                                                    <tr>
-                                                                                                                                                                                      <th class="ps_iconColumn">
-							 
-						</th><th class="ps_nameColumn">Name</th><th class="ps_descriptionColumn">Description</th></tr><tr data="public;static;declared;notNetfw;">
-                                                                                                                                                                                              <td><img src="./../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="./../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Finally.htm" target="">Finally(Task, Action<span id="ID0EDABXBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EDABXBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>Task<span id="ID0EBABXBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EBABXBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+type CoreTaskExtensions =  class end</pre></div><div id="ID0EDAFAAABAA_code_Div4" class="codeSnippetContainerCode" style="display: none">
+                                                                                                                                                        <pre>&lt;<span class="identifier">ExtensionAttribute</span>&gt; 
+<span class="keyword">Public</span> <span class="keyword">NotInheritable</span> <span class="keyword">Class</span> <span class="identifier">CoreTaskExtensions</span></pre></div><div id="ID0EDAFAAABAA_code_Plain_Div4" class="codeSnippetContainerCode" style="display: none">
+                                                                                                                                                                      <pre>&lt;ExtensionAttribute&gt; 
+Public NotInheritable Class CoreTaskExtensions</pre></div></div></div><script>addSpecificTextLanguageTagSet('ID0EDAFAAABAA');</script></div><div class="OH_CollapsibleAreaRegion">
+                                                                                                                                                                            <div class="OH_regiontitle">Methods</div></div><table id="memberList" class="members">
+                                                                                                                                                                                <tr>
+                                                                                                                                                                                  <th class="ps_iconColumn">
+								 
+							</th><th class="ps_nameColumn">Name</th><th class="ps_descriptionColumn">Description</th></tr><tr data="public;static;declared;notNetfw;SHFB_VBPI_Lbl_459BFCFC;SHFB_VBPI_Lbl_3B491471;SHFB_VBPI_Lbl_B5F0B8F2;">
+                                                                                                                                                                                          <td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Finally.htm">Finally(Task, Action<span id="ID0EDABXBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EDABXBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>Task<span id="ID0EBABXBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EBABXBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
 				</script>)</a></td><td>
-                                                                                                                                                                                                              <div class="summary">
+                                                                                                                                                                                                          <div class="summary">
              Synchronously execute a cleanup continuation when a task completes, regardless of the
              final <a href="http://msdn2.microsoft.com/en-us/library/dd235651" target="_blank">Status</a> of the task. If the cleanup action completes
              successfully, the status of the antecedent is directly applied to the task returned by
              this method. Otherwise, the status of the faulted or canceled cleanup operation is
              directly applied to the task returned by this method.
-             </div></td></tr><tr data="public;static;declared;notNetfw;">
-                                                                                                                                                                                                                    <td><img src="./../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="./../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Finally_1.htm" target="">Finally(Task, Func<span id="ID0EDABWBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EDABWBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>Task, Task<span id="ID0EBABWBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EBABWBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+             </div></td></tr><tr data="public;static;declared;notNetfw;SHFB_VBPI_Lbl_459BFCFC;SHFB_VBPI_Lbl_3B491471;SHFB_VBPI_Lbl_B5F0B8F2;">
+                                                                                                                                                                                                                <td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Finally_1.htm">Finally(Task, Func<span id="ID0EDABWBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EDABWBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>Task, Task<span id="ID0EBABWBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EBABWBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
 				</script>)</a></td><td>
-                                                                                                                                                                                                                                    <div class="summary">
+                                                                                                                                                                                                                                <div class="summary">
              Execute a cleanup continuation task when a task completes, regardless of the final
              <a href="http://msdn2.microsoft.com/en-us/library/dd235651" target="_blank">Status</a> of the antecedent task. If the cleanup action completes
              successfully, the status of the antecedent is directly applied to the task returned by
              this method. Otherwise, the status of the faulted or canceled cleanup operation is
              directly applied to the task returned by this method.
-             </div></td></tr><tr data="public;static;declared;notNetfw;">
-                                                                                                                                                                                                                                          <td><img src="./../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="./../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Finally__1.htm" target="">Finally<span id="ID0EOABVBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EOABVBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TResult<span id="ID0EMABVBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EMABVBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>(Task<span id="ID0EKABVBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EKABVBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TResult<span id="ID0EIABVBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EIABVBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>, Action<span id="ID0EGABVBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EGABVBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>Task<span id="ID0EEABVBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EEABVBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TResult<span id="ID0ECABVBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0ECABVBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script><span id="ID0EBABVBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EBABVBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+             </div></td></tr><tr data="public;static;declared;notNetfw;SHFB_VBPI_Lbl_459BFCFC;SHFB_VBPI_Lbl_3B491471;SHFB_VBPI_Lbl_B5F0B8F2;">
+                                                                                                                                                                                                                                      <td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Finally__1.htm">Finally<span id="ID0EOABVBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EOABVBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TResult<span id="ID0EMABVBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EMABVBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>(Task<span id="ID0EKABVBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EKABVBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TResult<span id="ID0EIABVBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EIABVBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>, Action<span id="ID0EGABVBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EGABVBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>Task<span id="ID0EEABVBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EEABVBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TResult<span id="ID0ECABVBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0ECABVBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script><span id="ID0EBABVBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EBABVBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
 				</script>)</a></td><td>
-                                                                                                                                                                                                                                                                                  <div class="summary">
+                                                                                                                                                                                                                                                                              <div class="summary">
              Synchronously execute a cleanup continuation when a task completes, regardless of the
              final <a href="http://msdn2.microsoft.com/en-us/library/dd235651" target="_blank">Status</a> of the task. If the cleanup action completes
              successfully, the status of the antecedent is directly applied to the task returned by
              this method. Otherwise, the status of the faulted or canceled cleanup operation is
              directly applied to the task returned by this method.
-             </div></td></tr><tr data="public;static;declared;notNetfw;">
-                                                                                                                                                                                                                                                                                        <td><img src="./../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="./../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Finally__1_1.htm" target="">Finally<span id="ID0EPABUBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EPABUBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TResult<span id="ID0ENABUBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0ENABUBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>(Task<span id="ID0ELABUBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0ELABUBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TResult<span id="ID0EJABUBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EJABUBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>, Func<span id="ID0EHABUBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EHABUBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>Task<span id="ID0EFABUBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EFABUBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TResult<span id="ID0EDABUBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EDABUBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>, Task<span id="ID0EBABUBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EBABUBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+             </div></td></tr><tr data="public;static;declared;notNetfw;SHFB_VBPI_Lbl_459BFCFC;SHFB_VBPI_Lbl_3B491471;SHFB_VBPI_Lbl_B5F0B8F2;">
+                                                                                                                                                                                                                                                                                    <td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Finally__1_1.htm">Finally<span id="ID0EPABUBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EPABUBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TResult<span id="ID0ENABUBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0ENABUBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>(Task<span id="ID0ELABUBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0ELABUBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TResult<span id="ID0EJABUBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EJABUBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>, Func<span id="ID0EHABUBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EHABUBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>Task<span id="ID0EFABUBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EFABUBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TResult<span id="ID0EDABUBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EDABUBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>, Task<span id="ID0EBABUBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EBABUBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
 				</script>)</a></td><td>
-                                                                                                                                                                                                                                                                                                                                <div class="summary">
+                                                                                                                                                                                                                                                                                                                            <div class="summary">
              Execute a cleanup continuation task when a task completes, regardless of the final
              <a href="http://msdn2.microsoft.com/en-us/library/dd235651" target="_blank">Status</a> of the antecedent task. If the cleanup action completes
              successfully, the status of the antecedent is directly applied to the task returned by
              this method. Otherwise, the status of the faulted or canceled cleanup operation is
              directly applied to the task returned by this method.
-             </div></td></tr><tr data="public;static;declared;notNetfw;">
-                                                                                                                                                                                                                                                                                                                                      <td><img src="./../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="./../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Select.htm" target="">Select(Task, Action<span id="ID0EDABTBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EDABTBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>Task<span id="ID0EBABTBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EBABTBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+             </div></td></tr><tr data="public;static;declared;notNetfw;SHFB_VBPI_Lbl_459BFCFC;SHFB_VBPI_Lbl_3B491471;SHFB_VBPI_Lbl_B5F0B8F2;">
+                                                                                                                                                                                                                                                                                                                                  <td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Select.htm">Select(Task, Action<span id="ID0EDABTBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EDABTBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>Task<span id="ID0EBABTBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EBABTBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
 				</script>)</a></td><td>
-                                                                                                                                                                                                                                                                                                                                                      <div class="summary">
+                                                                                                                                                                                                                                                                                                                                                  <div class="summary">
              Synchronously execute a continuation when a task completes successfully.
-             </div></td></tr><tr data="public;static;declared;notNetfw;">
-                                                                                                                                                                                                                                                                                                                                                          <td><img src="./../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="./../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Select_1.htm" target="">Select(Task, Action<span id="ID0EDABSBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EDABSBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>Task<span id="ID0EBABSBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EBABSBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+             </div></td></tr><tr data="public;static;declared;notNetfw;SHFB_VBPI_Lbl_459BFCFC;SHFB_VBPI_Lbl_3B491471;SHFB_VBPI_Lbl_B5F0B8F2;">
+                                                                                                                                                                                                                                                                                                                                                      <td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Select_1.htm">Select(Task, Action<span id="ID0EDABSBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EDABSBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>Task<span id="ID0EBABSBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EBABSBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
 				</script>, Boolean)</a></td><td>
-                                                                                                                                                                                                                                                                                                                                                                          <div class="summary">
+                                                                                                                                                                                                                                                                                                                                                                      <div class="summary">
              Synchronously execute a continuation when a task completes. The <span class="parameter">supportsErrors</span>
              parameter specifies whether the continuation is executed if the antecedent task is faulted.
-             </div></td></tr><tr data="public;static;declared;notNetfw;">
-                                                                                                                                                                                                                                                                                                                                                                                <td><img src="./../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="./../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Select__1.htm" target="">Select<span id="ID0EHABRBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EHABRBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TResult<span id="ID0EFABRBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EFABRBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>(Task, Func<span id="ID0EDABRBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EDABRBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>Task, TResult<span id="ID0EBABRBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EBABRBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+             </div></td></tr><tr data="public;static;declared;notNetfw;SHFB_VBPI_Lbl_459BFCFC;SHFB_VBPI_Lbl_3B491471;SHFB_VBPI_Lbl_B5F0B8F2;">
+                                                                                                                                                                                                                                                                                                                                                                            <td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Select__1.htm">Select<span id="ID0EHABRBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EHABRBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TResult<span id="ID0EFABRBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EFABRBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>(Task, Func<span id="ID0EDABRBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EDABRBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>Task, TResult<span id="ID0EBABRBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EBABRBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
 				</script>)</a></td><td>
-                                                                                                                                                                                                                                                                                                                                                                                                        <div class="summary">
+                                                                                                                                                                                                                                                                                                                                                                                                    <div class="summary">
              Synchronously execute a continuation when a task completes successfully.
-             </div></td></tr><tr data="public;static;declared;notNetfw;">
-                                                                                                                                                                                                                                                                                                                                                                                                            <td><img src="./../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="./../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Select__1_2.htm" target="">Select<span id="ID0EOABQBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EOABQBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TSource<span id="ID0EMABQBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EMABQBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>(Task<span id="ID0EKABQBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EKABQBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TSource<span id="ID0EIABQBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EIABQBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>, Action<span id="ID0EGABQBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EGABQBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>Task<span id="ID0EEABQBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EEABQBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TSource<span id="ID0ECABQBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0ECABQBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script><span id="ID0EBABQBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EBABQBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+             </div></td></tr><tr data="public;static;declared;notNetfw;SHFB_VBPI_Lbl_459BFCFC;SHFB_VBPI_Lbl_3B491471;SHFB_VBPI_Lbl_B5F0B8F2;">
+                                                                                                                                                                                                                                                                                                                                                                                                        <td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Select__1_2.htm">Select<span id="ID0EOABQBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EOABQBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TSource<span id="ID0EMABQBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EMABQBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>(Task<span id="ID0EKABQBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EKABQBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TSource<span id="ID0EIABQBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EIABQBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>, Action<span id="ID0EGABQBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EGABQBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>Task<span id="ID0EEABQBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EEABQBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TSource<span id="ID0ECABQBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0ECABQBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script><span id="ID0EBABQBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EBABQBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
 				</script>)</a></td><td>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                    <div class="summary">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="summary">
              Synchronously execute a continuation when a task completes successfully.
-             </div></td></tr><tr data="public;static;declared;notNetfw;">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                        <td><img src="./../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="./../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Select__1_1.htm" target="">Select<span id="ID0EHABPBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EHABPBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TResult<span id="ID0EFABPBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EFABPBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>(Task, Func<span id="ID0EDABPBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EDABPBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>Task, TResult<span id="ID0EBABPBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EBABPBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+             </div></td></tr><tr data="public;static;declared;notNetfw;SHFB_VBPI_Lbl_459BFCFC;SHFB_VBPI_Lbl_3B491471;SHFB_VBPI_Lbl_B5F0B8F2;">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    <td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Select__1_1.htm">Select<span id="ID0EHABPBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EHABPBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TResult<span id="ID0EFABPBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EFABPBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>(Task, Func<span id="ID0EDABPBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EDABPBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>Task, TResult<span id="ID0EBABPBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EBABPBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
 				</script>, Boolean)</a></td><td>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="summary">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="summary">
              Synchronously execute a continuation when a task completes. The <span class="parameter">supportsErrors</span>
              parameter specifies whether the continuation is executed if the antecedent task is faulted.
-             </div></td></tr><tr data="public;static;declared;notNetfw;">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <td><img src="./../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="./../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Select__1_3.htm" target="">Select<span id="ID0EOABOBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EOABOBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TSource<span id="ID0EMABOBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EMABOBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>(Task<span id="ID0EKABOBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EKABOBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TSource<span id="ID0EIABOBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EIABOBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>, Action<span id="ID0EGABOBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EGABOBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>Task<span id="ID0EEABOBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EEABOBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TSource<span id="ID0ECABOBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0ECABOBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script><span id="ID0EBABOBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EBABOBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+             </div></td></tr><tr data="public;static;declared;notNetfw;SHFB_VBPI_Lbl_459BFCFC;SHFB_VBPI_Lbl_3B491471;SHFB_VBPI_Lbl_B5F0B8F2;">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Select__1_3.htm">Select<span id="ID0EOABOBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EOABOBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TSource<span id="ID0EMABOBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EMABOBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>(Task<span id="ID0EKABOBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EKABOBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TSource<span id="ID0EIABOBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EIABOBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>, Action<span id="ID0EGABOBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EGABOBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>Task<span id="ID0EEABOBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EEABOBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TSource<span id="ID0ECABOBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0ECABOBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script><span id="ID0EBABOBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EBABOBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
 				</script>, Boolean)</a></td><td>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <div class="summary">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <div class="summary">
              Synchronously execute a continuation when a task completes. The <span class="parameter">supportsErrors</span>
              parameter specifies whether the continuation is executed if the antecedent task is faulted.
-             </div></td></tr><tr data="public;static;declared;notNetfw;">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <td><img src="./../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="./../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Select__2.htm" target="">Select<span id="ID0EPABNBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EPABNBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TSource, TResult<span id="ID0ENABNBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0ENABNBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>(Task<span id="ID0ELABNBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0ELABNBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TSource<span id="ID0EJABNBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EJABNBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>, Func<span id="ID0EHABNBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EHABNBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>Task<span id="ID0EFABNBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EFABNBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TSource<span id="ID0EDABNBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EDABNBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>, TResult<span id="ID0EBABNBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EBABNBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+             </div></td></tr><tr data="public;static;declared;notNetfw;SHFB_VBPI_Lbl_459BFCFC;SHFB_VBPI_Lbl_3B491471;SHFB_VBPI_Lbl_B5F0B8F2;">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Select__2.htm">Select<span id="ID0EPABNBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EPABNBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TSource, TResult<span id="ID0ENABNBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0ENABNBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>(Task<span id="ID0ELABNBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0ELABNBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TSource<span id="ID0EJABNBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EJABNBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>, Func<span id="ID0EHABNBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EHABNBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>Task<span id="ID0EFABNBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EFABNBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TSource<span id="ID0EDABNBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EDABNBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>, TResult<span id="ID0EBABNBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EBABNBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
 				</script>)</a></td><td>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="summary">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div class="summary">
              Synchronously execute a continuation when a task completes successfully.
-             </div></td></tr><tr data="public;static;declared;notNetfw;">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <td><img src="./../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="./../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Select__2_1.htm" target="">Select<span id="ID0EPABMBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EPABMBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TSource, TResult<span id="ID0ENABMBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0ENABMBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>(Task<span id="ID0ELABMBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0ELABMBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TSource<span id="ID0EJABMBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EJABMBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>, Func<span id="ID0EHABMBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EHABMBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>Task<span id="ID0EFABMBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EFABMBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TSource<span id="ID0EDABMBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EDABMBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>, TResult<span id="ID0EBABMBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EBABMBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+             </div></td></tr><tr data="public;static;declared;notNetfw;SHFB_VBPI_Lbl_459BFCFC;SHFB_VBPI_Lbl_3B491471;SHFB_VBPI_Lbl_B5F0B8F2;">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Select__2_1.htm">Select<span id="ID0EPABMBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EPABMBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TSource, TResult<span id="ID0ENABMBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0ENABMBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>(Task<span id="ID0ELABMBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0ELABMBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TSource<span id="ID0EJABMBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EJABMBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>, Func<span id="ID0EHABMBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EHABMBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>Task<span id="ID0EFABMBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EFABMBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TSource<span id="ID0EDABMBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EDABMBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>, TResult<span id="ID0EBABMBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EBABMBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
 				</script>, Boolean)</a></td><td>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div class="summary">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <div class="summary">
              Synchronously execute a continuation when a task completes. The <span class="parameter">supportsErrors</span>
              parameter specifies whether the continuation is executed if the antecedent task is faulted.
-             </div></td></tr><tr data="public;static;declared;notNetfw;">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <td><img src="./../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="./../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Then.htm" target="">Then(Task, Func<span id="ID0EDABLBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EDABLBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>Task, Task<span id="ID0EBABLBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EBABLBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+             </div></td></tr><tr data="public;static;declared;notNetfw;SHFB_VBPI_Lbl_459BFCFC;SHFB_VBPI_Lbl_3B491471;SHFB_VBPI_Lbl_B5F0B8F2;">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Then.htm">Then(Task, Func<span id="ID0EDABLBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EDABLBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>Task, Task<span id="ID0EBABLBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EBABLBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
 				</script>)</a></td><td>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <div class="summary">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <div class="summary">
              Execute a continuation task when a task completes successfully. The continuation
              task is synchronously created by a continuation function, and then unwrapped to
              form the result of this method.
-             </div></td></tr><tr data="public;static;declared;notNetfw;">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <td><img src="./../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="./../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Then_1.htm" target="">Then(Task, Func<span id="ID0EDABKBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EDABKBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>Task, Task<span id="ID0EBABKBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EBABKBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+             </div></td></tr><tr data="public;static;declared;notNetfw;SHFB_VBPI_Lbl_459BFCFC;SHFB_VBPI_Lbl_3B491471;SHFB_VBPI_Lbl_B5F0B8F2;">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Then_1.htm">Then(Task, Func<span id="ID0EDABKBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EDABKBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>Task, Task<span id="ID0EBABKBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EBABKBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
 				</script>, Boolean)</a></td><td>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <div class="summary">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <div class="summary">
              Execute a continuation task when a task completes. The continuation task is synchronously
              created by a continuation function, and then unwrapped to form the result of this method.
              The <span class="parameter">supportsErrors</span> parameter specifies whether the continuation is
              executed if the antecedent task is faulted.
-             </div></td></tr><tr data="public;static;declared;notNetfw;">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <td><img src="./../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="./../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Then__1.htm" target="">Then<span id="ID0EKABJBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EKABJBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TResult<span id="ID0EIABJBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EIABJBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>(Task, Func<span id="ID0EGABJBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EGABJBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>Task, Task<span id="ID0EEABJBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EEABJBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TResult<span id="ID0ECABJBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0ECABJBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script><span id="ID0EBABJBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EBABJBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+             </div></td></tr><tr data="public;static;declared;notNetfw;SHFB_VBPI_Lbl_459BFCFC;SHFB_VBPI_Lbl_3B491471;SHFB_VBPI_Lbl_B5F0B8F2;">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Then__1.htm">Then<span id="ID0EKABJBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EKABJBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TResult<span id="ID0EIABJBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EIABJBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>(Task, Func<span id="ID0EGABJBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EGABJBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>Task, Task<span id="ID0EEABJBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EEABJBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TResult<span id="ID0ECABJBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0ECABJBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script><span id="ID0EBABJBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EBABJBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
 				</script>)</a></td><td>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div class="summary">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <div class="summary">
              Execute a continuation task when a task completes successfully. The continuation
              task is synchronously created by a continuation function, and then unwrapped to
              form the result of this method.
-             </div></td></tr><tr data="public;static;declared;notNetfw;">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <td><img src="./../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="./../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Then__1_2.htm" target="">Then<span id="ID0EPABIBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EPABIBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TSource<span id="ID0ENABIBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0ENABIBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>(Task<span id="ID0ELABIBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0ELABIBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TSource<span id="ID0EJABIBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EJABIBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>, Func<span id="ID0EHABIBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EHABIBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>Task<span id="ID0EFABIBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EFABIBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TSource<span id="ID0EDABIBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EDABIBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>, Task<span id="ID0EBABIBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EBABIBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+             </div></td></tr><tr data="public;static;declared;notNetfw;SHFB_VBPI_Lbl_459BFCFC;SHFB_VBPI_Lbl_3B491471;SHFB_VBPI_Lbl_B5F0B8F2;">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Then__1_2.htm">Then<span id="ID0EPABIBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EPABIBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TSource<span id="ID0ENABIBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0ENABIBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>(Task<span id="ID0ELABIBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0ELABIBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TSource<span id="ID0EJABIBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EJABIBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>, Func<span id="ID0EHABIBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EHABIBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>Task<span id="ID0EFABIBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EFABIBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TSource<span id="ID0EDABIBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EDABIBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>, Task<span id="ID0EBABIBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EBABIBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
 				</script>)</a></td><td>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <div class="summary">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="summary">
              Execute a continuation task when a task completes successfully. The continuation
              task is synchronously created by a continuation function, and then unwrapped to
              form the result of this method.
-             </div></td></tr><tr data="public;static;declared;notNetfw;">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <td><img src="./../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="./../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Then__1_1.htm" target="">Then<span id="ID0EKABHBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EKABHBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TResult<span id="ID0EIABHBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EIABHBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>(Task, Func<span id="ID0EGABHBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EGABHBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>Task, Task<span id="ID0EEABHBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EEABHBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TResult<span id="ID0ECABHBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0ECABHBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script><span id="ID0EBABHBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EBABHBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+             </div></td></tr><tr data="public;static;declared;notNetfw;SHFB_VBPI_Lbl_459BFCFC;SHFB_VBPI_Lbl_3B491471;SHFB_VBPI_Lbl_B5F0B8F2;">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Then__1_1.htm">Then<span id="ID0EKABHBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EKABHBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TResult<span id="ID0EIABHBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EIABHBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>(Task, Func<span id="ID0EGABHBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EGABHBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>Task, Task<span id="ID0EEABHBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EEABHBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TResult<span id="ID0ECABHBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0ECABHBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script><span id="ID0EBABHBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EBABHBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
 				</script>, Boolean)</a></td><td>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div class="summary">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <div class="summary">
              Execute a continuation task when a task completes. The continuation task is synchronously
              created by a continuation function, and then unwrapped to form the result of this method.
              The <span class="parameter">supportsErrors</span> parameter specifies whether the continuation is
              executed if the antecedent task is faulted.
-             </div></td></tr><tr data="public;static;declared;notNetfw;">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <td><img src="./../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="./../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Then__1_3.htm" target="">Then<span id="ID0EPABGBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EPABGBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TSource<span id="ID0ENABGBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0ENABGBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>(Task<span id="ID0ELABGBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0ELABGBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TSource<span id="ID0EJABGBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EJABGBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>, Func<span id="ID0EHABGBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EHABGBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>Task<span id="ID0EFABGBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EFABGBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TSource<span id="ID0EDABGBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EDABGBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>, Task<span id="ID0EBABGBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EBABGBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+             </div></td></tr><tr data="public;static;declared;notNetfw;SHFB_VBPI_Lbl_459BFCFC;SHFB_VBPI_Lbl_3B491471;SHFB_VBPI_Lbl_B5F0B8F2;">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Then__1_3.htm">Then<span id="ID0EPABGBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EPABGBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TSource<span id="ID0ENABGBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0ENABGBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>(Task<span id="ID0ELABGBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0ELABGBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TSource<span id="ID0EJABGBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EJABGBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>, Func<span id="ID0EHABGBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EHABGBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>Task<span id="ID0EFABGBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EFABGBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TSource<span id="ID0EDABGBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EDABGBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>, Task<span id="ID0EBABGBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EBABGBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
 				</script>, Boolean)</a></td><td>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <div class="summary">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <div class="summary">
              Execute a continuation task when a task completes. The continuation
              task is synchronously created by a continuation function, and then unwrapped to
              form the result of this method. The <span class="parameter">supportsErrors</span>
              parameter specifies whether the continuation is executed if the antecedent task is faulted.
-             </div></td></tr><tr data="public;static;declared;notNetfw;">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <td><img src="./../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="./../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Then__2.htm" target="">Then<span id="ID0ESABFBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0ESABFBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TSource, TResult<span id="ID0EQABFBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EQABFBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>(Task<span id="ID0EOABFBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EOABFBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TSource<span id="ID0EMABFBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EMABFBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>, Func<span id="ID0EKABFBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EKABFBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>Task<span id="ID0EIABFBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EIABFBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TSource<span id="ID0EGABFBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EGABFBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>, Task<span id="ID0EEABFBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EEABFBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TResult<span id="ID0ECABFBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0ECABFBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script><span id="ID0EBABFBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EBABFBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+             </div></td></tr><tr data="public;static;declared;notNetfw;SHFB_VBPI_Lbl_459BFCFC;SHFB_VBPI_Lbl_3B491471;SHFB_VBPI_Lbl_B5F0B8F2;">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Then__2.htm">Then<span id="ID0ESABFBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0ESABFBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TSource, TResult<span id="ID0EQABFBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EQABFBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>(Task<span id="ID0EOABFBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EOABFBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TSource<span id="ID0EMABFBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EMABFBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>, Func<span id="ID0EKABFBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EKABFBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>Task<span id="ID0EIABFBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EIABFBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TSource<span id="ID0EGABFBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EGABFBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>, Task<span id="ID0EEABFBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EEABFBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TResult<span id="ID0ECABFBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0ECABFBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script><span id="ID0EBABFBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EBABFBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
 				</script>)</a></td><td>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="summary">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div class="summary">
              Execute a continuation task when a task completes successfully. The continuation
              task is synchronously created by a continuation function, and then unwrapped to
              form the result of this method.
-             </div></td></tr><tr data="public;static;declared;notNetfw;">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <td><img src="./../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="./../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Then__2_1.htm" target="">Then<span id="ID0ESABEBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0ESABEBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TSource, TResult<span id="ID0EQABEBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EQABEBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>(Task<span id="ID0EOABEBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EOABEBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TSource<span id="ID0EMABEBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EMABEBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>, Func<span id="ID0EKABEBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EKABEBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>Task<span id="ID0EIABEBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EIABEBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TSource<span id="ID0EGABEBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EGABEBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>, Task<span id="ID0EEABEBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EEABEBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TResult<span id="ID0ECABEBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0ECABEBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script><span id="ID0EBABEBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EBABEBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+             </div></td></tr><tr data="public;static;declared;notNetfw;SHFB_VBPI_Lbl_459BFCFC;SHFB_VBPI_Lbl_3B491471;SHFB_VBPI_Lbl_B5F0B8F2;">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Then__2_1.htm">Then<span id="ID0ESABEBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0ESABEBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TSource, TResult<span id="ID0EQABEBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EQABEBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>(Task<span id="ID0EOABEBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EOABEBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TSource<span id="ID0EMABEBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EMABEBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>, Func<span id="ID0EKABEBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EKABEBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>Task<span id="ID0EIABEBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EIABEBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TSource<span id="ID0EGABEBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EGABEBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>, Task<span id="ID0EEABEBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EEABEBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TResult<span id="ID0ECABEBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0ECABEBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script><span id="ID0EBABEBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EBABEBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
 				</script>, Boolean)</a></td><td>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="summary">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="summary">
              Execute a continuation task when a task completes. The continuation
              task is synchronously created by a continuation function, and then unwrapped to
              form the result of this method. The <span class="parameter">supportsErrors</span>
              parameter specifies whether the continuation is executed if the antecedent task is faulted.
-             </div></td></tr><tr data="public;static;declared;notNetfw;">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <td><img src="./../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="./../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Using__1.htm" target="">Using<span id="ID0ESABDBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0ESABDBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TResource<span id="ID0EQABDBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EQABDBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>(Func<span id="ID0EOABDBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EOABDBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>Task<span id="ID0EMABDBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EMABDBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TResource<span id="ID0EKABDBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EKABDBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script><span id="ID0EJABDBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EJABDBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>, Func<span id="ID0EHABDBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EHABDBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>Task<span id="ID0EFABDBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EFABDBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TResource<span id="ID0EDABDBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EDABDBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>, Task<span id="ID0EBABDBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EBABDBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+             </div></td></tr><tr data="public;static;declared;notNetfw;SHFB_VBPI_Lbl_459BFCFC;SHFB_VBPI_Lbl_3B491471;SHFB_VBPI_Lbl_B5F0B8F2;">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Using__1.htm">Using<span id="ID0ESABDBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0ESABDBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TResource<span id="ID0EQABDBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EQABDBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>(Func<span id="ID0EOABDBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EOABDBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>Task<span id="ID0EMABDBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EMABDBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TResource<span id="ID0EKABDBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EKABDBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script><span id="ID0EJABDBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EJABDBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>, Func<span id="ID0EHABDBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EHABDBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>Task<span id="ID0EFABDBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EFABDBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TResource<span id="ID0EDABDBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EDABDBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>, Task<span id="ID0EBABDBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EBABDBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
 				</script>)</a></td><td>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <div class="summary">
-             Provides support for resource cleanup in asynchronous code where the <span sdata="langKeyword" value="async/await"><span class="input"><span id="ID0EACBAADBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EACBAADBDAAAAA?vb=Async|cpp=async|cs=async|fs=async|nu=async");
-				</script></span>/<span class="input"><span id="ID0EAABAADBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EAABAADBDAAAAA?vb=Await|cpp=await|cs=await|fs=let!|nu=await");
-				</script></span></span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <div class="summary">
+             Provides support for resource cleanup in asynchronous code where the <span class="input"><span id="ID0EADAADBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EADAADBEAAABAA?vb=Async|cpp=async|cs=async|fs=async|nu=async");
+				</script></span>/<span class="input"><span id="ID0EABAADBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EABAADBEAAABAA?vb=Await|cpp=await|cs=await|fs=let!|nu=await");
+				</script></span>
              keywords are not available.
-             </div></td></tr><tr data="public;static;declared;notNetfw;">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <td><img src="./../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="./../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Using__2.htm" target="">Using<span id="ID0EVABCBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EVABCBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TResource, TResult<span id="ID0ETABCBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0ETABCBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>(Func<span id="ID0ERABCBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0ERABCBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>Task<span id="ID0EPABCBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EPABCBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TResource<span id="ID0ENABCBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0ENABCBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script><span id="ID0EMABCBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EMABCBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>, Func<span id="ID0EKABCBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EKABCBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>Task<span id="ID0EIABCBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EIABCBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TResource<span id="ID0EGABCBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EGABCBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>, Task<span id="ID0EEABCBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EEABCBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>TResult<span id="ID0ECABCBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0ECABCBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script><span id="ID0EBABCBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EBABCBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+             </div></td></tr><tr data="public;static;declared;notNetfw;SHFB_VBPI_Lbl_459BFCFC;SHFB_VBPI_Lbl_3B491471;SHFB_VBPI_Lbl_B5F0B8F2;">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_Using__2.htm">Using<span id="ID0EVABCBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EVABCBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TResource, TResult<span id="ID0ETABCBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0ETABCBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>(Func<span id="ID0ERABCBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0ERABCBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>Task<span id="ID0EPABCBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EPABCBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TResource<span id="ID0ENABCBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0ENABCBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script><span id="ID0EMABCBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EMABCBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>, Func<span id="ID0EKABCBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EKABCBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>Task<span id="ID0EIABCBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EIABCBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TResource<span id="ID0EGABCBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EGABCBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>, Task<span id="ID0EEABCBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EEABCBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TResult<span id="ID0ECABCBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0ECABCBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script><span id="ID0EBABCBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EBABCBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
 				</script>)</a></td><td>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="summary">
-             Provides support for resource cleanup in asynchronous code where the <span sdata="langKeyword" value="async/await"><span class="input"><span id="ID0EACBAACBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EACBAACBDAAAAA?vb=Async|cpp=async|cs=async|fs=async|nu=async");
-				</script></span>/<span class="input"><span id="ID0EAABAACBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EAABAACBDAAAAA?vb=Await|cpp=await|cs=await|fs=let!|nu=await");
-				</script></span></span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <div class="summary">
+             Provides support for resource cleanup in asynchronous code where the <span class="input"><span id="ID0EADAACBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EADAACBEAAABAA?vb=Async|cpp=async|cs=async|fs=async|nu=async");
+				</script></span>/<span class="input"><span id="ID0EABAACBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EABAACBEAAABAA?vb=Await|cpp=await|cs=await|fs=let!|nu=await");
+				</script></span>
              keywords are not available.
-             </div></td></tr><tr data="public;static;declared;notNetfw;">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <td><img src="./../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="./../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_While.htm" target="">While(Func<span id="ID0EHABBBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EHABBBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>Boolean<span id="ID0EFABBBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EFABBBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>, Func<span id="ID0EDABBBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EDABBBDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>Task<span id="ID0EBABBBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EBABBBDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+             </div></td></tr><tr data="public;static;declared;notNetfw;SHFB_VBPI_Lbl_459BFCFC;SHFB_VBPI_Lbl_3B491471;SHFB_VBPI_Lbl_B5F0B8F2;">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_While.htm">While(Func<span id="ID0EHABBBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EHABBBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>Boolean<span id="ID0EFABBBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EFABBBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>, Func<span id="ID0EDABBBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EDABBBEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>Task<span id="ID0EBABBBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EBABBBEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
 				</script>)</a></td><td>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <div class="summary">
-             Provides support for a conditional "while" loop in asynchronous code, without requiring the use of <span sdata="langKeyword" value="async/await"><span class="input"><span id="ID0EACBAABBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EACBAABBDAAAAA?vb=Async|cpp=async|cs=async|fs=async|nu=async");
-				</script></span>/<span class="input"><span id="ID0EAABAABBDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EAABAABBDAAAAA?vb=Await|cpp=await|cs=await|fs=let!|nu=await");
-				</script></span></span>.
-             </div></td></tr><tr data="public;static;declared;notNetfw;">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <td><img src="./../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="./../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_While_1.htm" target="">While(Func<span id="ID0EKABABDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EKABABDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>Task<span id="ID0EIABABDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EIABABDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>Boolean<span id="ID0EGABABDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EGABABDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script><span id="ID0EFABABDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EFABABDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
-				</script>, Func<span id="ID0EDABABDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EDABABDAAAAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
-				</script>Task<span id="ID0EBABABDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EBABABDAAAAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <div class="summary">
+             Provides support for a conditional "while" loop in asynchronous code, without requiring the use of <span class="input"><span id="ID0EADAABBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EADAABBEAAABAA?vb=Async|cpp=async|cs=async|fs=async|nu=async");
+				</script></span>/<span class="input"><span id="ID0EABAABBEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EABAABBEAAABAA?vb=Await|cpp=await|cs=await|fs=let!|nu=await");
+				</script></span>.
+             </div></td></tr><tr data="public;static;declared;notNetfw;SHFB_VBPI_Lbl_459BFCFC;SHFB_VBPI_Lbl_3B491471;SHFB_VBPI_Lbl_B5F0B8F2;">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method"><img src="../icons/static.gif" alt="Static member" title="Static member"></td><td><a href="M_Rackspace_Threading_CoreTaskExtensions_While_1.htm">While(Func<span id="ID0EKABABEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EKABABEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>Task<span id="ID0EIABABEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EIABABEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>Boolean<span id="ID0EGABABEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EGABABEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script><span id="ID0EFABABEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EFABABEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>, Func<span id="ID0EDABABEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EDABABEAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>Task<span id="ID0EBABABEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EBABABEAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
 				</script>)</a></td><td>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="summary">
-             Provides support for a conditional "while" loop in asynchronous code, without requiring the use of <span sdata="langKeyword" value="async/await"><span class="input"><span id="ID0EACBAAABDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EACBAAABDAAAAA?vb=Async|cpp=async|cs=async|fs=async|nu=async");
-				</script></span>/<span class="input"><span id="ID0EAABAAABDAAAAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EAABAAABDAAAAA?vb=Await|cpp=await|cs=await|fs=let!|nu=await");
-				</script></span></span>.
-             </div></td></tr></table><a href="#mainBody" target="">Top</a><div class="OH_CollapsibleAreaRegion">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="OH_regiontitle">Thread Safety</div></div>Any public <span class="input">static</span> (<span class="input">Shared</span> in Visual Basic)  members of this type are thread safe. Any instance members are not guaranteed to be thread safe.<a name="seeAlsoSection"></a><div class="OH_CollapsibleAreaRegion">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div class="OH_regiontitle">See Also</div></div><h4 class="subHeading">Reference</h4><div class="seeAlsoStyle"><a href="N_Rackspace_Threading.htm" target="">Rackspace.Threading Namespace</a></div></div></div></div></div><div id="OH_footer" class="OH_footer">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <p></p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <div class="OH_feedbacklink"><a href="mailto:sam.harwell@rackspace.com?subject=Threading+API+Reference+CoreTaskExtensions+Class+100+EN-US&amp;body=Your%20feedback%20is%20used%20to%20improve%20the%20documentation%20and%20the%20product.%20Your%20e-mail%20address%20will%20not%20be%20used%20for%20any%20other%20purpose%20and%20is%20disposed%20of%20after%20the%20issue%20you%20report%20is%20resolved.%20While%20working%20to%20resolve%20the%20issue%20that%20you%20report%2c%20you%20may%20be%20contacted%20via%20e-mail%20to%20get%20further%20details%20or%20clarification%20on%20the%20feedback%20you%20sent.%20After%20the%20issue%20you%20report%20has%20been%20addressed%2c%20you%20may%20receive%20an%20e-mail%20to%20let%20you%20know%20that%20your%20feedback%20has%20been%20addressed.">Send Feedback</a> on this topic to sam.harwell@rackspace.com.</div></div><script src="//code.jquery.com/jquery-1.11.0.min.js"></script><script type="text/javascript">$(document).ready(function () {DocumentReady();});</script></body></html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <div class="summary">
+             Provides support for a conditional "while" loop in asynchronous code, without requiring the use of <span class="input"><span id="ID0EADAAABEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EADAAABEAAABAA?vb=Async|cpp=async|cs=async|fs=async|nu=async");
+				</script></span>/<span class="input"><span id="ID0EABAAABEAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EABAAABEAAABAA?vb=Await|cpp=await|cs=await|fs=let!|nu=await");
+				</script></span>.
+             </div></td></tr></table><a href="#mainBody">Top</a><div class="OH_CollapsibleAreaRegion">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <div class="OH_regiontitle">Version Information</div></div><h4 class="subHeading">.NET for Windows Store apps</h4>Supported in: Windows 8<br><h4 class="subHeading">.NET Framework</h4>Supported in: 4.5, 4.0, 3.5<br><h4 class="subHeading">Portable Class Library</h4>Supported in: Portable Class Library (Legacy), Portable Class Library<br><div class="OH_CollapsibleAreaRegion">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <div class="OH_regiontitle">Thread Safety</div></div>Any public <span class="input">static</span> (<span class="input">Shared</span> in Visual Basic)  members of this type are thread safe. Any instance members are not guaranteed to be thread safe.<a name="seeAlsoSection"></a><div class="OH_CollapsibleAreaRegion">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div class="OH_regiontitle">See Also</div></div><h4 class="subHeading">Reference</h4><div class="seeAlsoStyle"><a href="N_Rackspace_Threading.htm">Rackspace.Threading Namespace</a></div></div></div></div></div><div id="OH_footer" class="OH_footer">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <div class="OH_feedbacklink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:sam.harwell%40rackspace.com?Subject=Threading API Reference">sam.harwell@rackspace.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div><script src="//code.jquery.com/jquery-1.11.0.min.js"></script><script type="text/javascript">$(document).ready(function () {DocumentReady();});</script></body></html>

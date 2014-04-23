@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOCNode Title="CopyToAsync Method " Url="html/Overload_Rackspace_Threading_StreamExtensions_CopyToAsync.htm">
+  <HelpTOCNode Title="CopyToAsync Method (Stream, Stream)" Url="html/M_Rackspace_Threading_StreamExtensions_CopyToAsync.htm" />
+  <HelpTOCNode Title="CopyToAsync Method (Stream, Stream, Int32)" Url="html/M_Rackspace_Threading_StreamExtensions_CopyToAsync_1.htm" />
+  <HelpTOCNode Title="CopyToAsync Method (Stream, Stream, Int32, CancellationToken)" Url="html/M_Rackspace_Threading_StreamExtensions_CopyToAsync_2.htm" />
+</HelpTOCNode>

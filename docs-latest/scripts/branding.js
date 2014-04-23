@@ -4,7 +4,6 @@
 var allLanguageTagSets = new Array();
 // we stored the ids of code snippets of same pages so that we can do interaction between them when tab are selected
 var snippetIdSets = new Array();
-var isSearchPage = false;
 // Width of TOC: 0 (0px), 1 (280px), 2 (480px), 3 (680px)
 var tocPosition = 1;
 
@@ -40,7 +39,7 @@ function onLoad()
   // if LST exists on the page, then set the LST to show the user selected programming language.
   updateLST(currentLang);
 
-  // if codesnippet exists
+  // if code snippet exists
   if (snippetIdSets.length > 0)
   {
     var i = 0;
@@ -101,14 +100,6 @@ function onLoad()
     }
   }
 
-  updateSearchUI();
-
-  // Check for high contrast mode
-  if (isHighContrast())
-  {
-    onHighContrast(isBlackBackground());
-  }
-
   // Position TOC
   tocPosition = GetCookie("TocPosition", 1);
   resizeToc();
@@ -138,124 +129,6 @@ function updateLST(currentLang)
             }
         }
     }
-}
-
-function updateSearchUI()
-{
-  var searchWatermark = document.getElementById('searchWatermark');
-  var searchBtn = document.getElementById('btnS');
-  var searchTextbox = document.getElementById('qu');
-
-  if (searchWatermark && searchBtn && searchTextbox)
-  {
-    if (searchBtn.innerText == '' || searchBtn.textContent == '')  // true if we are not on the search results page
-    {
-      // Position watermarks
-      searchWatermark.style.top = searchTextbox.offsetTop + 'px';
-      searchWatermark.style.left = searchTextbox.offsetLeft + 'px';
-      if (searchTextbox.value != '')
-      {
-        searchWatermark.style.display = 'none';
-        searchTextbox.focus();
-      }
-      else
-      {
-        searchWatermark.style.display = 'inline';
-        searchTextbox.blur();
-      }
-    }
-    else
-    {
-      isSearchPage = true;
-      searchWatermark.style.display = 'none';
-      searchTextbox.focus();
-    }
-  }
-}
-
-// We use a colored span to detect high contrast mode
-function isHighContrast()
-{
-  var elem = document.getElementById('HCColorTest');
-  if (elem)
-  {
-    // Set SPAN text color - will not be applied if in contrast mode
-    elem.style.color = '#ff00ff';
-    if (window.getComputedStyle)
-    { // Firefox
-      var textcolor = window.getComputedStyle(elem, null).color;
-      if (textcolor != 'rgb(255, 0, 255)'
-       && textcolor != '#ff00ff')
-      {
-        return true;
-      }
-    }
-    else if (elem.currentStyle)
-    { // IE
-      if (elem.currentStyle.color != '#ff00ff')
-      {
-        return true;
-      }
-    }
-  }
-
-  return false;
-}
-
-// Called to determine if background is black
-// Only accurate when in high constrast mode
-function isBlackBackground()
-{
-  var color = '';
-
-  if (window.getComputedStyle)
-  { // Firefox
-    color = window.getComputedStyle(document.body, null).backgroundColor;
-  }
-  else if (document.body.currentStyle)
-  { // IE
-    color = document.body.currentStyle.backgroundColor;
-  }
-
-  if (color == 'rgb(0, 0, 0)'
-   || color == '#000000')
-  {
-    return true;
-  }
-
-  return false;
-}
-
-// Called when high constrast is detected
-function onHighContrast(black)
-{
-  if (black)
-  { // Black background, so use alternative images
-
-    // VS logo
-    var logo = document.getElementById('VSLogo');
-    if (logo)
-    {
-      var logoHC = document.getElementById('VSLogoHC');
-      if (logoHC)
-      {
-        logo.style.display = 'none';
-        logoHC.style.display = '';
-      }
-    }
-
-    // Search
-    var searchImage = document.getElementById('searchImage');
-    if (searchImage)
-    {
-      var searchImageHC = document.getElementById('searchImageHC');
-      if (searchImageHC)
-      {
-        searchImage.style.display = 'none';
-        searchImageHC.style.display = '';
-      }
-    }
-  }
 }
 
 function getDevLangFromCodeSnippet(lang)
@@ -314,7 +187,7 @@ function SetCodeSnippetContainerLangCookie(lang)
 }
 
 // we store the ids of LST control as dictionary object key values, so that we can get access to them and update when user changes to a different programming language. 
-// The values of this dictioanry objects are ';' separated languagespecific attributes of the mtps:languagespecific control in the content.
+// The values of this dictionary objects are ';' separated languagespecific attributes of the mtps:languagespecific control in the content.
 // This function is called from LanguageSpecificText.xslt
 var lanSpecTextIdSet = new Object();
 function addToLanSpecTextIdSet(id)
@@ -330,11 +203,11 @@ function ChangeTab(objid, lang, index, snippetCount)
   setCurrentLang(objid, lang, index, snippetCount, true);
   SetCodeSnippetContainerLangCookie(lang);
 
-  // switch tab for all of other codesnippets
+  // switch tab for all of other code snippets
   i = 0;
   while (i < snippetIdSets.length)
   {
-    // we just care about other snippes
+    // we just care about other snippets
     if (snippetIdSets[i] != objid)
     {
 
@@ -456,61 +329,6 @@ function addSpecificTextLanguageTagSet(codesnippetid)
   }
   snippetIdSets.push(codesnippetid);
 }
-function ExchangeTitleContent(objid, snippetCount)
-{
-  ApplyExchangeTitleContent(objid, snippetCount);
-
-  // switch tab for all of other codesnippets
-  i = 0;
-  while (i < snippetIdSets.length)
-  {
-    // we just care about other snippes
-    if (snippetIdSets[i] != objid)
-    {
-      var _tempSnippetCount = 5;
-      if (document.getElementById(snippetIdSets[i] + "_tab4") == null)
-        _tempSnippetCount = 1;
-
-      if (_tempSnippetCount < 2) return;
-
-      ApplyExchangeTitleContent(snippetIdSets[i], _tempSnippetCount);
-    }
-    i++;
-  }
-}
-
-function ApplyExchangeTitleContent(objid, snippetCount)
-{
-  var i = 1;
-  while (i <= snippetCount)
-  {
-    var obj = document.getElementById(objid + '_code_Div' + i);
-    if ((obj != null) && (obj.style.display != 'none'))
-    {
-      obj.style.display = 'none';
-      document.getElementById(objid + '_code_Plain_Div' + i).style.display = 'block';
-      viewPlain = true;
-
-      document.getElementById(objid + '_ViewPlain').style.display = 'none';
-      document.getElementById(objid + '_ViewColorized').style.display = 'inline';
-      break;
-    }
-
-    obj = document.getElementById(objid + '_code_Plain_Div' + i);
-    if ((obj != null) && (obj.style.display != 'none'))
-    {
-      obj.style.display = 'none';
-      document.getElementById(objid + '_code_Div' + i).style.display = 'block';
-      viewPlain = false;
-
-      document.getElementById(objid + '_ViewPlain').style.display = 'inline';
-      document.getElementById(objid + '_ViewColorized').style.display = 'none';
-      break;
-    }
-
-    i++;
-  }
-}
 function CopyToClipboard(objid, snippetCount)
 {
   var contentid;
@@ -574,6 +392,7 @@ function CopyToClipboard(objid, snippetCount)
     return;
   }
 }
+
 function Print(objid, snippetCount)
 {
   var contentid;
@@ -599,7 +418,6 @@ function Print(objid, snippetCount)
   var obj = document.getElementById(contentid);
   if (obj)
   {
-    //var tempwin = window.open('', '', '');
       var tempwin = window.open('', '', 'top=900000, left=900000, dependent=yes');
       if (tempwin && tempwin.document) {
           try {
@@ -610,18 +428,6 @@ function Print(objid, snippetCount)
           } catch (e) { if (tempwin) tempwin.close(); };
       }
   }
-}
-
-function SearchTextboxKeyUp(e)
-{
-  var e = window.event || e;
-  var key = e.charCode || e.keyCode;
-  if (key == 27)
-  { // If user pressed ESCAPE, clear the textbox (IE doesn't pass special keys to onkeypress)
-    document.getElementById('qu').value = '';
-    return false;
-  }
-  preventEventBubbling(e);
 }
 
 // TOC resize script
@@ -663,18 +469,6 @@ function resizeToc()
 
     // Hide/show reset TOC width image
     document.getElementById("ResizeImageReset").style.display = (tocPosition != 3) ? "none" : "";
-  }
-}
-
-function preventEventBubbling(e)
-{
-  if (e && e.stopPropagation)
-  {
-    e.stopPropagation();
-  }
-  else
-  {
-    event.cancelBubble = true;
   }
 }
 
