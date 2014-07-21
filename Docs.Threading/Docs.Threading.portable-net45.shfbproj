@@ -84,7 +84,7 @@
         <configuration>
           <currentProject label="Portable Class Library" version="Portable Class Library" ripOldApis="False" />
           <versions>
-            <version label=".NET Framework" version="3.5" helpFileProject="Docs.Threading.net35.shfbproj" />
+            <version label=".NET Framework" version="3.5" helpFileProject="Docs.Threading.net35-client.shfbproj" />
           </versions>
         </configuration>
       </PlugInConfig>
@@ -117,8 +117,8 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Win32' ">
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Docs.Threading\Docs.Threading.net35.shfbproj">
-      <Name>Docs.Threading.net35</Name>
+    <ProjectReference Include="..\Docs.Threading\Docs.Threading.net35-client.shfbproj">
+      <Name>Docs.Threading.net35-client</Name>
       <Project>{a2d73067-50e8-42f8-aeb1-3b6bde900850}</Project>
       <Private>False</Private>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
