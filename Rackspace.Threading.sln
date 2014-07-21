@@ -11,9 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rackspace.Threading.net45",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rackspace.Threading.netcore45", "Rackspace.Threading\Rackspace.Threading.netcore45.csproj", "{0A5117FD-5E6D-4538-A749-17358BB796BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rackspace.Threading.portable-net40+sl4+wp7+win8", "Rackspace.Threading\Rackspace.Threading.portable-net40+sl4+wp7+win8.csproj", "{EA68B8FE-DBB5-453B-A6D8-95541935EC86}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rackspace.Threading.portable-net40", "Rackspace.Threading\Rackspace.Threading.portable-net40.csproj", "{EA68B8FE-DBB5-453B-A6D8-95541935EC86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rackspace.Threading.portable-net45+wp80+win8", "Rackspace.Threading\Rackspace.Threading.portable-net45+wp80+win8.csproj", "{5C1D10F9-A716-4EC0-BC10-1E3654666799}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rackspace.Threading.portable-net45", "Rackspace.Threading\Rackspace.Threading.portable-net45.csproj", "{5C1D10F9-A716-4EC0-BC10-1E3654666799}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{03061638-D376-45D0-9B98-817735FCD4F9}"
 	ProjectSection(SolutionItems) = preProject
@@ -30,9 +30,9 @@ Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Docs.Threading.net45", "Doc
 EndProject
 Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Docs.Threading.netcore45", "Docs.Threading\Docs.Threading.netcore45.shfbproj", "{E21976FF-B7C5-4D5E-992E-F59760CCC1AB}"
 EndProject
-Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Docs.Threading.portable-net40+sl4+wp7+win8", "Docs.Threading\Docs.Threading.portable-net40+sl4+wp7+win8.shfbproj", "{E9EFECCD-C484-4B4B-A6DD-8480570D1EE6}"
+Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Docs.Threading.portable-net40", "Docs.Threading\Docs.Threading.portable-net40.shfbproj", "{E9EFECCD-C484-4B4B-A6DD-8480570D1EE6}"
 EndProject
-Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Docs.Threading.portable-net45+wp80+win8", "Docs.Threading\Docs.Threading.portable-net45+wp80+win8.shfbproj", "{70569826-141E-416D-B52B-EDC9B5F4301B}"
+Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Docs.Threading.portable-net45", "Docs.Threading\Docs.Threading.portable-net45.shfbproj", "{70569826-141E-416D-B52B-EDC9B5F4301B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

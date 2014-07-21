@@ -13,14 +13,14 @@
          Studio adds them anyway -->
     <AssemblyName>Docs.Threading</AssemblyName>
     <RootNamespace>Docs.Threading</RootNamespace>
-    <Name>Docs.Threading.portable-net40+sl4+wp7+win8</Name>
+    <Name>Docs.Threading.portable-net40</Name>
     <!-- SHFB properties -->
     <FrameworkVersion>.NET Portable Library 4.0 %28Legacy%29</FrameworkVersion>
-    <OutputPath>.\bin\Help\portable-net40+sl4+wp7+win8\</OutputPath>
+    <OutputPath>.\bin\Help\portable-net40\</OutputPath>
     <HtmlHelpName>Threading API Reference</HtmlHelpName>
     <Language>en-US</Language>
     <DocumentationSources>
-      <DocumentationSource sourceFile="..\Rackspace.Threading\Rackspace.Threading.portable-net40+sl4+wp7+win8.csproj" />
+      <DocumentationSource sourceFile="..\Rackspace.Threading\Rackspace.Threading.portable-net40.csproj" />
     </DocumentationSources>
     <BuildAssemblerVerbosity>OnlyWarningsAndErrors</BuildAssemblerVerbosity>
     <HelpFileFormat>Website</HelpFileFormat>
@@ -59,7 +59,7 @@
     <ComponentConfigurations>
       <ComponentConfig id="IntelliSense Component" enabled="True">
         <component id="IntelliSense Component">
-          <output includeNamespaces="false" namespacesFile="Namespaces" folder="{@OutputFolder}\..\..\Api\portable-net40+sl4+wp7+win8" />
+          <output includeNamespaces="false" namespacesFile="Namespaces" folder="{@OutputFolder}\..\..\Api\portable-net40" />
         </component>
       </ComponentConfig>
     </ComponentConfigurations>
@@ -109,8 +109,8 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Win32' ">
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Rackspace.Threading\Rackspace.Threading.portable-net40+sl4+wp7+win8.csproj">
-      <Name>Rackspace.Threading.portable-net40+sl4+wp7+win8</Name>
+    <ProjectReference Include="..\Rackspace.Threading\Rackspace.Threading.portable-net40.csproj">
+      <Name>Rackspace.Threading.portable-net40</Name>
       <Project>{ea68b8fe-dbb5-453b-a6d8-95541935ec86}</Project>
       <Private>True</Private>
     </ProjectReference>

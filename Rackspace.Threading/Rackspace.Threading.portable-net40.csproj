@@ -4,36 +4,35 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5C1D10F9-A716-4EC0-BC10-1E3654666799}</ProjectGuid>
+    <ProjectGuid>{EA68B8FE-DBB5-453B-A6D8-95541935EC86}</ProjectGuid>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Rackspace.Threading</RootNamespace>
     <AssemblyName>Rackspace.Threading</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile136</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
-    <BaseIntermediateOutputPath>obj\portable-net45+wp80+win8\</BaseIntermediateOutputPath>
-    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <BaseIntermediateOutputPath>obj\portable-net40\</BaseIntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\portable-net45+wp80+win8\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;PORTABLE;NET45;NET45PLUS;NET40PLUS;NET35PLUS</DefineConstants>
+    <OutputPath>bin\portable-net40\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;PORTABLE;NET40;NET40PLUS;NET35PLUS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\portable-net45+wp80+win8\Debug\Rackspace.Threading.xml</DocumentationFile>
+    <DocumentationFile>bin\portable-net40\Debug\Rackspace.Threading.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\portable-net45+wp80+win8\Release\</OutputPath>
-    <DefineConstants>TRACE;PORTABLE;NET45;NET45PLUS;NET40PLUS;NET35PLUS</DefineConstants>
+    <OutputPath>bin\portable-net40\Release\</OutputPath>
+    <DefineConstants>TRACE;PORTABLE;NET40;NET40PLUS;NET35PLUS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\portable-net45+wp80+win8\Release\Rackspace.Threading.xml</DocumentationFile>
+    <DocumentationFile>bin\portable-net40\Release\Rackspace.Threading.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -57,7 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Rackspace.Threading.nuspec" />
-    <None Include="packages.Rackspace.Threading.portable-net45+wp80+win8.config" />
+    <None Include="packages.Rackspace.Threading.portable-net40.config" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

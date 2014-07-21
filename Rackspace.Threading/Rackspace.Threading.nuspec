@@ -41,13 +41,13 @@
     <file src="bin\netcore45\$Configuration$\Rackspace.Threading.pdb" target="lib\netcore45"/>
     <file src="bin\netcore45\$Configuration$\Rackspace.Threading.xml" target="lib\netcore45"/>
 
-    <file src="bin\portable-net40+sl4+wp7+win8\$Configuration$\Rackspace.Threading.dll" target="lib\portable-net40+sl4+wp7+win8"/>
-    <file src="bin\portable-net40+sl4+wp7+win8\$Configuration$\Rackspace.Threading.pdb" target="lib\portable-net40+sl4+wp7+win8"/>
-    <file src="bin\portable-net40+sl4+wp7+win8\$Configuration$\Rackspace.Threading.xml" target="lib\portable-net40+sl4+wp7+win8"/>
+    <file src="bin\portable-net40\$Configuration$\Rackspace.Threading.dll" target="lib\portable-net4+sl5+netcore45+wp8+MonoAndroid1+MonoTouch1"/>
+    <file src="bin\portable-net40\$Configuration$\Rackspace.Threading.pdb" target="lib\portable-net4+sl5+netcore45+wp8+MonoAndroid1+MonoTouch1"/>
+    <file src="bin\portable-net40\$Configuration$\Rackspace.Threading.xml" target="lib\portable-net4+sl5+netcore45+wp8+MonoAndroid1+MonoTouch1"/>
 
-    <file src="bin\portable-net45+wp80+win8\$Configuration$\Rackspace.Threading.dll" target="lib\portable-net45+wp80+win8"/>
-    <file src="bin\portable-net45+wp80+win8\$Configuration$\Rackspace.Threading.pdb" target="lib\portable-net45+wp80+win8"/>
-    <file src="bin\portable-net45+wp80+win8\$Configuration$\Rackspace.Threading.xml" target="lib\portable-net45+wp80+win8"/>
+    <file src="bin\portable-net45\$Configuration$\Rackspace.Threading.dll" target="lib\portable-net45+netcore45+wp8+MonoAndroid1+MonoTouch1"/>
+    <file src="bin\portable-net45\$Configuration$\Rackspace.Threading.pdb" target="lib\portable-net45+netcore45+wp8+MonoAndroid1+MonoTouch1"/>
+    <file src="bin\portable-net45\$Configuration$\Rackspace.Threading.xml" target="lib\portable-net45+netcore45+wp8+MonoAndroid1+MonoTouch1"/>
 
     <!-- Source code -->
     <file src="**\*.cs" target="src" />
