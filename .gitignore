@@ -9,3 +9,6 @@ Build/nuget/
 # Visual Studio per-user files
 *.suo
 *.user
+
+# Roslyn IntelliSense Cache
+*.sln.ide/
