@@ -33,4 +33,4 @@ if (-not (Test-Path 'nuget')) {
 	mkdir "nuget"
 }
 
-..\.nuget\NuGet.exe pack ..\Rackspace.Threading\Rackspace.Threading.nuspec -OutputDirectory nuget -Prop Configuration=$BuildConfig -Version $Version -Symbols
+..\.nuget\NuGet.exe 'pack' '..\Rackspace.Threading\Rackspace.Threading.nuspec' '-OutputDirectory' 'nuget' '-Prop' "Configuration=$BuildConfig" '-Version' "$Version" '-Symbols'
