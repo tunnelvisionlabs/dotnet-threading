@@ -64,8 +64,21 @@ namespace Rackspace.Threading
                         {
                             IDisposable disposable = resourceTask.Result;
                             if (disposable != null)
-                                disposable.Dispose();
+                            {
+                                IAsyncDisposable asyncDisposable = disposable as IAsyncDisposable;
+                                if (asyncDisposable != null)
+                                {
+                                    return asyncDisposable.DisposeAsync();
+                                }
+                                else
+                                {
+                                    disposable.Dispose();
+                                    return CompletedTask.Default;
+                                }
+                            }
                         }
+
+                        return CompletedTask.Default;
                     });
         }
 
@@ -117,8 +130,21 @@ namespace Rackspace.Threading
                         {
                             IDisposable disposable = resourceTask.Result;
                             if (disposable != null)
-                                disposable.Dispose();
+                            {
+                                IAsyncDisposable asyncDisposable = disposable as IAsyncDisposable;
+                                if (asyncDisposable != null)
+                                {
+                                    return asyncDisposable.DisposeAsync();
+                                }
+                                else
+                                {
+                                    disposable.Dispose();
+                                    return CompletedTask.Default;
+                                }
+                            }
                         }
+
+                        return CompletedTask.Default;
                     });
         }
 
