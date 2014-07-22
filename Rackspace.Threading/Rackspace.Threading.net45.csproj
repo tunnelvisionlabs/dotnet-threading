@@ -51,6 +51,7 @@
     <Compile Include="CancellationTokenSourceExtensions.cs" />
     <Compile Include="CompletedTask.cs" />
     <Compile Include="CoreTaskExtensions.cs" />
+    <Compile Include="IProgress`1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StreamExtensions.cs" />
     <Compile Include="TaskCompletionSourceExtensions.cs" />
