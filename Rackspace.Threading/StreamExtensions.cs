@@ -140,7 +140,7 @@ namespace Rackspace.Threading
                     .Select(task => (nread = task.Result) != 0);
             Func<Task> body = () => destination.WriteAsync(buffer, 0, nread, cancellationToken);
 
-            return CoreTaskExtensions.While(condition, body);
+            return TaskBlocks.While(condition, body);
         }
 
         /// <summary>

@@ -192,6 +192,27 @@
               keywords, but does not depend on these features being available. As a result, .NET 3.5 and
               .NET 4.0 developers can enjoy clean, efficient asynchronous code.
             </para>
+            <para>
+              The following blocks are currently supported by this library.
+            </para>
+            <list class="bullet">
+              <listItem>
+                <para>
+                  <codeEntityReference>Overload:Rackspace.Threading.TaskBlocks.While</codeEntityReference>:
+                  These methods create tasks which operate in a similar manner to a <codeInline>while</codeInline>
+                  block written in an <languageKeyword>async</languageKeyword> method (for languages which support
+                  <languageKeyword>async</languageKeyword>/<languageKeyword>await</languageKeyword>.
+                </para>
+              </listItem>
+              <listItem>
+                <para>
+                  <codeEntityReference>Overload:Rackspace.Threading.TaskBlocks.Using</codeEntityReference>:
+                  These methods create tasks which operate in a similar manner to a <codeInline>using</codeInline>
+                  block written in an <languageKeyword>async</languageKeyword> method (for languages which support
+                  <languageKeyword>async</languageKeyword>/<languageKeyword>await</languageKeyword>.
+                </para>
+              </listItem>
+            </list>
           </content>
         </section>
       </sections>
