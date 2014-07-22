@@ -10,27 +10,28 @@
     <RootNamespace>Rackspace.Threading</RootNamespace>
     <AssemblyName>Rackspace.Threading</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
-    <BaseIntermediateOutputPath>obj\net40\</BaseIntermediateOutputPath>
+    <BaseIntermediateOutputPath>obj\net40-client\</BaseIntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\net40\Debug\</OutputPath>
+    <OutputPath>bin\net40-client\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE;NET40;NET40PLUS;NET35PLUS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\net40\Debug\Rackspace.Threading.xml</DocumentationFile>
+    <DocumentationFile>bin\net40-client\Debug\Rackspace.Threading.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\net40\Release\</OutputPath>
+    <OutputPath>bin\net40-client\Release\</OutputPath>
     <DefineConstants>TRACE;NET40;NET40PLUS;NET35PLUS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\net40\Release\Rackspace.Threading.xml</DocumentationFile>
+    <DocumentationFile>bin\net40-client\Release\Rackspace.Threading.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -63,7 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Rackspace.Threading.nuspec" />
-    <None Include="packages.Rackspace.Threading.net40.config" />
+    <None Include="packages.Rackspace.Threading.net40-client.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

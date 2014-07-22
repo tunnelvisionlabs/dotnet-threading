@@ -7,20 +7,20 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{70569826-141e-416d-b52b-edc9b5f4301b}</ProjectGuid>
+    <ProjectGuid>{a2d73067-50e8-42f8-aeb1-3b6bde900850}</ProjectGuid>
     <SHFBSchemaVersion>1.9.9.0</SHFBSchemaVersion>
     <!-- AssemblyName, Name, and RootNamespace are not used by SHFB but Visual
          Studio adds them anyway -->
     <AssemblyName>Docs.Threading</AssemblyName>
     <RootNamespace>Docs.Threading</RootNamespace>
-    <Name>Docs.Threading.portable-net45+wp80+win8</Name>
+    <Name>Docs.Threading.net35-client</Name>
     <!-- SHFB properties -->
-    <FrameworkVersion>.NET Portable Library 4.5</FrameworkVersion>
-    <OutputPath>.\bin\Help\portable-net45+wp80+win8\</OutputPath>
+    <FrameworkVersion>.NET Framework 3.5</FrameworkVersion>
+    <OutputPath>.\bin\Help\net35-client\</OutputPath>
     <HtmlHelpName>Threading API Reference</HtmlHelpName>
     <Language>en-US</Language>
     <DocumentationSources>
-      <DocumentationSource sourceFile="..\Rackspace.Threading\Rackspace.Threading.portable-net45+wp80+win8.csproj" />
+      <DocumentationSource sourceFile="..\Rackspace.Threading\Rackspace.Threading.net35-client.csproj" />
     </DocumentationSources>
     <BuildAssemblerVerbosity>OnlyWarningsAndErrors</BuildAssemblerVerbosity>
     <HelpFileFormat>Website</HelpFileFormat>
@@ -59,7 +59,7 @@
     <ComponentConfigurations>
       <ComponentConfig id="IntelliSense Component" enabled="True">
         <component id="IntelliSense Component">
-          <output includeNamespaces="false" namespacesFile="Namespaces" folder="{@OutputFolder}\..\..\Api\portable-net45+wp80+win8" />
+          <output includeNamespaces="false" namespacesFile="Namespaces" folder="{@OutputFolder}\..\..\Api\net35-client" />
         </component>
       </ComponentConfig>
     </ComponentConfigurations>
@@ -79,14 +79,6 @@
     <PlugInConfigurations>
       <PlugInConfig id="Lightweight TOC" enabled="True">
         <configuration />
-      </PlugInConfig>
-      <PlugInConfig id="Version Builder" enabled="True">
-        <configuration>
-          <currentProject label="Portable Class Library" version="Portable Class Library" ripOldApis="False" />
-          <versions>
-            <version label=".NET Framework" version="3.5" helpFileProject="Docs.Threading.net35.shfbproj" />
-          </versions>
-        </configuration>
       </PlugInConfig>
     </PlugInConfigurations>
     <BuildLogFile />
@@ -117,15 +109,9 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Win32' ">
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Docs.Threading\Docs.Threading.net35.shfbproj">
-      <Name>Docs.Threading.net35</Name>
-      <Project>{a2d73067-50e8-42f8-aeb1-3b6bde900850}</Project>
-      <Private>False</Private>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\Rackspace.Threading\Rackspace.Threading.portable-net45+wp80+win8.csproj">
-      <Name>Rackspace.Threading.portable-net45+wp80+win8</Name>
-      <Project>{5c1d10f9-a716-4ec0-bc10-1e3654666799}</Project>
+    <ProjectReference Include="..\Rackspace.Threading\Rackspace.Threading.net35-client.csproj">
+      <Name>Rackspace.Threading.net35-client</Name>
+      <Project>{52ca4a3b-f296-4489-b5f0-ad375d039b35}</Project>
       <Private>True</Private>
     </ProjectReference>
   </ItemGroup>
