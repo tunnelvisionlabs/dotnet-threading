@@ -16,7 +16,6 @@
     <Name>Docs.Threading.netcore45</Name>
     <!-- SHFB properties -->
     <FrameworkVersion>.NET for Windows Store Apps</FrameworkVersion>
-    <OutputPath>.\bin\Help\netcore45\</OutputPath>
     <HtmlHelpName>Threading API Reference</HtmlHelpName>
     <Language>en-US</Language>
     <DocumentationSources>
@@ -56,13 +55,6 @@
       <Argument Key="logoPlacement" Value="left" />
       <Argument Key="logoAlignment" Value="left" />
     </TransformComponentArguments>
-    <ComponentConfigurations>
-      <ComponentConfig id="IntelliSense Component" enabled="True">
-        <component id="IntelliSense Component">
-          <output includeNamespaces="false" namespacesFile="Namespaces" folder="{@OutputFolder}\..\..\Api\netcore45" />
-        </component>
-      </ComponentConfig>
-    </ComponentConfigurations>
     <CatalogName>VisualStudio11</CatalogName>
     <TocParentId>-1</TocParentId>
     <TocParentVersion>100</TocParentVersion>
@@ -105,8 +97,24 @@
        order for Visual Studio to perform the build.  The others are optional
        common platform types that may appear. -->
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>.\bin\Help\netcore45\Debug\</OutputPath>
+    <ComponentConfigurations>
+      <ComponentConfig id="IntelliSense Component" enabled="True">
+        <component id="IntelliSense Component">
+          <output includeNamespaces="false" namespacesFile="Namespaces" folder="{@OutputFolder}\..\..\..\Api\netcore45\Debug" />
+        </component>
+      </ComponentConfig>
+    </ComponentConfigurations>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>.\bin\Help\netcore45\Release\</OutputPath>
+    <ComponentConfigurations>
+      <ComponentConfig id="IntelliSense Component" enabled="True">
+        <component id="IntelliSense Component">
+          <output includeNamespaces="false" namespacesFile="Namespaces" folder="{@OutputFolder}\..\..\..\Api\netcore45\Release" />
+        </component>
+      </ComponentConfig>
+    </ComponentConfigurations>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
   </PropertyGroup>
