@@ -185,6 +185,15 @@ namespace Rackspace.Threading
         /// <param name="condition">A function which evaluates the condition of the asynchronous <c>while</c> loop.</param>
         /// <param name="body">A function which returns a <see cref="Task"/> representing one iteration of the body of the <c>while</c> loop.</param>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
+        /// <example>
+        /// The following example shows a basic "while" loop implemented using this building block.
+        /// <code source="..\Samples\CSharpSamples\TaskBlockWhileAsync.cs" region="WhileAsyncBuildingBlock" language="cs"/>
+        /// <para>
+        /// For reference, the following example demonstrates a (nearly) equivalent implementation of this behavior using
+        /// the <see langword="async/await"/> operators.
+        /// </para>
+        /// <code source="..\Samples\CSharpSamples\TaskBlockWhileAsync.cs" region="WhileAsyncAwait" language="cs"/>
+        /// </example>
         /// <exception cref="ArgumentNullException">
         /// If <paramref name="condition"/> is <see langword="null"/>.
         /// <para>-or-</para>
@@ -249,6 +258,15 @@ namespace Rackspace.Threading
         /// <param name="condition">A function which returns a <see cref="Task"/> representing the asynchronous evaluation of the <c>while</c> condition.</param>
         /// <param name="body">A function which returns a <see cref="Task"/> representing one iteration of the body of the <c>while</c> loop.</param>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
+        /// <example>
+        /// The following example shows a basic "while" loop implemented using this building block.
+        /// <code source="..\Samples\CSharpSamples\TaskBlockWhileAsyncCondition.cs" region="WhileAsyncBuildingBlock" language="cs"/>
+        /// <para>
+        /// For reference, the following example demonstrates a (nearly) equivalent implementation of this behavior using
+        /// the <see langword="async/await"/> operators.
+        /// </para>
+        /// <code source="..\Samples\CSharpSamples\TaskBlockWhileAsyncCondition.cs" region="WhileAsyncAwait" language="cs"/>
+        /// </example>
         /// <exception cref="ArgumentNullException">
         /// If <paramref name="condition"/> is <see langword="null"/>.
         /// <para>-or-</para>
