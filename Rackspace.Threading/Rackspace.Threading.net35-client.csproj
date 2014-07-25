@@ -58,6 +58,7 @@
     <Compile Include="CoreTaskExtensions.cs" />
     <Compile Include="IAsyncDisposable.cs" />
     <Compile Include="IProgress`1.cs" />
+    <Compile Include="NamespaceDoc.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StreamExtensions.cs" />
     <Compile Include="TaskBlocks.cs" />
