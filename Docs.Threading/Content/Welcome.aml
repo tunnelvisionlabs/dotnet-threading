@@ -21,6 +21,11 @@
         <list class="bullet">
           <listItem>
             <para>
+              Getting Started: <link xlink:href="0a33afc9-793d-448a-950f-f03a2ca156d2"/>
+            </para>
+          </listItem>
+          <listItem>
+            <para>
               Latest Release: <externalLink>
                 <linkText>GitHub Releases</linkText>
                 <linkAlternateText>Release notes for the latest release on GitHub</linkAlternateText>
