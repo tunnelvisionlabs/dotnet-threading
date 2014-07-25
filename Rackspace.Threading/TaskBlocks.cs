@@ -27,6 +27,12 @@ namespace Rackspace.Threading
         /// }
         /// </code>
         ///
+        /// <para>
+        /// This method expands on the <c>using</c> statement provided by C# by implementing support for
+        /// <see cref="IAsyncDisposable"/> as described in
+        /// <see href="http://roslyn.codeplex.com/discussions/546377">IAsyncDisposable, using statements, and async/await</see>.
+        /// </para>
+        ///
         /// <note type="caller">
         /// If the <paramref name="resource"/> function throws an exception, or if the <see cref="Task{TResult}"/> it returns
         /// does not complete successfully, the resource will not be acquired by this method. In either of these
@@ -105,6 +111,12 @@ namespace Rackspace.Threading
         ///     await body(disposable).ConfigureAwait(false);
         /// }
         /// </code>
+        ///
+        /// <para>
+        /// This method expands on the <c>using</c> statement provided by C# by implementing support for
+        /// <see cref="IAsyncDisposable"/> as described in
+        /// <see href="http://roslyn.codeplex.com/discussions/546377">IAsyncDisposable, using statements, and async/await</see>.
+        /// </para>
         ///
         /// <note type="caller">
         /// If the <paramref name="resource"/> function throws an exception, or if the <see cref="Task{TResult}"/> it returns
