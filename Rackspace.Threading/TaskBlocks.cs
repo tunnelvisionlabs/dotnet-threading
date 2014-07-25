@@ -21,9 +21,9 @@ namespace Rackspace.Threading
         /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
         ///
         /// <code language="cs">
-        /// using (IDisposable disposable = await <paramref name="resource"/>().ConfigureAwait(false))
+        /// using (IDisposable disposable = await resource().ConfigureAwait(false))
         /// {
-        ///     return await <paramref name="body"/>(disposable).ConfigureAwait(false);
+        ///     return await body(disposable).ConfigureAwait(false);
         /// }
         /// </code>
         ///
@@ -90,9 +90,9 @@ namespace Rackspace.Threading
         /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
         ///
         /// <code language="cs">
-        /// using (IDisposable disposable = await <paramref name="resource"/>().ConfigureAwait(false))
+        /// using (IDisposable disposable = await resource().ConfigureAwait(false))
         /// {
-        ///     await <paramref name="body"/>(disposable).ConfigureAwait(false);
+        ///     await body(disposable).ConfigureAwait(false);
         /// }
         /// </code>
         ///
@@ -157,7 +157,7 @@ namespace Rackspace.Threading
         /// <code language="cs">
         /// while (condition())
         /// {
-        ///     await <paramref name="body"/>().ConfigureAwait(false);
+        ///     await body().ConfigureAwait(false);
         /// }
         /// </code>
         /// </remarks>
@@ -221,7 +221,7 @@ namespace Rackspace.Threading
         /// <code language="cs">
         /// while (await condition().ConfigureAwait(false))
         /// {
-        ///     await <paramref name="body"/>().ConfigureAwait(false);
+        ///     await body().ConfigureAwait(false);
         /// }
         /// </code>
         /// </remarks>
