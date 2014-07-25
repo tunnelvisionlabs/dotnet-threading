@@ -61,6 +61,8 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaskBlockUsing.cs" />
+    <Compile Include="TaskBlockUsingWithResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Rackspace.Threading\Rackspace.Threading.net45.csproj">

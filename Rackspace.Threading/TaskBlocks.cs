@@ -41,6 +41,16 @@ namespace Rackspace.Threading
         /// <returns>A <see cref="Task"/> representing the asynchronous operation. When the task completes successfully,
         /// the <see cref="Task{TResult}.Result"/> property will contain the result provided by the
         /// <see cref="Task{TResult}.Result"/> property of the task returned from <paramref name="body"/>.</returns>
+        /// <example>
+        /// The following example asynchronously acquires a resource by calling the user method <c>AcquireResourceAsync</c>.
+        /// The resource will be disposed after the body executes, prior to returning the result of the body.
+        /// <code source="..\Samples\CSharpSamples\TaskBlockUsingWithResult.cs" region="UsingWithResultAsyncBuildingBlock" language="cs"/>
+        /// <para>
+        /// For reference, the following example demonstrates a (nearly) equivalent implementation of this behavior using
+        /// the <see langword="async/await"/> operators.
+        /// </para>
+        /// <code source="..\Samples\CSharpSamples\TaskBlockUsingWithResult.cs" region="UsingWithResultAsyncAwait" language="cs"/>
+        /// </example>
         /// <exception cref="ArgumentNullException">
         /// If <paramref name="resource"/> is <see langword="null"/>.
         /// <para>-or-</para>
@@ -107,6 +117,17 @@ namespace Rackspace.Threading
         /// <param name="resource">A function which acquires the resource used during the execution of the task.</param>
         /// <param name="body">The continuation function which provides the <see cref="Task"/> which acts as the body of the <c>using</c> block.</param>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
+        /// <example>
+        /// The following example asynchronously acquires a resource by calling the user method <c>AcquireResourceAsync</c>.
+        /// The resource will be disposed after the body executes. No result is return from this operation, as the body of
+        /// the task block represents an asynchronous operation that does not return a result.
+        /// <code source="..\Samples\CSharpSamples\TaskBlockUsing.cs" region="UsingAsyncBuildingBlock" language="cs"/>
+        /// <para>
+        /// For reference, the following example demonstrates a (nearly) equivalent implementation of this behavior using
+        /// the <see langword="async/await"/> operators.
+        /// </para>
+        /// <code source="..\Samples\CSharpSamples\TaskBlockUsing.cs" region="UsingAsyncAwait" language="cs"/>
+        /// </example>
         /// <exception cref="ArgumentNullException">
         /// If <paramref name="resource"/> is <see langword="null"/>.
         /// <para>-or-</para>
