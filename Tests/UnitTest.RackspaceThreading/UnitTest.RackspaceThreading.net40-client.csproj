@@ -54,6 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestCancellationTokenSourceExtensions.cs" />
     <Compile Include="TestCompletedTask.cs" />
+    <Compile Include="TestCoreTaskExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Rackspace.Threading\Rackspace.Threading.net40-client.csproj">
