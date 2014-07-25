@@ -38,6 +38,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{EEE4
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpSamples", "Samples\CSharpSamples\CSharpSamples.csproj", "{9F8D12B2-273B-4C1A-9CDB-79120E4B66B6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{D19E0612-679A-4EE9-9674-E5636FCEB98F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest.RackspaceThreading.net35-client", "Tests\UnitTest.RackspaceThreading\UnitTest.RackspaceThreading.net35-client.csproj", "{5A5C58DD-BEE6-41A8-AB99-F1363E00C1CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest.RackspaceThreading.net40-client", "Tests\UnitTest.RackspaceThreading\UnitTest.RackspaceThreading.net40-client.csproj", "{4BA8E526-949C-4EAE-B7C5-F8150140ED25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest.RackspaceThreading.net45", "Tests\UnitTest.RackspaceThreading\UnitTest.RackspaceThreading.net45.csproj", "{33E4C444-B346-48BB-90C9-DA7E983C8BE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest.RackspaceThreading.portable-net40", "Tests\UnitTest.RackspaceThreading\UnitTest.RackspaceThreading.portable-net40.csproj", "{81DE643E-CC9E-4B9A-A66C-23DCAEAA9BE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest.RackspaceThreading.portable-net45", "Tests\UnitTest.RackspaceThreading\UnitTest.RackspaceThreading.portable-net45.csproj", "{0A938208-8788-40ED-BE23-C9FD89DB78A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -90,11 +102,36 @@ Global
 		{9F8D12B2-273B-4C1A-9CDB-79120E4B66B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F8D12B2-273B-4C1A-9CDB-79120E4B66B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F8D12B2-273B-4C1A-9CDB-79120E4B66B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A5C58DD-BEE6-41A8-AB99-F1363E00C1CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A5C58DD-BEE6-41A8-AB99-F1363E00C1CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A5C58DD-BEE6-41A8-AB99-F1363E00C1CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A5C58DD-BEE6-41A8-AB99-F1363E00C1CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BA8E526-949C-4EAE-B7C5-F8150140ED25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BA8E526-949C-4EAE-B7C5-F8150140ED25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BA8E526-949C-4EAE-B7C5-F8150140ED25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BA8E526-949C-4EAE-B7C5-F8150140ED25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33E4C444-B346-48BB-90C9-DA7E983C8BE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33E4C444-B346-48BB-90C9-DA7E983C8BE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33E4C444-B346-48BB-90C9-DA7E983C8BE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33E4C444-B346-48BB-90C9-DA7E983C8BE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81DE643E-CC9E-4B9A-A66C-23DCAEAA9BE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81DE643E-CC9E-4B9A-A66C-23DCAEAA9BE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81DE643E-CC9E-4B9A-A66C-23DCAEAA9BE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81DE643E-CC9E-4B9A-A66C-23DCAEAA9BE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A938208-8788-40ED-BE23-C9FD89DB78A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A938208-8788-40ED-BE23-C9FD89DB78A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A938208-8788-40ED-BE23-C9FD89DB78A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A938208-8788-40ED-BE23-C9FD89DB78A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{9F8D12B2-273B-4C1A-9CDB-79120E4B66B6} = {EEE4FD60-7F41-4999-85C4-E1C3FA77F6F0}
+		{5A5C58DD-BEE6-41A8-AB99-F1363E00C1CC} = {D19E0612-679A-4EE9-9674-E5636FCEB98F}
+		{4BA8E526-949C-4EAE-B7C5-F8150140ED25} = {D19E0612-679A-4EE9-9674-E5636FCEB98F}
+		{33E4C444-B346-48BB-90C9-DA7E983C8BE5} = {D19E0612-679A-4EE9-9674-E5636FCEB98F}
+		{81DE643E-CC9E-4B9A-A66C-23DCAEAA9BE9} = {D19E0612-679A-4EE9-9674-E5636FCEB98F}
+		{0A938208-8788-40ED-BE23-C9FD89DB78A8} = {D19E0612-679A-4EE9-9674-E5636FCEB98F}
 	EndGlobalSection
 EndGlobal
