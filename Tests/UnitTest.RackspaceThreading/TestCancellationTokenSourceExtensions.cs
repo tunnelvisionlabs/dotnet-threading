@@ -28,12 +28,12 @@ namespace UnitTest.RackspaceThreading
         [Timeout(2000)]
         public void TestCancelAfter()
         {
-            TimeSpan timeout = TimeSpan.FromSeconds(1);
-            TimeSpan tolerance = TimeSpan.FromSeconds(0.05);
+            TimeSpan timeout = TimeSpan.FromSeconds(0.25);
+            TimeSpan tolerance = TimeSpan.FromSeconds(0.003);
 
             CancellationTokenSource cts = new CancellationTokenSource();
             Stopwatch timer = Stopwatch.StartNew();
-            CancellationTokenSourceExtensions.CancelAfter(cts, TimeSpan.FromSeconds(1));
+            CancellationTokenSourceExtensions.CancelAfter(cts, timeout);
 
             // a task which never completes
             Task[] tasks = { new TaskCompletionSource<object>().Task };
@@ -46,8 +46,8 @@ namespace UnitTest.RackspaceThreading
             catch (OperationCanceledException)
             {
                 TimeSpan elapsed = timer.Elapsed;
-                Assert.IsTrue(timer.Elapsed > timeout - tolerance, "The CancellationTokenSource cancelled too soon ({0} sec < {1} sec).", elapsed.TotalSeconds, (timeout - tolerance).TotalSeconds);
-                Assert.IsTrue(timer.Elapsed < timeout + tolerance, "The CancellationTokenSource cancelled too late ({1} sec > {1} sec).", elapsed.TotalSeconds, (timeout + tolerance).TotalSeconds);
+                Assert.IsTrue(elapsed >= timeout - tolerance, "The CancellationTokenSource cancelled too soon ({0} sec < {1} sec).", elapsed.TotalSeconds, (timeout - tolerance).TotalSeconds);
+                Assert.IsTrue(elapsed <= timeout + tolerance, "The CancellationTokenSource cancelled too late ({0} sec > {1} sec).", elapsed.TotalSeconds, (timeout + tolerance).TotalSeconds);
             }
         }
     }
