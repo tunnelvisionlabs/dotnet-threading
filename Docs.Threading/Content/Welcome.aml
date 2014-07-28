@@ -6,11 +6,63 @@
 
     <introduction>
       <para>
-        Welcome to the Threading API. If you have any information, tips, updates, or corrections that
-        you would like to see added to the guide, feel free to submit them to the author using the
-        <ui>Send Feedback</ui> link at the bottom of the page or the e-mail link in the page footer.
+        Welcome to the Rackspace Threading Library, a lightweight utility library designed to simplify
+        the development of efficient, asynchronous code targeting .NET 3.5 and newer.
       </para>
     </introduction>
+
+    <section address="ProjectResources">
+      <title>Project Resources</title>
+      <content>
+        <para>
+          The following links go directly to the latest information available about the project.
+        </para>
+
+        <list class="bullet">
+          <listItem>
+            <para>
+              Getting Started: <link xlink:href="0a33afc9-793d-448a-950f-f03a2ca156d2"/>
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              Latest Release: <externalLink>
+                <linkText>GitHub Releases</linkText>
+                <linkAlternateText>Release notes for the latest release on GitHub</linkAlternateText>
+                <linkUri>https://github.com/rackerlabs/dotnet-threading/releases/latest</linkUri>
+              </externalLink>
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              Source Code: <externalLink>
+                <linkText>GitHub Repository</linkText>
+                <linkAlternateText>Source code for the project on GitHub</linkAlternateText>
+                <linkUri>https://github.com/rackerlabs/dotnet-threading</linkUri>
+              </externalLink>
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              Documentation: <externalLink>
+                <linkText>API Documentation</linkText>
+                <linkAlternateText>Documentation for the latest release hosted on GitHub Pages</linkAlternateText>
+                <linkUri>https://rackerlabs.github.io/dotnet-threading/docs-latest</linkUri>
+              </externalLink>
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              Issue Tracker: <externalLink>
+                <linkText>GitHub Issues</linkText>
+                <linkAlternateText>Project issue tracker on GitHub Issues</linkAlternateText>
+                <linkUri>https://github.com/rackerlabs/dotnet-threading/issues</linkUri>
+              </externalLink>
+            </para>
+          </listItem>
+        </list>
+      </content>
+    </section>
 
     <relatedTopics/>
   </developerConceptualDocument>

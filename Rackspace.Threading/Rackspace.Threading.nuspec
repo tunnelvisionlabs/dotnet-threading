@@ -27,27 +27,27 @@
     <!-- Runtime libraries -->
     <file src="bin\net35-client\$Configuration$\Rackspace.Threading.dll" target="lib\net35-client"/>
     <file src="bin\net35-client\$Configuration$\Rackspace.Threading.pdb" target="lib\net35-client"/>
-    <file src="bin\net35-client\$Configuration$\Rackspace.Threading.xml" target="lib\net35-client"/>
+    <file src="..\Docs.Threading\bin\Api\net35-client\$Configuration$\Rackspace.Threading.xml" target="lib\net35-client"/>
 
     <file src="bin\net40-client\$Configuration$\Rackspace.Threading.dll" target="lib\net40-client"/>
     <file src="bin\net40-client\$Configuration$\Rackspace.Threading.pdb" target="lib\net40-client"/>
-    <file src="bin\net40-client\$Configuration$\Rackspace.Threading.xml" target="lib\net40-client"/>
+    <file src="..\Docs.Threading\bin\Api\net40-client\$Configuration$\Rackspace.Threading.xml" target="lib\net40-client"/>
 
     <file src="bin\net45\$Configuration$\Rackspace.Threading.dll" target="lib\net45"/>
     <file src="bin\net45\$Configuration$\Rackspace.Threading.pdb" target="lib\net45"/>
-    <file src="bin\net45\$Configuration$\Rackspace.Threading.xml" target="lib\net45"/>
+    <file src="..\Docs.Threading\bin\Api\net45\$Configuration$\Rackspace.Threading.xml" target="lib\net45"/>
 
     <file src="bin\netcore45\$Configuration$\Rackspace.Threading.dll" target="lib\netcore45"/>
     <file src="bin\netcore45\$Configuration$\Rackspace.Threading.pdb" target="lib\netcore45"/>
-    <file src="bin\netcore45\$Configuration$\Rackspace.Threading.xml" target="lib\netcore45"/>
+    <file src="..\Docs.Threading\bin\Api\netcore45\$Configuration$\Rackspace.Threading.xml" target="lib\netcore45"/>
 
     <file src="bin\portable-net40\$Configuration$\Rackspace.Threading.dll" target="lib\portable-net4+sl5+netcore45+wp8+MonoAndroid1+MonoTouch1"/>
     <file src="bin\portable-net40\$Configuration$\Rackspace.Threading.pdb" target="lib\portable-net4+sl5+netcore45+wp8+MonoAndroid1+MonoTouch1"/>
-    <file src="bin\portable-net40\$Configuration$\Rackspace.Threading.xml" target="lib\portable-net4+sl5+netcore45+wp8+MonoAndroid1+MonoTouch1"/>
+    <file src="..\Docs.Threading\bin\Api\portable-net40\$Configuration$\Rackspace.Threading.xml" target="lib\portable-net4+sl5+netcore45+wp8+MonoAndroid1+MonoTouch1"/>
 
     <file src="bin\portable-net45\$Configuration$\Rackspace.Threading.dll" target="lib\portable-net45+netcore45+wp8+MonoAndroid1+MonoTouch1"/>
     <file src="bin\portable-net45\$Configuration$\Rackspace.Threading.pdb" target="lib\portable-net45+netcore45+wp8+MonoAndroid1+MonoTouch1"/>
-    <file src="bin\portable-net45\$Configuration$\Rackspace.Threading.xml" target="lib\portable-net45+netcore45+wp8+MonoAndroid1+MonoTouch1"/>
+    <file src="..\Docs.Threading\bin\Api\portable-net45\$Configuration$\Rackspace.Threading.xml" target="lib\portable-net45+netcore45+wp8+MonoAndroid1+MonoTouch1"/>
 
     <!-- Source code -->
     <file src="**\*.cs" target="src" />

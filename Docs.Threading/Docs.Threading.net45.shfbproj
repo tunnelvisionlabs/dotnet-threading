@@ -16,7 +16,6 @@
     <Name>Docs.Threading.net45</Name>
     <!-- SHFB properties -->
     <FrameworkVersion>.NET Framework 4.5</FrameworkVersion>
-    <OutputPath>.\bin\Help\net45\</OutputPath>
     <HtmlHelpName>Threading API Reference</HtmlHelpName>
     <Language>en-US</Language>
     <DocumentationSources>
@@ -56,13 +55,6 @@
       <Argument Key="logoPlacement" Value="left" />
       <Argument Key="logoAlignment" Value="left" />
     </TransformComponentArguments>
-    <ComponentConfigurations>
-      <ComponentConfig id="IntelliSense Component" enabled="True">
-        <component id="IntelliSense Component">
-          <output includeNamespaces="false" namespacesFile="Namespaces" folder="{@OutputFolder}\..\..\Api\net45" />
-        </component>
-      </ComponentConfig>
-    </ComponentConfigurations>
     <CatalogName>VisualStudio11</CatalogName>
     <TocParentId>-1</TocParentId>
     <TocParentVersion>100</TocParentVersion>
@@ -101,28 +93,26 @@
        order for Visual Studio to perform the build.  The others are optional
        common platform types that may appear. -->
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>.\bin\Help\net45\Debug\</OutputPath>
+    <ComponentConfigurations>
+      <ComponentConfig id="IntelliSense Component" enabled="True">
+        <component id="IntelliSense Component">
+          <output includeNamespaces="false" namespacesFile="Namespaces" folder="{@OutputFolder}\..\..\..\Api\net45\Debug" />
+        </component>
+      </ComponentConfig>
+    </ComponentConfigurations>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Win32' ">
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Win32' ">
+    <OutputPath>.\bin\Help\net45\Release\</OutputPath>
+    <ComponentConfigurations>
+      <ComponentConfig id="IntelliSense Component" enabled="True">
+        <component id="IntelliSense Component">
+          <output includeNamespaces="false" namespacesFile="Namespaces" folder="{@OutputFolder}\..\..\..\Api\net45\Release" />
+        </component>
+      </ComponentConfig>
+    </ComponentConfigurations>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Docs.Threading\Docs.Threading.net35-client.shfbproj">
-      <Name>Docs.Threading.net35-client</Name>
-      <Project>{a2d73067-50e8-42f8-aeb1-3b6bde900850}</Project>
-      <Private>False</Private>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
     <ProjectReference Include="..\Rackspace.Threading\Rackspace.Threading.net45.csproj">
       <Name>Rackspace.Threading.net45</Name>
       <Project>{808f5d89-ff4f-43d5-8ba7-e558ad4945d7}</Project>

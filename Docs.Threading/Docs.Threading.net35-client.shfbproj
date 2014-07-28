@@ -16,7 +16,6 @@
     <Name>Docs.Threading.net35-client</Name>
     <!-- SHFB properties -->
     <FrameworkVersion>.NET Framework 3.5</FrameworkVersion>
-    <OutputPath>.\bin\Help\net35-client\</OutputPath>
     <HtmlHelpName>Threading API Reference</HtmlHelpName>
     <Language>en-US</Language>
     <DocumentationSources>
@@ -56,13 +55,6 @@
       <Argument Key="logoPlacement" Value="left" />
       <Argument Key="logoAlignment" Value="left" />
     </TransformComponentArguments>
-    <ComponentConfigurations>
-      <ComponentConfig id="IntelliSense Component" enabled="True">
-        <component id="IntelliSense Component">
-          <output includeNamespaces="false" namespacesFile="Namespaces" folder="{@OutputFolder}\..\..\Api\net35-client" />
-        </component>
-      </ComponentConfig>
-    </ComponentConfigurations>
     <CatalogName>VisualStudio11</CatalogName>
     <TocParentId>-1</TocParentId>
     <TocParentVersion>100</TocParentVersion>
@@ -93,20 +85,24 @@
        order for Visual Studio to perform the build.  The others are optional
        common platform types that may appear. -->
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>.\bin\Help\net35-client\Debug\</OutputPath>
+    <ComponentConfigurations>
+      <ComponentConfig id="IntelliSense Component" enabled="True">
+        <component id="IntelliSense Component">
+          <output includeNamespaces="false" namespacesFile="Namespaces" folder="{@OutputFolder}\..\..\..\Api\net35-client\Debug" />
+        </component>
+      </ComponentConfig>
+    </ComponentConfigurations>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Win32' ">
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Win32' ">
+    <OutputPath>.\bin\Help\net35-client\Release\</OutputPath>
+    <ComponentConfigurations>
+      <ComponentConfig id="IntelliSense Component" enabled="True">
+        <component id="IntelliSense Component">
+          <output includeNamespaces="false" namespacesFile="Namespaces" folder="{@OutputFolder}\..\..\..\Api\net35-client\Release" />
+        </component>
+      </ComponentConfig>
+    </ComponentConfigurations>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\Rackspace.Threading\Rackspace.Threading.net35-client.csproj">

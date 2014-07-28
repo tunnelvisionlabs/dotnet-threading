@@ -7,58 +7,10 @@
     <introduction>
       <para>
         This library provides improved support for writing asynchronous code targeting the .NET
-        Framework 3.5 and newer.
+        Framework 3.5 and newer. Additional information and links to project resources are
+        located on the <link xlink:href="50d028db-e522-4750-91a6-4ae6c97c2610"/> page.
       </para>
     </introduction>
-
-    <section address="ProjectResources">
-      <title>Project Resources</title>
-      <content>
-        <para>
-          The following links go directly to the latest information available
-          about the project.
-        </para>
-
-        <list class="bullet">
-          <listItem>
-            <para>
-              Latest Release: <externalLink>
-                <linkText>GitHub Releases</linkText>
-                <linkAlternateText>Release notes for the latest release on GitHub</linkAlternateText>
-                <linkUri>https://github.com/rackerlabs/dotnet-threading/releases/latest</linkUri>
-              </externalLink>
-            </para>
-          </listItem>
-          <listItem>
-            <para>
-              Source Code: <externalLink>
-                <linkText>GitHub Repository</linkText>
-                <linkAlternateText>Source code for the project on GitHub</linkAlternateText>
-                <linkUri>https://github.com/rackerlabs/dotnet-threading</linkUri>
-              </externalLink>
-            </para>
-          </listItem>
-          <listItem>
-            <para>
-              Documentation: <externalLink>
-                <linkText>API Documentation</linkText>
-                <linkAlternateText>Documentation for the latest release hosted on GitHub Pages</linkAlternateText>
-                <linkUri>https://rackerlabs.github.io/dotnet-threading/docs-latest</linkUri>
-              </externalLink>
-            </para>
-          </listItem>
-          <listItem>
-            <para>
-              Issue Tracker: <externalLink>
-                <linkText>GitHub Issues</linkText>
-                <linkAlternateText>Project issue tracker on GitHub Issues</linkAlternateText>
-                <linkUri>https://github.com/rackerlabs/dotnet-threading/issues</linkUri>
-              </externalLink>
-            </para>
-          </listItem>
-        </list>
-      </content>
-    </section>
 
     <section address="Features">
       <title>Features</title>

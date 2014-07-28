@@ -21,11 +21,17 @@ namespace Rackspace.Threading
         /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
         ///
         /// <code language="cs">
-        /// using (IDisposable disposable = await <paramref name="resource"/>().ConfigureAwait(false))
+        /// using (IDisposable disposable = await resource().ConfigureAwait(false))
         /// {
-        ///     return await <paramref name="body"/>(disposable).ConfigureAwait(false);
+        ///     return await body(disposable).ConfigureAwait(false);
         /// }
         /// </code>
+        ///
+        /// <para>
+        /// This method expands on the <c>using</c> statement provided by C# by implementing support for
+        /// <see cref="IAsyncDisposable"/> as described in
+        /// <see href="http://roslyn.codeplex.com/discussions/546377">IAsyncDisposable, using statements, and async/await</see>.
+        /// </para>
         ///
         /// <note type="caller">
         /// If the <paramref name="resource"/> function throws an exception, or if the <see cref="Task{TResult}"/> it returns
@@ -41,6 +47,16 @@ namespace Rackspace.Threading
         /// <returns>A <see cref="Task"/> representing the asynchronous operation. When the task completes successfully,
         /// the <see cref="Task{TResult}.Result"/> property will contain the result provided by the
         /// <see cref="Task{TResult}.Result"/> property of the task returned from <paramref name="body"/>.</returns>
+        /// <example>
+        /// The following example asynchronously acquires a resource by calling the user method <c>AcquireResourceAsync</c>.
+        /// The resource will be disposed after the body executes, prior to returning the result of the body.
+        /// <code source="..\Samples\CSharpSamples\TaskBlockUsingWithResult.cs" region="UsingWithResultAsyncBuildingBlock" language="cs"/>
+        /// <para>
+        /// For reference, the following example demonstrates a (nearly) equivalent implementation of this behavior using
+        /// the <see langword="async/await"/> operators.
+        /// </para>
+        /// <code source="..\Samples\CSharpSamples\TaskBlockUsingWithResult.cs" region="UsingWithResultAsyncAwait" language="cs"/>
+        /// </example>
         /// <exception cref="ArgumentNullException">
         /// If <paramref name="resource"/> is <see langword="null"/>.
         /// <para>-or-</para>
@@ -90,11 +106,17 @@ namespace Rackspace.Threading
         /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
         ///
         /// <code language="cs">
-        /// using (IDisposable disposable = await <paramref name="resource"/>().ConfigureAwait(false))
+        /// using (IDisposable disposable = await resource().ConfigureAwait(false))
         /// {
-        ///     await <paramref name="body"/>(disposable).ConfigureAwait(false);
+        ///     await body(disposable).ConfigureAwait(false);
         /// }
         /// </code>
+        ///
+        /// <para>
+        /// This method expands on the <c>using</c> statement provided by C# by implementing support for
+        /// <see cref="IAsyncDisposable"/> as described in
+        /// <see href="http://roslyn.codeplex.com/discussions/546377">IAsyncDisposable, using statements, and async/await</see>.
+        /// </para>
         ///
         /// <note type="caller">
         /// If the <paramref name="resource"/> function throws an exception, or if the <see cref="Task{TResult}"/> it returns
@@ -107,6 +129,17 @@ namespace Rackspace.Threading
         /// <param name="resource">A function which acquires the resource used during the execution of the task.</param>
         /// <param name="body">The continuation function which provides the <see cref="Task"/> which acts as the body of the <c>using</c> block.</param>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
+        /// <example>
+        /// The following example asynchronously acquires a resource by calling the user method <c>AcquireResourceAsync</c>.
+        /// The resource will be disposed after the body executes. No result is return from this operation, as the body of
+        /// the task block represents an asynchronous operation that does not return a result.
+        /// <code source="..\Samples\CSharpSamples\TaskBlockUsing.cs" region="UsingAsyncBuildingBlock" language="cs"/>
+        /// <para>
+        /// For reference, the following example demonstrates a (nearly) equivalent implementation of this behavior using
+        /// the <see langword="async/await"/> operators.
+        /// </para>
+        /// <code source="..\Samples\CSharpSamples\TaskBlockUsing.cs" region="UsingAsyncAwait" language="cs"/>
+        /// </example>
         /// <exception cref="ArgumentNullException">
         /// If <paramref name="resource"/> is <see langword="null"/>.
         /// <para>-or-</para>
@@ -157,13 +190,22 @@ namespace Rackspace.Threading
         /// <code language="cs">
         /// while (condition())
         /// {
-        ///     await <paramref name="body"/>().ConfigureAwait(false);
+        ///     await body().ConfigureAwait(false);
         /// }
         /// </code>
         /// </remarks>
         /// <param name="condition">A function which evaluates the condition of the asynchronous <c>while</c> loop.</param>
         /// <param name="body">A function which returns a <see cref="Task"/> representing one iteration of the body of the <c>while</c> loop.</param>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
+        /// <example>
+        /// The following example shows a basic "while" loop implemented using this building block.
+        /// <code source="..\Samples\CSharpSamples\TaskBlockWhileAsync.cs" region="WhileAsyncBuildingBlock" language="cs"/>
+        /// <para>
+        /// For reference, the following example demonstrates a (nearly) equivalent implementation of this behavior using
+        /// the <see langword="async/await"/> operators.
+        /// </para>
+        /// <code source="..\Samples\CSharpSamples\TaskBlockWhileAsync.cs" region="WhileAsyncAwait" language="cs"/>
+        /// </example>
         /// <exception cref="ArgumentNullException">
         /// If <paramref name="condition"/> is <see langword="null"/>.
         /// <para>-or-</para>
@@ -221,13 +263,22 @@ namespace Rackspace.Threading
         /// <code language="cs">
         /// while (await condition().ConfigureAwait(false))
         /// {
-        ///     await <paramref name="body"/>().ConfigureAwait(false);
+        ///     await body().ConfigureAwait(false);
         /// }
         /// </code>
         /// </remarks>
         /// <param name="condition">A function which returns a <see cref="Task"/> representing the asynchronous evaluation of the <c>while</c> condition.</param>
         /// <param name="body">A function which returns a <see cref="Task"/> representing one iteration of the body of the <c>while</c> loop.</param>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
+        /// <example>
+        /// The following example shows a basic "while" loop implemented using this building block.
+        /// <code source="..\Samples\CSharpSamples\TaskBlockWhileAsyncCondition.cs" region="WhileAsyncBuildingBlock" language="cs"/>
+        /// <para>
+        /// For reference, the following example demonstrates a (nearly) equivalent implementation of this behavior using
+        /// the <see langword="async/await"/> operators.
+        /// </para>
+        /// <code source="..\Samples\CSharpSamples\TaskBlockWhileAsyncCondition.cs" region="WhileAsyncAwait" language="cs"/>
+        /// </example>
         /// <exception cref="ArgumentNullException">
         /// If <paramref name="condition"/> is <see langword="null"/>.
         /// <para>-or-</para>
