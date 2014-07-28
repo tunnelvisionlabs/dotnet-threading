@@ -1,4 +1,4 @@
-﻿#if !NET40PLUS
+﻿#if !NET45PLUS
 
 namespace Rackspace.Threading
 {
