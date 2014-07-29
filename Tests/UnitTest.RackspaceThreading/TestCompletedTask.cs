@@ -79,7 +79,7 @@ namespace UnitTest.RackspaceThreading
 
             Stopwatch timer = Stopwatch.StartNew();
             Task.WaitAll(new[] { completedTask });
-            Assert.IsTrue(timer.Elapsed < TimeSpan.FromMilliseconds(1), "Waiting on CompletedTask.Default resulted in an unexpected delay ({0}ms > 1ms)", timer.Elapsed.TotalMilliseconds);
+            Assert.IsTrue(timer.Elapsed <= TimeSpan.FromMilliseconds(5), "Waiting on CompletedTask.Default resulted in an unexpected delay ({0}ms > 5ms)", timer.Elapsed.TotalMilliseconds);
         }
 
         [TestMethod]
@@ -94,7 +94,7 @@ namespace UnitTest.RackspaceThreading
 
             Stopwatch timer = Stopwatch.StartNew();
             Task.WaitAll(new[] { completedTask });
-            Assert.IsTrue(timer.Elapsed < TimeSpan.FromMilliseconds(1), "Waiting on CompletedTask.Default resulted in an unexpected delay ({0}ms > 1ms)", timer.Elapsed.TotalMilliseconds);
+            Assert.IsTrue(timer.Elapsed <= TimeSpan.FromMilliseconds(5), "Waiting on CompletedTask.Default resulted in an unexpected delay ({0}ms > 5ms)", timer.Elapsed.TotalMilliseconds);
         }
 
         [TestMethod]
@@ -109,7 +109,24 @@ namespace UnitTest.RackspaceThreading
 
             Stopwatch timer = Stopwatch.StartNew();
             Task.WaitAll(new[] { completedTask });
-            Assert.IsTrue(timer.Elapsed < TimeSpan.FromMilliseconds(1), "Waiting on CompletedTask.Default resulted in an unexpected delay ({0}ms > 1ms)", timer.Elapsed.TotalMilliseconds);
+            Assert.IsTrue(timer.Elapsed <= TimeSpan.FromMilliseconds(5), "Waiting on CompletedTask.Default resulted in an unexpected delay ({0}ms > 5ms)", timer.Elapsed.TotalMilliseconds);
+        }
+
+        /// <summary>
+        /// This test verifies that <see cref="CompletedTask.FromResult{TResult}(TResult)"/> allows
+        /// <see langword="null"/> arguments.
+        /// </summary>
+        [TestMethod]
+        public void TestDefaultTObject_Null()
+        {
+            Task<object> completedTask = CompletedTask.FromResult(default(object));
+            Assert.AreEqual(TaskStatus.RanToCompletion, completedTask.Status);
+            Assert.IsTrue(completedTask.IsCompleted);
+            Assert.IsNull(completedTask.Result);
+
+            Stopwatch timer = Stopwatch.StartNew();
+            Task.WaitAll(new[] { completedTask });
+            Assert.IsTrue(timer.Elapsed <= TimeSpan.FromMilliseconds(5), "Waiting on CompletedTask.Default resulted in an unexpected delay ({0}ms > 5ms)", timer.Elapsed.TotalMilliseconds);
         }
     }
 }
