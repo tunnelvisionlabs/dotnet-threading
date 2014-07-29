@@ -31,6 +31,40 @@ namespace UnitTest.RackspaceThreading
         /// method.
         /// </summary>
         [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestFinally1_NullAntecedent_CompletedCleanup()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = null;
+            Action<Task> finallyAction = task =>
+                {
+                };
+
+            CoreTaskExtensions.Finally(antecedent, finallyAction);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Finally(Task, Action{Task})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestFinally1_CompletedAntecedent_NullCleanup()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = CompletedTask.Default;
+            Action<Task> finallyAction = null;
+
+            CoreTaskExtensions.Finally(antecedent, finallyAction);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Finally(Task, Action{Task})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
         public void TestFinally1_CompletedAntecedent_CompletedCleanup()
         {
             bool executed = false;
@@ -232,6 +266,41 @@ namespace UnitTest.RackspaceThreading
         #endregion
 
         #region Finally 2
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Finally(Task, Func{Task, Task})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestFinally2_NullAntecedent_CompletedCleanup()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = null;
+            Func<Task, Task> finallyFunc = task =>
+                Task.Factory.StartNew(() =>
+                {
+                });
+
+            CoreTaskExtensions.Finally(antecedent, finallyFunc);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Finally(Task, Func{Task, Task})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestFinally2_CompletedAntecedent_NullCleanupFunction()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = CompletedTask.Default;
+            Func<Task, Task> finallyFunc = null;
+
+            CoreTaskExtensions.Finally(antecedent, finallyFunc);
+        }
 
         /// <summary>
         /// This method test the behavior of the
@@ -810,6 +879,41 @@ namespace UnitTest.RackspaceThreading
         /// method.
         /// </summary>
         [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestFinally3_NullAntecedent_CompletedCleanup()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task<object> antecedent = null;
+            Action<Task<object>> finallyAction = task =>
+                {
+                };
+
+            CoreTaskExtensions.Finally(antecedent, finallyAction);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Finally{TResult}(Task{TResult}, Action{Task{TResult}})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestFinally3_CompletedAntecedent_NullCleanup()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            object result = new object();
+            Task<object> antecedent = CompletedTask.FromResult(result);
+            Action<Task<object>> finallyAction = null;
+
+            CoreTaskExtensions.Finally(antecedent, finallyAction);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Finally{TResult}(Task{TResult}, Action{Task{TResult}})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
         public void TestFinally3_CompletedAntecedent_CompletedCleanup()
         {
             bool executed = false;
@@ -1014,6 +1118,42 @@ namespace UnitTest.RackspaceThreading
         #endregion
 
         #region Finally 4
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Finally{TResult}(Task{TResult}, Func{Task{TResult}, Task})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestFinally4_NullAntecedent_CompletedCleanup()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task<object> antecedent = null;
+            Func<Task<object>, Task> finallyFunc = task =>
+                Task.Factory.StartNew(() =>
+                {
+                });
+
+            CoreTaskExtensions.Finally(antecedent, finallyFunc);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Finally{TResult}(Task{TResult}, Func{Task{TResult}, Task})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestFinally4_CompletedAntecedent_NullCleanupFunction()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            object result = new object();
+            Task<object> antecedent = CompletedTask.FromResult(result);
+            Func<Task<object>, Task> finallyFunc = null;
+
+            CoreTaskExtensions.Finally(antecedent, finallyFunc);
+        }
 
         /// <summary>
         /// This method test the behavior of the
@@ -1598,6 +1738,40 @@ namespace UnitTest.RackspaceThreading
         /// method.
         /// </summary>
         [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestSelect1_NullAntecedent_CompletedContinuation()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = null;
+            Action<Task> continuationAction = task =>
+                {
+                };
+
+            CoreTaskExtensions.Select(antecedent, continuationAction);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Select(Task, Action{Task})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestSelect1_CompletedAntecedent_NullContinuation()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = CompletedTask.Default;
+            Action<Task> continuationAction = null;
+
+            CoreTaskExtensions.Select(antecedent, continuationAction);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Select(Task, Action{Task})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
         public void TestSelect1_CompletedAntecedent_CompletedContinuation()
         {
             bool executed = false;
@@ -1799,6 +1973,42 @@ namespace UnitTest.RackspaceThreading
         #endregion
 
         #region Select 2
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Select(Task, Action{Task}, bool)"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestSelect2_NullAntecedent_CompletedContinuation_NoErrors()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = null;
+            Action<Task> continuationAction = task =>
+                {
+                };
+            bool supportsErrors = false;
+
+            CoreTaskExtensions.Select(antecedent, continuationAction, supportsErrors);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Select(Task, Action{Task}, bool)"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestSelect2_CompletedAntecedent_NullContinuation_NoErrors()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = CompletedTask.Default;
+            Action<Task> continuationAction = null;
+            bool supportsErrors = false;
+
+            CoreTaskExtensions.Select(antecedent, continuationAction, supportsErrors);
+        }
 
         /// <summary>
         /// This method test the behavior of the
@@ -2019,6 +2229,42 @@ namespace UnitTest.RackspaceThreading
         /// method.
         /// </summary>
         [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestSelect2_NullAntecedent_CompletedContinuation_SupportsErrors()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = null;
+            Action<Task> continuationAction = task =>
+                {
+                };
+            bool supportsErrors = true;
+
+            CoreTaskExtensions.Select(antecedent, continuationAction, supportsErrors);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Select(Task, Action{Task}, bool)"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestSelect2_CompletedAntecedent_NullContinuation_SupportsErrors()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = CompletedTask.Default;
+            Action<Task> continuationAction = null;
+            bool supportsErrors = true;
+
+            CoreTaskExtensions.Select(antecedent, continuationAction, supportsErrors);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Select(Task, Action{Task}, bool)"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
         public void TestSelect2_CompletedAntecedent_CompletedContinuation_SupportsErrors()
         {
             bool executed = false;
@@ -2217,6 +2463,39 @@ namespace UnitTest.RackspaceThreading
         #endregion
 
         #region Select 3
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Select{TResult}(Task, Func{Task, TResult})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestSelect3_NullAntecedent_CompletedContinuation()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = null;
+            object result = new object();
+            Func<Task, object> continuationFunction = task => result;
+
+            CoreTaskExtensions.Select(antecedent, continuationFunction);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Select{TResult}(Task, Func{Task, TResult})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestSelect3_CompletedAntecedent_NullContinuation()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = CompletedTask.Default;
+            Func<Task, object> continuationFunction = null;
+
+            CoreTaskExtensions.Select(antecedent, continuationFunction);
+        }
 
         /// <summary>
         /// This method test the behavior of the
@@ -2441,6 +2720,43 @@ namespace UnitTest.RackspaceThreading
         #endregion
 
         #region Select 4
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Select{TResult}(Task, Func{Task, TResult}, bool)"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestSelect4_NullAntecedent_CompletedContinuation_NoErrors()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = null;
+            object result = new object();
+            Func<Task, object> continuationFunction = task => result;
+
+            bool supportsErrors = false;
+
+            CoreTaskExtensions.Select(antecedent, continuationFunction, supportsErrors);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Select{TResult}(Task, Func{Task, TResult}, bool)"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestSelect4_CompletedAntecedent_NullContinuation_NoErrors()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = CompletedTask.Default;
+            Func<Task, object> continuationFunction = null;
+
+            bool supportsErrors = false;
+
+            CoreTaskExtensions.Select(antecedent, continuationFunction, supportsErrors);
+        }
 
         /// <summary>
         /// This method test the behavior of the
@@ -2680,6 +2996,43 @@ namespace UnitTest.RackspaceThreading
         /// method.
         /// </summary>
         [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestSelect4_NullAntecedent_CompletedContinuation_SupportsErrors()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = null;
+            object result = new object();
+            Func<Task, object> continuationFunction = task => result;
+
+            bool supportsErrors = true;
+
+            CoreTaskExtensions.Select(antecedent, continuationFunction, supportsErrors);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Select{TResult}(Task, Func{Task, TResult}, bool)"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestSelect4_CompletedAntecedent_NullContinuation_SupportsErrors()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = CompletedTask.Default;
+            Func<Task, object> continuationFunction = null;
+
+            bool supportsErrors = true;
+
+            CoreTaskExtensions.Select(antecedent, continuationFunction, supportsErrors);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Select{TResult}(Task, Func{Task, TResult}, bool)"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
         public void TestSelect4_CompletedAntecedent_CompletedContinuation_SupportsErrors()
         {
             bool executed = false;
@@ -2904,6 +3257,39 @@ namespace UnitTest.RackspaceThreading
         /// method.
         /// </summary>
         [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestSelect5_NullAntecedent_CompletedContinuation()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task<List<object>> antecedent = null;
+            string result = "Test string";
+            Func<Task<List<object>>, string> continuationFunction = task => result;
+
+            CoreTaskExtensions.Select(antecedent, continuationFunction);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Select{TSource, TResult}(Task{TSource}, Func{Task{TSource}, TResult})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestSelect5_CompletedAntecedent_NullContinuation()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task<List<object>> antecedent = CompletedTask.FromResult(new List<object>());
+            Func<Task<List<object>>, string> continuationFunction = null;
+
+            CoreTaskExtensions.Select(antecedent, continuationFunction);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Select{TSource, TResult}(Task{TSource}, Func{Task{TSource}, TResult})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
         public void TestSelect5_CompletedAntecedent_CompletedContinuation()
         {
             bool executed = false;
@@ -3121,6 +3507,43 @@ namespace UnitTest.RackspaceThreading
         #endregion
 
         #region Select 6
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Select{TSource, TResult}(Task{TSource}, Func{Task{TSource}, TResult}, bool)"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestSelect6_NullAntecedent_CompletedContinuation_NoErrors()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task<List<object>> antecedent = null;
+            string result = "Test string";
+            Func<Task<List<object>>, string> continuationFunction = task => result;
+
+            bool supportsErrors = false;
+
+            CoreTaskExtensions.Select(antecedent, continuationFunction, supportsErrors);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Select{TSource, TResult}(Task{TSource}, Func{Task{TSource}, TResult}, bool)"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestSelect6_CompletedAntecedent_NullContinuation_NoErrors()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task<List<object>> antecedent = CompletedTask.FromResult(new List<object>());
+            Func<Task<List<object>>, string> continuationFunction = null;
+
+            bool supportsErrors = false;
+
+            CoreTaskExtensions.Select(antecedent, continuationFunction, supportsErrors);
+        }
 
         /// <summary>
         /// This method test the behavior of the
@@ -3360,6 +3783,43 @@ namespace UnitTest.RackspaceThreading
         /// method.
         /// </summary>
         [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestSelect6_NullAntecedent_CompletedContinuation_SupportsErrors()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task<List<object>> antecedent = null;
+            string result = "Test string";
+            Func<Task<List<object>>, string> continuationFunction = task => result;
+
+            bool supportsErrors = true;
+
+            CoreTaskExtensions.Select(antecedent, continuationFunction, supportsErrors);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Select{TSource, TResult}(Task{TSource}, Func{Task{TSource}, TResult}, bool)"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestSelect6_CompletedAntecedent_NullContinuation_SupportsErrors()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task<List<object>> antecedent = CompletedTask.FromResult(new List<object>());
+            Func<Task<List<object>>, string> continuationFunction = null;
+
+            bool supportsErrors = true;
+
+            CoreTaskExtensions.Select(antecedent, continuationFunction, supportsErrors);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Select{TSource, TResult}(Task{TSource}, Func{Task{TSource}, TResult}, bool)"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
         public void TestSelect6_CompletedAntecedent_CompletedContinuation_SupportsErrors()
         {
             bool executed = false;
@@ -3584,6 +4044,40 @@ namespace UnitTest.RackspaceThreading
         /// method.
         /// </summary>
         [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestSelect7_NullAntecedent_CompletedContinuation()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task<string> antecedent = null;
+            Action<Task<string>> continuationAction = task =>
+                {
+                };
+
+            CoreTaskExtensions.Select(antecedent, continuationAction);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Select{TSource}(Task{TSource}, Action{Task{TSource}})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestSelect7_CompletedAntecedent_NullContinuation()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task<string> antecedent = CompletedTask.FromResult("Test string");
+            Action<Task<string>> continuationAction = null;
+
+            CoreTaskExtensions.Select(antecedent, continuationAction);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Select{TSource}(Task{TSource}, Action{Task{TSource}})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
         public void TestSelect7_CompletedAntecedent_CompletedContinuation()
         {
             bool executed = false;
@@ -3785,6 +4279,42 @@ namespace UnitTest.RackspaceThreading
         #endregion
 
         #region Select 8
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Select{TSource}(Task{TSource}, Action{Task{TSource}}, bool)"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestSelect8_NullAntecedent_CompletedContinuation_NoErrors()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task<string> antecedent = null;
+            Action<Task<string>> continuationAction = task =>
+                {
+                };
+            bool supportsErrors = false;
+
+            CoreTaskExtensions.Select(antecedent, continuationAction, supportsErrors);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Select{TSource}(Task{TSource}, Action{Task{TSource}}, bool)"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestSelect8_CompletedAntecedent_NullContinuation_NoErrors()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task<string> antecedent = CompletedTask.FromResult("Test string");
+            Action<Task<string>> continuationAction = null;
+            bool supportsErrors = false;
+
+            CoreTaskExtensions.Select(antecedent, continuationAction, supportsErrors);
+        }
 
         /// <summary>
         /// This method test the behavior of the
@@ -4005,6 +4535,42 @@ namespace UnitTest.RackspaceThreading
         /// method.
         /// </summary>
         [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestSelect8_NullAntecedent_CompletedContinuation_SupportsErrors()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task<string> antecedent = null;
+            Action<Task<string>> continuationAction = task =>
+                {
+                };
+            bool supportsErrors = true;
+
+            CoreTaskExtensions.Select(antecedent, continuationAction, supportsErrors);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Select{TSource}(Task{TSource}, Action{Task{TSource}}, bool)"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestSelect8_CompletedAntecedent_NullContinuation_SupportsErrors()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task<string> antecedent = CompletedTask.FromResult("Test string");
+            Action<Task<string>> continuationAction = null;
+            bool supportsErrors = true;
+
+            CoreTaskExtensions.Select(antecedent, continuationAction, supportsErrors);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Select{TSource}(Task{TSource}, Action{Task{TSource}}, bool)"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
         public void TestSelect8_CompletedAntecedent_CompletedContinuation_SupportsErrors()
         {
             bool executed = false;
@@ -4203,6 +4769,41 @@ namespace UnitTest.RackspaceThreading
         #endregion
 
         #region Then 1
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Then(Task, Func{Task, Task})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestThen1_NullAntecedent_CompletedContinuation()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = null;
+            Func<Task, Task> continuationFunction = task =>
+                Task.Factory.StartNew(() =>
+                {
+                });
+
+            CoreTaskExtensions.Then(antecedent, continuationFunction);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Then(Task, Func{Task, Task})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestThen1_CompletedAntecedent_NullContinuationFunction()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = CompletedTask.Default;
+            Func<Task, Task> continuationFunction = null;
+
+            CoreTaskExtensions.Then(antecedent, continuationFunction);
+        }
 
         /// <summary>
         /// This method test the behavior of the
@@ -4768,6 +5369,43 @@ namespace UnitTest.RackspaceThreading
         #endregion
 
         #region Then 2
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Then(Task, Func{Task, Task}, bool)"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestThen2_NullAntecedent_CompletedContinuation_NoErrors()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = null;
+            Func<Task, Task> continuationFunction = task =>
+                Task.Factory.StartNew(() =>
+                {
+                });
+            bool supportsErrors = false;
+
+            CoreTaskExtensions.Then(antecedent, continuationFunction, supportsErrors);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Then(Task, Func{Task, Task}, bool)"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestThen2_CompletedAntecedent_NullContinuationFunction_NoErrors()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = CompletedTask.Default;
+            Func<Task, Task> continuationFunction = null;
+            bool supportsErrors = false;
+
+            CoreTaskExtensions.Then(antecedent, continuationFunction, supportsErrors);
+        }
 
         /// <summary>
         /// This method test the behavior of the
@@ -5363,6 +6001,43 @@ namespace UnitTest.RackspaceThreading
         /// method.
         /// </summary>
         [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestThen2_NullAntecedent_CompletedContinuation_SupportsErrors()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = null;
+            Func<Task, Task> continuationFunction = task =>
+                Task.Factory.StartNew(() =>
+                {
+                });
+            bool supportsErrors = true;
+
+            CoreTaskExtensions.Then(antecedent, continuationFunction, supportsErrors);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Then(Task, Func{Task, Task}, bool)"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestThen2_CompletedAntecedent_NullContinuationFunction_SupportsErrors()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = CompletedTask.Default;
+            Func<Task, Task> continuationFunction = null;
+            bool supportsErrors = true;
+
+            CoreTaskExtensions.Then(antecedent, continuationFunction, supportsErrors);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Then(Task, Func{Task, Task}, bool)"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
         public void TestThen2_CompletedAntecedent_CompletedContinuation_SupportsErrors()
         {
             bool executed = false;
@@ -5936,6 +6611,40 @@ namespace UnitTest.RackspaceThreading
         #endregion
 
         #region Then 3
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Then{TResult}(Task, Func{Task, Task{TResult}})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestThen3_NullAntecedent_CompletedContinuation()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = null;
+            object result = new object();
+            Func<Task, Task<object>> continuationFunction = task =>
+                Task.Factory.StartNew(() => result);
+
+            CoreTaskExtensions.Then(antecedent, continuationFunction);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Then{TResult}(Task, Func{Task, Task{TResult}})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestThen3_CompletedAntecedent_NullContinuationFunction()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = CompletedTask.Default;
+            Func<Task, Task<object>> continuationFunction = null;
+
+            CoreTaskExtensions.Then(antecedent, continuationFunction);
+        }
 
         /// <summary>
         /// This method test the behavior of the
@@ -6523,6 +7232,43 @@ namespace UnitTest.RackspaceThreading
         #endregion
 
         #region Then 4
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Then{TResult}(Task, Func{Task, Task{TResult}}, bool)"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestThen4_NullAntecedent_CompletedContinuation_NoErrors()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = null;
+            object result = new object();
+            Func<Task, Task<object>> continuationFunction = task =>
+                Task.Factory.StartNew(() => result);
+
+            bool supportsErrors = false;
+
+            CoreTaskExtensions.Then(antecedent, continuationFunction, supportsErrors);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Then{TResult}(Task, Func{Task, Task{TResult}}, bool)"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestThen4_CompletedAntecedent_NullContinuationFunction_NoErrors()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = CompletedTask.Default;
+            Func<Task, Task<object>> continuationFunction = null;
+            bool supportsErrors = false;
+
+            CoreTaskExtensions.Then(antecedent, continuationFunction, supportsErrors);
+        }
 
         /// <summary>
         /// This method test the behavior of the
@@ -7143,6 +7889,43 @@ namespace UnitTest.RackspaceThreading
         /// method.
         /// </summary>
         [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestThen4_NullAntecedent_CompletedContinuation_SupportsErrors()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = null;
+            object result = new object();
+            Func<Task, Task<object>> continuationFunction = task =>
+                Task.Factory.StartNew(() => result);
+
+            bool supportsErrors = true;
+
+            CoreTaskExtensions.Then(antecedent, continuationFunction, supportsErrors);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Then{TResult}(Task, Func{Task, Task{TResult}}, bool)"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestThen4_CompletedAntecedent_NullContinuationFunction_SupportsErrors()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = CompletedTask.Default;
+            Func<Task, Task<object>> continuationFunction = null;
+            bool supportsErrors = true;
+
+            CoreTaskExtensions.Then(antecedent, continuationFunction, supportsErrors);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Then{TResult}(Task, Func{Task, Task{TResult}}, bool)"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
         public void TestThen4_CompletedAntecedent_CompletedContinuation_SupportsErrors()
         {
             bool executed = false;
@@ -7748,6 +8531,40 @@ namespace UnitTest.RackspaceThreading
         /// method.
         /// </summary>
         [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestThen5_NullAntecedent_CompletedContinuation()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task<List<object>> antecedent = null;
+            string result = "Test string";
+            Func<Task<List<object>>, Task<string>> continuationFunction = task =>
+                Task.Factory.StartNew(() => result);
+
+            CoreTaskExtensions.Then(antecedent, continuationFunction);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Then{TSource, TResult}(Task{TSource}, Func{Task{TSource}, Task{TResult}})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestThen5_CompletedAntecedent_NullContinuationFunction()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task<List<object>> antecedent = CompletedTask.FromResult(new List<object>());
+            Func<Task<List<object>>, Task<string>> continuationFunction = null;
+
+            CoreTaskExtensions.Then(antecedent, continuationFunction);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Then{TSource, TResult}(Task{TSource}, Func{Task{TSource}, Task{TResult}})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
         public void TestThen5_CompletedAntecedent_CompletedContinuation()
         {
             bool executed = false;
@@ -8328,6 +9145,43 @@ namespace UnitTest.RackspaceThreading
         #endregion
 
         #region Then 6
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Then{TSource, TResult}(Task{TSource}, Func{Task{TSource}, Task{TResult}}, bool)"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestThen6_NullAntecedent_CompletedContinuation_NoErrors()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task<List<object>> antecedent = null;
+            string result = "Test string";
+            Func<Task<List<object>>, Task<string>> continuationFunction = task =>
+                Task.Factory.StartNew(() => result);
+
+            bool supportsErrors = false;
+
+            CoreTaskExtensions.Then(antecedent, continuationFunction, supportsErrors);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Then{TSource, TResult}(Task{TSource}, Func{Task{TSource}, Task{TResult}}, bool)"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestThen6_CompletedAntecedent_NullContinuationFunction_NoErrors()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task<List<object>> antecedent = CompletedTask.FromResult(new List<object>());
+            Func<Task<List<object>>, Task<string>> continuationFunction = null;
+            bool supportsErrors = false;
+
+            CoreTaskExtensions.Then(antecedent, continuationFunction, supportsErrors);
+        }
 
         /// <summary>
         /// This method test the behavior of the
@@ -8948,6 +9802,43 @@ namespace UnitTest.RackspaceThreading
         /// method.
         /// </summary>
         [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestThen6_NullAntecedent_CompletedContinuation_SupportsErrors()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task<List<object>> antecedent = null;
+            string result = "Test string";
+            Func<Task<List<object>>, Task<string>> continuationFunction = task =>
+                Task.Factory.StartNew(() => result);
+
+            bool supportsErrors = true;
+
+            CoreTaskExtensions.Then(antecedent, continuationFunction, supportsErrors);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Then{TSource, TResult}(Task{TSource}, Func{Task{TSource}, Task{TResult}}, bool)"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestThen6_CompletedAntecedent_NullContinuationFunction_SupportsErrors()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task<List<object>> antecedent = CompletedTask.FromResult(new List<object>());
+            Func<Task<List<object>>, Task<string>> continuationFunction = null;
+            bool supportsErrors = true;
+
+            CoreTaskExtensions.Then(antecedent, continuationFunction, supportsErrors);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Then{TSource, TResult}(Task{TSource}, Func{Task{TSource}, Task{TResult}}, bool)"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
         public void TestThen6_CompletedAntecedent_CompletedContinuation_SupportsErrors()
         {
             bool executed = false;
@@ -9553,6 +10444,41 @@ namespace UnitTest.RackspaceThreading
         /// method.
         /// </summary>
         [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestThen7_NullAntecedent_CompletedContinuation()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task<string> antecedent = null;
+            Func<Task<string>, Task> continuationFunction = task =>
+                Task.Factory.StartNew(() =>
+                {
+                });
+
+            CoreTaskExtensions.Then(antecedent, continuationFunction);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Then{TSource}(Task{TSource}, Func{Task{TSource}, Task})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestThen7_CompletedAntecedent_NullContinuationFunction()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task<string> antecedent = CompletedTask.FromResult("Test string");
+            Func<Task<string>, Task> continuationFunction = null;
+
+            CoreTaskExtensions.Then(antecedent, continuationFunction);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Then{TSource}(Task{TSource}, Func{Task{TSource}, Task})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
         public void TestThen7_CompletedAntecedent_CompletedContinuation()
         {
             bool executed = false;
@@ -10111,6 +11037,43 @@ namespace UnitTest.RackspaceThreading
         #endregion
 
         #region Then 8
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Then{TSource}(Task{TSource}, Func{Task{TSource}, Task}, bool)"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestThen8_NullAntecedent_CompletedContinuation_NoErrors()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task<string> antecedent = null;
+            Func<Task<string>, Task> continuationFunction = task =>
+                Task.Factory.StartNew(() =>
+                {
+                });
+            bool supportsErrors = false;
+
+            CoreTaskExtensions.Then(antecedent, continuationFunction, supportsErrors);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Then{TSource}(Task{TSource}, Func{Task{TSource}, Task}, bool)"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestThen8_CompletedAntecedent_NullContinuationFunction_NoErrors()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task<string> antecedent = CompletedTask.FromResult("Test string");
+            Func<Task<string>, Task> continuationFunction = null;
+            bool supportsErrors = false;
+
+            CoreTaskExtensions.Then(antecedent, continuationFunction, supportsErrors);
+        }
 
         /// <summary>
         /// This method test the behavior of the
@@ -10698,6 +11661,43 @@ namespace UnitTest.RackspaceThreading
                 Assert.AreSame(expectedException, ex.InnerExceptions[0]);
                 Assert.IsFalse(executed);
             }
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Then{TSource}(Task{TSource}, Func{Task{TSource}, Task}, bool)"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestThen8_NullAntecedent_CompletedContinuation_SupportsErrors()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task<string> antecedent = null;
+            Func<Task<string>, Task> continuationFunction = task =>
+                Task.Factory.StartNew(() =>
+                {
+                });
+            bool supportsErrors = true;
+
+            CoreTaskExtensions.Then(antecedent, continuationFunction, supportsErrors);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Then{TSource}(Task{TSource}, Func{Task{TSource}, Task}, bool)"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestThen8_CompletedAntecedent_NullContinuationFunction_SupportsErrors()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Task<string> antecedent = CompletedTask.FromResult("Test string");
+            Func<Task<string>, Task> continuationFunction = null;
+            bool supportsErrors = true;
+
+            CoreTaskExtensions.Then(antecedent, continuationFunction, supportsErrors);
         }
 
         /// <summary>
