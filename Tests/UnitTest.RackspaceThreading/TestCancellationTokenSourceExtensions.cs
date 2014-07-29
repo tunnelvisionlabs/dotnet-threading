@@ -25,6 +25,9 @@ namespace UnitTest.RackspaceThreading
     [TestClass]
     public class TestCancellationTokenSourceExtensions
     {
+        /// <summary>
+        /// This test validates the basic behavior of <see cref="CancellationTokenSourceExtensions.CancelAfter"/>.
+        /// </summary>
         [TestMethod]
         [Timeout(2000)]
         public void TestCancelAfter()
@@ -52,6 +55,10 @@ namespace UnitTest.RackspaceThreading
             }
         }
 
+        /// <summary>
+        /// This test validates the behavior of <see cref="CancellationTokenSourceExtensions.CancelAfter"/> when
+        /// called multiple times for a single <see cref="CancellationTokenSource"/> instance.
+        /// </summary>
         [TestMethod]
         [Timeout(2000)]
         public void TestCancelAfter_TimerReset()
@@ -81,6 +88,10 @@ namespace UnitTest.RackspaceThreading
             }
         }
 
+        /// <summary>
+        /// This test ensures the <see cref="CancellationTokenSourceExtensions.CancelAfter"/> method throws
+        /// the expected exception for a <see langword="null"/> <see cref="CancellationTokenSource"/>.
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void TestCancelAfter_ArgumentNull()
@@ -88,6 +99,10 @@ namespace UnitTest.RackspaceThreading
             CancellationTokenSourceExtensions.CancelAfter(null, TimeSpan.FromSeconds(1));
         }
 
+        /// <summary>
+        /// This test ensures the <see cref="CancellationTokenSourceExtensions.CancelAfter"/> method throws
+        /// the expected exception for an invalid negative delay.
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void TestCancelAfter_ArgumentOutOfRange()
@@ -95,6 +110,10 @@ namespace UnitTest.RackspaceThreading
             CancellationTokenSourceExtensions.CancelAfter(new CancellationTokenSource(), TimeSpan.FromSeconds(-1));
         }
 
+        /// <summary>
+        /// This test ensures the <see cref="CancellationTokenSourceExtensions.CancelAfter"/> does not
+        /// affect whether or not a <see cref="CancellationTokenSource"/> is eligible for garbage collection.
+        /// </summary>
         [TestMethod]
         public void TestCancelAfter_GCEligible()
         {
@@ -111,6 +130,10 @@ namespace UnitTest.RackspaceThreading
             Assert.IsNull(weakReference.Target);
         }
 
+        /// <summary>
+        /// This test ensures a <see cref="Timer"/> created on the stack still executes its callback once,
+        /// an imperfect measure of GC predictability within the test environment.
+        /// </summary>
         [TestMethod]
         public void TestNoForcedGCAllowsTimer()
         {
@@ -122,6 +145,11 @@ namespace UnitTest.RackspaceThreading
             Assert.IsTrue(executed);
         }
 
+        /// <summary>
+        /// This test ensures a <see cref="Timer"/> created on the stack is finalized by a forced garbage
+        /// collection, and thus does not execute its callback, an imperfect measure of GC predictability
+        /// within the test environment.
+        /// </summary>
         [TestMethod]
         public void TestForcedGCHaltsTimer()
         {
@@ -135,6 +163,12 @@ namespace UnitTest.RackspaceThreading
             Assert.IsFalse(executed);
         }
 
+        /// <summary>
+        /// This test verifies that the <see cref="Timer"/> instances created and managed by
+        /// <see cref="CancellationTokenSourceExtensions"/> are not eligible for garbage collection
+        /// prematurely, provided the test environment is predictable with respect to the
+        /// <see cref="TestNoForcedGCAllowsTimer"/> and <see cref="TestForcedGCHaltsTimer"/> tests.
+        /// </summary>
         [TestMethod]
         [Timeout(2000)]
         public void TestCancelAfter_TimerPinning()
