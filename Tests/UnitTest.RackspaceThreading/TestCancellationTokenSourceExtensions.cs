@@ -29,7 +29,7 @@ namespace UnitTest.RackspaceThreading
         public void TestCancelAfter()
         {
             TimeSpan timeout = TimeSpan.FromSeconds(0.25);
-            TimeSpan tolerance = TimeSpan.FromSeconds(0.003);
+            TimeSpan tolerance = TimeSpan.FromSeconds(0.025);
 
             CancellationTokenSource cts = new CancellationTokenSource();
             Stopwatch timer = Stopwatch.StartNew();
@@ -57,7 +57,7 @@ namespace UnitTest.RackspaceThreading
         {
             TimeSpan initialTimeout = TimeSpan.FromSeconds(0.10);
             TimeSpan updatedTimeout = TimeSpan.FromSeconds(0.35);
-            TimeSpan tolerance = TimeSpan.FromSeconds(0.003);
+            TimeSpan tolerance = TimeSpan.FromSeconds(0.025);
 
             CancellationTokenSource cts = new CancellationTokenSource();
             Stopwatch timer = Stopwatch.StartNew();
