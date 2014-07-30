@@ -57,6 +57,22 @@ namespace UnitTest.RackspaceThreading
 
         /// <summary>
         /// This test validates the behavior of <see cref="CancellationTokenSourceExtensions.CancelAfter"/> when
+        /// the <see cref="CancellationTokenSource"/> has already been canceled.
+        /// </summary>
+        [TestMethod]
+        [Timeout(2000)]
+        public void TestCancelAfter_AlreadyCanceled()
+        {
+            CancellationTokenSource cts = new CancellationTokenSource();
+            cts.Cancel();
+            Assert.IsTrue(cts.IsCancellationRequested);
+
+            cts.CancelAfter(TimeSpan.FromSeconds(2));
+            Assert.IsTrue(cts.IsCancellationRequested);
+        }
+
+        /// <summary>
+        /// This test validates the behavior of <see cref="CancellationTokenSourceExtensions.CancelAfter"/> when
         /// called multiple times for a single <see cref="CancellationTokenSource"/> instance.
         /// </summary>
         [TestMethod]
