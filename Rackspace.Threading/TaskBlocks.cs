@@ -34,10 +34,10 @@ namespace Rackspace.Threading
         /// </para>
         ///
         /// <note type="caller">
-        /// If the <paramref name="resource"/> function throws an exception, or if the <see cref="Task{TResult}"/> it returns
-        /// does not complete successfully, the resource will not be acquired by this method. In either of these
-        /// situations the caller is responsible for ensuring the <paramref name="resource"/> function cleans up any
-        /// resources it creates.
+        /// If the <paramref name="resource"/> function throws an exception, or if it returns <see langword="null"/>,
+        /// or if the <see cref="Task{TResult}"/> it returns does not complete successfully, the resource will not be
+        /// acquired by this method. In either of these situations the caller is responsible for ensuring the
+        /// <paramref name="resource"/> function cleans up any resources it creates.
         /// </note>
         /// </remarks>
         /// <typeparam name="TResource">The type of resource used within the task and disposed of afterwards.</typeparam>
@@ -62,6 +62,9 @@ namespace Rackspace.Threading
         /// <para>-or-</para>
         /// <para>If <paramref name="body"/> is <see langword="null"/>.</para>
         /// </exception>
+        /// <exception cref="InvalidOperationException">
+        /// If <paramref name="resource"/> returns <see langword="null"/>.
+        /// </exception>
         public static Task<TResult> Using<TResource, TResult>(Func<Task<TResource>> resource, Func<Task<TResource>, Task<TResult>> body)
             where TResource : IDisposable
         {
@@ -71,6 +74,9 @@ namespace Rackspace.Threading
                 throw new ArgumentNullException("body");
 
             Task<TResource> resourceTask = resource();
+            if (resourceTask == null)
+                throw new InvalidOperationException("The resource acquisition Task provided by the 'resource' delegate cannot be null.");
+
             return resourceTask
                 .Then(body)
                 .Finally(
@@ -119,10 +125,10 @@ namespace Rackspace.Threading
         /// </para>
         ///
         /// <note type="caller">
-        /// If the <paramref name="resource"/> function throws an exception, or if the <see cref="Task{TResult}"/> it returns
-        /// does not complete successfully, the resource will not be acquired by this method. In either of these
-        /// situations the caller is responsible for ensuring the <paramref name="resource"/> function cleans up any
-        /// resources it creates.
+        /// If the <paramref name="resource"/> function throws an exception, or if it returns <see langword="null"/>,
+        /// or if the <see cref="Task{TResult}"/> it returns does not complete successfully, the resource will not be
+        /// acquired by this method. In either of these situations the caller is responsible for ensuring the
+        /// <paramref name="resource"/> function cleans up any resources it creates.
         /// </note>
         /// </remarks>
         /// <typeparam name="TResource">The type of resource used within the task and disposed of afterwards.</typeparam>
@@ -145,6 +151,9 @@ namespace Rackspace.Threading
         /// <para>-or-</para>
         /// <para>If <paramref name="body"/> is <see langword="null"/>.</para>
         /// </exception>
+        /// <exception cref="InvalidOperationException">
+        /// If <paramref name="resource"/> returns <see langword="null"/>.
+        /// </exception>
         public static Task Using<TResource>(Func<Task<TResource>> resource, Func<Task<TResource>, Task> body)
             where TResource : IDisposable
         {
@@ -154,6 +163,9 @@ namespace Rackspace.Threading
                 throw new ArgumentNullException("body");
 
             Task<TResource> resourceTask = resource();
+            if (resourceTask == null)
+                throw new InvalidOperationException("The resource acquisition Task provided by the 'resource' delegate cannot be null.");
+
             return resourceTask
                 .Then(body)
                 .Finally(
@@ -211,6 +223,9 @@ namespace Rackspace.Threading
         /// <para>-or-</para>
         /// <para>If <paramref name="body"/> is <see langword="null"/>.</para>
         /// </exception>
+        /// <exception cref="InvalidOperationException">
+        /// If <paramref name="body"/> returns <see langword="null"/>.
+        /// </exception>
         public static Task While(Func<bool> condition, Func<Task> body)
         {
             if (condition == null)
@@ -219,7 +234,7 @@ namespace Rackspace.Threading
                 throw new ArgumentNullException("body");
 
             TaskCompletionSource<VoidResult> taskCompletionSource = new TaskCompletionSource<VoidResult>();
-            Task currentTask = CompletedTask.Default;
+            Task currentTask;
 
             // This action specifically handles cases where evaluating condition or body
             // results in an exception.
@@ -247,10 +262,14 @@ namespace Rackspace.Threading
                     }
 
                     // reschedule
-                    currentTask = body().Finally(continuation).Finally(handleErrors);
+                    Task bodyTask = body();
+                    if (bodyTask == null)
+                        throw new InvalidOperationException("The Task provided by the 'body' delegate cannot be null.");
+
+                    currentTask = bodyTask.Select(continuation).Finally(handleErrors);
                 };
 
-            currentTask.Finally(continuation).Finally(handleErrors);
+            currentTask = CompletedTask.Default.Select(continuation).Finally(handleErrors);
             return taskCompletionSource.Task;
         }
 
@@ -284,6 +303,11 @@ namespace Rackspace.Threading
         /// <para>-or-</para>
         /// <para>If <paramref name="body"/> is <see langword="null"/>.</para>
         /// </exception>
+        /// <exception cref="InvalidOperationException">
+        /// If <paramref name="condition"/> returns <see langword="null"/>.
+        /// <para>-or-</para>
+        /// <para>If <paramref name="body"/> returns <see langword="null"/>.</para>
+        /// </exception>
         public static Task While(Func<Task<bool>> condition, Func<Task> body)
         {
             if (condition == null)
@@ -292,7 +316,7 @@ namespace Rackspace.Threading
                 throw new ArgumentNullException("body");
 
             TaskCompletionSource<VoidResult> taskCompletionSource = new TaskCompletionSource<VoidResult>();
-            Task currentTask = CompletedTask.Default;
+            Task currentTask;
 
             Action<Task> statusCheck =
                 previousTask =>
@@ -304,21 +328,17 @@ namespace Rackspace.Threading
             Func<Task, Task<bool>> conditionContinuation =
                 previousTask =>
                 {
-                    if (taskCompletionSource.Task.IsCompleted)
-                        return CompletedTask.FromResult(false);
+                    Task<bool> conditionTask = condition();
+                    if (conditionTask == null)
+                        throw new InvalidOperationException("The Task provided by the 'condition' delegate cannot be null.");
 
-                    return condition();
+                    return conditionTask;
                 };
 
             Action<Task<bool>> continuation = null;
             continuation =
                 previousTask =>
                 {
-                    if (taskCompletionSource.Task.IsCompleted)
-                    {
-                        return;
-                    }
-
                     if (!previousTask.Result)
                     {
                         taskCompletionSource.TrySetResult(null);
@@ -326,10 +346,14 @@ namespace Rackspace.Threading
                     }
 
                     // reschedule
-                    currentTask = body().Finally(statusCheck).Then(conditionContinuation).Select(continuation).Finally(statusCheck);
+                    Task bodyTask = body();
+                    if (bodyTask == null)
+                        throw new InvalidOperationException("The Task provided by the 'body' delegate cannot be null.");
+
+                    currentTask = bodyTask.Then(conditionContinuation).Select(continuation).Finally(statusCheck);
                 };
 
-            currentTask = currentTask.Finally(statusCheck).Then(conditionContinuation).Select(continuation).Finally(statusCheck);
+            currentTask = CompletedTask.Default.Then(conditionContinuation).Select(continuation).Finally(statusCheck);
             return taskCompletionSource.Task;
         }
     }
