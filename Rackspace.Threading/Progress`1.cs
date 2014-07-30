@@ -16,6 +16,8 @@
     /// <typeparam name="T">Specifies the type of the progress report value.</typeparam>
     public class Progress<T> : IProgress<T>
     {
+        private static readonly SynchronizationContext DefaultSynchronizationContext = new SynchronizationContext();
+
         private readonly SynchronizationContext _synchronizationContext;
         private readonly SendOrPostCallback _callback;
         private readonly Action<T> _handler;
@@ -34,7 +36,7 @@
         /// </summary>
         public Progress()
         {
-            _synchronizationContext = SynchronizationContext.Current;
+            _synchronizationContext = SynchronizationContext.Current ?? DefaultSynchronizationContext;
             _callback = Callback;
         }
 
