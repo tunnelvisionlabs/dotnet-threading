@@ -223,6 +223,9 @@ namespace Rackspace.Threading
         /// <para>-or-</para>
         /// <para>If <paramref name="body"/> is <see langword="null"/>.</para>
         /// </exception>
+        /// <exception cref="InvalidOperationException">
+        /// If <paramref name="body"/> returns <see langword="null"/>.
+        /// </exception>
         public static Task While(Func<bool> condition, Func<Task> body)
         {
             if (condition == null)
@@ -259,7 +262,11 @@ namespace Rackspace.Threading
                     }
 
                     // reschedule
-                    currentTask = body().Select(continuation).Finally(handleErrors);
+                    Task bodyTask = body();
+                    if (bodyTask == null)
+                        throw new InvalidOperationException("The Task provided by the 'body' delegate cannot be null.");
+
+                    currentTask = bodyTask.Select(continuation).Finally(handleErrors);
                 };
 
             currentTask = CompletedTask.Default.Select(continuation).Finally(handleErrors);
@@ -296,6 +303,11 @@ namespace Rackspace.Threading
         /// <para>-or-</para>
         /// <para>If <paramref name="body"/> is <see langword="null"/>.</para>
         /// </exception>
+        /// <exception cref="InvalidOperationException">
+        /// If <paramref name="condition"/> returns <see langword="null"/>.
+        /// <para>-or-</para>
+        /// <para>If <paramref name="body"/> returns <see langword="null"/>.</para>
+        /// </exception>
         public static Task While(Func<Task<bool>> condition, Func<Task> body)
         {
             if (condition == null)
@@ -316,7 +328,11 @@ namespace Rackspace.Threading
             Func<Task, Task<bool>> conditionContinuation =
                 previousTask =>
                 {
-                    return condition();
+                    Task<bool> conditionTask = condition();
+                    if (conditionTask == null)
+                        throw new InvalidOperationException("The Task provided by the 'condition' delegate cannot be null.");
+
+                    return conditionTask;
                 };
 
             Action<Task<bool>> continuation = null;
@@ -330,7 +346,11 @@ namespace Rackspace.Threading
                     }
 
                     // reschedule
-                    currentTask = body().Then(conditionContinuation).Select(continuation).Finally(statusCheck);
+                    Task bodyTask = body();
+                    if (bodyTask == null)
+                        throw new InvalidOperationException("The Task provided by the 'body' delegate cannot be null.");
+
+                    currentTask = bodyTask.Then(conditionContinuation).Select(continuation).Finally(statusCheck);
                 };
 
             currentTask = CompletedTask.Default.Then(conditionContinuation).Select(continuation).Finally(statusCheck);
