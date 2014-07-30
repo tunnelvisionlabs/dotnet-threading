@@ -10,7 +10,6 @@ namespace Rackspace.Threading
     /// with automatic handling of faulted and canceled antecedent tasks.
     /// </summary>
     /// <threadsafety static="true" instance="false"/>
-    /// <preliminary/>
     public static class CoreTaskExtensions
     {
         /// <summary>

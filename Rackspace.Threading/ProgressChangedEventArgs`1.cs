@@ -15,7 +15,6 @@
     /// </remarks>
     /// <typeparam name="T">The type representing the progress indicator.</typeparam>
     /// <threadsafety static="true" instance="false"/>
-    /// <preliminary/>
     public class ProgressChangedEventArgs<T> : EventArgs
     {
         /// <summary>

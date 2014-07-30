@@ -10,7 +10,6 @@ namespace Rackspace.Threading
     /// without requiring the use of those keywords.
     /// </summary>
     /// <threadsafety static="true" instance="false"/>
-    /// <preliminary/>
     public static class TaskBlocks
     {
         /// <summary>
