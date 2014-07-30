@@ -34,10 +34,10 @@ namespace Rackspace.Threading
         /// </para>
         ///
         /// <note type="caller">
-        /// If the <paramref name="resource"/> function throws an exception, or if the <see cref="Task{TResult}"/> it returns
-        /// does not complete successfully, the resource will not be acquired by this method. In either of these
-        /// situations the caller is responsible for ensuring the <paramref name="resource"/> function cleans up any
-        /// resources it creates.
+        /// If the <paramref name="resource"/> function throws an exception, or if it returns <see langword="null"/>,
+        /// or if the <see cref="Task{TResult}"/> it returns does not complete successfully, the resource will not be
+        /// acquired by this method. In either of these situations the caller is responsible for ensuring the
+        /// <paramref name="resource"/> function cleans up any resources it creates.
         /// </note>
         /// </remarks>
         /// <typeparam name="TResource">The type of resource used within the task and disposed of afterwards.</typeparam>
@@ -62,6 +62,9 @@ namespace Rackspace.Threading
         /// <para>-or-</para>
         /// <para>If <paramref name="body"/> is <see langword="null"/>.</para>
         /// </exception>
+        /// <exception cref="InvalidOperationException">
+        /// If <paramref name="resource"/> returns <see langword="null"/>.
+        /// </exception>
         public static Task<TResult> Using<TResource, TResult>(Func<Task<TResource>> resource, Func<Task<TResource>, Task<TResult>> body)
             where TResource : IDisposable
         {
@@ -71,6 +74,9 @@ namespace Rackspace.Threading
                 throw new ArgumentNullException("body");
 
             Task<TResource> resourceTask = resource();
+            if (resourceTask == null)
+                throw new InvalidOperationException("The resource acquisition Task provided by the 'resource' delegate cannot be null.");
+
             return resourceTask
                 .Then(body)
                 .Finally(
@@ -119,10 +125,10 @@ namespace Rackspace.Threading
         /// </para>
         ///
         /// <note type="caller">
-        /// If the <paramref name="resource"/> function throws an exception, or if the <see cref="Task{TResult}"/> it returns
-        /// does not complete successfully, the resource will not be acquired by this method. In either of these
-        /// situations the caller is responsible for ensuring the <paramref name="resource"/> function cleans up any
-        /// resources it creates.
+        /// If the <paramref name="resource"/> function throws an exception, or if it returns <see langword="null"/>,
+        /// or if the <see cref="Task{TResult}"/> it returns does not complete successfully, the resource will not be
+        /// acquired by this method. In either of these situations the caller is responsible for ensuring the
+        /// <paramref name="resource"/> function cleans up any resources it creates.
         /// </note>
         /// </remarks>
         /// <typeparam name="TResource">The type of resource used within the task and disposed of afterwards.</typeparam>
@@ -145,6 +151,9 @@ namespace Rackspace.Threading
         /// <para>-or-</para>
         /// <para>If <paramref name="body"/> is <see langword="null"/>.</para>
         /// </exception>
+        /// <exception cref="InvalidOperationException">
+        /// If <paramref name="resource"/> returns <see langword="null"/>.
+        /// </exception>
         public static Task Using<TResource>(Func<Task<TResource>> resource, Func<Task<TResource>, Task> body)
             where TResource : IDisposable
         {
@@ -154,6 +163,9 @@ namespace Rackspace.Threading
                 throw new ArgumentNullException("body");
 
             Task<TResource> resourceTask = resource();
+            if (resourceTask == null)
+                throw new InvalidOperationException("The resource acquisition Task provided by the 'resource' delegate cannot be null.");
+
             return resourceTask
                 .Then(body)
                 .Finally(
