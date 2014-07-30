@@ -8,7 +8,6 @@ namespace Rackspace.Threading
     /// Provides static methods to create completed <see cref="Task"/> and <see cref="Task{TResult}"/> instances.
     /// </summary>
     /// <threadsafety static="true" instance="false"/>
-    /// <preliminary/>
     public static class CompletedTask
     {
         /// <summary>

@@ -18,7 +18,6 @@ namespace Rackspace.Threading
     /// Provides extension methods for the <see cref="CancellationTokenSource"/> class.
     /// </summary>
     /// <threadsafety static="true" instance="false"/>
-    /// <preliminary/>
     public static class CancellationTokenSourceExtensions
     {
 #if NET40PLUS

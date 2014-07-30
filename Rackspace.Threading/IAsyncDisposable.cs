@@ -6,7 +6,6 @@
     /// <summary>
     /// Provides a mechanism for asynchronously releasing unmanaged resources.
     /// </summary>
-    /// <preliminary/>
     public interface IAsyncDisposable : IDisposable
     {
         /// <summary>

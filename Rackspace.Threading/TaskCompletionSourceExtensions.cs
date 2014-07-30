@@ -12,7 +12,6 @@ namespace Rackspace.Threading
     using System.Threading.Tasks;
 
     /// <summary>Extension methods for TaskCompletionSource.</summary>
-    /// <preliminary/>
     internal static class TaskCompletionSourceExtensions
     {
         /// <summary>Transfers the result of a Task to the TaskCompletionSource.</summary>

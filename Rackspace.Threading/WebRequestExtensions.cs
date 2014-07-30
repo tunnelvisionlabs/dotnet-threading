@@ -15,7 +15,6 @@ namespace Rackspace.Threading
     /// <see cref="WebRequest"/> objects.
     /// </summary>
     /// <threadsafety static="true" instance="false"/>
-    /// <preliminary/>
     public static class WebRequestExtensions
     {
 #if !NET45PLUS
