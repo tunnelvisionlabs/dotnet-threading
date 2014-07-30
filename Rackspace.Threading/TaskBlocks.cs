@@ -231,7 +231,7 @@ namespace Rackspace.Threading
                 throw new ArgumentNullException("body");
 
             TaskCompletionSource<VoidResult> taskCompletionSource = new TaskCompletionSource<VoidResult>();
-            Task currentTask = CompletedTask.Default;
+            Task currentTask;
 
             // This action specifically handles cases where evaluating condition or body
             // results in an exception.
@@ -259,10 +259,10 @@ namespace Rackspace.Threading
                     }
 
                     // reschedule
-                    currentTask = body().Finally(continuation).Finally(handleErrors);
+                    currentTask = body().Select(continuation).Finally(handleErrors);
                 };
 
-            currentTask.Finally(continuation).Finally(handleErrors);
+            currentTask = CompletedTask.Default.Select(continuation).Finally(handleErrors);
             return taskCompletionSource.Task;
         }
 
@@ -304,7 +304,7 @@ namespace Rackspace.Threading
                 throw new ArgumentNullException("body");
 
             TaskCompletionSource<VoidResult> taskCompletionSource = new TaskCompletionSource<VoidResult>();
-            Task currentTask = CompletedTask.Default;
+            Task currentTask;
 
             Action<Task> statusCheck =
                 previousTask =>
@@ -316,9 +316,6 @@ namespace Rackspace.Threading
             Func<Task, Task<bool>> conditionContinuation =
                 previousTask =>
                 {
-                    if (taskCompletionSource.Task.IsCompleted)
-                        return CompletedTask.FromResult(false);
-
                     return condition();
                 };
 
@@ -326,11 +323,6 @@ namespace Rackspace.Threading
             continuation =
                 previousTask =>
                 {
-                    if (taskCompletionSource.Task.IsCompleted)
-                    {
-                        return;
-                    }
-
                     if (!previousTask.Result)
                     {
                         taskCompletionSource.TrySetResult(null);
@@ -338,10 +330,10 @@ namespace Rackspace.Threading
                     }
 
                     // reschedule
-                    currentTask = body().Finally(statusCheck).Then(conditionContinuation).Select(continuation).Finally(statusCheck);
+                    currentTask = body().Then(conditionContinuation).Select(continuation).Finally(statusCheck);
                 };
 
-            currentTask = currentTask.Finally(statusCheck).Then(conditionContinuation).Select(continuation).Finally(statusCheck);
+            currentTask = CompletedTask.Default.Then(conditionContinuation).Select(continuation).Finally(statusCheck);
             return taskCompletionSource.Task;
         }
     }
