@@ -30,6 +30,45 @@ namespace UnitTest.RackspaceThreading
         /// method.
         /// </summary>
         [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestUsing1_NullResourceFunction_CompletedBody_Disposable()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Func<Task<IDisposable>> resource = null;
+            Func<Task<IDisposable>, Task> body = task =>
+                Task.Factory.StartNew(() =>
+                {
+                });
+
+            TaskBlocks.Using(resource, body);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="TaskBlocks.Using{TResource}(Func{Task{TResource}}, Func{Task{TResource}, Task})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestUsing1_CompletedResource_NullBodyFunction_Disposable()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Func<Task<IDisposable>> resource = () =>
+                {
+                    Assert.Fail("Should not have attempted to create the resource.");
+                    throw new InvalidOperationException("Unreachable");
+                };
+            Func<Task<IDisposable>, Task> body = null;
+
+            TaskBlocks.Using(resource, body);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="TaskBlocks.Using{TResource}(Func{Task{TResource}}, Func{Task{TResource}, Task})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
         public void TestUsing1_CompletedResource_CompletedBody_Disposable()
         {
             bool executed = false;
@@ -48,6 +87,26 @@ namespace UnitTest.RackspaceThreading
             Assert.AreEqual(TaskStatus.RanToCompletion, combinedTask.Status);
             Assert.IsNotNull(resourceObject);
             Assert.IsTrue(resourceObject.Disposed);
+            Assert.IsTrue(executed);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="TaskBlocks.Using{TResource}(Func{Task{TResource}}, Func{Task{TResource}, Task})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestUsing1_CompletedNullResource_CompletedBody_Disposable()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            Func<Task<IDisposable>> resource = () => CompletedTask.FromResult(default(IDisposable));
+            Func<Task<IDisposable>, Task> body = task => Task.Factory.StartNew(() => executed = true);
+
+            Task combinedTask = TaskBlocks.Using(resource, body);
+            combinedTask.Wait();
+            Assert.AreEqual(TaskStatus.RanToCompletion, combinedTask.Status);
             Assert.IsTrue(executed);
         }
 
@@ -128,6 +187,55 @@ namespace UnitTest.RackspaceThreading
                 Assert.IsNull(resourceObject);
                 Assert.IsFalse(executed);
             }
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="TaskBlocks.Using{TResource}(Func{Task{TResource}}, Func{Task{TResource}, Task})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestUsing1_FaultedPreResource_CompletedBody_Disposable()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            Exception expectedException = new ArgumentException();
+            Func<Task<IDisposable>> resource = () =>
+                {
+                    throw expectedException;
+                };
+            Func<Task<IDisposable>, Task> body = task => Task.Factory.StartNew(() => executed = true);
+
+            try
+            {
+                TaskBlocks.Using(resource, body);
+                Assert.Fail("Expected an ArgumentException");
+            }
+            catch (ArgumentException ex)
+            {
+                Assert.AreSame(expectedException, ex);
+                Assert.IsFalse(executed);
+            }
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="TaskBlocks.Using{TResource}(Func{Task{TResource}}, Func{Task{TResource}, Task})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void TestUsing1_NullResourceTask_CompletedBody_Disposable()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Func<Task<IDisposable>> resource = () => null;
+            Func<Task<IDisposable>, Task> body = task =>
+                {
+                    throw new NotSupportedException();
+                };
+
+            TaskBlocks.Using(resource, body);
         }
 
         /// <summary>
@@ -1356,6 +1464,44 @@ namespace UnitTest.RackspaceThreading
         /// method.
         /// </summary>
         [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestUsing2_NullResourceFunction_CompletedBody_Disposable()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Func<Task<IDisposable>> resource = null;
+            object result = new object();
+            Func<Task<IDisposable>, Task<object>> body = task =>
+                Task.Factory.StartNew(() => result);
+
+            TaskBlocks.Using(resource, body);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="TaskBlocks.Using{TResource, TResult}(Func{Task{TResource}}, Func{Task{TResource}, Task{TResult}})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestUsing2_CompletedResource_NullBodyFunction_Disposable()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Func<Task<IDisposable>> resource = () =>
+                {
+                    Assert.Fail("Should not have attempted to create the resource.");
+                    throw new InvalidOperationException("Unreachable");
+                };
+            Func<Task<IDisposable>, Task<object>> body = null;
+
+            TaskBlocks.Using(resource, body);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="TaskBlocks.Using{TResource, TResult}(Func{Task{TResource}}, Func{Task{TResource}, Task{TResult}})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
         public void TestUsing2_CompletedResource_CompletedBody_Disposable()
         {
             bool executed = false;
@@ -1380,6 +1526,32 @@ namespace UnitTest.RackspaceThreading
             Assert.AreEqual(TaskStatus.RanToCompletion, combinedTask.Status);
             Assert.IsNotNull(resourceObject);
             Assert.IsTrue(resourceObject.Disposed);
+            Assert.IsTrue(executed);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="TaskBlocks.Using{TResource, TResult}(Func{Task{TResource}}, Func{Task{TResource}, Task{TResult}})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestUsing2_CompletedNullResource_CompletedBody_Disposable()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            Func<Task<IDisposable>> resource = () => CompletedTask.FromResult(default(IDisposable));
+            object result = new object();
+            Func<Task<IDisposable>, Task<object>> body = task =>
+                Task.Factory.StartNew(() =>
+                {
+                    executed = true;
+                    return result;
+                });
+
+            Task<object> combinedTask = TaskBlocks.Using(resource, body);
+            combinedTask.Wait();
+            Assert.AreEqual(TaskStatus.RanToCompletion, combinedTask.Status);
             Assert.IsTrue(executed);
         }
 
@@ -1472,6 +1644,61 @@ namespace UnitTest.RackspaceThreading
                 Assert.IsNull(resourceObject);
                 Assert.IsFalse(executed);
             }
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="TaskBlocks.Using{TResource, TResult}(Func{Task{TResource}}, Func{Task{TResource}, Task{TResult}})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestUsing2_FaultedPreResource_CompletedBody_Disposable()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            Exception expectedException = new ArgumentException();
+            Func<Task<IDisposable>> resource = () =>
+                {
+                    throw expectedException;
+                };
+            object result = new object();
+            Func<Task<IDisposable>, Task<object>> body = task =>
+                Task.Factory.StartNew(() =>
+                {
+                    executed = true;
+                    return result;
+                });
+
+            try
+            {
+                TaskBlocks.Using(resource, body);
+                Assert.Fail("Expected an ArgumentException");
+            }
+            catch (ArgumentException ex)
+            {
+                Assert.AreSame(expectedException, ex);
+                Assert.IsFalse(executed);
+            }
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="TaskBlocks.Using{TResource, TResult}(Func{Task{TResource}}, Func{Task{TResource}, Task{TResult}})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void TestUsing2_NullResourceTask_CompletedBody_Disposable()
+        {
+            // declaring these makes it clear we are testing the correct overload
+            Func<Task<IDisposable>> resource = () => null;
+            Func<Task<IDisposable>, Task<object>> body = task =>
+                {
+                    throw new NotSupportedException();
+                };
+
+            TaskBlocks.Using(resource, body);
         }
 
         /// <summary>
