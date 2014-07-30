@@ -55,6 +55,7 @@
     <Compile Include="TestCancellationTokenSourceExtensions.cs" />
     <Compile Include="TestCompletedTask.cs" />
     <Compile Include="TestCoreTaskExtensions.cs" />
+    <Compile Include="TestProgress.cs" />
     <Compile Include="TestTaskBlocks.cs" />
   </ItemGroup>
   <ItemGroup>
