@@ -3,7 +3,11 @@
   <HelpTOCNode Title="CancellationTokenSourceExtensions Class" Url="html/T_Rackspace_Threading_CancellationTokenSourceExtensions.htm" HasChildren="true" />
   <HelpTOCNode Title="CompletedTask Class" Url="html/T_Rackspace_Threading_CompletedTask.htm" HasChildren="true" />
   <HelpTOCNode Title="CoreTaskExtensions Class" Url="html/T_Rackspace_Threading_CoreTaskExtensions.htm" HasChildren="true" />
+  <HelpTOCNode Title="IAsyncDisposable Interface" Url="html/T_Rackspace_Threading_IAsyncDisposable.htm" HasChildren="true" />
   <HelpTOCNode Title="IProgress(T) Interface" Url="html/T_Rackspace_Threading_IProgress_1.htm" HasChildren="true" />
+  <HelpTOCNode Title="Progress(T) Class" Url="html/T_Rackspace_Threading_Progress_1.htm" HasChildren="true" />
+  <HelpTOCNode Title="ProgressChangedEventArgs(T) Class" Url="html/T_Rackspace_Threading_ProgressChangedEventArgs_1.htm" HasChildren="true" />
   <HelpTOCNode Title="StreamExtensions Class" Url="html/T_Rackspace_Threading_StreamExtensions.htm" HasChildren="true" />
+  <HelpTOCNode Title="TaskBlocks Class" Url="html/T_Rackspace_Threading_TaskBlocks.htm" HasChildren="true" />
   <HelpTOCNode Title="WebRequestExtensions Class" Url="html/T_Rackspace_Threading_WebRequestExtensions.htm" HasChildren="true" />
 </HelpTOCNode>

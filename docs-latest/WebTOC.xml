@@ -4,37 +4,37 @@
   <HelpTOCNode Title="Welcome" Url="html/50d028db-e522-4750-91a6-4ae6c97c2610.htm" />
   <HelpTOCNode Title="License Agreement" Url="html/42ba1007-d64f-410e-af6c-169426597465.htm" />
   <HelpTOCNode Title="Preliminary Features" Url="html/e02b9881-f06b-4420-aace-71b176d635db.htm" />
-  <HelpTOCNode Id="6f0f5200-8768-4647-9dcd-bf2f0dc92fd4" Title="User Guide" Url="html/0a33afc9-793d-448a-950f-f03a2ca156d2.htm">
+  <HelpTOCNode Id="0dd402ca-8e63-454e-b0c1-4850b88aae4a" Title="User Guide" Url="html/0a33afc9-793d-448a-950f-f03a2ca156d2.htm">
     <HelpTOCNode Title="Installation" Url="html/3304f46f-a7d2-4af6-8b5a-11f9931ba72e.htm" />
   </HelpTOCNode>
-  <HelpTOCNode Id="9c1ccc3a-8334-4605-944d-1f4b969e8659" Title="API Reference" Url="html/R_Project_Threading_API_Reference.htm">
-    <HelpTOCNode Id="d2e4fcde-2874-44d5-82d2-30849592cf23" Title="Rackspace.Threading" Url="html/N_Rackspace_Threading.htm">
-      <HelpTOCNode Id="480619dc-07a4-4ad0-8188-e07ef1555e10" Title="CancellationTokenSourceExtensions Class" Url="html/T_Rackspace_Threading_CancellationTokenSourceExtensions.htm">
-        <HelpTOCNode Id="ef0ab559-5f7e-40bd-b5c1-447b1f369d91" Title="CancellationTokenSourceExtensions Methods" Url="html/Methods_T_Rackspace_Threading_CancellationTokenSourceExtensions.htm">
+  <HelpTOCNode Id="539d251f-5ab1-4ca5-b0c4-c6903c669e2f" Title="API Reference" Url="html/R_Project_Threading_API_Reference.htm">
+    <HelpTOCNode Id="6ea9df71-ca29-47a3-8e68-dcaadbb73dfe" Title="Rackspace.Threading" Url="html/N_Rackspace_Threading.htm">
+      <HelpTOCNode Id="145328a5-e95f-4f21-b96f-db867a4efec2" Title="CancellationTokenSourceExtensions Class" Url="html/T_Rackspace_Threading_CancellationTokenSourceExtensions.htm">
+        <HelpTOCNode Id="62a09a58-7477-42bb-9785-7e17e767a7e0" Title="CancellationTokenSourceExtensions Methods" Url="html/Methods_T_Rackspace_Threading_CancellationTokenSourceExtensions.htm">
           <HelpTOCNode Title="CancelAfter Method " Url="html/M_Rackspace_Threading_CancellationTokenSourceExtensions_CancelAfter.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="93da71bc-ea69-4b32-989f-40771ff8279a" Title="CompletedTask Class" Url="html/T_Rackspace_Threading_CompletedTask.htm">
-        <HelpTOCNode Id="1943693a-a6b3-498d-904e-cbc7de2905df" Title="CompletedTask Methods" Url="html/Methods_T_Rackspace_Threading_CompletedTask.htm">
-          <HelpTOCNode Id="3d600a3b-d286-429d-8611-b33929fb1930" Title="Canceled Method " Url="html/Overload_Rackspace_Threading_CompletedTask_Canceled.htm">
+      <HelpTOCNode Id="8e34f51a-2155-40a6-8e7c-856ee44a7757" Title="CompletedTask Class" Url="html/T_Rackspace_Threading_CompletedTask.htm">
+        <HelpTOCNode Id="28abf5c0-ef36-4b99-ae44-d9b1c51c6049" Title="CompletedTask Methods" Url="html/Methods_T_Rackspace_Threading_CompletedTask.htm">
+          <HelpTOCNode Id="9ea17e1f-34c9-4051-9b0b-ce8e7eaff054" Title="Canceled Method " Url="html/Overload_Rackspace_Threading_CompletedTask_Canceled.htm">
             <HelpTOCNode Title="Canceled Method " Url="html/M_Rackspace_Threading_CompletedTask_Canceled.htm" />
             <HelpTOCNode Title="Canceled(TResult) Method " Url="html/M_Rackspace_Threading_CompletedTask_Canceled__1.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="FromResult(TResult) Method " Url="html/M_Rackspace_Threading_CompletedTask_FromResult__1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="26878df7-d108-44ce-89a8-c6a318973395" Title="CompletedTask Properties" Url="html/Properties_T_Rackspace_Threading_CompletedTask.htm">
+        <HelpTOCNode Id="175b0f4d-8e8f-4bbc-b67c-ed901adba0c8" Title="CompletedTask Properties" Url="html/Properties_T_Rackspace_Threading_CompletedTask.htm">
           <HelpTOCNode Title="Default Property " Url="html/P_Rackspace_Threading_CompletedTask_Default.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="53b8ccdc-fa15-44de-9051-824c0cd6daee" Title="CoreTaskExtensions Class" Url="html/T_Rackspace_Threading_CoreTaskExtensions.htm">
-        <HelpTOCNode Id="0e220151-df52-435f-83f8-db111f7c8779" Title="CoreTaskExtensions Methods" Url="html/Methods_T_Rackspace_Threading_CoreTaskExtensions.htm">
-          <HelpTOCNode Id="7e76b0bd-024c-4c96-b0c3-e42a2f899498" Title="Finally Method " Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Finally.htm">
+      <HelpTOCNode Id="ea0ca8c2-13bc-40bd-920f-db4a4f8c3e47" Title="CoreTaskExtensions Class" Url="html/T_Rackspace_Threading_CoreTaskExtensions.htm">
+        <HelpTOCNode Id="dcc5604e-d387-483c-b732-3cac715554ce" Title="CoreTaskExtensions Methods" Url="html/Methods_T_Rackspace_Threading_CoreTaskExtensions.htm">
+          <HelpTOCNode Id="c642dedb-7f59-449f-9b5f-702c1849f4bf" Title="Finally Method " Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Finally.htm">
             <HelpTOCNode Title="Finally Method (Task, Action(Task))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Finally.htm" />
             <HelpTOCNode Title="Finally Method (Task, Func(Task, Task))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Finally_1.htm" />
             <HelpTOCNode Title="Finally(TResult) Method (Task(TResult), Action(Task(TResult)))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Finally__1.htm" />
             <HelpTOCNode Title="Finally(TResult) Method (Task(TResult), Func(Task(TResult), Task))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Finally__1_1.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="8f1ab8dd-3fbf-4f14-8a0f-5952ca0435c7" Title="Select Method " Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Select.htm">
+          <HelpTOCNode Id="0c24827a-53bf-4a36-a8a3-a8f135852d1a" Title="Select Method " Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Select.htm">
             <HelpTOCNode Title="Select Method (Task, Action(Task))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Select.htm" />
             <HelpTOCNode Title="Select(TResult) Method (Task, Func(Task, TResult))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Select__1.htm" />
             <HelpTOCNode Title="Select(TSource) Method (Task(TSource), Action(Task(TSource)))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Select__1_2.htm" />
@@ -44,7 +44,7 @@
             <HelpTOCNode Title="Select(TSource) Method (Task(TSource), Action(Task(TSource)), Boolean)" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Select__1_3.htm" />
             <HelpTOCNode Title="Select(TSource, TResult) Method (Task(TSource), Func(Task(TSource), TResult), Boolean)" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Select__2_1.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="b758994a-9d7d-4bc8-be2a-aa2f55e79908" Title="Then Method " Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Then.htm">
+          <HelpTOCNode Id="d4b24574-0501-4df2-a8c2-34c1d57130d0" Title="Then Method " Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Then.htm">
             <HelpTOCNode Title="Then(TResult) Method (Task, Func(Task, Task(TResult)))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Then__1.htm" />
             <HelpTOCNode Title="Then Method (Task, Func(Task, Task))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Then.htm" />
             <HelpTOCNode Title="Then(TSource, TResult) Method (Task(TSource), Func(Task(TSource), Task(TResult)))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Then__2.htm" />
@@ -54,46 +54,76 @@
             <HelpTOCNode Title="Then(TSource, TResult) Method (Task(TSource), Func(Task(TSource), Task(TResult)), Boolean)" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Then__2_1.htm" />
             <HelpTOCNode Title="Then(TSource) Method (Task(TSource), Func(Task(TSource), Task), Boolean)" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Then__1_3.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="657a83cf-37b8-4779-8e92-2f937f528221" Title="Using Method " Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Using.htm">
-            <HelpTOCNode Title="Using(TResource, TResult) Method (Func(Task(TResource)), Func(Task(TResource), Task(TResult)))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Using__2.htm" />
-            <HelpTOCNode Title="Using(TResource) Method (Func(Task(TResource)), Func(Task(TResource), Task))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Using__1.htm" />
-          </HelpTOCNode>
-          <HelpTOCNode Id="21c1d947-a86b-4ab1-9c88-6ce92387e405" Title="While Method " Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_While.htm">
-            <HelpTOCNode Title="While Method (Func(Boolean), Func(Task))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_While.htm" />
-            <HelpTOCNode Title="While Method (Func(Task(Boolean)), Func(Task))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_While_1.htm" />
-          </HelpTOCNode>
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="2f82e6b0-1a18-49a3-9722-37803b2a6596" Title="IProgress(T) Interface" Url="html/T_Rackspace_Threading_IProgress_1.htm">
-        <HelpTOCNode Id="046183eb-b5d7-4d54-aeda-77f2b8c03214" Title="IProgress(T) Methods" Url="html/Methods_T_Rackspace_Threading_IProgress_1.htm">
+      <HelpTOCNode Id="542b46c8-41aa-4267-9459-6d4837705a77" Title="IAsyncDisposable Interface" Url="html/T_Rackspace_Threading_IAsyncDisposable.htm">
+        <HelpTOCNode Id="39a727fa-3ae8-4336-a1ad-72d73da225b6" Title="IAsyncDisposable Methods" Url="html/Methods_T_Rackspace_Threading_IAsyncDisposable.htm">
+          <HelpTOCNode Title="DisposeAsync Method " Url="html/M_Rackspace_Threading_IAsyncDisposable_DisposeAsync.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="e476065f-3194-4cd8-b480-865a0c07ff26" Title="IProgress(T) Interface" Url="html/T_Rackspace_Threading_IProgress_1.htm">
+        <HelpTOCNode Id="17ba92d3-c7e8-4afa-b63d-864b8345ada6" Title="IProgress(T) Methods" Url="html/Methods_T_Rackspace_Threading_IProgress_1.htm">
           <HelpTOCNode Title="Report Method " Url="html/M_Rackspace_Threading_IProgress_1_Report.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="19ae5aec-e780-453b-99c0-0e0eacf76470" Title="StreamExtensions Class" Url="html/T_Rackspace_Threading_StreamExtensions.htm">
-        <HelpTOCNode Id="228fd48e-055d-4999-93c4-ca187351c692" Title="StreamExtensions Methods" Url="html/Methods_T_Rackspace_Threading_StreamExtensions.htm">
-          <HelpTOCNode Id="9e308661-7174-4ec0-bbff-afe43981895c" Title="CopyToAsync Method " Url="html/Overload_Rackspace_Threading_StreamExtensions_CopyToAsync.htm">
+      <HelpTOCNode Id="a75fcd54-bb21-4f16-b62b-17c808a08bea" Title="Progress(T) Class" Url="html/T_Rackspace_Threading_Progress_1.htm">
+        <HelpTOCNode Id="eecddd0a-a851-4e90-af96-ac976113fa7d" Title="Progress(T) Constructor " Url="html/Overload_Rackspace_Threading_Progress_1__ctor.htm">
+          <HelpTOCNode Title="Progress(T) Constructor " Url="html/M_Rackspace_Threading_Progress_1__ctor.htm" />
+          <HelpTOCNode Title="Progress(T) Constructor (Action(T))" Url="html/M_Rackspace_Threading_Progress_1__ctor_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="ea00fa8d-7006-4b59-81c6-d33af66d689c" Title="Progress(T) Methods" Url="html/Methods_T_Rackspace_Threading_Progress_1.htm">
+          <HelpTOCNode Title="IProgress(T).Report Method " Url="html/M_Rackspace_Threading_Progress_1_System_IProgress{T}_Report.htm" />
+          <HelpTOCNode Title="IProgress(T).Report Method " Url="html/M_Rackspace_Threading_Progress_1_Rackspace_Threading_IProgress{T}_Report.htm" />
+          <HelpTOCNode Title="OnReport Method " Url="html/M_Rackspace_Threading_Progress_1_OnReport.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="1251b445-ae92-4c2a-adca-4eef4a11ef5e" Title="Progress(T) Events" Url="html/Events_T_Rackspace_Threading_Progress_1.htm">
+          <HelpTOCNode Title="ProgressChanged Event" Url="html/E_Rackspace_Threading_Progress_1_ProgressChanged.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="247e8ec3-a077-4efa-a3e8-275a9f42c674" Title="ProgressChangedEventArgs(T) Class" Url="html/T_Rackspace_Threading_ProgressChangedEventArgs_1.htm">
+        <HelpTOCNode Title="ProgressChangedEventArgs(T) Constructor " Url="html/M_Rackspace_Threading_ProgressChangedEventArgs_1__ctor.htm" />
+        <HelpTOCNode Title="ProgressChangedEventArgs(T) Methods" Url="html/Methods_T_Rackspace_Threading_ProgressChangedEventArgs_1.htm" />
+        <HelpTOCNode Id="560dd92b-fff3-4c4b-ac4c-d8548e5d670d" Title="ProgressChangedEventArgs(T) Properties" Url="html/Properties_T_Rackspace_Threading_ProgressChangedEventArgs_1.htm">
+          <HelpTOCNode Title="Progress Property " Url="html/P_Rackspace_Threading_ProgressChangedEventArgs_1_Progress.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="830952be-0c4b-43ba-8328-897d64ef9ff1" Title="StreamExtensions Class" Url="html/T_Rackspace_Threading_StreamExtensions.htm">
+        <HelpTOCNode Id="bb3c7f56-c648-47e4-83cd-2c0ea099dbfa" Title="StreamExtensions Methods" Url="html/Methods_T_Rackspace_Threading_StreamExtensions.htm">
+          <HelpTOCNode Id="c253a985-98de-4271-9cb9-be19b4a95793" Title="CopyToAsync Method " Url="html/Overload_Rackspace_Threading_StreamExtensions_CopyToAsync.htm">
             <HelpTOCNode Title="CopyToAsync Method (Stream, Stream)" Url="html/M_Rackspace_Threading_StreamExtensions_CopyToAsync.htm" />
             <HelpTOCNode Title="CopyToAsync Method (Stream, Stream, Int32)" Url="html/M_Rackspace_Threading_StreamExtensions_CopyToAsync_1.htm" />
             <HelpTOCNode Title="CopyToAsync Method (Stream, Stream, Int32, CancellationToken)" Url="html/M_Rackspace_Threading_StreamExtensions_CopyToAsync_2.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="83393530-9e73-42eb-acc8-9af45e3d3715" Title="FlushAsync Method " Url="html/Overload_Rackspace_Threading_StreamExtensions_FlushAsync.htm">
+          <HelpTOCNode Id="c6a887d6-48ca-499e-9eb2-2ed3d4d7e6ff" Title="FlushAsync Method " Url="html/Overload_Rackspace_Threading_StreamExtensions_FlushAsync.htm">
             <HelpTOCNode Title="FlushAsync Method (Stream)" Url="html/M_Rackspace_Threading_StreamExtensions_FlushAsync.htm" />
             <HelpTOCNode Title="FlushAsync Method (Stream, CancellationToken)" Url="html/M_Rackspace_Threading_StreamExtensions_FlushAsync_1.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="1f5f76b4-eda6-458b-8d82-43acfbe6bb0b" Title="ReadAsync Method " Url="html/Overload_Rackspace_Threading_StreamExtensions_ReadAsync.htm">
+          <HelpTOCNode Id="95ffbcc1-7627-477c-9233-f6f89151be80" Title="ReadAsync Method " Url="html/Overload_Rackspace_Threading_StreamExtensions_ReadAsync.htm">
             <HelpTOCNode Title="ReadAsync Method (Stream, Byte[], Int32, Int32)" Url="html/M_Rackspace_Threading_StreamExtensions_ReadAsync.htm" />
             <HelpTOCNode Title="ReadAsync Method (Stream, Byte[], Int32, Int32, CancellationToken)" Url="html/M_Rackspace_Threading_StreamExtensions_ReadAsync_1.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="1665f925-b4e5-45ff-9a8c-e2486e2725ac" Title="WriteAsync Method " Url="html/Overload_Rackspace_Threading_StreamExtensions_WriteAsync.htm">
+          <HelpTOCNode Id="5944dbea-870b-4486-8b97-f2831284d8e7" Title="WriteAsync Method " Url="html/Overload_Rackspace_Threading_StreamExtensions_WriteAsync.htm">
             <HelpTOCNode Title="WriteAsync Method (Stream, Byte[], Int32, Int32)" Url="html/M_Rackspace_Threading_StreamExtensions_WriteAsync.htm" />
             <HelpTOCNode Title="WriteAsync Method (Stream, Byte[], Int32, Int32, CancellationToken)" Url="html/M_Rackspace_Threading_StreamExtensions_WriteAsync_1.htm" />
           </HelpTOCNode>
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="9c49d6d8-0715-45dc-96f7-856e5f61fc09" Title="WebRequestExtensions Class" Url="html/T_Rackspace_Threading_WebRequestExtensions.htm">
-        <HelpTOCNode Id="d889f8fa-da98-4b4b-81d1-2e3ab7607de7" Title="WebRequestExtensions Methods" Url="html/Methods_T_Rackspace_Threading_WebRequestExtensions.htm">
+      <HelpTOCNode Id="eb1f0a53-13b8-4e5c-bb27-b89277e0a943" Title="TaskBlocks Class" Url="html/T_Rackspace_Threading_TaskBlocks.htm">
+        <HelpTOCNode Id="eb2252be-b3b7-47ac-a30b-20e879ec79cb" Title="TaskBlocks Methods" Url="html/Methods_T_Rackspace_Threading_TaskBlocks.htm">
+          <HelpTOCNode Id="ee60dff1-ee35-4c3d-8bd1-c001801163b4" Title="Using Method " Url="html/Overload_Rackspace_Threading_TaskBlocks_Using.htm">
+            <HelpTOCNode Title="Using(TResource, TResult) Method (Func(Task(TResource)), Func(Task(TResource), Task(TResult)))" Url="html/M_Rackspace_Threading_TaskBlocks_Using__2.htm" />
+            <HelpTOCNode Title="Using(TResource) Method (Func(Task(TResource)), Func(Task(TResource), Task))" Url="html/M_Rackspace_Threading_TaskBlocks_Using__1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Id="4cdf6ce6-10dc-4d31-bb43-0603d4632ce0" Title="While Method " Url="html/Overload_Rackspace_Threading_TaskBlocks_While.htm">
+            <HelpTOCNode Title="While Method (Func(Boolean), Func(Task))" Url="html/M_Rackspace_Threading_TaskBlocks_While.htm" />
+            <HelpTOCNode Title="While Method (Func(Task(Boolean)), Func(Task))" Url="html/M_Rackspace_Threading_TaskBlocks_While_1.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="8dff3af0-2e37-4090-9789-4064b3dc8054" Title="WebRequestExtensions Class" Url="html/T_Rackspace_Threading_WebRequestExtensions.htm">
+        <HelpTOCNode Id="c4301e05-559d-4b9d-8d1f-7c714417a548" Title="WebRequestExtensions Methods" Url="html/Methods_T_Rackspace_Threading_WebRequestExtensions.htm">
           <HelpTOCNode Title="GetRequestStreamAsync Method " Url="html/M_Rackspace_Threading_WebRequestExtensions_GetRequestStreamAsync.htm" />
-          <HelpTOCNode Id="580613bf-7c4c-40dc-af0b-fce14621f95f" Title="GetResponseAsync Method " Url="html/Overload_Rackspace_Threading_WebRequestExtensions_GetResponseAsync.htm">
+          <HelpTOCNode Id="4c8d9ba2-5822-4059-a7bf-fb1d3a4a0ebc" Title="GetResponseAsync Method " Url="html/Overload_Rackspace_Threading_WebRequestExtensions_GetResponseAsync.htm">
             <HelpTOCNode Title="GetResponseAsync Method (WebRequest)" Url="html/M_Rackspace_Threading_WebRequestExtensions_GetResponseAsync_2.htm" />
             <HelpTOCNode Title="GetResponseAsync Method (WebRequest, CancellationToken)" Url="html/M_Rackspace_Threading_WebRequestExtensions_GetResponseAsync_1.htm" />
             <HelpTOCNode Title="GetResponseAsync Method (WebRequest, Boolean, CancellationToken)" Url="html/M_Rackspace_Threading_WebRequestExtensions_GetResponseAsync.htm" />
