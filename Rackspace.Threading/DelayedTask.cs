@@ -1,6 +1,8 @@
 ﻿namespace Rackspace.Threading
 {
     using System;
+    using System.Collections.Generic;
+    using System.Linq;
     using System.Threading;
     using System.Threading.Tasks;
 
@@ -176,6 +178,228 @@
 #endif
 
             return result.Task;
+#endif
+        }
+
+        /// <summary>
+        /// Creates a task that will complete when all of the supplied tasks have completed.
+        /// </summary>
+        /// <remarks>
+        /// If any of the supplied tasks completes in a faulted state, the returned task will also
+        /// complete in a <see cref="TaskStatus.Faulted"/> state, where its exceptions will contain
+        /// the aggregation of the set of unwrapped exceptions from each of the supplied tasks.
+        ///
+        /// <para>If none of the supplied tasks faulted but at least one of them was canceled, the
+        /// returned task will end in the <see cref="TaskStatus.Canceled"/> state.</para>
+        ///
+        /// <para>If none of the tasks faulted and none of the tasks were canceled, the resulting
+        /// task will end in the <see cref="TaskStatus.RanToCompletion"/> state.</para>
+        ///
+        /// <para>If the supplied array/enumerable contains no tasks, the returned task will
+        /// immediately transition to a <see cref="TaskStatus.RanToCompletion"/> state before it's
+        /// returned to the caller.</para>
+        /// </remarks>
+        /// <param name="tasks">The tasks to wait on for completion.</param>
+        /// <returns>A task that represents the completion of all of the supplied tasks.</returns>
+        /// <exception cref="ArgumentNullException">If <paramref name="tasks"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentException">If <paramref name="tasks"/> contains any <see langword="null"/> values.</exception>
+        public static Task WhenAll(params Task[] tasks)
+        {
+            return WhenAll(tasks.AsEnumerable());
+        }
+
+        /// <summary>
+        /// Creates a task that will complete when all of the supplied tasks have completed.
+        /// </summary>
+        /// <remarks>
+        /// If any of the supplied tasks completes in a faulted state, the returned task will also
+        /// complete in a <see cref="TaskStatus.Faulted"/> state, where its exceptions will contain
+        /// the aggregation of the set of unwrapped exceptions from each of the supplied tasks.
+        ///
+        /// <para>If none of the supplied tasks faulted but at least one of them was canceled, the
+        /// returned task will end in the <see cref="TaskStatus.Canceled"/> state.</para>
+        ///
+        /// <para>If none of the tasks faulted and none of the tasks were canceled, the resulting
+        /// task will end in the <see cref="TaskStatus.RanToCompletion"/> state.</para>
+        ///
+        /// <para>If the supplied array/enumerable contains no tasks, the returned task will
+        /// immediately transition to a <see cref="TaskStatus.RanToCompletion"/> state before it's
+        /// returned to the caller.</para>
+        /// </remarks>
+        /// <param name="tasks">The tasks to wait on for completion.</param>
+        /// <returns>A task that represents the completion of all of the supplied tasks.</returns>
+        /// <exception cref="ArgumentNullException">If <paramref name="tasks"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentException">If <paramref name="tasks"/> contains any <see langword="null"/> values.</exception>
+        public static Task WhenAll(IEnumerable<Task> tasks)
+        {
+#if NET45PLUS
+            return Task.WhenAll(tasks);
+#else
+            if (tasks == null)
+                throw new ArgumentNullException("tasks");
+
+            Task[] tasksArray = tasks.ToArray();
+            if (tasksArray.Length == 0)
+                return CompletedTask.Default;
+
+            if (tasksArray.Contains(null))
+                throw new ArgumentException("tasks cannot contain any null values", "tasks");
+
+            TaskCompletionSource<VoidResult> taskCompletionSource = new TaskCompletionSource<VoidResult>();
+            Action<Task[]> continuationAction =
+                completedTasks =>
+                {
+                    List<Exception> exceptions = new List<Exception>();
+                    bool canceled = false;
+
+                    foreach (var completedTask in completedTasks)
+                    {
+                        switch (completedTask.Status)
+                        {
+                        case TaskStatus.RanToCompletion:
+                            break;
+
+                        case TaskStatus.Canceled:
+                            canceled = true;
+                            break;
+
+                        case TaskStatus.Faulted:
+                            exceptions.AddRange(completedTask.Exception.InnerExceptions);
+                            break;
+
+                        default:
+                            throw new InvalidOperationException("Unreachable");
+                        }
+                    }
+
+                    if (exceptions.Count > 0)
+                        taskCompletionSource.SetException(exceptions);
+                    else if (canceled)
+                        taskCompletionSource.SetCanceled();
+                    else
+                        taskCompletionSource.SetResult(default(VoidResult));
+                };
+            Task.Factory.ContinueWhenAll(tasksArray, continuationAction);
+            return taskCompletionSource.Task;
+#endif
+        }
+
+        /// <summary>
+        /// Creates a task that will complete when all of the supplied tasks have completed.
+        /// </summary>
+        /// <remarks>
+        /// If any of the supplied tasks completes in a faulted state, the returned task will also
+        /// complete in a <see cref="TaskStatus.Faulted"/> state, where its exceptions will contain
+        /// the aggregation of the set of unwrapped exceptions from each of the supplied tasks.
+        ///
+        /// <para>If none of the supplied tasks faulted but at least one of them was canceled, the
+        /// returned task will end in the <see cref="TaskStatus.Canceled"/> state.</para>
+        ///
+        /// <para>If none of the tasks faulted and none of the tasks were canceled, the resulting
+        /// task will end in the <see cref="TaskStatus.RanToCompletion"/> state. The
+        /// <see cref="Task{TResult}.Result"/> of the returned task will be set to an array
+        /// containing all of the results of the supplied tasks in the same order as they were
+        /// provided (e.g. if the input tasks array contained t1, t2, t3, the output task's
+        /// <see cref="Task{TResult}.Result"/> will return an <typeparamref name="TResult"/>[]
+        /// where <c>arr[0] == t1.Result, arr[1] == t2.Result, and arr[2] == t3.Result</c>).</para>
+        ///
+        /// <para>If the supplied array/enumerable contains no tasks, the returned task will
+        /// immediately transition to a <see cref="TaskStatus.RanToCompletion"/> state before it's
+        /// returned to the caller. The returned <typeparamref name="TResult"/>[] will be an array
+        /// of 0 elements.</para>
+        /// </remarks>
+        /// <typeparam name="TResult">The type of the completed task.</typeparam>
+        /// <param name="tasks">The tasks to wait on for completion.</param>
+        /// <returns>A task that represents the completion of all of the supplied tasks.</returns>
+        /// <exception cref="ArgumentNullException">If <paramref name="tasks"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentException">If <paramref name="tasks"/> contains any <see langword="null"/> values.</exception>
+        public static Task<TResult[]> WhenAll<TResult>(params Task<TResult>[] tasks)
+        {
+            return WhenAll(tasks.AsEnumerable());
+        }
+
+        /// <summary>
+        /// Creates a task that will complete when all of the supplied tasks have completed.
+        /// </summary>
+        /// <remarks>
+        /// If any of the supplied tasks completes in a faulted state, the returned task will also
+        /// complete in a <see cref="TaskStatus.Faulted"/> state, where its exceptions will contain
+        /// the aggregation of the set of unwrapped exceptions from each of the supplied tasks.
+        ///
+        /// <para>If none of the supplied tasks faulted but at least one of them was canceled, the
+        /// returned task will end in the <see cref="TaskStatus.Canceled"/> state.</para>
+        ///
+        /// <para>If none of the tasks faulted and none of the tasks were canceled, the resulting
+        /// task will end in the <see cref="TaskStatus.RanToCompletion"/> state. The
+        /// <see cref="Task{TResult}.Result"/> of the returned task will be set to an array
+        /// containing all of the results of the supplied tasks in the same order as they were
+        /// provided (e.g. if the input tasks array contained t1, t2, t3, the output task's
+        /// <see cref="Task{TResult}.Result"/> will return an <typeparamref name="TResult"/>[]
+        /// where <c>arr[0] == t1.Result, arr[1] == t2.Result, and arr[2] == t3.Result</c>).</para>
+        ///
+        /// <para>If the supplied array/enumerable contains no tasks, the returned task will
+        /// immediately transition to a <see cref="TaskStatus.RanToCompletion"/> state before it's
+        /// returned to the caller. The returned <typeparamref name="TResult"/>[] will be an array
+        /// of 0 elements.</para>
+        /// </remarks>
+        /// <typeparam name="TResult">The type of the completed task.</typeparam>
+        /// <param name="tasks">The tasks to wait on for completion.</param>
+        /// <returns>A task that represents the completion of all of the supplied tasks.</returns>
+        /// <exception cref="ArgumentNullException">If <paramref name="tasks"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentException">If <paramref name="tasks"/> contains any <see langword="null"/> values.</exception>
+        public static Task<TResult[]> WhenAll<TResult>(IEnumerable<Task<TResult>> tasks)
+        {
+#if NET45PLUS
+            return Task.WhenAll(tasks);
+#else
+            if (tasks == null)
+                throw new ArgumentNullException("tasks");
+
+            Task<TResult>[] tasksArray = tasks.ToArray();
+            if (tasksArray.Length == 0)
+                return CompletedTask.FromResult(new TResult[0]);
+
+            if (tasksArray.Contains(null))
+                throw new ArgumentException("tasks cannot contain any null values", "tasks");
+
+            TaskCompletionSource<TResult[]> taskCompletionSource = new TaskCompletionSource<TResult[]>();
+            Action<Task<TResult>[]> continuationAction =
+                completedTasks =>
+                {
+                    List<TResult> results = new List<TResult>();
+                    List<Exception> exceptions = new List<Exception>();
+                    bool canceled = false;
+
+                    foreach (var completedTask in completedTasks)
+                    {
+                        switch (completedTask.Status)
+                        {
+                        case TaskStatus.RanToCompletion:
+                            results.Add(completedTask.Result);
+                            break;
+
+                        case TaskStatus.Canceled:
+                            canceled = true;
+                            break;
+
+                        case TaskStatus.Faulted:
+                            exceptions.AddRange(completedTask.Exception.InnerExceptions);
+                            break;
+
+                        default:
+                            throw new InvalidOperationException("Unreachable");
+                        }
+                    }
+
+                    if (exceptions.Count > 0)
+                        taskCompletionSource.SetException(exceptions);
+                    else if (canceled)
+                        taskCompletionSource.SetCanceled();
+                    else
+                        taskCompletionSource.SetResult(results.ToArray());
+                };
+            Task.Factory.ContinueWhenAll(tasksArray, continuationAction);
+            return taskCompletionSource.Task;
 #endif
         }
     }
