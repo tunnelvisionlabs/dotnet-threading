@@ -256,7 +256,7 @@ namespace Rackspace.Threading
 
                     if (!condition())
                     {
-                        taskCompletionSource.SetResult(null);
+                        taskCompletionSource.SetResult(default(VoidResult));
                         return;
                     }
 
@@ -340,7 +340,7 @@ namespace Rackspace.Threading
                 {
                     if (!previousTask.Result)
                     {
-                        taskCompletionSource.TrySetResult(null);
+                        taskCompletionSource.TrySetResult(default(VoidResult));
                         return;
                     }
 
