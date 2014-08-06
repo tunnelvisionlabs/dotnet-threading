@@ -92,7 +92,7 @@ namespace Rackspace.Threading
 
             TaskContinuationOptions failedContinuationOptions = supportsErrors ? TaskContinuationOptions.OnlyOnCanceled : TaskContinuationOptions.NotOnRanToCompletion;
             task
-                .ContinueWith(t => completionSource.SetFromTask(t), TaskContinuationOptions.ExecuteSynchronously | failedContinuationOptions);
+                .ContinueWith(t => completionSource.SetFromFailedTask(t), TaskContinuationOptions.ExecuteSynchronously | failedContinuationOptions);
 
             return completionSource.Task;
         }
@@ -177,7 +177,7 @@ namespace Rackspace.Threading
 
             TaskContinuationOptions failedContinuationOptions = supportsErrors ? TaskContinuationOptions.OnlyOnCanceled : TaskContinuationOptions.NotOnRanToCompletion;
             task
-                .ContinueWith(t => completionSource.SetFromTask(t), TaskContinuationOptions.ExecuteSynchronously | failedContinuationOptions);
+                .ContinueWith(t => completionSource.SetFromFailedTask(t), TaskContinuationOptions.ExecuteSynchronously | failedContinuationOptions);
 
             return completionSource.Task;
         }
@@ -253,12 +253,12 @@ namespace Rackspace.Threading
                     t =>
                     {
                         if (task.Status == TaskStatus.RanToCompletion || supportsErrors && task.Status == TaskStatus.Faulted)
-                            completionSource.SetFromTask(t);
+                            completionSource.SetFromTask(t, default(VoidResult));
                     }, TaskContinuationOptions.ExecuteSynchronously);
 
             TaskContinuationOptions failedContinuationOptions = supportsErrors ? TaskContinuationOptions.OnlyOnCanceled : TaskContinuationOptions.NotOnRanToCompletion;
             task
-                .ContinueWith(t => completionSource.SetFromTask(t), TaskContinuationOptions.ExecuteSynchronously | failedContinuationOptions);
+                .ContinueWith(t => completionSource.SetFromFailedTask(t), TaskContinuationOptions.ExecuteSynchronously | failedContinuationOptions);
 
             return completionSource.Task;
         }
@@ -334,12 +334,12 @@ namespace Rackspace.Threading
                     t =>
                     {
                         if (task.Status == TaskStatus.RanToCompletion || supportsErrors && task.Status == TaskStatus.Faulted)
-                            completionSource.SetFromTask(t);
+                            completionSource.SetFromTask(t, default(VoidResult));
                     }, TaskContinuationOptions.ExecuteSynchronously);
 
             TaskContinuationOptions failedContinuationOptions = supportsErrors ? TaskContinuationOptions.OnlyOnCanceled : TaskContinuationOptions.NotOnRanToCompletion;
             task
-                .ContinueWith(t => completionSource.SetFromTask(t), TaskContinuationOptions.ExecuteSynchronously | failedContinuationOptions);
+                .ContinueWith(t => completionSource.SetFromFailedTask(t), TaskContinuationOptions.ExecuteSynchronously | failedContinuationOptions);
 
             return completionSource.Task;
         }
@@ -386,9 +386,9 @@ namespace Rackspace.Threading
                     t =>
                     {
                         if (t.Status == TaskStatus.RanToCompletion)
-                            completionSource.SetFromTask(task);
+                            completionSource.SetFromTask(task, default(VoidResult));
                         else
-                            completionSource.SetFromTask(t);
+                            completionSource.SetFromFailedTask(t);
                     }, TaskContinuationOptions.ExecuteSynchronously);
 
             return completionSource.Task;
@@ -441,7 +441,7 @@ namespace Rackspace.Threading
                         if (t.Status == TaskStatus.RanToCompletion)
                             completionSource.SetFromTask(task);
                         else
-                            completionSource.SetFromTask(t);
+                            completionSource.SetFromFailedTask(t);
                     }, TaskContinuationOptions.ExecuteSynchronously);
 
             return completionSource.Task;
@@ -490,9 +490,9 @@ namespace Rackspace.Threading
                     t =>
                     {
                         if (t.Status == TaskStatus.RanToCompletion)
-                            completionSource.SetFromTask(task);
+                            completionSource.SetFromTask(task, default(VoidResult));
                         else
-                            completionSource.SetFromTask(t);
+                            completionSource.SetFromFailedTask(t);
                     }, TaskContinuationOptions.ExecuteSynchronously);
 
             return completionSource.Task;
@@ -546,7 +546,7 @@ namespace Rackspace.Threading
                         if (t.Status == TaskStatus.RanToCompletion)
                             completionSource.SetFromTask(task);
                         else
-                            completionSource.SetFromTask(t);
+                            completionSource.SetFromFailedTask(t);
                     }, TaskContinuationOptions.ExecuteSynchronously);
 
             return completionSource.Task;
@@ -640,7 +640,7 @@ namespace Rackspace.Threading
 
             TaskContinuationOptions failedContinuationOptions = supportsErrors ? TaskContinuationOptions.OnlyOnCanceled : TaskContinuationOptions.NotOnRanToCompletion;
             task
-                .ContinueWith(t => completionSource.SetFromTask(t), TaskContinuationOptions.ExecuteSynchronously | failedContinuationOptions);
+                .ContinueWith(t => completionSource.SetFromFailedTask(t), TaskContinuationOptions.ExecuteSynchronously | failedContinuationOptions);
 
             return completionSource.Task;
         }
@@ -735,7 +735,7 @@ namespace Rackspace.Threading
 
             TaskContinuationOptions failedContinuationOptions = supportsErrors ? TaskContinuationOptions.OnlyOnCanceled : TaskContinuationOptions.NotOnRanToCompletion;
             task
-                .ContinueWith(t => completionSource.SetFromTask(t), TaskContinuationOptions.ExecuteSynchronously | failedContinuationOptions);
+                .ContinueWith(t => completionSource.SetFromFailedTask(t), TaskContinuationOptions.ExecuteSynchronously | failedContinuationOptions);
 
             return completionSource.Task;
         }
@@ -817,12 +817,12 @@ namespace Rackspace.Threading
                     t =>
                     {
                         if (task.Status == TaskStatus.RanToCompletion || supportsErrors && task.Status == TaskStatus.Faulted)
-                            completionSource.SetFromTask(t);
+                            completionSource.SetFromTask(t, default(VoidResult));
                     }, TaskContinuationOptions.ExecuteSynchronously);
 
             TaskContinuationOptions failedContinuationOptions = supportsErrors ? TaskContinuationOptions.OnlyOnCanceled : TaskContinuationOptions.NotOnRanToCompletion;
             task
-                .ContinueWith(t => completionSource.SetFromTask(t), TaskContinuationOptions.ExecuteSynchronously | failedContinuationOptions);
+                .ContinueWith(t => completionSource.SetFromFailedTask(t), TaskContinuationOptions.ExecuteSynchronously | failedContinuationOptions);
 
             return completionSource.Task;
         }
@@ -906,12 +906,12 @@ namespace Rackspace.Threading
                     t =>
                     {
                         if (task.Status == TaskStatus.RanToCompletion || supportsErrors && task.Status == TaskStatus.Faulted)
-                            completionSource.SetFromTask(t);
+                            completionSource.SetFromTask(t, default(VoidResult));
                     }, TaskContinuationOptions.ExecuteSynchronously);
 
             TaskContinuationOptions failedContinuationOptions = supportsErrors ? TaskContinuationOptions.OnlyOnCanceled : TaskContinuationOptions.NotOnRanToCompletion;
             task
-                .ContinueWith(t => completionSource.SetFromTask(t), TaskContinuationOptions.ExecuteSynchronously | failedContinuationOptions);
+                .ContinueWith(t => completionSource.SetFromFailedTask(t), TaskContinuationOptions.ExecuteSynchronously | failedContinuationOptions);
 
             return completionSource.Task;
         }

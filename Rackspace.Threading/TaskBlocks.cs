@@ -241,7 +241,7 @@ namespace Rackspace.Threading
                 previousTask =>
                 {
                     if (previousTask.Status != TaskStatus.RanToCompletion)
-                        taskCompletionSource.SetFromTask(previousTask);
+                        taskCompletionSource.SetFromFailedTask(previousTask);
                 };
 
             Action<Task> continuation = null;
@@ -250,7 +250,7 @@ namespace Rackspace.Threading
                 {
                     if (previousTask.Status != TaskStatus.RanToCompletion)
                     {
-                        taskCompletionSource.SetFromTask(previousTask);
+                        taskCompletionSource.SetFromFailedTask(previousTask);
                         return;
                     }
 
@@ -321,7 +321,7 @@ namespace Rackspace.Threading
                 previousTask =>
                 {
                     if (previousTask.Status != TaskStatus.RanToCompletion)
-                        taskCompletionSource.SetFromTask(previousTask);
+                        taskCompletionSource.SetFromFailedTask(previousTask);
                 };
 
             Func<Task, Task<bool>> conditionContinuation =
