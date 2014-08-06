@@ -16,6 +16,13 @@ namespace Rackspace.Threading
         /// Synchronously execute a continuation when a task completes successfully.
         /// </summary>
         /// <remarks>
+        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        ///
+        /// <code language="cs">
+        /// await task.ConfigureAwait(false);
+        /// return continuationFunction(task);
+        /// </code>
+        ///
         /// <para>If the antecedent task is canceled or faulted, the status of the antecedent is
         /// directly applied to the task returned by this method; it is not wrapped in an additional
         /// <see cref="AggregateException"/>.
@@ -48,6 +55,22 @@ namespace Rackspace.Threading
         /// parameter specifies whether the continuation is executed if the antecedent task is faulted.
         /// </summary>
         /// <remarks>
+        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        ///
+        /// <code language="cs">
+        /// try
+        /// {
+        ///     await task.ConfigureAwait(false);
+        /// }
+        /// catch
+        /// {
+        ///     if (!supportsErrors)
+        ///         throw;
+        /// }
+        ///
+        /// return continuationFunction(task);
+        /// </code>
+        ///
         /// <para>If the antecedent task is canceled, or faulted with <paramref name="supportsErrors"/>
         /// set to <see langword="false"/>, the status of the antecedent is directly applied to the task
         /// returned by this method; it is not wrapped in an additional <see cref="AggregateException"/>.
@@ -101,6 +124,13 @@ namespace Rackspace.Threading
         /// Synchronously execute a continuation when a task completes successfully.
         /// </summary>
         /// <remarks>
+        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        ///
+        /// <code language="cs">
+        /// TSource source = await task.ConfigureAwait(false);
+        /// return continuationFunction(task);
+        /// </code>
+        ///
         /// <para>If the antecedent task is canceled or faulted, the status of the antecedent is
         /// directly applied to the task returned by this method; it is not wrapped in an additional
         /// <see cref="AggregateException"/>.
@@ -133,6 +163,22 @@ namespace Rackspace.Threading
         /// parameter specifies whether the continuation is executed if the antecedent task is faulted.
         /// </summary>
         /// <remarks>
+        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        ///
+        /// <code language="cs">
+        /// try
+        /// {
+        ///     TSource source = await task.ConfigureAwait(false);
+        /// }
+        /// catch
+        /// {
+        ///     if (!supportsErrors)
+        ///         throw;
+        /// }
+        ///
+        /// return continuationFunction(task);
+        /// </code>
+        ///
         /// <para>If the antecedent task is canceled, or faulted with <paramref name="supportsErrors"/>
         /// set to <see langword="false"/>, the status of the antecedent is directly applied to the task
         /// returned by this method; it is not wrapped in an additional <see cref="AggregateException"/>.
@@ -186,6 +232,13 @@ namespace Rackspace.Threading
         /// Synchronously execute a continuation when a task completes successfully.
         /// </summary>
         /// <remarks>
+        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        ///
+        /// <code language="cs">
+        /// await task.ConfigureAwait(false);
+        /// continuationAction(task);
+        /// </code>
+        ///
         /// <para>If the antecedent task is canceled or faulted, the status of the antecedent is
         /// directly applied to the task returned by this method; it is not wrapped in an additional
         /// <see cref="AggregateException"/>.
@@ -216,6 +269,22 @@ namespace Rackspace.Threading
         /// parameter specifies whether the continuation is executed if the antecedent task is faulted.
         /// </summary>
         /// <remarks>
+        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        ///
+        /// <code language="cs">
+        /// try
+        /// {
+        ///     await task.ConfigureAwait(false);
+        /// }
+        /// catch
+        /// {
+        ///     if (!supportsErrors)
+        ///         throw;
+        /// }
+        ///
+        /// continuationAction(task);
+        /// </code>
+        ///
         /// <para>If the antecedent task is canceled, or faulted with <paramref name="supportsErrors"/>
         /// set to <see langword="false"/>, the status of the antecedent is directly applied to the task
         /// returned by this method; it is not wrapped in an additional <see cref="AggregateException"/>.
@@ -267,6 +336,13 @@ namespace Rackspace.Threading
         /// Synchronously execute a continuation when a task completes successfully.
         /// </summary>
         /// <remarks>
+        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        ///
+        /// <code language="cs">
+        /// TSource source = await task.ConfigureAwait(false);
+        /// continuationAction(task);
+        /// </code>
+        ///
         /// <para>If the antecedent task is canceled or faulted, the status of the antecedent is
         /// directly applied to the task returned by this method; it is not wrapped in an additional
         /// <see cref="AggregateException"/>.
@@ -297,6 +373,22 @@ namespace Rackspace.Threading
         /// parameter specifies whether the continuation is executed if the antecedent task is faulted.
         /// </summary>
         /// <remarks>
+        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        ///
+        /// <code language="cs">
+        /// try
+        /// {
+        ///     TSource source = await task.ConfigureAwait(false);
+        /// }
+        /// catch
+        /// {
+        ///     if (!supportsErrors)
+        ///         throw;
+        /// }
+        ///
+        /// continuationAction(task);
+        /// </code>
+        ///
         /// <para>If the antecedent task is canceled, or faulted with <paramref name="supportsErrors"/>
         /// set to <see langword="false"/>, the status of the antecedent is directly applied to the task
         /// returned by this method; it is not wrapped in an additional <see cref="AggregateException"/>.
@@ -352,6 +444,19 @@ namespace Rackspace.Threading
         /// directly applied to the task returned by this method.
         /// </summary>
         /// <remarks>
+        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        ///
+        /// <code language="cs">
+        /// try
+        /// {
+        ///     await task.ConfigureAwait(false);
+        /// }
+        /// finally
+        /// {
+        ///     cleanupAction(task);
+        /// }
+        /// </code>
+        ///
         /// <para>This method ensures that exception information provided by a faulted or canceled
         /// task is not wrapped in an additional <see cref="AggregateException"/>.
         /// </para>
@@ -402,6 +507,19 @@ namespace Rackspace.Threading
         /// directly applied to the task returned by this method.
         /// </summary>
         /// <remarks>
+        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        ///
+        /// <code language="cs">
+        /// try
+        /// {
+        ///     return await task.ConfigureAwait(false);
+        /// }
+        /// finally
+        /// {
+        ///     cleanupAction(task);
+        /// }
+        /// </code>
+        ///
         /// <para>This method ensures that exception information provided by a faulted or canceled
         /// task is not wrapped in an additional <see cref="AggregateException"/>.
         /// </para>
@@ -455,6 +573,19 @@ namespace Rackspace.Threading
         /// directly applied to the task returned by this method.
         /// </summary>
         /// <remarks>
+        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        ///
+        /// <code language="cs">
+        /// try
+        /// {
+        ///     await task.ConfigureAwait(false);
+        /// }
+        /// finally
+        /// {
+        ///     await cleanupFunction(task).ConfigureAwait(false);
+        /// }
+        /// </code>
+        ///
         /// <para>This method ensures that exception information provided by a faulted or canceled
         /// task is not wrapped in an additional <see cref="AggregateException"/>.
         /// </para>
@@ -506,6 +637,19 @@ namespace Rackspace.Threading
         /// directly applied to the task returned by this method.
         /// </summary>
         /// <remarks>
+        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        ///
+        /// <code language="cs">
+        /// try
+        /// {
+        ///     return await task.ConfigureAwait(false);
+        /// }
+        /// finally
+        /// {
+        ///     await cleanupFunction(task).ConfigureAwait(false);
+        /// }
+        /// </code>
+        ///
         /// <para>This method ensures that exception information provided by a faulted or canceled
         /// task is not wrapped in an additional <see cref="AggregateException"/>.
         /// </para>
@@ -558,6 +702,13 @@ namespace Rackspace.Threading
         /// form the result of this method.
         /// </summary>
         /// <remarks>
+        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        ///
+        /// <code language="cs">
+        /// await task.ConfigureAwait(false);
+        /// return await continuationFunction(task).ConfigureAwait(false);
+        /// </code>
+        ///
         /// <para>If the antecedent <paramref name="task"/> is canceled or faulted, the status
         /// of the antecedent is directly applied to the task returned by this method; it is
         /// not wrapped in an additional <see cref="AggregateException"/>.
@@ -593,6 +744,22 @@ namespace Rackspace.Threading
         /// executed if the antecedent task is faulted.
         /// </summary>
         /// <remarks>
+        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        ///
+        /// <code language="cs">
+        /// try
+        /// {
+        ///     await task.ConfigureAwait(false);
+        /// }
+        /// catch
+        /// {
+        ///     if (!supportsErrors)
+        ///         throw;
+        /// }
+        ///
+        /// return await continuationFunction(task).ConfigureAwait(false);
+        /// </code>
+        ///
         /// <para>If the antecedent <paramref name="task"/> is canceled, or faulted with <paramref name="supportsErrors"/>
         /// set to <see langword="false"/>, the status
         /// of the antecedent is directly applied to the task returned by this method; it is
@@ -651,6 +818,13 @@ namespace Rackspace.Threading
         /// form the result of this method.
         /// </summary>
         /// <remarks>
+        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        ///
+        /// <code language="cs">
+        /// TSource source = await task.ConfigureAwait(false);
+        /// return await continuationFunction(task).ConfigureAwait(false);
+        /// </code>
+        ///
         /// <para>If the antecedent <paramref name="task"/> is canceled or faulted, the status
         /// of the antecedent is directly applied to the task returned by this method; it is
         /// not wrapped in an additional <see cref="AggregateException"/>.
@@ -687,6 +861,22 @@ namespace Rackspace.Threading
         /// parameter specifies whether the continuation is executed if the antecedent task is faulted.
         /// </summary>
         /// <remarks>
+        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        ///
+        /// <code language="cs">
+        /// try
+        /// {
+        ///     TSource source = await task.ConfigureAwait(false);
+        /// }
+        /// catch
+        /// {
+        ///     if (!supportsErrors)
+        ///         throw;
+        /// }
+        ///
+        /// return await continuationFunction(task).ConfigureAwait(false);
+        /// </code>
+        ///
         /// <para>If the antecedent <paramref name="task"/> is canceled, or faulted with <paramref name="supportsErrors"/>
         /// set to <see langword="false"/>, the status
         /// of the antecedent is directly applied to the task returned by this method; it is
@@ -746,6 +936,13 @@ namespace Rackspace.Threading
         /// form the result of this method.
         /// </summary>
         /// <remarks>
+        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        ///
+        /// <code language="cs">
+        /// await task.ConfigureAwait(false);
+        /// await continuationFunction(task).ConfigureAwait(false);
+        /// </code>
+        ///
         /// <para>If the antecedent <paramref name="task"/> is canceled or faulted, the status
         /// of the antecedent is directly applied to the task returned by this method; it is
         /// not wrapped in an additional <see cref="AggregateException"/>.
@@ -778,6 +975,22 @@ namespace Rackspace.Threading
         /// executed if the antecedent task is faulted.
         /// </summary>
         /// <remarks>
+        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        ///
+        /// <code language="cs">
+        /// try
+        /// {
+        ///     await task.ConfigureAwait(false);
+        /// }
+        /// catch
+        /// {
+        ///     if (!supportsErrors)
+        ///         throw;
+        /// }
+        ///
+        /// await continuationFunction(task).ConfigureAwait(false);
+        /// </code>
+        ///
         /// <para>If the antecedent <paramref name="task"/> is canceled, or faulted with <paramref name="supportsErrors"/>
         /// set to <see langword="false"/>, the status
         /// of the antecedent is directly applied to the task returned by this method; it is
@@ -833,6 +1046,13 @@ namespace Rackspace.Threading
         /// form the result of this method.
         /// </summary>
         /// <remarks>
+        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        ///
+        /// <code language="cs">
+        /// TSource source = await task.ConfigureAwait(false);
+        /// await continuationFunction(task).ConfigureAwait(false);
+        /// </code>
+        ///
         /// <para>If the antecedent <paramref name="task"/> is canceled or faulted, the status
         /// of the antecedent is directly applied to the task returned by this method; it is
         /// not wrapped in an additional <see cref="AggregateException"/>.
@@ -866,6 +1086,22 @@ namespace Rackspace.Threading
         /// parameter specifies whether the continuation is executed if the antecedent task is faulted.
         /// </summary>
         /// <remarks>
+        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        ///
+        /// <code language="cs">
+        /// try
+        /// {
+        ///     TSource source = await task.ConfigureAwait(false);
+        /// }
+        /// catch
+        /// {
+        ///     if (!supportsErrors)
+        ///         throw;
+        /// }
+        ///
+        /// await continuationFunction(task).ConfigureAwait(false);
+        /// </code>
+        ///
         /// <para>If the antecedent <paramref name="task"/> is canceled, or faulted with <paramref name="supportsErrors"/>
         /// set to <see langword="false"/>, the status
         /// of the antecedent is directly applied to the task returned by this method; it is
