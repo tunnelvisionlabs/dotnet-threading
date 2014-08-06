@@ -402,5 +402,159 @@
             return taskCompletionSource.Task;
 #endif
         }
+
+        /// <summary>
+        /// Creates a task that will complete when any of the supplied tasks have completed.
+        /// </summary>
+        /// <remarks>
+        /// The returned task will complete when any of the supplied tasks has completed. The returned
+        /// task will always end in the <see cref="TaskStatus.RanToCompletion"/> state with its
+        /// <see cref="Task{TResult}.Result"/> set to the first task to complete. This is true even if
+        /// the first task to complete ended in the <see cref="TaskStatus.Canceled"/> or
+        /// <see cref="TaskStatus.Faulted"/> state.
+        /// </remarks>
+        /// <param name="tasks">The tasks to wait on for completion.</param>
+        /// <returns>A task that represents the completion of one of the supplied tasks. The return task's <see cref="Task{TResult}.Result"/> is the task that completed.</returns>
+        /// <exception cref="ArgumentNullException">If <paramref name="tasks"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentException">
+        /// If <paramref name="tasks"/> contains any <see langword="null"/> values.
+        /// <para>-or-</para>
+        /// <para>If <paramref name="tasks"/> was empty.</para>
+        /// </exception>
+        public static Task<Task> WhenAny(params Task[] tasks)
+        {
+            return WhenAny(tasks.AsEnumerable());
+        }
+
+        /// <summary>
+        /// Creates a task that will complete when any of the supplied tasks have completed.
+        /// </summary>
+        /// <remarks>
+        /// The returned task will complete when any of the supplied tasks has completed. The returned
+        /// task will always end in the <see cref="TaskStatus.RanToCompletion"/> state with its
+        /// <see cref="Task{TResult}.Result"/> set to the first task to complete. This is true even if
+        /// the first task to complete ended in the <see cref="TaskStatus.Canceled"/> or
+        /// <see cref="TaskStatus.Faulted"/> state.
+        /// </remarks>
+        /// <param name="tasks">The tasks to wait on for completion.</param>
+        /// <returns>A task that represents the completion of one of the supplied tasks. The return task's <see cref="Task{TResult}.Result"/> is the task that completed.</returns>
+        /// <exception cref="ArgumentNullException">If <paramref name="tasks"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentException">
+        /// If <paramref name="tasks"/> contains any <see langword="null"/> values.
+        /// <para>-or-</para>
+        /// <para>If <paramref name="tasks"/> was empty.</para>
+        /// </exception>
+        public static Task<Task> WhenAny(IEnumerable<Task> tasks)
+        {
+#if NET45PLUS
+            return Task.WhenAny(tasks);
+#else
+            if (tasks == null)
+                throw new ArgumentNullException("tasks");
+
+            Task[] tasksArray = tasks.ToArray();
+            if (tasksArray.Length == 0)
+                throw new ArgumentException("tasks cannot be empty", "tasks");
+
+            if (tasksArray.Contains(null))
+                throw new ArgumentException("tasks cannot contain any null values", "tasks");
+
+            TaskCompletionSource<Task> taskCompletionSource = new TaskCompletionSource<Task>();
+            Action<Task> continuationAction =
+                completedTask =>
+                {
+                    switch (completedTask.Status)
+                    {
+                    case TaskStatus.RanToCompletion:
+                    case TaskStatus.Canceled:
+                    case TaskStatus.Faulted:
+                        taskCompletionSource.SetResult(completedTask);
+                        break;
+
+                    default:
+                        throw new InvalidOperationException("Unreachable");
+                    }
+                };
+            Task.Factory.ContinueWhenAny(tasksArray, continuationAction);
+            return taskCompletionSource.Task;
+#endif
+        }
+
+        /// <summary>
+        /// Creates a task that will complete when any of the supplied tasks have completed.
+        /// </summary>
+        /// <remarks>
+        /// The returned task will complete when any of the supplied tasks has completed. The returned
+        /// task will always end in the <see cref="TaskStatus.RanToCompletion"/> state with its
+        /// <see cref="Task{TResult}.Result"/> set to the first task to complete. This is true even if
+        /// the first task to complete ended in the <see cref="TaskStatus.Canceled"/> or
+        /// <see cref="TaskStatus.Faulted"/> state.
+        /// </remarks>
+        /// <param name="tasks">The tasks to wait on for completion.</param>
+        /// <returns>A task that represents the completion of one of the supplied tasks. The return task's <see cref="Task{TResult}.Result"/> is the task that completed.</returns>
+        /// <exception cref="ArgumentNullException">If <paramref name="tasks"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentException">
+        /// If <paramref name="tasks"/> contains any <see langword="null"/> values.
+        /// <para>-or-</para>
+        /// <para>If <paramref name="tasks"/> was empty.</para>
+        /// </exception>
+        public static Task<Task<TResult>> WhenAny<TResult>(params Task<TResult>[] tasks)
+        {
+            return WhenAny(tasks.AsEnumerable());
+        }
+
+        /// <summary>
+        /// Creates a task that will complete when any of the supplied tasks have completed.
+        /// </summary>
+        /// <remarks>
+        /// The returned task will complete when any of the supplied tasks has completed. The returned
+        /// task will always end in the <see cref="TaskStatus.RanToCompletion"/> state with its
+        /// <see cref="Task{TResult}.Result"/> set to the first task to complete. This is true even if
+        /// the first task to complete ended in the <see cref="TaskStatus.Canceled"/> or
+        /// <see cref="TaskStatus.Faulted"/> state.
+        /// </remarks>
+        /// <param name="tasks">The tasks to wait on for completion.</param>
+        /// <returns>A task that represents the completion of one of the supplied tasks. The return task's <see cref="Task{TResult}.Result"/> is the task that completed.</returns>
+        /// <exception cref="ArgumentNullException">If <paramref name="tasks"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentException">
+        /// If <paramref name="tasks"/> contains any <see langword="null"/> values.
+        /// <para>-or-</para>
+        /// <para>If <paramref name="tasks"/> was empty.</para>
+        /// </exception>
+        public static Task<Task<TResult>> WhenAny<TResult>(IEnumerable<Task<TResult>> tasks)
+        {
+#if NET45PLUS
+            return Task.WhenAny(tasks);
+#else
+            if (tasks == null)
+                throw new ArgumentNullException("tasks");
+
+            Task<TResult>[] tasksArray = tasks.ToArray();
+            if (tasksArray.Length == 0)
+                throw new ArgumentException("tasks cannot be empty", "tasks");
+
+            if (tasksArray.Contains(null))
+                throw new ArgumentException("tasks cannot contain any null values", "tasks");
+
+            TaskCompletionSource<Task<TResult>> taskCompletionSource = new TaskCompletionSource<Task<TResult>>();
+            Action<Task<TResult>> continuationAction =
+                completedTask =>
+                {
+                    switch (completedTask.Status)
+                    {
+                    case TaskStatus.RanToCompletion:
+                    case TaskStatus.Canceled:
+                    case TaskStatus.Faulted:
+                        taskCompletionSource.SetResult(completedTask);
+                        break;
+
+                    default:
+                        throw new InvalidOperationException("Unreachable");
+                    }
+                };
+            Task.Factory.ContinueWhenAny(tasksArray, continuationAction);
+            return taskCompletionSource.Task;
+#endif
+        }
     }
 }
