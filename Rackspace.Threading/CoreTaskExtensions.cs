@@ -5,6 +5,10 @@ namespace Rackspace.Threading
     using System;
     using System.Threading.Tasks;
 
+#if NET45PLUS
+    using System.Reflection;
+#endif
+
     /// <summary>
     /// Provides extension methods for efficiently creating <see cref="Task"/> continuations,
     /// with automatic handling of faulted and canceled antecedent tasks.
@@ -432,6 +436,390 @@ namespace Rackspace.Threading
             TaskContinuationOptions failedContinuationOptions = supportsErrors ? TaskContinuationOptions.OnlyOnCanceled : TaskContinuationOptions.NotOnRanToCompletion;
             task
                 .ContinueWith(t => completionSource.SetFromFailedTask(t), TaskContinuationOptions.ExecuteSynchronously | failedContinuationOptions);
+
+            return completionSource.Task;
+        }
+
+        /// <summary>
+        /// Synchronously execute an exception handling continuation when a task completes in the
+        /// <see cref="TaskStatus.Canceled"/> or <see cref="TaskStatus.Faulted"/> state. If the
+        /// antecedent task completes successfully, or if the <see cref="Task.Exception"/> it
+        /// provides is not a <typeparamref name="TException"/> wrapped in an
+        /// <see cref="AggregateException"/>, the status of the antecedent is directly applied to
+        /// the task returned by this method. Otherwise, the status of the cleanup operation is
+        /// directly applied to the task returned by this method.
+        /// </summary>
+        /// <remarks>
+        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        ///
+        /// <code language="cs">
+        /// try
+        /// {
+        ///     await task.ConfigureAwait(false);
+        /// }
+        /// catch (TException ex)
+        /// {
+        ///     handler(task, ex);
+        /// }
+        /// </code>
+        ///
+        /// <para>This method is capable of handling <see cref="TaskStatus.Canceled"/> antecedent
+        /// tasks when <typeparamref name="TException"/> is assignable from
+        /// <see cref="TaskCanceledException"/>.</para>
+        ///
+        /// <para>This method ensures that exception information provided by a faulted or canceled
+        /// task is not wrapped in an additional <see cref="AggregateException"/>.
+        /// </para>
+        ///
+        /// <note type="caller">
+        /// Since the continuation is executed synchronously, this method should only be used for
+        /// lightweight exception handler methods. For non-trivial exception handlers, use a
+        /// <see cref="Task"/> for the exception handling operation and call
+        /// <see cref="Catch{TException}(Task, Func{Task, TException, Task})"/>
+        /// instead.
+        /// </note>
+        /// </remarks>
+        /// <typeparam name="TException">The type of exception which is handled by <paramref name="handler"/>.</typeparam>
+        /// <param name="task">The antecedent task.</param>
+        /// <param name="handler">The exception handler continuation action to execute when <paramref name="task"/> completes with an exception of type <typeparamref name="TException"/>.</param>
+        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
+        /// <exception cref="ArgumentNullException">
+        /// If <paramref name="task"/> is <see langword="null"/>.
+        /// <para>-or-</para>
+        /// <para>If <paramref name="handler"/> is <see langword="null"/>.</para>
+        /// </exception>
+        /// <preliminary/>
+        public static Task Catch<TException>(this Task task, Action<Task, TException> handler)
+            where TException : Exception
+        {
+            if (task == null)
+                throw new ArgumentNullException("task");
+            if (handler == null)
+                throw new ArgumentNullException("handler");
+
+            TaskCompletionSource<VoidResult> completionSource = new TaskCompletionSource<VoidResult>();
+
+            bool match = false;
+            Action<Task> handlerWrapper =
+                t =>
+                {
+                    TException exception = TryGetException<TException>(t);
+                    if (exception != null)
+                    {
+                        match = true;
+                        handler(task, exception);
+                    }
+                };
+
+            task
+                .ContinueWith(handlerWrapper, TaskContinuationOptions.ExecuteSynchronously | TaskContinuationOptions.NotOnRanToCompletion)
+                .ContinueWith(
+                    t =>
+                    {
+                        if (match)
+                        {
+                            // this is the only case where the handler executes
+                            completionSource.SetFromTask(t, default(VoidResult));
+                        }
+                        else
+                        {
+                            // otherwise propagate the antecedent
+                            completionSource.SetFromTask(task, default(VoidResult));
+                        }
+                    }, TaskContinuationOptions.ExecuteSynchronously);
+
+            return completionSource.Task;
+        }
+
+        /// <summary>
+        /// Synchronously execute an exception handling continuation when a task completes in the
+        /// <see cref="TaskStatus.Canceled"/> or <see cref="TaskStatus.Faulted"/> state. If the
+        /// antecedent task completes successfully, or if the <see cref="Task.Exception"/> it
+        /// provides is not a <typeparamref name="TException"/> wrapped in an
+        /// <see cref="AggregateException"/>, the status of the antecedent is directly applied to
+        /// the task returned by this method. Otherwise, the status of the cleanup operation is
+        /// directly applied to the task returned by this method.
+        /// </summary>
+        /// <remarks>
+        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        ///
+        /// <code language="cs">
+        /// try
+        /// {
+        ///     return await task.ConfigureAwait(false);
+        /// }
+        /// catch (TException ex)
+        /// {
+        ///     return handler(task, ex);
+        /// }
+        /// </code>
+        ///
+        /// <para>This method is capable of handling <see cref="TaskStatus.Canceled"/> antecedent
+        /// tasks when <typeparamref name="TException"/> is assignable from
+        /// <see cref="TaskCanceledException"/>.</para>
+        ///
+        /// <para>This method ensures that exception information provided by a faulted or canceled
+        /// task is not wrapped in an additional <see cref="AggregateException"/>.
+        /// </para>
+        ///
+        /// <note type="caller">
+        /// Since the continuation is executed synchronously, this method should only be used for
+        /// lightweight exception handler methods. For non-trivial exception handlers, use a
+        /// <see cref="Task"/> for the exception handling operation and call
+        /// <see cref="Catch{TException, TResult}(Task{TResult}, Func{Task{TResult}, TException, Task{TResult}})"/>
+        /// instead.
+        /// </note>
+        /// </remarks>
+        /// <typeparam name="TException">The type of exception which is handled by <paramref name="handler"/>.</typeparam>
+        /// <typeparam name="TResult">The result type of the antecedent <paramref name="task"/>.</typeparam>
+        /// <param name="task">The antecedent task.</param>
+        /// <param name="handler">The exception handler continuation function to execute when <paramref name="task"/> completes with an exception of type <typeparamref name="TException"/>.</param>
+        /// <returns>A <see cref="Task"/> representing the asynchronous operation. When the task completes successfully,
+        /// the <see cref="Task{TResult}.Result"/> property will contain the result returned from the <paramref name="task"/>
+        /// if it completed successfully, or the result of <paramref name="handler"/> if it resulted in an error condition
+        /// which was handled.</returns>
+        /// <exception cref="ArgumentNullException">
+        /// If <paramref name="task"/> is <see langword="null"/>.
+        /// <para>-or-</para>
+        /// <para>If <paramref name="handler"/> is <see langword="null"/>.</para>
+        /// </exception>
+        /// <preliminary/>
+        public static Task<TResult> Catch<TException, TResult>(this Task<TResult> task, Func<Task<TResult>, TException, TResult> handler)
+            where TException : Exception
+        {
+            if (task == null)
+                throw new ArgumentNullException("task");
+            if (handler == null)
+                throw new ArgumentNullException("handler");
+
+            TaskCompletionSource<TResult> completionSource = new TaskCompletionSource<TResult>();
+
+            bool match = false;
+            Func<Task<TResult>, TResult> handlerWrapper =
+                t =>
+                {
+                    TException exception = TryGetException<TException>(t);
+                    if (exception != null)
+                    {
+                        match = true;
+                        return handler(task, exception);
+                    }
+                    else
+                    {
+                        return default(TResult);
+                    }
+                };
+
+            task
+                .ContinueWith(handlerWrapper, TaskContinuationOptions.ExecuteSynchronously | TaskContinuationOptions.NotOnRanToCompletion)
+                .ContinueWith(
+                    t =>
+                    {
+                        if (match)
+                        {
+                            // this is the only case where the handler executes
+                            completionSource.SetFromTask(t);
+                        }
+                        else
+                        {
+                            // otherwise propagate the antecedent
+                            completionSource.SetFromTask(task);
+                        }
+                    }, TaskContinuationOptions.ExecuteSynchronously);
+
+            return completionSource.Task;
+        }
+
+        /// <summary>
+        /// Execute an exception handling continuation when a task completes in the
+        /// <see cref="TaskStatus.Canceled"/> or <see cref="TaskStatus.Faulted"/> state. If the
+        /// antecedent task completes successfully, or if the <see cref="Task.Exception"/> it
+        /// provides is not a <typeparamref name="TException"/> wrapped in an
+        /// <see cref="AggregateException"/>, the status of the antecedent is directly applied to
+        /// the task returned by this method. Otherwise, the status of the cleanup operation is
+        /// directly applied to the task returned by this method.
+        /// </summary>
+        /// <remarks>
+        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        ///
+        /// <code language="cs">
+        /// try
+        /// {
+        ///     await task.ConfigureAwait(false);
+        /// }
+        /// catch (TException ex)
+        /// {
+        ///     await handler(task, ex).ConfigureAwait(false);
+        /// }
+        /// </code>
+        ///
+        /// <para>This method is capable of handling <see cref="TaskStatus.Canceled"/> antecedent
+        /// tasks when <typeparamref name="TException"/> is assignable from
+        /// <see cref="TaskCanceledException"/>.</para>
+        ///
+        /// <para>This method ensures that exception information provided by a faulted or canceled
+        /// task is not wrapped in an additional <see cref="AggregateException"/>.
+        /// </para>
+        ///
+        /// <note type="caller">
+        /// Since the <paramref name="handler"/> function is executed synchronously, this
+        /// method should only be used for lightweight continuation functions. This restriction
+        /// applies only to <paramref name="handler"/> itself, not to the
+        /// <see cref="Task"/> returned by it.
+        /// </note>
+        /// </remarks>
+        /// <typeparam name="TException">The type of exception which is handled by <paramref name="handler"/>.</typeparam>
+        /// <param name="task">The antecedent task.</param>
+        /// <param name="handler">The exception handler continuation function to execute when <paramref name="task"/> completes with an exception of type <typeparamref name="TException"/>.</param>
+        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
+        /// <exception cref="ArgumentNullException">
+        /// If <paramref name="task"/> is <see langword="null"/>.
+        /// <para>-or-</para>
+        /// <para>If <paramref name="handler"/> is <see langword="null"/>.</para>
+        /// </exception>
+        /// <preliminary/>
+        public static Task Catch<TException>(this Task task, Func<Task, TException, Task> handler)
+            where TException : Exception
+        {
+            if (task == null)
+                throw new ArgumentNullException("task");
+            if (handler == null)
+                throw new ArgumentNullException("handler");
+
+            TaskCompletionSource<VoidResult> completionSource = new TaskCompletionSource<VoidResult>();
+
+            bool match = false;
+            Func<Task, Task> handlerWrapper =
+                t =>
+                {
+                    TException exception = TryGetException<TException>(t);
+                    if (exception != null)
+                    {
+                        match = true;
+                        return handler(task, exception);
+                    }
+                    else
+                    {
+                        return CompletedTask.Default;
+                    }
+                };
+
+            task
+                .ContinueWith(handlerWrapper, TaskContinuationOptions.ExecuteSynchronously | TaskContinuationOptions.NotOnRanToCompletion)
+                .Unwrap()
+                .ContinueWith(
+                    t =>
+                    {
+                        if (match)
+                        {
+                            // this is the only case where the handler executes
+                            completionSource.SetFromTask(t, default(VoidResult));
+                        }
+                        else
+                        {
+                            // otherwise propagate the antecedent
+                            completionSource.SetFromTask(task, default(VoidResult));
+                        }
+                    }, TaskContinuationOptions.ExecuteSynchronously);
+
+            return completionSource.Task;
+        }
+
+        /// <summary>
+        /// Execute an exception handling continuation when a task completes in the
+        /// <see cref="TaskStatus.Canceled"/> or <see cref="TaskStatus.Faulted"/> state. If the
+        /// antecedent task completes successfully, or if the <see cref="Task.Exception"/> it
+        /// provides is not a <typeparamref name="TException"/> wrapped in an
+        /// <see cref="AggregateException"/>, the status of the antecedent is directly applied to
+        /// the task returned by this method. Otherwise, the status of the cleanup operation is
+        /// directly applied to the task returned by this method.
+        /// </summary>
+        /// <remarks>
+        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        ///
+        /// <code language="cs">
+        /// try
+        /// {
+        ///     return await task.ConfigureAwait(false);
+        /// }
+        /// catch (TException ex)
+        /// {
+        ///     return await handler(task, ex).ConfigureAwait(false);
+        /// }
+        /// </code>
+        ///
+        /// <para>This method is capable of handling <see cref="TaskStatus.Canceled"/> antecedent
+        /// tasks when <typeparamref name="TException"/> is assignable from
+        /// <see cref="TaskCanceledException"/>.</para>
+        ///
+        /// <para>This method ensures that exception information provided by a faulted or canceled
+        /// task is not wrapped in an additional <see cref="AggregateException"/>.
+        /// </para>
+        ///
+        /// <note type="caller">
+        /// Since the <paramref name="handler"/> function is executed synchronously, this
+        /// method should only be used for lightweight continuation functions. This restriction
+        /// applies only to <paramref name="handler"/> itself, not to the
+        /// <see cref="Task{TResult}"/> returned by it.
+        /// </note>
+        /// </remarks>
+        /// <typeparam name="TException">The type of exception which is handled by <paramref name="handler"/>.</typeparam>
+        /// <typeparam name="TResult">The result type of the antecedent <paramref name="task"/>.</typeparam>
+        /// <param name="task">The antecedent task.</param>
+        /// <param name="handler">The exception handler continuation function to execute when <paramref name="task"/> completes with an exception of type <typeparamref name="TException"/>.</param>
+        /// <returns>A <see cref="Task"/> representing the asynchronous operation. When the task completes successfully,
+        /// the <see cref="Task{TResult}.Result"/> property will contain the result returned from the <paramref name="task"/>
+        /// if it completed successfully, or the result of <paramref name="handler"/> if it resulted in an error condition
+        /// which was handled.</returns>
+        /// <exception cref="ArgumentNullException">
+        /// If <paramref name="task"/> is <see langword="null"/>.
+        /// <para>-or-</para>
+        /// <para>If <paramref name="handler"/> is <see langword="null"/>.</para>
+        /// </exception>
+        /// <preliminary/>
+        public static Task<TResult> Catch<TException, TResult>(this Task<TResult> task, Func<Task<TResult>, TException, Task<TResult>> handler)
+            where TException : Exception
+        {
+            if (task == null)
+                throw new ArgumentNullException("task");
+            if (handler == null)
+                throw new ArgumentNullException("handler");
+
+            TaskCompletionSource<TResult> completionSource = new TaskCompletionSource<TResult>();
+
+            bool match = false;
+            Func<Task<TResult>, Task<TResult>> handlerWrapper =
+                t =>
+                {
+                    TException exception = TryGetException<TException>(t);
+                    if (exception != null)
+                    {
+                        match = true;
+                        return handler(task, exception);
+                    }
+                    else
+                    {
+                        return CompletedTask.FromResult(default(TResult));
+                    }
+                };
+
+            task
+                .ContinueWith(handlerWrapper, TaskContinuationOptions.ExecuteSynchronously | TaskContinuationOptions.NotOnRanToCompletion)
+                .Unwrap()
+                .ContinueWith(
+                    t =>
+                    {
+                        if (match)
+                        {
+                            // this is the only case where the handler executes
+                            completionSource.SetFromTask(t);
+                        }
+                        else
+                        {
+                            // otherwise propagate the antecedent
+                            completionSource.SetFromTask(task);
+                        }
+                    }, TaskContinuationOptions.ExecuteSynchronously);
 
             return completionSource.Task;
         }
@@ -1150,6 +1538,88 @@ namespace Rackspace.Threading
                 .ContinueWith(t => completionSource.SetFromFailedTask(t), TaskContinuationOptions.ExecuteSynchronously | failedContinuationOptions);
 
             return completionSource.Task;
+        }
+
+        /// <summary>
+        /// Attempts to gets the first unwrapped exception from a faulted or canceled task
+        /// as an instance of <typeparamref name="TException"/>.
+        /// </summary>
+        /// <typeparam name="TException">The desired exception type.</typeparam>
+        /// <param name="task">The completed task.</param>
+        /// <returns>
+        /// An instance of <typeparamref name="TException"/> if the <paramref name="task"/> is in the
+        /// <see cref="TaskStatus.Faulted"/> state and the first exception in
+        /// <see cref="AggregateException.InnerExceptions"/> is an instance of
+        /// <typeparamref name="TException"/>.
+        /// <para>-or-</para>
+        /// <para>An instance of <typeparamref name="TException"/> if the <paramref name="task"/> is in
+        /// the <see cref="TaskStatus.Canceled"/> state, and a call to <see cref="Task.Wait()"/> results
+        /// in an <see cref="AggregateException"/>, and the first unwrapped exception is an instance of
+        /// <typeparamref name="TException"/>.</para>
+        /// <para>-or-</para>
+        /// <para>Otherwise, <see langword="null"/> if the <paramref name="task"/> completed
+        /// successfully or the unwrapped exception was not an instance of
+        /// <typeparamref name="TException"/>.</para>
+        /// </returns>
+        /// <exception cref="ArgumentNullException">If <paramref name="task"/> is <see langword="null"/>.</exception>
+        private static TException TryGetException<TException>(Task task)
+            where TException : Exception
+        {
+            if (task == null)
+                throw new ArgumentNullException("task");
+
+            TException exception = null;
+            if (task.Exception != null && task.Exception.InnerExceptions.Count >= 1)
+                exception = task.Exception.InnerExceptions[0] as TException;
+
+            if (exception == null && task.Status == TaskStatus.Canceled && CouldHandleCancellation<TException>.Value)
+            {
+                try
+                {
+                    task.Wait();
+                }
+                catch (AggregateException ex)
+                {
+                    if (ex.InnerExceptions.Count >= 1)
+                        exception = ex.InnerExceptions[0] as TException;
+                }
+            }
+
+            return exception;
+        }
+
+        /// <summary>
+        /// This utility class provide efficient access to a value indicating whether
+        /// a particular exception type might be able to handle the unwrapped exception
+        /// from a <see cref="TaskStatus.Canceled"/> task.
+        /// </summary>
+        /// <typeparam name="TException">The desired exception type.</typeparam>
+        private static class CouldHandleCancellation<TException>
+            where TException : Exception
+        {
+            /// <summary>
+            /// A value indicating whether the unwrapped exception from a <see cref="TaskStatus.Canceled"/>
+            /// task could be an instance of <typeparamref name="TException"/>.
+            /// </summary>
+            /// <value>
+            /// <see langword="true"/> if <typeparamref name="TException"/> is assignable from <see cref="TaskCanceledException"/>.
+            /// <para>-or-</para>
+            /// <para><see langword="true"/> if <see cref="TaskCanceledException"/> is assignable from <typeparamref name="TException"/>.</para>
+            /// <para>-or-</para>
+            /// <para>Otherwise, <see langword="false"/>.</para>
+            /// </value>
+            public static readonly bool Value;
+
+            static CouldHandleCancellation()
+            {
+#if NET45PLUS
+                Value = typeof(TException).GetTypeInfo().IsAssignableFrom(typeof(TaskCanceledException).GetTypeInfo())
+                    || typeof(TaskCanceledException).GetTypeInfo().IsAssignableFrom(typeof(TException).GetTypeInfo());
+#else
+                Value = typeof(TException).IsAssignableFrom(typeof(TaskCanceledException))
+                    || typeof(TaskCanceledException).IsAssignableFrom(typeof(TException));
+#endif
+            }
         }
     }
 }
