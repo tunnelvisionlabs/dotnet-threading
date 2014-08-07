@@ -817,7 +817,7 @@ namespace UnitTest.RackspaceThreading
 
         #endregion
 
-        private abstract class BaseWhileCondition
+        private abstract class BaseWhileCondition : IDisposable
         {
             protected BaseWhileCondition(int totalIterations, DelegateBehavior behavior)
             {
@@ -868,6 +868,12 @@ namespace UnitTest.RackspaceThreading
                 private set;
             }
 
+            public void Dispose()
+            {
+                Dispose(true);
+                GC.SuppressFinalize(this);
+            }
+
             protected bool EvaluateCore()
             {
                 EvaluateCoreCount++;
@@ -877,6 +883,16 @@ namespace UnitTest.RackspaceThreading
 
                 Iteration++;
                 return true;
+            }
+
+            protected virtual void Dispose(bool disposing)
+            {
+                if (disposing)
+                {
+                    CancellationTokenSource cancellationTokenSource = this.CancellationTokenSource;
+                    if (cancellationTokenSource != null)
+                        cancellationTokenSource.Dispose();
+                }
             }
         }
 
@@ -992,7 +1008,7 @@ namespace UnitTest.RackspaceThreading
             }
         }
 
-        private sealed class WhileBody
+        private class WhileBody : IDisposable
         {
             public WhileBody()
                 : this(int.MaxValue, DelegateBehavior.Success)
@@ -1075,6 +1091,22 @@ namespace UnitTest.RackspaceThreading
                             }
                         }
                     }, cancellationToken);
+            }
+
+            public void Dispose()
+            {
+                Dispose(true);
+                GC.SuppressFinalize(this);
+            }
+
+            protected virtual void Dispose(bool disposing)
+            {
+                if (disposing)
+                {
+                    CancellationTokenSource cancellationTokenSource = this.CancellationTokenSource;
+                    if (cancellationTokenSource != null)
+                        cancellationTokenSource.Dispose();
+                }
             }
         }
 
