@@ -123,6 +123,17 @@
               </listItem>
               <listItem>
                 <para>
+                  <codeEntityReference>Overload:Rackspace.Threading.CoreTaskExtensions.Catch</codeEntityReference>:
+                  This extension method is intended for cases where exception handling code needs to run after
+                  an antecedent task is faulted or was canceled. Much like a <languageKeyword>catch</languageKeyword>
+                  block in code, this method does change the behavior of the antecedent task if it completed
+                  successfully, or if the exception it produced does not match the exception type handled by this
+                  method. If the catch method does execute, its result is used in place of the result of the
+                  antecedent task.
+                </para>
+              </listItem>
+              <listItem>
+                <para>
                   <codeEntityReference>Overload:Rackspace.Threading.CoreTaskExtensions.Finally</codeEntityReference>:
                   This extension method is intended for cases where cleanup code needs to run following the
                   completion of an antecedent task, regardless of whether the antecedent succeeded, faulted, or
