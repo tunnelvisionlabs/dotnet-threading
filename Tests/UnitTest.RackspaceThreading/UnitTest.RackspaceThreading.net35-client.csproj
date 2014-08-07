@@ -65,9 +65,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestCancellationTokenSourceExtensions.cs" />
     <Compile Include="TestCompletedTask.cs" />
-    <Compile Include="TestCoreTaskExtensions.cs" />
+    <Compile Include="TestCoreTaskExtensions_Finally.cs" />
+    <Compile Include="TestCoreTaskExtensions_Select.cs" />
+    <Compile Include="TestCoreTaskExtensions_Then.cs" />
     <Compile Include="TestProgress.cs" />
-    <Compile Include="TestTaskBlocks.cs" />
+    <Compile Include="TestTaskBlocks_Using.cs" />
+    <Compile Include="TestTaskBlocks_While.cs" />
     <Compile Include="TestWebRequestExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
