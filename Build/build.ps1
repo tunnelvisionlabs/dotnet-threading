@@ -8,7 +8,7 @@ $SolutionPath = "..\Rackspace.Threading.sln"
 
 # make sure the script was run from the expected path
 if (!(Test-Path $SolutionPath)) {
-	echo "The script was run from an invalid working directory."
+	$host.ui.WriteErrorLine('The script was run from an invalid working directory.')
 	exit 1
 }
 
@@ -25,7 +25,7 @@ $msbuild = "$env:windir\Microsoft.NET\Framework64\v4.0.30319\msbuild.exe"
 
 &$msbuild '/nologo' '/m' '/nr:false' '/t:rebuild' "/p:Configuration=$BuildConfig" "/p:VisualStudioVersion=$VisualStudioVersion" $SolutionPath
 if ($LASTEXITCODE -ne 0) {
-	echo "Build failed, aborting!"
+	$host.ui.WriteErrorLine('Build failed, aborting!')
 	exit $p.ExitCode
 }
 
