@@ -50,6 +50,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest.RackspaceThreading
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest.RackspaceThreading.portable-net45", "Tests\UnitTest.RackspaceThreading\UnitTest.RackspaceThreading.portable-net45.csproj", "{0A938208-8788-40ED-BE23-C9FD89DB78A8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{1A382B22-F449-4D0B-BC67-E7D905BAD9EE}"
+	ProjectSection(SolutionItems) = preProject
+		Build\build.ps1 = Build\build.ps1
+		Build\check-key.ps1 = Build\check-key.ps1
+		Build\KeyReporting.targets = Build\KeyReporting.targets
+		Build\keys.ps1 = Build\keys.ps1
+		Build\push.ps1 = Build\push.ps1
+		Build\version.ps1 = Build\version.ps1
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
