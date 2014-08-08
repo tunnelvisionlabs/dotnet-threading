@@ -183,7 +183,7 @@ namespace Rackspace.Threading
             if (cancellationToken.IsCancellationRequested)
                 return CompletedTask.Canceled();
 
-            return Task.Factory.StartNew(state => ((Stream)state).Flush(), stream, cancellationToken);
+            return Task.Factory.StartNew(state => ((Stream)state).Flush(), stream, cancellationToken, TaskCreationOptions.None, TaskScheduler.Default);
         }
 
         /// <summary>
