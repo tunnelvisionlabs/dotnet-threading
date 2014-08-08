@@ -828,8 +828,6 @@ namespace UnitTest.RackspaceThreading
                 Behavior = behavior;
                 if (behavior == DelegateBehavior.Faulted || behavior == DelegateBehavior.SyncFaulted)
                     ExpectedException = new ArithmeticException();
-                else if (behavior == DelegateBehavior.Canceled)
-                    CancellationTokenSource = new CancellationTokenSource();
             }
 
             public int TotalIterations
@@ -857,12 +855,6 @@ namespace UnitTest.RackspaceThreading
             }
 
             protected int EvaluateCoreCount
-            {
-                get;
-                private set;
-            }
-
-            protected CancellationTokenSource CancellationTokenSource
             {
                 get;
                 private set;
@@ -968,31 +960,30 @@ namespace UnitTest.RackspaceThreading
                         return null;
                 }
 
-                CancellationToken cancellationToken = CancellationTokenSource != null ? CancellationTokenSource.Token : CancellationToken.None;
-                return Task.Factory.StartNew(() =>
-                    {
-                        EvaluateAsyncCount++;
-
-                        bool result = EvaluateCore();
-                        if (!result)
+                return Task.Factory
+                    .StartNew(
+                        () =>
                         {
-                            if (Behavior == DelegateBehavior.Faulted)
+                            EvaluateAsyncCount++;
+                            return EvaluateCore();
+                        })
+                    .Then(
+                        task =>
+                        {
+                            if (!task.Result)
                             {
-                                throw ExpectedException;
+                                if (Behavior == DelegateBehavior.Faulted)
+                                    throw ExpectedException;
+                                else if (Behavior == DelegateBehavior.Canceled)
+                                    return CompletedTask.Canceled<bool>();
                             }
-                            else if (Behavior == DelegateBehavior.Canceled)
-                            {
-                                CancellationTokenSource.Cancel();
-                                CancellationTokenSource.Token.ThrowIfCancellationRequested();
-                            }
-                        }
 
-                        return result;
-                    }, cancellationToken);
+                            return CompletedTask.FromResult(task.Result);
+                        });
             }
         }
 
-        private sealed class WhileBody
+        private class WhileBody
         {
             public WhileBody()
                 : this(int.MaxValue, DelegateBehavior.Success)
@@ -1005,8 +996,6 @@ namespace UnitTest.RackspaceThreading
                 Behavior = behavior;
                 if (behavior == DelegateBehavior.Faulted || behavior == DelegateBehavior.SyncFaulted)
                     ExpectedException = new FormatException();
-                else if (behavior == DelegateBehavior.Canceled)
-                    CancellationTokenSource = new CancellationTokenSource();
             }
 
             public int MaxExecutions
@@ -1033,12 +1022,6 @@ namespace UnitTest.RackspaceThreading
                 private set;
             }
 
-            public CancellationTokenSource CancellationTokenSource
-            {
-                get;
-                private set;
-            }
-
             public Exception ExpectedException
             {
                 get;
@@ -1057,24 +1040,21 @@ namespace UnitTest.RackspaceThreading
                         return null;
                 }
 
-                CancellationToken cancellationToken = CancellationTokenSource != null ? CancellationTokenSource.Token : CancellationToken.None;
-                return Task.Factory.StartNew(() =>
-                    {
-                        ExecutionCount++;
-
-                        if (ExecutionCount >= MaxExecutions)
+                return Task.Factory
+                    .StartNew(() => ExecutionCount++)
+                    .Then(
+                        task =>
                         {
-                            if (Behavior == DelegateBehavior.Faulted)
+                            if (ExecutionCount >= MaxExecutions)
                             {
-                                throw ExpectedException;
+                                if (Behavior == DelegateBehavior.Faulted)
+                                    throw ExpectedException;
+                                else if (Behavior == DelegateBehavior.Canceled)
+                                    return CompletedTask.Canceled();
                             }
-                            else if (Behavior == DelegateBehavior.Canceled)
-                            {
-                                CancellationTokenSource.Cancel();
-                                CancellationTokenSource.Token.ThrowIfCancellationRequested();
-                            }
-                        }
-                    }, cancellationToken);
+
+                            return CompletedTask.Default;
+                        });
             }
         }
 
