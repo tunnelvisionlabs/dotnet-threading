@@ -63,6 +63,9 @@
     <Compile Include="TestCoreTaskExtensions_Finally.cs" />
     <Compile Include="TestCoreTaskExtensions_Select.cs" />
     <Compile Include="TestCoreTaskExtensions_Then.cs" />
+    <Compile Include="TestDelayedTask_Delay.cs" />
+    <Compile Include="TestDelayedTask_WhenAll.cs" />
+    <Compile Include="TestDelayedTask_WhenAny.cs" />
     <Compile Include="TestProgress.cs" />
     <Compile Include="TestTaskBlocks_Using.cs" />
     <Compile Include="TestTaskBlocks_While.cs" />
