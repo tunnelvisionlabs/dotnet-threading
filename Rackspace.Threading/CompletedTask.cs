@@ -64,7 +64,7 @@ namespace Rackspace.Threading
 
             static CompletedTaskHolder()
             {
-                Default = CompletedTaskHolder<object>.Default;
+                Default = CompletedTaskHolder<VoidResult>.Default;
             }
         }
 
@@ -90,7 +90,7 @@ namespace Rackspace.Threading
 
             static CanceledTaskHolder()
             {
-                Default = CanceledTaskHolder<object>.Default;
+                Default = CanceledTaskHolder<VoidResult>.Default;
             }
         }
 
