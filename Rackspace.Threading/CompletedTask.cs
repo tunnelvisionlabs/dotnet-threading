@@ -30,9 +30,13 @@ namespace Rackspace.Threading
         /// <returns>A completed <see cref="Task{TResult}"/>, whose <see cref="Task{TResult}.Result"/> property returns the specified <paramref name="result"/>.</returns>
         public static Task<TResult> FromResult<TResult>(TResult result)
         {
+#if NET45PLUS
+            return Task.FromResult(result);
+#else
             TaskCompletionSource<TResult> completionSource = new TaskCompletionSource<TResult>();
             completionSource.SetResult(result);
             return completionSource.Task;
+#endif
         }
 
         /// <summary>
@@ -70,9 +74,13 @@ namespace Rackspace.Threading
 
             static CompletedTaskHolder()
             {
+#if NET45PLUS
+                Default = Task.FromResult(default(T));
+#else
                 TaskCompletionSource<T> completionSource = new TaskCompletionSource<T>();
                 completionSource.SetResult(default(T));
                 Default = completionSource.Task;
+#endif
             }
         }
 
