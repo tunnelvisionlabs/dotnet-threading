@@ -341,6 +341,12 @@ namespace Rackspace.Threading
         /// <exception cref="InvalidOperationException">If <paramref name="stream"/> is currently in use by a previous write operation.</exception>
         public static Task WriteAsync(this Stream stream, byte[] buffer, int offset, int count, CancellationToken cancellationToken)
         {
+            if (stream == null)
+                throw new ArgumentNullException("stream");
+
+            if (cancellationToken.IsCancellationRequested)
+                return CompletedTask.Canceled();
+
             return Task.Factory.FromAsync(stream.BeginWrite, stream.EndWrite, buffer, offset, count, null);
         }
     }
