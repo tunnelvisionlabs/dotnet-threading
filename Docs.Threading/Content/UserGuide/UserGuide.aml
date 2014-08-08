@@ -21,9 +21,9 @@
         <list class="bullet">
           <listItem>
             <para>
-              <newTerm>Extensions for legacy code</newTerm>: These extension methods provide
+              <newTerm>Extensions and utilities for legacy code</newTerm>: These extension methods provide
               select features which were added to the Task Parallel Library in .NET 4.5 as extension methods
-              for .NET 3.5 and .NET 4.0 users.
+              and static utility methods for .NET 3.5 and .NET 4.0 users.
             </para>
           </listItem>
           <listItem>
@@ -46,38 +46,87 @@
       </content>
       <sections>
         <section>
-          <title>Extension Methods for Legacy Code</title>
+          <title>Extension and Utility Methods for Legacy Code</title>
           <content>
             <para>
               The .NET Framework 4.5 introduces several new methods to simplify the use of the Task Parallel
-              Library in common scenarios. This library provides extension methods for some of the most
-              frequently used cases, allowing use of the functionality in .NET 3.5 and .NET 4.0. These methods
-              are provided by the following classes.
+              Library in common scenarios. This library provides extension methods and static utility methods
+              for some of the most frequently used cases, allowing use of the functionality in .NET 3.5 and
+              .NET 4.0. These methods are provided by the following classes.
             </para>
             <list class="bullet">
               <listItem>
                 <para>
-                  <codeEntityReference>T:Rackspace.Threading.CancellationTokenSourceExtensions</codeEntityReference>
+                  <codeEntityReference>T:Rackspace.Threading.CancellationTokenSourceExtensions</codeEntityReference>:
+                  This class provides the
+                  <codeEntityReference>M:Rackspace.Threading.CancellationTokenSourceExtensions.CancelAfter(System.Threading.CancellationTokenSource,System.TimeSpan)</codeEntityReference>
+                  extension method, allowing the use of this feature prior to the introduction of
+                  <codeEntityReference>Overload:System.Threading.CancellationTokenSource.CancelAfter</codeEntityReference>
+                  in .NET 4.5.
                 </para>
               </listItem>
               <listItem>
                 <para>
-                  <codeEntityReference>T:Rackspace.Threading.StreamExtensions</codeEntityReference>
+                  <codeEntityReference>T:Rackspace.Threading.CompletedTask</codeEntityReference>: This class
+                  provides static methods and properties for cases where code needs to return a
+                  <codeEntityReference>T:System.Threading.Tasks.Task</codeEntityReference> which has already
+                  entered a completed state (either successfully or canceled).
                 </para>
               </listItem>
               <listItem>
                 <para>
-                  <codeEntityReference>T:Rackspace.Threading.WebRequestExtensions</codeEntityReference>
+                  <codeEntityReference>T:Rackspace.Threading.DelayedTask</codeEntityReference>: This class
+                  provides static methods to simplify the creation of tasks which represent a fixed delay or
+                  an operation to wait on one or more other tasks to complete.
+                </para>
+                <list class="bullet">
+                  <listItem>
+                    <para>
+                      <codeEntityReference>Overload:Rackspace.Threading.DelayedTask.Delay</codeEntityReference>:
+                      These methods create tasks which complete after a specified delay period. Their
+                      implementation is intended to match the behavior of the
+                      <codeEntityReference>Overload:System.Threading.Tasks.Task.Delay</codeEntityReference>
+                      methods which were introduced in .NET 4.5.
+                    </para>
+                  </listItem>
+                  <listItem>
+                    <para>
+                      <codeEntityReference>Overload:Rackspace.Threading.DelayedTask.WhenAll</codeEntityReference>:
+                      These methods create tasks which complete after all of the specified antecedent tasks
+                      complete. Their implementation is intended to match the behavior of the
+                      <codeEntityReference>Overload:System.Threading.Tasks.Task.WhenAll</codeEntityReference>
+                      methods which were introduced in .NET 4.5.
+                    </para>
+                  </listItem>
+                  <listItem>
+                    <para>
+                      <codeEntityReference>Overload:Rackspace.Threading.DelayedTask.WhenAny</codeEntityReference>:
+                      These methods create tasks which complete after any of the specified antecedent tasks
+                      complete. Their implementation is intended to match the behavior of the
+                      <codeEntityReference>Overload:System.Threading.Tasks.Task.WhenAny</codeEntityReference>
+                      methods which were introduced in .NET 4.5.
+                    </para>
+                  </listItem>
+                </list>
+              </listItem>
+              <listItem>
+                <para>
+                  <codeEntityReference>T:Rackspace.Threading.StreamExtensions</codeEntityReference>: This
+                  class introduces extension methods to support asynchronous operations on
+                  <codeEntityReference>T:System.IO.Stream</codeEntityReference> instances, prior to the introduction
+                  of asynchronous methods for this class in .NET 4.5.
+                </para>
+              </listItem>
+              <listItem>
+                <para>
+                  <codeEntityReference>T:Rackspace.Threading.WebRequestExtensions</codeEntityReference>: This
+                  class provides extension methods which offer extensive support for using
+                  <codeEntityReference>T:System.Net.WebRequest</codeEntityReference> in asynchronous code,
+                  including support for both <codeEntityReference>T:System.Threading.CancellationToken</codeEntityReference>
+                  and traditional timeouts.
                 </para>
               </listItem>
             </list>
-            <para>
-              In addition to the extension methods, the
-              <codeEntityReference>T:Rackspace.Threading.CompletedTask</codeEntityReference> class provides
-              static methods and properties for cases where code needs to return a
-              <codeEntityReference>T:System.Threading.Tasks.Task</codeEntityReference> which has already
-              entered a completed state (either successfully or canceled).
-            </para>
           </content>
         </section>
         <section>
