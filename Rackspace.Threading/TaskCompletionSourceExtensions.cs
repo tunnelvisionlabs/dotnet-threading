@@ -14,6 +14,7 @@ namespace Rackspace.Threading
 
     /// <summary>Extension methods for <see cref="TaskCompletionSource{TResult}"/>.</summary>
     /// <threadsafety static="true" instance="false"/>
+    /// <preliminary/>
     public static class TaskCompletionSourceExtensions
     {
         /// <summary>Transfers the result of a <see cref="Task{TResult}"/> to a <see cref="TaskCompletionSource{TResult}"/>.</summary>
