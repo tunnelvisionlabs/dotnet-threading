@@ -3,15 +3,15 @@
     using System;
 
     /// <summary>
-    /// This class contains information for the <see cref="Progress{T}.ProgressChanged"/> event.
+    /// This class contains information for the <see cref="Rackspace.Threading.Progress{T}.ProgressChanged"/> event.
     /// </summary>
     /// <remarks>
     /// Prior to .NET 4.5, the <see cref="EventHandler{TEventArgs}"/> delegate included a
     /// constraint that the generic argument be derived from <see cref="EventArgs"/>. This
     /// constraint prevents a direct back-port of the <see cref="T:System.Progress`1"/>
-    /// class to earlier frameworks, so the <see cref="Progress{T}"/> class is provided with
+    /// class to earlier frameworks, so the <see cref="Rackspace.Threading.Progress{T}"/> class is provided with
     /// a wrapper around the progress value reported by the
-    /// <see cref="Progress{T}.ProgressChanged"/> event.
+    /// <see cref="Rackspace.Threading.Progress{T}.ProgressChanged"/> event.
     /// </remarks>
     /// <typeparam name="T">The type representing the progress indicator.</typeparam>
     /// <threadsafety static="true" instance="false"/>
