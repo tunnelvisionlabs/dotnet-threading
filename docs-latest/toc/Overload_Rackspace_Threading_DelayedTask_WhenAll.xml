@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOCNode Title="WhenAll Method " Url="html/Overload_Rackspace_Threading_DelayedTask_WhenAll.htm">
+  <HelpTOCNode Title="WhenAll(TResult) Method (IEnumerable(Task(TResult)))" Url="html/M_Rackspace_Threading_DelayedTask_WhenAll__1.htm" />
+  <HelpTOCNode Title="WhenAll Method (IEnumerable(Task))" Url="html/M_Rackspace_Threading_DelayedTask_WhenAll.htm" />
+  <HelpTOCNode Title="WhenAll Method (Task[])" Url="html/M_Rackspace_Threading_DelayedTask_WhenAll_1.htm" />
+  <HelpTOCNode Title="WhenAll(TResult) Method (Task(TResult)[])" Url="html/M_Rackspace_Threading_DelayedTask_WhenAll__1_1.htm" />
+</HelpTOCNode>

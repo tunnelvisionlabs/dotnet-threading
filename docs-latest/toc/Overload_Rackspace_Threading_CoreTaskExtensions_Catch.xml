@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOCNode Title="Catch Method " Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Catch.htm">
+  <HelpTOCNode Title="Catch(TException) Method (Task, Action(Task, TException))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Catch__1.htm" />
+  <HelpTOCNode Title="Catch(TException) Method (Task, Func(Task, TException, Task))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Catch__1_1.htm" />
+  <HelpTOCNode Title="Catch(TException, TResult) Method (Task(TResult), Func(Task(TResult), TException, Task(TResult)))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Catch__2.htm" />
+  <HelpTOCNode Title="Catch(TException, TResult) Method (Task(TResult), Func(Task(TResult), TException, TResult))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Catch__2_1.htm" />
+</HelpTOCNode>

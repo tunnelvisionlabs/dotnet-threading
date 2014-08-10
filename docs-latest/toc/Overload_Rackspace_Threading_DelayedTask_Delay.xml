@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOCNode Title="Delay Method " Url="html/Overload_Rackspace_Threading_DelayedTask_Delay.htm">
+  <HelpTOCNode Title="Delay Method (TimeSpan)" Url="html/M_Rackspace_Threading_DelayedTask_Delay.htm" />
+  <HelpTOCNode Title="Delay Method (TimeSpan, CancellationToken)" Url="html/M_Rackspace_Threading_DelayedTask_Delay_1.htm" />
+</HelpTOCNode>

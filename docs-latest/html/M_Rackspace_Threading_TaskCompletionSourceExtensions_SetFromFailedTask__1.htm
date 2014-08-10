@@ -1,0 +1,108 @@
+﻿<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="shortcut icon" href="../icons/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../styles/branding.css">
+    <link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css"><script type="text/javascript" src="../scripts/branding.js"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>TaskCompletionSourceExtensions.SetFromFailedTask(TResult) Method </title><meta name="Language" content="en-us">
+        <meta name="System.Keywords" content="SetFromFailedTask%3CTResult%3E method">
+        <meta name="System.Keywords" content="SetFromFailedTask(Of TResult) method">
+        <meta name="System.Keywords" content="TaskCompletionSourceExtensions.SetFromFailedTask%3CTResult%3E method">
+        <meta name="System.Keywords" content="TaskCompletionSourceExtensions.SetFromFailedTask(Of TResult) method">
+        <meta name="Microsoft.Help.F1" content="Rackspace.Threading.TaskCompletionSourceExtensions.SetFromFailedTask``1">
+        <meta name="Microsoft.Help.Id" content="M:Rackspace.Threading.TaskCompletionSourceExtensions.SetFromFailedTask``1(System.Threading.Tasks.TaskCompletionSource{``0},System.Threading.Tasks.Task)">
+        <meta name="Description" content="Transfers the result of a canceled or faulted to the .">
+        <meta name="Microsoft.Help.ContentType" content="Reference">
+        <meta name="BrandingAware" content="'true'">
+        <meta name="container" content="Rackspace.Threading">
+        <meta name="file" content="M_Rackspace_Threading_TaskCompletionSourceExtensions_SetFromFailedTask__1">
+        <meta name="guid" content="M_Rackspace_Threading_TaskCompletionSourceExtensions_SetFromFailedTask__1">
+          <meta name="SelfBranded" content="true"></head><body onload="onLoad()"><header class="ux-header"><div class="header-top-bar">Threading API Reference</div></header><div class="OH_outerDiv" style="padding: 35px 20px 0 20px;">
+                  <div class="OH_leftNav" id="LeftNav">
+  <div id="tocnav">
+    <div class="toclevel0" data-toclevel="0" style="padding-left: 0px;"><a class="toc_collapsed" onclick="javascript: Toggle(this);" href="#!"></a><a data-tochassubtree="true" href="50d028db-e522-4750-91a6-4ae6c97c2610.htm" title="Threading API" tocid="roottoc">Threading API</a></div><div class="toclevel0" data-toclevel="0" style="padding-left: 0px;"><a class="toc_collapsed" onclick="javascript: Toggle(this);" href="#!"></a><a data-tochassubtree="true" href="R_Project_Threading_API_Reference.htm" title="API Reference" tocid="R_Project_Threading_API_Reference">API Reference</a></div><div class="toclevel0" data-toclevel="0" style="padding-left: 0px;"><a class="toc_collapsed" onclick="javascript: Toggle(this);" href="#!"></a><a data-tochassubtree="true" href="N_Rackspace_Threading.htm" title="Rackspace.Threading" tocid="N_Rackspace_Threading">Rackspace.Threading</a></div><div class="toclevel0" data-toclevel="0" style="padding-left: 0px;"><a class="toc_collapsed" onclick="javascript: Toggle(this);" href="#!"></a><a data-tochassubtree="true" href="T_Rackspace_Threading_TaskCompletionSourceExtensions.htm" title="TaskCompletionSourceExtensions Class" tocid="T_Rackspace_Threading_TaskCompletionSourceExtensions">TaskCompletionSourceExtensions Class</a></div><div class="toclevel1" data-toclevel="1" style="padding-left: 13px;" data-childrenloaded="true"><a class="toc_expanded" onclick="javascript: Toggle(this);" href="#!"></a><a data-tochassubtree="true" href="Methods_T_Rackspace_Threading_TaskCompletionSourceExtensions.htm" title="TaskCompletionSourceExtensions Methods" tocid="Methods_T_Rackspace_Threading_TaskCompletionSourceExtensions">TaskCompletionSourceExtensions Methods</a></div><div class="toclevel2 current" data-toclevel="2" style="padding-left: 26px;"><span class="toc_empty"></span><a data-tochassubtree="false" href="M_Rackspace_Threading_TaskCompletionSourceExtensions_SetFromFailedTask__1.htm" title="SetFromFailedTask(TResult) Method " tocid="M_Rackspace_Threading_TaskCompletionSourceExtensions_SetFromFailedTask__1">SetFromFailedTask(TResult) Method </a></div><div class="toclevel2" data-toclevel="2" style="padding-left: 26px;"><a class="toc_collapsed" onclick="javascript: Toggle(this);" href="#!"></a><a data-tochassubtree="true" href="Overload_Rackspace_Threading_TaskCompletionSourceExtensions_SetFromTask.htm" title="SetFromTask Method " tocid="Overload_Rackspace_Threading_TaskCompletionSourceExtensions_SetFromTask">SetFromTask Method </a></div><div class="toclevel2" data-toclevel="2" style="padding-left: 26px;"><a class="toc_collapsed" onclick="javascript: Toggle(this);" href="#!"></a><a data-tochassubtree="true" href="Overload_Rackspace_Threading_TaskCompletionSourceExtensions_TrySetFromTask.htm" title="TrySetFromTask Method " tocid="Overload_Rackspace_Threading_TaskCompletionSourceExtensions_TrySetFromTask">TrySetFromTask Method </a></div></div></div><div id="TocResize" class="OH_TocResize"><img id="ResizeImageIncrease" src="../icons/open.gif" onclick="onIncreaseToc()" alt="Expand" title="Expand"><img id="ResizeImageReset" src="../icons/close.gif" style="display:none" onclick="onResetToc()" alt="Minimize" title="Minimize"></div><div class="OH_outerContent" id="OuterContent" style="margin-left: 280px;">
+                    <h1 class="title">TaskCompletionSourceExtensions<span id="ID0EFBABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EFBABAA?vb=.|cpp=::|cs=.|fs=.|nu=.");
+				</script>SetFromFailedTask<span id="ID0EDBABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EDBABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script><span class="typeparameter">TResult</span><span id="ID0EBBABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EBBABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script> Method </h1><div id="mainSection">
+                                      <div id="mainBody"><span class="introStyle"></span><div class="preliminary">[This documentation is preliminary and is subject to change.]</div><div class="summary">Transfers the result of a canceled or faulted <a href="http://msdn2.microsoft.com/en-us/library/dd235678" target="_blank">Task</a> to the <a href="http://msdn2.microsoft.com/en-us/library/dd449174" target="_blank">TaskCompletionSource<span id="ID0ECBLAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0ECBLAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script>TResult<span id="ID0EABLAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EABLAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script></a>.</div><p></p><strong>Namespace:</strong> <a href="N_Rackspace_Threading.htm">Rackspace.Threading</a><br><strong>Assembly:</strong> Rackspace.Threading (in Rackspace.Threading.dll) Version: 1.1.0.0-beta001<div class="OH_CollapsibleAreaRegion">
+                                                                    <div class="OH_regiontitle">Syntax</div></div><div id="snippetGroup_Syntax" class="code">
+                                                                        <div id="ID0EDPDAAABAA" class="codeSnippetContainer">
+                                                                          <div class="codeSnippetContainerTabs" id="ID0EDPDAAABAA_tabs">
+                                                                            <div id="ID0EDPDAAABAA_tab1" class="codeSnippetContainerTabActive" dir="ltr" EnableCopyCode="true"><a href="#" onclick="javascript:ChangeTab('ID0EDPDAAABAA','C#','1','4');return false;">C#</a></div><div id="ID0EDPDAAABAA_tab2" class="codeSnippetContainerTab" dir="ltr" EnableCopyCode="true"><a href="#" onclick="javascript:ChangeTab('ID0EDPDAAABAA','Visual C++','2','4');return false;">C++</a></div><div id="ID0EDPDAAABAA_tab3" class="codeSnippetContainerTab" dir="ltr" EnableCopyCode="true"><a href="#" onclick="javascript:ChangeTab('ID0EDPDAAABAA','F#','3','4');return false;">F#</a></div><div id="ID0EDPDAAABAA_tab4" class="codeSnippetContainerTab" dir="ltr" EnableCopyCode="true"><a href="#" onclick="javascript:ChangeTab('ID0EDPDAAABAA','Visual Basic','4','4');return false;">VB</a></div></div><div id="ID0EDPDAAABAA_codecollection" class="codeSnippetContainerCodeContainer">
+                                                                                              <div class="codeSnippetToolBar">
+                                                                                                <div class="codeSnippetToolBarText"><a id="ID0EDPDAAABAA_copycode" href="#" onclick="javascript:CopyToClipboard('ID0EDPDAAABAA','4')" title="Copy to Clipboard">Copy to Clipboard</a><a id="ID0EDPDAAABAA_PrintText" class="OH_PrintText" href="#" onclick="javascript:Print('ID0EDPDAAABAA','4')" title="Print">Print</a></div></div><div id="ID0EDPDAAABAA_code_Div1" class="codeSnippetContainerCode" style="display: block">
+                                                                                                        <pre><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="identifier">SetFromFailedTask</span>&lt;TResult&gt;(
+	<span class="keyword">this</span> <span class="identifier">TaskCompletionSource</span>&lt;TResult&gt; <span class="parameter">taskCompletionSource</span>,
+	<span class="identifier">Task</span> <span class="parameter">task</span>
+)
+</pre></div><div id="ID0EDPDAAABAA_code_Plain_Div1" class="codeSnippetContainerCode" style="display: none">
+                                                                                                                              <pre>public static void SetFromFailedTask&lt;TResult&gt;(
+	this TaskCompletionSource&lt;TResult&gt; taskCompletionSource,
+	Task task
+)
+</pre></div><div id="ID0EDPDAAABAA_code_Div2" class="codeSnippetContainerCode" style="display: none">
+                                                                                                                                  <pre><span class="keyword">public</span>:
+[<span class="identifier">ExtensionAttribute</span>]
+<span class="keyword">generic</span>&lt;<span class="keyword">typename</span> TResult&gt;
+<span class="keyword">static</span> <span class="keyword">void</span> <span class="identifier">SetFromFailedTask</span>(
+	<span class="identifier">TaskCompletionSource</span>&lt;TResult&gt;^ <span class="parameter">taskCompletionSource</span>, 
+	<span class="identifier">Task</span>^ <span class="parameter">task</span>
+)</pre></div><div id="ID0EDPDAAABAA_code_Plain_Div2" class="codeSnippetContainerCode" style="display: none">
+                                                                                                                                                            <pre>public:
+[ExtensionAttribute]
+generic&lt;typename TResult&gt;
+static void SetFromFailedTask(
+	TaskCompletionSource&lt;TResult&gt;^ taskCompletionSource, 
+	Task^ task
+)</pre></div><div id="ID0EDPDAAABAA_code_Div3" class="codeSnippetContainerCode" style="display: none">
+                                                                                                                                                                <pre><span class="keyword">static</span> <span class="keyword">member</span> <span class="identifier">SetFromFailedTask</span> : 
+        <span class="parameter">taskCompletionSource</span> : <span class="identifier">TaskCompletionSource</span>&lt;'TResult&gt; * 
+        <span class="parameter">task</span> : <span class="identifier">Task</span> <span class="keyword">-&gt;</span> <span class="keyword">unit</span> 
+</pre></div><div id="ID0EDPDAAABAA_code_Plain_Div3" class="codeSnippetContainerCode" style="display: none">
+                                                                                                                                                                                      <pre>static member SetFromFailedTask : 
+        taskCompletionSource : TaskCompletionSource&lt;'TResult&gt; * 
+        task : Task -&gt; unit 
+</pre></div><div id="ID0EDPDAAABAA_code_Div4" class="codeSnippetContainerCode" style="display: none">
+                                                                                                                                                                                          <pre>&lt;<span class="identifier">ExtensionAttribute</span>&gt; 
+<span class="keyword">Public</span> <span class="keyword">Shared</span> <span class="keyword">Sub</span> <span class="identifier">SetFromFailedTask</span>(<span class="keyword">Of</span> TResult) ( 
+	<span class="parameter">taskCompletionSource</span> <span class="keyword">As</span> <span class="identifier">TaskCompletionSource</span>(<span class="keyword">Of</span> TResult),
+	<span class="parameter">task</span> <span class="keyword">As</span> <span class="identifier">Task</span>
+)</pre></div><div id="ID0EDPDAAABAA_code_Plain_Div4" class="codeSnippetContainerCode" style="display: none">
+                                                                                                                                                                                                                        <pre>&lt;ExtensionAttribute&gt; 
+Public Shared Sub SetFromFailedTask(Of TResult) ( 
+	taskCompletionSource As TaskCompletionSource(Of TResult),
+	task As Task
+)</pre></div></div></div><script>addSpecificTextLanguageTagSet('ID0EDPDAAABAA');</script></div><h4 class="subHeading">Parameters</h4><dl paramName="taskCompletionSource">
+                                                                                                                                                                                                                                <dt><span class="parameter">taskCompletionSource</span></dt><dd>Type: <a href="http://msdn2.microsoft.com/en-us/library/dd449174" target="_blank">System.Threading.Tasks<span id="ID0EBFANDAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EBFANDAAABAA?vb=.|cpp=::|cs=.|fs=.|nu=.");
+				</script>TaskCompletionSource</a><span id="ID0EEANDAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EEANDAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script><span class="selflink"><span class="typeparameter">TResult</span></span><span id="ID0ECANDAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0ECANDAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script><br><span>The TaskCompletionSource.</span></dd></dl><dl paramName="task">
+                                                                                                                                                                                                                                                            <dt><span class="parameter">task</span></dt><dd>Type: <a href="http://msdn2.microsoft.com/en-us/library/dd235678" target="_blank">System.Threading.Tasks<span id="ID0EBCAMDAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EBCAMDAAABAA?vb=.|cpp=::|cs=.|fs=.|nu=.");
+				</script>Task</a><br><span>The task whose completion results should be transferred.</span></dd></dl><div id="genericParameters">
+                                                                                                                                                                                                                                                                            <h4 class="subHeading">Type Parameters</h4><dl>
+                                                                                                                                                                                                                                                                                <dt><span class="parameter">TResult</span></dt><dd>Specifies the type of the result.</dd></dl></div><h4 class="subHeading">Usage Note</h4>In Visual Basic and C#, you can call this method as an instance method on any object of type <a href="http://msdn2.microsoft.com/en-us/library/dd449174" target="_blank">TaskCompletionSource</a><span id="ID0EHDAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EHDAAABAA?vb=(Of |cpp=<|cs=<|fs=<'|nu=(");
+				</script><span class="selflink"><span class="typeparameter">TResult</span></span><span id="ID0EFDAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EFDAAABAA?vb=)|cpp=>|cs=>|fs=>|nu=)");
+				</script>. When you use instance method syntax to call this method, omit the first parameter. For more information, see <a href="http://msdn.microsoft.com/en-us/library/bb384936.aspx" target="_blank">Extension Methods (Visual Basic)</a> or <a href="http://msdn.microsoft.com/en-us/library/bb383977.aspx" target="_blank">Extension Methods (C# Programming Guide)</a>.<div class="OH_CollapsibleAreaRegion">
+                                                                                                                                                                                                                                                                                                            <div class="OH_regiontitle">Version Information</div></div><h4 class="subHeading">.NET for Windows Store apps</h4>Supported in: Windows 8<br><h4 class="subHeading">.NET Framework</h4>Supported in: 4.5, 4.0, 3.5<br><h4 class="subHeading">Portable Class Library</h4>Supported in: Portable Class Library (Legacy), Portable Class Library<br><a name="seeAlsoSection"></a><div class="OH_CollapsibleAreaRegion">
+                                                                                                                                                                                                                                                                                                                        <div class="OH_regiontitle">See Also</div></div><h4 class="subHeading">Reference</h4><div class="seeAlsoStyle"><a href="T_Rackspace_Threading_TaskCompletionSourceExtensions.htm">TaskCompletionSourceExtensions Class</a></div><div class="seeAlsoStyle"><a href="N_Rackspace_Threading.htm">Rackspace.Threading Namespace</a></div></div></div></div></div><div id="OH_footer" class="OH_footer">
+                                                                                                                                                                                                                                                                                                                                      <div class="OH_feedbacklink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:sam.harwell%40rackspace.com?Subject=Threading API Reference">sam.harwell@rackspace.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div><script src="//code.jquery.com/jquery-1.11.0.min.js"></script><script type="text/javascript">$(document).ready(function () {DocumentReady();});</script></body></html>
