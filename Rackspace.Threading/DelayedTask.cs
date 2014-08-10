@@ -490,6 +490,7 @@
         /// the first task to complete ended in the <see cref="TaskStatus.Canceled"/> or
         /// <see cref="TaskStatus.Faulted"/> state.
         /// </remarks>
+        /// <typeparam name="TResult">The type of the completed task.</typeparam>
         /// <param name="tasks">The tasks to wait on for completion.</param>
         /// <returns>A task that represents the completion of one of the supplied tasks. The return task's <see cref="Task{TResult}.Result"/> is the task that completed.</returns>
         /// <exception cref="ArgumentNullException">If <paramref name="tasks"/> is <see langword="null"/>.</exception>
@@ -513,6 +514,7 @@
         /// the first task to complete ended in the <see cref="TaskStatus.Canceled"/> or
         /// <see cref="TaskStatus.Faulted"/> state.
         /// </remarks>
+        /// <typeparam name="TResult">The type of the completed task.</typeparam>
         /// <param name="tasks">The tasks to wait on for completion.</param>
         /// <returns>A task that represents the completion of one of the supplied tasks. The return task's <see cref="Task{TResult}.Result"/> is the task that completed.</returns>
         /// <exception cref="ArgumentNullException">If <paramref name="tasks"/> is <see langword="null"/>.</exception>

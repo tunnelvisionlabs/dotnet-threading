@@ -104,60 +104,6 @@
           <output includeNamespaces="false" namespacesFile="Namespaces" folder="{@OutputFolder}\..\..\..\Api\netcore45\Debug" />
         </component>
       </ComponentConfig>
-      <ComponentConfig id="Comments Index Data (ESENT Cache)" enabled="True">
-        <component id="Comments Index Data (ESENT Cache)">
-          <index name="comments" value="/doc/members/member" key="@name" cache="30" localCacheSize="2500" frameworkCachePath="{@LocalDataFolder}Cache\CommentsIndexCache" projectCachePath="">
-            {@FrameworkCommentList}
-            {@CommentFileList}
-          </index>
-          <copy name="comments" source="*" target="/document/comments" />
-        </component>
-      </ComponentConfig>
-      <ComponentConfig id="Reflection Index Data (ESENT Cache)" enabled="True">
-        <component id="Reflection Index Data (ESENT Cache)">
-          <index name="reflection" value="/reflection/apis/api" key="@id" cache="15" localCacheSize="2500" frameworkCachePath="{@LocalDataFolder}Cache\ReflectionIndexCache" projectCachePath="">
-            <data base="{@SHFBFolder}Data\Reflection" recurse="true" files="*.xml" duplicateWarning="false" groupId="ReflectionIndexCache">
-              {@ReferenceLinkNamespaceFiles}
-            </data>
-            <data files="reflection.xml" groupId="Project_Ref_{@UniqueID}" />
-          </index>
-          <copy name="reflection" source="*" target="/document/reference" />
-        </component>
-      </ComponentConfig>
-      <ComponentConfig id="Resolve Reference Links (ESENT Cache)" enabled="True">
-        <component id="Resolve Reference Links (ESENT Cache)">
-          <locale value="{@Locale}" />
-          <linkTarget value="{@SdkLinkTarget}" />
-          <helpOutput format="HtmlHelp1">
-            <msdnContentIdCache path="{@LocalDataFolder}Cache\MsdnContentId.cache" cachePath="{@LocalDataFolder}Cache\ESentMsdnContentIdCache" localCacheSize="2500" />
-            <targets base="{@SHFBFolder}Data\Reflection" recurse="true" files="*.xml" type="{@HtmlSdkLinkType}" id="FrameworkTargets" cachePath="{@LocalDataFolder}Cache\ESentFrameworkTargetCache" localCacheSize="2500">
-              {@ReferenceLinkNamespaceFiles}
-            </targets>
-            <targets files="reflection.xml" type="Local" id="ProjectTargets" cachePath="" localCacheSize="2500" noReload="true" />
-          </helpOutput>
-          <helpOutput format="MSHelp2">
-            <msdnContentIdCache path="{@LocalDataFolder}Cache\MsdnContentId.cache" cachePath="{@LocalDataFolder}Cache\ESentMsdnContentIdCache" localCacheSize="2500" />
-            <targets base="{@SHFBFolder}Data\Reflection" recurse="true" files="*.xml" type="{@MSHelp2SdkLinkType}" id="FrameworkTargets" cachePath="{@LocalDataFolder}Cache\ESentFrameworkTargetCache" localCacheSize="2500">
-              {@ReferenceLinkNamespaceFiles}
-            </targets>
-            <targets files="reflection.xml" type="Index" id="ProjectTargets" cachePath="" localCacheSize="2500" noReload="true" />
-          </helpOutput>
-          <helpOutput format="MSHelpViewer">
-            <msdnContentIdCache path="{@LocalDataFolder}Cache\MsdnContentId.cache" cachePath="{@LocalDataFolder}Cache\ESentMsdnContentIdCache" localCacheSize="2500" />
-            <targets base="{@SHFBFolder}Data\Reflection" recurse="true" files="*.xml" type="{@MSHelpViewerSdkLinkType}" id="FrameworkTargets" cachePath="{@LocalDataFolder}Cache\ESentFrameworkTargetCache" localCacheSize="2500">
-              {@ReferenceLinkNamespaceFiles}
-            </targets>
-            <targets files="reflection.xml" type="Id" id="ProjectTargets" cachePath="" localCacheSize="2500" noReload="true" />
-          </helpOutput>
-          <helpOutput format="Website">
-            <msdnContentIdCache path="{@LocalDataFolder}Cache\MsdnContentId.cache" cachePath="{@LocalDataFolder}Cache\ESentMsdnContentIdCache" localCacheSize="2500" />
-            <targets base="{@SHFBFolder}Data\Reflection" recurse="true" files="*.xml" type="{@WebsiteSdkLinkType}" id="FrameworkTargets" cachePath="{@LocalDataFolder}Cache\ESentFrameworkTargetCache" localCacheSize="2500">
-              {@ReferenceLinkNamespaceFiles}
-            </targets>
-            <targets files="reflection.xml" type="Local" id="ProjectTargets" cachePath="" localCacheSize="2500" noReload="true" />
-          </helpOutput>
-        </component>
-      </ComponentConfig>
     </ComponentConfigurations>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -168,93 +114,9 @@
           <output includeNamespaces="false" namespacesFile="Namespaces" folder="{@OutputFolder}\..\..\..\Api\netcore45\Release" />
         </component>
       </ComponentConfig>
-      <ComponentConfig id="Comments Index Data (ESENT Cache)" enabled="True">
-        <component id="Comments Index Data (ESENT Cache)">
-          <index name="comments" value="/doc/members/member" key="@name" cache="30" localCacheSize="2500" frameworkCachePath="{@LocalDataFolder}Cache\CommentsIndexCache" projectCachePath="">
-            {@FrameworkCommentList}
-            {@CommentFileList}
-          </index>
-          <copy name="comments" source="*" target="/document/comments" />
-        </component>
-      </ComponentConfig>
-      <ComponentConfig id="Reflection Index Data (ESENT Cache)" enabled="True">
-        <component id="Reflection Index Data (ESENT Cache)">
-          <index name="reflection" value="/reflection/apis/api" key="@id" cache="15" localCacheSize="2500" frameworkCachePath="{@LocalDataFolder}Cache\ReflectionIndexCache" projectCachePath="">
-            <data base="{@SHFBFolder}Data\Reflection" recurse="true" files="*.xml" duplicateWarning="false" groupId="ReflectionIndexCache">
-              {@ReferenceLinkNamespaceFiles}
-            </data>
-            <data files="reflection.xml" groupId="Project_Ref_{@UniqueID}" />
-          </index>
-          <copy name="reflection" source="*" target="/document/reference" />
-        </component>
-      </ComponentConfig>
-      <ComponentConfig id="Resolve Reference Links (ESENT Cache)" enabled="True">
-        <component id="Resolve Reference Links (ESENT Cache)">
-          <locale value="{@Locale}" />
-          <linkTarget value="{@SdkLinkTarget}" />
-          <helpOutput format="HtmlHelp1">
-            <msdnContentIdCache path="{@LocalDataFolder}Cache\MsdnContentId.cache" cachePath="{@LocalDataFolder}Cache\ESentMsdnContentIdCache" localCacheSize="2500" />
-            <targets base="{@SHFBFolder}Data\Reflection" recurse="true" files="*.xml" type="{@HtmlSdkLinkType}" id="FrameworkTargets" cachePath="{@LocalDataFolder}Cache\ESentFrameworkTargetCache" localCacheSize="2500">
-              {@ReferenceLinkNamespaceFiles}
-            </targets>
-            <targets files="reflection.xml" type="Local" id="ProjectTargets" cachePath="" localCacheSize="2500" noReload="true" />
-          </helpOutput>
-          <helpOutput format="MSHelp2">
-            <msdnContentIdCache path="{@LocalDataFolder}Cache\MsdnContentId.cache" cachePath="{@LocalDataFolder}Cache\ESentMsdnContentIdCache" localCacheSize="2500" />
-            <targets base="{@SHFBFolder}Data\Reflection" recurse="true" files="*.xml" type="{@MSHelp2SdkLinkType}" id="FrameworkTargets" cachePath="{@LocalDataFolder}Cache\ESentFrameworkTargetCache" localCacheSize="2500">
-              {@ReferenceLinkNamespaceFiles}
-            </targets>
-            <targets files="reflection.xml" type="Index" id="ProjectTargets" cachePath="" localCacheSize="2500" noReload="true" />
-          </helpOutput>
-          <helpOutput format="MSHelpViewer">
-            <msdnContentIdCache path="{@LocalDataFolder}Cache\MsdnContentId.cache" cachePath="{@LocalDataFolder}Cache\ESentMsdnContentIdCache" localCacheSize="2500" />
-            <targets base="{@SHFBFolder}Data\Reflection" recurse="true" files="*.xml" type="{@MSHelpViewerSdkLinkType}" id="FrameworkTargets" cachePath="{@LocalDataFolder}Cache\ESentFrameworkTargetCache" localCacheSize="2500">
-              {@ReferenceLinkNamespaceFiles}
-            </targets>
-            <targets files="reflection.xml" type="Id" id="ProjectTargets" cachePath="" localCacheSize="2500" noReload="true" />
-          </helpOutput>
-          <helpOutput format="Website">
-            <msdnContentIdCache path="{@LocalDataFolder}Cache\MsdnContentId.cache" cachePath="{@LocalDataFolder}Cache\ESentMsdnContentIdCache" localCacheSize="2500" />
-            <targets base="{@SHFBFolder}Data\Reflection" recurse="true" files="*.xml" type="{@WebsiteSdkLinkType}" id="FrameworkTargets" cachePath="{@LocalDataFolder}Cache\ESentFrameworkTargetCache" localCacheSize="2500">
-              {@ReferenceLinkNamespaceFiles}
-            </targets>
-            <targets files="reflection.xml" type="Local" id="ProjectTargets" cachePath="" localCacheSize="2500" noReload="true" />
-          </helpOutput>
-        </component>
-      </ComponentConfig>
     </ComponentConfigurations>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Docs.Threading\Docs.Threading.net35-client.shfbproj">
-      <Name>Docs.Threading.net35-client</Name>
-      <Project>{a2d73067-50e8-42f8-aeb1-3b6bde900850}</Project>
-      <Private>False</Private>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\Docs.Threading\Docs.Threading.net40-client.shfbproj">
-      <Name>Docs.Threading.net40-client</Name>
-      <Project>{e0f959ce-80b6-4fac-bf98-fe04f0a09396}</Project>
-      <Private>False</Private>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\Docs.Threading\Docs.Threading.net45.shfbproj">
-      <Name>Docs.Threading.net45</Name>
-      <Project>{47b1188c-3aa9-470c-b8cb-244a028c2cdb}</Project>
-      <Private>False</Private>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\Docs.Threading\Docs.Threading.portable-net40.shfbproj">
-      <Name>Docs.Threading.portable-net40</Name>
-      <Project>{e9efeccd-c484-4b4b-a6dd-8480570d1ee6}</Project>
-      <Private>False</Private>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\Docs.Threading\Docs.Threading.portable-net45.shfbproj">
-      <Name>Docs.Threading.portable-net45</Name>
-      <Project>{70569826-141e-416d-b52b-edc9b5f4301b}</Project>
-      <Private>False</Private>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
     <ProjectReference Include="..\Rackspace.Threading\Rackspace.Threading.netcore45.csproj">
       <Name>Rackspace.Threading.netcore45</Name>
       <Project>{0a5117fd-5e6d-4538-a749-17358bb796ba}</Project>
