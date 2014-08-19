@@ -31,7 +31,7 @@
     <SyntaxFilters>Standard</SyntaxFilters>
     <SdkLinkTarget>Blank</SdkLinkTarget>
     <RootNamespaceContainer>True</RootNamespaceContainer>
-    <PresentationStyle>VS2013Alt</PresentationStyle>
+    <PresentationStyle>VS2013</PresentationStyle>
     <Preliminary>False</Preliminary>
     <NamingMethod>MemberName</NamingMethod>
     <HelpTitle>Threading API Reference</HelpTitle>
@@ -69,9 +69,6 @@
     <HelpAttributes />
     <NamespaceSummaries />
     <PlugInConfigurations>
-      <PlugInConfig id="Lightweight TOC" enabled="True">
-        <configuration />
-      </PlugInConfig>
     </PlugInConfigurations>
     <BuildLogFile />
     <HtmlHelp1xCompilerPath />
@@ -104,13 +101,6 @@
       </ComponentConfig>
     </ComponentConfigurations>
   </PropertyGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Rackspace.Threading\Rackspace.Threading.portable-net40.csproj">
-      <Name>Rackspace.Threading.portable-net40</Name>
-      <Project>{ea68b8fe-dbb5-453b-a6d8-95541935ec86}</Project>
-      <Private>True</Private>
-    </ProjectReference>
-  </ItemGroup>
   <ItemGroup>
     <None Include="Content\License.aml" />
     <None Include="Content\MSHelpViewerRoot.aml" />

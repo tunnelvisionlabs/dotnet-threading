@@ -31,7 +31,7 @@
     <SyntaxFilters>Standard</SyntaxFilters>
     <SdkLinkTarget>Blank</SdkLinkTarget>
     <RootNamespaceContainer>True</RootNamespaceContainer>
-    <PresentationStyle>VS2013Alt</PresentationStyle>
+    <PresentationStyle>VS2013</PresentationStyle>
     <Preliminary>False</Preliminary>
     <NamingMethod>MemberName</NamingMethod>
     <HelpTitle>Threading API Reference</HelpTitle>
@@ -69,9 +69,6 @@
     <HelpAttributes />
     <NamespaceSummaries />
     <PlugInConfigurations>
-      <PlugInConfig id="Lightweight TOC" enabled="True">
-        <configuration />
-      </PlugInConfig>
       <PlugInConfig id="Version Builder" enabled="True">
         <configuration>
           <currentProject label=".NET Framework" version="4.5" ripOldApis="False" />
@@ -112,13 +109,6 @@
       </ComponentConfig>
     </ComponentConfigurations>
   </PropertyGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Rackspace.Threading\Rackspace.Threading.net45.csproj">
-      <Name>Rackspace.Threading.net45</Name>
-      <Project>{808f5d89-ff4f-43d5-8ba7-e558ad4945d7}</Project>
-      <Private>True</Private>
-    </ProjectReference>
-  </ItemGroup>
   <ItemGroup>
     <None Include="Content\License.aml" />
     <None Include="Content\MSHelpViewerRoot.aml" />
