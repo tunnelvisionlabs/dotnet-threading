@@ -31,7 +31,7 @@
     <SyntaxFilters>Standard</SyntaxFilters>
     <SdkLinkTarget>Blank</SdkLinkTarget>
     <RootNamespaceContainer>True</RootNamespaceContainer>
-    <PresentationStyle>VS2013Alt</PresentationStyle>
+    <PresentationStyle>VS2013</PresentationStyle>
     <Preliminary>False</Preliminary>
     <NamingMethod>MemberName</NamingMethod>
     <HelpTitle>Threading API Reference</HelpTitle>
@@ -69,9 +69,6 @@
     <HelpAttributes />
     <NamespaceSummaries />
     <PlugInConfigurations>
-      <PlugInConfig id="Lightweight TOC" enabled="True">
-        <configuration />
-      </PlugInConfig>
       <PlugInConfig id="Version Builder" enabled="True">
         <configuration>
           <currentProject label="Portable Class Library" version="Portable Class Library" ripOldApis="False" />
