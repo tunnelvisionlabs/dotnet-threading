@@ -15,7 +15,7 @@
       <HelpKeyword index="K" term="license agreement" />
     </HelpKeywords>
   </Topic>
-  <Topic id="e02b9881-f06b-4420-aace-71b176d635db" visible="True" title="Preliminary Features" />
+  <Topic id="e02b9881-f06b-4420-aace-71b176d635db" visible="True" title="Breaking Changes Policy" />
   <Topic id="0a33afc9-793d-448a-950f-f03a2ca156d2" visible="True" isExpanded="true" title="User Guide">
     <Topic id="3304f46f-a7d2-4af6-8b5a-11f9931ba72e" visible="True" title="Installation" />
   </Topic>
