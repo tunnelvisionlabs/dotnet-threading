@@ -114,13 +114,6 @@
     </ComponentConfigurations>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Rackspace.Threading\Rackspace.Threading.netcore45.csproj">
-      <Name>Rackspace.Threading.netcore45</Name>
-      <Project>{0a5117fd-5e6d-4538-a749-17358bb796ba}</Project>
-      <Private>True</Private>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Content\License.aml" />
     <None Include="Content\MSHelpViewerRoot.aml" />
     <None Include="Content\PreliminaryFeatures.aml" />

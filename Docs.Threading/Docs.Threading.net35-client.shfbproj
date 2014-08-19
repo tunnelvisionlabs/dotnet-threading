@@ -102,13 +102,6 @@
     </ComponentConfigurations>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Rackspace.Threading\Rackspace.Threading.net35-client.csproj">
-      <Name>Rackspace.Threading.net35-client</Name>
-      <Project>{52ca4a3b-f296-4489-b5f0-ad375d039b35}</Project>
-      <Private>True</Private>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Content\License.aml" />
     <None Include="Content\MSHelpViewerRoot.aml" />
     <None Include="Content\PreliminaryFeatures.aml" />
