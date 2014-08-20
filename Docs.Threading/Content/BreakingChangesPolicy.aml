@@ -118,24 +118,13 @@
           always changes the strong name of the assembly.
         </para>
         <para>
-          Minor releases are typically used for the following.
+          Minor releases are typically used for the promotion of features previously marked preliminary to stable
+          features of the API.
         </para>
-        <list class="bullet">
-          <listItem>
-            <para>
-              Promotion of features previously marked as preliminary to stable features of the API.
-            </para>
-          </listItem>
-          <listItem>
-            <para>
-              Changes to stable features of the API where necessary for the purpose of introducing new functionality,
-              addressing performance concerns, or correcting bugs in the library.
-            </para>
-          </listItem>
-        </list>
         <para>
-          Major releases are typically used for substantial refactoring or other alterations in order to meet the needs
-          of a broader user base, or for the purpose of improving overall usability or flexibility of the library.
+          Major releases are required for any change which breaks backwards compatibility with assembly binding
+          redirection, but are typically used for substantial refactoring or other alterations in order to meet the
+          needs of a broader user base, or for the purpose of improving overall usability or flexibility of the library.
         </para>
       </content>
 
