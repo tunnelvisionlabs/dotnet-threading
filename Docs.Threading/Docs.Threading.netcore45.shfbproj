@@ -78,6 +78,8 @@
             <version label=".NET Framework" version="4.5" helpFileProject="Docs.Threading.net45.shfbproj" />
             <version label="Portable Class Library" version="Portable Class Library (Legacy)" helpFileProject="Docs.Threading.portable-net40.shfbproj" />
             <version label="Portable Class Library" version="Portable Class Library" helpFileProject="Docs.Threading.portable-net45.shfbproj" />
+            <version label="Rackspace Threading Library" version="1.0" ripOldApis="True" helpFileProject="..\Docs.Threading.History\1.0\Docs.Threading.1.0.shfbproj" />
+            <version label="Rackspace Threading Library" version="1.1" ripOldApis="True" helpFileProject="..\Docs.Threading.History\Current\Docs.Threading.Current.shfbproj" />
           </versions>
         </configuration>
       </PlugInConfig>
@@ -114,9 +116,9 @@
     </ComponentConfigurations>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="Content\BreakingChangesPolicy.aml" />
     <None Include="Content\License.aml" />
     <None Include="Content\MSHelpViewerRoot.aml" />
-    <None Include="Content\PreliminaryFeatures.aml" />
     <None Include="Content\UserGuide\Installation.aml" />
     <None Include="Content\UserGuide\UserGuide.aml" />
     <None Include="Content\Welcome.aml" />

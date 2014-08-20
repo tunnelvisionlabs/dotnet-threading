@@ -102,9 +102,9 @@
     </ComponentConfigurations>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="Content\BreakingChangesPolicy.aml" />
     <None Include="Content\License.aml" />
     <None Include="Content\MSHelpViewerRoot.aml" />
-    <None Include="Content\PreliminaryFeatures.aml" />
     <None Include="Content\UserGuide\Installation.aml" />
     <None Include="Content\UserGuide\UserGuide.aml" />
     <None Include="Content\Welcome.aml" />
