@@ -24,6 +24,55 @@
           such within the documentation.
         </para>
       </content>
+
+      <sections>
+        <section>
+          <title>Dependencies</title>
+          <content>
+            <para>
+              With the exception of the items listed in the following table, this library does not depend on any
+              libraries other than the .NET Framework itself. The .NET Framework's breaking changes policy is more
+              strict than this library, and is not anticipated to be the source of any breaking binary or source
+              breaking change which affects the use of this library.
+            </para>
+            <table>
+              <tableHeader>
+                <row>
+                  <entry>
+                    <para>Dependency</para>
+                  </entry>
+                  <entry>
+                    <para>Affected Framework(s)</para>
+                  </entry>
+                  <entry>
+                    <para>Policy</para>
+                  </entry>
+                </row>
+              </tableHeader>
+              <row>
+                <entry>
+                  <para>
+                    <externalLink>
+                      <linkText>TaskParallelLibrary</linkText>
+                      <linkAlternateText>Task Parallel Library for .NET 3.5</linkAlternateText>
+                      <linkUri>https://www.nuget.org/packages/TaskParallelLibrary/</linkUri>
+                    </externalLink>
+                  </para>
+                </entry>
+                <entry>
+                  <para>net35-client</para>
+                </entry>
+                <entry>
+                  <para>
+                    This compatibility library is no longer actively developed, and is unlikely to ever change in a
+                    manner inconsistent with this breaking changes policy.
+                  </para>
+                </entry>
+              </row>
+            </table>
+          </content>
+        </section>
+      </sections>
     </section>
 
     <section>
