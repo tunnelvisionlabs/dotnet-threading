@@ -6,8 +6,8 @@
 
     <introduction>
       <para>
-        To ensure the long-term reliability of both the SDK and applications which rely on the SDK, the following
-        policy is enforced for each release of the SDK.
+        To ensure the long-term reliability of both this library and applications which rely on it, the following policy
+        is enforced for each release.
       </para>
     </introduction>
 
