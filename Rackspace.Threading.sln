@@ -78,7 +78,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{1A382B22
 	ProjectSection(SolutionItems) = preProject
 		Build\build.ps1 = Build\build.ps1
 		Build\check-key.ps1 = Build\check-key.ps1
-		Build\KeyReporting.targets = Build\KeyReporting.targets
 		Build\keys.ps1 = Build\keys.ps1
 		Build\push.ps1 = Build\push.ps1
 		Build\version.ps1 = Build\version.ps1
