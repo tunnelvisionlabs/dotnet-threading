@@ -1,17 +1,12 @@
-﻿#if !NET45PLUS
+﻿#if !NET40PLUS
 
-namespace Rackspace.Threading
+namespace System
 {
     /// <summary>
     /// Defines a provider for progress updates.
     /// </summary>
     /// <typeparam name="T">The type of progress update value.</typeparam>
-    public interface IProgress<
-#if NET40PLUS
-        in
-#endif
-        T
-        >
+    public interface IProgress<T>
     {
         /// <summary>
         /// Reports a progress update.

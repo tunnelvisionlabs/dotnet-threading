@@ -84,6 +84,7 @@
     <ProjectReference Include="..\..\Rackspace.Threading\Rackspace.Threading.net35-client.csproj">
       <Project>{52ca4a3b-f296-4489-b5f0-ad375d039b35}</Project>
       <Name>Rackspace.Threading.net35-client</Name>
+      <Aliases>global,rax</Aliases>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
