@@ -1,17 +1,17 @@
 ﻿// Copyright (c) Rackspace, US Inc. All Rights Reserved. Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
-#if !NET45PLUS
-
 namespace Rackspace.Threading
 {
     using System;
     using System.Threading;
 
+#if !NET45PLUS
 #if NET40PLUS
     using System.Runtime.CompilerServices;
 #else
     using System.Collections.Generic;
     using System.Collections.Concurrent;
+#endif
 #endif
 
     /// <summary>
@@ -20,6 +20,7 @@ namespace Rackspace.Threading
     /// <threadsafety static="true" instance="false"/>
     public static class CancellationTokenSourceExtensions
     {
+#if !NET45PLUS
 #if NET40PLUS
         /// <summary>
         /// This map prevents <see cref="Timer"/> instances from being garbage collected prior to the
@@ -35,6 +36,7 @@ namespace Rackspace.Threading
         private static readonly ConcurrentDictionary<HashedWeakReference<CancellationTokenSource>, Timer> _timers =
             new ConcurrentDictionary<HashedWeakReference<CancellationTokenSource>, Timer>();
 #endif
+#endif
 
         /// <summary>
         /// Schedules a <see cref="CancellationTokenSource.Cancel()"/> operation on a <see cref="CancellationTokenSource"/>
@@ -49,8 +51,8 @@ namespace Rackspace.Threading
         /// <para>
         /// In all versions of .NET, requesting cancellation of a <see cref="CancellationTokenSource"/> will
         /// not prevent the instance from becoming eligible for garbage collection prior to the timer expiring.
-        /// In .NET 4 and newer, any associated <see cref="Timer"/> instance will become eligible for garbage
-        /// collection at the same time as the associated <see cref="CancellationTokenSource"/>.
+        /// In .NET 4 and newer, any associated <see cref="T:System.Threading.Timer"/> instance will become eligible for
+        /// garbage collection at the same time as the associated <see cref="CancellationTokenSource"/>.
         /// </para>
         /// </remarks>
         /// <param name="cts">The <see cref="CancellationTokenSource"/> to cancel after a delay.</param>
@@ -62,6 +64,10 @@ namespace Rackspace.Threading
         {
             if (cts == null)
                 throw new ArgumentNullException("cts");
+
+#if NET45PLUS
+            cts.CancelAfter(delay);
+#else
             if (delay.TotalMilliseconds < -1 || delay.TotalMilliseconds > int.MaxValue)
                 throw new ArgumentOutOfRangeException("delay");
 
@@ -81,8 +87,10 @@ namespace Rackspace.Threading
             Timer timer = _timers.GetOrAdd(new HashedWeakReference<CancellationTokenSource>(cts), CreateTimer);
             timer.Change(delay, TimeSpan.FromMilliseconds(-1));
 #endif
+#endif
         }
 
+#if !NET45PLUS
 #if !NET40PLUS
         private static Timer CreateTimer(HashedWeakReference<CancellationTokenSource> key)
         {
@@ -270,7 +278,6 @@ namespace Rackspace.Threading
                 set;
             }
         }
+#endif
     }
 }
-
-#endif
