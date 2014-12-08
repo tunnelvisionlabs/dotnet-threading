@@ -248,12 +248,6 @@ namespace Rackspace.Threading
             continuation =
                 previousTask =>
                 {
-                    if (previousTask.Status != TaskStatus.RanToCompletion)
-                    {
-                        taskCompletionSource.SetFromFailedTask(previousTask);
-                        return;
-                    }
-
                     if (!condition())
                     {
                         taskCompletionSource.SetResult(default(VoidResult));
