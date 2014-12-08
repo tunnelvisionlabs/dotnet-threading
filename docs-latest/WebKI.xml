@@ -58,8 +58,8 @@
     <HelpKINode Title="methods" Url="html/Methods_T_Rackspace_Threading_IProgress_1.htm" />
   </HelpKINode>
   <HelpKINode Title="IProgress(Of T).Report explicitly implemented method">
-    <HelpKINode Title="Progress(T).IProgress(T).Report Method " Url="html/M_Rackspace_Threading_Progress_1_Rackspace_Threading_IProgress{T}_Report.htm" />
     <HelpKINode Title="Progress(T).IProgress(T).Report Method " Url="html/M_Rackspace_Threading_Progress_1_System_IProgress{T}_Report.htm" />
+    <HelpKINode Title="Progress(T).IProgress(T).Report Method " Url="html/M_Rackspace_Threading_Progress_1_Rackspace_Threading_IProgress{T}_Report.htm" />
   </HelpKINode>
   <HelpKINode Title="IProgress(Of T).Report method" Url="html/M_Rackspace_Threading_IProgress_1_Report.htm" />
   <HelpKINode Title="IProgress&lt;T&gt; interface">

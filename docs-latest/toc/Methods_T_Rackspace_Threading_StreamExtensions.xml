@@ -1,7 +1,1 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<HelpTOCNode Title="StreamExtensions Methods" Url="html/Methods_T_Rackspace_Threading_StreamExtensions.htm">
-  <HelpTOCNode Title="CopyToAsync Method " Url="html/Overload_Rackspace_Threading_StreamExtensions_CopyToAsync.htm" HasChildren="true" />
-  <HelpTOCNode Title="FlushAsync Method " Url="html/Overload_Rackspace_Threading_StreamExtensions_FlushAsync.htm" HasChildren="true" />
-  <HelpTOCNode Title="ReadAsync Method " Url="html/Overload_Rackspace_Threading_StreamExtensions_ReadAsync.htm" HasChildren="true" />
-  <HelpTOCNode Title="WriteAsync Method " Url="html/Overload_Rackspace_Threading_StreamExtensions_WriteAsync.htm" HasChildren="true" />
-</HelpTOCNode>
+﻿<?xml version="1.0" encoding="utf-8"?><HelpTOCNode Title="StreamExtensions Methods" Url="html/Methods_T_Rackspace_Threading_StreamExtensions.htm"><HelpTOCNode Title="CopyToAsync Method " Url="html/Overload_Rackspace_Threading_StreamExtensions_CopyToAsync.htm" HasChildren="true" /><HelpTOCNode Title="FlushAsync Method " Url="html/Overload_Rackspace_Threading_StreamExtensions_FlushAsync.htm" HasChildren="true" /><HelpTOCNode Title="ReadAsync Method " Url="html/Overload_Rackspace_Threading_StreamExtensions_ReadAsync.htm" HasChildren="true" /><HelpTOCNode Title="WriteAsync Method " Url="html/Overload_Rackspace_Threading_StreamExtensions_WriteAsync.htm" HasChildren="true" /></HelpTOCNode>

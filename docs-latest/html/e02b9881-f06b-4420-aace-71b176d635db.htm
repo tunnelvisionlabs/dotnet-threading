@@ -1,36 +1,289 @@
-﻿<html>
+﻿<!DOCTYPE html >
+<html>
   <head>
     <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
     <link rel="shortcut icon" href="../icons/favicon.ico">
     <link rel="stylesheet" type="text/css" href="../styles/branding.css">
-    <link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css"><script type="text/javascript" src="../scripts/branding.js"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <title>Preliminary Features</title><meta name="Language" content="en-us">
+    <link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css"><script type="text/javascript" src="../scripts/branding.js"> </script><title>Breaking Changes Policy</title><meta name="Language" content="en-us">
         <meta name="Microsoft.Help.Id" content="e02b9881-f06b-4420-aace-71b176d635db">
-        <meta name="Description" content="Certain sections of this documentation may be marked as preliminary documentation. This page describes the role of classes and methods marked as preliminary in a release of this library.">
+        <meta name="Description" content="To ensure the long-term reliability of both this library and applications which rely on it, the following policy is enforced for each release.">
         <meta name="Microsoft.Help.ContentType" content="Concepts">
-        <meta name="BrandingAware" content="'true'">
-          <meta name="SelfBranded" content="true"></head><body onload="onLoad()"><header class="ux-header"><div class="header-top-bar">Threading API Reference</div></header><div class="OH_outerDiv" style="padding: 35px 20px 0 20px;">
-                  <div class="OH_leftNav" id="LeftNav">
-  <div id="tocnav">
-    <div class="toclevel0" data-toclevel="0" style="padding-left: 0px;" data-childrenloaded="true"><a class="toc_expanded" onclick="javascript: Toggle(this);" href="#!"></a><a data-tochassubtree="true" href="50d028db-e522-4750-91a6-4ae6c97c2610.htm" title="Threading API" tocid="roottoc">Threading API</a></div><div class="toclevel1" data-toclevel="1" style="padding-left: 13px;"><span class="toc_empty"></span><a data-tochassubtree="false" href="50d028db-e522-4750-91a6-4ae6c97c2610.htm" title="Welcome" tocid="50d028db-e522-4750-91a6-4ae6c97c2610">Welcome</a></div><div class="toclevel1" data-toclevel="1" style="padding-left: 13px;"><span class="toc_empty"></span><a data-tochassubtree="false" href="42ba1007-d64f-410e-af6c-169426597465.htm" title="License Agreement" tocid="42ba1007-d64f-410e-af6c-169426597465">License Agreement</a></div><div class="toclevel1 current" data-toclevel="1" style="padding-left: 13px;"><span class="toc_empty"></span><a data-tochassubtree="false" href="e02b9881-f06b-4420-aace-71b176d635db.htm" title="Preliminary Features" tocid="e02b9881-f06b-4420-aace-71b176d635db">Preliminary Features</a></div><div class="toclevel1" data-toclevel="1" style="padding-left: 13px;"><a class="toc_collapsed" onclick="javascript: Toggle(this);" href="#!"></a><a data-tochassubtree="true" href="0a33afc9-793d-448a-950f-f03a2ca156d2.htm" title="User Guide" tocid="0a33afc9-793d-448a-950f-f03a2ca156d2">User Guide</a></div><div class="toclevel1" data-toclevel="1" style="padding-left: 13px;"><a class="toc_collapsed" onclick="javascript: Toggle(this);" href="#!"></a><a data-tochassubtree="true" href="R_Project_Threading_API_Reference.htm" title="API Reference" tocid="R_Project_Threading_API_Reference">API Reference</a></div></div></div><div id="TocResize" class="OH_TocResize"><img id="ResizeImageIncrease" src="../icons/open.gif" onclick="onIncreaseToc()" alt="Expand" title="Expand"><img id="ResizeImageReset" src="../icons/close.gif" style="display:none" onclick="onResetToc()" alt="Minimize" title="Minimize"></div><div class="OH_outerContent" id="OuterContent" style="margin-left: 280px;">
-                    <h1 class="title">Preliminary Features</h1><div id="mainSection">
-                        <div id="mainBody"><span class="introStyle"></span><div class="introduction">
-                              <p>
-        Certain sections of this documentation may be marked as <q>preliminary documentation</q>.
-        This page describes the role of classes and methods marked as preliminary in a release of this library.
-      </p></div><a id="AddingFeatures"></a><div class="OH_CollapsibleAreaRegion">
-                                      <div class="OH_regiontitle">Adding Features</div></div><p>New features SHOULD be added with the preliminary marking.</p><ul>
-                                            <li>
-                                              <p>Breaking changes to features marked as preliminary are allowed in releases that do not change the assembly's strong name, provided they are listed in the release notes.</p></li><li>
-                                                  <p>If any binary breaking changes were made to a feature while it was marked preliminary, the assembly strong name MUST be updated when the preliminary marking is removed. If no binary breaking changes were made to a feature while it was marked preliminary, the preliminary marking MAY be removed without changing the strong name of the assembly.</p></li></ul><a id="BreakingChanges"></a><div class="OH_CollapsibleAreaRegion">
-                                                        <div class="OH_regiontitle">Breaking Changes</div></div><ul>
-                                                            <li>
-                                                              <p>Breaking changes to binary compatibility MUST NOT be made to features without updating the assembly's strong name unless they are marked preliminary.</p></li><li>
-                                                                  <p>Breaking changes to source compatibility SHOULD NOT be made to features without updating the assembly's strong name, unless they are marked preliminary.</p></li></ul></div></div></div></div><div id="OH_footer" class="OH_footer">
-                                                                      <div class="OH_feedbacklink">Send comments on this topic to
+        <meta name="BrandingAware" content="true">
+          <link rel="stylesheet" type="text/css" href="../styles/branding-Website.css"><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle"><div class="pageHeader" id="PageHeader">Threading API Reference<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody">
+                    <div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!"></a><a data-tochassubtree="true" href="50d028db-e522-4750-91a6-4ae6c97c2610.htm" title="Threading API Reference" tocid="roottoc">Threading API Reference</a></div><div class="toclevel1" data-toclevel="1"><a data-tochassubtree="false" href="50d028db-e522-4750-91a6-4ae6c97c2610.htm" title="Welcome" tocid="50d028db-e522-4750-91a6-4ae6c97c2610">Welcome</a></div><div class="toclevel1" data-toclevel="1"><a data-tochassubtree="false" href="42ba1007-d64f-410e-af6c-169426597465.htm" title="License Agreement" tocid="42ba1007-d64f-410e-af6c-169426597465">License Agreement</a></div><div class="toclevel1 current" data-toclevel="1"><a data-tochassubtree="false" href="e02b9881-f06b-4420-aace-71b176d635db.htm" title="Breaking Changes Policy" tocid="e02b9881-f06b-4420-aace-71b176d635db">Breaking Changes Policy</a></div><div class="toclevel1" data-toclevel="1"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!"></a><a data-tochassubtree="true" href="0a33afc9-793d-448a-950f-f03a2ca156d2.htm" title="User Guide" tocid="0a33afc9-793d-448a-950f-f03a2ca156d2">User Guide</a></div><div class="toclevel1" data-toclevel="1"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!"></a><a data-tochassubtree="true" href="R_Project_Threading_API_Reference.htm" title="API Reference" tocid="R_Project_Threading_API_Reference">API Reference</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize"><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize"></div></div><div class="topicContent" id="TopicContent">
+                      <table class="titleTable">
+                        <tr>
+                          <td class="titleColumn">Breaking Changes Policy</td></tr></table><span class="introStyle"></span><div class="introduction">
+                                <p>
+        To ensure the long-term reliability of both this library and applications which rely on it, the following policy
+        is enforced for each release.
+      </p></div><div class="collapsibleAreaRegion"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png">Scope</span></div><div id="ID0RBSection" class="collapsibleSection">
+                                        <p>
+          This breaking changes policy is only enforced for libraries which explicitly state it as their governing
+          policy. In certain cases, a library governed by this breaking changes policy may depend on a library which is
+          not governed by the same policy, or which does not provide any breaking changes policy. In those cases, a
+          best-effort is provided to ensure changes to the dependency do not affect dependent code. For maximum
+          long-term compatibility, dependent applications and libraries should treat dependencies not governed by this
+          policy in accordance with the rules described for preliminary features, even though they are not marked as
+          such within the documentation.
+        </p><h4 class="subHeading">Dependencies</h4><div class="subsection">
+                                              <p>
+              With the exception of the items listed in the following table, this library does not depend on any
+              libraries other than the .NET Framework itself. The .NET Framework's breaking changes policy is more
+              strict than this library, and is not anticipated to be the source of any breaking binary or source
+              breaking change which affects the use of this library.
+            </p><div class="tableSection">
+                                                  <table>
+                                                    <tr>
+                                                      <th>
+                                                        <p>Dependency</p></th><th>
+                                                            <p>Affected Framework(s)</p></th><th>
+                                                                <p>Policy</p></th></tr><tr>
+                                                                    <td>
+                                                                      <p><a href="https://www.nuget.org/packages/TaskParallelLibrary/" title="Task Parallel Library for .NET 3.5" target="_blank">TaskParallelLibrary</a></p></td><td>
+                                                                            <p>net35-client</p></td><td>
+                                                                                <p>
+                    This compatibility library is no longer actively developed, and is unlikely to ever change in a
+                    manner inconsistent with this breaking changes policy.
+                  </p></td></tr></table></div></div></div><div class="collapsibleAreaRegion"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png">Definitions</span></div><div id="ID1RBSection" class="collapsibleSection">
+                                                                                        <dl>
+                                                                                          <dt>Binary compatible</dt><dd>
+                                                                                              <p>
+              An assembly <span class="literal">x</span> is <span class="term">binary compatible</span> with an assembly
+              <span class="literal">y</span> if replacing <span class="literal">y</span> with <span class="literal">x</span> will not cause an
+              application previously compiled against <span class="literal">y</span> to stop functioning at runtime.
+            </p><div class="alert">
+                                                                                                              <table>
+                                                                                                                <tr>
+                                                                                                                  <th><img src="../icons/AlertNote.png" alt="Note"> Note</th></tr><tr>
+                                                                                                                      <td>
+                                                                                                                        <p>
+                Binary compatibility is transitive, but not necessarily symmetric. Specifically, the assembly
+                <span class="literal">x</span> may include new APIs that are not included in <span class="literal">y</span>; since the
+                application compiled against <span class="literal">y</span> is clearly not using any of these new APIs, they do
+                not prevent <span class="literal">x</span> from being binary compatible with <span class="literal">y</span>.
+              </p></td></tr></table></div></dd><dt>Source compatible</dt><dd>
+                                                                                                                                        <p>
+              An assembly <span class="literal">x</span> is <span class="term">source compatible</span> with an assembly
+              <span class="literal">y</span> if replacing <span class="literal">y</span> with <span class="literal">x</span> will not cause an
+              application previously compiled against <span class="literal">y</span> to encounter build errors when it is
+              recompiled.
+            </p></dd><dt>Version</dt><dd>
+                                                                                                                                                          <p>
+              A <span class="term">version</span> is comprised of four parts, with the following form.
+            </p><blockquote>
+              major.minor.patch.revision
+            </blockquote><p>
+              Each part of the version number is an integer in the range 0-65535, inclusive.
+            </p></dd><dt>Major release</dt><dd>
+                                                                                                                                                                      <p>
+              A <span class="term">major release</span> is a release which increments the "major" part of the version.
+            </p></dd><dt>Minor release</dt><dd>
+                                                                                                                                                                              <p>
+              A <span class="term">minor release</span> is a release which increments the "minor" part of the version, but does
+              not change the "major" part.
+            </p></dd><dt>Patch release</dt><dd>
+                                                                                                                                                                                      <p>
+              A <span class="term">patch release</span> is a release which increments the "patch" and/or "revision" parts of
+              the version, but does not change either the "major" or "minor" parts.
+            </p></dd><dt>Preliminary feature</dt><dd>
+                                                                                                                                                                                              <p>
+              A <span class="term">preliminary feature</span> is a special designation for a publicly-exposed API in the
+              library which is exempted from certain rules within the breaking changes policy for the purpose of
+              improving the agility of library development without compromising reliability for business users primarily
+              interested in API stability.
+            </p></dd><dt>Stable feature</dt><dd>
+                                                                                                                                                                                                      <p>
+              A <span class="term">stable feature</span> is any type or member within the publicly-exposed API of the library
+              which is not designated as a preliminary feature.
+            </p></dd></dl></div><div class="collapsibleAreaRegion"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png">Major and Minor Releases</span></div><div id="ID2RBSection" class="collapsibleSection">
+                                                                                                                                                                                                                <p>
+          Major and minor releases do not preserve binary compatibility. For dependent assemblies which use a strong
+          name, the binary incompatibility is enforced by a change to the strong name of the assembly. Major and minor
+          releases update the value of the
+          <a href="http://msdn2.microsoft.com/en-us/library/zb298d28" target="_blank">AssemblyVersionAttribute</a> attribute, which
+          always changes the strong name of the assembly.
+        </p><p>
+          Minor releases are typically used for the promotion of features previously marked preliminary to stable
+          features of the API.
+        </p><p>
+          Major releases are required for any change which breaks backwards compatibility with assembly binding
+          redirection, but are typically used for substantial refactoring or other alterations in order to meet the
+          needs of a broader user base, or for the purpose of improving overall usability or flexibility of the library.
+        </p><h4 class="subHeading">Assembly Binding Redirection for Minor Releases</h4><div class="subsection">
+                                                                                                                                                                                                                            <p>
+              For this library, minor releases include a special provision for binary compatibility when using assembly
+              binding redirection. For any two versions <span class="literal">x</span> and <span class="literal">y</span> of the library
+              where the major version of <span class="literal">x</span> and <span class="literal">y</span> are the same but the minor
+              version of <span class="literal">y</span> is greater than the minor version of <span class="literal">x</span>, then
+              <span class="literal">y</span> is binary compatible with <span class="literal">x</span> when assembly binding redirection is
+              used. For more information about using assembly binding redirection, see <a href="http://msdn.microsoft.com/en-us/library/7wd6ex19.aspx" target="_blank">Redirecting Assembly Versions</a>.
+            </p><div class="alert">
+                                                                                                                                                                                                                                                  <table>
+                                                                                                                                                                                                                                                    <tr>
+                                                                                                                                                                                                                                                      <th><img src="../icons/AlertNote.png" alt="Note"> Note</th></tr><tr>
+                                                                                                                                                                                                                                                          <td>
+                                                                                                                                                                                                                                                            <p>
+                The <a href="#PatchReleaseExceptions">exceptions</a> described for binary compatibility of
+                patch releases apply for assembly binding redirection as well.
+              </p></td></tr></table></div><div class="alert">
+                                                                                                                                                                                                                                                                  <table>
+                                                                                                                                                                                                                                                                    <tr>
+                                                                                                                                                                                                                                                                      <th><img src="../icons/AlertCaution.png" alt="Important note"> Important</th></tr><tr>
+                                                                                                                                                                                                                                                                          <td>
+                                                                                                                                                                                                                                                                            <p>
+                Major releases of this library <strong>do not</strong> include a special provision for binary
+                compatibility when using assembly binding redirection. Assembly binding redirection should only be used
+                for major releases when the release notes explicitly state that binding redirection is supported for the
+                specific versions in use.
+              </p></td></tr></table></div></div></div><div class="collapsibleAreaRegion"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png">Patch Releases</span></div><div id="ID3RBSection" class="collapsibleSection">
+                                                                                                                                                                                                                                                                                      <p>
+          Patch releases preserve binary compatibility for all features of the library which are not marked preliminary.
+          This includes but is not limited to the following guarantees.
+        </p><ul>
+                                                                                                                                                                                                                                                                                          <li>
+                                                                                                                                                                                                                                                                                            <p>
+              Patch releases never change the strong name of the assembly. This means a patch release updates the
+              <a href="http://msdn2.microsoft.com/en-us/library/zt82d9ex" target="_blank">AssemblyFileVersionAttribute</a> and
+              <a href="http://msdn2.microsoft.com/en-us/library/55cfxe86" target="_blank">AssemblyInformationalVersionAttribute</a>
+              values, but does not change the
+              <a href="http://msdn2.microsoft.com/en-us/library/zb298d28" target="_blank">AssemblyVersionAttribute</a> value.
+            </p></li><li>
+                                                                                                                                                                                                                                                                                                      <p>
+              Patch releases do not change the runtime signature of any type or method which is not marked preliminary.
+              The runtime signatures include type and method names
+            </p></li><li>
+                                                                                                                                                                                                                                                                                                          <p>
+              Patch releases may only add elements to the public API of the assembly if they are marked preliminary.
+              This rule ensures that patch releases preserve symmetric binary compatibility for applications and
+              libraries which avoid the use of any feature marked as preliminary.
+            </p></li></ul><h4 class="subHeading">Revision-Only Releases</h4><div class="subsection">
+                                                                                                                                                                                                                                                                                                                <p>
+              In some cases, a release will only update the "revision" part of the version. With regard to this breaking
+              changes policy, these releases are equivalent to patch releases. In practice, revision-only releases are
+              typically reserved for correcting a previous patch or revision release which violated the breaking changes
+              policy, or for correcting a bug which was introduced in the current patch cycle without making changes to
+              the public API of the assembly.
+            </p></div><h4 class="subHeading" id="PatchReleaseExceptions">Exceptions</h4><div class="subsection">
+                                                                                                                                                                                                                                                                                                                      <p>
+              Certain exceptions apply to the binary compatibility requirement of patch releases. These include the
+              following.
+            </p><ul>
+                                                                                                                                                                                                                                                                                                                          <li>
+                                                                                                                                                                                                                                                                                                                            <p>
+                  All implementation details, i.e. code which is not part of the public API of the assembly, is allowed
+                  to change during a patch release. Code using the reflection APIs to manipulate any aspect of the
+                  library may observe breaking changes at runtime as a result of changes to implementation details.
+                </p></li><li>
+                                                                                                                                                                                                                                                                                                                                <p>
+                  All types and members which are marked as preliminary are exempted from the binary compatibility
+                  requirement, subject to the rules of
+                  <a href="#PreliminaryFeatures">preliminary features</a>.
+                </p></li></ul></div></div><div class="collapsibleAreaRegion"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID4RB')" onkeypress="SectionExpandCollapse_CheckKey('ID4RB', event)" tabindex="0"><img id="ID4RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png">Summary of Release Characteristics</span></div><div id="ID4RBSection" class="collapsibleSection">
+                                                                                                                                                                                                                                                                                                                                          <p>The following table summarizes the intent of various releases.</p><div class="tableSection">
+                                                                                                                                                                                                                                                                                                                                              <table>
+                                                                                                                                                                                                                                                                                                                                                <tr>
+                                                                                                                                                                                                                                                                                                                                                  <th>
+                                                                                                                                                                                                                                                                                                                                                    <p>Release Type</p></th><th>
+                                                                                                                                                                                                                                                                                                                                                        <p>Binary Compatibility</p></th><th>
+                                                                                                                                                                                                                                                                                                                                                            <p>Binding Redirection</p></th><th>
+                                                                                                                                                                                                                                                                                                                                                                <p>Source Compatibility</p></th><th>
+                                                                                                                                                                                                                                                                                                                                                                    <p>New Features</p></th></tr><tr>
+                                                                                                                                                                                                                                                                                                                                                                        <td>
+                                                                                                                                                                                                                                                                                                                                                                          <p>Major</p></td><td>
+                                                                                                                                                                                                                                                                                                                                                                              <p>Unrestricted</p></td><td>
+                                                                                                                                                                                                                                                                                                                                                                                  <p>
+                Explicit Only<sup>1</sup></p></td><td>
+                                                                                                                                                                                                                                                                                                                                                                                        <p>Unrestricted</p></td><td>
+                                                                                                                                                                                                                                                                                                                                                                                            <p>Unrestricted</p></td></tr><tr>
+                                                                                                                                                                                                                                                                                                                                                                                                <td>
+                                                                                                                                                                                                                                                                                                                                                                                                  <p>Minor</p></td><td>
+                                                                                                                                                                                                                                                                                                                                                                                                      <p>
+                Transitive: Binding Redirection<sup>2</sup></p><p>
+                Symmetric: Unrestricted
+              </p></td><td>
+                                                                                                                                                                                                                                                                                                                                                                                                              <p>Supported</p></td><td>
+                                                                                                                                                                                                                                                                                                                                                                                                                  <p>
+                Relaxed Preferred<sup>3</sup></p></td><td>
+                                                                                                                                                                                                                                                                                                                                                                                                                        <p>Unrestricted</p></td></tr><tr>
+                                                                                                                                                                                                                                                                                                                                                                                                                            <td>
+                                                                                                                                                                                                                                                                                                                                                                                                                              <p>Patch</p></td><td>
+                                                                                                                                                                                                                                                                                                                                                                                                                                  <p>Transitive: Required</p><p>
+                Symmetric: Preferred<sup>4</sup></p></td><td>
+                                                                                                                                                                                                                                                                                                                                                                                                                                          <p>
+                Implicit<sup>5</sup></p></td><td>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <p>
+                Strict Preferred<sup>6</sup></p></td><td>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                      <p>
+                Preliminary Only<sup>4</sup></p></td></tr></table></div><ol>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                            <li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                              <p>
+              Major releases only support assembly binding redirection when explicitly stated in the release notes for
+              a particular major release.
+            </p></li><li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <p>
+              Since minor releases result in a change to the strong name of the assembly, binary compatibility by simply
+              replacing assemblies on disk is never preserved for strong-named applications or libraries which reference
+              the assembly. However, for all stable features, minor releases are binary compatible with previous
+              releases when applications are configured with an assembly binding redirection in their configuration.
+            </p></li><li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <p>
+              To minimize the cost of updating an application to use a new minor release of the library,
+              source-incompatible changes should only be introduced when necessary to support a substantial improvement
+              to the library. Eligible improvements include but are not limited to resource utilization, runtime
+              performance, or new feature offerings.
+            </p></li><li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <p>
+              Restricting the introduction of features in a patch release to preliminary features provides applications
+              the ability to leverage symmetric binary compatibility for maximum runtime reliability, by avoiding the
+              use of any feature which is marked as preliminary.
+            </p></li><li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <p>
+              Assembly binding redirection is only required for compatible assemblies which have different strong names.
+              The binary compatibility requirement for patch releases guarantees that these releases will have the same
+              strong name, so assembly binding redirection is unnecessary.
+            </p></li><li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <p>
+              Changes to preliminary features may result in source code incompatibilities due to situations including
+              but not limited to conflicts due to ambiguous names. In addition, changing the name of a required
+              parameter for the purpose of correcting a spelling error or avoiding confusion is generally allowed due to
+              a very low risk of actually causing compilation problems for users. Changes to the names of optional
+              parameters, on the other hand, should be avoided whenever possible as users are likely to be referencing
+              them directly by name.
+            </p></li></ol></div><div class="collapsibleAreaRegion" id="PreliminaryFeatures"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID5RB')" onkeypress="SectionExpandCollapse_CheckKey('ID5RB', event)" tabindex="0"><img id="ID5RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png">Preliminary Features</span></div><div id="ID5RBSection" class="collapsibleSection">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <p>
+          This library may include types and/or members which are designated as preliminary features. The preliminary
+          feature designation is indicated by a clear note at the top of the associated documentation page. In the
+          library source code, preliminary features are indicated by including the
+          <span class="code">&lt;preliminary/&gt;</span> element to the XML documentation comment for the feature. While
+          preliminary features are much more "flexible" during the release cycle of the library, certain rules do apply
+          in order to ensure the stronger rules provided for stable features will not be violated by a change to a
+          preliminary feature. The following list includes examples of these rules, but other rules may be imposed by
+          basic logical constraints. The API elements referred to in the following list are assumed to be restricted to
+          the publicly-exposed API of the library. The terms "member" and "members" refer to any method, property, or
+          event.
+        </p><ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <p>
+              A member may only refer to a preliminary type in its signature if it is also marked preliminary.
+            </p></li><li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <p>
+              An interface may only include a preliminary member if it is also marked preliminary.
+            </p></li><li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <p>
+              An interface may only extend a preliminary interface if it is also marked preliminary.
+            </p></li><li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <p>
+              A class may only include a preliminary <span class="code">abstract</span> member if either it is also
+              marked preliminary, or all constructors for the class are marked <span class="code">internal</span>. This
+              restriction also applies to <span class="code">abstract</span> classes which do not implement an
+              <span class="code">abstract</span> member declared in a base class.
+            </p></li></ul></div></div></div><div id="pageFooter" class="pageFooter">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <div class="feedbackLink">Send comments on this topic to
         <a id="HT_MailLink" href="mailto:sam.harwell%40rackspace.com?Subject=Threading API Reference">sam.harwell@rackspace.com</a></div><script type="text/javascript">
         var HT_mailLink = document.getElementById("HT_MailLink");
         var HT_mailLinkText = HT_mailLink.innerHTML;
         HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
         HT_mailLink.innerHTML = HT_mailLinkText;
-        </script></div><script src="//code.jquery.com/jquery-1.11.0.min.js"></script><script type="text/javascript">$(document).ready(function () {DocumentReady();});</script></body></html>
+        </script></div></body></html>

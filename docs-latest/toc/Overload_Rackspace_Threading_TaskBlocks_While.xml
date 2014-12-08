@@ -1,5 +1,1 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<HelpTOCNode Title="While Method " Url="html/Overload_Rackspace_Threading_TaskBlocks_While.htm">
-  <HelpTOCNode Title="While Method (Func(Boolean), Func(Task))" Url="html/M_Rackspace_Threading_TaskBlocks_While.htm" />
-  <HelpTOCNode Title="While Method (Func(Task(Boolean)), Func(Task))" Url="html/M_Rackspace_Threading_TaskBlocks_While_1.htm" />
-</HelpTOCNode>
+﻿<?xml version="1.0" encoding="utf-8"?><HelpTOCNode Title="While Method " Url="html/Overload_Rackspace_Threading_TaskBlocks_While.htm"><HelpTOCNode Title="While Method (Func(Boolean), Func(Task))" Url="html/M_Rackspace_Threading_TaskBlocks_While.htm" /><HelpTOCNode Title="While Method (Func(Task(Boolean)), Func(Task))" Url="html/M_Rackspace_Threading_TaskBlocks_While_1.htm" /></HelpTOCNode>

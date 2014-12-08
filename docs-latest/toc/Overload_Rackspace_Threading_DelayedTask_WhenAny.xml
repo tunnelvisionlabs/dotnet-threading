@@ -1,7 +1,1 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<HelpTOCNode Title="WhenAny Method " Url="html/Overload_Rackspace_Threading_DelayedTask_WhenAny.htm">
-  <HelpTOCNode Title="WhenAny(TResult) Method (IEnumerable(Task(TResult)))" Url="html/M_Rackspace_Threading_DelayedTask_WhenAny__1.htm" />
-  <HelpTOCNode Title="WhenAny Method (IEnumerable(Task))" Url="html/M_Rackspace_Threading_DelayedTask_WhenAny.htm" />
-  <HelpTOCNode Title="WhenAny Method (Task[])" Url="html/M_Rackspace_Threading_DelayedTask_WhenAny_1.htm" />
-  <HelpTOCNode Title="WhenAny(TResult) Method (Task(TResult)[])" Url="html/M_Rackspace_Threading_DelayedTask_WhenAny__1_1.htm" />
-</HelpTOCNode>
+﻿<?xml version="1.0" encoding="utf-8"?><HelpTOCNode Title="WhenAny Method " Url="html/Overload_Rackspace_Threading_DelayedTask_WhenAny.htm"><HelpTOCNode Title="WhenAny(TResult) Method (IEnumerable(Task(TResult)))" Url="html/M_Rackspace_Threading_DelayedTask_WhenAny__1.htm" /><HelpTOCNode Title="WhenAny Method (IEnumerable(Task))" Url="html/M_Rackspace_Threading_DelayedTask_WhenAny.htm" /><HelpTOCNode Title="WhenAny Method (Task[])" Url="html/M_Rackspace_Threading_DelayedTask_WhenAny_1.htm" /><HelpTOCNode Title="WhenAny(TResult) Method (Task(TResult)[])" Url="html/M_Rackspace_Threading_DelayedTask_WhenAny__1_1.htm" /></HelpTOCNode>

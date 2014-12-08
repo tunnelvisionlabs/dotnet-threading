@@ -1,6 +1,1 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<HelpTOCNode Title="ProgressChangedEventArgs(T) Class" Url="html/T_Rackspace_Threading_ProgressChangedEventArgs_1.htm">
-  <HelpTOCNode Title="ProgressChangedEventArgs(T) Constructor " Url="html/M_Rackspace_Threading_ProgressChangedEventArgs_1__ctor.htm" />
-  <HelpTOCNode Title="ProgressChangedEventArgs(T) Methods" Url="html/Methods_T_Rackspace_Threading_ProgressChangedEventArgs_1.htm" />
-  <HelpTOCNode Title="ProgressChangedEventArgs(T) Properties" Url="html/Properties_T_Rackspace_Threading_ProgressChangedEventArgs_1.htm" HasChildren="true" />
-</HelpTOCNode>
+﻿<?xml version="1.0" encoding="utf-8"?><HelpTOCNode Title="ProgressChangedEventArgs(T) Class" Url="html/T_Rackspace_Threading_ProgressChangedEventArgs_1.htm"><HelpTOCNode Title="ProgressChangedEventArgs(T) Constructor " Url="html/M_Rackspace_Threading_ProgressChangedEventArgs_1__ctor.htm" /><HelpTOCNode Title="ProgressChangedEventArgs(T) Methods" Url="html/Methods_T_Rackspace_Threading_ProgressChangedEventArgs_1.htm" /><HelpTOCNode Title="ProgressChangedEventArgs(T) Properties" Url="html/Properties_T_Rackspace_Threading_ProgressChangedEventArgs_1.htm" HasChildren="true" /></HelpTOCNode>

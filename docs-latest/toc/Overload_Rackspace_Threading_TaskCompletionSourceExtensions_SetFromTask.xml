@@ -1,5 +1,1 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<HelpTOCNode Title="SetFromTask Method " Url="html/Overload_Rackspace_Threading_TaskCompletionSourceExtensions_SetFromTask.htm">
-  <HelpTOCNode Title="SetFromTask(TSource, TResult) Method (TaskCompletionSource(TResult), Task(TSource))" Url="html/M_Rackspace_Threading_TaskCompletionSourceExtensions_SetFromTask__2.htm" />
-  <HelpTOCNode Title="SetFromTask(TResult) Method (TaskCompletionSource(TResult), Task, TResult)" Url="html/M_Rackspace_Threading_TaskCompletionSourceExtensions_SetFromTask__1.htm" />
-</HelpTOCNode>
+﻿<?xml version="1.0" encoding="utf-8"?><HelpTOCNode Title="SetFromTask Method " Url="html/Overload_Rackspace_Threading_TaskCompletionSourceExtensions_SetFromTask.htm"><HelpTOCNode Title="SetFromTask(TSource, TResult) Method (TaskCompletionSource(TResult), Task(TSource))" Url="html/M_Rackspace_Threading_TaskCompletionSourceExtensions_SetFromTask__2.htm" /><HelpTOCNode Title="SetFromTask(TResult) Method (TaskCompletionSource(TResult), Task, TResult)" Url="html/M_Rackspace_Threading_TaskCompletionSourceExtensions_SetFromTask__1.htm" /></HelpTOCNode>

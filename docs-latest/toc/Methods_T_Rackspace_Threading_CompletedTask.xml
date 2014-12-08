@@ -1,5 +1,1 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<HelpTOCNode Title="CompletedTask Methods" Url="html/Methods_T_Rackspace_Threading_CompletedTask.htm">
-  <HelpTOCNode Title="Canceled Method " Url="html/Overload_Rackspace_Threading_CompletedTask_Canceled.htm" HasChildren="true" />
-  <HelpTOCNode Title="FromResult(TResult) Method " Url="html/M_Rackspace_Threading_CompletedTask_FromResult__1.htm" />
-</HelpTOCNode>
+﻿<?xml version="1.0" encoding="utf-8"?><HelpTOCNode Title="CompletedTask Methods" Url="html/Methods_T_Rackspace_Threading_CompletedTask.htm"><HelpTOCNode Title="Canceled Method " Url="html/Overload_Rackspace_Threading_CompletedTask_Canceled.htm" HasChildren="true" /><HelpTOCNode Title="FromResult(TResult) Method " Url="html/M_Rackspace_Threading_CompletedTask_FromResult__1.htm" /></HelpTOCNode>

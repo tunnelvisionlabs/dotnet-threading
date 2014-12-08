@@ -1,174 +1,128 @@
-﻿<html>
+﻿<!DOCTYPE html >
+<html>
   <head>
     <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
     <link rel="shortcut icon" href="../icons/favicon.ico">
     <link rel="stylesheet" type="text/css" href="../styles/branding.css">
-    <link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css"><script type="text/javascript" src="../scripts/branding.js"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <title>User Guide</title><meta name="Language" content="en-us">
+    <link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css"><script type="text/javascript" src="../scripts/branding.js"> </script><title>User Guide</title><meta name="Language" content="en-us">
         <meta name="Microsoft.Help.Id" content="0a33afc9-793d-448a-950f-f03a2ca156d2">
         <meta name="Description" content="This library provides improved support for writing asynchronous code targeting the .NET Framework 3.5 and newer. Additional information and links to project resources are located on the page.">
         <meta name="Microsoft.Help.ContentType" content="Concepts">
-        <meta name="BrandingAware" content="'true'">
-          <meta name="SelfBranded" content="true"></head><body onload="onLoad()"><header class="ux-header"><div class="header-top-bar">Threading API Reference</div></header><div class="OH_outerDiv" style="padding: 35px 20px 0 20px;">
-                  <div class="OH_leftNav" id="LeftNav">
-  <div id="tocnav">
-    <div class="toclevel0" data-toclevel="0" style="padding-left: 0px;"><a class="toc_collapsed" onclick="javascript: Toggle(this);" href="#!"></a><a data-tochassubtree="true" href="50d028db-e522-4750-91a6-4ae6c97c2610.htm" title="Threading API" tocid="roottoc">Threading API</a></div><div class="toclevel1 current" data-toclevel="1" style="padding-left: 13px;" data-childrenloaded="true"><a class="toc_expanded" onclick="javascript: Toggle(this);" href="#!"></a><a data-tochassubtree="true" href="0a33afc9-793d-448a-950f-f03a2ca156d2.htm" title="User Guide" tocid="0a33afc9-793d-448a-950f-f03a2ca156d2">User Guide</a></div><div class="toclevel2" data-toclevel="2" style="padding-left: 26px; display: block;"><span class="toc_empty"></span><a data-tochassubtree="false" href="3304f46f-a7d2-4af6-8b5a-11f9931ba72e.htm" title="Installation" tocid="3304f46f-a7d2-4af6-8b5a-11f9931ba72e">Installation</a></div></div></div><div id="TocResize" class="OH_TocResize"><img id="ResizeImageIncrease" src="../icons/open.gif" onclick="onIncreaseToc()" alt="Expand" title="Expand"><img id="ResizeImageReset" src="../icons/close.gif" style="display:none" onclick="onResetToc()" alt="Minimize" title="Minimize"></div><div class="OH_outerContent" id="OuterContent" style="margin-left: 280px;">
-                    <h1 class="title">User Guide</h1><div id="mainSection">
-                        <div id="mainBody"><span class="introStyle"></span><div class="introduction">
-                              <p>
+        <meta name="BrandingAware" content="true">
+          <link rel="stylesheet" type="text/css" href="../styles/branding-Website.css"><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle"><div class="pageHeader" id="PageHeader">Threading API Reference<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody">
+                    <div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!"></a><a data-tochassubtree="true" href="50d028db-e522-4750-91a6-4ae6c97c2610.htm" title="Threading API Reference" tocid="roottoc">Threading API Reference</a></div><div class="toclevel1 current" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!"></a><a data-tochassubtree="true" href="0a33afc9-793d-448a-950f-f03a2ca156d2.htm" title="User Guide" tocid="0a33afc9-793d-448a-950f-f03a2ca156d2">User Guide</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="3304f46f-a7d2-4af6-8b5a-11f9931ba72e.htm" title="Installation" tocid="3304f46f-a7d2-4af6-8b5a-11f9931ba72e">Installation</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize"><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize"></div></div><div class="topicContent" id="TopicContent">
+                      <table class="titleTable">
+                        <tr>
+                          <td class="titleColumn">User Guide</td></tr></table><span class="introStyle"></span><div class="introduction">
+                                <p>
         This library provides improved support for writing asynchronous code targeting the .NET
         Framework 3.5 and newer. Additional information and links to project resources are
         located on the <a href="50d028db-e522-4750-91a6-4ae6c97c2610.htm">Welcome</a> page.
-      </p></div><a id="Features"></a><div class="OH_CollapsibleAreaRegion">
-                                      <div class="OH_regiontitle">Features</div></div><p>
+      </p></div><div class="collapsibleAreaRegion" id="Features"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png">Features</span></div><div id="ID0RBSection" class="collapsibleSection">
+                                          <p>
           The basic features of this library can be described as the following.
         </p><ul>
-                                            <li>
-                                              <p><span class="term">Extensions and utilities for legacy code</span>: These extension methods provide
+                                              <li>
+                                                <p><span class="term">Extensions and utilities for legacy code</span>: These extension methods provide
               select features which were added to the Task Parallel Library in .NET 4.5 as extension methods
               and static utility methods for .NET 3.5 and .NET 4.0 users.
             </p></li><li>
-                                                    <p><span class="term">Extensions for task continuations</span>: These extension methods allow developers to
+                                                      <p><span class="term">Extensions for task continuations</span>: These extension methods allow developers to
               write task continuations in asynchronous code that behave in similarly to
-              <span class="input"><span id="ID0EADABGAAAABAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EADABGAAAABAA?vb=Async|cpp=async|cs=async|fs=async|nu=async");
-				</script></span>/<span class="input"><span id="ID0EABABGAAAABAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EABABGAAAABAA?vb=Await|cpp=await|cs=await|fs=let!|nu=await");
-				</script></span> while maintaining
+              <span class="keyword"><span id="LST2B1E8304_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST2B1E8304_0?vb=Async|nu=async");</script></span>/<span class="keyword"><span id="LST2B1E8304_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST2B1E8304_1?vb=Await|fs=let!|nu=await");</script></span> while maintaining
               support for .NET 3.5 and .NET 4.0.
             </p></li><li>
-                                                                      <p><span class="term">Task building blocks</span>: These utility methods
+                                                                        <p><span class="term">Task building blocks</span>: These utility methods
               allow developers to write efficient asynchronous code using high-level block constructs that
-              resemble the methods produced by the <span class="input"><span id="ID0EABAAGAAAABAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EABAAGAAAABAA?vb=Async|cpp=async|cs=async|fs=async|nu=async");
-				</script></span> keyword
+              resemble the methods produced by the <span class="keyword"><span id="LST2B1E8304_2"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST2B1E8304_2?vb=Async|nu=async");</script></span> keyword
               while maintaining support for .NET 3.5 and .NET 4.0.
             </p></li></ul><h4 class="subHeading">Extension and Utility Methods for Legacy Code</h4><div class="subsection">
-                                                                                    <p>
+                                                                                      <p>
               The .NET Framework 4.5 introduces several new methods to simplify the use of the Task Parallel
               Library in common scenarios. This library provides extension methods and static utility methods
               for some of the most frequently used cases, allowing use of the functionality in .NET 3.5 and
               .NET 4.0. These methods are provided by the following classes.
             </p><ul>
-                                                                                        <li>
-                                                                                          <p><a href="T_Rackspace_Threading_CancellationTokenSourceExtensions.htm">CancellationTokenSourceExtensions</a>:
+                                                                                          <li>
+                                                                                            <p><a href="T_Rackspace_Threading_CancellationTokenSourceExtensions.htm">CancellationTokenSourceExtensions</a>:
                   This class provides the
                   <a href="M_Rackspace_Threading_CancellationTokenSourceExtensions_CancelAfter.htm">CancelAfter(CancellationTokenSource, TimeSpan)</a>
                   extension method, allowing the use of this feature prior to the introduction of
-                  <a href="http://msdn2.microsoft.com/en-us/library/hh139230" target="_blank">CancelAfter<span id="ID0EABAEAEAAAABAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EABAEAEAAAABAA?vb=|cpp=()|cs=()|fs=()|nu=()");
-				</script></a>
+                  <a href="http://msdn2.microsoft.com/en-us/library/hh139230" target="_blank">CancelAfter<span id="LST2B1E8304_3"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST2B1E8304_3?cs=()|vb=|cpp=()|nu=()|fs=()");</script></a>
                   in .NET 4.5.
                 </p></li><li>
-                                                                                                        <p><a href="T_Rackspace_Threading_CompletedTask.htm">CompletedTask</a>: This class
+                                                                                                          <p><a href="T_Rackspace_Threading_CompletedTask.htm">CompletedTask</a>: This class
                   provides static methods and properties for cases where code needs to return a
                   <a href="http://msdn2.microsoft.com/en-us/library/dd235678" target="_blank">Task</a> which has already
                   entered a completed state (either successfully or canceled).
                 </p></li><li>
-                                                                                                                <p><a href="T_Rackspace_Threading_DelayedTask.htm">DelayedTask</a>: This class
+                                                                                                                  <p><a href="T_Rackspace_Threading_DelayedTask.htm">DelayedTask</a>: This class
                   provides static methods to simplify the creation of tasks which represent a fixed delay or
                   an operation to wait on one or more other tasks to complete.
                 </p><ul>
-                                                                                                                      <li>
-                                                                                                                        <p><a href="Overload_Rackspace_Threading_DelayedTask_Delay.htm">Delay<span id="ID0EADACACAEAAAABAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EADACACAEAAAABAA?vb=|cpp=()|cs=()|fs=()|nu=()");
-				</script></a>:
+                                                                                                                        <li>
+                                                                                                                          <p><a href="Overload_Rackspace_Threading_DelayedTask_Delay.htm">Delay<span id="LST2B1E8304_4"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST2B1E8304_4?cs=()|vb=|cpp=()|nu=()|fs=()");</script></a>:
                       These methods create tasks which complete after a specified delay period. Their
                       implementation is intended to match the behavior of the
-                      <a href="http://msdn2.microsoft.com/en-us/library/hh160377" target="_blank">Delay<span id="ID0EABACACAEAAAABAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EABACACAEAAAABAA?vb=|cpp=()|cs=()|fs=()|nu=()");
-				</script></a>
+                      <a href="http://msdn2.microsoft.com/en-us/library/hh160377" target="_blank">Delay<span id="LST2B1E8304_5"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST2B1E8304_5?cs=()|vb=|cpp=()|nu=()|fs=()");</script></a>
                       methods which were introduced in .NET 4.5.
                     </p></li><li>
-                                                                                                                                        <p><a href="Overload_Rackspace_Threading_DelayedTask_WhenAll.htm">WhenAll<span id="ID0EADABACAEAAAABAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EADABACAEAAAABAA?vb=|cpp=()|cs=()|fs=()|nu=()");
-				</script></a>:
+                                                                                                                                          <p><a href="Overload_Rackspace_Threading_DelayedTask_WhenAll.htm">WhenAll<span id="LST2B1E8304_6"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST2B1E8304_6?cs=()|vb=|cpp=()|nu=()|fs=()");</script></a>:
                       These methods create tasks which complete after all of the specified antecedent tasks
                       complete. Their implementation is intended to match the behavior of the
-                      <a href="http://msdn2.microsoft.com/en-us/library/hh139093" target="_blank">WhenAll<span id="ID0EABABACAEAAAABAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EABABACAEAAAABAA?vb=|cpp=()|cs=()|fs=()|nu=()");
-				</script></a>
+                      <a href="http://msdn2.microsoft.com/en-us/library/hh139093" target="_blank">WhenAll<span id="LST2B1E8304_7"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST2B1E8304_7?cs=()|vb=|cpp=()|nu=()|fs=()");</script></a>
                       methods which were introduced in .NET 4.5.
                     </p></li><li>
-                                                                                                                                                        <p><a href="Overload_Rackspace_Threading_DelayedTask_WhenAny.htm">WhenAny<span id="ID0EADAAACAEAAAABAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EADAAACAEAAAABAA?vb=|cpp=()|cs=()|fs=()|nu=()");
-				</script></a>:
+                                                                                                                                                          <p><a href="Overload_Rackspace_Threading_DelayedTask_WhenAny.htm">WhenAny<span id="LST2B1E8304_8"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST2B1E8304_8?cs=()|vb=|cpp=()|nu=()|fs=()");</script></a>:
                       These methods create tasks which complete after any of the specified antecedent tasks
                       complete. Their implementation is intended to match the behavior of the
-                      <a href="http://msdn2.microsoft.com/en-us/library/hh194854" target="_blank">WhenAny<span id="ID0EABAAACAEAAAABAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EABAAACAEAAAABAA?vb=|cpp=()|cs=()|fs=()|nu=()");
-				</script></a>
+                      <a href="http://msdn2.microsoft.com/en-us/library/hh194854" target="_blank">WhenAny<span id="LST2B1E8304_9"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST2B1E8304_9?cs=()|vb=|cpp=()|nu=()|fs=()");</script></a>
                       methods which were introduced in .NET 4.5.
                     </p></li></ul></li><li>
-                                                                                                                                                                        <p><a href="T_Rackspace_Threading_StreamExtensions.htm">StreamExtensions</a>: This
+                                                                                                                                                                          <p><a href="T_Rackspace_Threading_StreamExtensions.htm">StreamExtensions</a>: This
                   class introduces extension methods to support asynchronous operations on
                   <a href="http://msdn2.microsoft.com/en-us/library/8f86tw9e" target="_blank">Stream</a> instances, prior to the introduction
                   of asynchronous methods for this class in .NET 4.5.
                 </p></li><li>
-                                                                                                                                                                                <p><a href="T_Rackspace_Threading_WebRequestExtensions.htm">WebRequestExtensions</a>: This
+                                                                                                                                                                                  <p><a href="T_Rackspace_Threading_WebRequestExtensions.htm">WebRequestExtensions</a>: This
                   class provides extension methods which offer extensive support for using
                   <a href="http://msdn2.microsoft.com/en-us/library/5t9y35bd" target="_blank">WebRequest</a> in asynchronous code,
                   including support for both <a href="http://msdn2.microsoft.com/en-us/library/dd384802" target="_blank">CancellationToken</a>
                   and traditional timeouts.
                 </p></li></ul></div><h4 class="subHeading">Extension Methods for Task Continuations</h4><div class="subsection">
-                                                                                                                                                                                            <p>
-              The <a href="http://msdn2.microsoft.com/en-us/library/dd235663" target="_blank">ContinueWith<span id="ID0EALCCAAAABAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EALCCAAAABAA?vb=|cpp=()|cs=()|fs=()|nu=()");
-				</script></a>
+                                                                                                                                                                                              <p>
+              The <a href="http://msdn2.microsoft.com/en-us/library/dd235663" target="_blank">ContinueWith<span id="LST2B1E8304_10"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST2B1E8304_10?cs=()|vb=|cpp=()|nu=()|fs=()");</script></a>
               methods provide comprehensive options for writing task continuations, but introduce a number
               of concerns regarding faulted and canceled tasks. Developers must also be careful regarding
-              the use of the <a href="http://msdn2.microsoft.com/en-us/library/ee835489" target="_blank">Unwrap<span id="ID0EAJCCAAAABAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EAJCCAAAABAA?vb=|cpp=()|cs=()|fs=()|nu=()");
-				</script></a>
-              method. While the <span class="input"><span id="ID0EAHCCAAAABAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EAHCCAAAABAA?vb=Async|cpp=async|cs=async|fs=async|nu=async");
-				</script></span>/<span class="input"><span id="ID0EAFCCAAAABAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EAFCCAAAABAA?vb=Await|cpp=await|cs=await|fs=let!|nu=await");
-				</script></span>
+              the use of the <a href="http://msdn2.microsoft.com/en-us/library/ee835489" target="_blank">Unwrap<span id="LST2B1E8304_11"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST2B1E8304_11?cs=()|vb=|cpp=()|nu=()|fs=()");</script></a>
+              method. While the <span class="keyword"><span id="LST2B1E8304_12"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST2B1E8304_12?vb=Async|nu=async");</script></span>/<span class="keyword"><span id="LST2B1E8304_13"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST2B1E8304_13?vb=Await|fs=let!|nu=await");</script></span>
               keywords introduced in C# 5 (and similar keywords in other select programming languages) provide
               a cleaner development experience, they are not available for users of earlier versions of the
               language and/or framework. This library provides extension methods to simplify the creation
               of efficient, "well-behaved" task continuations without requiring the use of
-              <span class="input"><span id="ID0EADCCAAAABAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EADCCAAAABAA?vb=Async|cpp=async|cs=async|fs=async|nu=async");
-				</script></span>/<span class="input"><span id="ID0EABCCAAAABAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EABCCAAAABAA?vb=Await|cpp=await|cs=await|fs=let!|nu=await");
-				</script></span>.
+              <span class="keyword"><span id="LST2B1E8304_14"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST2B1E8304_14?vb=Async|nu=async");</script></span>/<span class="keyword"><span id="LST2B1E8304_15"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST2B1E8304_15?vb=Await|fs=let!|nu=await");</script></span>.
             </p><p>
               Each of the extension methods provided by this library is implemented in a manner that
               propagates exceptions and/or cancellation closely matching the behavior of code written with
-              <span class="input"><span id="ID0EAFBCAAAABAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EAFBCAAAABAA?vb=Async|cpp=async|cs=async|fs=async|nu=async");
-				</script></span>/<span class="input"><span id="ID0EADBCAAAABAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EADBCAAAABAA?vb=Await|cpp=await|cs=await|fs=let!|nu=await");
-				</script></span>. In
+              <span class="keyword"><span id="LST2B1E8304_16"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST2B1E8304_16?vb=Async|nu=async");</script></span>/<span class="keyword"><span id="LST2B1E8304_17"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST2B1E8304_17?vb=Await|fs=let!|nu=await");</script></span>. In
               particular, care is taken to not wrap single exceptions inside multiple layers of
               <a href="http://msdn2.microsoft.com/en-us/library/dd386929" target="_blank">AggregateException</a>.
             </p><ul>
-                                                                                                                                                                                                                                                    <li>
-                                                                                                                                                                                                                                                      <p><a href="Overload_Rackspace_Threading_CoreTaskExtensions_Select.htm">Select<span id="ID0EADADACAAAABAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EADADACAAAABAA?vb=|cpp=()|cs=()|fs=()|nu=()");
-				</script></a>:
+                                                                                                                                                                                                                                                      <li>
+                                                                                                                                                                                                                                                        <p><a href="Overload_Rackspace_Threading_CoreTaskExtensions_Select.htm">Select<span id="LST2B1E8304_18"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST2B1E8304_18?cs=()|vb=|cpp=()|nu=()|fs=()");</script></a>:
                   This extension method is intended for cases where code needs to run in-line following
                   the completion of another task (called the <span class="term">antecedent</span> task).
                 </p></li><li>
-                                                                                                                                                                                                                                                                  <p><a href="Overload_Rackspace_Threading_CoreTaskExtensions_Then.htm">Then<span id="ID0EAHACACAAAABAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EAHACACAAAABAA?vb=|cpp=()|cs=()|fs=()|nu=()");
-				</script></a>:
+                                                                                                                                                                                                                                                                    <p><a href="Overload_Rackspace_Threading_CoreTaskExtensions_Then.htm">Then<span id="LST2B1E8304_19"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST2B1E8304_19?cs=()|vb=|cpp=()|nu=()|fs=()");</script></a>:
                   This extension method is intended for cases where another
                   <a href="http://msdn2.microsoft.com/en-us/library/dd235678" target="_blank">Task</a> needs to run following
                   the completion of an antecedent task. The extension method automatically calls
-                  <a href="http://msdn2.microsoft.com/en-us/library/ee835489" target="_blank">Unwrap<span id="ID0EADACACAAAABAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EADACACAAAABAA?vb=|cpp=()|cs=()|fs=()|nu=()");
-				</script></a>,
-                  providing an experience similar to using the <span class="input"><span id="ID0EABACACAAAABAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EABACACAAAABAA?vb=Await|cpp=await|cs=await|fs=let!|nu=await");
-				</script></span> keyword
+                  <a href="http://msdn2.microsoft.com/en-us/library/ee835489" target="_blank">Unwrap<span id="LST2B1E8304_20"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST2B1E8304_20?cs=()|vb=|cpp=()|nu=()|fs=()");</script></a>,
+                  providing an experience similar to using the <span class="keyword"><span id="LST2B1E8304_21"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST2B1E8304_21?vb=Await|fs=let!|nu=await");</script></span> keyword
                   on the call.
                 </p></li><li>
-                                                                                                                                                                                                                                                                                          <p><a href="Overload_Rackspace_Threading_CoreTaskExtensions_Catch.htm">Catch<span id="ID0EADABACAAAABAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EADABACAAAABAA?vb=|cpp=()|cs=()|fs=()|nu=()");
-				</script></a>:
+                                                                                                                                                                                                                                                                                            <p><a href="Overload_Rackspace_Threading_CoreTaskExtensions_Catch.htm">Catch<span id="LST2B1E8304_22"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST2B1E8304_22?cs=()|vb=|cpp=()|nu=()|fs=()");</script></a>:
                   This extension method is intended for cases where exception handling code needs to run after
                   an antecedent task is faulted or was canceled. Much like a <span class="code">catch</span>
                   block in code, this method does change the behavior of the antecedent task if it completed
@@ -176,62 +130,40 @@
                   method. If the catch method does execute, its result is used in place of the result of the
                   antecedent task.
                 </p></li><li>
-                                                                                                                                                                                                                                                                                                      <p><a href="Overload_Rackspace_Threading_CoreTaskExtensions_Finally.htm">Finally<span id="ID0EAFAAACAAAABAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EAFAAACAAAABAA?vb=|cpp=()|cs=()|fs=()|nu=()");
-				</script></a>:
+                                                                                                                                                                                                                                                                                                        <p><a href="Overload_Rackspace_Threading_CoreTaskExtensions_Finally.htm">Finally<span id="LST2B1E8304_23"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST2B1E8304_23?cs=()|vb=|cpp=()|nu=()|fs=()");</script></a>:
                   This extension method is intended for cases where cleanup code needs to run following the
                   completion of an antecedent task, regardless of whether the antecedent succeeded, faulted, or
                   was canceled. Much like a <span class="code">finally</span> block in code, this method
                   does not alter the result provided by the antecedent task unless an exception is thrown within
                   the <span class="code">finally</span> block itself.
                 </p></li></ul></div><h4 class="subHeading">Task Building Blocks</h4><div class="subsection">
-                                                                                                                                                                                                                                                                                                                      <p>
+                                                                                                                                                                                                                                                                                                                        <p>
               Task building blocks provide support for block-level programming constructs in asynchronous
               code. The resulting execution resembles the behavior of the state machines created by the C#
-              compiler to support the <span class="input"><span id="ID0EADCAAAAABAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EADCAAAAABAA?vb=Async|cpp=async|cs=async|fs=async|nu=async");
-				</script></span>/<span class="input"><span id="ID0EABCAAAAABAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EABCAAAAABAA?vb=Await|cpp=await|cs=await|fs=let!|nu=await");
-				</script></span>
+              compiler to support the <span class="keyword"><span id="LST2B1E8304_24"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST2B1E8304_24?vb=Async|nu=async");</script></span>/<span class="keyword"><span id="LST2B1E8304_25"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST2B1E8304_25?vb=Await|fs=let!|nu=await");</script></span>
               keywords, but does not depend on these features being available. As a result, .NET 3.5 and
               .NET 4.0 developers can enjoy clean, efficient asynchronous code.
             </p><p>
               The following blocks are currently supported by this library.
             </p><ul>
-                                                                                                                                                                                                                                                                                                                                        <li>
-                                                                                                                                                                                                                                                                                                                                          <p><a href="Overload_Rackspace_Threading_TaskBlocks_While.htm">While<span id="ID0EAJABAAAAAABAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EAJABAAAAAABAA?vb=|cpp=()|cs=()|fs=()|nu=()");
-				</script></a>:
+                                                                                                                                                                                                                                                                                                                                          <li>
+                                                                                                                                                                                                                                                                                                                                            <p><a href="Overload_Rackspace_Threading_TaskBlocks_While.htm">While<span id="LST2B1E8304_26"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST2B1E8304_26?cs=()|vb=|cpp=()|nu=()|fs=()");</script></a>:
                   These methods create tasks which operate in a similar manner to a <span class="code">while</span>
-                  block written in an <span class="input"><span id="ID0EAFABAAAAAABAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EAFABAAAAAABAA?vb=Async|cpp=async|cs=async|fs=async|nu=async");
-				</script></span> method (for languages which support
-                  <span class="input"><span id="ID0EADABAAAAAABAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EADABAAAAAABAA?vb=Async|cpp=async|cs=async|fs=async|nu=async");
-				</script></span>/<span class="input"><span id="ID0EABABAAAAAABAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EABABAAAAAABAA?vb=Await|cpp=await|cs=await|fs=let!|nu=await");
-				</script></span>.
+                  block written in an <span class="keyword"><span id="LST2B1E8304_27"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST2B1E8304_27?vb=Async|nu=async");</script></span> method (for languages which support
+                  <span class="keyword"><span id="LST2B1E8304_28"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST2B1E8304_28?vb=Async|nu=async");</script></span>/<span class="keyword"><span id="LST2B1E8304_29"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST2B1E8304_29?vb=Await|fs=let!|nu=await");</script></span>.
                 </p></li><li>
-                                                                                                                                                                                                                                                                                                                                                                        <p><a href="Overload_Rackspace_Threading_TaskBlocks_Using.htm">Using<span id="ID0EAPAAAAAAAABAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EAPAAAAAAAABAA?vb=|cpp=()|cs=()|fs=()|nu=()");
-				</script></a>:
+                                                                                                                                                                                                                                                                                                                                                                          <p><a href="Overload_Rackspace_Threading_TaskBlocks_Using.htm">Using<span id="LST2B1E8304_30"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST2B1E8304_30?cs=()|vb=|cpp=()|nu=()|fs=()");</script></a>:
                   These methods create tasks which operate in a similar manner to a <span class="code">using</span>
-                  block written in an <span class="input"><span id="ID0EALAAAAAAAABAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EALAAAAAAAABAA?vb=Async|cpp=async|cs=async|fs=async|nu=async");
-				</script></span> method (for languages which support
-                  <span class="input"><span id="ID0EAJAAAAAAAABAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EAJAAAAAAAABAA?vb=Async|cpp=async|cs=async|fs=async|nu=async");
-				</script></span>/<span class="input"><span id="ID0EAHAAAAAAAABAA"> </span><script type="text/javascript">
-					addToLanSpecTextIdSet("ID0EAHAAAAAAAABAA?vb=Await|cpp=await|cs=await|fs=let!|nu=await");
-				</script></span>. These methods
+                  block written in an <span class="keyword"><span id="LST2B1E8304_31"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST2B1E8304_31?vb=Async|nu=async");</script></span> method (for languages which support
+                  <span class="keyword"><span id="LST2B1E8304_32"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST2B1E8304_32?vb=Async|nu=async");</script></span>/<span class="keyword"><span id="LST2B1E8304_33"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST2B1E8304_33?vb=Await|fs=let!|nu=await");</script></span>. These methods
                   expand on the <span class="code">using</span> statement provided by C# by implementing support
                   for <a href="T_Rackspace_Threading_IAsyncDisposable.htm">IAsyncDisposable</a> as described
                   in <a href="http://roslyn.codeplex.com/discussions/546377" target="_blank">IAsyncDisposable, using statements, and async/await</a>.
-                </p></li></ul></div></div></div></div></div><div id="OH_footer" class="OH_footer">
-                                                                                                                                                                                                                                                                                                                                                                                                            <div class="OH_feedbacklink">Send comments on this topic to
+                </p></li></ul></div></div></div></div><div id="pageFooter" class="pageFooter">
+                                                                                                                                                                                                                                                                                                                                                                                                              <div class="feedbackLink">Send comments on this topic to
         <a id="HT_MailLink" href="mailto:sam.harwell%40rackspace.com?Subject=Threading API Reference">sam.harwell@rackspace.com</a></div><script type="text/javascript">
         var HT_mailLink = document.getElementById("HT_MailLink");
         var HT_mailLinkText = HT_mailLink.innerHTML;
         HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
         HT_mailLink.innerHTML = HT_mailLinkText;
-        </script></div><script src="//code.jquery.com/jquery-1.11.0.min.js"></script><script type="text/javascript">$(document).ready(function () {DocumentReady();});</script></body></html>
+        </script></div></body></html>

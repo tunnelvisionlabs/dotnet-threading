@@ -1,6 +1,1 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<HelpTOCNode Title="DelayedTask Methods" Url="html/Methods_T_Rackspace_Threading_DelayedTask.htm">
-  <HelpTOCNode Title="Delay Method " Url="html/Overload_Rackspace_Threading_DelayedTask_Delay.htm" HasChildren="true" />
-  <HelpTOCNode Title="WhenAll Method " Url="html/Overload_Rackspace_Threading_DelayedTask_WhenAll.htm" HasChildren="true" />
-  <HelpTOCNode Title="WhenAny Method " Url="html/Overload_Rackspace_Threading_DelayedTask_WhenAny.htm" HasChildren="true" />
-</HelpTOCNode>
+﻿<?xml version="1.0" encoding="utf-8"?><HelpTOCNode Title="DelayedTask Methods" Url="html/Methods_T_Rackspace_Threading_DelayedTask.htm"><HelpTOCNode Title="Delay Method " Url="html/Overload_Rackspace_Threading_DelayedTask_Delay.htm" HasChildren="true" /><HelpTOCNode Title="WhenAll Method " Url="html/Overload_Rackspace_Threading_DelayedTask_WhenAll.htm" HasChildren="true" /><HelpTOCNode Title="WhenAny Method " Url="html/Overload_Rackspace_Threading_DelayedTask_WhenAny.htm" HasChildren="true" /></HelpTOCNode>
