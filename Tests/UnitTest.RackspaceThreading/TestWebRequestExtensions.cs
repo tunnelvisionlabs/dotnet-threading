@@ -1,7 +1,5 @@
 ﻿// Copyright (c) Rackspace, US Inc. All Rights Reserved. Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
-#if !PORTABLE || !NET45PLUS
-
 namespace UnitTest.RackspaceThreading
 {
 #if !NET40PLUS
@@ -31,7 +29,6 @@ namespace UnitTest.RackspaceThreading
     [TestClass]
     public class TestWebRequestExtensions
     {
-#if !NET45PLUS
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void TestGetRequestStreamAsync_NullRequest()
@@ -92,9 +89,6 @@ namespace UnitTest.RackspaceThreading
             GetData getData = JsonConvert.DeserializeObject<GetData>(Encoding.UTF8.GetString(outputStream.GetBuffer()));
             Assert.AreEqual(request.RequestUri.OriginalString, getData.url);
         }
-#endif
-
-#if !PORTABLE
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
@@ -441,7 +435,6 @@ namespace UnitTest.RackspaceThreading
                 }
             }
         }
-#endif
 
         private static Task CopyToAsync(Stream stream, Stream destination)
         {
@@ -477,5 +470,3 @@ namespace UnitTest.RackspaceThreading
         }
     }
 }
-
-#endif

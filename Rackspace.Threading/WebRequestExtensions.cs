@@ -1,7 +1,5 @@
 ﻿// Copyright (c) Rackspace, US Inc. All Rights Reserved. Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
-#if !PORTABLE || !NET45PLUS
-
 namespace Rackspace.Threading
 {
     using System;
@@ -10,6 +8,10 @@ namespace Rackspace.Threading
     using System.Threading.Tasks;
     using Stream = System.IO.Stream;
 
+#if PORTABLE && NET45PLUS
+    using Microsoft.CSharp.RuntimeBinder;
+#endif
+
     /// <summary>
     /// Provides extension methods for asynchronous operations on
     /// <see cref="WebRequest"/> objects.
@@ -17,7 +19,6 @@ namespace Rackspace.Threading
     /// <threadsafety static="true" instance="false"/>
     public static class WebRequestExtensions
     {
-#if !NET45PLUS
         /// <summary>
         /// Returns a <see cref="Stream"/> for writing data to the Internet resource as an asynchronous operation.
         /// </summary>
@@ -53,9 +54,7 @@ namespace Rackspace.Threading
             return GetResponseAsync(request, CancellationToken.None);
 #endif
         }
-#endif
 
-#if !PORTABLE
         /// <summary>
         /// Returns a response to an Internet request as an asynchronous operation.
         /// </summary>
@@ -103,6 +102,92 @@ namespace Rackspace.Threading
             if (request == null)
                 throw new ArgumentNullException("request");
 
+#if PORTABLE
+            bool timeout = false;
+
+            CancellationTokenRegistration cancellationTokenRegistration;
+            if (cancellationToken.CanBeCanceled)
+            {
+                Action cancellationAction = request.Abort;
+                cancellationTokenRegistration = cancellationToken.Register(cancellationAction);
+            }
+            else
+            {
+                cancellationTokenRegistration = default(CancellationTokenRegistration);
+            }
+
+            CancellationTokenSource noRequestTimeoutTokenSource = new CancellationTokenSource();
+            WebExceptionStatus timeoutStatus;
+            if (!Enum.TryParse("Timeout", out timeoutStatus))
+                timeoutStatus = WebExceptionStatus.UnknownError;
+
+            int requestTimeout;
+#if NET45PLUS
+            try
+            {
+                // hack to work around PCL limitation in .NET 4.5
+                dynamic dynamicRequest = request;
+                requestTimeout = dynamicRequest.Timeout;
+            }
+            catch (RuntimeBinderException)
+            {
+                requestTimeout = Timeout.Infinite;
+            }
+#else
+            // hack to work around PCL limitation in .NET 4.0
+            var propertyInfo = request.GetType().GetProperty("Timeout", typeof(int));
+            if (propertyInfo != null)
+            {
+                requestTimeout = (int)propertyInfo.GetValue(request, null);
+            }
+            else
+            {
+                requestTimeout = Timeout.Infinite;
+            }
+#endif
+
+            if (requestTimeout >= 0)
+            {
+                Task timeoutTask = DelayedTask.Delay(TimeSpan.FromMilliseconds(requestTimeout), noRequestTimeoutTokenSource.Token).Select(
+                    _ =>
+                    {
+                        timeout = true;
+                        request.Abort();
+                    });
+            }
+
+            TaskCompletionSource<WebResponse> completionSource = new TaskCompletionSource<WebResponse>();
+
+            AsyncCallback completedCallback =
+                result =>
+                {
+                    try
+                    {
+                        noRequestTimeoutTokenSource.Cancel();
+                        noRequestTimeoutTokenSource.Dispose();
+                        cancellationTokenRegistration.Dispose();
+                        completionSource.TrySetResult(request.EndGetResponse(result));
+                    }
+                    catch (WebException ex)
+                    {
+                        if (timeout)
+                            completionSource.TrySetException(new WebException("No response was received during the time-out period for a request.", timeoutStatus));
+                        else if (cancellationToken.IsCancellationRequested)
+                            completionSource.TrySetCanceled();
+                        else if (ex.Response != null && !throwOnError)
+                            completionSource.TrySetResult(ex.Response);
+                        else
+                            completionSource.TrySetException(ex);
+                    }
+                    catch (Exception ex)
+                    {
+                        completionSource.TrySetException(ex);
+                    }
+                };
+
+            IAsyncResult asyncResult = request.BeginGetResponse(completedCallback, null);
+            return completionSource.Task;
+#else
             bool timeout = false;
             TaskCompletionSource<WebResponse> completionSource = new TaskCompletionSource<WebResponse>();
 
@@ -170,9 +255,7 @@ namespace Rackspace.Threading
             }
 
             return completionSource.Task;
-        }
 #endif
+        }
     }
 }
-
-#endif
