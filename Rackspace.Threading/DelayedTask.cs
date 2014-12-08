@@ -15,7 +15,6 @@
     /// of a fixed duration or operations to wait on one or more other tasks to complete.
     /// </summary>
     /// <threadsafety static="true" instance="false"/>
-    /// <preliminary/>
     public static class DelayedTask
     {
 #if PORTABLE && !NET45PLUS
