@@ -1,7 +1,5 @@
 ﻿// Copyright (c) Rackspace, US Inc. All Rights Reserved. Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
-#if !NET45PLUS
-
 namespace Rackspace.Threading
 {
     using System;
@@ -41,7 +39,13 @@ namespace Rackspace.Threading
         /// </exception>
         public static Task CopyToAsync(this Stream stream, Stream destination)
         {
+#if NET45PLUS
+            // This code requires the `Stream` class provide an implementation of `CopyToAsync`. The unit tests will
+            // detect any case where this results in a stack overflow.
+            return stream.CopyToAsync(destination);
+#else
             return CopyToAsync(stream, destination, 16 * 1024, CancellationToken.None);
+#endif
         }
 
         /// <summary>
@@ -75,7 +79,13 @@ namespace Rackspace.Threading
         /// </exception>
         public static Task CopyToAsync(this Stream stream, Stream destination, int bufferSize)
         {
+#if NET45PLUS
+            // This code requires the `Stream` class provide an implementation of `CopyToAsync`. The unit tests will
+            // detect any case where this results in a stack overflow.
+            return stream.CopyToAsync(destination, bufferSize);
+#else
             return CopyToAsync(stream, destination, bufferSize, CancellationToken.None);
+#endif
         }
 
         /// <summary>
@@ -128,9 +138,16 @@ namespace Rackspace.Threading
             if (cancellationToken.IsCancellationRequested)
                 return CompletedTask.Canceled();
 
+#if NET45PLUS
+            // This code requires the `Stream` class provide an implementation of `CopyToAsync`. The unit tests will
+            // detect any case where this results in a stack overflow.
+            return stream.CopyToAsync(destination, bufferSize, cancellationToken);
+#else
             return CopyToAsync(stream, destination, new byte[bufferSize], cancellationToken);
+#endif
         }
 
+#if !NET45PLUS
         private static Task CopyToAsync(Stream stream, Stream destination, byte[] buffer, CancellationToken cancellationToken)
         {
             int nread = 0;
@@ -141,6 +158,7 @@ namespace Rackspace.Threading
 
             return TaskBlocks.While(condition, body);
         }
+#endif
 
         /// <summary>
         /// Asynchronously clears all buffers for a stream and causes any buffered data to be written to the underlying device.
@@ -155,7 +173,13 @@ namespace Rackspace.Threading
         /// <exception cref="ObjectDisposedException">If <paramref name="stream"/> has been disposed.</exception>
         public static Task FlushAsync(this Stream stream)
         {
+#if NET45PLUS
+            // This code requires the `Stream` class provide an implementation of `FlushAsync`. The unit tests will
+            // detect any case where this results in a stack overflow.
+            return stream.FlushAsync();
+#else
             return FlushAsync(stream, CancellationToken.None);
+#endif
         }
 
         /// <summary>
@@ -183,7 +207,13 @@ namespace Rackspace.Threading
             if (cancellationToken.IsCancellationRequested)
                 return CompletedTask.Canceled();
 
+#if NET45PLUS
+            // This code requires the `Stream` class provide an implementation of `FlushAsync`. The unit tests will
+            // detect any case where this results in a stack overflow.
+            return stream.FlushAsync(cancellationToken);
+#else
             return Task.Factory.StartNew(state => ((Stream)state).Flush(), stream, cancellationToken, TaskCreationOptions.None, TaskScheduler.Default);
+#endif
         }
 
         /// <summary>
@@ -219,7 +249,13 @@ namespace Rackspace.Threading
         /// <exception cref="InvalidOperationException">If <paramref name="stream"/> is currently in use by a previous read operation.</exception>
         public static Task<int> ReadAsync(this Stream stream, byte[] buffer, int offset, int count)
         {
+#if NET45PLUS
+            // This code requires the `Stream` class provide an implementation of `FlushAsync`. The unit tests will
+            // detect any case where this results in a stack overflow.
+            return stream.ReadAsync(buffer, offset, count);
+#else
             return ReadAsync(stream, buffer, offset, count, CancellationToken.None);
+#endif
         }
 
         /// <summary>
@@ -267,7 +303,13 @@ namespace Rackspace.Threading
             if (cancellationToken.IsCancellationRequested)
                 return CompletedTask.Canceled<int>();
 
+#if NET45PLUS
+            // This code requires the `Stream` class provide an implementation of `ReadAsync`. The unit tests will
+            // detect any case where this results in a stack overflow.
+            return stream.ReadAsync(buffer, offset, count, cancellationToken);
+#else
             return Task<int>.Factory.FromAsync(stream.BeginRead, stream.EndRead, buffer, offset, count, null);
+#endif
         }
 
         /// <summary>
@@ -301,7 +343,13 @@ namespace Rackspace.Threading
         /// <exception cref="InvalidOperationException">If <paramref name="stream"/> is currently in use by a previous write operation.</exception>
         public static Task WriteAsync(this Stream stream, byte[] buffer, int offset, int count)
         {
+#if NET45PLUS
+            // This code requires the `Stream` class provide an implementation of `WriteAsync`. The unit tests will
+            // detect any case where this results in a stack overflow.
+            return stream.WriteAsync(buffer, offset, count);
+#else
             return WriteAsync(stream, buffer, offset, count, CancellationToken.None);
+#endif
         }
 
         /// <summary>
@@ -347,9 +395,13 @@ namespace Rackspace.Threading
             if (cancellationToken.IsCancellationRequested)
                 return CompletedTask.Canceled();
 
+#if NET45PLUS
+            // This code requires the `Stream` class provide an implementation of `WriteAsync`. The unit tests will
+            // detect any case where this results in a stack overflow.
+            return stream.WriteAsync(buffer, offset, count, cancellationToken);
+#else
             return Task.Factory.FromAsync(stream.BeginWrite, stream.EndWrite, buffer, offset, count, null);
+#endif
         }
     }
 }
-
-#endif
