@@ -351,6 +351,7 @@ namespace UnitTest.RackspaceThreading
         }
 
         [TestMethod]
+        [Timeout(10000)]
         public void TestGetResponseAsync3_WebRequestTimeout_Throw()
         {
             using (CancellationTokenSource cts = new CancellationTokenSource())
