@@ -73,6 +73,7 @@
     <Compile Include="TestDelayedTask_WhenAll.cs" />
     <Compile Include="TestDelayedTask_WhenAny.cs" />
     <Compile Include="TestProgress.cs" />
+    <Compile Include="TestStreamExtensions.cs" />
     <Compile Include="TestTaskBlocks_Using.cs" />
     <Compile Include="TestTaskBlocks_While.cs" />
     <Compile Include="TestWebRequestExtensions.cs" />

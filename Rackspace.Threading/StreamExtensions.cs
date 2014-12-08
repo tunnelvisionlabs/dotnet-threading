@@ -40,6 +40,9 @@ namespace Rackspace.Threading
         public static Task CopyToAsync(this Stream stream, Stream destination)
         {
 #if NET45PLUS
+            if (stream == null)
+                throw new ArgumentNullException("stream");
+
             // This code requires the `Stream` class provide an implementation of `CopyToAsync`. The unit tests will
             // detect any case where this results in a stack overflow.
             return stream.CopyToAsync(destination);
@@ -80,6 +83,9 @@ namespace Rackspace.Threading
         public static Task CopyToAsync(this Stream stream, Stream destination, int bufferSize)
         {
 #if NET45PLUS
+            if (stream == null)
+                throw new ArgumentNullException("stream");
+
             // This code requires the `Stream` class provide an implementation of `CopyToAsync`. The unit tests will
             // detect any case where this results in a stack overflow.
             return stream.CopyToAsync(destination, bufferSize);
@@ -174,6 +180,9 @@ namespace Rackspace.Threading
         public static Task FlushAsync(this Stream stream)
         {
 #if NET45PLUS
+            if (stream == null)
+                throw new ArgumentNullException("stream");
+
             // This code requires the `Stream` class provide an implementation of `FlushAsync`. The unit tests will
             // detect any case where this results in a stack overflow.
             return stream.FlushAsync();
@@ -250,6 +259,9 @@ namespace Rackspace.Threading
         public static Task<int> ReadAsync(this Stream stream, byte[] buffer, int offset, int count)
         {
 #if NET45PLUS
+            if (stream == null)
+                throw new ArgumentNullException("stream");
+
             // This code requires the `Stream` class provide an implementation of `FlushAsync`. The unit tests will
             // detect any case where this results in a stack overflow.
             return stream.ReadAsync(buffer, offset, count);
@@ -344,6 +356,9 @@ namespace Rackspace.Threading
         public static Task WriteAsync(this Stream stream, byte[] buffer, int offset, int count)
         {
 #if NET45PLUS
+            if (stream == null)
+                throw new ArgumentNullException("stream");
+
             // This code requires the `Stream` class provide an implementation of `WriteAsync`. The unit tests will
             // detect any case where this results in a stack overflow.
             return stream.WriteAsync(buffer, offset, count);
