@@ -1,11 +1,11 @@
-# Note: these values may only change during minor release
+# Note: these values may only change during major release
 $Keys = @{
-	'net35-client' = '8b3790928cb57ea0'
-	'net40-client' = 'b3a60e8d525c0432'
-	'net45' = 'c5149d599dccb791'
-	'netcore45' = 'c0beeaaf4ff18c32'
-	'portable-net40' = '165cb04bbaa60d42'
-	'portable-net45' = '7c9e9383f8e98b3a'
+	'net35-client' = 'd693b28384d1c375'
+	'net40-client' = 'fd26f941b2df1ee3'
+	'net45' = 'fd26f941b2df1ee3'
+	'netcore45' = 'fd26f941b2df1ee3'
+	'portable-net40' = 'fd26f941b2df1ee3'
+	'portable-net45' = 'fd26f941b2df1ee3'
 }
 
 function Resolve-FullPath() {

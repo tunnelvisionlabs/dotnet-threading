@@ -39,7 +39,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>..\..\keys\Rackspace.Threading.portable-net40.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>..\Build\keys\Rackspace.Threading.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="CancellationTokenSourceExtensions.cs" />
@@ -59,8 +59,8 @@
     <Compile Include="WebRequestExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\keys\Rackspace.Threading.portable-net40.snk">
-      <Link>Rackspace.Threading.portable-net40.snk</Link>
+    <None Include="..\Build\keys\Rackspace.Threading.snk">
+      <Link>Rackspace.Threading.snk</Link>
     </None>
   </ItemGroup>
   <ItemGroup>

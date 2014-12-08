@@ -38,7 +38,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>..\..\keys\Rackspace.Threading.netcore45.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>..\Build\keys\Rackspace.Threading.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="CancellationTokenSourceExtensions.cs" />
@@ -58,8 +58,8 @@
     <Compile Include="WebRequestExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\keys\Rackspace.Threading.netcore45.snk">
-      <Link>Rackspace.Threading.netcore45.snk</Link>
+    <None Include="..\Build\keys\Rackspace.Threading.snk">
+      <Link>Rackspace.Threading.snk</Link>
     </None>
   </ItemGroup>
   <ItemGroup>

@@ -38,7 +38,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>..\..\keys\Rackspace.Threading.net40-client.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>..\Build\keys\Rackspace.Threading.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -76,8 +76,8 @@
     <Compile Include="WebRequestExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\keys\Rackspace.Threading.net40-client.snk">
-      <Link>Rackspace.Threading.net40-client.snk</Link>
+    <None Include="..\Build\keys\Rackspace.Threading.snk">
+      <Link>Rackspace.Threading.snk</Link>
     </None>
   </ItemGroup>
   <ItemGroup>
