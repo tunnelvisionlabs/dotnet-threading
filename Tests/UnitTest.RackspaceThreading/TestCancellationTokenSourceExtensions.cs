@@ -1,7 +1,5 @@
 ﻿// Copyright (c) Rackspace, US Inc. All Rights Reserved. Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
-#if !NET45PLUS
-
 namespace UnitTest.RackspaceThreading
 {
 #if !NET40PLUS
@@ -215,5 +213,3 @@ namespace UnitTest.RackspaceThreading
         }
     }
 }
-
-#endif

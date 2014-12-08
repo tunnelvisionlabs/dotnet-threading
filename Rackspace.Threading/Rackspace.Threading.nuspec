@@ -18,7 +18,11 @@
         <dependency id="TaskParallelLibrary" version="1.0.2856.0" />
       </group>
       <group targetFramework="4.0">
-        <!-- Only the .NET Framework 3.5 needs a dependency. All other frameworks use this empty group. -->
+        <dependency id="Microsoft.Bcl.Build" version="1.0.14" />
+        <dependency id="Microsoft.Bcl" version="1.1.9" />
+      </group>
+      <group targetFramework="4.5">
+        <!-- Only the .NET Framework 3.5 and 4.0 needs a dependency. All newer frameworks use this empty group. -->
       </group>
     </dependencies>
   </metadata>

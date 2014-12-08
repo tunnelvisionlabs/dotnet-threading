@@ -1,10 +1,15 @@
-﻿#if NET45PLUS
-// This is intentionally placed in a different scope to ensure Progress<T> resolves to Rackspace.Threading.Progress<T>
+﻿// This is intentionally placed in a different scope to ensure Progress<T> resolves to Rackspace.Threading.Progress<T>
 using System;
-#endif
 
 namespace UnitTest.RackspaceThreading
 {
+#if NET40PLUS
+    using IProgressInt = System.IProgress<int>;
+#else
+    extern alias rax;
+    using IProgressInt = rax::System.IProgress<int>;
+#endif
+
     using System.Threading;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Rackspace.Threading;
@@ -27,7 +32,7 @@ namespace UnitTest.RackspaceThreading
                     mre.Set();
                 };
 
-            IProgress<int> progress = progressObject;
+            IProgressInt progress = progressObject;
             progress.Report(3);
             mre.Wait();
 
@@ -48,7 +53,7 @@ namespace UnitTest.RackspaceThreading
                     mre.Set();
                 });
 
-            IProgress<int> progress = progressObject;
+            IProgressInt progress = progressObject;
             progress.Report(3);
             mre.Wait();
 
@@ -77,7 +82,7 @@ namespace UnitTest.RackspaceThreading
                     eventMre.Set();
                 };
 
-            IProgress<int> progress = progressObject;
+            IProgressInt progress = progressObject;
             progress.Report(3);
             handlerMre.Wait();
             eventMre.Wait();

@@ -1,7 +1,5 @@
 ﻿// Copyright (c) Rackspace, US Inc. All Rights Reserved. Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
-#if !NET45PLUS
-
 namespace Rackspace.Threading
 {
     using System;
@@ -12,6 +10,10 @@ namespace Rackspace.Threading
 #else
     using System.Collections.Generic;
     using System.Collections.Concurrent;
+#endif
+
+#if NET45PLUS && PORTABLE
+    using System.Threading.Tasks;
 #endif
 
     /// <summary>
@@ -49,8 +51,8 @@ namespace Rackspace.Threading
         /// <para>
         /// In all versions of .NET, requesting cancellation of a <see cref="CancellationTokenSource"/> will
         /// not prevent the instance from becoming eligible for garbage collection prior to the timer expiring.
-        /// In .NET 4 and newer, any associated <see cref="Timer"/> instance will become eligible for garbage
-        /// collection at the same time as the associated <see cref="CancellationTokenSource"/>.
+        /// In .NET 4 and newer, any associated <see cref="T:System.Threading.Timer"/> instance will become eligible for
+        /// garbage collection at the same time as the associated <see cref="CancellationTokenSource"/>.
         /// </para>
         /// </remarks>
         /// <param name="cts">The <see cref="CancellationTokenSource"/> to cancel after a delay.</param>
@@ -62,6 +64,7 @@ namespace Rackspace.Threading
         {
             if (cts == null)
                 throw new ArgumentNullException("cts");
+
             if (delay.TotalMilliseconds < -1 || delay.TotalMilliseconds > int.MaxValue)
                 throw new ArgumentOutOfRangeException("delay");
 
@@ -270,7 +273,110 @@ namespace Rackspace.Threading
                 set;
             }
         }
+
+#if NET45PLUS && PORTABLE
+        /// <summary>
+        /// This class implements the Timer functionality required for this class in cases where the PCL does not
+        /// provide the standard <see cref="T:System.Threading.Timer"/> class.
+        /// </summary>
+        /// <threadsafety static="true" instance="false"/>
+        private sealed class Timer
+        {
+            private readonly object _lock = new object();
+            private readonly TimerCallback _callback;
+            private readonly object _state;
+
+            private CancellationTokenSource _cancellationTokenSource;
+            private Task _task;
+
+            /// <summary>
+            /// Initializes a new instance of the <see cref="Timer"/> class, using a 32-bit signed integer to specify
+            /// the time interval.
+            /// </summary>
+            /// <param name="callback">A <see cref="TimerCallback"/> delegate representing a method to be executed.</param>
+            /// <param name="state">An object containing information to be used by the <paramref name="callback"/> method, or <see langword="null"/>.</param>
+            /// <param name="dueTime">The amount of time to delay before callback is invoked, in milliseconds. Specify <see cref="Timeout.Infinite"/> to prevent the timer from starting. Specify zero (0) to start the timer immediately.</param>
+            /// <param name="period">The time interval between invocations of <paramref name="callback"/>, in milliseconds. Specify <see cref="Timeout.Infinite"/> to disable periodic signaling.</param>
+            public Timer(TimerCallback callback, object state, int dueTime, int period)
+            {
+                if (callback == null)
+                    throw new ArgumentNullException("callback");
+                if (dueTime < -1)
+                    throw new ArgumentOutOfRangeException("dueTime");
+                if (period < -1)
+                    throw new ArgumentOutOfRangeException("period");
+
+                _callback = callback;
+                _state = state;
+
+                Change(dueTime, period);
+            }
+
+            /// <summary>
+            /// Changes the start time and the interval between method invocations for a timer, using <see cref="TimeSpan"/> values to measure time intervals.
+            /// </summary>
+            /// <param name="delay">A <see cref="TimeSpan"/> representing the amount of time to delay before invoking the callback method specified when the <see cref="Timer"/> was constructed. Specify negative one (-1) milliseconds to prevent the timer from restarting. Specify zero (0) to restart the timer immediately.</param>
+            /// <param name="period">The time interval between invocations of the callback method specified when the <see cref="Timer"/> was constructed. Specify negative one (-1) milliseconds to disable periodic signaling.</param>
+            /// <returns><see langword="true"/> if the timer was successfully updated; otherwise, <see langword="false"/>.</returns>
+            public bool Change(TimeSpan delay, TimeSpan period)
+            {
+                return Change((int)delay.TotalMilliseconds, (int)period.TotalMilliseconds);
+            }
+
+            public bool Change(int delay, int period)
+            {
+                if (delay < -1)
+                    throw new ArgumentOutOfRangeException("delay");
+                if (period < -1)
+                    throw new ArgumentOutOfRangeException("period");
+
+                lock (_lock)
+                {
+                    if (_cancellationTokenSource != null)
+                    {
+                        _cancellationTokenSource.Cancel();
+                        _cancellationTokenSource.Dispose();
+                    }
+
+                    if (delay >= 0)
+                    {
+
+                        _cancellationTokenSource = new CancellationTokenSource();
+                        Task task = DelayedTask.Delay(TimeSpan.FromMilliseconds(delay), _cancellationTokenSource.Token).Select(BeginInvokeCallback);
+                        if (period > 0)
+                        {
+                            Func<bool> TrueFunction = () => true;
+                            Func<Task> delayAndSend = () => DelayedTask.Delay(TimeSpan.FromMilliseconds(period), _cancellationTokenSource.Token).Select(BeginInvokeCallback);
+                            task = task.Then(_ => TaskBlocks.While(TrueFunction, delayAndSend));
+                        }
+
+                        _task = task;
+                    }
+                }
+
+                return true;
+            }
+
+            /// <inheritdoc/>
+            public void Dispose()
+            {
+                _cancellationTokenSource.Cancel();
+                _cancellationTokenSource.Dispose();
+                GC.SuppressFinalize(this);
+            }
+
+            private void BeginInvokeCallback(Task task)
+            {
+                Task.Factory.StartNew(() => _callback(_state));
+            }
+        }
+
+        /// <summary>
+        /// Represents the method that handles calls from a <see cref="Timer"/>.
+        /// </summary>
+        /// <param name="state">An object containing application-specific information relevant to the method invoked by
+        /// this delegate, or <see langword="null"/>.</param>
+        private delegate void TimerCallback(object state);
+#endif
     }
 }
-
-#endif
