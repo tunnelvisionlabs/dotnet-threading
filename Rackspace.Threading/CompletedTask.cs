@@ -18,7 +18,7 @@ namespace Rackspace.Threading
         {
             get
             {
-                return CompletedTaskHolder.Default;
+                return FromResult(default(VoidResult));
             }
         }
 
@@ -45,7 +45,7 @@ namespace Rackspace.Threading
         /// <returns>A canceled <see cref="Task"/>.</returns>
         public static Task Canceled()
         {
-            return CanceledTaskHolder.Default;
+            return Canceled<VoidResult>();
         }
 
         /// <summary>
@@ -55,55 +55,9 @@ namespace Rackspace.Threading
         /// <returns>A canceled <see cref="Task{TResult}"/>.</returns>
         public static Task<TResult> Canceled<TResult>()
         {
-            return CanceledTaskHolder<TResult>.Default;
-        }
-
-        private static class CompletedTaskHolder
-        {
-            public static readonly Task Default;
-
-            static CompletedTaskHolder()
-            {
-                Default = CompletedTaskHolder<VoidResult>.Default;
-            }
-        }
-
-        private static class CompletedTaskHolder<T>
-        {
-            public static readonly Task<T> Default;
-
-            static CompletedTaskHolder()
-            {
-#if NET45PLUS
-                Default = Task.FromResult(default(T));
-#else
-                TaskCompletionSource<T> completionSource = new TaskCompletionSource<T>();
-                completionSource.SetResult(default(T));
-                Default = completionSource.Task;
-#endif
-            }
-        }
-
-        private static class CanceledTaskHolder
-        {
-            public static readonly Task Default;
-
-            static CanceledTaskHolder()
-            {
-                Default = CanceledTaskHolder<VoidResult>.Default;
-            }
-        }
-
-        private static class CanceledTaskHolder<T>
-        {
-            public static readonly Task<T> Default;
-
-            static CanceledTaskHolder()
-            {
-                TaskCompletionSource<T> completionSource = new TaskCompletionSource<T>();
-                completionSource.SetCanceled();
-                Default = completionSource.Task;
-            }
+            TaskCompletionSource<TResult> completionSource = new TaskCompletionSource<TResult>();
+            completionSource.SetCanceled();
+            return completionSource.Task;
         }
     }
 }

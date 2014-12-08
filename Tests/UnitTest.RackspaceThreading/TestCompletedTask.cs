@@ -41,6 +41,16 @@ namespace UnitTest.RackspaceThreading
         }
 
         [TestMethod]
+        public void TestCancelledGetsDisposed()
+        {
+            CompletedTask.Canceled().Dispose();
+            TestCancelled();
+
+            Assert.IsTrue(CompletedTask.Canceled().Select(_ => default(object)).IsCanceled);
+            Assert.IsTrue(CoreTaskExtensions.Then(CompletedTask.Canceled(), _ => CompletedTask.Default).IsCanceled);
+        }
+
+        [TestMethod]
         public void TestCancelledT()
         {
             Task<int> cancelledTask = CompletedTask.Canceled<int>();
@@ -71,6 +81,16 @@ namespace UnitTest.RackspaceThreading
         }
 
         [TestMethod]
+        public void TestCancelledTGetsDisposed()
+        {
+            CompletedTask.Canceled<int>().Dispose();
+            TestCancelledT();
+
+            Assert.IsTrue(CompletedTask.Canceled<int>().Select(_ => default(object)).IsCanceled);
+            Assert.IsTrue(CoreTaskExtensions.Then(CompletedTask.Canceled<int>(), _ => CompletedTask.Default).IsCanceled);
+        }
+
+        [TestMethod]
         public void TestDefault()
         {
             Task completedTask = CompletedTask.Default;
@@ -80,6 +100,16 @@ namespace UnitTest.RackspaceThreading
             Stopwatch timer = Stopwatch.StartNew();
             Task.WaitAll(new[] { completedTask });
             Assert.IsTrue(timer.Elapsed <= TimeSpan.FromMilliseconds(5), "Waiting on CompletedTask.Default resulted in an unexpected delay ({0}ms > 5ms)", timer.Elapsed.TotalMilliseconds);
+        }
+
+        [TestMethod]
+        public void TestDefaultGetsDisposed()
+        {
+            CompletedTask.Default.Dispose();
+            TestDefault();
+
+            Assert.IsTrue(CompletedTask.Default.Select(_ => default(object)).IsCompleted);
+            Assert.IsTrue(CoreTaskExtensions.Then(CompletedTask.Default, _ => CompletedTask.Default).IsCompleted);
         }
 
         [TestMethod]
