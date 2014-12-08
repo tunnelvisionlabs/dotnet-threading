@@ -25,17 +25,17 @@ namespace Rackspace.Threading
         /// <param name="destination">The stream to which the contents of the source stream will be copied.</param>
         /// <returns>A task that represents the asynchronous copy operation.</returns>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="stream"/> is <see langword="null"/>.
+        /// <para>If <paramref name="stream"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="destination"/> is <see langword="null"/>.</para>
         /// </exception>
         /// <exception cref="ObjectDisposedException">
-        /// If <paramref name="stream"/> is disposed.
+        /// <para>If <paramref name="stream"/> is disposed.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="destination"/> is disposed.</para>
         /// </exception>
         /// <exception cref="NotSupportedException">
-        /// If <paramref name="stream"/> does not support reading.
+        /// <para>If <paramref name="stream"/> does not support reading.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="destination"/> does not support writing.</para>
         /// </exception>
@@ -56,7 +56,7 @@ namespace Rackspace.Threading
         /// <param name="bufferSize">The size, in bytes, of the buffer. This value must be greater than zero. The default size is 81920.</param>
         /// <returns>A task that represents the asynchronous copy operation.</returns>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="stream"/> is <see langword="null"/>.
+        /// <para>If <paramref name="stream"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="destination"/> is <see langword="null"/>.</para>
         /// </exception>
@@ -64,12 +64,12 @@ namespace Rackspace.Threading
         /// If <paramref name="bufferSize"/> is negative or zero.
         /// </exception>
         /// <exception cref="ObjectDisposedException">
-        /// If <paramref name="stream"/> is disposed.
+        /// <para>If <paramref name="stream"/> is disposed.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="destination"/> is disposed.</para>
         /// </exception>
         /// <exception cref="NotSupportedException">
-        /// If <paramref name="stream"/> does not support reading.
+        /// <para>If <paramref name="stream"/> does not support reading.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="destination"/> does not support writing.</para>
         /// </exception>
@@ -83,8 +83,8 @@ namespace Rackspace.Threading
         /// using a specified buffer size and cancellation token.
         /// </summary>
         /// <remarks>
-        /// If the operation is canceled before it completes, the returned task contains the <see cref="TaskStatus.Canceled"/>
-        /// value for the <see cref="Task.Status"/> property.
+        /// <para>If the operation is canceled before it completes, the returned task contains the <see cref="TaskStatus.Canceled"/>
+        /// value for the <see cref="Task.Status"/> property.</para>
         /// <para>
         /// Copying begins at the current position in <paramref name="stream"/>.
         /// </para>
@@ -95,7 +95,7 @@ namespace Rackspace.Threading
         /// <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="CancellationToken.None"/>.</param>
         /// <returns>A task that represents the asynchronous copy operation.</returns>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="stream"/> is <see langword="null"/>.
+        /// <para>If <paramref name="stream"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="destination"/> is <see langword="null"/>.</para>
         /// </exception>
@@ -103,12 +103,12 @@ namespace Rackspace.Threading
         /// If <paramref name="bufferSize"/> is negative or zero.
         /// </exception>
         /// <exception cref="ObjectDisposedException">
-        /// If <paramref name="stream"/> is disposed.
+        /// <para>If <paramref name="stream"/> is disposed.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="destination"/> is disposed.</para>
         /// </exception>
         /// <exception cref="NotSupportedException">
-        /// If <paramref name="stream"/> does not support reading.
+        /// <para>If <paramref name="stream"/> does not support reading.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="destination"/> does not support writing.</para>
         /// </exception>
@@ -163,8 +163,8 @@ namespace Rackspace.Threading
         /// and monitors cancellation requests.
         /// </summary>
         /// <remarks>
-        /// If the operation is canceled before it completes, the returned task contains the <see cref="TaskStatus.Canceled"/>
-        /// value for the <see cref="Task.Status"/> property.
+        /// <para>If the operation is canceled before it completes, the returned task contains the <see cref="TaskStatus.Canceled"/>
+        /// value for the <see cref="Task.Status"/> property.</para>
         /// <para>
         /// If a derived class does not flush the buffer in its implementation of the <see cref="Stream.Flush()"/> method,
         /// the <see cref="FlushAsync(Stream)"/> method will not flush the buffer.
@@ -202,12 +202,12 @@ namespace Rackspace.Threading
         /// the number of bytes currently available is less than the requested number, or it can be 0 (zero) if the end of the stream has been reached.
         /// </returns>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="stream"/> is <see langword="null"/>.
+        /// <para>If <paramref name="stream"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="buffer"/> is <see langword="null"/>.</para>
         /// </exception>
         /// <exception cref="ArgumentOutOfRangeException">
-        /// If <paramref name="offset"/> is negative.
+        /// <para>If <paramref name="offset"/> is negative.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="count"/> is negative.</para>
         /// </exception>
@@ -244,12 +244,12 @@ namespace Rackspace.Threading
         /// the number of bytes currently available is less than the requested number, or it can be 0 (zero) if the end of the stream has been reached.
         /// </returns>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="stream"/> is <see langword="null"/>.
+        /// <para>If <paramref name="stream"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="buffer"/> is <see langword="null"/>.</para>
         /// </exception>
         /// <exception cref="ArgumentOutOfRangeException">
-        /// If <paramref name="offset"/> is negative.
+        /// <para>If <paramref name="offset"/> is negative.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="count"/> is negative.</para>
         /// </exception>
@@ -284,12 +284,12 @@ namespace Rackspace.Threading
         /// A task that represents the asynchronous write operation.
         /// </returns>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="stream"/> is <see langword="null"/>.
+        /// <para>If <paramref name="stream"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="buffer"/> is <see langword="null"/>.</para>
         /// </exception>
         /// <exception cref="ArgumentOutOfRangeException">
-        /// If <paramref name="offset"/> is negative.
+        /// <para>If <paramref name="offset"/> is negative.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="count"/> is negative.</para>
         /// </exception>
@@ -324,12 +324,12 @@ namespace Rackspace.Threading
         /// A task that represents the asynchronous write operation.
         /// </returns>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="stream"/> is <see langword="null"/>.
+        /// <para>If <paramref name="stream"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="buffer"/> is <see langword="null"/>.</para>
         /// </exception>
         /// <exception cref="ArgumentOutOfRangeException">
-        /// If <paramref name="offset"/> is negative.
+        /// <para>If <paramref name="offset"/> is negative.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="count"/> is negative.</para>
         /// </exception>
