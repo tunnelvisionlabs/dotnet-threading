@@ -21,12 +21,18 @@ If ($Debug) {
 	$BuildConfig = 'Release'
 }
 
+If ($Version.Contains('-')) {
+	$KeyConfiguration = 'Dev'
+} Else {
+	$KeyConfiguration = 'Final'
+}
+
 # build the main project
 $nuget = '..\.nuget\NuGet.exe'
 $msbuild = "$env:windir\Microsoft.NET\Framework64\v4.0.30319\msbuild.exe"
 
 &$nuget 'restore' $SolutionPath
-&$msbuild '/nologo' '/m' '/nr:false' '/t:rebuild' "/p:Configuration=$BuildConfig" "/p:VisualStudioVersion=$VisualStudioVersion" $SolutionPath
+&$msbuild '/nologo' '/m' '/nr:false' '/t:rebuild' "/p:Configuration=$BuildConfig" "/p:VisualStudioVersion=$VisualStudioVersion" "/p:KeyConfiguration=$KeyConfiguration" $SolutionPath
 if ($LASTEXITCODE -ne 0) {
 	$host.ui.WriteErrorLine('Build failed, aborting!')
 	exit $p.ExitCode

@@ -38,7 +38,8 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>..\Build\keys\Rackspace.Threading.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile Condition="'$(KeyConfiguration)' == 'Final'">..\Build\keys\Rackspace.Threading.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile Condition="'$(KeyConfiguration)' != 'Final'">..\Build\keys\Rackspace.Threading.dev.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="CancellationTokenSourceExtensions.cs" />
@@ -58,6 +59,9 @@
     <Compile Include="WebRequestExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\Build\keys\Rackspace.Threading.dev.snk">
+      <Link>Rackspace.Threading.dev.snk</Link>
+    </None>
     <None Include="..\Build\keys\Rackspace.Threading.snk">
       <Link>Rackspace.Threading.snk</Link>
     </None>
