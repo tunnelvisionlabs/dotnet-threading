@@ -27,6 +27,7 @@ namespace UnitTest.RackspaceThreading
 
         [TestMethod]
         [Timeout(5000)]
+        [TestCategory("WebRequest")]
         public void TestGetRequestStreamAsync()
         {
             WebRequest request = WebRequest.Create("http://httpbin.org/post");
@@ -60,6 +61,7 @@ namespace UnitTest.RackspaceThreading
 
         [TestMethod]
         [Timeout(5000)]
+        [TestCategory("WebRequest")]
         public void TestGetResponseAsync1()
         {
             WebRequest request = WebRequest.Create("http://httpbin.org/get");
@@ -88,6 +90,7 @@ namespace UnitTest.RackspaceThreading
 
         [TestMethod]
         [Timeout(5000)]
+        [TestCategory("WebRequest")]
         public void TestGetResponseAsync2()
         {
             using (CancellationTokenSource cts = new CancellationTokenSource())
@@ -114,6 +117,7 @@ namespace UnitTest.RackspaceThreading
 
         [TestMethod]
         [Timeout(5000)]
+        [TestCategory("WebRequest")]
         public void TestGetResponseAsync2_WebRequestTimeout()
         {
             using (CancellationTokenSource cts = new CancellationTokenSource())
@@ -145,6 +149,7 @@ namespace UnitTest.RackspaceThreading
 
         [TestMethod]
         [Timeout(5000)]
+        [TestCategory("WebRequest")]
         public void TestGetResponseAsync2_Timeout()
         {
             using (CancellationTokenSource cts = new CancellationTokenSource())
@@ -188,6 +193,7 @@ namespace UnitTest.RackspaceThreading
 
         [TestMethod]
         [Timeout(5000)]
+        [TestCategory("WebRequest")]
         public void TestGetResponseAsync3_Success_NoThrow()
         {
             using (CancellationTokenSource cts = new CancellationTokenSource())
@@ -214,6 +220,7 @@ namespace UnitTest.RackspaceThreading
 
         [TestMethod]
         [Timeout(5000)]
+        [TestCategory("WebRequest")]
         public void TestGetResponseAsync3_Success_Throw()
         {
             using (CancellationTokenSource cts = new CancellationTokenSource())
@@ -240,6 +247,7 @@ namespace UnitTest.RackspaceThreading
 
         [TestMethod]
         [Timeout(5000)]
+        [TestCategory("WebRequest")]
         public void TestGetResponseAsync3_Error_NoThrow()
         {
             using (CancellationTokenSource cts = new CancellationTokenSource())
@@ -271,6 +279,7 @@ namespace UnitTest.RackspaceThreading
 
         [TestMethod]
         [Timeout(5000)]
+        [TestCategory("WebRequest")]
         public void TestGetResponseAsync3_Error_Throw()
         {
             using (CancellationTokenSource cts = new CancellationTokenSource())
@@ -310,6 +319,7 @@ namespace UnitTest.RackspaceThreading
         }
 
         [TestMethod]
+        [TestCategory("WebRequest")]
         public void TestGetResponseAsync3_WebRequestTimeout_NoThrow()
         {
             using (CancellationTokenSource cts = new CancellationTokenSource())
@@ -341,6 +351,7 @@ namespace UnitTest.RackspaceThreading
 
         [TestMethod]
         [Timeout(10000)]
+        [TestCategory("WebRequest")]
         public void TestGetResponseAsync3_WebRequestTimeout_Throw()
         {
             using (CancellationTokenSource cts = new CancellationTokenSource())
@@ -371,6 +382,7 @@ namespace UnitTest.RackspaceThreading
         }
 
         [TestMethod]
+        [TestCategory("WebRequest")]
         public void TestGetResponseAsync3_Timeout_NoThrow()
         {
             using (CancellationTokenSource cts = new CancellationTokenSource())
@@ -399,6 +411,7 @@ namespace UnitTest.RackspaceThreading
         }
 
         [TestMethod]
+        [TestCategory("WebRequest")]
         public void TestGetResponseAsync3_Timeout_Throw()
         {
             using (CancellationTokenSource cts = new CancellationTokenSource())
