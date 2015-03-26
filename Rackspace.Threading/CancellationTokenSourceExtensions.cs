@@ -45,7 +45,7 @@ namespace Rackspace.Threading
         /// <remarks>
         /// <para>If a previous call to this method scheduled a cancellation, the cancellation time is
         /// reset to the new <paramref name="delay"/> value. This method has no effect if the
-        /// <see cref="CancellationTokenSource"/> has already been cancelled (i.e. the
+        /// <see cref="CancellationTokenSource"/> has already been canceled (i.e. the
         /// <see cref="CancellationTokenSource.IsCancellationRequested"/> property returns
         /// <see langword="true"/>.</para>
         /// <para>

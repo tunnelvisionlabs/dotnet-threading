@@ -1608,7 +1608,7 @@ namespace Rackspace.Threading
         }
 
         /// <summary>
-        /// This utility class provide efficient access to a value indicating whether
+        /// This utility class provides efficient access to a value indicating whether
         /// a particular exception type might be able to handle the unwrapped exception
         /// from a <see cref="TaskStatus.Canceled"/> task.
         /// </summary>
