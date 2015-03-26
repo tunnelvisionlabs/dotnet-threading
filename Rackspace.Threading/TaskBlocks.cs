@@ -29,7 +29,7 @@ namespace Rackspace.Threading
         /// <para>
         /// This method expands on the <c>using</c> statement provided by C# by implementing support for
         /// <see cref="IAsyncDisposable"/> as described in
-        /// <see href="http://roslyn.codeplex.com/discussions/546377">IAsyncDisposable, using statements, and async/await</see>.
+        /// <see href="https://github.com/dotnet/roslyn/issues/114">IAsyncDisposable, using statements, and async/await</see>.
         /// </para>
         ///
         /// <note type="caller">
@@ -121,7 +121,7 @@ namespace Rackspace.Threading
         /// <para>
         /// This method expands on the <c>using</c> statement provided by C# by implementing support for
         /// <see cref="IAsyncDisposable"/> as described in
-        /// <see href="http://roslyn.codeplex.com/discussions/546377">IAsyncDisposable, using statements, and async/await</see>.
+        /// <see href="https://github.com/dotnet/roslyn/issues/114">IAsyncDisposable, using statements, and async/await</see>.
         /// </para>
         ///
         /// <note type="caller">

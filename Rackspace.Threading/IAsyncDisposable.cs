@@ -20,7 +20,7 @@
         /// even when that block is located within an <see langword="async"/> method. The
         /// <see cref="O:Rackspace.Threading.TaskBlocks.Using"/> methods provide support for the
         /// <see cref="IAsyncDisposable"/> interface in a manner resembling the behavior proposed in
-        /// <see href="http://roslyn.codeplex.com/discussions/546377">IAsyncDisposable, using statements, and async/await</see>.</item>
+        /// <see href="https://github.com/dotnet/roslyn/issues/114">IAsyncDisposable, using statements, and async/await</see>.</item>
         /// </list>
         /// <note type="implement">
         /// <para>To prevent finalization of the object while an asynchronous dispose operation is ongoing,
