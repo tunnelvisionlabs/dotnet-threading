@@ -14,7 +14,7 @@
         public void TestCreateProgressT_Event()
         {
             int progressValue = 0;
-            ManualResetEventSlim mre = new ManualResetEventSlim();
+            ManualResetEvent mre = new ManualResetEvent(false);
 
             var progressObject = new Rackspace.Threading.Progress<int>();
             progressObject.ProgressChanged +=
@@ -26,7 +26,7 @@
 
             IProgress<int> progress = progressObject;
             progress.Report(3);
-            mre.Wait();
+            mre.WaitOne();
 
             Assert.AreEqual(3, progressValue);
         }
@@ -36,7 +36,7 @@
         public void TestCreateProgressT_Handler()
         {
             int progressValue = 0;
-            ManualResetEventSlim mre = new ManualResetEventSlim();
+            ManualResetEvent mre = new ManualResetEvent(false);
 
             var progressObject = new Rackspace.Threading.Progress<int>(
                 value =>
@@ -47,7 +47,7 @@
 
             IProgress<int> progress = progressObject;
             progress.Report(3);
-            mre.Wait();
+            mre.WaitOne();
 
             Assert.AreEqual(3, progressValue);
         }
@@ -58,8 +58,8 @@
         {
             int handlerProgressValue = 0;
             int eventProgressValue = 0;
-            ManualResetEventSlim handlerMre = new ManualResetEventSlim();
-            ManualResetEventSlim eventMre = new ManualResetEventSlim();
+            ManualResetEvent handlerMre = new ManualResetEvent(false);
+            ManualResetEvent eventMre = new ManualResetEvent(false);
 
             var progressObject = new Rackspace.Threading.Progress<int>(
                 value =>
@@ -76,8 +76,8 @@
 
             IProgress<int> progress = progressObject;
             progress.Report(3);
-            handlerMre.Wait();
-            eventMre.Wait();
+            handlerMre.WaitOne();
+            eventMre.WaitOne();
 
             Assert.AreEqual(3, handlerProgressValue);
             Assert.AreEqual(3, eventProgressValue);

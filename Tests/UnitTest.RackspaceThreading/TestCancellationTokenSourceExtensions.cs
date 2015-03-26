@@ -128,7 +128,8 @@ namespace UnitTest.RackspaceThreading
 
             GC.KeepAlive(cts);
             cts = null;
-            GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced, true);
+            GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced);
+            GC.WaitForFullGCComplete();
 
             Assert.IsNull(weakReference.Target);
         }
@@ -143,7 +144,7 @@ namespace UnitTest.RackspaceThreading
             bool executed = false;
             new Timer(_ => executed = true, null, TimeSpan.FromSeconds(0.4), TimeSpan.FromMilliseconds(-1));
 
-            global::System.Threading.Tasks.Task.Delay(TimeSpan.FromSeconds(0.6)).Wait();
+            DelayedTask.Delay(TimeSpan.FromSeconds(0.6)).Wait();
 
             Assert.IsTrue(executed);
         }
@@ -159,9 +160,10 @@ namespace UnitTest.RackspaceThreading
             bool executed = false;
             new Timer(_ => executed = true, null, TimeSpan.FromSeconds(0.4), TimeSpan.FromMilliseconds(-1));
 
-            GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced, true);
+            GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced);
+            GC.WaitForFullGCComplete();
 
-            global::System.Threading.Tasks.Task.Delay(TimeSpan.FromSeconds(0.6)).Wait();
+            DelayedTask.Delay(TimeSpan.FromSeconds(0.6)).Wait();
 
             Assert.IsFalse(executed);
         }
@@ -183,7 +185,8 @@ namespace UnitTest.RackspaceThreading
             Stopwatch timer = Stopwatch.StartNew();
             CancellationTokenSourceExtensions.CancelAfter(cts, timeout);
 
-            GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced, true);
+            GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced);
+            GC.WaitForFullGCComplete();
 
             // a task which never completes
             Task[] tasks = { new TaskCompletionSource<object>().Task };

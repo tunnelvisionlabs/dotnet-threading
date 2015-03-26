@@ -29,7 +29,7 @@ namespace UnitTest.RackspaceThreading
         [Timeout(5000)]
         public void TestGetRequestStreamAsync()
         {
-            WebRequest request = WebRequest.CreateHttp("http://httpbin.org/post");
+            WebRequest request = WebRequest.Create("http://httpbin.org/post");
             request.Method = "POST";
 
             string sampleData = "Sample Data";
@@ -62,7 +62,7 @@ namespace UnitTest.RackspaceThreading
         [Timeout(5000)]
         public void TestGetResponseAsync1()
         {
-            WebRequest request = WebRequest.CreateHttp("http://httpbin.org/get");
+            WebRequest request = WebRequest.Create("http://httpbin.org/get");
             request.Method = "GET";
 
             MemoryStream outputStream = new MemoryStream();
@@ -94,7 +94,7 @@ namespace UnitTest.RackspaceThreading
             {
                 cts.CancelAfter(TimeSpan.FromSeconds(2));
 
-                WebRequest request = WebRequest.CreateHttp("http://httpbin.org/get");
+                WebRequest request = WebRequest.Create("http://httpbin.org/get");
                 request.Method = "GET";
 
                 MemoryStream outputStream = new MemoryStream();
@@ -118,7 +118,7 @@ namespace UnitTest.RackspaceThreading
         {
             using (CancellationTokenSource cts = new CancellationTokenSource())
             {
-                WebRequest request = WebRequest.CreateHttp("http://httpbin.org/delay/6");
+                WebRequest request = WebRequest.Create("http://httpbin.org/delay/6");
                 request.Timeout = 1000;
                 request.Method = "GET";
 
@@ -151,7 +151,7 @@ namespace UnitTest.RackspaceThreading
             {
                 cts.CancelAfter(TimeSpan.FromSeconds(2));
 
-                WebRequest request = WebRequest.CreateHttp("http://httpbin.org/delay/6");
+                WebRequest request = WebRequest.Create("http://httpbin.org/delay/6");
                 request.Method = "GET";
 
                 Task<WebResponse> responseTask = null;
@@ -194,7 +194,7 @@ namespace UnitTest.RackspaceThreading
             {
                 cts.CancelAfter(TimeSpan.FromSeconds(2));
 
-                WebRequest request = WebRequest.CreateHttp("http://httpbin.org/get");
+                WebRequest request = WebRequest.Create("http://httpbin.org/get");
                 request.Method = "GET";
 
                 MemoryStream outputStream = new MemoryStream();
@@ -220,7 +220,7 @@ namespace UnitTest.RackspaceThreading
             {
                 cts.CancelAfter(TimeSpan.FromSeconds(2));
 
-                WebRequest request = WebRequest.CreateHttp("http://httpbin.org/get");
+                WebRequest request = WebRequest.Create("http://httpbin.org/get");
                 request.Method = "GET";
 
                 MemoryStream outputStream = new MemoryStream();
@@ -246,7 +246,7 @@ namespace UnitTest.RackspaceThreading
             {
                 cts.CancelAfter(TimeSpan.FromSeconds(2));
 
-                WebRequest request = WebRequest.CreateHttp("http://httpbin.org/status/404");
+                WebRequest request = WebRequest.Create("http://httpbin.org/status/404");
                 request.Method = "GET";
 
                 WebResponse response = null;
@@ -277,7 +277,7 @@ namespace UnitTest.RackspaceThreading
             {
                 cts.CancelAfter(TimeSpan.FromSeconds(2));
 
-                WebRequest request = WebRequest.CreateHttp("http://httpbin.org/status/404");
+                WebRequest request = WebRequest.Create("http://httpbin.org/status/404");
                 request.Method = "GET";
 
                 MemoryStream outputStream = new MemoryStream();
@@ -314,7 +314,7 @@ namespace UnitTest.RackspaceThreading
         {
             using (CancellationTokenSource cts = new CancellationTokenSource())
             {
-                WebRequest request = WebRequest.CreateHttp("http://httpbin.org/delay/6");
+                WebRequest request = WebRequest.Create("http://httpbin.org/delay/6");
                 request.Timeout = 1000;
                 request.Method = "GET";
 
@@ -345,7 +345,7 @@ namespace UnitTest.RackspaceThreading
         {
             using (CancellationTokenSource cts = new CancellationTokenSource())
             {
-                WebRequest request = WebRequest.CreateHttp("http://httpbin.org/delay/6");
+                WebRequest request = WebRequest.Create("http://httpbin.org/delay/6");
                 request.Timeout = 1000;
                 request.Method = "GET";
 
@@ -377,7 +377,7 @@ namespace UnitTest.RackspaceThreading
             {
                 cts.CancelAfter(TimeSpan.FromSeconds(2));
 
-                WebRequest request = WebRequest.CreateHttp("http://httpbin.org/delay/6");
+                WebRequest request = WebRequest.Create("http://httpbin.org/delay/6");
                 request.Method = "GET";
 
                 Task<WebResponse> responseTask = null;
@@ -405,7 +405,7 @@ namespace UnitTest.RackspaceThreading
             {
                 cts.CancelAfter(TimeSpan.FromSeconds(2));
 
-                WebRequest request = WebRequest.CreateHttp("http://httpbin.org/delay/6");
+                WebRequest request = WebRequest.Create("http://httpbin.org/delay/6");
                 request.Method = "GET";
 
                 Task<WebResponse> responseTask = null;

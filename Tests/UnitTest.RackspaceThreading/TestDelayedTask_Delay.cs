@@ -80,7 +80,8 @@ namespace UnitTest.RackspaceThreading
             Stopwatch timer = Stopwatch.StartNew();
             Task delayTask = DelayedTask.Delay(timeout);
 
-            GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced, true);
+            GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced);
+            GC.WaitForFullGCComplete();
 
             delayTask.Wait();
 
@@ -159,7 +160,8 @@ namespace UnitTest.RackspaceThreading
             Stopwatch timer = Stopwatch.StartNew();
             Task delayTask = DelayedTask.Delay(timeout, CancellationToken.None);
 
-            GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced, true);
+            GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced);
+            GC.WaitForFullGCComplete();
 
             delayTask.Wait();
 
@@ -248,7 +250,8 @@ namespace UnitTest.RackspaceThreading
                 Stopwatch timer = Stopwatch.StartNew();
                 Task delayTask = DelayedTask.Delay(timeout, cts.Token);
 
-                GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced, true);
+                GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced);
+                GC.WaitForFullGCComplete();
 
                 delayTask.Wait();
 
@@ -433,7 +436,8 @@ namespace UnitTest.RackspaceThreading
                 TimeSpan timeout = TimeSpan.FromSeconds(1);
                 Task delayTask = DelayedTask.Delay(timeout, cts.Token);
 
-                GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced, true);
+                GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced);
+                GC.WaitForFullGCComplete();
 
                 try
                 {
