@@ -10,7 +10,7 @@ namespace UnitTest.RackspaceThreading
     using Rackspace.Threading;
 
     [TestClass]
-    public class TestDelayedTask_Delay
+    public class TestDelayedTask_Delay : TaskTestingBase
     {
         #region Delay 1
 

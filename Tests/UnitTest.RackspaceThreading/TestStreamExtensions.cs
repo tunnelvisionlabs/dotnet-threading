@@ -8,7 +8,7 @@
     using Rackspace.Threading;
 
     [TestClass]
-    public class TestStreamExtensions
+    public class TestStreamExtensions : TaskTestingBase
     {
         #region CopyToAsync 1
 

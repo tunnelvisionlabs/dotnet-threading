@@ -8,7 +8,7 @@ namespace UnitTest.RackspaceThreading
     using Rackspace.Threading;
 
     [TestClass]
-    public class TestCoreTaskExtensions_Catch
+    public class TestCoreTaskExtensions_Catch : TaskTestingBase
     {
         private readonly string AntecedentValue = "Hello World 1";
         private readonly string HandlerValue = "Hello World 2";

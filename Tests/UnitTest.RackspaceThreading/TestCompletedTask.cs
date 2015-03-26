@@ -9,7 +9,7 @@ namespace UnitTest.RackspaceThreading
     using Rackspace.Threading;
 
     [TestClass]
-    public class TestCompletedTask
+    public class TestCompletedTask : TaskTestingBase
     {
         [TestMethod]
         public void TestCancelled()

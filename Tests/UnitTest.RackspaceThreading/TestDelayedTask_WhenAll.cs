@@ -10,7 +10,7 @@ namespace UnitTest.RackspaceThreading
     using Rackspace.Threading;
 
     [TestClass]
-    public class TestDelayedTask_WhenAll
+    public class TestDelayedTask_WhenAll : TaskTestingBase
     {
         #region WhenAll 1
 

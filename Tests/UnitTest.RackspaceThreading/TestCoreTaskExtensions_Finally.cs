@@ -9,7 +9,7 @@ namespace UnitTest.RackspaceThreading
     using Rackspace.Threading;
 
     [TestClass]
-    public class TestCoreTaskExtensions_Finally
+    public class TestCoreTaskExtensions_Finally : TaskTestingBase
     {
         #region Finally 1
 

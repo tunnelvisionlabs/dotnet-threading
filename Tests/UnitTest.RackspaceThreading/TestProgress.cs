@@ -7,7 +7,7 @@
     using Rackspace.Threading;
 
     [TestClass]
-    public class TestProgress
+    public class TestProgress : TaskTestingBase
     {
         [TestMethod]
         [Timeout(2000)]

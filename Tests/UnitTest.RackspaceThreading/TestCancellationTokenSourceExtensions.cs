@@ -10,7 +10,7 @@ namespace UnitTest.RackspaceThreading
     using Rackspace.Threading;
 
     [TestClass]
-    public class TestCancellationTokenSourceExtensions
+    public class TestCancellationTokenSourceExtensions : TaskTestingBase
     {
         /// <summary>
         /// This test validates the basic behavior of <see cref="CancellationTokenSourceExtensions.CancelAfter"/>.

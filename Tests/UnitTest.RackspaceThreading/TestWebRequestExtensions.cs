@@ -16,7 +16,7 @@ namespace UnitTest.RackspaceThreading
     using Stream = System.IO.Stream;
 
     [TestClass]
-    public class TestWebRequestExtensions
+    public class TestWebRequestExtensions : TaskTestingBase
     {
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]

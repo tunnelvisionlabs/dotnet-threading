@@ -9,7 +9,7 @@ namespace UnitTest.RackspaceThreading
     using Rackspace.Threading;
 
     [TestClass]
-    public class TestTaskBlocks_Using
+    public class TestTaskBlocks_Using : TaskTestingBase
     {
         #region Using 1
 

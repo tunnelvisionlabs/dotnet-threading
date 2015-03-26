@@ -8,7 +8,7 @@ namespace UnitTest.RackspaceThreading
     using Rackspace.Threading;
 
     [TestClass]
-    public class TestTaskBlocks_While
+    public class TestTaskBlocks_While : TaskTestingBase
     {
         #region While 1
 
