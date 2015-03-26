@@ -18,13 +18,15 @@ namespace Rackspace.Threading
     {
         /// <summary>Transfers the result of a <see cref="Task{TResult}"/> to a <see cref="TaskCompletionSource{TResult}"/>.</summary>
         /// <remarks>
-        /// If <paramref name="task"/> is in the <see cref="TaskStatus.RanToCompletion"/> state,
+        /// <para>If <paramref name="task"/> is in the <see cref="TaskStatus.RanToCompletion"/> state,
         /// the result of the task is assigned to the <see cref="TaskCompletionSource{TResult}"/>
-        /// using the <see cref="TaskCompletionSource{TResult}.SetResult(TResult)"/> method.
+        /// using the <see cref="TaskCompletionSource{TResult}.SetResult(TResult)"/> method.</para>
+        ///
         /// <para>If <paramref name="task"/> is in the <see cref="TaskStatus.Faulted"/> state,
         /// the unwrapped exceptions are bound to the <see cref="TaskCompletionSource{TResult}"/>
         /// using the <see cref="TaskCompletionSource{TResult}.SetException(IEnumerable{Exception})"/>
         /// method.</para>
+        ///
         /// <para>If <paramref name="task"/> is in the <see cref="TaskStatus.Canceled"/> state,
         /// the <see cref="TaskCompletionSource{TResult}"/> is transitioned to the
         /// <see cref="TaskStatus.Canceled"/> state using the
@@ -35,17 +37,17 @@ namespace Rackspace.Threading
         /// <param name="taskCompletionSource">The <see cref="TaskCompletionSource{TResult}"/> instance.</param>
         /// <param name="task">The result task whose completion results should be transferred.</param>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="taskCompletionSource"/> is <see langword="null"/>.
+        /// <para>If <paramref name="taskCompletionSource"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="task"/> is <see langword="null"/>.</para>
         /// </exception>
         /// <exception cref="ObjectDisposedException">
-        /// If the underlying <see cref="Task{TResult}"/> of <paramref name="taskCompletionSource"/> was disposed.
+        /// <para>If the underlying <see cref="Task{TResult}"/> of <paramref name="taskCompletionSource"/> was disposed.</para>
         /// </exception>
         /// <exception cref="InvalidOperationException">
-        /// If the underlying <see cref="Task{TResult}"/> produced by <paramref name="taskCompletionSource"/> is already
+        /// <para>If the underlying <see cref="Task{TResult}"/> produced by <paramref name="taskCompletionSource"/> is already
         /// in one of the three final states: <see cref="TaskStatus.RanToCompletion"/>,
-        /// <see cref="TaskStatus.Faulted"/>, or <see cref="TaskStatus.Canceled"/>.
+        /// <see cref="TaskStatus.Faulted"/>, or <see cref="TaskStatus.Canceled"/>.</para>
         /// </exception>
         public static void SetFromTask<TSource, TResult>(this TaskCompletionSource<TResult> taskCompletionSource, Task<TSource> task)
             where TSource : TResult
@@ -80,14 +82,16 @@ namespace Rackspace.Threading
         /// state.
         /// </summary>
         /// <remarks>
-        /// If <paramref name="task"/> is in the <see cref="TaskStatus.RanToCompletion"/> state,
+        /// <para>If <paramref name="task"/> is in the <see cref="TaskStatus.RanToCompletion"/> state,
         /// the specified <paramref name="result"/> value is assigned to the
         /// <see cref="TaskCompletionSource{TResult}"/> using the
-        /// <see cref="TaskCompletionSource{TResult}.SetResult(TResult)"/> method.
+        /// <see cref="TaskCompletionSource{TResult}.SetResult(TResult)"/> method.</para>
+        ///
         /// <para>If <paramref name="task"/> is in the <see cref="TaskStatus.Faulted"/> state,
         /// the unwrapped exceptions are bound to the <see cref="TaskCompletionSource{TResult}"/>
         /// using the <see cref="TaskCompletionSource{TResult}.SetException(IEnumerable{Exception})"/>
         /// method.</para>
+        ///
         /// <para>If <paramref name="task"/> is in the <see cref="TaskStatus.Canceled"/> state,
         /// the <see cref="TaskCompletionSource{TResult}"/> is transitioned to the
         /// <see cref="TaskStatus.Canceled"/> state using the
@@ -98,17 +102,17 @@ namespace Rackspace.Threading
         /// <param name="task">The result task whose completion results should be transferred.</param>
         /// <param name="result">The result of the completion source when the specified task completed successfully.</param>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="taskCompletionSource"/> is <see langword="null"/>.
+        /// <para>If <paramref name="taskCompletionSource"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="task"/> is <see langword="null"/>.</para>
         /// </exception>
         /// <exception cref="ObjectDisposedException">
-        /// If the underlying <see cref="Task{TResult}"/> of <paramref name="taskCompletionSource"/> was disposed.
+        /// <para>If the underlying <see cref="Task{TResult}"/> of <paramref name="taskCompletionSource"/> was disposed.</para>
         /// </exception>
         /// <exception cref="InvalidOperationException">
-        /// If the underlying <see cref="Task{TResult}"/> produced by <paramref name="taskCompletionSource"/> is already
+        /// <para>If the underlying <see cref="Task{TResult}"/> produced by <paramref name="taskCompletionSource"/> is already
         /// in one of the three final states: <see cref="TaskStatus.RanToCompletion"/>,
-        /// <see cref="TaskStatus.Faulted"/>, or <see cref="TaskStatus.Canceled"/>.
+        /// <see cref="TaskStatus.Faulted"/>, or <see cref="TaskStatus.Canceled"/>.</para>
         /// </exception>
         public static void SetFromTask<TResult>(this TaskCompletionSource<TResult> taskCompletionSource, Task task, TResult result)
         {
@@ -133,18 +137,21 @@ namespace Rackspace.Threading
 
         /// <summary>Attempts to transfer the result of a <see cref="Task{TResult}"/> to a <see cref="TaskCompletionSource{TResult}"/>.</summary>
         /// <remarks>
-        /// This method will return <see langword="false"/> if the <see cref="Task{TResult}"/>
+        /// <para>This method will return <see langword="false"/> if the <see cref="Task{TResult}"/>
         /// provided by <paramref name="taskCompletionSource"/> is already in one of the three
         /// final states: <see cref="TaskStatus.RanToCompletion"/>, <see cref="TaskStatus.Faulted"/>,
         /// or <see cref="TaskStatus.Canceled"/>. This method also returns <see langword="false"/>
-        /// if the underlying <see cref="Task{TResult}"/> has already been disposed.
+        /// if the underlying <see cref="Task{TResult}"/> has already been disposed.</para>
+        ///
         /// <para>If <paramref name="task"/> is in the <see cref="TaskStatus.RanToCompletion"/> state,
         /// the result of the task is assigned to the <see cref="TaskCompletionSource{TResult}"/>
         /// using the <see cref="TaskCompletionSource{TResult}.TrySetResult(TResult)"/> method.</para>
+        ///
         /// <para>If <paramref name="task"/> is in the <see cref="TaskStatus.Faulted"/> state,
         /// the unwrapped exceptions are bound to the <see cref="TaskCompletionSource{TResult}"/>
         /// using the <see cref="TaskCompletionSource{TResult}.TrySetException(IEnumerable{Exception})"/>
         /// method.</para>
+        ///
         /// <para>If <paramref name="task"/> is in the <see cref="TaskStatus.Canceled"/> state,
         /// the <see cref="TaskCompletionSource{TResult}"/> is transitioned to the
         /// <see cref="TaskStatus.Canceled"/> state using the
@@ -155,12 +162,12 @@ namespace Rackspace.Threading
         /// <param name="taskCompletionSource">The <see cref="TaskCompletionSource{TResult}"/> instance.</param>
         /// <param name="task">The result task whose completion results should be transferred.</param>
         /// <returns>
-        /// <see langword="true"/> if the operation was successful.
+        /// <para><see langword="true"/> if the operation was successful.</para>
         /// <para>-or-</para>
         /// <para><see langword="false"/> if the operation was unsuccessful or the object has already been disposed.</para>
         /// </returns>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="taskCompletionSource"/> is <see langword="null"/>.
+        /// <para>If <paramref name="taskCompletionSource"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="task"/> is <see langword="null"/>.</para>
         /// </exception>
@@ -189,19 +196,22 @@ namespace Rackspace.Threading
         /// state.
         /// </summary>
         /// <remarks>
-        /// This method will return <see langword="false"/> if the <see cref="Task{TResult}"/>
+        /// <para>This method will return <see langword="false"/> if the <see cref="Task{TResult}"/>
         /// provided by <paramref name="taskCompletionSource"/> is already in one of the three
         /// final states: <see cref="TaskStatus.RanToCompletion"/>, <see cref="TaskStatus.Faulted"/>,
         /// or <see cref="TaskStatus.Canceled"/>. This method also returns <see langword="false"/>
-        /// if the underlying <see cref="Task{TResult}"/> has already been disposed.
+        /// if the underlying <see cref="Task{TResult}"/> has already been disposed.</para>
+        ///
         /// <para>If <paramref name="task"/> is in the <see cref="TaskStatus.RanToCompletion"/> state,
         /// the specified <paramref name="result"/> value is assigned to the
         /// <see cref="TaskCompletionSource{TResult}"/> using the
         /// <see cref="TaskCompletionSource{TResult}.TrySetResult(TResult)"/> method.</para>
+        ///
         /// <para>If <paramref name="task"/> is in the <see cref="TaskStatus.Faulted"/> state,
         /// the unwrapped exceptions are bound to the <see cref="TaskCompletionSource{TResult}"/>
         /// using the <see cref="TaskCompletionSource{TResult}.TrySetException(IEnumerable{Exception})"/>
         /// method.</para>
+        ///
         /// <para>If <paramref name="task"/> is in the <see cref="TaskStatus.Canceled"/> state,
         /// the <see cref="TaskCompletionSource{TResult}"/> is transitioned to the
         /// <see cref="TaskStatus.Canceled"/> state using the
@@ -212,12 +222,12 @@ namespace Rackspace.Threading
         /// <param name="task">The result task whose completion results should be transferred.</param>
         /// <param name="result">The result of the completion source when the specified task completed successfully.</param>
         /// <returns>
-        /// <see langword="true"/> if the operation was successful.
+        /// <para><see langword="true"/> if the operation was successful.</para>
         /// <para>-or-</para>
         /// <para><see langword="false"/> if the operation was unsuccessful or the object has already been disposed.</para>
         /// </returns>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="taskCompletionSource"/> is <see langword="null"/>.
+        /// <para>If <paramref name="taskCompletionSource"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="task"/> is <see langword="null"/>.</para>
         /// </exception>

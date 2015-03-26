@@ -20,7 +20,8 @@ namespace Rackspace.Threading
         /// Synchronously execute a continuation when a task completes successfully.
         /// </summary>
         /// <remarks>
-        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        /// <para>This code implements support for the following construct without requiring the use of
+        /// <see langword="async/await"/>.</para>
         ///
         /// <code language="cs">
         /// await task.ConfigureAwait(false);
@@ -33,10 +34,10 @@ namespace Rackspace.Threading
         /// </para>
         ///
         /// <note type="caller">
-        /// Since the continuation is executed synchronously, this method should only be used for
+        /// <para>Since the continuation is executed synchronously, this method should only be used for
         /// lightweight continuation functions. For non-trivial continuation functions, use a
         /// <see cref="Task"/> for the continuation operation and call
-        /// <see cref="Then{TResult}(Task, Func{Task, Task{TResult}})"/> instead.
+        /// <see cref="Then{TResult}(Task, Func{Task, Task{TResult}})"/> instead.</para>
         /// </note>
         /// </remarks>
         /// <typeparam name="TResult">The type of the result produced by the continuation <see cref="Task{TResult}"/>.</typeparam>
@@ -45,7 +46,7 @@ namespace Rackspace.Threading
         /// <returns>A <see cref="Task"/> representing the asynchronous operation. When the task completes successfully,
         /// the <see cref="Task{TResult}.Result"/> property will contain the result returned from the <paramref name="continuationFunction"/>.</returns>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="task"/> is <see langword="null"/>.
+        /// <para>If <paramref name="task"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="continuationFunction"/> is <see langword="null"/>.</para>
         /// </exception>
@@ -59,7 +60,8 @@ namespace Rackspace.Threading
         /// parameter specifies whether the continuation is executed if the antecedent task is faulted.
         /// </summary>
         /// <remarks>
-        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        /// <para>This code implements support for the following construct without requiring the use of
+        /// <see langword="async/await"/>.</para>
         ///
         /// <code language="cs">
         /// try
@@ -81,10 +83,10 @@ namespace Rackspace.Threading
         /// </para>
         ///
         /// <note type="caller">
-        /// Since the continuation is executed synchronously, this method should only be used for
+        /// <para>Since the continuation is executed synchronously, this method should only be used for
         /// lightweight continuation functions. For non-trivial continuation functions, use a
         /// <see cref="Task"/> for the continuation operation and call
-        /// <see cref="Then{TResult}(Task, Func{Task, Task{TResult}}, bool)"/> instead.
+        /// <see cref="Then{TResult}(Task, Func{Task, Task{TResult}}, bool)"/> instead.</para>
         /// </note>
         /// </remarks>
         /// <typeparam name="TResult">The type of the result produced by the continuation <see cref="Task{TResult}"/>.</typeparam>
@@ -94,7 +96,7 @@ namespace Rackspace.Threading
         /// <returns>A <see cref="Task"/> representing the asynchronous operation. When the task completes successfully,
         /// the <see cref="Task{TResult}.Result"/> property will contain the result returned from the <paramref name="continuationFunction"/>.</returns>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="task"/> is <see langword="null"/>.
+        /// <para>If <paramref name="task"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="continuationFunction"/> is <see langword="null"/>.</para>
         /// </exception>
@@ -128,7 +130,8 @@ namespace Rackspace.Threading
         /// Synchronously execute a continuation when a task completes successfully.
         /// </summary>
         /// <remarks>
-        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        /// <para>This code implements support for the following construct without requiring the use of
+        /// <see langword="async/await"/>.</para>
         ///
         /// <code language="cs">
         /// TSource source = await task.ConfigureAwait(false);
@@ -141,9 +144,9 @@ namespace Rackspace.Threading
         /// </para>
         ///
         /// <note type="caller">
-        /// Since the continuation is executed synchronously, this method should only be used for
+        /// <para>Since the continuation is executed synchronously, this method should only be used for
         /// lightweight continuation functions. For non-trivial continuation functions, use <see cref="Then{TSource, TResult}(Task{TSource}, Func{Task{TSource}, Task{TResult}})"/>
-        /// instead.
+        /// instead.</para>
         /// </note>
         /// </remarks>
         /// <typeparam name="TSource">The type of the result produced by the antecedent <see cref="Task{TResult}"/>.</typeparam>
@@ -153,7 +156,7 @@ namespace Rackspace.Threading
         /// <returns>A <see cref="Task"/> representing the asynchronous operation. When the task completes successfully,
         /// the <see cref="Task{TResult}.Result"/> property will contain the result returned from the <paramref name="continuationFunction"/>.</returns>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="task"/> is <see langword="null"/>.
+        /// <para>If <paramref name="task"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="continuationFunction"/> is <see langword="null"/>.</para>
         /// </exception>
@@ -167,7 +170,8 @@ namespace Rackspace.Threading
         /// parameter specifies whether the continuation is executed if the antecedent task is faulted.
         /// </summary>
         /// <remarks>
-        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        /// <para>This code implements support for the following construct without requiring the use of
+        /// <see langword="async/await"/>.</para>
         ///
         /// <code language="cs">
         /// try
@@ -189,9 +193,9 @@ namespace Rackspace.Threading
         /// </para>
         ///
         /// <note type="caller">
-        /// Since the continuation is executed synchronously, this method should only be used for
+        /// <para>Since the continuation is executed synchronously, this method should only be used for
         /// lightweight continuation functions. For non-trivial continuation functions, use <see cref="Then{TSource, TResult}(Task{TSource}, Func{Task{TSource}, Task{TResult}}, bool)"/>
-        /// instead.
+        /// instead.</para>
         /// </note>
         /// </remarks>
         /// <typeparam name="TSource">The type of the result produced by the antecedent <see cref="Task{TResult}"/>.</typeparam>
@@ -202,7 +206,7 @@ namespace Rackspace.Threading
         /// <returns>A <see cref="Task"/> representing the asynchronous operation. When the task completes successfully,
         /// the <see cref="Task{TResult}.Result"/> property will contain the result returned from the <paramref name="continuationFunction"/>.</returns>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="task"/> is <see langword="null"/>.
+        /// <para>If <paramref name="task"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="continuationFunction"/> is <see langword="null"/>.</para>
         /// </exception>
@@ -236,7 +240,8 @@ namespace Rackspace.Threading
         /// Synchronously execute a continuation when a task completes successfully.
         /// </summary>
         /// <remarks>
-        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        /// <para>This code implements support for the following construct without requiring the use of
+        /// <see langword="async/await"/>.</para>
         ///
         /// <code language="cs">
         /// await task.ConfigureAwait(false);
@@ -249,17 +254,17 @@ namespace Rackspace.Threading
         /// </para>
         ///
         /// <note type="caller">
-        /// Since the continuation is executed synchronously, this method should only be used for
+        /// <para>Since the continuation is executed synchronously, this method should only be used for
         /// lightweight continuation actions. For non-trivial continuation actions, use a
         /// <see cref="Task"/> for the continuation operation and call
-        /// <see cref="Then(Task, Func{Task, Task})"/> instead.
+        /// <see cref="Then(Task, Func{Task, Task})"/> instead.</para>
         /// </note>
         /// </remarks>
         /// <param name="task">The antecedent task.</param>
         /// <param name="continuationAction">The continuation action to execute when <paramref name="task"/> completes successfully.</param>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="task"/> is <see langword="null"/>.
+        /// <para>If <paramref name="task"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="continuationAction"/> is <see langword="null"/>.</para>
         /// </exception>
@@ -273,7 +278,8 @@ namespace Rackspace.Threading
         /// parameter specifies whether the continuation is executed if the antecedent task is faulted.
         /// </summary>
         /// <remarks>
-        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        /// <para>This code implements support for the following construct without requiring the use of
+        /// <see langword="async/await"/>.</para>
         ///
         /// <code language="cs">
         /// try
@@ -295,10 +301,10 @@ namespace Rackspace.Threading
         /// </para>
         ///
         /// <note type="caller">
-        /// Since the continuation is executed synchronously, this method should only be used for
+        /// <para>Since the continuation is executed synchronously, this method should only be used for
         /// lightweight continuation actions. For non-trivial continuation actions, use a
         /// <see cref="Task"/> for the continuation operation and call
-        /// <see cref="Then(Task, Func{Task, Task}, bool)"/> instead.
+        /// <see cref="Then(Task, Func{Task, Task}, bool)"/> instead.</para>
         /// </note>
         /// </remarks>
         /// <param name="task">The antecedent task.</param>
@@ -306,7 +312,7 @@ namespace Rackspace.Threading
         /// <param name="supportsErrors"><see langword="true"/> if the <paramref name="continuationAction"/> properly handles a faulted antecedent task; otherwise, <see langword="false"/>.</param>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="task"/> is <see langword="null"/>.
+        /// <para>If <paramref name="task"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="continuationAction"/> is <see langword="null"/>.</para>
         /// </exception>
@@ -340,7 +346,8 @@ namespace Rackspace.Threading
         /// Synchronously execute a continuation when a task completes successfully.
         /// </summary>
         /// <remarks>
-        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        /// <para>This code implements support for the following construct without requiring the use of
+        /// <see langword="async/await"/>.</para>
         ///
         /// <code language="cs">
         /// TSource source = await task.ConfigureAwait(false);
@@ -353,9 +360,9 @@ namespace Rackspace.Threading
         /// </para>
         ///
         /// <note type="caller">
-        /// Since the continuation is executed synchronously, this method should only be used for
+        /// <para>Since the continuation is executed synchronously, this method should only be used for
         /// lightweight continuation actions. For non-trivial continuation actions, use <see cref="Then{TSource}(Task{TSource}, Func{Task{TSource}, Task})"/>
-        /// instead.
+        /// instead.</para>
         /// </note>
         /// </remarks>
         /// <typeparam name="TSource">The type of the result produced by the antecedent <see cref="Task{TResult}"/>.</typeparam>
@@ -363,7 +370,7 @@ namespace Rackspace.Threading
         /// <param name="continuationAction">The continuation action to execute when <paramref name="task"/> completes successfully.</param>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="task"/> is <see langword="null"/>.
+        /// <para>If <paramref name="task"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="continuationAction"/> is <see langword="null"/>.</para>
         /// </exception>
@@ -377,7 +384,8 @@ namespace Rackspace.Threading
         /// parameter specifies whether the continuation is executed if the antecedent task is faulted.
         /// </summary>
         /// <remarks>
-        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        /// <para>This code implements support for the following construct without requiring the use of
+        /// <see langword="async/await"/>.</para>
         ///
         /// <code language="cs">
         /// try
@@ -399,9 +407,9 @@ namespace Rackspace.Threading
         /// </para>
         ///
         /// <note type="caller">
-        /// Since the continuation is executed synchronously, this method should only be used for
+        /// <para>Since the continuation is executed synchronously, this method should only be used for
         /// lightweight continuation actions. For non-trivial continuation actions, use <see cref="Then{TSource}(Task{TSource}, Func{Task{TSource}, Task}, bool)"/>
-        /// instead.
+        /// instead.</para>
         /// </note>
         /// </remarks>
         /// <typeparam name="TSource">The type of the result produced by the antecedent <see cref="Task{TResult}"/>.</typeparam>
@@ -410,7 +418,7 @@ namespace Rackspace.Threading
         /// <param name="supportsErrors"><see langword="true"/> if the <paramref name="continuationAction"/> properly handles a faulted antecedent task; otherwise, <see langword="false"/>.</param>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="task"/> is <see langword="null"/>.
+        /// <para>If <paramref name="task"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="continuationAction"/> is <see langword="null"/>.</para>
         /// </exception>
@@ -450,7 +458,8 @@ namespace Rackspace.Threading
         /// directly applied to the task returned by this method.
         /// </summary>
         /// <remarks>
-        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        /// <para>This code implements support for the following construct without requiring the use of
+        /// <see langword="async/await"/>.</para>
         ///
         /// <code language="cs">
         /// try
@@ -472,11 +481,11 @@ namespace Rackspace.Threading
         /// </para>
         ///
         /// <note type="caller">
-        /// Since the continuation is executed synchronously, this method should only be used for
+        /// <para>Since the continuation is executed synchronously, this method should only be used for
         /// lightweight exception handler methods. For non-trivial exception handlers, use a
         /// <see cref="Task"/> for the exception handling operation and call
         /// <see cref="Catch{TException}(Task, Func{Task, TException, Task})"/>
-        /// instead.
+        /// instead.</para>
         /// </note>
         /// </remarks>
         /// <typeparam name="TException">The type of exception which is handled by <paramref name="handler"/>.</typeparam>
@@ -484,7 +493,7 @@ namespace Rackspace.Threading
         /// <param name="handler">The exception handler continuation action to execute when <paramref name="task"/> completes with an exception of type <typeparamref name="TException"/>.</param>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="task"/> is <see langword="null"/>.
+        /// <para>If <paramref name="task"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="handler"/> is <see langword="null"/>.</para>
         /// </exception>
@@ -540,7 +549,8 @@ namespace Rackspace.Threading
         /// directly applied to the task returned by this method.
         /// </summary>
         /// <remarks>
-        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        /// <para>This code implements support for the following construct without requiring the use of
+        /// <see langword="async/await"/>.</para>
         ///
         /// <code language="cs">
         /// try
@@ -562,11 +572,11 @@ namespace Rackspace.Threading
         /// </para>
         ///
         /// <note type="caller">
-        /// Since the continuation is executed synchronously, this method should only be used for
+        /// <para>Since the continuation is executed synchronously, this method should only be used for
         /// lightweight exception handler methods. For non-trivial exception handlers, use a
         /// <see cref="Task"/> for the exception handling operation and call
         /// <see cref="Catch{TException, TResult}(Task{TResult}, Func{Task{TResult}, TException, Task{TResult}})"/>
-        /// instead.
+        /// instead.</para>
         /// </note>
         /// </remarks>
         /// <typeparam name="TException">The type of exception which is handled by <paramref name="handler"/>.</typeparam>
@@ -578,7 +588,7 @@ namespace Rackspace.Threading
         /// if it completed successfully, or the result of <paramref name="handler"/> if it resulted in an error condition
         /// which was handled.</returns>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="task"/> is <see langword="null"/>.
+        /// <para>If <paramref name="task"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="handler"/> is <see langword="null"/>.</para>
         /// </exception>
@@ -638,7 +648,8 @@ namespace Rackspace.Threading
         /// directly applied to the task returned by this method.
         /// </summary>
         /// <remarks>
-        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        /// <para>This code implements support for the following construct without requiring the use of
+        /// <see langword="async/await"/>.</para>
         ///
         /// <code language="cs">
         /// try
@@ -660,10 +671,10 @@ namespace Rackspace.Threading
         /// </para>
         ///
         /// <note type="caller">
-        /// Since the <paramref name="handler"/> function is executed synchronously, this
+        /// <para>Since the <paramref name="handler"/> function is executed synchronously, this
         /// method should only be used for lightweight continuation functions. This restriction
         /// applies only to <paramref name="handler"/> itself, not to the
-        /// <see cref="Task"/> returned by it.
+        /// <see cref="Task"/> returned by it.</para>
         /// </note>
         /// </remarks>
         /// <typeparam name="TException">The type of exception which is handled by <paramref name="handler"/>.</typeparam>
@@ -671,7 +682,7 @@ namespace Rackspace.Threading
         /// <param name="handler">The exception handler continuation function to execute when <paramref name="task"/> completes with an exception of type <typeparamref name="TException"/>.</param>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="task"/> is <see langword="null"/>.
+        /// <para>If <paramref name="task"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="handler"/> is <see langword="null"/>.</para>
         /// </exception>
@@ -732,7 +743,8 @@ namespace Rackspace.Threading
         /// directly applied to the task returned by this method.
         /// </summary>
         /// <remarks>
-        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        /// <para>This code implements support for the following construct without requiring the use of
+        /// <see langword="async/await"/>.</para>
         ///
         /// <code language="cs">
         /// try
@@ -754,10 +766,10 @@ namespace Rackspace.Threading
         /// </para>
         ///
         /// <note type="caller">
-        /// Since the <paramref name="handler"/> function is executed synchronously, this
+        /// <para>Since the <paramref name="handler"/> function is executed synchronously, this
         /// method should only be used for lightweight continuation functions. This restriction
         /// applies only to <paramref name="handler"/> itself, not to the
-        /// <see cref="Task{TResult}"/> returned by it.
+        /// <see cref="Task{TResult}"/> returned by it.</para>
         /// </note>
         /// </remarks>
         /// <typeparam name="TException">The type of exception which is handled by <paramref name="handler"/>.</typeparam>
@@ -769,7 +781,7 @@ namespace Rackspace.Threading
         /// if it completed successfully, or the result of <paramref name="handler"/> if it resulted in an error condition
         /// which was handled.</returns>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="task"/> is <see langword="null"/>.
+        /// <para>If <paramref name="task"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="handler"/> is <see langword="null"/>.</para>
         /// </exception>
@@ -828,7 +840,8 @@ namespace Rackspace.Threading
         /// directly applied to the task returned by this method.
         /// </summary>
         /// <remarks>
-        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        /// <para>This code implements support for the following construct without requiring the use of
+        /// <see langword="async/await"/>.</para>
         ///
         /// <code language="cs">
         /// try
@@ -846,17 +859,17 @@ namespace Rackspace.Threading
         /// </para>
         ///
         /// <note type="caller">
-        /// Since the continuation is executed synchronously, this method should only be used for
+        /// <para>Since the continuation is executed synchronously, this method should only be used for
         /// lightweight continuation functions. For non-trivial continuation functions, use a
         /// <see cref="Task"/> for the continuation operation and call
-        /// <see cref="Finally(Task, Func{Task, Task})"/> instead.
+        /// <see cref="Finally(Task, Func{Task, Task})"/> instead.</para>
         /// </note>
         /// </remarks>
         /// <param name="task">The antecedent task.</param>
         /// <param name="cleanupAction">The cleanup continuation function to execute when <paramref name="task"/> completes.</param>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="task"/> is <see langword="null"/>.
+        /// <para>If <paramref name="task"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="cleanupAction"/> is <see langword="null"/>.</para>
         /// </exception>
@@ -891,7 +904,8 @@ namespace Rackspace.Threading
         /// directly applied to the task returned by this method.
         /// </summary>
         /// <remarks>
-        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        /// <para>This code implements support for the following construct without requiring the use of
+        /// <see langword="async/await"/>.</para>
         ///
         /// <code language="cs">
         /// try
@@ -909,10 +923,10 @@ namespace Rackspace.Threading
         /// </para>
         ///
         /// <note type="caller">
-        /// Since the continuation is executed synchronously, this method should only be used for
+        /// <para>Since the continuation is executed synchronously, this method should only be used for
         /// lightweight continuation functions. For non-trivial continuation functions, use a
         /// <see cref="Task"/> for the continuation operation and call
-        /// <see cref="Finally(Task, Func{Task, Task})"/> instead.
+        /// <see cref="Finally(Task, Func{Task, Task})"/> instead.</para>
         /// </note>
         /// </remarks>
         /// <typeparam name="TResult">The type of the result produced by the antecedent <see cref="Task{TResult}"/>.</typeparam>
@@ -922,7 +936,7 @@ namespace Rackspace.Threading
         /// completes successfully, the <see cref="Task{TResult}.Result"/> property will return
         /// the result of the antecedent <paramref name="task"/>.</returns>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="task"/> is <see langword="null"/>.
+        /// <para>If <paramref name="task"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="cleanupAction"/> is <see langword="null"/>.</para>
         /// </exception>
@@ -957,7 +971,8 @@ namespace Rackspace.Threading
         /// directly applied to the task returned by this method.
         /// </summary>
         /// <remarks>
-        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        /// <para>This code implements support for the following construct without requiring the use of
+        /// <see langword="async/await"/>.</para>
         ///
         /// <code language="cs">
         /// try
@@ -975,17 +990,17 @@ namespace Rackspace.Threading
         /// </para>
         ///
         /// <note type="caller">
-        /// Since the <paramref name="cleanupFunction"/> is executed synchronously, this
+        /// <para>Since the <paramref name="cleanupFunction"/> is executed synchronously, this
         /// method should only be used for lightweight continuation functions. This restriction
         /// applies only to <paramref name="cleanupFunction"/> itself, not to the
-        /// <see cref="Task"/> returned by it.
+        /// <see cref="Task"/> returned by it.</para>
         /// </note>
         /// </remarks>
         /// <param name="task">The antecedent task.</param>
         /// <param name="cleanupFunction">The continuation function to execute when <paramref name="task"/> completes. The continuation function returns a <see cref="Task"/> representing the asynchronous cleanup operation.</param>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="task"/> is <see langword="null"/>.
+        /// <para>If <paramref name="task"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="cleanupFunction"/> is <see langword="null"/>.</para>
         /// </exception>
@@ -1021,7 +1036,8 @@ namespace Rackspace.Threading
         /// directly applied to the task returned by this method.
         /// </summary>
         /// <remarks>
-        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        /// <para>This code implements support for the following construct without requiring the use of
+        /// <see langword="async/await"/>.</para>
         ///
         /// <code language="cs">
         /// try
@@ -1039,10 +1055,10 @@ namespace Rackspace.Threading
         /// </para>
         ///
         /// <note type="caller">
-        /// Since the <paramref name="cleanupFunction"/> is executed synchronously, this
+        /// <para>Since the <paramref name="cleanupFunction"/> is executed synchronously, this
         /// method should only be used for lightweight continuation functions. This restriction
         /// applies only to <paramref name="cleanupFunction"/> itself, not to the
-        /// <see cref="Task"/> returned by it.
+        /// <see cref="Task"/> returned by it.</para>
         /// </note>
         /// </remarks>
         /// <typeparam name="TResult">The type of the result produced by the antecedent <see cref="Task{TResult}"/>.</typeparam>
@@ -1052,7 +1068,7 @@ namespace Rackspace.Threading
         /// completes successfully, the <see cref="Task{TResult}.Result"/> property will return
         /// the result of the antecedent <paramref name="task"/>.</returns>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="task"/> is <see langword="null"/>.
+        /// <para>If <paramref name="task"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="cleanupFunction"/> is <see langword="null"/>.</para>
         /// </exception>
@@ -1086,7 +1102,8 @@ namespace Rackspace.Threading
         /// form the result of this method.
         /// </summary>
         /// <remarks>
-        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        /// <para>This code implements support for the following construct without requiring the use of
+        /// <see langword="async/await"/>.</para>
         ///
         /// <code language="cs">
         /// await task.ConfigureAwait(false);
@@ -1099,10 +1116,10 @@ namespace Rackspace.Threading
         /// </para>
         ///
         /// <note type="caller">
-        /// Since the <paramref name="continuationFunction"/> is executed synchronously, this
+        /// <para>Since the <paramref name="continuationFunction"/> is executed synchronously, this
         /// method should only be used for lightweight continuation functions. This restriction
         /// applies only to <paramref name="continuationFunction"/> itself, not to the
-        /// <see cref="Task"/> returned by it.
+        /// <see cref="Task"/> returned by it.</para>
         /// </note>
         /// </remarks>
         /// <typeparam name="TResult">The type of the result produced by the continuation <see cref="Task{TResult}"/>.</typeparam>
@@ -1112,7 +1129,7 @@ namespace Rackspace.Threading
         /// the <see cref="Task{TResult}.Result"/> property will contain the result provided by the
         /// <see cref="Task{TResult}.Result"/> property of the task returned from <paramref name="continuationFunction"/>.</returns>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="task"/> is <see langword="null"/>.
+        /// <para>If <paramref name="task"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="continuationFunction"/> is <see langword="null"/>.</para>
         /// </exception>
@@ -1128,7 +1145,8 @@ namespace Rackspace.Threading
         /// executed if the antecedent task is faulted.
         /// </summary>
         /// <remarks>
-        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        /// <para>This code implements support for the following construct without requiring the use of
+        /// <see langword="async/await"/>.</para>
         ///
         /// <code language="cs">
         /// try
@@ -1151,10 +1169,10 @@ namespace Rackspace.Threading
         /// </para>
         ///
         /// <note type="caller">
-        /// Since the <paramref name="continuationFunction"/> is executed synchronously, this
+        /// <para>Since the <paramref name="continuationFunction"/> is executed synchronously, this
         /// method should only be used for lightweight continuation functions. This restriction
         /// applies only to <paramref name="continuationFunction"/> itself, not to the
-        /// <see cref="Task"/> returned by it.
+        /// <see cref="Task"/> returned by it.</para>
         /// </note>
         /// </remarks>
         /// <typeparam name="TResult">The type of the result produced by the continuation <see cref="Task{TResult}"/>.</typeparam>
@@ -1165,7 +1183,7 @@ namespace Rackspace.Threading
         /// the <see cref="Task{TResult}.Result"/> property will contain the result provided by the
         /// <see cref="Task{TResult}.Result"/> property of the task returned from <paramref name="continuationFunction"/>.</returns>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="task"/> is <see langword="null"/>.
+        /// <para>If <paramref name="task"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="continuationFunction"/> is <see langword="null"/>.</para>
         /// </exception>
@@ -1202,7 +1220,8 @@ namespace Rackspace.Threading
         /// form the result of this method.
         /// </summary>
         /// <remarks>
-        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        /// <para>This code implements support for the following construct without requiring the use of
+        /// <see langword="async/await"/>.</para>
         ///
         /// <code language="cs">
         /// TSource source = await task.ConfigureAwait(false);
@@ -1215,10 +1234,10 @@ namespace Rackspace.Threading
         /// </para>
         ///
         /// <note type="caller">
-        /// Since the <paramref name="continuationFunction"/> is executed synchronously, this
+        /// <para>Since the <paramref name="continuationFunction"/> is executed synchronously, this
         /// method should only be used for lightweight continuation functions. This restriction
         /// applies only to <paramref name="continuationFunction"/> itself, not to the
-        /// <see cref="Task"/> returned by it.
+        /// <see cref="Task"/> returned by it.</para>
         /// </note>
         /// </remarks>
         /// <typeparam name="TSource">The type of the result produced by the antecedent <see cref="Task{TResult}"/>.</typeparam>
@@ -1229,7 +1248,7 @@ namespace Rackspace.Threading
         /// the <see cref="Task{TResult}.Result"/> property will contain the result provided by the
         /// <see cref="Task{TResult}.Result"/> property of the task returned from <paramref name="continuationFunction"/>.</returns>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="task"/> is <see langword="null"/>.
+        /// <para>If <paramref name="task"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="continuationFunction"/> is <see langword="null"/>.</para>
         /// </exception>
@@ -1245,7 +1264,8 @@ namespace Rackspace.Threading
         /// parameter specifies whether the continuation is executed if the antecedent task is faulted.
         /// </summary>
         /// <remarks>
-        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        /// <para>This code implements support for the following construct without requiring the use of
+        /// <see langword="async/await"/>.</para>
         ///
         /// <code language="cs">
         /// try
@@ -1268,10 +1288,10 @@ namespace Rackspace.Threading
         /// </para>
         ///
         /// <note type="caller">
-        /// Since the <paramref name="continuationFunction"/> is executed synchronously, this
+        /// <para>Since the <paramref name="continuationFunction"/> is executed synchronously, this
         /// method should only be used for lightweight continuation functions. This restriction
         /// applies only to <paramref name="continuationFunction"/> itself, not to the
-        /// <see cref="Task"/> returned by it.
+        /// <see cref="Task"/> returned by it.</para>
         /// </note>
         /// </remarks>
         /// <typeparam name="TSource">The type of the result produced by the antecedent <see cref="Task{TResult}"/>.</typeparam>
@@ -1283,7 +1303,7 @@ namespace Rackspace.Threading
         /// the <see cref="Task{TResult}.Result"/> property will contain the result provided by the
         /// <see cref="Task{TResult}.Result"/> property of the task returned from <paramref name="continuationFunction"/>.</returns>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="task"/> is <see langword="null"/>.
+        /// <para>If <paramref name="task"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="continuationFunction"/> is <see langword="null"/>.</para>
         /// </exception>
@@ -1320,7 +1340,8 @@ namespace Rackspace.Threading
         /// form the result of this method.
         /// </summary>
         /// <remarks>
-        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        /// <para>This code implements support for the following construct without requiring the use of
+        /// <see langword="async/await"/>.</para>
         ///
         /// <code language="cs">
         /// await task.ConfigureAwait(false);
@@ -1333,17 +1354,17 @@ namespace Rackspace.Threading
         /// </para>
         ///
         /// <note type="caller">
-        /// Since the <paramref name="continuationFunction"/> is executed synchronously, this
+        /// <para>Since the <paramref name="continuationFunction"/> is executed synchronously, this
         /// method should only be used for lightweight continuation functions. This restriction
         /// applies only to <paramref name="continuationFunction"/> itself, not to the
-        /// <see cref="Task"/> returned by it.
+        /// <see cref="Task"/> returned by it.</para>
         /// </note>
         /// </remarks>
         /// <param name="task">The antecedent task.</param>
         /// <param name="continuationFunction">The continuation function to execute when <paramref name="task"/> completes successfully. The continuation function returns a <see cref="Task"/> which provides the final result of the continuation.</param>
         /// <returns>A <see cref="Task"/> representing the unwrapped asynchronous operation.</returns>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="task"/> is <see langword="null"/>.
+        /// <para>If <paramref name="task"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="continuationFunction"/> is <see langword="null"/>.</para>
         /// </exception>
@@ -1359,7 +1380,8 @@ namespace Rackspace.Threading
         /// executed if the antecedent task is faulted.
         /// </summary>
         /// <remarks>
-        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        /// <para>This code implements support for the following construct without requiring the use of
+        /// <see langword="async/await"/>.</para>
         ///
         /// <code language="cs">
         /// try
@@ -1382,10 +1404,10 @@ namespace Rackspace.Threading
         /// </para>
         ///
         /// <note type="caller">
-        /// Since the <paramref name="continuationFunction"/> is executed synchronously, this
+        /// <para>Since the <paramref name="continuationFunction"/> is executed synchronously, this
         /// method should only be used for lightweight continuation functions. This restriction
         /// applies only to <paramref name="continuationFunction"/> itself, not to the
-        /// <see cref="Task"/> returned by it.
+        /// <see cref="Task"/> returned by it.</para>
         /// </note>
         /// </remarks>
         /// <param name="task">The antecedent task.</param>
@@ -1393,7 +1415,7 @@ namespace Rackspace.Threading
         /// <param name="supportsErrors"><see langword="true"/> if the <paramref name="continuationFunction"/> properly handles a faulted antecedent task; otherwise, <see langword="false"/>.</param>
         /// <returns>A <see cref="Task"/> representing the unwrapped asynchronous operation.</returns>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="task"/> is <see langword="null"/>.
+        /// <para>If <paramref name="task"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="continuationFunction"/> is <see langword="null"/>.</para>
         /// </exception>
@@ -1430,7 +1452,8 @@ namespace Rackspace.Threading
         /// form the result of this method.
         /// </summary>
         /// <remarks>
-        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        /// <para>This code implements support for the following construct without requiring the use of
+        /// <see langword="async/await"/>.</para>
         ///
         /// <code language="cs">
         /// TSource source = await task.ConfigureAwait(false);
@@ -1443,10 +1466,10 @@ namespace Rackspace.Threading
         /// </para>
         ///
         /// <note type="caller">
-        /// Since the <paramref name="continuationFunction"/> is executed synchronously, this
+        /// <para>Since the <paramref name="continuationFunction"/> is executed synchronously, this
         /// method should only be used for lightweight continuation functions. This restriction
         /// applies only to <paramref name="continuationFunction"/> itself, not to the
-        /// <see cref="Task"/> returned by it.
+        /// <see cref="Task"/> returned by it.</para>
         /// </note>
         /// </remarks>
         /// <typeparam name="TSource">The type of the result produced by the antecedent <see cref="Task{TResult}"/>.</typeparam>
@@ -1454,7 +1477,7 @@ namespace Rackspace.Threading
         /// <param name="continuationFunction">The continuation function to execute when <paramref name="task"/> completes successfully. The continuation function returns a <see cref="Task"/> which provides the final result of the continuation.</param>
         /// <returns>A <see cref="Task"/> representing the unwrapped asynchronous operation.</returns>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="task"/> is <see langword="null"/>.
+        /// <para>If <paramref name="task"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="continuationFunction"/> is <see langword="null"/>.</para>
         /// </exception>
@@ -1470,7 +1493,7 @@ namespace Rackspace.Threading
         /// parameter specifies whether the continuation is executed if the antecedent task is faulted.
         /// </summary>
         /// <remarks>
-        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        /// <para>This code implements support for the following construct without requiring the use of <see langword="async/await"/>.</para>
         ///
         /// <code language="cs">
         /// try
@@ -1493,10 +1516,10 @@ namespace Rackspace.Threading
         /// </para>
         ///
         /// <note type="caller">
-        /// Since the <paramref name="continuationFunction"/> is executed synchronously, this
+        /// <para>Since the <paramref name="continuationFunction"/> is executed synchronously, this
         /// method should only be used for lightweight continuation functions. This restriction
         /// applies only to <paramref name="continuationFunction"/> itself, not to the
-        /// <see cref="Task"/> returned by it.
+        /// <see cref="Task"/> returned by it.</para>
         /// </note>
         /// </remarks>
         /// <typeparam name="TSource">The type of the result produced by the antecedent <see cref="Task{TResult}"/>.</typeparam>
@@ -1505,7 +1528,7 @@ namespace Rackspace.Threading
         /// <param name="supportsErrors"><see langword="true"/> if the <paramref name="continuationFunction"/> properly handles a faulted antecedent task; otherwise, <see langword="false"/>.</param>
         /// <returns>A <see cref="Task"/> representing the unwrapped asynchronous operation.</returns>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="task"/> is <see langword="null"/>.
+        /// <para>If <paramref name="task"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="continuationFunction"/> is <see langword="null"/>.</para>
         /// </exception>
@@ -1543,10 +1566,10 @@ namespace Rackspace.Threading
         /// <typeparam name="TException">The desired exception type.</typeparam>
         /// <param name="task">The completed task.</param>
         /// <returns>
-        /// An instance of <typeparamref name="TException"/> if the <paramref name="task"/> is in the
+        /// <para>An instance of <typeparamref name="TException"/> if the <paramref name="task"/> is in the
         /// <see cref="TaskStatus.Faulted"/> state and the first exception in
         /// <see cref="AggregateException.InnerExceptions"/> is an instance of
-        /// <typeparamref name="TException"/>.
+        /// <typeparamref name="TException"/>.</para>
         /// <para>-or-</para>
         /// <para>An instance of <typeparamref name="TException"/> if the <paramref name="task"/> is in
         /// the <see cref="TaskStatus.Canceled"/> state, and a call to <see cref="Task.Wait()"/> results
@@ -1598,7 +1621,7 @@ namespace Rackspace.Threading
             /// task could be an instance of <typeparamref name="TException"/>.
             /// </summary>
             /// <value>
-            /// <see langword="true"/> if <typeparamref name="TException"/> is assignable from <see cref="TaskCanceledException"/>.
+            /// <para><see langword="true"/> if <typeparamref name="TException"/> is assignable from <see cref="TaskCanceledException"/>.</para>
             /// <para>-or-</para>
             /// <para><see langword="true"/> if <see cref="TaskCanceledException"/> is assignable from <typeparamref name="TException"/>.</para>
             /// <para>-or-</para>

@@ -43,11 +43,11 @@ namespace Rackspace.Threading
         /// after the specified time span.
         /// </summary>
         /// <remarks>
-        /// If a previous call to this method scheduled a cancellation, the cancellation time is
+        /// <para>If a previous call to this method scheduled a cancellation, the cancellation time is
         /// reset to the new <paramref name="delay"/> value. This method has no effect if the
         /// <see cref="CancellationTokenSource"/> has already been cancelled (i.e. the
         /// <see cref="CancellationTokenSource.IsCancellationRequested"/> property returns
-        /// <see langword="true"/>.
+        /// <see langword="true"/>.</para>
         /// <para>
         /// In all versions of .NET, requesting cancellation of a <see cref="CancellationTokenSource"/> will
         /// not prevent the instance from becoming eligible for garbage collection prior to the timer expiring.

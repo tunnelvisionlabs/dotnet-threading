@@ -33,10 +33,10 @@ namespace Rackspace.Threading
         /// </para>
         ///
         /// <note type="caller">
-        /// If the <paramref name="resource"/> function throws an exception, or if it returns <see langword="null"/>,
+        /// <para>If the <paramref name="resource"/> function throws an exception, or if it returns <see langword="null"/>,
         /// or if the <see cref="Task{TResult}"/> it returns does not complete successfully, the resource will not be
         /// acquired by this method. In either of these situations the caller is responsible for ensuring the
-        /// <paramref name="resource"/> function cleans up any resources it creates.
+        /// <paramref name="resource"/> function cleans up any resources it creates.</para>
         /// </note>
         /// </remarks>
         /// <typeparam name="TResource">The type of resource used within the task and disposed of afterwards.</typeparam>
@@ -47,8 +47,8 @@ namespace Rackspace.Threading
         /// the <see cref="Task{TResult}.Result"/> property will contain the result provided by the
         /// <see cref="Task{TResult}.Result"/> property of the task returned from <paramref name="body"/>.</returns>
         /// <example>
-        /// The following example asynchronously acquires a resource by calling the user method <c>AcquireResourceAsync</c>.
-        /// The resource will be disposed after the body executes, prior to returning the result of the body.
+        /// <para>The following example asynchronously acquires a resource by calling the user method <c>AcquireResourceAsync</c>.
+        /// The resource will be disposed after the body executes, prior to returning the result of the body.</para>
         /// <code source="..\Samples\CSharpSamples\TaskBlockUsingWithResult.cs" region="UsingWithResultAsyncBuildingBlock" language="cs"/>
         /// <para>
         /// For reference, the following example demonstrates a (nearly) equivalent implementation of this behavior using
@@ -57,12 +57,12 @@ namespace Rackspace.Threading
         /// <code source="..\Samples\CSharpSamples\TaskBlockUsingWithResult.cs" region="UsingWithResultAsyncAwait" language="cs"/>
         /// </example>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="resource"/> is <see langword="null"/>.
+        /// <para>If <paramref name="resource"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="body"/> is <see langword="null"/>.</para>
         /// </exception>
         /// <exception cref="InvalidOperationException">
-        /// If <paramref name="resource"/> returns <see langword="null"/>.
+        /// <para>If <paramref name="resource"/> returns <see langword="null"/>.</para>
         /// </exception>
         public static Task<TResult> Using<TResource, TResult>(Func<Task<TResource>> resource, Func<Task<TResource>, Task<TResult>> body)
             where TResource : IDisposable
@@ -108,7 +108,8 @@ namespace Rackspace.Threading
         /// keywords are not available.
         /// </summary>
         /// <remarks>
-        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        /// <para>This code implements support for the following construct without requiring the use of
+        /// <see langword="async/await"/>.</para>
         ///
         /// <code language="cs">
         /// using (IDisposable disposable = await resource().ConfigureAwait(false))
@@ -124,10 +125,10 @@ namespace Rackspace.Threading
         /// </para>
         ///
         /// <note type="caller">
-        /// If the <paramref name="resource"/> function throws an exception, or if it returns <see langword="null"/>,
+        /// <para>If the <paramref name="resource"/> function throws an exception, or if it returns <see langword="null"/>,
         /// or if the <see cref="Task{TResult}"/> it returns does not complete successfully, the resource will not be
         /// acquired by this method. In either of these situations the caller is responsible for ensuring the
-        /// <paramref name="resource"/> function cleans up any resources it creates.
+        /// <paramref name="resource"/> function cleans up any resources it creates.</para>
         /// </note>
         /// </remarks>
         /// <typeparam name="TResource">The type of resource used within the task and disposed of afterwards.</typeparam>
@@ -135,9 +136,9 @@ namespace Rackspace.Threading
         /// <param name="body">The continuation function which provides the <see cref="Task"/> which acts as the body of the <c>using</c> block.</param>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
         /// <example>
-        /// The following example asynchronously acquires a resource by calling the user method <c>AcquireResourceAsync</c>.
+        /// <para>The following example asynchronously acquires a resource by calling the user method <c>AcquireResourceAsync</c>.
         /// The resource will be disposed after the body executes. No result is return from this operation, as the body of
-        /// the task block represents an asynchronous operation that does not return a result.
+        /// the task block represents an asynchronous operation that does not return a result.</para>
         /// <code source="..\Samples\CSharpSamples\TaskBlockUsing.cs" region="UsingAsyncBuildingBlock" language="cs"/>
         /// <para>
         /// For reference, the following example demonstrates a (nearly) equivalent implementation of this behavior using
@@ -146,12 +147,12 @@ namespace Rackspace.Threading
         /// <code source="..\Samples\CSharpSamples\TaskBlockUsing.cs" region="UsingAsyncAwait" language="cs"/>
         /// </example>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="resource"/> is <see langword="null"/>.
+        /// <para>If <paramref name="resource"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="body"/> is <see langword="null"/>.</para>
         /// </exception>
         /// <exception cref="InvalidOperationException">
-        /// If <paramref name="resource"/> returns <see langword="null"/>.
+        /// <para>If <paramref name="resource"/> returns <see langword="null"/>.</para>
         /// </exception>
         public static Task Using<TResource>(Func<Task<TResource>> resource, Func<Task<TResource>, Task> body)
             where TResource : IDisposable
@@ -196,7 +197,8 @@ namespace Rackspace.Threading
         /// Provides support for a conditional "while" loop in asynchronous code, without requiring the use of <see langword="async/await"/>.
         /// </summary>
         /// <remarks>
-        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        /// <para>This code implements support for the following construct without requiring the use of
+        /// <see langword="async/await"/>.</para>
         ///
         /// <code language="cs">
         /// while (condition())
@@ -209,7 +211,7 @@ namespace Rackspace.Threading
         /// <param name="body">A function which returns a <see cref="Task"/> representing one iteration of the body of the <c>while</c> loop.</param>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
         /// <example>
-        /// The following example shows a basic "while" loop implemented using this building block.
+        /// <para>The following example shows a basic "while" loop implemented using this building block.</para>
         /// <code source="..\Samples\CSharpSamples\TaskBlockWhileAsync.cs" region="WhileAsyncBuildingBlock" language="cs"/>
         /// <para>
         /// For reference, the following example demonstrates a (nearly) equivalent implementation of this behavior using
@@ -218,12 +220,12 @@ namespace Rackspace.Threading
         /// <code source="..\Samples\CSharpSamples\TaskBlockWhileAsync.cs" region="WhileAsyncAwait" language="cs"/>
         /// </example>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="condition"/> is <see langword="null"/>.
+        /// <para>If <paramref name="condition"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="body"/> is <see langword="null"/>.</para>
         /// </exception>
         /// <exception cref="InvalidOperationException">
-        /// If <paramref name="body"/> returns <see langword="null"/>.
+        /// <para>If <paramref name="body"/> returns <see langword="null"/>.</para>
         /// </exception>
         public static Task While(Func<bool> condition, Func<Task> body)
         {
@@ -270,7 +272,8 @@ namespace Rackspace.Threading
         /// Provides support for a conditional "while" loop in asynchronous code, without requiring the use of <see langword="async/await"/>.
         /// </summary>
         /// <remarks>
-        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        /// <para>This code implements support for the following construct without requiring the use of
+        /// <see langword="async/await"/>.</para>
         ///
         /// <code language="cs">
         /// while (await condition().ConfigureAwait(false))
@@ -283,7 +286,7 @@ namespace Rackspace.Threading
         /// <param name="body">A function which returns a <see cref="Task"/> representing one iteration of the body of the <c>while</c> loop.</param>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
         /// <example>
-        /// The following example shows a basic "while" loop implemented using this building block.
+        /// <para>The following example shows a basic "while" loop implemented using this building block.</para>
         /// <code source="..\Samples\CSharpSamples\TaskBlockWhileAsyncCondition.cs" region="WhileAsyncBuildingBlock" language="cs"/>
         /// <para>
         /// For reference, the following example demonstrates a (nearly) equivalent implementation of this behavior using
@@ -292,12 +295,12 @@ namespace Rackspace.Threading
         /// <code source="..\Samples\CSharpSamples\TaskBlockWhileAsyncCondition.cs" region="WhileAsyncAwait" language="cs"/>
         /// </example>
         /// <exception cref="ArgumentNullException">
-        /// If <paramref name="condition"/> is <see langword="null"/>.
+        /// <para>If <paramref name="condition"/> is <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="body"/> is <see langword="null"/>.</para>
         /// </exception>
         /// <exception cref="InvalidOperationException">
-        /// If <paramref name="condition"/> returns <see langword="null"/>.
+        /// <para>If <paramref name="condition"/> returns <see langword="null"/>.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="body"/> returns <see langword="null"/>.</para>
         /// </exception>

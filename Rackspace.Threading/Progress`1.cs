@@ -7,11 +7,11 @@
     /// Provides an <see cref="IProgress{T}"/> that invokes callbacks for each reported progress value.
     /// </summary>
     /// <remarks>
-    /// Any handler provided to the constructor or event handlers registered with the
+    /// <para>Any handler provided to the constructor or event handlers registered with the
     /// <see cref="ProgressChanged"/> event are invoked through a <see cref="SynchronizationContext"/>
     /// instance captured when the instance is constructed. If there is no current
     /// <see cref="SynchronizationContext"/> at the time of construction, the callbacks will be invoked
-    /// on the <see cref="T:System.Threading.ThreadPool"/>.
+    /// on the <see cref="T:System.Threading.ThreadPool"/>.</para>
     /// </remarks>
     /// <typeparam name="T">Specifies the type of the progress report value.</typeparam>
     public class Progress<T> : IProgress<T>
@@ -26,8 +26,8 @@
         /// Raised for each reported progress value.
         /// </summary>
         /// <remarks>
-        /// Handlers registered with this event will be invoked on the <see cref="SynchronizationContext"/>
-        /// captured when the instance was constructed.
+        /// <para>Handlers registered with this event will be invoked on the <see cref="SynchronizationContext"/>
+        /// captured when the instance was constructed.</para>
         /// </remarks>
         public event EventHandler<ProgressChangedEventArgs<T>> ProgressChanged;
 
@@ -58,11 +58,11 @@
 
         /// <inheritdoc/>
         /// <remarks>
-        /// Any handler provided to the constructor or event handlers registered with the
+        /// <para>Any handler provided to the constructor or event handlers registered with the
         /// <see cref="ProgressChanged"/> event are invoked through a <see cref="SynchronizationContext"/>
         /// instance captured when the instance is constructed. If there is no current
         /// <see cref="SynchronizationContext"/> at the time of construction, the callbacks will be invoked
-        /// on the <see cref="T:System.Threading.ThreadPool"/>.
+        /// on the <see cref="T:System.Threading.ThreadPool"/>.</para>
         /// </remarks>
         void IProgress<T>.Report(T value)
         {
