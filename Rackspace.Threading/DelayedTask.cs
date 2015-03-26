@@ -31,7 +31,8 @@
         /// Creates a task that will complete after a time delay.
         /// </summary>
         /// <remarks>
-        /// After the specified time delay, the task is completed in <see cref="TaskStatus.RanToCompletion"/> state.
+        /// <para>After the specified time delay, the task is completed in <see cref="TaskStatus.RanToCompletion"/>
+        /// state.</para>
         /// <para>This method ignores any fractional milliseconds when evaluating <paramref name="delay"/>.</para>
         /// </remarks>
         /// <param name="delay">The time span to wait before completing the returned task</param>
@@ -50,10 +51,10 @@
         /// Creates a task that will complete after a time delay.
         /// </summary>
         /// <remarks>
-        /// If the cancellation token is signaled before the specified time delay, then the task
+        /// <para>If the cancellation token is signaled before the specified time delay, then the task
         /// is completed in <see cref="TaskStatus.Canceled"/> state. Otherwise, the task is
         /// completed in <see cref="TaskStatus.RanToCompletion"/> state once the specified time
-        /// delay has expired.
+        /// delay has expired.</para>
         /// <para>This method ignores any fractional milliseconds when evaluating <paramref name="delay"/>.</para>
         /// </remarks>
         /// <param name="delay">The time span to wait before completing the returned task</param>
@@ -184,9 +185,9 @@
         /// Creates a task that will complete when all of the supplied tasks have completed.
         /// </summary>
         /// <remarks>
-        /// If any of the supplied tasks completes in a faulted state, the returned task will also
+        /// <para>If any of the supplied tasks completes in a faulted state, the returned task will also
         /// complete in a <see cref="TaskStatus.Faulted"/> state, where its exceptions will contain
-        /// the aggregation of the set of unwrapped exceptions from each of the supplied tasks.
+        /// the aggregation of the set of unwrapped exceptions from each of the supplied tasks.</para>
         ///
         /// <para>If none of the supplied tasks faulted but at least one of them was canceled, the
         /// returned task will end in the <see cref="TaskStatus.Canceled"/> state.</para>
@@ -211,9 +212,9 @@
         /// Creates a task that will complete when all of the supplied tasks have completed.
         /// </summary>
         /// <remarks>
-        /// If any of the supplied tasks completes in a faulted state, the returned task will also
+        /// <para>If any of the supplied tasks completes in a faulted state, the returned task will also
         /// complete in a <see cref="TaskStatus.Faulted"/> state, where its exceptions will contain
-        /// the aggregation of the set of unwrapped exceptions from each of the supplied tasks.
+        /// the aggregation of the set of unwrapped exceptions from each of the supplied tasks.</para>
         ///
         /// <para>If none of the supplied tasks faulted but at least one of them was canceled, the
         /// returned task will end in the <see cref="TaskStatus.Canceled"/> state.</para>
@@ -287,9 +288,9 @@
         /// Creates a task that will complete when all of the supplied tasks have completed.
         /// </summary>
         /// <remarks>
-        /// If any of the supplied tasks completes in a faulted state, the returned task will also
+        /// <para>If any of the supplied tasks completes in a faulted state, the returned task will also
         /// complete in a <see cref="TaskStatus.Faulted"/> state, where its exceptions will contain
-        /// the aggregation of the set of unwrapped exceptions from each of the supplied tasks.
+        /// the aggregation of the set of unwrapped exceptions from each of the supplied tasks.</para>
         ///
         /// <para>If none of the supplied tasks faulted but at least one of them was canceled, the
         /// returned task will end in the <see cref="TaskStatus.Canceled"/> state.</para>
@@ -321,9 +322,9 @@
         /// Creates a task that will complete when all of the supplied tasks have completed.
         /// </summary>
         /// <remarks>
-        /// If any of the supplied tasks completes in a faulted state, the returned task will also
+        /// <para>If any of the supplied tasks completes in a faulted state, the returned task will also
         /// complete in a <see cref="TaskStatus.Faulted"/> state, where its exceptions will contain
-        /// the aggregation of the set of unwrapped exceptions from each of the supplied tasks.
+        /// the aggregation of the set of unwrapped exceptions from each of the supplied tasks.</para>
         ///
         /// <para>If none of the supplied tasks faulted but at least one of them was canceled, the
         /// returned task will end in the <see cref="TaskStatus.Canceled"/> state.</para>
@@ -406,17 +407,17 @@
         /// Creates a task that will complete when any of the supplied tasks have completed.
         /// </summary>
         /// <remarks>
-        /// The returned task will complete when any of the supplied tasks has completed. The returned
+        /// <para>The returned task will complete when any of the supplied tasks has completed. The returned
         /// task will always end in the <see cref="TaskStatus.RanToCompletion"/> state with its
         /// <see cref="Task{TResult}.Result"/> set to the first task to complete. This is true even if
         /// the first task to complete ended in the <see cref="TaskStatus.Canceled"/> or
-        /// <see cref="TaskStatus.Faulted"/> state.
+        /// <see cref="TaskStatus.Faulted"/> state.</para>
         /// </remarks>
         /// <param name="tasks">The tasks to wait on for completion.</param>
         /// <returns>A task that represents the completion of one of the supplied tasks. The return task's <see cref="Task{TResult}.Result"/> is the task that completed.</returns>
         /// <exception cref="ArgumentNullException">If <paramref name="tasks"/> is <see langword="null"/>.</exception>
         /// <exception cref="ArgumentException">
-        /// If <paramref name="tasks"/> contains any <see langword="null"/> values.
+        /// <para>If <paramref name="tasks"/> contains any <see langword="null"/> values.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="tasks"/> was empty.</para>
         /// </exception>
@@ -429,17 +430,17 @@
         /// Creates a task that will complete when any of the supplied tasks have completed.
         /// </summary>
         /// <remarks>
-        /// The returned task will complete when any of the supplied tasks has completed. The returned
+        /// <para>The returned task will complete when any of the supplied tasks has completed. The returned
         /// task will always end in the <see cref="TaskStatus.RanToCompletion"/> state with its
         /// <see cref="Task{TResult}.Result"/> set to the first task to complete. This is true even if
         /// the first task to complete ended in the <see cref="TaskStatus.Canceled"/> or
-        /// <see cref="TaskStatus.Faulted"/> state.
+        /// <see cref="TaskStatus.Faulted"/> state.</para>
         /// </remarks>
         /// <param name="tasks">The tasks to wait on for completion.</param>
         /// <returns>A task that represents the completion of one of the supplied tasks. The return task's <see cref="Task{TResult}.Result"/> is the task that completed.</returns>
         /// <exception cref="ArgumentNullException">If <paramref name="tasks"/> is <see langword="null"/>.</exception>
         /// <exception cref="ArgumentException">
-        /// If <paramref name="tasks"/> contains any <see langword="null"/> values.
+        /// <para>If <paramref name="tasks"/> contains any <see langword="null"/> values.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="tasks"/> was empty.</para>
         /// </exception>
@@ -483,18 +484,18 @@
         /// Creates a task that will complete when any of the supplied tasks have completed.
         /// </summary>
         /// <remarks>
-        /// The returned task will complete when any of the supplied tasks has completed. The returned
+        /// <para>The returned task will complete when any of the supplied tasks has completed. The returned
         /// task will always end in the <see cref="TaskStatus.RanToCompletion"/> state with its
         /// <see cref="Task{TResult}.Result"/> set to the first task to complete. This is true even if
         /// the first task to complete ended in the <see cref="TaskStatus.Canceled"/> or
-        /// <see cref="TaskStatus.Faulted"/> state.
+        /// <see cref="TaskStatus.Faulted"/> state.</para>
         /// </remarks>
         /// <typeparam name="TResult">The type of the completed task.</typeparam>
         /// <param name="tasks">The tasks to wait on for completion.</param>
         /// <returns>A task that represents the completion of one of the supplied tasks. The return task's <see cref="Task{TResult}.Result"/> is the task that completed.</returns>
         /// <exception cref="ArgumentNullException">If <paramref name="tasks"/> is <see langword="null"/>.</exception>
         /// <exception cref="ArgumentException">
-        /// If <paramref name="tasks"/> contains any <see langword="null"/> values.
+        /// <para>If <paramref name="tasks"/> contains any <see langword="null"/> values.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="tasks"/> was empty.</para>
         /// </exception>
@@ -507,18 +508,18 @@
         /// Creates a task that will complete when any of the supplied tasks have completed.
         /// </summary>
         /// <remarks>
-        /// The returned task will complete when any of the supplied tasks has completed. The returned
+        /// <para>The returned task will complete when any of the supplied tasks has completed. The returned
         /// task will always end in the <see cref="TaskStatus.RanToCompletion"/> state with its
         /// <see cref="Task{TResult}.Result"/> set to the first task to complete. This is true even if
         /// the first task to complete ended in the <see cref="TaskStatus.Canceled"/> or
-        /// <see cref="TaskStatus.Faulted"/> state.
+        /// <see cref="TaskStatus.Faulted"/> state.</para>
         /// </remarks>
         /// <typeparam name="TResult">The type of the completed task.</typeparam>
         /// <param name="tasks">The tasks to wait on for completion.</param>
         /// <returns>A task that represents the completion of one of the supplied tasks. The return task's <see cref="Task{TResult}.Result"/> is the task that completed.</returns>
         /// <exception cref="ArgumentNullException">If <paramref name="tasks"/> is <see langword="null"/>.</exception>
         /// <exception cref="ArgumentException">
-        /// If <paramref name="tasks"/> contains any <see langword="null"/> values.
+        /// <para>If <paramref name="tasks"/> contains any <see langword="null"/> values.</para>
         /// <para>-or-</para>
         /// <para>If <paramref name="tasks"/> was empty.</para>
         /// </exception>

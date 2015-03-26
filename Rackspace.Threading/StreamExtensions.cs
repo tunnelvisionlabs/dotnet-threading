@@ -17,7 +17,7 @@ namespace Rackspace.Threading
         /// Asynchronously reads the bytes from a source stream and writes them to a destination stream.
         /// </summary>
         /// <remarks>
-        /// Copying begins at the current position in <paramref name="stream"/>.
+        /// <para>Copying begins at the current position in <paramref name="stream"/>.</para>
         /// </remarks>
         /// <param name="stream">The source stream.</param>
         /// <param name="destination">The stream to which the contents of the source stream will be copied.</param>
@@ -56,7 +56,7 @@ namespace Rackspace.Threading
         /// using a specified buffer size.
         /// </summary>
         /// <remarks>
-        /// Copying begins at the current position in <paramref name="stream"/>.
+        /// <para>Copying begins at the current position in <paramref name="stream"/>.</para>
         /// </remarks>
         /// <param name="stream">The source stream.</param>
         /// <param name="destination">The stream to which the contents of the source stream will be copied.</param>
@@ -68,7 +68,7 @@ namespace Rackspace.Threading
         /// <para>If <paramref name="destination"/> is <see langword="null"/>.</para>
         /// </exception>
         /// <exception cref="ArgumentOutOfRangeException">
-        /// If <paramref name="bufferSize"/> is negative or zero.
+        /// <para>If <paramref name="bufferSize"/> is negative or zero.</para>
         /// </exception>
         /// <exception cref="ObjectDisposedException">
         /// <para>If <paramref name="stream"/> is disposed.</para>
@@ -116,7 +116,7 @@ namespace Rackspace.Threading
         /// <para>If <paramref name="destination"/> is <see langword="null"/>.</para>
         /// </exception>
         /// <exception cref="ArgumentOutOfRangeException">
-        /// If <paramref name="bufferSize"/> is negative or zero.
+        /// <para>If <paramref name="bufferSize"/> is negative or zero.</para>
         /// </exception>
         /// <exception cref="ObjectDisposedException">
         /// <para>If <paramref name="stream"/> is disposed.</para>
@@ -170,8 +170,8 @@ namespace Rackspace.Threading
         /// Asynchronously clears all buffers for a stream and causes any buffered data to be written to the underlying device.
         /// </summary>
         /// <remarks>
-        /// If a derived class does not flush the buffer in its implementation of the <see cref="Stream.Flush()"/> method,
-        /// the <see cref="FlushAsync(Stream)"/> method will not flush the buffer.
+        /// <para>If a derived class does not flush the buffer in its implementation of the <see cref="Stream.Flush()"/>
+        /// method, the <see cref="FlushAsync(Stream)"/> method will not flush the buffer.</para>
         /// </remarks>
         /// <param name="stream">The stream to flush.</param>
         /// <returns>A task that represents the asynchronous flush operation.</returns>
@@ -229,7 +229,8 @@ namespace Rackspace.Threading
         /// Asynchronously reads a sequence of bytes from a stream and advances the position within the stream by the number of bytes read.
         /// </summary>
         /// <remarks>
-        /// Use the <see cref="Stream.CanRead"/> property to determine whether the stream instance supports reading.
+        /// <para>Use the <see cref="Stream.CanRead"/> property to determine whether the stream instance supports
+        /// reading.</para>
         /// </remarks>
         /// <param name="stream">The stream to read data from.</param>
         /// <param name="buffer">The buffer to write the data into.</param>
@@ -251,7 +252,7 @@ namespace Rackspace.Threading
         /// <para>If <paramref name="count"/> is negative.</para>
         /// </exception>
         /// <exception cref="ArgumentException">
-        /// If the sum of <paramref name="offset"/> and <paramref name="count"/> is larger than the buffer length.
+        /// <para>If the sum of <paramref name="offset"/> and <paramref name="count"/> is larger than the buffer length.</para>
         /// </exception>
         /// <exception cref="NotSupportedException">If <paramref name="stream"/> does not support reading.</exception>
         /// <exception cref="ObjectDisposedException">If <paramref name="stream"/> has been disposed.</exception>
@@ -275,7 +276,8 @@ namespace Rackspace.Threading
         /// and monitors cancellation requests.
         /// </summary>
         /// <remarks>
-        /// Use the <see cref="Stream.CanRead"/> property to determine whether the stream instance supports reading.
+        /// <para>Use the <see cref="Stream.CanRead"/> property to determine whether the stream instance supports
+        /// reading.</para>
         /// <para>
         /// If the operation is canceled before it completes, the returned task contains the <see cref="TaskStatus.Canceled"/>
         /// value for the <see cref="Task.Status"/> property.
@@ -302,7 +304,7 @@ namespace Rackspace.Threading
         /// <para>If <paramref name="count"/> is negative.</para>
         /// </exception>
         /// <exception cref="ArgumentException">
-        /// If the sum of <paramref name="offset"/> and <paramref name="count"/> is larger than the buffer length.
+        /// <para>If the sum of <paramref name="offset"/> and <paramref name="count"/> is larger than the buffer length.</para>
         /// </exception>
         /// <exception cref="NotSupportedException">If <paramref name="stream"/> does not support reading.</exception>
         /// <exception cref="ObjectDisposedException">If <paramref name="stream"/> has been disposed.</exception>
@@ -328,7 +330,7 @@ namespace Rackspace.Threading
         /// Asynchronously writes a sequence of bytes to a stream and advances the position within the stream by the number of bytes written.
         /// </summary>
         /// <remarks>
-        /// Use the <see cref="Stream.CanWrite"/> property to determine whether the stream instance supports writing.
+        /// <para>Use the <see cref="Stream.CanWrite"/> property to determine whether the stream instance supports writing.</para>
         /// </remarks>
         /// <param name="stream">The stream to write data to.</param>
         /// <param name="buffer">The buffer to read the data from.</param>
@@ -348,7 +350,7 @@ namespace Rackspace.Threading
         /// <para>If <paramref name="count"/> is negative.</para>
         /// </exception>
         /// <exception cref="ArgumentException">
-        /// If the sum of <paramref name="offset"/> and <paramref name="count"/> is larger than the buffer length.
+        /// <para>If the sum of <paramref name="offset"/> and <paramref name="count"/> is larger than the buffer length.</para>
         /// </exception>
         /// <exception cref="NotSupportedException">If <paramref name="stream"/> does not support writing.</exception>
         /// <exception cref="ObjectDisposedException">If <paramref name="stream"/> has been disposed.</exception>
@@ -372,7 +374,7 @@ namespace Rackspace.Threading
         /// and monitors cancellation requests.
         /// </summary>
         /// <remarks>
-        /// Use the <see cref="Stream.CanWrite"/> property to determine whether the stream instance supports writing.
+        /// <para>Use the <see cref="Stream.CanWrite"/> property to determine whether the stream instance supports writing.</para>
         /// <para>
         /// If the operation is canceled before it completes, the returned task contains the <see cref="TaskStatus.Canceled"/>
         /// value for the <see cref="Task.Status"/> property.
@@ -397,7 +399,7 @@ namespace Rackspace.Threading
         /// <para>If <paramref name="count"/> is negative.</para>
         /// </exception>
         /// <exception cref="ArgumentException">
-        /// If the sum of <paramref name="offset"/> and <paramref name="count"/> is larger than the buffer length.
+        /// <para>If the sum of <paramref name="offset"/> and <paramref name="count"/> is larger than the buffer length.</para>
         /// </exception>
         /// <exception cref="NotSupportedException">If <paramref name="stream"/> does not support writing.</exception>
         /// <exception cref="ObjectDisposedException">If <paramref name="stream"/> has been disposed.</exception>
