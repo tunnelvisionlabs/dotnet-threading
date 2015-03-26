@@ -179,7 +179,6 @@ namespace UnitTest.RackspaceThreading
         public void TestCancelAfter_TimerPinning()
         {
             TimeSpan timeout = TimeSpan.FromSeconds(0.40);
-            TimeSpan tolerance = TimeSpan.FromSeconds(0.025);
 
             CancellationTokenSource cts = new CancellationTokenSource();
             Stopwatch timer = Stopwatch.StartNew();
@@ -198,9 +197,7 @@ namespace UnitTest.RackspaceThreading
             }
             catch (OperationCanceledException)
             {
-                TimeSpan elapsed = timer.Elapsed;
-                Assert.IsTrue(elapsed >= timeout - tolerance, "The CancellationTokenSource cancelled too soon ({0} sec < {1} sec).", elapsed.TotalSeconds, (timeout - tolerance).TotalSeconds);
-                Assert.IsTrue(elapsed <= timeout + tolerance, "The CancellationTokenSource cancelled too late ({0} sec > {1} sec).", elapsed.TotalSeconds, (timeout + tolerance).TotalSeconds);
+                // The specific time of cancellation is not relevant to this test.
             }
         }
     }
