@@ -13,7 +13,7 @@ namespace System
     /// Defines a provider for progress updates.
     /// </summary>
     /// <typeparam name="T">The type of progress update value.</typeparam>
-    public interface IProgress<T>
+    public interface IProgress<in T>
     {
         /// <summary>
         /// Reports a progress update.
