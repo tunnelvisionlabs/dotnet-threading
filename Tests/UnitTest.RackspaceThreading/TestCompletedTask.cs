@@ -2,24 +2,14 @@
 
 namespace UnitTest.RackspaceThreading
 {
-#if !NET40PLUS
-    extern alias tpl;
-#endif
-
     using System;
     using System.Diagnostics;
+    using System.Threading.Tasks;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Rackspace.Threading;
 
-#if !NET40PLUS
-    using tpl::System.Threading.Tasks;
-    using AggregateException = tpl::System.AggregateException;
-#else
-    using System.Threading.Tasks;
-#endif
-
     [TestClass]
-    public class TestCompletedTask
+    public class TestCompletedTask : TaskTestingBase
     {
         [TestMethod]
         public void TestCancelled()

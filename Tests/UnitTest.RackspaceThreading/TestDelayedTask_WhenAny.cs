@@ -2,25 +2,15 @@
 
 namespace UnitTest.RackspaceThreading
 {
-#if !NET40PLUS
-    extern alias tpl;
-#endif
-
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Threading.Tasks;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Rackspace.Threading;
 
-#if !NET40PLUS
-    using tpl::System.Threading.Tasks;
-    using AggregateException = tpl::System.AggregateException;
-#else
-    using System.Threading.Tasks;
-#endif
-
     [TestClass]
-    public class TestDelayedTask_WhenAny
+    public class TestDelayedTask_WhenAny : TaskTestingBase
     {
         #region WhenAny 1
 
@@ -63,7 +53,7 @@ namespace UnitTest.RackspaceThreading
         [TestMethod]
         public void TestWhenAny1_Completed1()
         {
-            IEnumerable<Task> tasks = new[] { DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Select(_ => string.Empty) };
+            IEnumerable<Task> tasks = new[] { DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Select(_ => string.Empty) };
             Task<Task> delayed = DelayedTask.WhenAny(tasks);
             Assert.IsFalse(delayed.IsCompleted);
             delayed.Wait();
@@ -85,9 +75,9 @@ namespace UnitTest.RackspaceThreading
             IEnumerable<Task> tasks =
                 new[]
                 {
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Select(_ => string.Empty),
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(30)).Select(_ => string.Empty),
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(20)).Select(_ => string.Empty),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Select(_ => string.Empty),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(3 * TimingGranularity.TotalMilliseconds)).Select(_ => string.Empty),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(2 * TimingGranularity.TotalMilliseconds)).Select(_ => string.Empty),
                 };
 
             Task<Task> delayed = DelayedTask.WhenAny(tasks);
@@ -108,7 +98,7 @@ namespace UnitTest.RackspaceThreading
         [TestMethod]
         public void TestWhenAny1_Canceled1()
         {
-            IEnumerable<Task> tasks = new[] { DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Then(_ => CompletedTask.Canceled()) };
+            IEnumerable<Task> tasks = new[] { DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Then(_ => CompletedTask.Canceled()) };
             Task<Task> delayed = DelayedTask.WhenAny(tasks);
             Assert.IsFalse(delayed.IsCompleted);
 
@@ -132,9 +122,9 @@ namespace UnitTest.RackspaceThreading
             IEnumerable<Task> tasks =
                 new[]
                 {
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Then(_ => CompletedTask.Canceled()),
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(30)).Then(_ => CompletedTask.Canceled()),
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(20)).Then(_ => CompletedTask.Canceled()),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Then(_ => CompletedTask.Canceled()),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(3 * TimingGranularity.TotalMilliseconds)).Then(_ => CompletedTask.Canceled()),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(2 * TimingGranularity.TotalMilliseconds)).Then(_ => CompletedTask.Canceled()),
                 };
 
             Task<Task> delayed = DelayedTask.WhenAny(tasks);
@@ -163,7 +153,7 @@ namespace UnitTest.RackspaceThreading
                 {
                     throw expectedException;
                 };
-            IEnumerable<Task> tasks = new[] { DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Select(exceptionSelector) };
+            IEnumerable<Task> tasks = new[] { DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Select(exceptionSelector) };
             Task<Task> delayed = DelayedTask.WhenAny(tasks);
             Assert.IsFalse(delayed.IsCompleted);
 
@@ -196,9 +186,9 @@ namespace UnitTest.RackspaceThreading
             IEnumerable<Task> tasks =
                 new[]
                 {
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Select(exceptionSelector),
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(30)).Select(exceptionSelector),
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(20)).Select(exceptionSelector),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Select(exceptionSelector),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(3 * TimingGranularity.TotalMilliseconds)).Select(exceptionSelector),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(2 * TimingGranularity.TotalMilliseconds)).Select(exceptionSelector),
                 };
 
             Task<Task> delayed = DelayedTask.WhenAny(tasks);
@@ -227,8 +217,8 @@ namespace UnitTest.RackspaceThreading
             IEnumerable<Task> tasks =
                 new[]
                 {
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Select(_ => string.Empty),
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(30)).Then(_ => CompletedTask.Canceled())
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Select(_ => string.Empty),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(3 * TimingGranularity.TotalMilliseconds)).Then(_ => CompletedTask.Canceled())
                 };
             Task<Task> delayed = DelayedTask.WhenAny(tasks);
             Assert.IsFalse(delayed.IsCompleted);
@@ -259,8 +249,8 @@ namespace UnitTest.RackspaceThreading
             IEnumerable<Task> tasks =
                 new[]
                 {
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Select(_ => string.Empty),
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(30)).Select(exceptionSelector)
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Select(_ => string.Empty),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(3 * TimingGranularity.TotalMilliseconds)).Select(exceptionSelector)
                 };
             Task<Task> delayed = DelayedTask.WhenAny(tasks);
             Assert.IsFalse(delayed.IsCompleted);
@@ -291,8 +281,8 @@ namespace UnitTest.RackspaceThreading
             IEnumerable<Task> tasks =
                 new[]
                 {
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Then(_ => CompletedTask.Canceled()),
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(30)).Select(exceptionSelector)
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Then(_ => CompletedTask.Canceled()),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(3 * TimingGranularity.TotalMilliseconds)).Select(exceptionSelector)
                 };
             Task<Task> delayed = DelayedTask.WhenAny(tasks);
             Assert.IsFalse(delayed.IsCompleted);
@@ -323,7 +313,7 @@ namespace UnitTest.RackspaceThreading
                     tcs.SetException(expectedExceptions);
                     return tcs.Task;
                 };
-            IEnumerable<Task> tasks = new[] { DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Then(exceptionSelector) };
+            IEnumerable<Task> tasks = new[] { DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Then(exceptionSelector) };
             Task<Task> delayed = DelayedTask.WhenAny(tasks);
             Assert.IsFalse(delayed.IsCompleted);
 
@@ -387,7 +377,7 @@ namespace UnitTest.RackspaceThreading
         [TestMethod]
         public void TestWhenAny2_Completed1()
         {
-            Task[] tasks = new[] { DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Select(_ => string.Empty) };
+            Task[] tasks = new[] { DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Select(_ => string.Empty) };
             Task<Task> delayed = DelayedTask.WhenAny(tasks);
             Assert.IsFalse(delayed.IsCompleted);
             delayed.Wait();
@@ -409,9 +399,9 @@ namespace UnitTest.RackspaceThreading
             Task[] tasks =
                 new[]
                 {
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Select(_ => string.Empty),
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(30)).Select(_ => string.Empty),
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(20)).Select(_ => string.Empty),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Select(_ => string.Empty),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(3 * TimingGranularity.TotalMilliseconds)).Select(_ => string.Empty),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(2 * TimingGranularity.TotalMilliseconds)).Select(_ => string.Empty),
                 };
 
             Task<Task> delayed = DelayedTask.WhenAny(tasks);
@@ -432,7 +422,7 @@ namespace UnitTest.RackspaceThreading
         [TestMethod]
         public void TestWhenAny2_Canceled1()
         {
-            Task[] tasks = new[] { DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Then(_ => CompletedTask.Canceled()) };
+            Task[] tasks = new[] { DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Then(_ => CompletedTask.Canceled()) };
             Task<Task> delayed = DelayedTask.WhenAny(tasks);
             Assert.IsFalse(delayed.IsCompleted);
 
@@ -456,9 +446,9 @@ namespace UnitTest.RackspaceThreading
             Task[] tasks =
                 new[]
                 {
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Then(_ => CompletedTask.Canceled()),
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(30)).Then(_ => CompletedTask.Canceled()),
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(20)).Then(_ => CompletedTask.Canceled()),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Then(_ => CompletedTask.Canceled()),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(3 * TimingGranularity.TotalMilliseconds)).Then(_ => CompletedTask.Canceled()),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(2 * TimingGranularity.TotalMilliseconds)).Then(_ => CompletedTask.Canceled()),
                 };
 
             Task<Task> delayed = DelayedTask.WhenAny(tasks);
@@ -487,7 +477,7 @@ namespace UnitTest.RackspaceThreading
                 {
                     throw expectedException;
                 };
-            Task[] tasks = new[] { DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Select(exceptionSelector) };
+            Task[] tasks = new[] { DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Select(exceptionSelector) };
             Task<Task> delayed = DelayedTask.WhenAny(tasks);
             Assert.IsFalse(delayed.IsCompleted);
 
@@ -520,9 +510,9 @@ namespace UnitTest.RackspaceThreading
             Task[] tasks =
                 new[]
                 {
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Select(exceptionSelector),
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(30)).Select(exceptionSelector),
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(20)).Select(exceptionSelector),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Select(exceptionSelector),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(3 * TimingGranularity.TotalMilliseconds)).Select(exceptionSelector),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(2 * TimingGranularity.TotalMilliseconds)).Select(exceptionSelector),
                 };
 
             Task<Task> delayed = DelayedTask.WhenAny(tasks);
@@ -551,8 +541,8 @@ namespace UnitTest.RackspaceThreading
             Task[] tasks =
                 new[]
                 {
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Select(_ => string.Empty),
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(30)).Then(_ => CompletedTask.Canceled())
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Select(_ => string.Empty),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(3 * TimingGranularity.TotalMilliseconds)).Then(_ => CompletedTask.Canceled())
                 };
             Task<Task> delayed = DelayedTask.WhenAny(tasks);
             Assert.IsFalse(delayed.IsCompleted);
@@ -583,8 +573,8 @@ namespace UnitTest.RackspaceThreading
             Task[] tasks =
                 new[]
                 {
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Select(_ => string.Empty),
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(30)).Select(exceptionSelector)
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Select(_ => string.Empty),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(3 * TimingGranularity.TotalMilliseconds)).Select(exceptionSelector)
                 };
             Task<Task> delayed = DelayedTask.WhenAny(tasks);
             Assert.IsFalse(delayed.IsCompleted);
@@ -615,8 +605,8 @@ namespace UnitTest.RackspaceThreading
             Task[] tasks =
                 new[]
                 {
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Then(_ => CompletedTask.Canceled()),
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(30)).Select(exceptionSelector)
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Then(_ => CompletedTask.Canceled()),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(3 * TimingGranularity.TotalMilliseconds)).Select(exceptionSelector)
                 };
             Task<Task> delayed = DelayedTask.WhenAny(tasks);
             Assert.IsFalse(delayed.IsCompleted);
@@ -647,7 +637,7 @@ namespace UnitTest.RackspaceThreading
                     tcs.SetException(expectedExceptions);
                     return tcs.Task;
                 };
-            Task[] tasks = new[] { DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Then(exceptionSelector) };
+            Task[] tasks = new[] { DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Then(exceptionSelector) };
             Task<Task> delayed = DelayedTask.WhenAny(tasks);
             Assert.IsFalse(delayed.IsCompleted);
 
@@ -711,7 +701,7 @@ namespace UnitTest.RackspaceThreading
         [TestMethod]
         public void TestWhenAny3_Completed1()
         {
-            IEnumerable<Task<string>> tasks = new[] { DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Select(_ => string.Empty) };
+            IEnumerable<Task<string>> tasks = new[] { DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Select(_ => string.Empty) };
             Task<Task<string>> delayed = DelayedTask.WhenAny(tasks);
             Assert.IsFalse(delayed.IsCompleted);
             delayed.Wait();
@@ -734,9 +724,9 @@ namespace UnitTest.RackspaceThreading
             IEnumerable<Task<string>> tasks =
                 new[]
                 {
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Select(_ => string.Empty),
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(30)).Select(_ => string.Empty),
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(20)).Select(_ => string.Empty),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Select(_ => string.Empty),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(3 * TimingGranularity.TotalMilliseconds)).Select(_ => string.Empty),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(2 * TimingGranularity.TotalMilliseconds)).Select(_ => string.Empty),
                 };
 
             Task<Task<string>> delayed = DelayedTask.WhenAny(tasks);
@@ -758,7 +748,7 @@ namespace UnitTest.RackspaceThreading
         [TestMethod]
         public void TestWhenAny3_Canceled1()
         {
-            IEnumerable<Task<string>> tasks = new[] { DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Then(_ => CompletedTask.Canceled<string>()) };
+            IEnumerable<Task<string>> tasks = new[] { DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Then(_ => CompletedTask.Canceled<string>()) };
             Task<Task<string>> delayed = DelayedTask.WhenAny(tasks);
             Assert.IsFalse(delayed.IsCompleted);
 
@@ -782,9 +772,9 @@ namespace UnitTest.RackspaceThreading
             IEnumerable<Task<string>> tasks =
                 new[]
                 {
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Then(_ => CompletedTask.Canceled<string>()),
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(30)).Then(_ => CompletedTask.Canceled<string>()),
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(20)).Then(_ => CompletedTask.Canceled<string>()),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Then(_ => CompletedTask.Canceled<string>()),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(3 * TimingGranularity.TotalMilliseconds)).Then(_ => CompletedTask.Canceled<string>()),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(2 * TimingGranularity.TotalMilliseconds)).Then(_ => CompletedTask.Canceled<string>()),
                 };
 
             Task<Task<string>> delayed = DelayedTask.WhenAny(tasks);
@@ -813,7 +803,7 @@ namespace UnitTest.RackspaceThreading
                 {
                     throw expectedException;
                 };
-            IEnumerable<Task<string>> tasks = new[] { DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Select(exceptionSelector) };
+            IEnumerable<Task<string>> tasks = new[] { DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Select(exceptionSelector) };
             Task<Task<string>> delayed = DelayedTask.WhenAny(tasks);
             Assert.IsFalse(delayed.IsCompleted);
 
@@ -846,9 +836,9 @@ namespace UnitTest.RackspaceThreading
             IEnumerable<Task<string>> tasks =
                 new[]
                 {
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Select(exceptionSelector),
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(30)).Select(exceptionSelector),
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(20)).Select(exceptionSelector),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Select(exceptionSelector),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(3 * TimingGranularity.TotalMilliseconds)).Select(exceptionSelector),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(2 * TimingGranularity.TotalMilliseconds)).Select(exceptionSelector),
                 };
 
             Task<Task<string>> delayed = DelayedTask.WhenAny(tasks);
@@ -877,8 +867,8 @@ namespace UnitTest.RackspaceThreading
             IEnumerable<Task<string>> tasks =
                 new[]
                 {
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Select(_ => string.Empty),
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(30)).Then(_ => CompletedTask.Canceled<string>())
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Select(_ => string.Empty),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(3 * TimingGranularity.TotalMilliseconds)).Then(_ => CompletedTask.Canceled<string>())
                 };
             Task<Task<string>> delayed = DelayedTask.WhenAny(tasks);
             Assert.IsFalse(delayed.IsCompleted);
@@ -909,8 +899,8 @@ namespace UnitTest.RackspaceThreading
             IEnumerable<Task<string>> tasks =
                 new[]
                 {
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Select(_ => string.Empty),
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(30)).Select(exceptionSelector)
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Select(_ => string.Empty),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(3 * TimingGranularity.TotalMilliseconds)).Select(exceptionSelector)
                 };
             Task<Task<string>> delayed = DelayedTask.WhenAny(tasks);
             Assert.IsFalse(delayed.IsCompleted);
@@ -941,8 +931,8 @@ namespace UnitTest.RackspaceThreading
             IEnumerable<Task<string>> tasks =
                 new[]
                 {
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Then(_ => CompletedTask.Canceled<string>()),
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(30)).Select(exceptionSelector)
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Then(_ => CompletedTask.Canceled<string>()),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(3 * TimingGranularity.TotalMilliseconds)).Select(exceptionSelector)
                 };
             Task<Task<string>> delayed = DelayedTask.WhenAny(tasks);
             Assert.IsFalse(delayed.IsCompleted);
@@ -973,7 +963,7 @@ namespace UnitTest.RackspaceThreading
                     tcs.SetException(expectedExceptions);
                     return tcs.Task;
                 };
-            IEnumerable<Task<string>> tasks = new[] { DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Then(exceptionSelector) };
+            IEnumerable<Task<string>> tasks = new[] { DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Then(exceptionSelector) };
             Task<Task<string>> delayed = DelayedTask.WhenAny(tasks);
             Assert.IsFalse(delayed.IsCompleted);
 
@@ -1037,7 +1027,7 @@ namespace UnitTest.RackspaceThreading
         [TestMethod]
         public void TestWhenAny4_Completed1()
         {
-            Task<string>[] tasks = new[] { DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Select(_ => string.Empty) };
+            Task<string>[] tasks = new[] { DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Select(_ => string.Empty) };
             Task<Task<string>> delayed = DelayedTask.WhenAny(tasks);
             Assert.IsFalse(delayed.IsCompleted);
             delayed.Wait();
@@ -1060,9 +1050,9 @@ namespace UnitTest.RackspaceThreading
             Task<string>[] tasks =
                 new[]
                 {
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Select(_ => string.Empty),
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(30)).Select(_ => string.Empty),
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(20)).Select(_ => string.Empty),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Select(_ => string.Empty),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(3 * TimingGranularity.TotalMilliseconds)).Select(_ => string.Empty),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(2 * TimingGranularity.TotalMilliseconds)).Select(_ => string.Empty),
                 };
 
             Task<Task<string>> delayed = DelayedTask.WhenAny(tasks);
@@ -1084,7 +1074,7 @@ namespace UnitTest.RackspaceThreading
         [TestMethod]
         public void TestWhenAny4_Canceled1()
         {
-            Task<string>[] tasks = new[] { DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Then(_ => CompletedTask.Canceled<string>()) };
+            Task<string>[] tasks = new[] { DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Then(_ => CompletedTask.Canceled<string>()) };
             Task<Task<string>> delayed = DelayedTask.WhenAny(tasks);
             Assert.IsFalse(delayed.IsCompleted);
 
@@ -1108,9 +1098,9 @@ namespace UnitTest.RackspaceThreading
             Task<string>[] tasks =
                 new[]
                 {
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Then(_ => CompletedTask.Canceled<string>()),
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(30)).Then(_ => CompletedTask.Canceled<string>()),
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(20)).Then(_ => CompletedTask.Canceled<string>()),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Then(_ => CompletedTask.Canceled<string>()),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(3 * TimingGranularity.TotalMilliseconds)).Then(_ => CompletedTask.Canceled<string>()),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(2 * TimingGranularity.TotalMilliseconds)).Then(_ => CompletedTask.Canceled<string>()),
                 };
 
             Task<Task<string>> delayed = DelayedTask.WhenAny(tasks);
@@ -1139,7 +1129,7 @@ namespace UnitTest.RackspaceThreading
                 {
                     throw expectedException;
                 };
-            Task<string>[] tasks = new[] { DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Select(exceptionSelector) };
+            Task<string>[] tasks = new[] { DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Select(exceptionSelector) };
             Task<Task<string>> delayed = DelayedTask.WhenAny(tasks);
             Assert.IsFalse(delayed.IsCompleted);
 
@@ -1172,9 +1162,9 @@ namespace UnitTest.RackspaceThreading
             Task<string>[] tasks =
                 new[]
                 {
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Select(exceptionSelector),
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(30)).Select(exceptionSelector),
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(20)).Select(exceptionSelector),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Select(exceptionSelector),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(3 * TimingGranularity.TotalMilliseconds)).Select(exceptionSelector),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(2 * TimingGranularity.TotalMilliseconds)).Select(exceptionSelector),
                 };
 
             Task<Task<string>> delayed = DelayedTask.WhenAny(tasks);
@@ -1203,8 +1193,8 @@ namespace UnitTest.RackspaceThreading
             Task<string>[] tasks =
                 new[]
                 {
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Select(_ => string.Empty),
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(30)).Then(_ => CompletedTask.Canceled<string>())
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Select(_ => string.Empty),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(3 * TimingGranularity.TotalMilliseconds)).Then(_ => CompletedTask.Canceled<string>())
                 };
             Task<Task<string>> delayed = DelayedTask.WhenAny(tasks);
             Assert.IsFalse(delayed.IsCompleted);
@@ -1235,8 +1225,8 @@ namespace UnitTest.RackspaceThreading
             Task<string>[] tasks =
                 new[]
                 {
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Select(_ => string.Empty),
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(30)).Select(exceptionSelector)
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Select(_ => string.Empty),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(3 * TimingGranularity.TotalMilliseconds)).Select(exceptionSelector)
                 };
             Task<Task<string>> delayed = DelayedTask.WhenAny(tasks);
             Assert.IsFalse(delayed.IsCompleted);
@@ -1268,8 +1258,8 @@ namespace UnitTest.RackspaceThreading
             Task<string>[] tasks =
                 new[]
                 {
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Then(_ => CompletedTask.Canceled<string>()),
-                    DelayedTask.Delay(TimeSpan.FromMilliseconds(30)).Select(exceptionSelector)
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Then(_ => CompletedTask.Canceled<string>()),
+                    DelayedTask.Delay(TimeSpan.FromMilliseconds(3 * TimingGranularity.TotalMilliseconds)).Select(exceptionSelector)
                 };
             Task<Task<string>> delayed = DelayedTask.WhenAny(tasks);
             Assert.IsFalse(delayed.IsCompleted);
@@ -1300,7 +1290,7 @@ namespace UnitTest.RackspaceThreading
                     tcs.SetException(expectedExceptions);
                     return tcs.Task;
                 };
-            Task<string>[] tasks = new[] { DelayedTask.Delay(TimeSpan.FromMilliseconds(10)).Then(exceptionSelector) };
+            Task<string>[] tasks = new[] { DelayedTask.Delay(TimeSpan.FromMilliseconds(1 * TimingGranularity.TotalMilliseconds)).Then(exceptionSelector) };
             Task<Task<string>> delayed = DelayedTask.WhenAny(tasks);
             Assert.IsFalse(delayed.IsCompleted);
 

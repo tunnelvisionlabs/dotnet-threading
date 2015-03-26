@@ -1,30 +1,22 @@
-﻿// This is intentionally placed in a different scope to ensure Progress<T> resolves to Rackspace.Threading.Progress<T>
-using System;
-
-namespace UnitTest.RackspaceThreading
+﻿namespace UnitTest.RackspaceThreading
 {
-#if NET40PLUS
-    using IProgressInt = System.IProgress<int>;
-#else
-    extern alias rax;
-    using IProgressInt = rax::System.IProgress<int>;
-#endif
-
+    using System;
     using System.Threading;
+    using System.Threading.Tasks;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Rackspace.Threading;
 
     [TestClass]
-    public class TestProgress
+    public class TestProgress : TaskTestingBase
     {
         [TestMethod]
         [Timeout(2000)]
         public void TestCreateProgressT_Event()
         {
             int progressValue = 0;
-            ManualResetEventSlim mre = new ManualResetEventSlim();
+            ManualResetEvent mre = new ManualResetEvent(false);
 
-            Progress<int> progressObject = new Progress<int>();
+            var progressObject = new Rackspace.Threading.Progress<int>();
             progressObject.ProgressChanged +=
                 (sender, e) =>
                 {
@@ -32,9 +24,9 @@ namespace UnitTest.RackspaceThreading
                     mre.Set();
                 };
 
-            IProgressInt progress = progressObject;
+            IProgress<int> progress = progressObject;
             progress.Report(3);
-            mre.Wait();
+            mre.WaitOne();
 
             Assert.AreEqual(3, progressValue);
         }
@@ -44,18 +36,18 @@ namespace UnitTest.RackspaceThreading
         public void TestCreateProgressT_Handler()
         {
             int progressValue = 0;
-            ManualResetEventSlim mre = new ManualResetEventSlim();
+            ManualResetEvent mre = new ManualResetEvent(false);
 
-            Progress<int> progressObject = new Progress<int>(
+            var progressObject = new Rackspace.Threading.Progress<int>(
                 value =>
                 {
                     progressValue = value;
                     mre.Set();
                 });
 
-            IProgressInt progress = progressObject;
+            IProgress<int> progress = progressObject;
             progress.Report(3);
-            mre.Wait();
+            mre.WaitOne();
 
             Assert.AreEqual(3, progressValue);
         }
@@ -66,10 +58,10 @@ namespace UnitTest.RackspaceThreading
         {
             int handlerProgressValue = 0;
             int eventProgressValue = 0;
-            ManualResetEventSlim handlerMre = new ManualResetEventSlim();
-            ManualResetEventSlim eventMre = new ManualResetEventSlim();
+            ManualResetEvent handlerMre = new ManualResetEvent(false);
+            ManualResetEvent eventMre = new ManualResetEvent(false);
 
-            Progress<int> progressObject = new Progress<int>(
+            var progressObject = new Rackspace.Threading.Progress<int>(
                 value =>
                 {
                     handlerProgressValue = value;
@@ -82,10 +74,10 @@ namespace UnitTest.RackspaceThreading
                     eventMre.Set();
                 };
 
-            IProgressInt progress = progressObject;
+            IProgress<int> progress = progressObject;
             progress.Report(3);
-            handlerMre.Wait();
-            eventMre.Wait();
+            handlerMre.WaitOne();
+            eventMre.WaitOne();
 
             Assert.AreEqual(3, handlerProgressValue);
             Assert.AreEqual(3, eventProgressValue);

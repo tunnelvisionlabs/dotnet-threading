@@ -2,25 +2,13 @@
 
 namespace UnitTest.RackspaceThreading
 {
-#if !NET40PLUS
-    extern alias tpl;
-#endif
-
     using System;
+    using System.Threading.Tasks;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Rackspace.Threading;
 
-#if !NET40PLUS
-    using tpl::System.Threading;
-    using tpl::System.Threading.Tasks;
-    using AggregateException = tpl::System.AggregateException;
-#else
-    using System.Threading;
-    using System.Threading.Tasks;
-#endif
-
     [TestClass]
-    public class TestTaskBlocks_While
+    public class TestTaskBlocks_While : TaskTestingBase
     {
         #region While 1
 
