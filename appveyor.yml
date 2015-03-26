@@ -7,8 +7,8 @@ build_script:
 - powershell -Command .\build.ps1 -VisualStudioVersion "12.0" -Verbosity minimal -Logger "${env:ProgramFiles}\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 - cd ..
 test_script:
-- vstest.console /logger:Appveyor /TestCaseFilter:"TestCategory!=WebRequest" "C:\projects\dotnet-threading\Tests\UnitTest.RackspaceThreading\bin\net35-client\%CONFIGURATION%\UnitTest.RackspaceThreading.net35.dll"
-- vstest.console /logger:Appveyor /TestCaseFilter:"TestCategory!=WebRequest" "C:\projects\dotnet-threading\Tests\UnitTest.RackspaceThreading\bin\net40-client\%CONFIGURATION%\UnitTest.RackspaceThreading.net40.dll"
 - vstest.console /logger:Appveyor /TestCaseFilter:"TestCategory!=WebRequest" "C:\projects\dotnet-threading\Tests\UnitTest.RackspaceThreading\bin\net45\%CONFIGURATION%\UnitTest.RackspaceThreading.net45.dll"
-- vstest.console /logger:Appveyor /TestCaseFilter:"TestCategory!=WebRequest" "C:\projects\dotnet-threading\Tests\UnitTest.RackspaceThreading\bin\portable-net40\%CONFIGURATION%\UnitTest.RackspaceThreading.portable_net40.dll"
 - vstest.console /logger:Appveyor /TestCaseFilter:"TestCategory!=WebRequest" "C:\projects\dotnet-threading\Tests\UnitTest.RackspaceThreading\bin\portable-net45\%CONFIGURATION%\UnitTest.RackspaceThreading.portable_net45.dll"
+- vstest.console /logger:Appveyor /TestCaseFilter:"TestCategory!=WebRequest" "C:\projects\dotnet-threading\Tests\UnitTest.RackspaceThreading\bin\portable-net40\%CONFIGURATION%\UnitTest.RackspaceThreading.portable_net40.dll"
+- vstest.console /logger:Appveyor /TestCaseFilter:"TestCategory!=WebRequest" "C:\projects\dotnet-threading\Tests\UnitTest.RackspaceThreading\bin\net40-client\%CONFIGURATION%\UnitTest.RackspaceThreading.net40.dll"
+- vstest.console /logger:Appveyor /TestCaseFilter:"TestCategory!=WebRequest" "C:\projects\dotnet-threading\Tests\UnitTest.RackspaceThreading\bin\net35-client\%CONFIGURATION%\UnitTest.RackspaceThreading.net35.dll"
