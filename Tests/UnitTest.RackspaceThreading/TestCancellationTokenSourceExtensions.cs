@@ -20,7 +20,6 @@ namespace UnitTest.RackspaceThreading
         public void TestCancelAfter()
         {
             TimeSpan timeout = TimeSpan.FromSeconds(0.25);
-            TimeSpan tolerance = TimeSpan.FromSeconds(0.025);
 
             CancellationTokenSource cts = new CancellationTokenSource();
             Stopwatch timer = Stopwatch.StartNew();
@@ -37,8 +36,8 @@ namespace UnitTest.RackspaceThreading
             catch (OperationCanceledException)
             {
                 TimeSpan elapsed = timer.Elapsed;
-                Assert.IsTrue(elapsed >= timeout - tolerance, "The CancellationTokenSource canceled too soon ({0} sec < {1} sec).", elapsed.TotalSeconds, (timeout - tolerance).TotalSeconds);
-                Assert.IsTrue(elapsed <= timeout + tolerance, "The CancellationTokenSource canceled too late ({0} sec > {1} sec).", elapsed.TotalSeconds, (timeout + tolerance).TotalSeconds);
+                Assert.IsTrue(elapsed >= timeout - AdvanceTolerance, "The CancellationTokenSource canceled too soon ({0} sec < {1} sec).", elapsed.TotalSeconds, (timeout - AdvanceTolerance).TotalSeconds);
+                Assert.IsTrue(elapsed <= timeout + DelayTolerance, "The CancellationTokenSource canceled too late ({0} sec > {1} sec).", elapsed.TotalSeconds, (timeout + DelayTolerance).TotalSeconds);
             }
         }
 
@@ -68,7 +67,6 @@ namespace UnitTest.RackspaceThreading
         {
             TimeSpan initialTimeout = TimeSpan.FromSeconds(0.10);
             TimeSpan updatedTimeout = TimeSpan.FromSeconds(0.35);
-            TimeSpan tolerance = TimeSpan.FromSeconds(0.025);
 
             CancellationTokenSource cts = new CancellationTokenSource();
             Stopwatch timer = Stopwatch.StartNew();
@@ -86,8 +84,8 @@ namespace UnitTest.RackspaceThreading
             catch (OperationCanceledException)
             {
                 TimeSpan elapsed = timer.Elapsed;
-                Assert.IsTrue(elapsed >= updatedTimeout - tolerance, "The CancellationTokenSource canceled too soon ({0} sec < {1} sec).", elapsed.TotalSeconds, (updatedTimeout - tolerance).TotalSeconds);
-                Assert.IsTrue(elapsed <= updatedTimeout + tolerance, "The CancellationTokenSource canceled too late ({0} sec > {1} sec).", elapsed.TotalSeconds, (updatedTimeout + tolerance).TotalSeconds);
+                Assert.IsTrue(elapsed >= updatedTimeout - AdvanceTolerance, "The CancellationTokenSource canceled too soon ({0} sec < {1} sec).", elapsed.TotalSeconds, (updatedTimeout - AdvanceTolerance).TotalSeconds);
+                Assert.IsTrue(elapsed <= updatedTimeout + DelayTolerance, "The CancellationTokenSource canceled too late ({0} sec > {1} sec).", elapsed.TotalSeconds, (updatedTimeout + DelayTolerance).TotalSeconds);
             }
         }
 

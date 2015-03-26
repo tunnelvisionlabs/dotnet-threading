@@ -56,14 +56,13 @@ namespace UnitTest.RackspaceThreading
         public void TestDelay1_Timing()
         {
             TimeSpan timeout = TimeSpan.FromSeconds(0.25);
-            TimeSpan tolerance = TimeSpan.FromSeconds(0.025);
 
             Stopwatch timer = Stopwatch.StartNew();
             DelayedTask.Delay(timeout).Wait();
 
             TimeSpan elapsed = timer.Elapsed;
-            Assert.IsTrue(elapsed >= timeout - tolerance, "The Delay expired too soon ({0} sec < {1} sec).", elapsed.TotalSeconds, (timeout - tolerance).TotalSeconds);
-            Assert.IsTrue(elapsed <= timeout + tolerance, "The Delay expired too late ({0} sec > {1} sec).", elapsed.TotalSeconds, (timeout + tolerance).TotalSeconds);
+            Assert.IsTrue(elapsed >= timeout - AdvanceTolerance, "The Delay expired too soon ({0} sec < {1} sec).", elapsed.TotalSeconds, (timeout - AdvanceTolerance).TotalSeconds);
+            Assert.IsTrue(elapsed <= timeout + DelayTolerance, "The Delay expired too late ({0} sec > {1} sec).", elapsed.TotalSeconds, (timeout + DelayTolerance).TotalSeconds);
         }
 
         /// <summary>
@@ -75,7 +74,6 @@ namespace UnitTest.RackspaceThreading
         public void TestDelay1_GCBehavior()
         {
             TimeSpan timeout = TimeSpan.FromSeconds(0.40);
-            TimeSpan tolerance = TimeSpan.FromSeconds(0.025);
 
             Stopwatch timer = Stopwatch.StartNew();
             Task delayTask = DelayedTask.Delay(timeout);
@@ -86,8 +84,8 @@ namespace UnitTest.RackspaceThreading
             delayTask.Wait();
 
             TimeSpan elapsed = timer.Elapsed;
-            Assert.IsTrue(elapsed >= timeout - tolerance, "The Delay expired too soon ({0} sec < {1} sec).", elapsed.TotalSeconds, (timeout - tolerance).TotalSeconds);
-            Assert.IsTrue(elapsed <= timeout + tolerance, "The Delay expired too late ({0} sec > {1} sec).", elapsed.TotalSeconds, (timeout + tolerance).TotalSeconds);
+            Assert.IsTrue(elapsed >= timeout - AdvanceTolerance, "The Delay expired too soon ({0} sec < {1} sec).", elapsed.TotalSeconds, (timeout - AdvanceTolerance).TotalSeconds);
+            Assert.IsTrue(elapsed <= timeout + DelayTolerance, "The Delay expired too late ({0} sec > {1} sec).", elapsed.TotalSeconds, (timeout + DelayTolerance).TotalSeconds);
         }
 
         #endregion
@@ -136,14 +134,13 @@ namespace UnitTest.RackspaceThreading
         public void TestDelay2_NoCancel_Timing()
         {
             TimeSpan timeout = TimeSpan.FromSeconds(0.25);
-            TimeSpan tolerance = TimeSpan.FromSeconds(0.025);
 
             Stopwatch timer = Stopwatch.StartNew();
             DelayedTask.Delay(timeout, CancellationToken.None).Wait();
 
             TimeSpan elapsed = timer.Elapsed;
-            Assert.IsTrue(elapsed >= timeout - tolerance, "The Delay expired too soon ({0} sec < {1} sec).", elapsed.TotalSeconds, (timeout - tolerance).TotalSeconds);
-            Assert.IsTrue(elapsed <= timeout + tolerance, "The Delay expired too late ({0} sec > {1} sec).", elapsed.TotalSeconds, (timeout + tolerance).TotalSeconds);
+            Assert.IsTrue(elapsed >= timeout - AdvanceTolerance, "The Delay expired too soon ({0} sec < {1} sec).", elapsed.TotalSeconds, (timeout - AdvanceTolerance).TotalSeconds);
+            Assert.IsTrue(elapsed <= timeout + DelayTolerance, "The Delay expired too late ({0} sec > {1} sec).", elapsed.TotalSeconds, (timeout + DelayTolerance).TotalSeconds);
         }
 
         /// <summary>
@@ -155,7 +152,6 @@ namespace UnitTest.RackspaceThreading
         public void TestDelay2_NoCancel_GCBehavior()
         {
             TimeSpan timeout = TimeSpan.FromSeconds(0.40);
-            TimeSpan tolerance = TimeSpan.FromSeconds(0.025);
 
             Stopwatch timer = Stopwatch.StartNew();
             Task delayTask = DelayedTask.Delay(timeout, CancellationToken.None);
@@ -166,8 +162,8 @@ namespace UnitTest.RackspaceThreading
             delayTask.Wait();
 
             TimeSpan elapsed = timer.Elapsed;
-            Assert.IsTrue(elapsed >= timeout - tolerance, "The Delay expired too soon ({0} sec < {1} sec).", elapsed.TotalSeconds, (timeout - tolerance).TotalSeconds);
-            Assert.IsTrue(elapsed <= timeout + tolerance, "The Delay expired too late ({0} sec > {1} sec).", elapsed.TotalSeconds, (timeout + tolerance).TotalSeconds);
+            Assert.IsTrue(elapsed >= timeout - AdvanceTolerance, "The Delay expired too soon ({0} sec < {1} sec).", elapsed.TotalSeconds, (timeout - AdvanceTolerance).TotalSeconds);
+            Assert.IsTrue(elapsed <= timeout + DelayTolerance, "The Delay expired too late ({0} sec > {1} sec).", elapsed.TotalSeconds, (timeout + DelayTolerance).TotalSeconds);
         }
 
         /// <summary>
@@ -223,14 +219,13 @@ namespace UnitTest.RackspaceThreading
             using (CancellationTokenSource cts = new CancellationTokenSource())
             {
                 TimeSpan timeout = TimeSpan.FromSeconds(0.25);
-                TimeSpan tolerance = TimeSpan.FromSeconds(0.025);
 
                 Stopwatch timer = Stopwatch.StartNew();
                 DelayedTask.Delay(timeout, cts.Token).Wait();
 
                 TimeSpan elapsed = timer.Elapsed;
-                Assert.IsTrue(elapsed >= timeout - tolerance, "The Delay expired too soon ({0} sec < {1} sec).", elapsed.TotalSeconds, (timeout - tolerance).TotalSeconds);
-                Assert.IsTrue(elapsed <= timeout + tolerance, "The Delay expired too late ({0} sec > {1} sec).", elapsed.TotalSeconds, (timeout + tolerance).TotalSeconds);
+                Assert.IsTrue(elapsed >= timeout - AdvanceTolerance, "The Delay expired too soon ({0} sec < {1} sec).", elapsed.TotalSeconds, (timeout - AdvanceTolerance).TotalSeconds);
+                Assert.IsTrue(elapsed <= timeout + DelayTolerance, "The Delay expired too late ({0} sec > {1} sec).", elapsed.TotalSeconds, (timeout + DelayTolerance).TotalSeconds);
             }
         }
 
@@ -245,7 +240,6 @@ namespace UnitTest.RackspaceThreading
             using (CancellationTokenSource cts = new CancellationTokenSource())
             {
                 TimeSpan timeout = TimeSpan.FromSeconds(0.40);
-                TimeSpan tolerance = TimeSpan.FromSeconds(0.025);
 
                 Stopwatch timer = Stopwatch.StartNew();
                 Task delayTask = DelayedTask.Delay(timeout, cts.Token);
@@ -256,8 +250,8 @@ namespace UnitTest.RackspaceThreading
                 delayTask.Wait();
 
                 TimeSpan elapsed = timer.Elapsed;
-                Assert.IsTrue(elapsed >= timeout - tolerance, "The Delay expired too soon ({0} sec < {1} sec).", elapsed.TotalSeconds, (timeout - tolerance).TotalSeconds);
-                Assert.IsTrue(elapsed <= timeout + tolerance, "The Delay expired too late ({0} sec > {1} sec).", elapsed.TotalSeconds, (timeout + tolerance).TotalSeconds);
+                Assert.IsTrue(elapsed >= timeout - AdvanceTolerance, "The Delay expired too soon ({0} sec < {1} sec).", elapsed.TotalSeconds, (timeout - AdvanceTolerance).TotalSeconds);
+                Assert.IsTrue(elapsed <= timeout + DelayTolerance, "The Delay expired too late ({0} sec > {1} sec).", elapsed.TotalSeconds, (timeout + DelayTolerance).TotalSeconds);
             }
         }
 
@@ -393,7 +387,6 @@ namespace UnitTest.RackspaceThreading
                 Stopwatch timer = Stopwatch.StartNew();
 
                 TimeSpan cancelAfter = TimeSpan.FromSeconds(0.25);
-                TimeSpan tolerance = TimeSpan.FromSeconds(0.025);
                 cts.CancelAfter(cancelAfter);
 
                 TimeSpan timeout = TimeSpan.FromSeconds(1);
@@ -412,8 +405,8 @@ namespace UnitTest.RackspaceThreading
                 }
 
                 TimeSpan elapsed = timer.Elapsed;
-                Assert.IsTrue(elapsed >= cancelAfter - tolerance, "The Delay expired too soon ({0} sec < {1} sec).", elapsed.TotalSeconds, (cancelAfter - tolerance).TotalSeconds);
-                Assert.IsTrue(elapsed <= cancelAfter + tolerance, "The Delay expired too late ({0} sec > {1} sec).", elapsed.TotalSeconds, (cancelAfter + tolerance).TotalSeconds);
+                Assert.IsTrue(elapsed >= cancelAfter - AdvanceTolerance, "The Delay expired too soon ({0} sec < {1} sec).", elapsed.TotalSeconds, (cancelAfter - AdvanceTolerance).TotalSeconds);
+                Assert.IsTrue(elapsed <= cancelAfter + DelayTolerance, "The Delay expired too late ({0} sec > {1} sec).", elapsed.TotalSeconds, (cancelAfter + DelayTolerance).TotalSeconds);
             }
         }
 
@@ -430,7 +423,6 @@ namespace UnitTest.RackspaceThreading
                 Stopwatch timer = Stopwatch.StartNew();
 
                 TimeSpan cancelAfter = TimeSpan.FromSeconds(0.25);
-                TimeSpan tolerance = TimeSpan.FromSeconds(0.025);
                 cts.CancelAfter(cancelAfter);
 
                 TimeSpan timeout = TimeSpan.FromSeconds(1);
@@ -452,8 +444,8 @@ namespace UnitTest.RackspaceThreading
                 }
 
                 TimeSpan elapsed = timer.Elapsed;
-                Assert.IsTrue(elapsed >= cancelAfter - tolerance, "The Delay expired too soon ({0} sec < {1} sec).", elapsed.TotalSeconds, (cancelAfter - tolerance).TotalSeconds);
-                Assert.IsTrue(elapsed <= cancelAfter + tolerance, "The Delay expired too late ({0} sec > {1} sec).", elapsed.TotalSeconds, (cancelAfter + tolerance).TotalSeconds);
+                Assert.IsTrue(elapsed >= cancelAfter - AdvanceTolerance, "The Delay expired too soon ({0} sec < {1} sec).", elapsed.TotalSeconds, (cancelAfter - AdvanceTolerance).TotalSeconds);
+                Assert.IsTrue(elapsed <= cancelAfter + DelayTolerance, "The Delay expired too late ({0} sec > {1} sec).", elapsed.TotalSeconds, (cancelAfter + DelayTolerance).TotalSeconds);
             }
         }
 
