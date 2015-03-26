@@ -2,29 +2,18 @@
 
 namespace UnitTest.RackspaceThreading
 {
-#if !NET40PLUS
-    extern alias tpl;
-#endif
-
     using System;
     using System.Collections.Generic;
     using System.Net;
     using System.Text;
+    using System.Threading;
+    using System.Threading.Tasks;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
     using Rackspace.Threading;
     using MemoryStream = System.IO.MemoryStream;
     using Stream = System.IO.Stream;
-
-#if !NET40PLUS
-    using tpl::System.Threading;
-    using tpl::System.Threading.Tasks;
-    using AggregateException = tpl::System.AggregateException;
-#else
-    using System.Threading;
-    using System.Threading.Tasks;
-#endif
 
     [TestClass]
     public class TestWebRequestExtensions

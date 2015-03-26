@@ -1,16 +1,8 @@
-﻿// This is intentionally placed in a different scope to ensure Progress<T> resolves to Rackspace.Threading.Progress<T>
-using System;
-
-namespace UnitTest.RackspaceThreading
+﻿namespace UnitTest.RackspaceThreading
 {
-#if NET40PLUS
-    using IProgressInt = System.IProgress<int>;
-#else
-    extern alias rax;
-    using IProgressInt = rax::System.IProgress<int>;
-#endif
-
+    using System;
     using System.Threading;
+    using System.Threading.Tasks;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Rackspace.Threading;
 
@@ -24,7 +16,7 @@ namespace UnitTest.RackspaceThreading
             int progressValue = 0;
             ManualResetEventSlim mre = new ManualResetEventSlim();
 
-            Progress<int> progressObject = new Progress<int>();
+            var progressObject = new Rackspace.Threading.Progress<int>();
             progressObject.ProgressChanged +=
                 (sender, e) =>
                 {
@@ -32,7 +24,7 @@ namespace UnitTest.RackspaceThreading
                     mre.Set();
                 };
 
-            IProgressInt progress = progressObject;
+            IProgress<int> progress = progressObject;
             progress.Report(3);
             mre.Wait();
 
@@ -46,14 +38,14 @@ namespace UnitTest.RackspaceThreading
             int progressValue = 0;
             ManualResetEventSlim mre = new ManualResetEventSlim();
 
-            Progress<int> progressObject = new Progress<int>(
+            var progressObject = new Rackspace.Threading.Progress<int>(
                 value =>
                 {
                     progressValue = value;
                     mre.Set();
                 });
 
-            IProgressInt progress = progressObject;
+            IProgress<int> progress = progressObject;
             progress.Report(3);
             mre.Wait();
 
@@ -69,7 +61,7 @@ namespace UnitTest.RackspaceThreading
             ManualResetEventSlim handlerMre = new ManualResetEventSlim();
             ManualResetEventSlim eventMre = new ManualResetEventSlim();
 
-            Progress<int> progressObject = new Progress<int>(
+            var progressObject = new Rackspace.Threading.Progress<int>(
                 value =>
                 {
                     handlerProgressValue = value;
@@ -82,7 +74,7 @@ namespace UnitTest.RackspaceThreading
                     eventMre.Set();
                 };
 
-            IProgressInt progress = progressObject;
+            IProgress<int> progress = progressObject;
             progress.Report(3);
             handlerMre.Wait();
             eventMre.Wait();
