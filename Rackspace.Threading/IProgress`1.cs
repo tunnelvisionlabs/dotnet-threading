@@ -1,4 +1,11 @@
-﻿#if !NET40PLUS
+﻿#if NET40PLUS
+
+using System;
+using System.Runtime.CompilerServices;
+
+[assembly: TypeForwardedTo(typeof(IProgress<>))]
+
+#else
 
 namespace System
 {
