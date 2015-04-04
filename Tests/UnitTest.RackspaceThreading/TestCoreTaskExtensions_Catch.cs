@@ -27,7 +27,7 @@ namespace UnitTest.RackspaceThreading
             // declaring these makes it clear we are testing the correct overload
             Task<string> antecedent = null;
             Func<Task<string>, ArgumentException, Task<string>> handlerFunction =
-                (task, ex) => CompletedTask.FromResult("");
+                (task, ex) => CompletedTask.FromResult(string.Empty);
 
             CoreTaskExtensions.Catch(antecedent, handlerFunction);
         }
@@ -973,7 +973,7 @@ namespace UnitTest.RackspaceThreading
             // declaring these makes it clear we are testing the correct overload
             Task<string> antecedent = null;
             Func<Task<string>, ArgumentException, string> handlerFunction =
-                (task, ex) => "";
+                (task, ex) => string.Empty;
 
             CoreTaskExtensions.Catch(antecedent, handlerFunction);
         }
@@ -988,7 +988,7 @@ namespace UnitTest.RackspaceThreading
         public void TestCatch2_CompletedAntecedent_NullHandler()
         {
             // declaring these makes it clear we are testing the correct overload
-            Task<string> antecedent = CompletedTask.FromResult("");
+            Task<string> antecedent = CompletedTask.FromResult(string.Empty);
             Func<Task<string>, ArgumentException, string> handlerFunction = null;
 
             CoreTaskExtensions.Catch(antecedent, handlerFunction);
