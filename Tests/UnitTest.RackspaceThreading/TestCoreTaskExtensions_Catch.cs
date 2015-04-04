@@ -10,8 +10,8 @@ namespace UnitTest.RackspaceThreading
     [TestClass]
     public class TestCoreTaskExtensions_Catch : TaskTestingBase
     {
-        private readonly string AntecedentValue = "Hello World 1";
-        private readonly string HandlerValue = "Hello World 2";
+        private static readonly string AntecedentValue = "Hello World 1";
+        private static readonly string HandlerValue = "Hello World 2";
 
         #region Catch 1
 
