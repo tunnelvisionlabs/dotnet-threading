@@ -17,7 +17,8 @@ namespace Rackspace.Threading
         /// keywords are not available.
         /// </summary>
         /// <remarks>
-        /// This code implements support for the following construct without requiring the use of <see langword="async/await"/>.
+        /// <para>This code implements support for the following construct without requiring the use of
+        /// <see langword="async/await"/>.</para>
         ///
         /// <code language="cs">
         /// using (IDisposable disposable = await resource().ConfigureAwait(false))

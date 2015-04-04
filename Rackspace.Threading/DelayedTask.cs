@@ -415,7 +415,9 @@
         /// </remarks>
         /// <param name="tasks">The tasks to wait on for completion.</param>
         /// <returns>A task that represents the completion of one of the supplied tasks. The return task's <see cref="Task{TResult}.Result"/> is the task that completed.</returns>
-        /// <exception cref="ArgumentNullException">If <paramref name="tasks"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException">
+        /// <para>If <paramref name="tasks"/> is <see langword="null"/>.</para>
+        /// </exception>
         /// <exception cref="ArgumentException">
         /// <para>If <paramref name="tasks"/> contains any <see langword="null"/> values.</para>
         /// <para>-or-</para>
@@ -438,7 +440,9 @@
         /// </remarks>
         /// <param name="tasks">The tasks to wait on for completion.</param>
         /// <returns>A task that represents the completion of one of the supplied tasks. The return task's <see cref="Task{TResult}.Result"/> is the task that completed.</returns>
-        /// <exception cref="ArgumentNullException">If <paramref name="tasks"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException">
+        /// <para>If <paramref name="tasks"/> is <see langword="null"/>.</para>
+        /// </exception>
         /// <exception cref="ArgumentException">
         /// <para>If <paramref name="tasks"/> contains any <see langword="null"/> values.</para>
         /// <para>-or-</para>
@@ -493,7 +497,9 @@
         /// <typeparam name="TResult">The type of the completed task.</typeparam>
         /// <param name="tasks">The tasks to wait on for completion.</param>
         /// <returns>A task that represents the completion of one of the supplied tasks. The return task's <see cref="Task{TResult}.Result"/> is the task that completed.</returns>
-        /// <exception cref="ArgumentNullException">If <paramref name="tasks"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException">
+        /// <para>If <paramref name="tasks"/> is <see langword="null"/>.</para>
+        /// </exception>
         /// <exception cref="ArgumentException">
         /// <para>If <paramref name="tasks"/> contains any <see langword="null"/> values.</para>
         /// <para>-or-</para>
@@ -517,7 +523,9 @@
         /// <typeparam name="TResult">The type of the completed task.</typeparam>
         /// <param name="tasks">The tasks to wait on for completion.</param>
         /// <returns>A task that represents the completion of one of the supplied tasks. The return task's <see cref="Task{TResult}.Result"/> is the task that completed.</returns>
-        /// <exception cref="ArgumentNullException">If <paramref name="tasks"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException">
+        /// <para>If <paramref name="tasks"/> is <see langword="null"/>.</para>
+        /// </exception>
         /// <exception cref="ArgumentException">
         /// <para>If <paramref name="tasks"/> contains any <see langword="null"/> values.</para>
         /// <para>-or-</para>
