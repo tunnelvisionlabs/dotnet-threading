@@ -115,7 +115,7 @@ namespace Rackspace.Threading
                 .ContinueWith(
                     t =>
                     {
-                        if (task.Status == TaskStatus.RanToCompletion || supportsErrors && task.Status == TaskStatus.Faulted)
+                        if (task.Status == TaskStatus.RanToCompletion || (supportsErrors && task.Status == TaskStatus.Faulted))
                             completionSource.SetFromTask(t);
                     }, TaskContinuationOptions.ExecuteSynchronously);
 
@@ -225,7 +225,7 @@ namespace Rackspace.Threading
                 .ContinueWith(
                     t =>
                     {
-                        if (task.Status == TaskStatus.RanToCompletion || supportsErrors && task.Status == TaskStatus.Faulted)
+                        if (task.Status == TaskStatus.RanToCompletion || (supportsErrors && task.Status == TaskStatus.Faulted))
                             completionSource.SetFromTask(t);
                     }, TaskContinuationOptions.ExecuteSynchronously);
 
@@ -331,7 +331,7 @@ namespace Rackspace.Threading
                 .ContinueWith(
                     t =>
                     {
-                        if (task.Status == TaskStatus.RanToCompletion || supportsErrors && task.Status == TaskStatus.Faulted)
+                        if (task.Status == TaskStatus.RanToCompletion || (supportsErrors && task.Status == TaskStatus.Faulted))
                             completionSource.SetFromTask(t, default(VoidResult));
                     }, TaskContinuationOptions.ExecuteSynchronously);
 
@@ -437,7 +437,7 @@ namespace Rackspace.Threading
                 .ContinueWith(
                     t =>
                     {
-                        if (task.Status == TaskStatus.RanToCompletion || supportsErrors && task.Status == TaskStatus.Faulted)
+                        if (task.Status == TaskStatus.RanToCompletion || (supportsErrors && task.Status == TaskStatus.Faulted))
                             completionSource.SetFromTask(t, default(VoidResult));
                     }, TaskContinuationOptions.ExecuteSynchronously);
 
@@ -1203,7 +1203,7 @@ namespace Rackspace.Threading
                 .ContinueWith(
                     t =>
                     {
-                        if (task.Status == TaskStatus.RanToCompletion || supportsErrors && task.Status == TaskStatus.Faulted)
+                        if (task.Status == TaskStatus.RanToCompletion || (supportsErrors && task.Status == TaskStatus.Faulted))
                             completionSource.SetFromTask(t);
                     }, TaskContinuationOptions.ExecuteSynchronously);
 
@@ -1323,7 +1323,7 @@ namespace Rackspace.Threading
                 .ContinueWith(
                     t =>
                     {
-                        if (task.Status == TaskStatus.RanToCompletion || supportsErrors && task.Status == TaskStatus.Faulted)
+                        if (task.Status == TaskStatus.RanToCompletion || (supportsErrors && task.Status == TaskStatus.Faulted))
                             completionSource.SetFromTask(t);
                     }, TaskContinuationOptions.ExecuteSynchronously);
 
@@ -1435,7 +1435,7 @@ namespace Rackspace.Threading
                 .ContinueWith(
                     t =>
                     {
-                        if (task.Status == TaskStatus.RanToCompletion || supportsErrors && task.Status == TaskStatus.Faulted)
+                        if (task.Status == TaskStatus.RanToCompletion || (supportsErrors && task.Status == TaskStatus.Faulted))
                             completionSource.SetFromTask(t, default(VoidResult));
                     }, TaskContinuationOptions.ExecuteSynchronously);
 
@@ -1548,7 +1548,7 @@ namespace Rackspace.Threading
                 .ContinueWith(
                     t =>
                     {
-                        if (task.Status == TaskStatus.RanToCompletion || supportsErrors && task.Status == TaskStatus.Faulted)
+                        if (task.Status == TaskStatus.RanToCompletion || (supportsErrors && task.Status == TaskStatus.Faulted))
                             completionSource.SetFromTask(t, default(VoidResult));
                     }, TaskContinuationOptions.ExecuteSynchronously);
 
