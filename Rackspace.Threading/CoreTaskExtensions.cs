@@ -116,7 +116,10 @@ namespace Rackspace.Threading
                     t =>
                     {
                         if (task.Status == TaskStatus.RanToCompletion || (supportsErrors && task.Status == TaskStatus.Faulted))
+                        {
+                            IgnoreAntecedentExceptions(task);
                             completionSource.SetFromTask(t);
+                        }
                     }, TaskContinuationOptions.ExecuteSynchronously);
 
             TaskContinuationOptions failedContinuationOptions = supportsErrors ? TaskContinuationOptions.OnlyOnCanceled : TaskContinuationOptions.NotOnRanToCompletion;
@@ -226,7 +229,10 @@ namespace Rackspace.Threading
                     t =>
                     {
                         if (task.Status == TaskStatus.RanToCompletion || (supportsErrors && task.Status == TaskStatus.Faulted))
+                        {
+                            IgnoreAntecedentExceptions(task);
                             completionSource.SetFromTask(t);
+                        }
                     }, TaskContinuationOptions.ExecuteSynchronously);
 
             TaskContinuationOptions failedContinuationOptions = supportsErrors ? TaskContinuationOptions.OnlyOnCanceled : TaskContinuationOptions.NotOnRanToCompletion;
@@ -332,7 +338,10 @@ namespace Rackspace.Threading
                     t =>
                     {
                         if (task.Status == TaskStatus.RanToCompletion || (supportsErrors && task.Status == TaskStatus.Faulted))
+                        {
+                            IgnoreAntecedentExceptions(task);
                             completionSource.SetFromTask(t, default(VoidResult));
+                        }
                     }, TaskContinuationOptions.ExecuteSynchronously);
 
             TaskContinuationOptions failedContinuationOptions = supportsErrors ? TaskContinuationOptions.OnlyOnCanceled : TaskContinuationOptions.NotOnRanToCompletion;
@@ -438,7 +447,10 @@ namespace Rackspace.Threading
                     t =>
                     {
                         if (task.Status == TaskStatus.RanToCompletion || (supportsErrors && task.Status == TaskStatus.Faulted))
+                        {
+                            IgnoreAntecedentExceptions(task);
                             completionSource.SetFromTask(t, default(VoidResult));
+                        }
                     }, TaskContinuationOptions.ExecuteSynchronously);
 
             TaskContinuationOptions failedContinuationOptions = supportsErrors ? TaskContinuationOptions.OnlyOnCanceled : TaskContinuationOptions.NotOnRanToCompletion;
@@ -888,9 +900,14 @@ namespace Rackspace.Threading
                     t =>
                     {
                         if (t.Status == TaskStatus.RanToCompletion)
+                        {
                             completionSource.SetFromTask(task, default(VoidResult));
+                        }
                         else
+                        {
+                            IgnoreAntecedentExceptions(task);
                             completionSource.SetFromFailedTask(t);
+                        }
                     }, TaskContinuationOptions.ExecuteSynchronously);
 
             return completionSource.Task;
@@ -955,9 +972,14 @@ namespace Rackspace.Threading
                     t =>
                     {
                         if (t.Status == TaskStatus.RanToCompletion)
+                        {
                             completionSource.SetFromTask(task);
+                        }
                         else
+                        {
+                            IgnoreAntecedentExceptions(task);
                             completionSource.SetFromFailedTask(t);
+                        }
                     }, TaskContinuationOptions.ExecuteSynchronously);
 
             return completionSource.Task;
@@ -1020,9 +1042,14 @@ namespace Rackspace.Threading
                     t =>
                     {
                         if (t.Status == TaskStatus.RanToCompletion)
+                        {
                             completionSource.SetFromTask(task, default(VoidResult));
+                        }
                         else
+                        {
+                            IgnoreAntecedentExceptions(task);
                             completionSource.SetFromFailedTask(t);
+                        }
                     }, TaskContinuationOptions.ExecuteSynchronously);
 
             return completionSource.Task;
@@ -1088,9 +1115,14 @@ namespace Rackspace.Threading
                     t =>
                     {
                         if (t.Status == TaskStatus.RanToCompletion)
+                        {
                             completionSource.SetFromTask(task);
+                        }
                         else
+                        {
+                            IgnoreAntecedentExceptions(task);
                             completionSource.SetFromFailedTask(t);
+                        }
                     }, TaskContinuationOptions.ExecuteSynchronously);
 
             return completionSource.Task;
@@ -1204,7 +1236,10 @@ namespace Rackspace.Threading
                     t =>
                     {
                         if (task.Status == TaskStatus.RanToCompletion || (supportsErrors && task.Status == TaskStatus.Faulted))
+                        {
+                            IgnoreAntecedentExceptions(task);
                             completionSource.SetFromTask(t);
+                        }
                     }, TaskContinuationOptions.ExecuteSynchronously);
 
             TaskContinuationOptions failedContinuationOptions = supportsErrors ? TaskContinuationOptions.OnlyOnCanceled : TaskContinuationOptions.NotOnRanToCompletion;
@@ -1324,7 +1359,10 @@ namespace Rackspace.Threading
                     t =>
                     {
                         if (task.Status == TaskStatus.RanToCompletion || (supportsErrors && task.Status == TaskStatus.Faulted))
+                        {
+                            IgnoreAntecedentExceptions(task);
                             completionSource.SetFromTask(t);
+                        }
                     }, TaskContinuationOptions.ExecuteSynchronously);
 
             TaskContinuationOptions failedContinuationOptions = supportsErrors ? TaskContinuationOptions.OnlyOnCanceled : TaskContinuationOptions.NotOnRanToCompletion;
@@ -1436,7 +1474,10 @@ namespace Rackspace.Threading
                     t =>
                     {
                         if (task.Status == TaskStatus.RanToCompletion || (supportsErrors && task.Status == TaskStatus.Faulted))
+                        {
+                            IgnoreAntecedentExceptions(task);
                             completionSource.SetFromTask(t, default(VoidResult));
+                        }
                     }, TaskContinuationOptions.ExecuteSynchronously);
 
             TaskContinuationOptions failedContinuationOptions = supportsErrors ? TaskContinuationOptions.OnlyOnCanceled : TaskContinuationOptions.NotOnRanToCompletion;
@@ -1549,7 +1590,10 @@ namespace Rackspace.Threading
                     t =>
                     {
                         if (task.Status == TaskStatus.RanToCompletion || (supportsErrors && task.Status == TaskStatus.Faulted))
+                        {
+                            IgnoreAntecedentExceptions(task);
                             completionSource.SetFromTask(t, default(VoidResult));
+                        }
                     }, TaskContinuationOptions.ExecuteSynchronously);
 
             TaskContinuationOptions failedContinuationOptions = supportsErrors ? TaskContinuationOptions.OnlyOnCanceled : TaskContinuationOptions.NotOnRanToCompletion;
@@ -1632,6 +1676,31 @@ namespace Rackspace.Threading
             }
 
             return exception;
+        }
+
+        /// <summary>
+        /// Observe any exceptions from the specified <paramref name="task"/>, since its result is being ignored due to
+        /// another condition or task.
+        /// </summary>
+        /// <remarks>
+        /// <para>This is generally called when a continuation task's faulted or canceled state is about to be
+        /// propagated instead of the final state of <paramref name="task"/>. This is similar to the case in C# where an
+        /// exception is thrown in an exception block while another exception has already been thrown. The first
+        /// exception is silently dropped. In the Task Parallel Library, the equivalent is "observing" the exception
+        /// from the antecedent task by accessing its <see cref="Task.Exception"/> property.
+        /// </para>
+        /// </remarks>
+        /// <param name="task">The antecedent task.</param>
+        /// <exception cref="ArgumentNullException">If <paramref name="task"/> is <see langword="null"/>.</exception>
+        private static void IgnoreAntecedentExceptions(Task task)
+        {
+            if (task == null)
+                throw new ArgumentNullException("task");
+
+            if (!task.IsFaulted)
+                return;
+
+            Exception ignored = task.Exception;
         }
 
         /// <summary>
