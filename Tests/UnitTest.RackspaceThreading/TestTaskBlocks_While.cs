@@ -1064,7 +1064,7 @@ namespace UnitTest.RackspaceThreading
             /// The delegate returns a task which terminates with the <see cref="TaskStatus.Canceled"/> status.
             /// </summary>
             /// <remarks>
-            /// This behavior only applies to delegates which return a <see cref="Task"/>.
+            /// <para>This behavior only applies to delegates which return a <see cref="Task"/>.</para>
             /// </remarks>
             Canceled,
 
@@ -1072,7 +1072,7 @@ namespace UnitTest.RackspaceThreading
             /// The delegate throws an exception prior to returning a task.
             /// </summary>
             /// <remarks>
-            /// This behavior only applies to delegates which return a <see cref="Task"/>.
+            /// <para>This behavior only applies to delegates which return a <see cref="Task"/>.</para>
             /// </remarks>
             SyncFaulted,
 
@@ -1080,7 +1080,7 @@ namespace UnitTest.RackspaceThreading
             /// The delegate returns <see langword="null"/> instead of a <see cref="Task"/> instance.
             /// </summary>
             /// <remarks>
-            /// This behavior only applies to delegates which return a <see cref="Task"/>.
+            /// <para>This behavior only applies to delegates which return a <see cref="Task"/>.</para>
             /// </remarks>
             NullTask,
         }

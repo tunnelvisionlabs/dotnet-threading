@@ -32,7 +32,7 @@
         public event EventHandler<ProgressChangedEventArgs<T>> ProgressChanged;
 
         /// <summary>
-        /// Initializes the <see cref="Progress{T}"/> object.
+        /// Initializes a new instance of the <see cref="Progress{T}"/> class.
         /// </summary>
         public Progress()
         {
@@ -41,7 +41,7 @@
         }
 
         /// <summary>
-        /// Initializes the <see cref="Progress{T}"/> object with the specified callback.
+        /// Initializes a new instance of the <see cref="Progress{T}"/> class with the specified callback.
         /// </summary>
         /// <param name="handler">
         /// A handler to invoke for each reported progress value. This handler will be invoked in addition

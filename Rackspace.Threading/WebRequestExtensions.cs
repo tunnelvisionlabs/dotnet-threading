@@ -37,8 +37,8 @@ namespace Rackspace.Threading
         /// Returns a response to an Internet request as an asynchronous operation.
         /// </summary>
         /// <remarks>
-        /// This operation will not block. The returned <see cref="Task{TResult}"/> object will
-        /// complete after a response to an Internet request is available.
+        /// <para>This operation will not block. The returned <see cref="Task{TResult}"/> object will
+        /// complete after a response to an Internet request is available.</para>
         /// </remarks>
         /// <param name="request">The request.</param>
         /// <returns>A <see cref="Task"/> object which represents the asynchronous operation.</returns>
@@ -59,15 +59,17 @@ namespace Rackspace.Threading
         /// Returns a response to an Internet request as an asynchronous operation.
         /// </summary>
         /// <remarks>
-        /// This operation will not block. The returned <see cref="Task{TResult}"/> object will
-        /// complete after a response to an Internet request is available.
+        /// <para>This operation will not block. The returned <see cref="Task{TResult}"/> object will
+        /// complete after a response to an Internet request is available.</para>
         /// </remarks>
         /// <param name="request">The request.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> that will be assigned to the new <see cref="Task"/>.</param>
         /// <returns>A <see cref="Task"/> object which represents the asynchronous operation.</returns>
-        /// <exception cref="ArgumentNullException">If <paramref name="request"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException">
+        /// <para>If <paramref name="request"/> is <see langword="null"/>.</para>
+        /// </exception>
         /// <exception cref="WebException">
-        /// If <see cref="WebRequest.Abort"/> was previously called.
+        /// <para>If <see cref="WebRequest.Abort"/> was previously called.</para>
         /// <para>-or-</para>
         /// <para>If the timeout period for the request expired.</para>
         /// <para>-or-</para>
@@ -82,16 +84,18 @@ namespace Rackspace.Threading
         /// Returns a response to an Internet request as an asynchronous operation.
         /// </summary>
         /// <remarks>
-        /// This operation will not block. The returned <see cref="Task{TResult}"/> object will
-        /// complete after a response to an Internet request is available.
+        /// <para>This operation will not block. The returned <see cref="Task{TResult}"/> object will
+        /// complete after a response to an Internet request is available.</para>
         /// </remarks>
         /// <param name="request">The request.</param>
         /// <param name="throwOnError"><see langword="true"/> to throw a <see cref="WebException"/> if the <see cref="HttpWebResponse.StatusCode"/> of the response is greater than 400; otherwise, <see langword="false"/> to return the <see cref="WebResponse"/> in the result for these cases.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> that will be assigned to the new <see cref="Task"/>.</param>
         /// <returns>A <see cref="Task"/> object which represents the asynchronous operation.</returns>
-        /// <exception cref="ArgumentNullException">If <paramref name="request"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException">
+        /// <para>If <paramref name="request"/> is <see langword="null"/>.</para>
+        /// </exception>
         /// <exception cref="WebException">
-        /// If <see cref="WebRequest.Abort"/> was previously called.
+        /// <para>If <see cref="WebRequest.Abort"/> was previously called.</para>
         /// <para>-or-</para>
         /// <para>If the timeout period for the request expired.</para>
         /// <para>-or-</para>

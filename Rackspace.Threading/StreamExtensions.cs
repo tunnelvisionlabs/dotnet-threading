@@ -254,9 +254,15 @@ namespace Rackspace.Threading
         /// <exception cref="ArgumentException">
         /// <para>If the sum of <paramref name="offset"/> and <paramref name="count"/> is larger than the buffer length.</para>
         /// </exception>
-        /// <exception cref="NotSupportedException">If <paramref name="stream"/> does not support reading.</exception>
-        /// <exception cref="ObjectDisposedException">If <paramref name="stream"/> has been disposed.</exception>
-        /// <exception cref="InvalidOperationException">If <paramref name="stream"/> is currently in use by a previous read operation.</exception>
+        /// <exception cref="NotSupportedException">
+        /// <para>If <paramref name="stream"/> does not support reading.</para>
+        /// </exception>
+        /// <exception cref="ObjectDisposedException">
+        /// <para>If <paramref name="stream"/> has been disposed.</para>
+        /// </exception>
+        /// <exception cref="InvalidOperationException">
+        /// <para>If <paramref name="stream"/> is currently in use by a previous read operation.</para>
+        /// </exception>
         public static Task<int> ReadAsync(this Stream stream, byte[] buffer, int offset, int count)
         {
 #if NET45PLUS
@@ -306,9 +312,15 @@ namespace Rackspace.Threading
         /// <exception cref="ArgumentException">
         /// <para>If the sum of <paramref name="offset"/> and <paramref name="count"/> is larger than the buffer length.</para>
         /// </exception>
-        /// <exception cref="NotSupportedException">If <paramref name="stream"/> does not support reading.</exception>
-        /// <exception cref="ObjectDisposedException">If <paramref name="stream"/> has been disposed.</exception>
-        /// <exception cref="InvalidOperationException">If <paramref name="stream"/> is currently in use by a previous read operation.</exception>
+        /// <exception cref="NotSupportedException">
+        /// <para>If <paramref name="stream"/> does not support reading.</para>
+        /// </exception>
+        /// <exception cref="ObjectDisposedException">
+        /// <para>If <paramref name="stream"/> has been disposed.</para>
+        /// </exception>
+        /// <exception cref="InvalidOperationException">
+        /// <para>If <paramref name="stream"/> is currently in use by a previous read operation.</para>
+        /// </exception>
         public static Task<int> ReadAsync(this Stream stream, byte[] buffer, int offset, int count, CancellationToken cancellationToken)
         {
             if (stream == null)
@@ -352,9 +364,15 @@ namespace Rackspace.Threading
         /// <exception cref="ArgumentException">
         /// <para>If the sum of <paramref name="offset"/> and <paramref name="count"/> is larger than the buffer length.</para>
         /// </exception>
-        /// <exception cref="NotSupportedException">If <paramref name="stream"/> does not support writing.</exception>
-        /// <exception cref="ObjectDisposedException">If <paramref name="stream"/> has been disposed.</exception>
-        /// <exception cref="InvalidOperationException">If <paramref name="stream"/> is currently in use by a previous write operation.</exception>
+        /// <exception cref="NotSupportedException">
+        /// <para>If <paramref name="stream"/> does not support writing.</para>
+        /// </exception>
+        /// <exception cref="ObjectDisposedException">
+        /// <para>If <paramref name="stream"/> has been disposed.</para>
+        /// </exception>
+        /// <exception cref="InvalidOperationException">
+        /// <para>If <paramref name="stream"/> is currently in use by a previous write operation.</para>
+        /// </exception>
         public static Task WriteAsync(this Stream stream, byte[] buffer, int offset, int count)
         {
 #if NET45PLUS
@@ -401,9 +419,15 @@ namespace Rackspace.Threading
         /// <exception cref="ArgumentException">
         /// <para>If the sum of <paramref name="offset"/> and <paramref name="count"/> is larger than the buffer length.</para>
         /// </exception>
-        /// <exception cref="NotSupportedException">If <paramref name="stream"/> does not support writing.</exception>
-        /// <exception cref="ObjectDisposedException">If <paramref name="stream"/> has been disposed.</exception>
-        /// <exception cref="InvalidOperationException">If <paramref name="stream"/> is currently in use by a previous write operation.</exception>
+        /// <exception cref="NotSupportedException">
+        /// <para>If <paramref name="stream"/> does not support writing.</para>
+        /// </exception>
+        /// <exception cref="ObjectDisposedException">
+        /// <para>If <paramref name="stream"/> has been disposed.</para>
+        /// </exception>
+        /// <exception cref="InvalidOperationException">
+        /// <para>If <paramref name="stream"/> is currently in use by a previous write operation.</para>
+        /// </exception>
         public static Task WriteAsync(this Stream stream, byte[] buffer, int offset, int count, CancellationToken cancellationToken)
         {
             if (stream == null)
