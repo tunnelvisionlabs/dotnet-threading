@@ -262,10 +262,10 @@ namespace Rackspace.Threading
                     if (bodyTask == null)
                         throw new InvalidOperationException("The Task provided by the 'body' delegate cannot be null.");
 
-                    currentTask = bodyTask.Select(continuation).Finally(handleErrors);
+                    currentTask = bodyTask.Select(continuation).Finally(handleErrors).ObserveExceptions();
                 };
 
-            currentTask = CompletedTask.Default.Select(continuation).Finally(handleErrors);
+            currentTask = CompletedTask.Default.Select(continuation).Finally(handleErrors).ObserveExceptions();
             return taskCompletionSource.Task;
         }
 
@@ -347,10 +347,10 @@ namespace Rackspace.Threading
                     if (bodyTask == null)
                         throw new InvalidOperationException("The Task provided by the 'body' delegate cannot be null.");
 
-                    currentTask = bodyTask.Then(conditionContinuation).Select(continuation).Finally(statusCheck);
+                    currentTask = bodyTask.Then(conditionContinuation).Select(continuation).Finally(statusCheck).ObserveExceptions();
                 };
 
-            currentTask = CompletedTask.Default.Then(conditionContinuation).Select(continuation).Finally(statusCheck);
+            currentTask = CompletedTask.Default.Then(conditionContinuation).Select(continuation).Finally(statusCheck).ObserveExceptions();
             return taskCompletionSource.Task;
         }
     }
