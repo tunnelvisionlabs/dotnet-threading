@@ -1560,6 +1560,33 @@ namespace Rackspace.Threading
         }
 
         /// <summary>
+        /// This method ensures the exception for a faulted task is "observed", i.e. the <see cref="Task.Exception"/>
+        /// property will be accessed if the task enters the <see cref="TaskStatus.Faulted"/> state.
+        /// </summary>
+        /// <remarks>
+        /// <para>Prior to .NET 4.5, failing to observe the <see cref="Task.Exception"/> property for a faulted task
+        /// would terminate the process.</para>
+        /// </remarks>
+        /// <typeparam name="TTask">The specific type of task.</typeparam>
+        /// <param name="task">The antecedent task.</param>
+        /// <returns>The input argument <paramref name="task"/>.</returns>
+        /// <exception cref="ArgumentNullException">If <paramref name="task"/> is <see langword="null"/>.</exception>
+        public static TTask ObserveExceptions<TTask>(this TTask task)
+            where TTask : Task
+        {
+            if (task == null)
+                throw new ArgumentNullException("task");
+
+            task.ContinueWith(
+                t =>
+                {
+                    Exception ignored = t.Exception;
+                }, TaskContinuationOptions.ExecuteSynchronously | TaskContinuationOptions.OnlyOnFaulted);
+
+            return task;
+        }
+
+        /// <summary>
         /// Attempts to gets the first unwrapped exception from a faulted or canceled task
         /// as an instance of <typeparamref name="TException"/>.
         /// </summary>
