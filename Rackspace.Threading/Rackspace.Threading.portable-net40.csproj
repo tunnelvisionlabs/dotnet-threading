@@ -56,6 +56,13 @@
     <Compile Include="Progress`1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StreamExtensions.cs" />
+    <Compile Include="System\Runtime\CompilerServices\AsyncStateMachineAttribute.cs" />
+    <Compile Include="System\Runtime\CompilerServices\IAsyncMethodBuilder.cs" />
+    <Compile Include="System\Runtime\CompilerServices\IAsyncStateMachine.cs" />
+    <Compile Include="System\Runtime\CompilerServices\ICriticalNotifyCompletion.cs" />
+    <Compile Include="System\Runtime\CompilerServices\INotifyCompletion.cs" />
+    <Compile Include="System\Runtime\CompilerServices\IteratorStateMachineAttribute.cs" />
+    <Compile Include="System\Runtime\CompilerServices\StateMachineAttribute.cs" />
     <Compile Include="TaskBlocks.cs" />
     <Compile Include="TaskCompletionSourceExtensions.cs" />
     <Compile Include="VoidResult.cs" />

@@ -1,0 +1,14 @@
+System.Runtime.CompilerServices.AsyncStateMachineAttribute
+System.Runtime.CompilerServices.AsyncStateMachineAttribute.AsyncStateMachineAttribute(System.Type stateMachineType) -> void
+System.Runtime.CompilerServices.IAsyncStateMachine
+System.Runtime.CompilerServices.IAsyncStateMachine.MoveNext() -> void
+System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) -> void
+System.Runtime.CompilerServices.ICriticalNotifyCompletion
+System.Runtime.CompilerServices.ICriticalNotifyCompletion.UnsafeOnCompleted(System.Action continuation) -> void
+System.Runtime.CompilerServices.INotifyCompletion
+System.Runtime.CompilerServices.INotifyCompletion.OnCompleted(System.Action continuation) -> void
+System.Runtime.CompilerServices.IteratorStateMachineAttribute
+System.Runtime.CompilerServices.IteratorStateMachineAttribute.IteratorStateMachineAttribute(System.Type stateMachineType) -> void
+System.Runtime.CompilerServices.StateMachineAttribute
+System.Runtime.CompilerServices.StateMachineAttribute.StateMachineAttribute(System.Type stateMachineType) -> void
+System.Runtime.CompilerServices.StateMachineAttribute.StateMachineType.get -> System.Type
