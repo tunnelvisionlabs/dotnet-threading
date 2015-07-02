@@ -18,6 +18,7 @@
         <dependency id="TaskParallelLibrary" version="1.0.2856.0" />
       </group>
       <group targetFramework="4.0">
+        <dependency id="Microsoft.Bcl.Async" version="1.0.168" />
         <dependency id="Microsoft.Bcl.Build" version="1.0.14" />
         <dependency id="Microsoft.Bcl" version="1.1.9" />
       </group>

@@ -1,5 +1,60 @@
+AwaitExtensions
+Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable
+Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter
+Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter.GetResult() -> void
+Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter.IsCompleted.get -> bool
+Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter.OnCompleted(System.Action continuation) -> void
+Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter.UnsafeOnCompleted(System.Action continuation) -> void
+Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable.GetAwaiter() -> Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter
+Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable<TResult>
+Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable<TResult>.ConfiguredTaskAwaiter
+Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable<TResult>.ConfiguredTaskAwaiter.GetResult() -> TResult
+Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable<TResult>.ConfiguredTaskAwaiter.IsCompleted.get -> bool
+Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable<TResult>.ConfiguredTaskAwaiter.OnCompleted(System.Action continuation) -> void
+Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable<TResult>.ConfiguredTaskAwaiter.UnsafeOnCompleted(System.Action continuation) -> void
+Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable<TResult>.GetAwaiter() -> Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable<TResult>.ConfiguredTaskAwaiter
+Microsoft.Runtime.CompilerServices.TaskAwaiter
+Microsoft.Runtime.CompilerServices.TaskAwaiter.GetResult() -> void
+Microsoft.Runtime.CompilerServices.TaskAwaiter.IsCompleted.get -> bool
+Microsoft.Runtime.CompilerServices.TaskAwaiter.OnCompleted(System.Action continuation) -> void
+Microsoft.Runtime.CompilerServices.TaskAwaiter.UnsafeOnCompleted(System.Action continuation) -> void
+Microsoft.Runtime.CompilerServices.TaskAwaiter<TResult>
+Microsoft.Runtime.CompilerServices.TaskAwaiter<TResult>.GetResult() -> TResult
+Microsoft.Runtime.CompilerServices.TaskAwaiter<TResult>.IsCompleted.get -> bool
+Microsoft.Runtime.CompilerServices.TaskAwaiter<TResult>.OnCompleted(System.Action continuation) -> void
+Microsoft.Runtime.CompilerServices.TaskAwaiter<TResult>.UnsafeOnCompleted(System.Action continuation) -> void
+Microsoft.Runtime.CompilerServices.YieldAwaitable
+Microsoft.Runtime.CompilerServices.YieldAwaitable.GetAwaiter() -> Microsoft.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter
+Microsoft.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter
+Microsoft.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter.GetResult() -> void
+Microsoft.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter.IsCompleted.get -> bool
+Microsoft.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter.OnCompleted(System.Action continuation) -> void
+Microsoft.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter.UnsafeOnCompleted(System.Action continuation) -> void
 System.Runtime.CompilerServices.AsyncStateMachineAttribute
 System.Runtime.CompilerServices.AsyncStateMachineAttribute.AsyncStateMachineAttribute(System.Type stateMachineType) -> void
+System.Runtime.CompilerServices.AsyncTaskMethodBuilder
+System.Runtime.CompilerServices.AsyncTaskMethodBuilder.AwaitOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) -> void
+System.Runtime.CompilerServices.AsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) -> void
+System.Runtime.CompilerServices.AsyncTaskMethodBuilder.SetException(System.Exception exception) -> void
+System.Runtime.CompilerServices.AsyncTaskMethodBuilder.SetResult() -> void
+System.Runtime.CompilerServices.AsyncTaskMethodBuilder.SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) -> void
+System.Runtime.CompilerServices.AsyncTaskMethodBuilder.Start<TStateMachine>(ref TStateMachine stateMachine) -> void
+System.Runtime.CompilerServices.AsyncTaskMethodBuilder.Task.get -> System.Threading.Tasks.Task
+System.Runtime.CompilerServices.AsyncTaskMethodBuilder<TResult>
+System.Runtime.CompilerServices.AsyncTaskMethodBuilder<TResult>.AwaitOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) -> void
+System.Runtime.CompilerServices.AsyncTaskMethodBuilder<TResult>.AwaitUnsafeOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) -> void
+System.Runtime.CompilerServices.AsyncTaskMethodBuilder<TResult>.SetException(System.Exception exception) -> void
+System.Runtime.CompilerServices.AsyncTaskMethodBuilder<TResult>.SetResult(TResult result) -> void
+System.Runtime.CompilerServices.AsyncTaskMethodBuilder<TResult>.SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) -> void
+System.Runtime.CompilerServices.AsyncTaskMethodBuilder<TResult>.Start<TStateMachine>(ref TStateMachine stateMachine) -> void
+System.Runtime.CompilerServices.AsyncTaskMethodBuilder<TResult>.Task.get -> System.Threading.Tasks.Task<TResult>
+System.Runtime.CompilerServices.AsyncVoidMethodBuilder
+System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) -> void
+System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) -> void
+System.Runtime.CompilerServices.AsyncVoidMethodBuilder.SetException(System.Exception exception) -> void
+System.Runtime.CompilerServices.AsyncVoidMethodBuilder.SetResult() -> void
+System.Runtime.CompilerServices.AsyncVoidMethodBuilder.SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) -> void
+System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<TStateMachine>(ref TStateMachine stateMachine) -> void
 System.Runtime.CompilerServices.IAsyncStateMachine
 System.Runtime.CompilerServices.IAsyncStateMachine.MoveNext() -> void
 System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) -> void
@@ -12,3 +67,10 @@ System.Runtime.CompilerServices.IteratorStateMachineAttribute.IteratorStateMachi
 System.Runtime.CompilerServices.StateMachineAttribute
 System.Runtime.CompilerServices.StateMachineAttribute.StateMachineAttribute(System.Type stateMachineType) -> void
 System.Runtime.CompilerServices.StateMachineAttribute.StateMachineType.get -> System.Type
+static AwaitExtensions.ConfigureAwait(this System.Threading.Tasks.Task task, bool continueOnCapturedContext) -> Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable
+static AwaitExtensions.ConfigureAwait<TResult>(this System.Threading.Tasks.Task<TResult> task, bool continueOnCapturedContext) -> Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable<TResult>
+static AwaitExtensions.GetAwaiter(this System.Threading.Tasks.Task task) -> Microsoft.Runtime.CompilerServices.TaskAwaiter
+static AwaitExtensions.GetAwaiter<TResult>(this System.Threading.Tasks.Task<TResult> task) -> Microsoft.Runtime.CompilerServices.TaskAwaiter<TResult>
+static System.Runtime.CompilerServices.AsyncTaskMethodBuilder.Create() -> System.Runtime.CompilerServices.AsyncTaskMethodBuilder
+static System.Runtime.CompilerServices.AsyncTaskMethodBuilder<TResult>.Create() -> System.Runtime.CompilerServices.AsyncTaskMethodBuilder<TResult>
+static System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Create() -> System.Runtime.CompilerServices.AsyncVoidMethodBuilder
