@@ -7,6 +7,8 @@
     [TestClass]
     public abstract class TaskTestingBase
     {
+        private bool _unobservedException;
+
         /// <summary>
         /// During testing, timed events are assumed to be ordered if their expected times differ by more than
         /// <see cref="TimingGranularity"/>. Reducing this value increases confidence that events occur at the requested
@@ -73,20 +75,26 @@
         [TestInitialize]
         public void TestInitialize()
         {
+            _unobservedException = false;
             TaskScheduler.UnobservedTaskException += HandleUnobservedException;
         }
 
         private void HandleUnobservedException(object sender, UnobservedTaskExceptionEventArgs e)
         {
+            _unobservedException = true;
             e.SetObserved();
         }
 
+        /// <summary>
+        /// This method ensures failures in the <see cref="Task"/> finalizers do not impact other tests.
+        /// </summary>
         [TestCleanup]
         public void TestCleanup()
         {
             GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced);
             GC.WaitForPendingFinalizers();
             TaskScheduler.UnobservedTaskException -= HandleUnobservedException;
+            Assert.IsFalse(_unobservedException, "Failed to observe a task exception.");
         }
     }
 }
