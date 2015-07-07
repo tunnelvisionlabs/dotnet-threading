@@ -1,8 +1,8 @@
 version: 1.0.{build}
 configuration: Release
 environment:
-  DELAY_TOLERANCE_MS: 25
-  TIMING_GRANULARITY_MS: 10
+  DELAY_TOLERANCE_MS: 50
+  TIMING_GRANULARITY_MS: 30
 init:
 - git config --global core.autocrlf true
 build_script:
