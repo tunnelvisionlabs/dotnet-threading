@@ -71,6 +71,7 @@ static AwaitExtensions.ConfigureAwait(this System.Threading.Tasks.Task task, boo
 static AwaitExtensions.ConfigureAwait<TResult>(this System.Threading.Tasks.Task<TResult> task, bool continueOnCapturedContext) -> Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable<TResult>
 static AwaitExtensions.GetAwaiter(this System.Threading.Tasks.Task task) -> Microsoft.Runtime.CompilerServices.TaskAwaiter
 static AwaitExtensions.GetAwaiter<TResult>(this System.Threading.Tasks.Task<TResult> task) -> Microsoft.Runtime.CompilerServices.TaskAwaiter<TResult>
+static Rackspace.Threading.DelayedTask.Yield() -> Microsoft.Runtime.CompilerServices.YieldAwaitable
 static System.Runtime.CompilerServices.AsyncTaskMethodBuilder.Create() -> System.Runtime.CompilerServices.AsyncTaskMethodBuilder
 static System.Runtime.CompilerServices.AsyncTaskMethodBuilder<TResult>.Create() -> System.Runtime.CompilerServices.AsyncTaskMethodBuilder<TResult>
 static System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Create() -> System.Runtime.CompilerServices.AsyncVoidMethodBuilder
