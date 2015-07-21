@@ -65,7 +65,7 @@ namespace System
 
         public void Dispose()
         {
-            Call(ref _dispose, "Dispose");
+            TryCall(ref _dispose, "Dispose");
         }
     }
 }

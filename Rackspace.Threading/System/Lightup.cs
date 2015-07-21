@@ -79,13 +79,14 @@ namespace System
             return method();
         }
 
-        protected void Call(ref Delegate storage, string methodName)
+        protected bool TryCall(ref Delegate storage, string methodName)
         {
             Action method = GetMethodAccessor<Action>(ref storage, methodName);
             if (method == null)
-                throw new InvalidOperationException();
+                return false;
 
             method();
+            return true;
         }
 
         protected bool TryCall<TI, TV>(ref Delegate storage, TI instance, string methodName, TV parameter)
