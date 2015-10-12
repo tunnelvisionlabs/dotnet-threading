@@ -1,4 +1,7 @@
-﻿namespace Rackspace.Threading
+﻿// Copyright (c) Tunnel Vision Laboratories, LLC. All Rights Reserved.
+// Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
+
+namespace Rackspace.Threading
 {
     using System;
     using System.Collections.Generic;
@@ -140,9 +143,10 @@
                         }
                     });
 #else
-            // Since portable-net40 doesn't provide Task.Delay and also doesn't provide ThreadPool.RegisterWaitForSingleObject,
-            // we need to implement this functionality using timers stored in a ConditionalWeakTable, which are associated with
-            // the actual Task instance that gets returned by this method.
+            /* Since portable-net40 doesn't provide Task.Delay and also doesn't provide ThreadPool.RegisterWaitForSingleObject,
+             * we need to implement this functionality using timers stored in a ConditionalWeakTable, which are associated with
+             * the actual Task instance that gets returned by this method.
+             */
 
             CancellationTokenRegistration cancellationTokenRegistration = default(CancellationTokenRegistration);
             Timer timer = null;
@@ -158,7 +162,6 @@
             timer = new Timer(timerCallback, null, Timeout.Infinite, Timeout.Infinite);
             _delayTimers.Add(result.Task, timer);
             timer.Change(delay, TimeSpan.FromMilliseconds(-1));
-
 
             if (cancellationToken.CanBeCanceled)
             {

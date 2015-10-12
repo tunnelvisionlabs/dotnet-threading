@@ -30,6 +30,7 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\portable-net40\Debug\UnitTest.RackspaceThreading.portable_net40.xml</DocumentationFile>
     <NoWarn>1591</NoWarn>
+    <CodeAnalysisRuleSet>..\..\Rackspace.Threading.UnitTest.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -40,6 +41,7 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\portable-net40\Release\UnitTest.RackspaceThreading.portable_net40.xml</DocumentationFile>
     <NoWarn>1591</NoWarn>
+    <CodeAnalysisRuleSet>..\..\Rackspace.Threading.UnitTest.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -96,6 +98,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.UnitTest.RackspaceThreading.portable-net40.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\stylecop.json">
+      <Link>stylecop.json</Link>
+    </AdditionalFiles>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0-beta013\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
+    <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0-beta013\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

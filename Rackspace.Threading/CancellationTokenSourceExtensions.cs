@@ -1,4 +1,5 @@
-﻿// Copyright (c) Rackspace, US Inc. All Rights Reserved. Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
+﻿// Copyright (c) Tunnel Vision Laboratories, LLC. All Rights Reserved.
+// Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 namespace Rackspace.Threading
 {
@@ -8,8 +9,8 @@ namespace Rackspace.Threading
 #if NET40PLUS
     using System.Runtime.CompilerServices;
 #else
-    using System.Collections.Generic;
     using System.Collections.Concurrent;
+    using System.Collections.Generic;
 #endif
 
 #if NET45PLUS && PORTABLE
@@ -276,11 +277,19 @@ namespace Rackspace.Threading
 
 #if NET45PLUS && PORTABLE
         /// <summary>
+        /// Represents the method that handles calls from a <see cref="Timer"/>.
+        /// </summary>
+        /// <param name="state">An object containing application-specific information relevant to the method invoked by
+        /// this delegate, or <see langword="null"/>.</param>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1201:Elements must appear in the correct order", Justification = "Too many preprocessor directives to make ordering straightforward.")]
+        private delegate void TimerCallback(object state);
+
+        /// <summary>
         /// This class implements the Timer functionality required for this class in cases where the PCL does not
         /// provide the standard <see cref="T:System.Threading.Timer"/> class.
         /// </summary>
         /// <threadsafety static="true" instance="false"/>
-        private sealed class Timer
+        private sealed class Timer : IDisposable
         {
             private readonly object _lock = new object();
             private readonly TimerCallback _callback;
@@ -340,14 +349,13 @@ namespace Rackspace.Threading
 
                     if (delay >= 0)
                     {
-
                         _cancellationTokenSource = new CancellationTokenSource();
                         Task task = DelayedTask.Delay(TimeSpan.FromMilliseconds(delay), _cancellationTokenSource.Token).Select(BeginInvokeCallback);
                         if (period > 0)
                         {
-                            Func<bool> TrueFunction = () => true;
+                            Func<bool> trueFunction = () => true;
                             Func<Task> delayAndSend = () => DelayedTask.Delay(TimeSpan.FromMilliseconds(period), _cancellationTokenSource.Token).Select(BeginInvokeCallback);
-                            task = task.Then(_ => TaskBlocks.While(TrueFunction, delayAndSend));
+                            task = task.Then(_ => TaskBlocks.While(trueFunction, delayAndSend));
                         }
 
                         _task = task;
@@ -370,13 +378,6 @@ namespace Rackspace.Threading
                 Task.Factory.StartNew(() => _callback(_state));
             }
         }
-
-        /// <summary>
-        /// Represents the method that handles calls from a <see cref="Timer"/>.
-        /// </summary>
-        /// <param name="state">An object containing application-specific information relevant to the method invoked by
-        /// this delegate, or <see langword="null"/>.</param>
-        private delegate void TimerCallback(object state);
 #endif
     }
 }

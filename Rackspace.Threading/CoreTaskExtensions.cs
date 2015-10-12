@@ -1,4 +1,5 @@
-﻿// Copyright (c) Rackspace, US Inc. All Rights Reserved. Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
+﻿// Copyright (c) Tunnel Vision Laboratories, LLC. All Rights Reserved.
+// Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 namespace Rackspace.Threading
 {
@@ -1712,19 +1713,6 @@ namespace Rackspace.Threading
         private static class CouldHandleCancellation<TException>
             where TException : Exception
         {
-            /// <summary>
-            /// A value indicating whether the unwrapped exception from a <see cref="TaskStatus.Canceled"/>
-            /// task could be an instance of <typeparamref name="TException"/>.
-            /// </summary>
-            /// <value>
-            /// <para><see langword="true"/> if <typeparamref name="TException"/> is assignable from <see cref="TaskCanceledException"/>.</para>
-            /// <para>-or-</para>
-            /// <para><see langword="true"/> if <see cref="TaskCanceledException"/> is assignable from <typeparamref name="TException"/>.</para>
-            /// <para>-or-</para>
-            /// <para>Otherwise, <see langword="false"/>.</para>
-            /// </value>
-            public static readonly bool Value;
-
             static CouldHandleCancellation()
             {
 #if NET45PLUS
@@ -1734,6 +1722,22 @@ namespace Rackspace.Threading
                 Value = typeof(TException).IsAssignableFrom(typeof(TaskCanceledException))
                     || typeof(TaskCanceledException).IsAssignableFrom(typeof(TException));
 #endif
+            }
+
+            /// <summary>
+            /// Gets a value indicating whether the unwrapped exception from a <see cref="TaskStatus.Canceled"/>
+            /// task could be an instance of <typeparamref name="TException"/>.
+            /// </summary>
+            /// <value>
+            /// <para><see langword="true"/> if <typeparamref name="TException"/> is assignable from <see cref="TaskCanceledException"/>.</para>
+            /// <para>-or-</para>
+            /// <para><see langword="true"/> if <see cref="TaskCanceledException"/> is assignable from <typeparamref name="TException"/>.</para>
+            /// <para>-or-</para>
+            /// <para>Otherwise, <see langword="false"/>.</para>
+            /// </value>
+            public static bool Value
+            {
+                get;
             }
         }
     }

@@ -1,4 +1,5 @@
-﻿// Copyright (c) Rackspace, US Inc. All Rights Reserved. Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
+﻿// Copyright (c) Tunnel Vision Laboratories, LLC. All Rights Reserved.
+// Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 namespace UnitTest.RackspaceThreading
 {
@@ -10,6 +11,45 @@ namespace UnitTest.RackspaceThreading
     [TestClass]
     public class TestTaskBlocks_While : TaskTestingBase
     {
+        private enum DelegateBehavior
+        {
+            /// <summary>
+            /// The delegate completes successfully.
+            /// </summary>
+            Success,
+
+            /// <summary>
+            /// For delegates that return a value directly, the delegate throws an exception. For
+            /// delegates that return a <see cref="Task"/>, the delegate returns a <see cref="Task"/>
+            /// instance which terminates with the <see cref="TaskStatus.Faulted"/> status.
+            /// </summary>
+            Faulted,
+
+            /// <summary>
+            /// The delegate returns a task which terminates with the <see cref="TaskStatus.Canceled"/> status.
+            /// </summary>
+            /// <remarks>
+            /// <para>This behavior only applies to delegates which return a <see cref="Task"/>.</para>
+            /// </remarks>
+            Canceled,
+
+            /// <summary>
+            /// The delegate throws an exception prior to returning a task.
+            /// </summary>
+            /// <remarks>
+            /// <para>This behavior only applies to delegates which return a <see cref="Task"/>.</para>
+            /// </remarks>
+            SyncFaulted,
+
+            /// <summary>
+            /// The delegate returns <see langword="null"/> instead of a <see cref="Task"/> instance.
+            /// </summary>
+            /// <remarks>
+            /// <para>This behavior only applies to delegates which return a <see cref="Task"/>.</para>
+            /// </remarks>
+            NullTask,
+        }
+
         #region While 1
 
         /// <summary>
@@ -1044,45 +1084,6 @@ namespace UnitTest.RackspaceThreading
                             return CompletedTask.Default;
                         });
             }
-        }
-
-        private enum DelegateBehavior
-        {
-            /// <summary>
-            /// The delegate completes successfully.
-            /// </summary>
-            Success,
-
-            /// <summary>
-            /// For delegates that return a value directly, the delegate throws an exception. For
-            /// delegates that return a <see cref="Task"/>, the delegate returns a <see cref="Task"/>
-            /// instance which terminates with the <see cref="TaskStatus.Faulted"/> status.
-            /// </summary>
-            Faulted,
-
-            /// <summary>
-            /// The delegate returns a task which terminates with the <see cref="TaskStatus.Canceled"/> status.
-            /// </summary>
-            /// <remarks>
-            /// <para>This behavior only applies to delegates which return a <see cref="Task"/>.</para>
-            /// </remarks>
-            Canceled,
-
-            /// <summary>
-            /// The delegate throws an exception prior to returning a task.
-            /// </summary>
-            /// <remarks>
-            /// <para>This behavior only applies to delegates which return a <see cref="Task"/>.</para>
-            /// </remarks>
-            SyncFaulted,
-
-            /// <summary>
-            /// The delegate returns <see langword="null"/> instead of a <see cref="Task"/> instance.
-            /// </summary>
-            /// <remarks>
-            /// <para>This behavior only applies to delegates which return a <see cref="Task"/>.</para>
-            /// </remarks>
-            NullTask,
         }
     }
 }

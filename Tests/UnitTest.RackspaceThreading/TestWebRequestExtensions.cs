@@ -1,4 +1,5 @@
-﻿// Copyright (c) Rackspace, US Inc. All Rights Reserved. Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
+﻿// Copyright (c) Tunnel Vision Laboratories, LLC. All Rights Reserved.
+// Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 namespace UnitTest.RackspaceThreading
 {
@@ -448,6 +449,8 @@ namespace UnitTest.RackspaceThreading
 #endif
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.NamingRules", "SA1307:Accessible fields must begin with upper-case letter", Justification = "Names are based on an external data model.")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1401:Fields must be private", Justification = "A simple POCO for testing a web service.")]
         private class GetData
         {
 #pragma warning disable 649 // Field 'fieldName' is never assigned to, and will always have its default value null
@@ -458,6 +461,8 @@ namespace UnitTest.RackspaceThreading
 #pragma warning restore 649
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.NamingRules", "SA1307:Accessible fields must begin with upper-case letter", Justification = "Names are based on an external data model.")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1401:Fields must be private", Justification = "A simple POCO for testing a web service.")]
         private class PostData
         {
 #pragma warning disable 649 // Field 'fieldName' is never assigned to, and will always have its default value null

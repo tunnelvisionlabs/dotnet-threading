@@ -1,4 +1,7 @@
-﻿namespace Rackspace.Threading
+﻿// Copyright (c) Tunnel Vision Laboratories, LLC. All Rights Reserved.
+// Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
+
+namespace Rackspace.Threading
 {
     using System;
     using System.Threading;
@@ -21,15 +24,6 @@
         private readonly SynchronizationContext _synchronizationContext;
         private readonly SendOrPostCallback _callback;
         private readonly Action<T> _handler;
-
-        /// <summary>
-        /// Raised for each reported progress value.
-        /// </summary>
-        /// <remarks>
-        /// <para>Handlers registered with this event will be invoked on the <see cref="SynchronizationContext"/>
-        /// captured when the instance was constructed.</para>
-        /// </remarks>
-        public event EventHandler<ProgressChangedEventArgs<T>> ProgressChanged;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Progress{T}"/> class.
@@ -55,6 +49,15 @@
         {
             _handler = handler;
         }
+
+        /// <summary>
+        /// Raised for each reported progress value.
+        /// </summary>
+        /// <remarks>
+        /// <para>Handlers registered with this event will be invoked on the <see cref="SynchronizationContext"/>
+        /// captured when the instance was constructed.</para>
+        /// </remarks>
+        public event EventHandler<ProgressChangedEventArgs<T>> ProgressChanged;
 
         /// <inheritdoc/>
         /// <remarks>
