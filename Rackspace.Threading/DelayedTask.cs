@@ -159,7 +159,6 @@
             _delayTimers.Add(result.Task, timer);
             timer.Change(delay, TimeSpan.FromMilliseconds(-1));
 
-
             if (cancellationToken.CanBeCanceled)
             {
                 Action cancellationCallback =
