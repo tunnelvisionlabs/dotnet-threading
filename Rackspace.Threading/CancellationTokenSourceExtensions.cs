@@ -281,7 +281,7 @@ namespace Rackspace.Threading
         /// provide the standard <see cref="T:System.Threading.Timer"/> class.
         /// </summary>
         /// <threadsafety static="true" instance="false"/>
-        private sealed class Timer
+        private sealed class Timer : IDisposable
         {
             private readonly object _lock = new object();
             private readonly TimerCallback _callback;
