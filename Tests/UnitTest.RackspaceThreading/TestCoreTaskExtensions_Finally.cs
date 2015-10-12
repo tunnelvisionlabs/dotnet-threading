@@ -393,12 +393,13 @@ namespace UnitTest.RackspaceThreading
 
             CancellationTokenSource cts = new CancellationTokenSource();
             Func<Task, Task> finallyFunc = task =>
-                Task.Factory.StartNew(() =>
-                {
-                    executed = true;
-                    cts.Cancel();
-                    cts.Token.ThrowIfCancellationRequested();
-                }, cts.Token);
+                Task.Factory.StartNew(
+                    () =>
+                    {
+                        executed = true;
+                        cts.Cancel();
+                        cts.Token.ThrowIfCancellationRequested();
+                    }, cts.Token);
 
             Task combinedTask = null;
 
@@ -433,12 +434,13 @@ namespace UnitTest.RackspaceThreading
 
             CancellationTokenSource cts = new CancellationTokenSource();
             Func<Task, Task> finallyFunc = task =>
-                Task.Factory.StartNew(() =>
-                {
-                    executed = true;
-                    cts.Cancel();
-                    cts.Token.ThrowIfCancellationRequested();
-                }, cts.Token);
+                Task.Factory.StartNew(
+                    () =>
+                    {
+                        executed = true;
+                        cts.Cancel();
+                        cts.Token.ThrowIfCancellationRequested();
+                    }, cts.Token);
 
             Task combinedTask = null;
 
@@ -476,12 +478,13 @@ namespace UnitTest.RackspaceThreading
 
             CancellationTokenSource cts = new CancellationTokenSource();
             Func<Task, Task> finallyFunc = task =>
-                Task.Factory.StartNew(() =>
-                {
-                    executed = true;
-                    cts.Cancel();
-                    cts.Token.ThrowIfCancellationRequested();
-                }, cts.Token);
+                Task.Factory.StartNew(
+                    () =>
+                    {
+                        executed = true;
+                        cts.Cancel();
+                        cts.Token.ThrowIfCancellationRequested();
+                    }, cts.Token);
 
             Task combinedTask = null;
 
@@ -1249,12 +1252,13 @@ namespace UnitTest.RackspaceThreading
 
             CancellationTokenSource cts = new CancellationTokenSource();
             Func<Task<object>, Task> finallyFunc = task =>
-                Task.Factory.StartNew(() =>
-                {
-                    executed = true;
-                    cts.Cancel();
-                    cts.Token.ThrowIfCancellationRequested();
-                }, cts.Token);
+                Task.Factory.StartNew(
+                    () =>
+                    {
+                        executed = true;
+                        cts.Cancel();
+                        cts.Token.ThrowIfCancellationRequested();
+                    }, cts.Token);
 
             Task<object> combinedTask = null;
 
@@ -1289,12 +1293,13 @@ namespace UnitTest.RackspaceThreading
 
             CancellationTokenSource cts = new CancellationTokenSource();
             Func<Task<object>, Task> finallyFunc = task =>
-                Task.Factory.StartNew(() =>
-                {
-                    executed = true;
-                    cts.Cancel();
-                    cts.Token.ThrowIfCancellationRequested();
-                }, cts.Token);
+                Task.Factory.StartNew(
+                    () =>
+                    {
+                        executed = true;
+                        cts.Cancel();
+                        cts.Token.ThrowIfCancellationRequested();
+                    }, cts.Token);
 
             Task<object> combinedTask = null;
 
@@ -1332,12 +1337,13 @@ namespace UnitTest.RackspaceThreading
 
             CancellationTokenSource cts = new CancellationTokenSource();
             Func<Task<object>, Task> finallyFunc = task =>
-                Task.Factory.StartNew(() =>
-                {
-                    executed = true;
-                    cts.Cancel();
-                    cts.Token.ThrowIfCancellationRequested();
-                }, cts.Token);
+                Task.Factory.StartNew(
+                    () =>
+                    {
+                        executed = true;
+                        cts.Cancel();
+                        cts.Token.ThrowIfCancellationRequested();
+                    }, cts.Token);
 
             Task<object> combinedTask = null;
 
