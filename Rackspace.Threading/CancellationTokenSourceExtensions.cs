@@ -277,6 +277,14 @@ namespace Rackspace.Threading
 
 #if NET45PLUS && PORTABLE
         /// <summary>
+        /// Represents the method that handles calls from a <see cref="Timer"/>.
+        /// </summary>
+        /// <param name="state">An object containing application-specific information relevant to the method invoked by
+        /// this delegate, or <see langword="null"/>.</param>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1201:Elements must appear in the correct order", Justification = "Too many preprocessor directives to make ordering straightforward.")]
+        private delegate void TimerCallback(object state);
+
+        /// <summary>
         /// This class implements the Timer functionality required for this class in cases where the PCL does not
         /// provide the standard <see cref="T:System.Threading.Timer"/> class.
         /// </summary>
@@ -370,13 +378,6 @@ namespace Rackspace.Threading
                 Task.Factory.StartNew(() => _callback(_state));
             }
         }
-
-        /// <summary>
-        /// Represents the method that handles calls from a <see cref="Timer"/>.
-        /// </summary>
-        /// <param name="state">An object containing application-specific information relevant to the method invoked by
-        /// this delegate, or <see langword="null"/>.</param>
-        private delegate void TimerCallback(object state);
 #endif
     }
 }

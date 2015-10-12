@@ -26,15 +26,6 @@ namespace Rackspace.Threading
         private readonly Action<T> _handler;
 
         /// <summary>
-        /// Raised for each reported progress value.
-        /// </summary>
-        /// <remarks>
-        /// <para>Handlers registered with this event will be invoked on the <see cref="SynchronizationContext"/>
-        /// captured when the instance was constructed.</para>
-        /// </remarks>
-        public event EventHandler<ProgressChangedEventArgs<T>> ProgressChanged;
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="Progress{T}"/> class.
         /// </summary>
         public Progress()
@@ -58,6 +49,15 @@ namespace Rackspace.Threading
         {
             _handler = handler;
         }
+
+        /// <summary>
+        /// Raised for each reported progress value.
+        /// </summary>
+        /// <remarks>
+        /// <para>Handlers registered with this event will be invoked on the <see cref="SynchronizationContext"/>
+        /// captured when the instance was constructed.</para>
+        /// </remarks>
+        public event EventHandler<ProgressChangedEventArgs<T>> ProgressChanged;
 
         /// <inheritdoc/>
         /// <remarks>

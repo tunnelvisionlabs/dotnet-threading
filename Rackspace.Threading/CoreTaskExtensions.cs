@@ -1713,6 +1713,17 @@ namespace Rackspace.Threading
         private static class CouldHandleCancellation<TException>
             where TException : Exception
         {
+            static CouldHandleCancellation()
+            {
+#if NET45PLUS
+                Value = typeof(TException).GetTypeInfo().IsAssignableFrom(typeof(TaskCanceledException).GetTypeInfo())
+                    || typeof(TaskCanceledException).GetTypeInfo().IsAssignableFrom(typeof(TException).GetTypeInfo());
+#else
+                Value = typeof(TException).IsAssignableFrom(typeof(TaskCanceledException))
+                    || typeof(TaskCanceledException).IsAssignableFrom(typeof(TException));
+#endif
+            }
+
             /// <summary>
             /// Gets a value indicating whether the unwrapped exception from a <see cref="TaskStatus.Canceled"/>
             /// task could be an instance of <typeparamref name="TException"/>.
@@ -1727,17 +1738,6 @@ namespace Rackspace.Threading
             public static bool Value
             {
                 get;
-            }
-
-            static CouldHandleCancellation()
-            {
-#if NET45PLUS
-                Value = typeof(TException).GetTypeInfo().IsAssignableFrom(typeof(TaskCanceledException).GetTypeInfo())
-                    || typeof(TaskCanceledException).GetTypeInfo().IsAssignableFrom(typeof(TException).GetTypeInfo());
-#else
-                Value = typeof(TException).IsAssignableFrom(typeof(TaskCanceledException))
-                    || typeof(TaskCanceledException).IsAssignableFrom(typeof(TException));
-#endif
             }
         }
     }
