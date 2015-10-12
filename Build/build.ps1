@@ -1,7 +1,10 @@
 param (
 	[switch]$Debug,
 	[string]$VisualStudioVersion = "12.0",
-	[switch]$SkipKeyCheck
+	[switch]$NoDocs,
+	[string]$Verbosity = "normal",
+	[string]$Logger,
+	[switch]$InstallSHFB
 )
 
 # build the solution
@@ -27,12 +30,70 @@ If ($Version.Contains('-')) {
 	$KeyConfiguration = 'Final'
 }
 
+If ($NoDocs -and -not $Debug) {
+	$SolutionBuildConfig = $BuildConfig + 'NoDocs'
+} Else {
+	$SolutionBuildConfig = $BuildConfig
+}
+
 # build the main project
 $nuget = '..\.nuget\NuGet.exe'
-$msbuild = "$env:windir\Microsoft.NET\Framework64\v4.0.30319\msbuild.exe"
+
+if ($VisualStudioVersion -eq '4.0') {
+	$msbuild = "$env:windir\Microsoft.NET\Framework64\v4.0.30319\msbuild.exe"
+} Else {
+	$msbuild = "${env:ProgramFiles(x86)}\MSBuild\$VisualStudioVersion\Bin\MSBuild.exe"
+}
 
 &$nuget 'restore' $SolutionPath
-&$msbuild '/nologo' '/m' '/nr:false' '/t:rebuild' "/p:Configuration=$BuildConfig" "/p:VisualStudioVersion=$VisualStudioVersion" "/p:KeyConfiguration=$KeyConfiguration" $SolutionPath
+
+If ($InstallSHFB) {
+	# This is the NuGet package name for the SHFB package
+	$SHFBPackageName = 'EWSoftware.SHFB'
+	# This is the version according to the NuGet package itself
+	$SHFBVersion = '2014.11.22.0'
+
+	$SHFBPackagePath = "..\.shfb\$SHFBPackageName.$SHFBVersion.nupkg"
+	If (-not (Test-Path $SHFBPackagePath)) {
+		If (-not (Test-Path '..\.shfb')) {
+			mkdir '..\.shfb'
+		}
+
+		# This is the release name on GitHub where the NuGet package is attached
+		$SHFBRelease = 'v2014.11.22.0-beta'
+
+		$SHFBInstallerSource = "https://github.com/tunnelvisionlabs/SHFB/releases/download/$SHFBRelease/$SHFBPackageName.$SHFBVersion.nupkg"
+		Invoke-WebRequest $SHFBInstallerSource -OutFile $SHFBPackagePath
+		If (-not $?) {
+			$host.ui.WriteErrorLine('Failed to download the SHFB NuGet package')
+			Exit $LASTEXITCODE
+		}
+	}
+
+	$SHFBPackages = [System.IO.Path]::GetFullPath((Join-Path (pwd) '..\.shfb'))
+	$SHFBPackagesUri = [System.Uri]$SHFBPackages
+	Echo "$nuget 'install' 'EWSoftware.SHFB' -Version $SHFBVersion -OutputDirectory '..\packages' -Source $SHFBPackagesUri"
+	&$nuget 'install' $SHFBPackageName -Version $SHFBVersion -OutputDirectory '..\packages' -Source $SHFBPackagesUri
+	If (-not $?) {
+		$host.ui.WriteErrorLine('Failed to install the SHFB NuGet package')
+		Exit $LASTEXITCODE
+	}
+
+	$env:SHFBROOT = [System.IO.Path]::GetFullPath((Join-Path (pwd) "..\packages\$SHFBPackageName.$SHFBVersion\tools"))
+}
+
+If (-not $NoDocs) {
+	If ((-not $env:SHFBROOT) -or (-not (Test-Path $env:SHFBROOT))) {
+		$host.ui.WriteErrorLine('Could not locate Sandcastle Help File Builder')
+		Exit 1
+	}
+}
+
+If ($Logger) {
+	$LoggerArgument = "/logger:$Logger"
+}
+
+&$msbuild '/nologo' '/m' '/nr:false' '/t:rebuild' $LoggerArgument "/verbosity:$Verbosity" "/p:Configuration=$SolutionBuildConfig" "/p:Platform=Any CPU" "/p:VisualStudioVersion=$VisualStudioVersion" "/p:KeyConfiguration=$KeyConfiguration" $SolutionPath
 if (-not $?) {
 	$host.ui.WriteErrorLine('Build failed, aborting!')
 	exit $LASTEXITCODE
@@ -56,5 +117,9 @@ if (-not (Test-Path 'nuget')) {
 	mkdir "nuget"
 }
 
-&$nuget 'pack' '..\Rackspace.Threading\Rackspace.Threading.nuspec' '-OutputDirectory' 'nuget' '-Prop' "Configuration=$BuildConfig" '-Version' "$Version" '-Symbols'
-Exit $LASTEXITCODE
+# The NuGet packages reference XML documentation which is post-processed by SHFB. If the -NoDocs flag is specified,
+# these files are not created so packaging will fail.
+If (-not $NoDocs) {
+	&$nuget 'pack' '..\Rackspace.Threading\Rackspace.Threading.nuspec' '-OutputDirectory' 'nuget' '-Prop' "Configuration=$BuildConfig" '-Version' "$Version" '-Symbols'
+	Exit $LASTEXITCODE
+}

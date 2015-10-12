@@ -76,6 +76,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest.RackspaceThreading
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{1A382B22-F449-4D0B-BC67-E7D905BAD9EE}"
 	ProjectSection(SolutionItems) = preProject
+		Build\appveyor-deploy-docs.ps1 = Build\appveyor-deploy-docs.ps1
 		appveyor.yml = appveyor.yml
 		Build\build.ps1 = Build\build.ps1
 		Build\check-key.ps1 = Build\check-key.ps1
