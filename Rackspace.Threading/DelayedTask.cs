@@ -140,9 +140,10 @@
                         }
                     });
 #else
-            // Since portable-net40 doesn't provide Task.Delay and also doesn't provide ThreadPool.RegisterWaitForSingleObject,
-            // we need to implement this functionality using timers stored in a ConditionalWeakTable, which are associated with
-            // the actual Task instance that gets returned by this method.
+            /* Since portable-net40 doesn't provide Task.Delay and also doesn't provide ThreadPool.RegisterWaitForSingleObject,
+             * we need to implement this functionality using timers stored in a ConditionalWeakTable, which are associated with
+             * the actual Task instance that gets returned by this method.
+             */
 
             CancellationTokenRegistration cancellationTokenRegistration = default(CancellationTokenRegistration);
             Timer timer = null;
