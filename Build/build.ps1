@@ -33,9 +33,9 @@ $msbuild = "$env:windir\Microsoft.NET\Framework64\v4.0.30319\msbuild.exe"
 
 &$nuget 'restore' $SolutionPath
 &$msbuild '/nologo' '/m' '/nr:false' '/t:rebuild' "/p:Configuration=$BuildConfig" "/p:VisualStudioVersion=$VisualStudioVersion" "/p:KeyConfiguration=$KeyConfiguration" $SolutionPath
-if ($LASTEXITCODE -ne 0) {
+if (-not $?) {
 	$host.ui.WriteErrorLine('Build failed, aborting!')
-	exit $p.ExitCode
+	exit $LASTEXITCODE
 }
 
 # By default, do not create a NuGet package unless the expected strong name key files were used
@@ -46,8 +46,8 @@ if (-not $SkipKeyCheck) {
 		$assembly = Resolve-FullPath -Path "..\Rackspace.Threading\bin\$($pair.Key)\$BuildConfig\Rackspace.Threading.dll"
 		# Run the actual check in a separate process or the current process will keep the assembly file locked
 		powershell -Command ".\check-key.ps1 -Assembly '$assembly' -ExpectedKey '$($pair.Value)' -Build '$($pair.Key)'"
-		if ($LASTEXITCODE -ne 0) {
-			Exit $p.ExitCode
+		if (-not $?) {
+			Exit $LASTEXITCODE
 		}
 	}
 }
@@ -57,3 +57,4 @@ if (-not (Test-Path 'nuget')) {
 }
 
 &$nuget 'pack' '..\Rackspace.Threading\Rackspace.Threading.nuspec' '-OutputDirectory' 'nuget' '-Prop' "Configuration=$BuildConfig" '-Version' "$Version" '-Symbols'
+Exit $LASTEXITCODE
