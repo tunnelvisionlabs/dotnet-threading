@@ -29,7 +29,7 @@
               Latest Release: <externalLink>
                 <linkText>GitHub Releases</linkText>
                 <linkAlternateText>Release notes for the latest release on GitHub</linkAlternateText>
-                <linkUri>https://github.com/rackerlabs/dotnet-threading/releases/latest</linkUri>
+                <linkUri>https://github.com/tunnelvisionlabs/dotnet-threading/releases/latest</linkUri>
               </externalLink>
             </para>
           </listItem>
@@ -38,7 +38,7 @@
               Source Code: <externalLink>
                 <linkText>GitHub Repository</linkText>
                 <linkAlternateText>Source code for the project on GitHub</linkAlternateText>
-                <linkUri>https://github.com/rackerlabs/dotnet-threading</linkUri>
+                <linkUri>https://github.com/tunnelvisionlabs/dotnet-threading</linkUri>
               </externalLink>
             </para>
           </listItem>
@@ -47,7 +47,7 @@
               Documentation: <externalLink>
                 <linkText>API Documentation</linkText>
                 <linkAlternateText>Documentation for the latest release hosted on GitHub Pages</linkAlternateText>
-                <linkUri>https://rackerlabs.github.io/dotnet-threading/docs-latest</linkUri>
+                <linkUri>https://tunnelvisionlabs.github.io/dotnet-threading/docs-latest</linkUri>
               </externalLink>
             </para>
           </listItem>
@@ -56,7 +56,7 @@
               Issue Tracker: <externalLink>
                 <linkText>GitHub Issues</linkText>
                 <linkAlternateText>Project issue tracker on GitHub Issues</linkAlternateText>
-                <linkUri>https://github.com/rackerlabs/dotnet-threading/issues</linkUri>
+                <linkUri>https://github.com/tunnelvisionlabs/dotnet-threading/issues</linkUri>
               </externalLink>
             </para>
           </listItem>

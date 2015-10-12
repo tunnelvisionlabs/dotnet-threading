@@ -6,11 +6,11 @@
     <title>Rackspace.Threading</title>
     <authors>Sam Harwell</authors>
     <owners>Sam Harwell</owners>
-    <licenseUrl>https://raw.github.com/rackerlabs/dotnet-threading/v$version$/LICENSE</licenseUrl>
-    <projectUrl>https://github.com/rackerlabs/dotnet-threading</projectUrl>
+    <licenseUrl>https://raw.github.com/tunnelvisionlabs/dotnet-threading/v$version$/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/tunnelvisionlabs/dotnet-threading</projectUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>Utility library to simplify writing asynchronous code which supports .NET 3.5 and newer.</description>
-    <releaseNotes>https://github.com/rackerlabs/dotnet-threading/releases/v$version$</releaseNotes>
+    <releaseNotes>https://github.com/tunnelvisionlabs/dotnet-threading/releases/v$version$</releaseNotes>
     <copyright></copyright>
     <tags>threading tasks tpl async await</tags>
     <dependencies>

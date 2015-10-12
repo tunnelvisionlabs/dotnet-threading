@@ -42,7 +42,7 @@
     <IncludeFavorites>True</IncludeFavorites>
     <BinaryTOC>True</BinaryTOC>
     <VisibleItems>Attributes, ExplicitInterfaceImplementations, InheritedMembers, InheritedFrameworkMembers, Protected, ProtectedInternalAsProtected, SealedProtected</VisibleItems>
-    <FeedbackEMailAddress>sam.harwell%40rackspace.com</FeedbackEMailAddress>
+    <FeedbackEMailAddress></FeedbackEMailAddress>
     <CopyrightText>
     </CopyrightText>
     <CopyrightHref>
@@ -61,7 +61,7 @@
     <TopicVersion>100</TopicVersion>
     <TocOrder>-1</TocOrder>
     <ProductTitle>Threading API</ProductTitle>
-    <VendorName>Rackspace</VendorName>
+    <VendorName>Tunnel Vision Laboratories, LLC</VendorName>
     <MSHelpViewerSdkLinkType>Id</MSHelpViewerSdkLinkType>
     <CatalogVersion>100</CatalogVersion>
     <CatalogProductId>VS</CatalogProductId>
@@ -86,6 +86,7 @@
     <HtmlHelp2xCompilerPath />
     <WorkingPath />
     <ComponentPath />
+    <FooterText>&amp;lt%3ba href=&amp;quot%3bhttps://github.com/tunnelvisionlabs/dotnet-threading&amp;quot%3b&amp;gt%3bThreading Library Home&amp;lt%3b/a&amp;gt%3b</FooterText>
     <MaximumGroupParts>2</MaximumGroupParts>
     <NamespaceGrouping>False</NamespaceGrouping>
   </PropertyGroup>
