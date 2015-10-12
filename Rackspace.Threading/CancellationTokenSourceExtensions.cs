@@ -8,8 +8,8 @@ namespace Rackspace.Threading
 #if NET40PLUS
     using System.Runtime.CompilerServices;
 #else
-    using System.Collections.Generic;
     using System.Collections.Concurrent;
+    using System.Collections.Generic;
 #endif
 
 #if NET45PLUS && PORTABLE
