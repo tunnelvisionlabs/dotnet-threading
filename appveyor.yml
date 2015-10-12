@@ -15,3 +15,6 @@ test_script:
 - vstest.console /logger:Appveyor /TestCaseFilter:"TestCategory!=WebRequest" "C:\projects\dotnet-threading\Tests\UnitTest.RackspaceThreading\bin\portable-net40\%CONFIGURATION%\UnitTest.RackspaceThreading.portable_net40.dll"
 - vstest.console /logger:Appveyor /TestCaseFilter:"TestCategory!=WebRequest" "C:\projects\dotnet-threading\Tests\UnitTest.RackspaceThreading\bin\net40-client\%CONFIGURATION%\UnitTest.RackspaceThreading.net40.dll"
 - vstest.console /logger:Appveyor /TestCaseFilter:"TestCategory!=WebRequest" "C:\projects\dotnet-threading\Tests\UnitTest.RackspaceThreading\bin\net35-client\%CONFIGURATION%\UnitTest.RackspaceThreading.net35.dll"
+# preserve "packages" directory in the root of build folder but will reset it if packages.config is modified
+cache:
+  - packages -> **\packages.config
