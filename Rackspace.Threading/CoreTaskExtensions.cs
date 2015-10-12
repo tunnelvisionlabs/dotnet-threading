@@ -1713,7 +1713,7 @@ namespace Rackspace.Threading
             where TException : Exception
         {
             /// <summary>
-            /// A value indicating whether the unwrapped exception from a <see cref="TaskStatus.Canceled"/>
+            /// Gets a value indicating whether the unwrapped exception from a <see cref="TaskStatus.Canceled"/>
             /// task could be an instance of <typeparamref name="TException"/>.
             /// </summary>
             /// <value>
@@ -1723,7 +1723,10 @@ namespace Rackspace.Threading
             /// <para>-or-</para>
             /// <para>Otherwise, <see langword="false"/>.</para>
             /// </value>
-            public static readonly bool Value;
+            public static bool Value
+            {
+                get;
+            }
 
             static CouldHandleCancellation()
             {

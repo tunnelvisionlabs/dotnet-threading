@@ -449,6 +449,7 @@ namespace UnitTest.RackspaceThreading
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.NamingRules", "SA1307:Accessible fields must begin with upper-case letter", Justification = "Names are based on an external data model.")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1401:Fields must be private", Justification = "A simple POCO for testing a web service.")]
         private class GetData
         {
 #pragma warning disable 649 // Field 'fieldName' is never assigned to, and will always have its default value null
@@ -460,6 +461,7 @@ namespace UnitTest.RackspaceThreading
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.NamingRules", "SA1307:Accessible fields must begin with upper-case letter", Justification = "Names are based on an external data model.")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1401:Fields must be private", Justification = "A simple POCO for testing a web service.")]
         private class PostData
         {
 #pragma warning disable 649 // Field 'fieldName' is never assigned to, and will always have its default value null
