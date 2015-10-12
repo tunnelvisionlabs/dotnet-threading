@@ -345,9 +345,9 @@ namespace Rackspace.Threading
                         Task task = DelayedTask.Delay(TimeSpan.FromMilliseconds(delay), _cancellationTokenSource.Token).Select(BeginInvokeCallback);
                         if (period > 0)
                         {
-                            Func<bool> TrueFunction = () => true;
+                            Func<bool> trueFunction = () => true;
                             Func<Task> delayAndSend = () => DelayedTask.Delay(TimeSpan.FromMilliseconds(period), _cancellationTokenSource.Token).Select(BeginInvokeCallback);
-                            task = task.Then(_ => TaskBlocks.While(TrueFunction, delayAndSend));
+                            task = task.Then(_ => TaskBlocks.While(trueFunction, delayAndSend));
                         }
 
                         _task = task;
