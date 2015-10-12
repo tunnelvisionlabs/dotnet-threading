@@ -340,7 +340,6 @@ namespace Rackspace.Threading
 
                     if (delay >= 0)
                     {
-
                         _cancellationTokenSource = new CancellationTokenSource();
                         Task task = DelayedTask.Delay(TimeSpan.FromMilliseconds(delay), _cancellationTokenSource.Token).Select(BeginInvokeCallback);
                         if (period > 0)
