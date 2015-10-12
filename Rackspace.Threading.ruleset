@@ -7,7 +7,6 @@
     <Rule Id="SA1202" Action="None" />
     <Rule Id="SA1309" Action="None" />
     <Rule Id="SA1503" Action="None" />
-    <Rule Id="SA1600" Action="Hidden" />
     <Rule Id="SX1309" Action="Warning" />
     <Rule Id="SX1309S" Action="Warning" />
   </Rules>

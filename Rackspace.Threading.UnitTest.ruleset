@@ -3,5 +3,6 @@
   <Include Path="Rackspace.Threading.ruleset" Action="Default" />
   <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
     <Rule Id="SA1124" Action="None" />
+    <Rule Id="SA1600" Action="Hidden" />
   </Rules>
 </RuleSet>
