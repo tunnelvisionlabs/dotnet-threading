@@ -20,8 +20,8 @@
             <linkAlternateText>NuGet Package Manager Home</linkAlternateText>
             <linkUri>https://www.nuget.org</linkUri>
           </externalLink> with the package ID <externalLink>
-            <linkText>Rackspace.Threading</linkText>
-            <linkUri>https://www.nuget.org/packages/Rackspace.Threading</linkUri>
+            <linkText>TunnelVisionLabs.Threading</linkText>
+            <linkUri>https://www.nuget.org/packages/TunnelVisionLabs.Threading</linkUri>
           </externalLink>.  In addition to the release binaries, symbol files and source code
           are published to <externalLink>
             <linkText>SymbolSource</linkText>
@@ -61,13 +61,13 @@
               </listItem>
               <listItem>
                 <para>
-                  In the search box in the top right, enter <userInput>Rackspace.Threading</userInput>.
+                  In the search box in the top right, enter <userInput>TunnelVisionLabs.Threading</userInput>.
                 </para>
               </listItem>
               <listItem>
                 <para>
                   In the search results, locate and select the <ui>Rackspace Threading Library</ui> package.
-                  Verify that the <ui>Id</ui> listed in the right hand pane is <literal>Rackspace.Threading</literal>.
+                  Verify that the <ui>Id</ui> listed in the right hand pane is <literal>TunnelVisionLabs.Threading</literal>.
                 </para>
               </listItem>
               <listItem>
@@ -173,7 +173,7 @@
                   steps, I'll assume the directory is <localUri>$(SolutionDir)\lib</localUri>.
                 </para>
                 <para>
-                  <system>nuget.exe install Rackspace.Threading</system>
+                  <system>nuget.exe install TunnelVisionLabs.Threading</system>
                 </para>
               </listItem>
               <listItem>
@@ -181,7 +181,7 @@
                   In your project, add a reference to the following assembly.
                 </para>
                 <para>
-                  <localUri>$(SolutionDir)\lib\Rackspace.Threading-$(Version)\lib\$(Framework)\Rackspace.Threading.dll</localUri>
+                  <localUri>$(SolutionDir)\lib\TunnelVisionLabs.Threading-$(Version)\lib\$(Framework)\Rackspace.Threading.dll</localUri>
                 </para>
               </listItem>
             </list>

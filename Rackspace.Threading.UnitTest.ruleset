@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<RuleSet Name="Rackspace.Threading Code Analysis Rules for Test Projects" Description="Code analysis rules for Rackspace.Threading test projects" ToolsVersion="14.0">
-  <Include Path="Rackspace.Threading.ruleset" Action="Default" />
-  <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
-    <Rule Id="SA1124" Action="None" />
-    <Rule Id="SA1600" Action="Hidden" />
-  </Rules>
-</RuleSet>

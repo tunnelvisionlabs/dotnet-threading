@@ -24,7 +24,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\net40-client\Debug\Rackspace.Threading.xml</DocumentationFile>
-    <CodeAnalysisRuleSet>..\Rackspace.Threading.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\TunnelVisionLabs.Threading.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -34,7 +34,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\net40-client\Release\Rackspace.Threading.xml</DocumentationFile>
-    <CodeAnalysisRuleSet>..\Rackspace.Threading.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\TunnelVisionLabs.Threading.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -85,10 +85,8 @@
     <None Include="..\Build\keys\Rackspace.Threading.snk">
       <Link>Rackspace.Threading.snk</Link>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Rackspace.Threading.nuspec" />
     <None Include="packages.Rackspace.Threading.net40-client.config" />
+    <None Include="TunnelVisionLabs.Threading.nuspec" />
   </ItemGroup>
   <ItemGroup>
     <AdditionalFiles Include="..\stylecop.json">

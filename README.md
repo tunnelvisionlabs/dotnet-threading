@@ -1,4 +1,4 @@
-# Rackspace Threading Library for .NET
+# Threading Library for .NET
 
 [![Join the chat at https://gitter.im/tunnelvisionlabs/dotnet-threading](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/tunnelvisionlabs/dotnet-threading?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 

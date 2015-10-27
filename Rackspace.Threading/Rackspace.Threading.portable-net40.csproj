@@ -25,7 +25,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\portable-net40\Debug\Rackspace.Threading.xml</DocumentationFile>
-    <CodeAnalysisRuleSet>..\Rackspace.Threading.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\TunnelVisionLabs.Threading.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -35,7 +35,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\portable-net40\Release\Rackspace.Threading.xml</DocumentationFile>
-    <CodeAnalysisRuleSet>..\Rackspace.Threading.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\TunnelVisionLabs.Threading.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -68,10 +68,8 @@
     <None Include="..\Build\keys\Rackspace.Threading.snk">
       <Link>Rackspace.Threading.snk</Link>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Rackspace.Threading.nuspec" />
     <None Include="packages.Rackspace.Threading.portable-net40.config" />
+    <None Include="TunnelVisionLabs.Threading.nuspec" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.IO">

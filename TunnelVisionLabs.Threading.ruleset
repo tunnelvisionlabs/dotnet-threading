@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<RuleSet Name="Rackspace.Threading Code Analysis Rules" Description="Code Analysis Rules for Rackspace.Threading" ToolsVersion="14.0">
+<RuleSet Name="TunnelVisionLabs.Threading Code Analysis Rules" Description="Code Analysis Rules for TunnelVisionLabs.Threading" ToolsVersion="14.0">
   <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
     <Rule Id="SA1101" Action="None" />
     <Rule Id="SA1102" Action="None" />
