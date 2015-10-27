@@ -99,6 +99,12 @@ Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Docs.Threading.Current", "D
 		{52CA4A3B-F296-4489-B5F0-AD375D039B35} = {52CA4A3B-F296-4489-B5F0-AD375D039B35}
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E8EAC369-C58E-4CE9-A440-27633F473457}"
+	ProjectSection(SolutionItems) = preProject
+		TunnelVisionLabs.Threading.ruleset = TunnelVisionLabs.Threading.ruleset
+		TunnelVisionLabs.Threading.UnitTest.ruleset = TunnelVisionLabs.Threading.UnitTest.ruleset
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
