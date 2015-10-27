@@ -120,6 +120,6 @@ if (-not (Test-Path 'nuget')) {
 # The NuGet packages reference XML documentation which is post-processed by SHFB. If the -NoDocs flag is specified,
 # these files are not created so packaging will fail.
 If (-not $NoDocs) {
-	&$nuget 'pack' '..\Rackspace.Threading\Rackspace.Threading.nuspec' '-OutputDirectory' 'nuget' '-Prop' "Configuration=$BuildConfig" '-Version' "$Version" '-Symbols'
+	&$nuget 'pack' '..\Rackspace.Threading\TunnelVisionLabs.Threading.nuspec' '-OutputDirectory' 'nuget' '-Prop' "Configuration=$BuildConfig" '-Version' "$Version" '-Symbols'
 	Exit $LASTEXITCODE
 }

@@ -78,10 +78,8 @@
     <None Include="..\Build\keys\Rackspace.Threading.net35.snk">
       <Link>Rackspace.Threading.net35.snk</Link>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Rackspace.Threading.nuspec" />
     <None Include="packages.Rackspace.Threading.net35-client.config" />
+    <None Include="TunnelVisionLabs.Threading.nuspec" />
   </ItemGroup>
   <ItemGroup>
     <AdditionalFiles Include="..\stylecop.json">

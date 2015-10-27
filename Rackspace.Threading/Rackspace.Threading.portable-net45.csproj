@@ -69,10 +69,8 @@
     <None Include="..\Build\keys\Rackspace.Threading.snk">
       <Link>Rackspace.Threading.snk</Link>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Rackspace.Threading.nuspec" />
     <None Include="packages.Rackspace.Threading.portable-net45.config" />
+    <None Include="TunnelVisionLabs.Threading.nuspec" />
   </ItemGroup>
   <ItemGroup>
     <AdditionalFiles Include="..\stylecop.json">

@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>Rackspace.Threading</id>
+    <id>TunnelVisionLabs.Threading</id>
     <version>0.0.0</version>
-    <title>Rackspace.Threading</title>
+    <title>TunnelVisionLabs.Threading</title>
     <authors>Sam Harwell</authors>
     <owners>Sam Harwell</owners>
     <licenseUrl>https://raw.github.com/tunnelvisionlabs/dotnet-threading/v$version$/LICENSE</licenseUrl>
