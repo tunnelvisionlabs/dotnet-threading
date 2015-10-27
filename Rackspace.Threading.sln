@@ -101,6 +101,9 @@ Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Docs.Threading.Current", "D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E8EAC369-C58E-4CE9-A440-27633F473457}"
 	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+		stylecop.json = stylecop.json
 		TunnelVisionLabs.Threading.ruleset = TunnelVisionLabs.Threading.ruleset
 		TunnelVisionLabs.Threading.UnitTest.ruleset = TunnelVisionLabs.Threading.UnitTest.ruleset
 	EndProjectSection
