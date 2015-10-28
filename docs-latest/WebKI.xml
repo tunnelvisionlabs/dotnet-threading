@@ -27,6 +27,8 @@
   </HelpKINode>
   <HelpKINode Title="CoreTaskExtensions.Catch method" Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Catch.htm" />
   <HelpKINode Title="CoreTaskExtensions.Finally method" Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Finally.htm" />
+  <HelpKINode Title="CoreTaskExtensions.ObserveExceptions(Of TTask) method" Url="html/M_Rackspace_Threading_CoreTaskExtensions_ObserveExceptions__1.htm" />
+  <HelpKINode Title="CoreTaskExtensions.ObserveExceptions&lt;TTask&gt; method" Url="html/M_Rackspace_Threading_CoreTaskExtensions_ObserveExceptions__1.htm" />
   <HelpKINode Title="CoreTaskExtensions.Select method" Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Select.htm" />
   <HelpKINode Title="CoreTaskExtensions.Then method" Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Then.htm" />
   <HelpKINode Title="Default property" Url="html/P_Rackspace_Threading_CompletedTask_Default.htm" />
@@ -53,26 +55,22 @@
   </HelpKINode>
   <HelpKINode Title="IAsyncDisposable.DisposeAsync method" Url="html/M_Rackspace_Threading_IAsyncDisposable_DisposeAsync.htm" />
   <HelpKINode Title="IProgress(Of T) interface">
-    <HelpKINode Title="IProgress(T) Interface" Url="html/T_Rackspace_Threading_IProgress_1.htm" />
-    <HelpKINode Title="about IProgress(Of T) interface" Url="html/T_Rackspace_Threading_IProgress_1.htm" />
-    <HelpKINode Title="methods" Url="html/Methods_T_Rackspace_Threading_IProgress_1.htm" />
+    <HelpKINode Title="IProgress(T) Interface" Url="html/T_System_IProgress_1.htm" />
+    <HelpKINode Title="about IProgress(Of T) interface" Url="html/T_System_IProgress_1.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_System_IProgress_1.htm" />
   </HelpKINode>
-  <HelpKINode Title="IProgress(Of T).Report explicitly implemented method">
-    <HelpKINode Title="Progress(T).IProgress(T).Report Method " Url="html/M_Rackspace_Threading_Progress_1_System_IProgress{T}_Report.htm" />
-    <HelpKINode Title="Progress(T).IProgress(T).Report Method " Url="html/M_Rackspace_Threading_Progress_1_Rackspace_Threading_IProgress{T}_Report.htm" />
-  </HelpKINode>
-  <HelpKINode Title="IProgress(Of T).Report method" Url="html/M_Rackspace_Threading_IProgress_1_Report.htm" />
+  <HelpKINode Title="IProgress(Of T).Report explicitly implemented method" Url="html/M_Rackspace_Threading_Progress_1_System_IProgress{T}_Report.htm" />
+  <HelpKINode Title="IProgress(Of T).Report method" Url="html/M_System_IProgress_1_Report.htm" />
   <HelpKINode Title="IProgress&lt;T&gt; interface">
-    <HelpKINode Title="IProgress(T) Interface" Url="html/T_Rackspace_Threading_IProgress_1.htm" />
-    <HelpKINode Title="about IProgress&lt;T&gt; interface" Url="html/T_Rackspace_Threading_IProgress_1.htm" />
-    <HelpKINode Title="methods" Url="html/Methods_T_Rackspace_Threading_IProgress_1.htm" />
+    <HelpKINode Title="IProgress(T) Interface" Url="html/T_System_IProgress_1.htm" />
+    <HelpKINode Title="about IProgress&lt;T&gt; interface" Url="html/T_System_IProgress_1.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_System_IProgress_1.htm" />
   </HelpKINode>
-  <HelpKINode Title="IProgress&lt;T&gt;.Report explicitly implemented method">
-    <HelpKINode Title="Progress(T).IProgress(T).Report Method " Url="html/M_Rackspace_Threading_Progress_1_Rackspace_Threading_IProgress{T}_Report.htm" />
-    <HelpKINode Title="Progress(T).IProgress(T).Report Method " Url="html/M_Rackspace_Threading_Progress_1_System_IProgress{T}_Report.htm" />
-  </HelpKINode>
-  <HelpKINode Title="IProgress&lt;T&gt;.Report method" Url="html/M_Rackspace_Threading_IProgress_1_Report.htm" />
+  <HelpKINode Title="IProgress&lt;T&gt;.Report explicitly implemented method" Url="html/M_Rackspace_Threading_Progress_1_System_IProgress{T}_Report.htm" />
+  <HelpKINode Title="IProgress&lt;T&gt;.Report method" Url="html/M_System_IProgress_1_Report.htm" />
   <HelpKINode Title="license agreement" Url="html/42ba1007-d64f-410e-af6c-169426597465.htm" />
+  <HelpKINode Title="ObserveExceptions(Of TTask) method" Url="html/M_Rackspace_Threading_CoreTaskExtensions_ObserveExceptions__1.htm" />
+  <HelpKINode Title="ObserveExceptions&lt;TTask&gt; method" Url="html/M_Rackspace_Threading_CoreTaskExtensions_ObserveExceptions__1.htm" />
   <HelpKINode Title="OnReport method" Url="html/M_Rackspace_Threading_Progress_1_OnReport.htm" />
   <HelpKINode Title="Progress property" Url="html/P_Rackspace_Threading_ProgressChangedEventArgs_1_Progress.htm" />
   <HelpKINode Title="Progress(Of T) class">
@@ -82,10 +80,7 @@
     <HelpKINode Title="events" Url="html/Events_T_Rackspace_Threading_Progress_1.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_Rackspace_Threading_Progress_1.htm" />
   </HelpKINode>
-  <HelpKINode Title="Progress(Of T).IProgress(Of T).Report explicitly implemented method">
-    <HelpKINode Title="Progress(T).IProgress(T).Report Method " Url="html/M_Rackspace_Threading_Progress_1_System_IProgress{T}_Report.htm" />
-    <HelpKINode Title="Progress(T).IProgress(T).Report Method " Url="html/M_Rackspace_Threading_Progress_1_Rackspace_Threading_IProgress{T}_Report.htm" />
-  </HelpKINode>
+  <HelpKINode Title="Progress(Of T).IProgress(Of T).Report explicitly implemented method" Url="html/M_Rackspace_Threading_Progress_1_System_IProgress{T}_Report.htm" />
   <HelpKINode Title="Progress(Of T).OnReport method" Url="html/M_Rackspace_Threading_Progress_1_OnReport.htm" />
   <HelpKINode Title="Progress(Of T).Progress constructor" Url="html/Overload_Rackspace_Threading_Progress_1__ctor.htm" />
   <HelpKINode Title="Progress(Of T).ProgressChanged event" Url="html/E_Rackspace_Threading_Progress_1_ProgressChanged.htm" />
@@ -96,10 +91,7 @@
     <HelpKINode Title="events" Url="html/Events_T_Rackspace_Threading_Progress_1.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_Rackspace_Threading_Progress_1.htm" />
   </HelpKINode>
-  <HelpKINode Title="Progress&lt;T&gt;.IProgress&lt;T&gt;.Report explicitly implemented method">
-    <HelpKINode Title="Progress(T).IProgress(T).Report Method " Url="html/M_Rackspace_Threading_Progress_1_System_IProgress{T}_Report.htm" />
-    <HelpKINode Title="Progress(T).IProgress(T).Report Method " Url="html/M_Rackspace_Threading_Progress_1_Rackspace_Threading_IProgress{T}_Report.htm" />
-  </HelpKINode>
+  <HelpKINode Title="Progress&lt;T&gt;.IProgress&lt;T&gt;.Report explicitly implemented method" Url="html/M_Rackspace_Threading_Progress_1_System_IProgress{T}_Report.htm" />
   <HelpKINode Title="Progress&lt;T&gt;.OnReport method" Url="html/M_Rackspace_Threading_Progress_1_OnReport.htm" />
   <HelpKINode Title="Progress&lt;T&gt;.Progress constructor" Url="html/Overload_Rackspace_Threading_Progress_1__ctor.htm" />
   <HelpKINode Title="Progress&lt;T&gt;.ProgressChanged event" Url="html/E_Rackspace_Threading_Progress_1_ProgressChanged.htm" />
@@ -128,8 +120,6 @@
   <HelpKINode Title="Rackspace.Threading.CoreTaskExtensions class" Url="html/T_Rackspace_Threading_CoreTaskExtensions.htm" />
   <HelpKINode Title="Rackspace.Threading.DelayedTask class" Url="html/T_Rackspace_Threading_DelayedTask.htm" />
   <HelpKINode Title="Rackspace.Threading.IAsyncDisposable interface" Url="html/T_Rackspace_Threading_IAsyncDisposable.htm" />
-  <HelpKINode Title="Rackspace.Threading.IProgress(Of T) interface" Url="html/T_Rackspace_Threading_IProgress_1.htm" />
-  <HelpKINode Title="Rackspace.Threading.IProgress&lt;T&gt; interface" Url="html/T_Rackspace_Threading_IProgress_1.htm" />
   <HelpKINode Title="Rackspace.Threading.Progress(Of T) class" Url="html/T_Rackspace_Threading_Progress_1.htm" />
   <HelpKINode Title="Rackspace.Threading.Progress&lt;T&gt; class" Url="html/T_Rackspace_Threading_Progress_1.htm" />
   <HelpKINode Title="Rackspace.Threading.ProgressChangedEventArgs(Of T) class" Url="html/T_Rackspace_Threading_ProgressChangedEventArgs_1.htm" />
@@ -139,7 +129,7 @@
   <HelpKINode Title="Rackspace.Threading.TaskCompletionSourceExtensions class" Url="html/T_Rackspace_Threading_TaskCompletionSourceExtensions.htm" />
   <HelpKINode Title="Rackspace.Threading.WebRequestExtensions class" Url="html/T_Rackspace_Threading_WebRequestExtensions.htm" />
   <HelpKINode Title="ReadAsync method" Url="html/Overload_Rackspace_Threading_StreamExtensions_ReadAsync.htm" />
-  <HelpKINode Title="Report method" Url="html/M_Rackspace_Threading_IProgress_1_Report.htm" />
+  <HelpKINode Title="Report method" Url="html/M_System_IProgress_1_Report.htm" />
   <HelpKINode Title="Select method" Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Select.htm" />
   <HelpKINode Title="SetFromFailedTask(Of TResult) method" Url="html/M_Rackspace_Threading_TaskCompletionSourceExtensions_SetFromFailedTask__1.htm" />
   <HelpKINode Title="SetFromFailedTask&lt;TResult&gt; method" Url="html/M_Rackspace_Threading_TaskCompletionSourceExtensions_SetFromFailedTask__1.htm" />
@@ -153,6 +143,9 @@
   <HelpKINode Title="StreamExtensions.FlushAsync method" Url="html/Overload_Rackspace_Threading_StreamExtensions_FlushAsync.htm" />
   <HelpKINode Title="StreamExtensions.ReadAsync method" Url="html/Overload_Rackspace_Threading_StreamExtensions_ReadAsync.htm" />
   <HelpKINode Title="StreamExtensions.WriteAsync method" Url="html/Overload_Rackspace_Threading_StreamExtensions_WriteAsync.htm" />
+  <HelpKINode Title="System namespace" Url="html/N_System.htm" />
+  <HelpKINode Title="System.IProgress(Of T) interface" Url="html/T_System_IProgress_1.htm" />
+  <HelpKINode Title="System.IProgress&lt;T&gt; interface" Url="html/T_System_IProgress_1.htm" />
   <HelpKINode Title="TaskBlocks class">
     <HelpKINode Title="TaskBlocks Class" Url="html/T_Rackspace_Threading_TaskBlocks.htm" />
     <HelpKINode Title="about TaskBlocks class" Url="html/T_Rackspace_Threading_TaskBlocks.htm" />
