@@ -1,0 +1,80 @@
+Rackspace.Threading.CancellationTokenSourceExtensions
+Rackspace.Threading.CompletedTask
+Rackspace.Threading.CoreTaskExtensions
+Rackspace.Threading.DelayedTask
+Rackspace.Threading.IAsyncDisposable
+Rackspace.Threading.IAsyncDisposable.DisposeAsync() -> System.Threading.Tasks.Task
+Rackspace.Threading.Progress<T>
+Rackspace.Threading.Progress<T>.Progress() -> void
+Rackspace.Threading.Progress<T>.Progress(System.Action<T> handler) -> void
+Rackspace.Threading.Progress<T>.ProgressChanged -> System.EventHandler<Rackspace.Threading.ProgressChangedEventArgs<T>>
+Rackspace.Threading.ProgressChangedEventArgs<T>
+Rackspace.Threading.ProgressChangedEventArgs<T>.Progress.get -> T
+Rackspace.Threading.ProgressChangedEventArgs<T>.ProgressChangedEventArgs(T progress) -> void
+Rackspace.Threading.StreamExtensions
+Rackspace.Threading.TaskBlocks
+Rackspace.Threading.TaskCompletionSourceExtensions
+Rackspace.Threading.WebRequestExtensions
+static Rackspace.Threading.CancellationTokenSourceExtensions.CancelAfter(this System.Threading.CancellationTokenSource cts, System.TimeSpan delay) -> void
+static Rackspace.Threading.CompletedTask.Canceled() -> System.Threading.Tasks.Task
+static Rackspace.Threading.CompletedTask.Canceled<TResult>() -> System.Threading.Tasks.Task<TResult>
+static Rackspace.Threading.CompletedTask.Default.get -> System.Threading.Tasks.Task
+static Rackspace.Threading.CompletedTask.FromResult<TResult>(TResult result) -> System.Threading.Tasks.Task<TResult>
+static Rackspace.Threading.CoreTaskExtensions.Catch<TException, TResult>(this System.Threading.Tasks.Task<TResult> task, System.Func<System.Threading.Tasks.Task<TResult>, TException, System.Threading.Tasks.Task<TResult>> handler) -> System.Threading.Tasks.Task<TResult>
+static Rackspace.Threading.CoreTaskExtensions.Catch<TException, TResult>(this System.Threading.Tasks.Task<TResult> task, System.Func<System.Threading.Tasks.Task<TResult>, TException, TResult> handler) -> System.Threading.Tasks.Task<TResult>
+static Rackspace.Threading.CoreTaskExtensions.Catch<TException>(this System.Threading.Tasks.Task task, System.Action<System.Threading.Tasks.Task, TException> handler) -> System.Threading.Tasks.Task
+static Rackspace.Threading.CoreTaskExtensions.Catch<TException>(this System.Threading.Tasks.Task task, System.Func<System.Threading.Tasks.Task, TException, System.Threading.Tasks.Task> handler) -> System.Threading.Tasks.Task
+static Rackspace.Threading.CoreTaskExtensions.Finally(this System.Threading.Tasks.Task task, System.Action<System.Threading.Tasks.Task> cleanupAction) -> System.Threading.Tasks.Task
+static Rackspace.Threading.CoreTaskExtensions.Finally(this System.Threading.Tasks.Task task, System.Func<System.Threading.Tasks.Task, System.Threading.Tasks.Task> cleanupFunction) -> System.Threading.Tasks.Task
+static Rackspace.Threading.CoreTaskExtensions.Finally<TResult>(this System.Threading.Tasks.Task<TResult> task, System.Action<System.Threading.Tasks.Task<TResult>> cleanupAction) -> System.Threading.Tasks.Task<TResult>
+static Rackspace.Threading.CoreTaskExtensions.Finally<TResult>(this System.Threading.Tasks.Task<TResult> task, System.Func<System.Threading.Tasks.Task<TResult>, System.Threading.Tasks.Task> cleanupFunction) -> System.Threading.Tasks.Task<TResult>
+static Rackspace.Threading.CoreTaskExtensions.ObserveExceptions<TTask>(this TTask task) -> TTask
+static Rackspace.Threading.CoreTaskExtensions.Select(this System.Threading.Tasks.Task task, System.Action<System.Threading.Tasks.Task> continuationAction) -> System.Threading.Tasks.Task
+static Rackspace.Threading.CoreTaskExtensions.Select(this System.Threading.Tasks.Task task, System.Action<System.Threading.Tasks.Task> continuationAction, bool supportsErrors) -> System.Threading.Tasks.Task
+static Rackspace.Threading.CoreTaskExtensions.Select<TResult>(this System.Threading.Tasks.Task task, System.Func<System.Threading.Tasks.Task, TResult> continuationFunction) -> System.Threading.Tasks.Task<TResult>
+static Rackspace.Threading.CoreTaskExtensions.Select<TResult>(this System.Threading.Tasks.Task task, System.Func<System.Threading.Tasks.Task, TResult> continuationFunction, bool supportsErrors) -> System.Threading.Tasks.Task<TResult>
+static Rackspace.Threading.CoreTaskExtensions.Select<TSource, TResult>(this System.Threading.Tasks.Task<TSource> task, System.Func<System.Threading.Tasks.Task<TSource>, TResult> continuationFunction) -> System.Threading.Tasks.Task<TResult>
+static Rackspace.Threading.CoreTaskExtensions.Select<TSource, TResult>(this System.Threading.Tasks.Task<TSource> task, System.Func<System.Threading.Tasks.Task<TSource>, TResult> continuationFunction, bool supportsErrors) -> System.Threading.Tasks.Task<TResult>
+static Rackspace.Threading.CoreTaskExtensions.Select<TSource>(this System.Threading.Tasks.Task<TSource> task, System.Action<System.Threading.Tasks.Task<TSource>> continuationAction) -> System.Threading.Tasks.Task
+static Rackspace.Threading.CoreTaskExtensions.Select<TSource>(this System.Threading.Tasks.Task<TSource> task, System.Action<System.Threading.Tasks.Task<TSource>> continuationAction, bool supportsErrors) -> System.Threading.Tasks.Task
+static Rackspace.Threading.CoreTaskExtensions.Then(this System.Threading.Tasks.Task task, System.Func<System.Threading.Tasks.Task, System.Threading.Tasks.Task> continuationFunction) -> System.Threading.Tasks.Task
+static Rackspace.Threading.CoreTaskExtensions.Then(this System.Threading.Tasks.Task task, System.Func<System.Threading.Tasks.Task, System.Threading.Tasks.Task> continuationFunction, bool supportsErrors) -> System.Threading.Tasks.Task
+static Rackspace.Threading.CoreTaskExtensions.Then<TResult>(this System.Threading.Tasks.Task task, System.Func<System.Threading.Tasks.Task, System.Threading.Tasks.Task<TResult>> continuationFunction) -> System.Threading.Tasks.Task<TResult>
+static Rackspace.Threading.CoreTaskExtensions.Then<TResult>(this System.Threading.Tasks.Task task, System.Func<System.Threading.Tasks.Task, System.Threading.Tasks.Task<TResult>> continuationFunction, bool supportsErrors) -> System.Threading.Tasks.Task<TResult>
+static Rackspace.Threading.CoreTaskExtensions.Then<TSource, TResult>(this System.Threading.Tasks.Task<TSource> task, System.Func<System.Threading.Tasks.Task<TSource>, System.Threading.Tasks.Task<TResult>> continuationFunction) -> System.Threading.Tasks.Task<TResult>
+static Rackspace.Threading.CoreTaskExtensions.Then<TSource, TResult>(this System.Threading.Tasks.Task<TSource> task, System.Func<System.Threading.Tasks.Task<TSource>, System.Threading.Tasks.Task<TResult>> continuationFunction, bool supportsErrors) -> System.Threading.Tasks.Task<TResult>
+static Rackspace.Threading.CoreTaskExtensions.Then<TSource>(this System.Threading.Tasks.Task<TSource> task, System.Func<System.Threading.Tasks.Task<TSource>, System.Threading.Tasks.Task> continuationFunction) -> System.Threading.Tasks.Task
+static Rackspace.Threading.CoreTaskExtensions.Then<TSource>(this System.Threading.Tasks.Task<TSource> task, System.Func<System.Threading.Tasks.Task<TSource>, System.Threading.Tasks.Task> continuationFunction, bool supportsErrors) -> System.Threading.Tasks.Task
+static Rackspace.Threading.DelayedTask.Delay(System.TimeSpan delay) -> System.Threading.Tasks.Task
+static Rackspace.Threading.DelayedTask.Delay(System.TimeSpan delay, System.Threading.CancellationToken cancellationToken) -> System.Threading.Tasks.Task
+static Rackspace.Threading.DelayedTask.WhenAll(System.Collections.Generic.IEnumerable<System.Threading.Tasks.Task> tasks) -> System.Threading.Tasks.Task
+static Rackspace.Threading.DelayedTask.WhenAll(params System.Threading.Tasks.Task[] tasks) -> System.Threading.Tasks.Task
+static Rackspace.Threading.DelayedTask.WhenAll<TResult>(System.Collections.Generic.IEnumerable<System.Threading.Tasks.Task<TResult>> tasks) -> System.Threading.Tasks.Task<TResult[]>
+static Rackspace.Threading.DelayedTask.WhenAll<TResult>(params System.Threading.Tasks.Task<TResult>[] tasks) -> System.Threading.Tasks.Task<TResult[]>
+static Rackspace.Threading.DelayedTask.WhenAny(System.Collections.Generic.IEnumerable<System.Threading.Tasks.Task> tasks) -> System.Threading.Tasks.Task<System.Threading.Tasks.Task>
+static Rackspace.Threading.DelayedTask.WhenAny(params System.Threading.Tasks.Task[] tasks) -> System.Threading.Tasks.Task<System.Threading.Tasks.Task>
+static Rackspace.Threading.DelayedTask.WhenAny<TResult>(System.Collections.Generic.IEnumerable<System.Threading.Tasks.Task<TResult>> tasks) -> System.Threading.Tasks.Task<System.Threading.Tasks.Task<TResult>>
+static Rackspace.Threading.DelayedTask.WhenAny<TResult>(params System.Threading.Tasks.Task<TResult>[] tasks) -> System.Threading.Tasks.Task<System.Threading.Tasks.Task<TResult>>
+static Rackspace.Threading.StreamExtensions.CopyToAsync(this System.IO.Stream stream, System.IO.Stream destination) -> System.Threading.Tasks.Task
+static Rackspace.Threading.StreamExtensions.CopyToAsync(this System.IO.Stream stream, System.IO.Stream destination, int bufferSize) -> System.Threading.Tasks.Task
+static Rackspace.Threading.StreamExtensions.CopyToAsync(this System.IO.Stream stream, System.IO.Stream destination, int bufferSize, System.Threading.CancellationToken cancellationToken) -> System.Threading.Tasks.Task
+static Rackspace.Threading.StreamExtensions.FlushAsync(this System.IO.Stream stream) -> System.Threading.Tasks.Task
+static Rackspace.Threading.StreamExtensions.FlushAsync(this System.IO.Stream stream, System.Threading.CancellationToken cancellationToken) -> System.Threading.Tasks.Task
+static Rackspace.Threading.StreamExtensions.ReadAsync(this System.IO.Stream stream, byte[] buffer, int offset, int count) -> System.Threading.Tasks.Task<int>
+static Rackspace.Threading.StreamExtensions.ReadAsync(this System.IO.Stream stream, byte[] buffer, int offset, int count, System.Threading.CancellationToken cancellationToken) -> System.Threading.Tasks.Task<int>
+static Rackspace.Threading.StreamExtensions.WriteAsync(this System.IO.Stream stream, byte[] buffer, int offset, int count) -> System.Threading.Tasks.Task
+static Rackspace.Threading.StreamExtensions.WriteAsync(this System.IO.Stream stream, byte[] buffer, int offset, int count, System.Threading.CancellationToken cancellationToken) -> System.Threading.Tasks.Task
+static Rackspace.Threading.TaskBlocks.Using<TResource, TResult>(System.Func<System.Threading.Tasks.Task<TResource>> resource, System.Func<System.Threading.Tasks.Task<TResource>, System.Threading.Tasks.Task<TResult>> body) -> System.Threading.Tasks.Task<TResult>
+static Rackspace.Threading.TaskBlocks.Using<TResource>(System.Func<System.Threading.Tasks.Task<TResource>> resource, System.Func<System.Threading.Tasks.Task<TResource>, System.Threading.Tasks.Task> body) -> System.Threading.Tasks.Task
+static Rackspace.Threading.TaskBlocks.While(System.Func<System.Threading.Tasks.Task<bool>> condition, System.Func<System.Threading.Tasks.Task> body) -> System.Threading.Tasks.Task
+static Rackspace.Threading.TaskBlocks.While(System.Func<bool> condition, System.Func<System.Threading.Tasks.Task> body) -> System.Threading.Tasks.Task
+static Rackspace.Threading.TaskCompletionSourceExtensions.SetFromFailedTask<TResult>(this System.Threading.Tasks.TaskCompletionSource<TResult> taskCompletionSource, System.Threading.Tasks.Task task) -> void
+static Rackspace.Threading.TaskCompletionSourceExtensions.SetFromTask<TResult>(this System.Threading.Tasks.TaskCompletionSource<TResult> taskCompletionSource, System.Threading.Tasks.Task task, TResult result) -> void
+static Rackspace.Threading.TaskCompletionSourceExtensions.SetFromTask<TSource, TResult>(this System.Threading.Tasks.TaskCompletionSource<TResult> taskCompletionSource, System.Threading.Tasks.Task<TSource> task) -> void
+static Rackspace.Threading.TaskCompletionSourceExtensions.TrySetFromTask<TResult>(this System.Threading.Tasks.TaskCompletionSource<TResult> taskCompletionSource, System.Threading.Tasks.Task task, TResult result) -> bool
+static Rackspace.Threading.TaskCompletionSourceExtensions.TrySetFromTask<TSource, TResult>(this System.Threading.Tasks.TaskCompletionSource<TResult> taskCompletionSource, System.Threading.Tasks.Task<TSource> task) -> bool
+static Rackspace.Threading.WebRequestExtensions.GetRequestStreamAsync(this System.Net.WebRequest request) -> System.Threading.Tasks.Task<System.IO.Stream>
+static Rackspace.Threading.WebRequestExtensions.GetResponseAsync(this System.Net.WebRequest request) -> System.Threading.Tasks.Task<System.Net.WebResponse>
+static Rackspace.Threading.WebRequestExtensions.GetResponseAsync(this System.Net.WebRequest request, System.Threading.CancellationToken cancellationToken) -> System.Threading.Tasks.Task<System.Net.WebResponse>
+static Rackspace.Threading.WebRequestExtensions.GetResponseAsync(this System.Net.WebRequest request, bool throwOnError, System.Threading.CancellationToken cancellationToken) -> System.Threading.Tasks.Task<System.Net.WebResponse>
+virtual Rackspace.Threading.Progress<T>.OnReport(T value) -> void

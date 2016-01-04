@@ -81,6 +81,12 @@
     <AdditionalFiles Include="..\stylecop.json">
       <Link>stylecop.json</Link>
     </AdditionalFiles>
+    <AdditionalFiles Include="..\PublicAPI\dotnet\PublicAPI.Shipped.txt">
+      <Link>PublicAPI.Shipped.txt</Link>
+    </AdditionalFiles>
+    <AdditionalFiles Include="..\PublicAPI\dotnet\PublicAPI.Unshipped.txt">
+      <Link>PublicAPI.Unshipped.txt</Link>
+    </AdditionalFiles>
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\PublicApiAnalyzer.1.0.0-alpha001\analyzers\dotnet\cs\PublicApiAnalyzer.CodeFixes.dll" />
