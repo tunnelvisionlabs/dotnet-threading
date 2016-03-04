@@ -1,6 +1,9 @@
 ﻿// Copyright (c) Tunnel Vision Laboratories, LLC. All Rights Reserved.
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
+#pragma warning disable SA1609 // Property documentation must have value
+#pragma warning disable SA1623 // Property summary documentation must match accessors
+
 namespace UnitTest.RackspaceThreading
 {
     using System;
