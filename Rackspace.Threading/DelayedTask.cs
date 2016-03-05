@@ -5,9 +5,11 @@ namespace Rackspace.Threading
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Threading;
     using System.Threading.Tasks;
+    using Microsoft.Runtime.CompilerServices;
 
 #if PORTABLE && !NET45PLUS
     using System.Runtime.CompilerServices;
@@ -568,6 +570,27 @@ namespace Rackspace.Threading
             Task.Factory.ContinueWhenAny(tasksArray, continuationAction);
             return taskCompletionSource.Task;
 #endif
+        }
+
+        /// <summary>
+        /// Creates an awaitable task that asynchronously yields back to the current context when awaited.
+        /// </summary>
+        /// <returns>
+        /// A context that, when awaited, will asynchronously transition back into the current context at the time of
+        /// the await. If the current <see cref="SynchronizationContext"/> is non-<see langword="null"/>, it is treated
+        /// as the current context. Otherwise, the task scheduler that is associated with the currently executing task
+        /// is treated as the current context.
+        /// </returns>
+        [CLSCompliant(
+#if NET40
+            false)]
+#else
+            true)]
+#endif
+        [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1114:Parameter list must follow declaration", Justification = "This avoids duplicating the entire documentation comment in the conditional block.")]
+        public static YieldAwaitable Yield()
+        {
+            return default(YieldAwaitable);
         }
     }
 }

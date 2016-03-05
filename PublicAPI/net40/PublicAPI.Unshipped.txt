@@ -1,0 +1,1 @@
+static Rackspace.Threading.DelayedTask.Yield() -> Microsoft.Runtime.CompilerServices.YieldAwaitable

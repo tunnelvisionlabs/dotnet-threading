@@ -68,6 +68,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TaskTestingBase.cs" />
+    <Compile Include="TestAsyncAwait.cs" />
     <Compile Include="TestCancellationTokenSourceExtensions.cs" />
     <Compile Include="TestCompletedTask.cs" />
     <Compile Include="TestCoreTaskExtensions_Catch.cs" />

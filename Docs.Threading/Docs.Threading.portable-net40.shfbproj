@@ -72,6 +72,19 @@
       <PlugInConfig id="IntelliSense Only" enabled="True">
         <configuration />
       </PlugInConfig>
+      <PlugInConfig id="Assembly Binding Redirection" enabled="True">
+        <configuration useGAC="false">
+          <assemblyBinding>
+            <dependentAssembly>
+              <assemblyIdentity name="System.Threading.Tasks" publicKeyToken="b03f5f7f11d50a3a" />
+              <bindingRedirect oldVersion="0.0.0.0-2.6.9.0" newVersion="2.6.9.0" />
+            </dependentAssembly>
+          </assemblyBinding>
+          <ignoreIfUnresolved>
+            <assemblyIdentity name="BusinessObjects.Licensing.KeycodeDecoder" />
+          </ignoreIfUnresolved>
+        </configuration>
+      </PlugInConfig>
     </PlugInConfigurations>
     <BuildLogFile />
     <HtmlHelp1xCompilerPath />

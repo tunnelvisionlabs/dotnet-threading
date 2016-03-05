@@ -1,0 +1,37 @@
+AwaitExtensions
+Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable
+Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter
+Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter.GetResult() -> void
+Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter.IsCompleted.get -> bool
+Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter.OnCompleted(System.Action continuation) -> void
+Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter.UnsafeOnCompleted(System.Action continuation) -> void
+Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable.GetAwaiter() -> Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter
+Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable<TResult>
+Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable<TResult>.ConfiguredTaskAwaiter
+Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable<TResult>.ConfiguredTaskAwaiter.GetResult() -> TResult
+Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable<TResult>.ConfiguredTaskAwaiter.IsCompleted.get -> bool
+Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable<TResult>.ConfiguredTaskAwaiter.OnCompleted(System.Action continuation) -> void
+Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable<TResult>.ConfiguredTaskAwaiter.UnsafeOnCompleted(System.Action continuation) -> void
+Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable<TResult>.GetAwaiter() -> Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable<TResult>.ConfiguredTaskAwaiter
+Microsoft.Runtime.CompilerServices.TaskAwaiter
+Microsoft.Runtime.CompilerServices.TaskAwaiter.GetResult() -> void
+Microsoft.Runtime.CompilerServices.TaskAwaiter.IsCompleted.get -> bool
+Microsoft.Runtime.CompilerServices.TaskAwaiter.OnCompleted(System.Action continuation) -> void
+Microsoft.Runtime.CompilerServices.TaskAwaiter.UnsafeOnCompleted(System.Action continuation) -> void
+Microsoft.Runtime.CompilerServices.TaskAwaiter<TResult>
+Microsoft.Runtime.CompilerServices.TaskAwaiter<TResult>.GetResult() -> TResult
+Microsoft.Runtime.CompilerServices.TaskAwaiter<TResult>.IsCompleted.get -> bool
+Microsoft.Runtime.CompilerServices.TaskAwaiter<TResult>.OnCompleted(System.Action continuation) -> void
+Microsoft.Runtime.CompilerServices.TaskAwaiter<TResult>.UnsafeOnCompleted(System.Action continuation) -> void
+Microsoft.Runtime.CompilerServices.YieldAwaitable
+Microsoft.Runtime.CompilerServices.YieldAwaitable.GetAwaiter() -> Microsoft.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter
+Microsoft.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter
+Microsoft.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter.GetResult() -> void
+Microsoft.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter.IsCompleted.get -> bool
+Microsoft.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter.OnCompleted(System.Action continuation) -> void
+Microsoft.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter.UnsafeOnCompleted(System.Action continuation) -> void
+static AwaitExtensions.ConfigureAwait(this System.Threading.Tasks.Task task, bool continueOnCapturedContext) -> Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable
+static AwaitExtensions.ConfigureAwait<TResult>(this System.Threading.Tasks.Task<TResult> task, bool continueOnCapturedContext) -> Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable<TResult>
+static AwaitExtensions.GetAwaiter(this System.Threading.Tasks.Task task) -> Microsoft.Runtime.CompilerServices.TaskAwaiter
+static AwaitExtensions.GetAwaiter<TResult>(this System.Threading.Tasks.Task<TResult> task) -> Microsoft.Runtime.CompilerServices.TaskAwaiter<TResult>
+static Rackspace.Threading.DelayedTask.Yield() -> Microsoft.Runtime.CompilerServices.YieldAwaitable
