@@ -738,6 +738,7 @@ namespace Rackspace.Threading
         /// <para>-or-</para>
         /// <para>If <paramref name="handler"/> is <see langword="null"/>.</para>
         /// </exception>
+        /// <preliminary/>
         public static Task Catch<TException>(this Task task, Predicate<TException> filter, Action<Task, TException> handler)
             where TException : Exception
         {
@@ -848,6 +849,7 @@ namespace Rackspace.Threading
         /// <para>-or-</para>
         /// <para>If <paramref name="handler"/> is <see langword="null"/>.</para>
         /// </exception>
+        /// <preliminary/>
         public static Task<TResult> Catch<TException, TResult>(this Task<TResult> task, Predicate<TException> filter, Func<Task<TResult>, TException, TResult> handler)
             where TException : Exception
         {
@@ -953,6 +955,7 @@ namespace Rackspace.Threading
         /// <para>-or-</para>
         /// <para>If <paramref name="handler"/> is <see langword="null"/>.</para>
         /// </exception>
+        /// <preliminary/>
         public static Task Catch<TException>(this Task task, Predicate<TException> filter, Func<Task, TException, Task> handler)
             where TException : Exception
         {
@@ -1063,6 +1066,7 @@ namespace Rackspace.Threading
         /// <para>-or-</para>
         /// <para>If <paramref name="handler"/> is <see langword="null"/>.</para>
         /// </exception>
+        /// <preliminary/>
         public static Task<TResult> Catch<TException, TResult>(this Task<TResult> task, Predicate<TException> filter, Func<Task<TResult>, TException, Task<TResult>> handler)
             where TException : Exception
         {
