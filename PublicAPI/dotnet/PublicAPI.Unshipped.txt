@@ -34,4 +34,8 @@ static AwaitExtensions.ConfigureAwait(this System.Threading.Tasks.Task task, boo
 static AwaitExtensions.ConfigureAwait<TResult>(this System.Threading.Tasks.Task<TResult> task, bool continueOnCapturedContext) -> Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable<TResult>
 static AwaitExtensions.GetAwaiter(this System.Threading.Tasks.Task task) -> Microsoft.Runtime.CompilerServices.TaskAwaiter
 static AwaitExtensions.GetAwaiter<TResult>(this System.Threading.Tasks.Task<TResult> task) -> Microsoft.Runtime.CompilerServices.TaskAwaiter<TResult>
+static Rackspace.Threading.CoreTaskExtensions.Catch<TException, TResult>(this System.Threading.Tasks.Task<TResult> task, System.Predicate<TException> filter, System.Func<System.Threading.Tasks.Task<TResult>, TException, System.Threading.Tasks.Task<TResult>> handler) -> System.Threading.Tasks.Task<TResult>
+static Rackspace.Threading.CoreTaskExtensions.Catch<TException, TResult>(this System.Threading.Tasks.Task<TResult> task, System.Predicate<TException> filter, System.Func<System.Threading.Tasks.Task<TResult>, TException, TResult> handler) -> System.Threading.Tasks.Task<TResult>
+static Rackspace.Threading.CoreTaskExtensions.Catch<TException>(this System.Threading.Tasks.Task task, System.Predicate<TException> filter, System.Action<System.Threading.Tasks.Task, TException> handler) -> System.Threading.Tasks.Task
+static Rackspace.Threading.CoreTaskExtensions.Catch<TException>(this System.Threading.Tasks.Task task, System.Predicate<TException> filter, System.Func<System.Threading.Tasks.Task, TException, System.Threading.Tasks.Task> handler) -> System.Threading.Tasks.Task
 static Rackspace.Threading.DelayedTask.Yield() -> Microsoft.Runtime.CompilerServices.YieldAwaitable
