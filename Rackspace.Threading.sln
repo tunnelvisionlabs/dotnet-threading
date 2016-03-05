@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rackspace.Threading.net35-client", "Rackspace.Threading\Rackspace.Threading.net35-client.csproj", "{52CA4A3B-F296-4489-B5F0-AD375D039B35}"
 EndProject
@@ -107,6 +107,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		TunnelVisionLabs.Threading.ruleset = TunnelVisionLabs.Threading.ruleset
 		TunnelVisionLabs.Threading.UnitTest.ruleset = TunnelVisionLabs.Threading.UnitTest.ruleset
 	EndProjectSection
+EndProject
+Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Docs.Threading.2.0", "Docs.Threading.History\2.0\Docs.Threading.2.0.shfbproj", "{971275CF-04B4-4062-9487-516674838F48}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -220,6 +222,9 @@ Global
 		{F6D21C32-671D-469E-B094-49794DFF550F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F6D21C32-671D-469E-B094-49794DFF550F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6D21C32-671D-469E-B094-49794DFF550F}.ReleaseNoDocs|Any CPU.ActiveCfg = Release|Any CPU
+		{971275CF-04B4-4062-9487-516674838F48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{971275CF-04B4-4062-9487-516674838F48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{971275CF-04B4-4062-9487-516674838F48}.ReleaseNoDocs|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -241,5 +246,6 @@ Global
 		{252DA18A-BDB9-4D15-B5A9-63FA2B7F91A8} = {3ECDDCBB-3BA0-407D-9E64-83B596ED767E}
 		{665B3728-8EB8-491D-B685-5FF1CCCDE62E} = {3ECDDCBB-3BA0-407D-9E64-83B596ED767E}
 		{F6D21C32-671D-469E-B094-49794DFF550F} = {3ECDDCBB-3BA0-407D-9E64-83B596ED767E}
+		{971275CF-04B4-4062-9487-516674838F48} = {3ECDDCBB-3BA0-407D-9E64-83B596ED767E}
 	EndGlobalSection
 EndGlobal
