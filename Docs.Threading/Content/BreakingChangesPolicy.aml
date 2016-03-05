@@ -69,6 +69,53 @@
                   </para>
                 </entry>
               </row>
+              <row>
+                <entry>
+                  <para>
+                    <externalLink>
+                      <linkText>Microsoft.Bcl.Build</linkText>
+                      <linkAlternateText>Microsoft.Bcl.Build</linkAlternateText>
+                      <linkUri>https://www.nuget.org/packages/Microsoft.Bcl.Build/</linkUri>
+                    </externalLink>
+                  </para>
+                </entry>
+                <entry>
+                  <para>net40-client, portable-net40</para>
+                </entry>
+                <entry>
+                  <para>
+                    This dependency is compatible with the breaking changes policy since it does not contain any
+                    assemblies which are referenced.
+                  </para>
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  <para>
+                    <externalLink>
+                      <linkText>Microsoft.Bcl</linkText>
+                      <linkAlternateText>Microsoft.Bcl</linkAlternateText>
+                      <linkUri>https://www.nuget.org/packages/Microsoft.Bcl/</linkUri>
+                    </externalLink>,
+                    <externalLink>
+                      <linkText>Microsoft.Bcl.Async</linkText>
+                      <linkAlternateText>Microsoft.Bcl.Async</linkAlternateText>
+                      <linkUri>https://www.nuget.org/packages/Microsoft.Bcl.Async/</linkUri>
+                    </externalLink>
+                  </para>
+                </entry>
+                <entry>
+                  <para>net40-client, portable-net40</para>
+                </entry>
+                <entry>
+                  <para>
+                    Future releases of these dependencies are unlikely to include source-level breaking changes.
+                    However, updating to a newer release of these libraries may require one or more assembly binding
+                    redirects. To maintain maximum compatibility with this breaking changes policy, the minimum
+                    supported version of these dependencies will not change as part of patch releases.
+                  </para>
+                </entry>
+              </row>
             </table>
           </content>
         </section>
