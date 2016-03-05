@@ -14,6 +14,7 @@ namespace System.Runtime.CompilerServices
     /// <summary>
     /// Represents state machines generated for asynchronous methods. This type is intended for compiler use only.
     /// </summary>
+    /// <preliminary/>
     public interface IAsyncStateMachine
     {
         /// <summary>Moves the state machine to its next state.</summary>

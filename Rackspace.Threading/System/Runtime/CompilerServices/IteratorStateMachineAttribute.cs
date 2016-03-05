@@ -14,6 +14,7 @@ namespace System.Runtime.CompilerServices
     /// <summary>
     /// Indicates whether a method in Visual Basic is marked with the <see langword="Iterator"/> modifier.
     /// </summary>
+    /// <preliminary/>
     [Serializable]
     [AttributeUsage(AttributeTargets.Method, Inherited = false, AllowMultiple = false)]
     public sealed class IteratorStateMachineAttribute : StateMachineAttribute

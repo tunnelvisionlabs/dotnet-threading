@@ -17,6 +17,7 @@ using Microsoft.Runtime.CompilerServices;
 /// <summary>
 /// Provides extension methods for threading-related types.
 /// </summary>
+/// <preliminary/>
 public static class AwaitExtensions
 {
     /// <summary>Gets an awaiter used to await this <see cref="Task"/>.</summary>

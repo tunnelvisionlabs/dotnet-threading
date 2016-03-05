@@ -21,6 +21,7 @@ namespace Microsoft.Runtime.CompilerServices
     /// <summary>Provides an awaiter for awaiting a <see cref="Task{TResult}"/>.</summary>
     /// <remarks>This type is intended for compiler use only.</remarks>
     /// <typeparam name="TResult">The return type of the <see cref="Task{TResult}"/>.</typeparam>
+    /// <preliminary/>
     public struct TaskAwaiter<TResult> : ICriticalNotifyCompletion, INotifyCompletion
     {
         /// <summary>The task being awaited.</summary>

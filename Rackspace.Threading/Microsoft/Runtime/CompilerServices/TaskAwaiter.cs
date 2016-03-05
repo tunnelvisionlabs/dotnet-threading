@@ -21,6 +21,7 @@ namespace Microsoft.Runtime.CompilerServices
 
     /// <summary>Provides an awaiter for awaiting a <see cref="Task"/>.</summary>
     /// <remarks>This type is intended for compiler use only.</remarks>
+    /// <preliminary/>
     public struct TaskAwaiter : ICriticalNotifyCompletion
     {
         /// <summary>The default value to use for continueOnCapturedContext.</summary>

@@ -18,6 +18,7 @@ namespace System.Runtime.CompilerServices
     /// <summary>
     /// Provides a builder for asynchronous methods that return void. This type is intended for compiler use only.
     /// </summary>
+    /// <preliminary/>
     public struct AsyncVoidMethodBuilder : IAsyncMethodBuilder
     {
         /// <summary>Non-zero if <see cref="PreventUnobservedTaskExceptions"/> has already been invoked.</summary>

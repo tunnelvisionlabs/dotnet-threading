@@ -14,6 +14,7 @@ namespace System.Runtime.CompilerServices
     /// <summary>
     /// Allows you to determine whether a method is a state machine method.
     /// </summary>
+    /// <preliminary/>
     [Serializable]
     [AttributeUsage(AttributeTargets.Method, Inherited = false, AllowMultiple = false)]
     public class StateMachineAttribute : Attribute
