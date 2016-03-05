@@ -1,5 +1,93 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <HelpKI>
+  <HelpKINode Title="AsyncStateMachineAttribute class">
+    <HelpKINode Title="AsyncStateMachineAttribute Class" Url="html/T_System_Runtime_CompilerServices_AsyncStateMachineAttribute.htm" />
+    <HelpKINode Title="about AsyncStateMachineAttribute class" Url="html/T_System_Runtime_CompilerServices_AsyncStateMachineAttribute.htm" />
+    <HelpKINode Title="constructor" Url="html/M_System_Runtime_CompilerServices_AsyncStateMachineAttribute__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_System_Runtime_CompilerServices_AsyncStateMachineAttribute.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_System_Runtime_CompilerServices_AsyncStateMachineAttribute.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AsyncStateMachineAttribute.AsyncStateMachineAttribute constructor" Url="html/M_System_Runtime_CompilerServices_AsyncStateMachineAttribute__ctor.htm" />
+  <HelpKINode Title="AsyncTaskMethodBuilder structure">
+    <HelpKINode Title="AsyncTaskMethodBuilder Structure" Url="html/T_System_Runtime_CompilerServices_AsyncTaskMethodBuilder.htm" />
+    <HelpKINode Title="about AsyncTaskMethodBuilder structure" Url="html/T_System_Runtime_CompilerServices_AsyncTaskMethodBuilder.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_System_Runtime_CompilerServices_AsyncTaskMethodBuilder.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_System_Runtime_CompilerServices_AsyncTaskMethodBuilder.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AsyncTaskMethodBuilder(Of TResult) structure">
+    <HelpKINode Title="AsyncTaskMethodBuilder(TResult) Structure" Url="html/T_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1.htm" />
+    <HelpKINode Title="about AsyncTaskMethodBuilder(Of TResult) structure" Url="html/T_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AsyncTaskMethodBuilder(Of TResult).AwaitOnCompleted(Of TAwaiter, TStateMachine) method" Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_AwaitOnCompleted__2.htm" />
+  <HelpKINode Title="AsyncTaskMethodBuilder(Of TResult).AwaitUnsafeOnCompleted(Of TAwaiter, TStateMachine) method" Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_AwaitUnsafeOnCompleted__2.htm" />
+  <HelpKINode Title="AsyncTaskMethodBuilder(Of TResult).Create method" Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_Create.htm" />
+  <HelpKINode Title="AsyncTaskMethodBuilder(Of TResult).SetException method" Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_SetException.htm" />
+  <HelpKINode Title="AsyncTaskMethodBuilder(Of TResult).SetResult method" Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_SetResult.htm" />
+  <HelpKINode Title="AsyncTaskMethodBuilder(Of TResult).SetStateMachine method" Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_SetStateMachine.htm" />
+  <HelpKINode Title="AsyncTaskMethodBuilder(Of TResult).Start(Of TStateMachine) method" Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_Start__1.htm" />
+  <HelpKINode Title="AsyncTaskMethodBuilder(Of TResult).Task property" Url="html/P_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_Task.htm" />
+  <HelpKINode Title="AsyncTaskMethodBuilder.AwaitOnCompleted(Of TAwaiter, TStateMachine) method" Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_AwaitOnCompleted__2.htm" />
+  <HelpKINode Title="AsyncTaskMethodBuilder.AwaitOnCompleted&lt;TAwaiter, TStateMachine&gt; method" Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_AwaitOnCompleted__2.htm" />
+  <HelpKINode Title="AsyncTaskMethodBuilder.AwaitUnsafeOnCompleted(Of TAwaiter, TStateMachine) method" Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted__2.htm" />
+  <HelpKINode Title="AsyncTaskMethodBuilder.AwaitUnsafeOnCompleted&lt;TAwaiter, TStateMachine&gt; method" Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted__2.htm" />
+  <HelpKINode Title="AsyncTaskMethodBuilder.Create method" Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_Create.htm" />
+  <HelpKINode Title="AsyncTaskMethodBuilder.SetException method" Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_SetException.htm" />
+  <HelpKINode Title="AsyncTaskMethodBuilder.SetResult method" Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_SetResult.htm" />
+  <HelpKINode Title="AsyncTaskMethodBuilder.SetStateMachine method" Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_SetStateMachine.htm" />
+  <HelpKINode Title="AsyncTaskMethodBuilder.Start(Of TStateMachine) method" Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_Start__1.htm" />
+  <HelpKINode Title="AsyncTaskMethodBuilder.Start&lt;TStateMachine&gt; method" Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_Start__1.htm" />
+  <HelpKINode Title="AsyncTaskMethodBuilder.Task property" Url="html/P_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_Task.htm" />
+  <HelpKINode Title="AsyncTaskMethodBuilder&lt;TResult&gt; structure">
+    <HelpKINode Title="AsyncTaskMethodBuilder(TResult) Structure" Url="html/T_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1.htm" />
+    <HelpKINode Title="about AsyncTaskMethodBuilder&lt;TResult&gt; structure" Url="html/T_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AsyncTaskMethodBuilder&lt;TResult&gt;.AwaitOnCompleted&lt;TAwaiter, TStateMachine&gt; method" Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_AwaitOnCompleted__2.htm" />
+  <HelpKINode Title="AsyncTaskMethodBuilder&lt;TResult&gt;.AwaitUnsafeOnCompleted&lt;TAwaiter, TStateMachine&gt; method" Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_AwaitUnsafeOnCompleted__2.htm" />
+  <HelpKINode Title="AsyncTaskMethodBuilder&lt;TResult&gt;.Create method" Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_Create.htm" />
+  <HelpKINode Title="AsyncTaskMethodBuilder&lt;TResult&gt;.SetException method" Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_SetException.htm" />
+  <HelpKINode Title="AsyncTaskMethodBuilder&lt;TResult&gt;.SetResult method" Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_SetResult.htm" />
+  <HelpKINode Title="AsyncTaskMethodBuilder&lt;TResult&gt;.SetStateMachine method" Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_SetStateMachine.htm" />
+  <HelpKINode Title="AsyncTaskMethodBuilder&lt;TResult&gt;.Start&lt;TStateMachine&gt; method" Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_Start__1.htm" />
+  <HelpKINode Title="AsyncTaskMethodBuilder&lt;TResult&gt;.Task property" Url="html/P_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_Task.htm" />
+  <HelpKINode Title="AsyncVoidMethodBuilder structure">
+    <HelpKINode Title="AsyncVoidMethodBuilder Structure" Url="html/T_System_Runtime_CompilerServices_AsyncVoidMethodBuilder.htm" />
+    <HelpKINode Title="about AsyncVoidMethodBuilder structure" Url="html/T_System_Runtime_CompilerServices_AsyncVoidMethodBuilder.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_System_Runtime_CompilerServices_AsyncVoidMethodBuilder.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AsyncVoidMethodBuilder.AwaitOnCompleted(Of TAwaiter, TStateMachine) method" Url="html/M_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_AwaitOnCompleted__2.htm" />
+  <HelpKINode Title="AsyncVoidMethodBuilder.AwaitOnCompleted&lt;TAwaiter, TStateMachine&gt; method" Url="html/M_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_AwaitOnCompleted__2.htm" />
+  <HelpKINode Title="AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted(Of TAwaiter, TStateMachine) method" Url="html/M_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_AwaitUnsafeOnCompleted__2.htm" />
+  <HelpKINode Title="AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted&lt;TAwaiter, TStateMachine&gt; method" Url="html/M_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_AwaitUnsafeOnCompleted__2.htm" />
+  <HelpKINode Title="AsyncVoidMethodBuilder.Create method" Url="html/M_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_Create.htm" />
+  <HelpKINode Title="AsyncVoidMethodBuilder.SetException method" Url="html/M_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_SetException.htm" />
+  <HelpKINode Title="AsyncVoidMethodBuilder.SetResult method" Url="html/M_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_SetResult.htm" />
+  <HelpKINode Title="AsyncVoidMethodBuilder.SetStateMachine method" Url="html/M_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_SetStateMachine.htm" />
+  <HelpKINode Title="AsyncVoidMethodBuilder.Start(Of TStateMachine) method" Url="html/M_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_Start__1.htm" />
+  <HelpKINode Title="AsyncVoidMethodBuilder.Start&lt;TStateMachine&gt; method" Url="html/M_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_Start__1.htm" />
+  <HelpKINode Title="AwaitOnCompleted(Of TAwaiter, TStateMachine) method">
+    <HelpKINode Title="AsyncTaskMethodBuilder(TResult).AwaitOnCompleted(TAwaiter, TStateMachine) Method " Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_AwaitOnCompleted__2.htm" />
+    <HelpKINode Title="AsyncTaskMethodBuilder.AwaitOnCompleted(TAwaiter, TStateMachine) Method " Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_AwaitOnCompleted__2.htm" />
+    <HelpKINode Title="AsyncVoidMethodBuilder.AwaitOnCompleted(TAwaiter, TStateMachine) Method " Url="html/M_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_AwaitOnCompleted__2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AwaitOnCompleted&lt;TAwaiter, TStateMachine&gt; method">
+    <HelpKINode Title="AsyncTaskMethodBuilder(TResult).AwaitOnCompleted(TAwaiter, TStateMachine) Method " Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_AwaitOnCompleted__2.htm" />
+    <HelpKINode Title="AsyncTaskMethodBuilder.AwaitOnCompleted(TAwaiter, TStateMachine) Method " Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_AwaitOnCompleted__2.htm" />
+    <HelpKINode Title="AsyncVoidMethodBuilder.AwaitOnCompleted(TAwaiter, TStateMachine) Method " Url="html/M_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_AwaitOnCompleted__2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AwaitUnsafeOnCompleted(Of TAwaiter, TStateMachine) method">
+    <HelpKINode Title="AsyncTaskMethodBuilder(TResult).AwaitUnsafeOnCompleted(TAwaiter, TStateMachine) Method " Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_AwaitUnsafeOnCompleted__2.htm" />
+    <HelpKINode Title="AsyncTaskMethodBuilder.AwaitUnsafeOnCompleted(TAwaiter, TStateMachine) Method " Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted__2.htm" />
+    <HelpKINode Title="AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted(TAwaiter, TStateMachine) Method " Url="html/M_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_AwaitUnsafeOnCompleted__2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AwaitUnsafeOnCompleted&lt;TAwaiter, TStateMachine&gt; method">
+    <HelpKINode Title="AsyncTaskMethodBuilder(TResult).AwaitUnsafeOnCompleted(TAwaiter, TStateMachine) Method " Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_AwaitUnsafeOnCompleted__2.htm" />
+    <HelpKINode Title="AsyncTaskMethodBuilder.AwaitUnsafeOnCompleted(TAwaiter, TStateMachine) Method " Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted__2.htm" />
+    <HelpKINode Title="AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted(TAwaiter, TStateMachine) Method " Url="html/M_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_AwaitUnsafeOnCompleted__2.htm" />
+  </HelpKINode>
   <HelpKINode Title="CancelAfter method" Url="html/M_Rackspace_Threading_CancellationTokenSourceExtensions_CancelAfter.htm" />
   <HelpKINode Title="Canceled method" Url="html/Overload_Rackspace_Threading_CompletedTask_Canceled.htm" />
   <HelpKINode Title="CancellationTokenSourceExtensions class">
@@ -19,6 +107,54 @@
   <HelpKINode Title="CompletedTask.Default property" Url="html/P_Rackspace_Threading_CompletedTask_Default.htm" />
   <HelpKINode Title="CompletedTask.FromResult(Of TResult) method" Url="html/M_Rackspace_Threading_CompletedTask_FromResult__1.htm" />
   <HelpKINode Title="CompletedTask.FromResult&lt;TResult&gt; method" Url="html/M_Rackspace_Threading_CompletedTask_FromResult__1.htm" />
+  <HelpKINode Title="ConfiguredTaskAwaitable structure">
+    <HelpKINode Title="ConfiguredTaskAwaitable Structure" Url="html/T_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable.htm" />
+    <HelpKINode Title="about ConfiguredTaskAwaitable structure" Url="html/T_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ConfiguredTaskAwaitable(Of TResult) structure">
+    <HelpKINode Title="ConfiguredTaskAwaitable(TResult) Structure" Url="html/T_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1.htm" />
+    <HelpKINode Title="about ConfiguredTaskAwaitable(Of TResult) structure" Url="html/T_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ConfiguredTaskAwaitable(Of TResult).ConfiguredTaskAwaiter structure">
+    <HelpKINode Title="ConfiguredTaskAwaitable(TResult).ConfiguredTaskAwaiter Structure" Url="html/T_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter.htm" />
+    <HelpKINode Title="about ConfiguredTaskAwaitable(Of TResult).ConfiguredTaskAwaiter structure" Url="html/T_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ConfiguredTaskAwaitable(Of TResult).ConfiguredTaskAwaiter.GetResult method" Url="html/M_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter_GetResult.htm" />
+  <HelpKINode Title="ConfiguredTaskAwaitable(Of TResult).ConfiguredTaskAwaiter.IsCompleted property" Url="html/P_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter_IsCompleted.htm" />
+  <HelpKINode Title="ConfiguredTaskAwaitable(Of TResult).ConfiguredTaskAwaiter.OnCompleted method" Url="html/M_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter_OnCompleted.htm" />
+  <HelpKINode Title="ConfiguredTaskAwaitable(Of TResult).ConfiguredTaskAwaiter.UnsafeOnCompleted method" Url="html/M_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter_UnsafeOnCompleted.htm" />
+  <HelpKINode Title="ConfiguredTaskAwaitable(Of TResult).GetAwaiter method" Url="html/M_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_GetAwaiter.htm" />
+  <HelpKINode Title="ConfiguredTaskAwaitable.ConfiguredTaskAwaiter structure">
+    <HelpKINode Title="ConfiguredTaskAwaitable.ConfiguredTaskAwaiter Structure" Url="html/T_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter.htm" />
+    <HelpKINode Title="about ConfiguredTaskAwaitable.ConfiguredTaskAwaiter structure" Url="html/T_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ConfiguredTaskAwaitable.ConfiguredTaskAwaiter.GetResult method" Url="html/M_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_GetResult.htm" />
+  <HelpKINode Title="ConfiguredTaskAwaitable.ConfiguredTaskAwaiter.IsCompleted property" Url="html/P_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_IsCompleted.htm" />
+  <HelpKINode Title="ConfiguredTaskAwaitable.ConfiguredTaskAwaiter.OnCompleted method" Url="html/M_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_OnCompleted.htm" />
+  <HelpKINode Title="ConfiguredTaskAwaitable.ConfiguredTaskAwaiter.UnsafeOnCompleted method" Url="html/M_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_UnsafeOnCompleted.htm" />
+  <HelpKINode Title="ConfiguredTaskAwaitable.GetAwaiter method" Url="html/M_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_GetAwaiter.htm" />
+  <HelpKINode Title="ConfiguredTaskAwaitable&lt;TResult&gt; structure">
+    <HelpKINode Title="ConfiguredTaskAwaitable(TResult) Structure" Url="html/T_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1.htm" />
+    <HelpKINode Title="about ConfiguredTaskAwaitable&lt;TResult&gt; structure" Url="html/T_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ConfiguredTaskAwaitable&lt;TResult&gt;.ConfiguredTaskAwaiter structure">
+    <HelpKINode Title="ConfiguredTaskAwaitable(TResult).ConfiguredTaskAwaiter Structure" Url="html/T_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter.htm" />
+    <HelpKINode Title="about ConfiguredTaskAwaitable&lt;TResult&gt;.ConfiguredTaskAwaiter structure" Url="html/T_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ConfiguredTaskAwaitable&lt;TResult&gt;.ConfiguredTaskAwaiter.GetResult method" Url="html/M_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter_GetResult.htm" />
+  <HelpKINode Title="ConfiguredTaskAwaitable&lt;TResult&gt;.ConfiguredTaskAwaiter.IsCompleted property" Url="html/P_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter_IsCompleted.htm" />
+  <HelpKINode Title="ConfiguredTaskAwaitable&lt;TResult&gt;.ConfiguredTaskAwaiter.OnCompleted method" Url="html/M_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter_OnCompleted.htm" />
+  <HelpKINode Title="ConfiguredTaskAwaitable&lt;TResult&gt;.ConfiguredTaskAwaiter.UnsafeOnCompleted method" Url="html/M_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter_UnsafeOnCompleted.htm" />
+  <HelpKINode Title="ConfiguredTaskAwaitable&lt;TResult&gt;.GetAwaiter method" Url="html/M_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_GetAwaiter.htm" />
+  <HelpKINode Title="ConfiguredTaskAwaiter structure">
+    <HelpKINode Title="methods" Url="html/Methods_T_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter.htm" />
+  </HelpKINode>
   <HelpKINode Title="CopyToAsync method" Url="html/Overload_Rackspace_Threading_StreamExtensions_CopyToAsync.htm" />
   <HelpKINode Title="CoreTaskExtensions class">
     <HelpKINode Title="CoreTaskExtensions Class" Url="html/T_Rackspace_Threading_CoreTaskExtensions.htm" />
@@ -31,6 +167,11 @@
   <HelpKINode Title="CoreTaskExtensions.ObserveExceptions&lt;TTask&gt; method" Url="html/M_Rackspace_Threading_CoreTaskExtensions_ObserveExceptions__1.htm" />
   <HelpKINode Title="CoreTaskExtensions.Select method" Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Select.htm" />
   <HelpKINode Title="CoreTaskExtensions.Then method" Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Then.htm" />
+  <HelpKINode Title="Create method">
+    <HelpKINode Title="AsyncTaskMethodBuilder(TResult).Create Method " Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_Create.htm" />
+    <HelpKINode Title="AsyncTaskMethodBuilder.Create Method " Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_Create.htm" />
+    <HelpKINode Title="AsyncVoidMethodBuilder.Create Method " Url="html/M_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_Create.htm" />
+  </HelpKINode>
   <HelpKINode Title="Default property" Url="html/P_Rackspace_Threading_CompletedTask_Default.htm" />
   <HelpKINode Title="Delay method" Url="html/Overload_Rackspace_Threading_DelayedTask_Delay.htm" />
   <HelpKINode Title="DelayedTask class">
@@ -41,19 +182,51 @@
   <HelpKINode Title="DelayedTask.Delay method" Url="html/Overload_Rackspace_Threading_DelayedTask_Delay.htm" />
   <HelpKINode Title="DelayedTask.WhenAll method" Url="html/Overload_Rackspace_Threading_DelayedTask_WhenAll.htm" />
   <HelpKINode Title="DelayedTask.WhenAny method" Url="html/Overload_Rackspace_Threading_DelayedTask_WhenAny.htm" />
+  <HelpKINode Title="DelayedTask.Yield method" Url="html/M_Rackspace_Threading_DelayedTask_Yield.htm" />
   <HelpKINode Title="DisposeAsync method" Url="html/M_Rackspace_Threading_IAsyncDisposable_DisposeAsync.htm" />
   <HelpKINode Title="Finally method" Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Finally.htm" />
   <HelpKINode Title="FlushAsync method" Url="html/Overload_Rackspace_Threading_StreamExtensions_FlushAsync.htm" />
   <HelpKINode Title="FromResult(Of TResult) method" Url="html/M_Rackspace_Threading_CompletedTask_FromResult__1.htm" />
   <HelpKINode Title="FromResult&lt;TResult&gt; method" Url="html/M_Rackspace_Threading_CompletedTask_FromResult__1.htm" />
+  <HelpKINode Title="GetAwaiter method">
+    <HelpKINode Title="ConfiguredTaskAwaitable(TResult).GetAwaiter Method " Url="html/M_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_GetAwaiter.htm" />
+    <HelpKINode Title="ConfiguredTaskAwaitable.GetAwaiter Method " Url="html/M_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_GetAwaiter.htm" />
+    <HelpKINode Title="YieldAwaitable.GetAwaiter Method " Url="html/M_Microsoft_Runtime_CompilerServices_YieldAwaitable_GetAwaiter.htm" />
+  </HelpKINode>
   <HelpKINode Title="GetRequestStreamAsync method" Url="html/M_Rackspace_Threading_WebRequestExtensions_GetRequestStreamAsync.htm" />
   <HelpKINode Title="GetResponseAsync method" Url="html/Overload_Rackspace_Threading_WebRequestExtensions_GetResponseAsync.htm" />
+  <HelpKINode Title="GetResult method">
+    <HelpKINode Title="ConfiguredTaskAwaitable(TResult).ConfiguredTaskAwaiter.GetResult Method " Url="html/M_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter_GetResult.htm" />
+    <HelpKINode Title="ConfiguredTaskAwaitable.ConfiguredTaskAwaiter.GetResult Method " Url="html/M_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_GetResult.htm" />
+    <HelpKINode Title="TaskAwaiter(TResult).GetResult Method " Url="html/M_Microsoft_Runtime_CompilerServices_TaskAwaiter_1_GetResult.htm" />
+    <HelpKINode Title="TaskAwaiter.GetResult Method " Url="html/M_Microsoft_Runtime_CompilerServices_TaskAwaiter_GetResult.htm" />
+    <HelpKINode Title="YieldAwaitable.YieldAwaiter.GetResult Method " Url="html/M_Microsoft_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_GetResult.htm" />
+  </HelpKINode>
   <HelpKINode Title="IAsyncDisposable interface">
     <HelpKINode Title="IAsyncDisposable Interface" Url="html/T_Rackspace_Threading_IAsyncDisposable.htm" />
     <HelpKINode Title="about IAsyncDisposable interface" Url="html/T_Rackspace_Threading_IAsyncDisposable.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_Rackspace_Threading_IAsyncDisposable.htm" />
   </HelpKINode>
   <HelpKINode Title="IAsyncDisposable.DisposeAsync method" Url="html/M_Rackspace_Threading_IAsyncDisposable_DisposeAsync.htm" />
+  <HelpKINode Title="IAsyncStateMachine interface">
+    <HelpKINode Title="IAsyncStateMachine Interface" Url="html/T_System_Runtime_CompilerServices_IAsyncStateMachine.htm" />
+    <HelpKINode Title="about IAsyncStateMachine interface" Url="html/T_System_Runtime_CompilerServices_IAsyncStateMachine.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_System_Runtime_CompilerServices_IAsyncStateMachine.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IAsyncStateMachine.MoveNext method" Url="html/M_System_Runtime_CompilerServices_IAsyncStateMachine_MoveNext.htm" />
+  <HelpKINode Title="IAsyncStateMachine.SetStateMachine method" Url="html/M_System_Runtime_CompilerServices_IAsyncStateMachine_SetStateMachine.htm" />
+  <HelpKINode Title="ICriticalNotifyCompletion interface">
+    <HelpKINode Title="ICriticalNotifyCompletion Interface" Url="html/T_System_Runtime_CompilerServices_ICriticalNotifyCompletion.htm" />
+    <HelpKINode Title="about ICriticalNotifyCompletion interface" Url="html/T_System_Runtime_CompilerServices_ICriticalNotifyCompletion.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_System_Runtime_CompilerServices_ICriticalNotifyCompletion.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ICriticalNotifyCompletion.UnsafeOnCompleted method" Url="html/M_System_Runtime_CompilerServices_ICriticalNotifyCompletion_UnsafeOnCompleted.htm" />
+  <HelpKINode Title="INotifyCompletion interface">
+    <HelpKINode Title="INotifyCompletion Interface" Url="html/T_System_Runtime_CompilerServices_INotifyCompletion.htm" />
+    <HelpKINode Title="about INotifyCompletion interface" Url="html/T_System_Runtime_CompilerServices_INotifyCompletion.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_System_Runtime_CompilerServices_INotifyCompletion.htm" />
+  </HelpKINode>
+  <HelpKINode Title="INotifyCompletion.OnCompleted method" Url="html/M_System_Runtime_CompilerServices_INotifyCompletion_OnCompleted.htm" />
   <HelpKINode Title="IProgress(Of T) interface">
     <HelpKINode Title="IProgress(T) Interface" Url="html/T_System_IProgress_1.htm" />
     <HelpKINode Title="about IProgress(Of T) interface" Url="html/T_System_IProgress_1.htm" />
@@ -68,9 +241,45 @@
   </HelpKINode>
   <HelpKINode Title="IProgress&lt;T&gt;.Report explicitly implemented method" Url="html/M_Rackspace_Threading_Progress_1_System_IProgress{T}_Report.htm" />
   <HelpKINode Title="IProgress&lt;T&gt;.Report method" Url="html/M_System_IProgress_1_Report.htm" />
+  <HelpKINode Title="IsCompleted property">
+    <HelpKINode Title="ConfiguredTaskAwaitable(TResult).ConfiguredTaskAwaiter.IsCompleted Property " Url="html/P_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter_IsCompleted.htm" />
+    <HelpKINode Title="ConfiguredTaskAwaitable.ConfiguredTaskAwaiter.IsCompleted Property " Url="html/P_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_IsCompleted.htm" />
+    <HelpKINode Title="TaskAwaiter(TResult).IsCompleted Property " Url="html/P_Microsoft_Runtime_CompilerServices_TaskAwaiter_1_IsCompleted.htm" />
+    <HelpKINode Title="TaskAwaiter.IsCompleted Property " Url="html/P_Microsoft_Runtime_CompilerServices_TaskAwaiter_IsCompleted.htm" />
+    <HelpKINode Title="YieldAwaitable.YieldAwaiter.IsCompleted Property " Url="html/P_Microsoft_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_IsCompleted.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IteratorStateMachineAttribute class">
+    <HelpKINode Title="IteratorStateMachineAttribute Class" Url="html/T_System_Runtime_CompilerServices_IteratorStateMachineAttribute.htm" />
+    <HelpKINode Title="about IteratorStateMachineAttribute class" Url="html/T_System_Runtime_CompilerServices_IteratorStateMachineAttribute.htm" />
+    <HelpKINode Title="constructor" Url="html/M_System_Runtime_CompilerServices_IteratorStateMachineAttribute__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_System_Runtime_CompilerServices_IteratorStateMachineAttribute.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_System_Runtime_CompilerServices_IteratorStateMachineAttribute.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IteratorStateMachineAttribute.IteratorStateMachineAttribute constructor" Url="html/M_System_Runtime_CompilerServices_IteratorStateMachineAttribute__ctor.htm" />
   <HelpKINode Title="license agreement" Url="html/42ba1007-d64f-410e-af6c-169426597465.htm" />
+  <HelpKINode Title="Microsoft.Runtime.CompilerServices namespace" Url="html/N_Microsoft_Runtime_CompilerServices.htm" />
+  <HelpKINode Title="Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable structure" Url="html/T_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable.htm" />
+  <HelpKINode Title="Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable(Of TResult) structure" Url="html/T_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1.htm" />
+  <HelpKINode Title="Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable(Of TResult).ConfiguredTaskAwaiter structure" Url="html/T_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter.htm" />
+  <HelpKINode Title="Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter structure" Url="html/T_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter.htm" />
+  <HelpKINode Title="Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable&lt;TResult&gt; structure" Url="html/T_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1.htm" />
+  <HelpKINode Title="Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable&lt;TResult&gt;.ConfiguredTaskAwaiter structure" Url="html/T_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter.htm" />
+  <HelpKINode Title="Microsoft.Runtime.CompilerServices.TaskAwaiter structure" Url="html/T_Microsoft_Runtime_CompilerServices_TaskAwaiter.htm" />
+  <HelpKINode Title="Microsoft.Runtime.CompilerServices.TaskAwaiter(Of TResult) structure" Url="html/T_Microsoft_Runtime_CompilerServices_TaskAwaiter_1.htm" />
+  <HelpKINode Title="Microsoft.Runtime.CompilerServices.TaskAwaiter&lt;TResult&gt; structure" Url="html/T_Microsoft_Runtime_CompilerServices_TaskAwaiter_1.htm" />
+  <HelpKINode Title="Microsoft.Runtime.CompilerServices.YieldAwaitable structure" Url="html/T_Microsoft_Runtime_CompilerServices_YieldAwaitable.htm" />
+  <HelpKINode Title="Microsoft.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter structure" Url="html/T_Microsoft_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter.htm" />
+  <HelpKINode Title="MoveNext method" Url="html/M_System_Runtime_CompilerServices_IAsyncStateMachine_MoveNext.htm" />
   <HelpKINode Title="ObserveExceptions(Of TTask) method" Url="html/M_Rackspace_Threading_CoreTaskExtensions_ObserveExceptions__1.htm" />
   <HelpKINode Title="ObserveExceptions&lt;TTask&gt; method" Url="html/M_Rackspace_Threading_CoreTaskExtensions_ObserveExceptions__1.htm" />
+  <HelpKINode Title="OnCompleted method">
+    <HelpKINode Title="ConfiguredTaskAwaitable(TResult).ConfiguredTaskAwaiter.OnCompleted Method " Url="html/M_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter_OnCompleted.htm" />
+    <HelpKINode Title="ConfiguredTaskAwaitable.ConfiguredTaskAwaiter.OnCompleted Method " Url="html/M_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_OnCompleted.htm" />
+    <HelpKINode Title="INotifyCompletion.OnCompleted Method " Url="html/M_System_Runtime_CompilerServices_INotifyCompletion_OnCompleted.htm" />
+    <HelpKINode Title="TaskAwaiter(TResult).OnCompleted Method " Url="html/M_Microsoft_Runtime_CompilerServices_TaskAwaiter_1_OnCompleted.htm" />
+    <HelpKINode Title="TaskAwaiter.OnCompleted Method " Url="html/M_Microsoft_Runtime_CompilerServices_TaskAwaiter_OnCompleted.htm" />
+    <HelpKINode Title="YieldAwaitable.YieldAwaiter.OnCompleted Method " Url="html/M_Microsoft_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_OnCompleted.htm" />
+  </HelpKINode>
   <HelpKINode Title="OnReport method" Url="html/M_Rackspace_Threading_Progress_1_OnReport.htm" />
   <HelpKINode Title="Progress property" Url="html/P_Rackspace_Threading_ProgressChangedEventArgs_1_Progress.htm" />
   <HelpKINode Title="Progress(Of T) class">
@@ -131,9 +340,45 @@
   <HelpKINode Title="ReadAsync method" Url="html/Overload_Rackspace_Threading_StreamExtensions_ReadAsync.htm" />
   <HelpKINode Title="Report method" Url="html/M_System_IProgress_1_Report.htm" />
   <HelpKINode Title="Select method" Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Select.htm" />
+  <HelpKINode Title="SetException method">
+    <HelpKINode Title="AsyncTaskMethodBuilder(TResult).SetException Method " Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_SetException.htm" />
+    <HelpKINode Title="AsyncTaskMethodBuilder.SetException Method " Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_SetException.htm" />
+    <HelpKINode Title="AsyncVoidMethodBuilder.SetException Method " Url="html/M_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_SetException.htm" />
+  </HelpKINode>
   <HelpKINode Title="SetFromFailedTask(Of TResult) method" Url="html/M_Rackspace_Threading_TaskCompletionSourceExtensions_SetFromFailedTask__1.htm" />
   <HelpKINode Title="SetFromFailedTask&lt;TResult&gt; method" Url="html/M_Rackspace_Threading_TaskCompletionSourceExtensions_SetFromFailedTask__1.htm" />
   <HelpKINode Title="SetFromTask method" Url="html/Overload_Rackspace_Threading_TaskCompletionSourceExtensions_SetFromTask.htm" />
+  <HelpKINode Title="SetResult method">
+    <HelpKINode Title="AsyncTaskMethodBuilder(TResult).SetResult Method " Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_SetResult.htm" />
+    <HelpKINode Title="AsyncTaskMethodBuilder.SetResult Method " Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_SetResult.htm" />
+    <HelpKINode Title="AsyncVoidMethodBuilder.SetResult Method " Url="html/M_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_SetResult.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SetStateMachine method">
+    <HelpKINode Title="AsyncTaskMethodBuilder(TResult).SetStateMachine Method " Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_SetStateMachine.htm" />
+    <HelpKINode Title="AsyncTaskMethodBuilder.SetStateMachine Method " Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_SetStateMachine.htm" />
+    <HelpKINode Title="AsyncVoidMethodBuilder.SetStateMachine Method " Url="html/M_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_SetStateMachine.htm" />
+    <HelpKINode Title="IAsyncStateMachine.SetStateMachine Method " Url="html/M_System_Runtime_CompilerServices_IAsyncStateMachine_SetStateMachine.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Start(Of TStateMachine) method">
+    <HelpKINode Title="AsyncTaskMethodBuilder(TResult).Start(TStateMachine) Method " Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_Start__1.htm" />
+    <HelpKINode Title="AsyncTaskMethodBuilder.Start(TStateMachine) Method " Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_Start__1.htm" />
+    <HelpKINode Title="AsyncVoidMethodBuilder.Start(TStateMachine) Method " Url="html/M_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_Start__1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Start&lt;TStateMachine&gt; method">
+    <HelpKINode Title="AsyncTaskMethodBuilder(TResult).Start(TStateMachine) Method " Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_Start__1.htm" />
+    <HelpKINode Title="AsyncTaskMethodBuilder.Start(TStateMachine) Method " Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_Start__1.htm" />
+    <HelpKINode Title="AsyncVoidMethodBuilder.Start(TStateMachine) Method " Url="html/M_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_Start__1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="StateMachineAttribute class">
+    <HelpKINode Title="StateMachineAttribute Class" Url="html/T_System_Runtime_CompilerServices_StateMachineAttribute.htm" />
+    <HelpKINode Title="about StateMachineAttribute class" Url="html/T_System_Runtime_CompilerServices_StateMachineAttribute.htm" />
+    <HelpKINode Title="constructor" Url="html/M_System_Runtime_CompilerServices_StateMachineAttribute__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_System_Runtime_CompilerServices_StateMachineAttribute.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_System_Runtime_CompilerServices_StateMachineAttribute.htm" />
+  </HelpKINode>
+  <HelpKINode Title="StateMachineAttribute.StateMachineAttribute constructor" Url="html/M_System_Runtime_CompilerServices_StateMachineAttribute__ctor.htm" />
+  <HelpKINode Title="StateMachineAttribute.StateMachineType property" Url="html/P_System_Runtime_CompilerServices_StateMachineAttribute_StateMachineType.htm" />
+  <HelpKINode Title="StateMachineType property" Url="html/P_System_Runtime_CompilerServices_StateMachineAttribute_StateMachineType.htm" />
   <HelpKINode Title="StreamExtensions class">
     <HelpKINode Title="StreamExtensions Class" Url="html/T_Rackspace_Threading_StreamExtensions.htm" />
     <HelpKINode Title="about StreamExtensions class" Url="html/T_Rackspace_Threading_StreamExtensions.htm" />
@@ -146,6 +391,51 @@
   <HelpKINode Title="System namespace" Url="html/N_System.htm" />
   <HelpKINode Title="System.IProgress(Of T) interface" Url="html/T_System_IProgress_1.htm" />
   <HelpKINode Title="System.IProgress&lt;T&gt; interface" Url="html/T_System_IProgress_1.htm" />
+  <HelpKINode Title="System.Runtime.CompilerServices namespace" Url="html/N_System_Runtime_CompilerServices.htm" />
+  <HelpKINode Title="System.Runtime.CompilerServices.AsyncStateMachineAttribute class" Url="html/T_System_Runtime_CompilerServices_AsyncStateMachineAttribute.htm" />
+  <HelpKINode Title="System.Runtime.CompilerServices.AsyncTaskMethodBuilder structure" Url="html/T_System_Runtime_CompilerServices_AsyncTaskMethodBuilder.htm" />
+  <HelpKINode Title="System.Runtime.CompilerServices.AsyncTaskMethodBuilder(Of TResult) structure" Url="html/T_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1.htm" />
+  <HelpKINode Title="System.Runtime.CompilerServices.AsyncTaskMethodBuilder&lt;TResult&gt; structure" Url="html/T_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1.htm" />
+  <HelpKINode Title="System.Runtime.CompilerServices.AsyncVoidMethodBuilder structure" Url="html/T_System_Runtime_CompilerServices_AsyncVoidMethodBuilder.htm" />
+  <HelpKINode Title="System.Runtime.CompilerServices.IAsyncStateMachine interface" Url="html/T_System_Runtime_CompilerServices_IAsyncStateMachine.htm" />
+  <HelpKINode Title="System.Runtime.CompilerServices.ICriticalNotifyCompletion interface" Url="html/T_System_Runtime_CompilerServices_ICriticalNotifyCompletion.htm" />
+  <HelpKINode Title="System.Runtime.CompilerServices.INotifyCompletion interface" Url="html/T_System_Runtime_CompilerServices_INotifyCompletion.htm" />
+  <HelpKINode Title="System.Runtime.CompilerServices.IteratorStateMachineAttribute class" Url="html/T_System_Runtime_CompilerServices_IteratorStateMachineAttribute.htm" />
+  <HelpKINode Title="System.Runtime.CompilerServices.StateMachineAttribute class" Url="html/T_System_Runtime_CompilerServices_StateMachineAttribute.htm" />
+  <HelpKINode Title="Task property">
+    <HelpKINode Title="AsyncTaskMethodBuilder(TResult).Task Property " Url="html/P_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_Task.htm" />
+    <HelpKINode Title="AsyncTaskMethodBuilder.Task Property " Url="html/P_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_Task.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TaskAwaiter structure">
+    <HelpKINode Title="TaskAwaiter Structure" Url="html/T_Microsoft_Runtime_CompilerServices_TaskAwaiter.htm" />
+    <HelpKINode Title="about TaskAwaiter structure" Url="html/T_Microsoft_Runtime_CompilerServices_TaskAwaiter.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Microsoft_Runtime_CompilerServices_TaskAwaiter.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Microsoft_Runtime_CompilerServices_TaskAwaiter.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TaskAwaiter(Of TResult) structure">
+    <HelpKINode Title="TaskAwaiter(TResult) Structure" Url="html/T_Microsoft_Runtime_CompilerServices_TaskAwaiter_1.htm" />
+    <HelpKINode Title="about TaskAwaiter(Of TResult) structure" Url="html/T_Microsoft_Runtime_CompilerServices_TaskAwaiter_1.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Microsoft_Runtime_CompilerServices_TaskAwaiter_1.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Microsoft_Runtime_CompilerServices_TaskAwaiter_1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TaskAwaiter(Of TResult).GetResult method" Url="html/M_Microsoft_Runtime_CompilerServices_TaskAwaiter_1_GetResult.htm" />
+  <HelpKINode Title="TaskAwaiter(Of TResult).IsCompleted property" Url="html/P_Microsoft_Runtime_CompilerServices_TaskAwaiter_1_IsCompleted.htm" />
+  <HelpKINode Title="TaskAwaiter(Of TResult).OnCompleted method" Url="html/M_Microsoft_Runtime_CompilerServices_TaskAwaiter_1_OnCompleted.htm" />
+  <HelpKINode Title="TaskAwaiter(Of TResult).UnsafeOnCompleted method" Url="html/M_Microsoft_Runtime_CompilerServices_TaskAwaiter_1_UnsafeOnCompleted.htm" />
+  <HelpKINode Title="TaskAwaiter.GetResult method" Url="html/M_Microsoft_Runtime_CompilerServices_TaskAwaiter_GetResult.htm" />
+  <HelpKINode Title="TaskAwaiter.IsCompleted property" Url="html/P_Microsoft_Runtime_CompilerServices_TaskAwaiter_IsCompleted.htm" />
+  <HelpKINode Title="TaskAwaiter.OnCompleted method" Url="html/M_Microsoft_Runtime_CompilerServices_TaskAwaiter_OnCompleted.htm" />
+  <HelpKINode Title="TaskAwaiter.UnsafeOnCompleted method" Url="html/M_Microsoft_Runtime_CompilerServices_TaskAwaiter_UnsafeOnCompleted.htm" />
+  <HelpKINode Title="TaskAwaiter&lt;TResult&gt; structure">
+    <HelpKINode Title="TaskAwaiter(TResult) Structure" Url="html/T_Microsoft_Runtime_CompilerServices_TaskAwaiter_1.htm" />
+    <HelpKINode Title="about TaskAwaiter&lt;TResult&gt; structure" Url="html/T_Microsoft_Runtime_CompilerServices_TaskAwaiter_1.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Microsoft_Runtime_CompilerServices_TaskAwaiter_1.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Microsoft_Runtime_CompilerServices_TaskAwaiter_1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TaskAwaiter&lt;TResult&gt;.GetResult method" Url="html/M_Microsoft_Runtime_CompilerServices_TaskAwaiter_1_GetResult.htm" />
+  <HelpKINode Title="TaskAwaiter&lt;TResult&gt;.IsCompleted property" Url="html/P_Microsoft_Runtime_CompilerServices_TaskAwaiter_1_IsCompleted.htm" />
+  <HelpKINode Title="TaskAwaiter&lt;TResult&gt;.OnCompleted method" Url="html/M_Microsoft_Runtime_CompilerServices_TaskAwaiter_1_OnCompleted.htm" />
+  <HelpKINode Title="TaskAwaiter&lt;TResult&gt;.UnsafeOnCompleted method" Url="html/M_Microsoft_Runtime_CompilerServices_TaskAwaiter_1_UnsafeOnCompleted.htm" />
   <HelpKINode Title="TaskBlocks class">
     <HelpKINode Title="TaskBlocks Class" Url="html/T_Rackspace_Threading_TaskBlocks.htm" />
     <HelpKINode Title="about TaskBlocks class" Url="html/T_Rackspace_Threading_TaskBlocks.htm" />
@@ -165,6 +455,14 @@
   <HelpKINode Title="Then method" Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Then.htm" />
   <HelpKINode Title="Threading API" Url="html/1fae0098-7351-4567-bf25-713298f07bdc.htm" />
   <HelpKINode Title="TrySetFromTask method" Url="html/Overload_Rackspace_Threading_TaskCompletionSourceExtensions_TrySetFromTask.htm" />
+  <HelpKINode Title="UnsafeOnCompleted method">
+    <HelpKINode Title="ConfiguredTaskAwaitable(TResult).ConfiguredTaskAwaiter.UnsafeOnCompleted Method " Url="html/M_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter_UnsafeOnCompleted.htm" />
+    <HelpKINode Title="ConfiguredTaskAwaitable.ConfiguredTaskAwaiter.UnsafeOnCompleted Method " Url="html/M_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_UnsafeOnCompleted.htm" />
+    <HelpKINode Title="ICriticalNotifyCompletion.UnsafeOnCompleted Method " Url="html/M_System_Runtime_CompilerServices_ICriticalNotifyCompletion_UnsafeOnCompleted.htm" />
+    <HelpKINode Title="TaskAwaiter(TResult).UnsafeOnCompleted Method " Url="html/M_Microsoft_Runtime_CompilerServices_TaskAwaiter_1_UnsafeOnCompleted.htm" />
+    <HelpKINode Title="TaskAwaiter.UnsafeOnCompleted Method " Url="html/M_Microsoft_Runtime_CompilerServices_TaskAwaiter_UnsafeOnCompleted.htm" />
+    <HelpKINode Title="YieldAwaitable.YieldAwaiter.UnsafeOnCompleted Method " Url="html/M_Microsoft_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_UnsafeOnCompleted.htm" />
+  </HelpKINode>
   <HelpKINode Title="Using method" Url="html/Overload_Rackspace_Threading_TaskBlocks_Using.htm" />
   <HelpKINode Title="WebRequestExtensions class">
     <HelpKINode Title="WebRequestExtensions Class" Url="html/T_Rackspace_Threading_WebRequestExtensions.htm" />
@@ -178,4 +476,23 @@
   <HelpKINode Title="WhenAny method" Url="html/Overload_Rackspace_Threading_DelayedTask_WhenAny.htm" />
   <HelpKINode Title="While method" Url="html/Overload_Rackspace_Threading_TaskBlocks_While.htm" />
   <HelpKINode Title="WriteAsync method" Url="html/Overload_Rackspace_Threading_StreamExtensions_WriteAsync.htm" />
+  <HelpKINode Title="Yield method" Url="html/M_Rackspace_Threading_DelayedTask_Yield.htm" />
+  <HelpKINode Title="YieldAwaitable structure">
+    <HelpKINode Title="YieldAwaitable Structure" Url="html/T_Microsoft_Runtime_CompilerServices_YieldAwaitable.htm" />
+    <HelpKINode Title="about YieldAwaitable structure" Url="html/T_Microsoft_Runtime_CompilerServices_YieldAwaitable.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Microsoft_Runtime_CompilerServices_YieldAwaitable.htm" />
+  </HelpKINode>
+  <HelpKINode Title="YieldAwaitable.GetAwaiter method" Url="html/M_Microsoft_Runtime_CompilerServices_YieldAwaitable_GetAwaiter.htm" />
+  <HelpKINode Title="YieldAwaitable.YieldAwaiter structure">
+    <HelpKINode Title="YieldAwaitable.YieldAwaiter Structure" Url="html/T_Microsoft_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter.htm" />
+    <HelpKINode Title="about YieldAwaitable.YieldAwaiter structure" Url="html/T_Microsoft_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter.htm" />
+  </HelpKINode>
+  <HelpKINode Title="YieldAwaitable.YieldAwaiter.GetResult method" Url="html/M_Microsoft_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_GetResult.htm" />
+  <HelpKINode Title="YieldAwaitable.YieldAwaiter.IsCompleted property" Url="html/P_Microsoft_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_IsCompleted.htm" />
+  <HelpKINode Title="YieldAwaitable.YieldAwaiter.OnCompleted method" Url="html/M_Microsoft_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_OnCompleted.htm" />
+  <HelpKINode Title="YieldAwaitable.YieldAwaiter.UnsafeOnCompleted method" Url="html/M_Microsoft_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_UnsafeOnCompleted.htm" />
+  <HelpKINode Title="YieldAwaiter structure">
+    <HelpKINode Title="methods" Url="html/Methods_T_Microsoft_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Microsoft_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter.htm" />
+  </HelpKINode>
 </HelpKI>

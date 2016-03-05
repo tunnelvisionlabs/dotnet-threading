@@ -4,44 +4,115 @@
   <HelpTOCNode Title="Welcome" Url="html/50d028db-e522-4750-91a6-4ae6c97c2610.htm" />
   <HelpTOCNode Title="License Agreement" Url="html/42ba1007-d64f-410e-af6c-169426597465.htm" />
   <HelpTOCNode Title="Breaking Changes Policy" Url="html/e02b9881-f06b-4420-aace-71b176d635db.htm" />
-  <HelpTOCNode Id="43c55c85-393b-40ef-9c1a-d66715a7f545" Title="User Guide" Url="html/0a33afc9-793d-448a-950f-f03a2ca156d2.htm">
+  <HelpTOCNode Id="1e188b11-1f19-4041-8c41-c5c4a3b6891a" Title="User Guide" Url="html/0a33afc9-793d-448a-950f-f03a2ca156d2.htm">
     <HelpTOCNode Title="Installation" Url="html/3304f46f-a7d2-4af6-8b5a-11f9931ba72e.htm" />
   </HelpTOCNode>
-  <HelpTOCNode Id="bd65f755-c9fe-4ac4-964b-e36df9aa6460" Title="API Reference" Url="html/R_Project_Threading_API_Reference.htm">
-    <HelpTOCNode Id="22cafd97-6f0a-4f82-9103-24f04021de27" Title="Rackspace.Threading" Url="html/N_Rackspace_Threading.htm">
-      <HelpTOCNode Id="913a6367-23d8-49c1-a4b2-cd1a337260c9" Title="CancellationTokenSourceExtensions Class" Url="html/T_Rackspace_Threading_CancellationTokenSourceExtensions.htm">
-        <HelpTOCNode Id="8f2264d9-cffa-45de-b6e3-a968116af61e" Title="CancellationTokenSourceExtensions Methods" Url="html/Methods_T_Rackspace_Threading_CancellationTokenSourceExtensions.htm">
+  <HelpTOCNode Id="0231b1b6-f11c-4ce3-aa51-210b828fbec0" Title="API Reference" Url="html/R_Project_Threading_API_Reference.htm">
+    <HelpTOCNode Id="bfd1680e-ecc6-4826-8567-08b34809f0ef" Title="Microsoft.Runtime.CompilerServices" Url="html/N_Microsoft_Runtime_CompilerServices.htm">
+      <HelpTOCNode Id="8f9f71a5-b1d7-4a05-9de4-1317c861639d" Title="ConfiguredTaskAwaitable Structure" Url="html/T_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable.htm">
+        <HelpTOCNode Id="daa75d15-1bca-4594-860a-6a99d28dff54" Title="ConfiguredTaskAwaitable Methods" Url="html/Methods_T_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable.htm">
+          <HelpTOCNode Title="GetAwaiter Method " Url="html/M_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_GetAwaiter.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="90b1cec3-4bdb-4aac-9902-949aa3780746" Title="ConfiguredTaskAwaitable.ConfiguredTaskAwaiter Structure" Url="html/T_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter.htm">
+        <HelpTOCNode Id="c8d80756-09cd-4f77-a44c-f504ce491510" Title="ConfiguredTaskAwaiter Methods" Url="html/Methods_T_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter.htm">
+          <HelpTOCNode Title="GetResult Method " Url="html/M_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_GetResult.htm" />
+          <HelpTOCNode Title="OnCompleted Method " Url="html/M_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_OnCompleted.htm" />
+          <HelpTOCNode Title="UnsafeOnCompleted Method " Url="html/M_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_UnsafeOnCompleted.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="6651d205-08f7-4a54-8727-02113667e078" Title="ConfiguredTaskAwaiter Properties" Url="html/Properties_T_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter.htm">
+          <HelpTOCNode Title="IsCompleted Property " Url="html/P_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_IsCompleted.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="64658dc8-22d8-409b-adba-4b66adadd004" Title="ConfiguredTaskAwaitable(TResult) Structure" Url="html/T_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1.htm">
+        <HelpTOCNode Id="d233af1a-7c0a-4e5c-ac76-b063ba31e6b5" Title="ConfiguredTaskAwaitable(TResult) Methods" Url="html/Methods_T_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1.htm">
+          <HelpTOCNode Title="GetAwaiter Method " Url="html/M_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_GetAwaiter.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="ecab534d-f383-49d1-93e3-af3321592fb3" Title="ConfiguredTaskAwaitable(TResult).ConfiguredTaskAwaiter Structure" Url="html/T_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter.htm">
+        <HelpTOCNode Id="3c78ceff-b26d-4f95-a982-54fbe1411141" Title="ConfiguredTaskAwaiter Methods" Url="html/Methods_T_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter.htm">
+          <HelpTOCNode Title="GetResult Method " Url="html/M_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter_GetResult.htm" />
+          <HelpTOCNode Title="OnCompleted Method " Url="html/M_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter_OnCompleted.htm" />
+          <HelpTOCNode Title="UnsafeOnCompleted Method " Url="html/M_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter_UnsafeOnCompleted.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="f2068861-70d0-40f0-9912-ecec35d17afd" Title="ConfiguredTaskAwaiter Properties" Url="html/Properties_T_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter.htm">
+          <HelpTOCNode Title="IsCompleted Property " Url="html/P_Microsoft_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter_IsCompleted.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="3fef6eb6-ae6a-43be-a1d3-e19cbf4dd637" Title="TaskAwaiter Structure" Url="html/T_Microsoft_Runtime_CompilerServices_TaskAwaiter.htm">
+        <HelpTOCNode Id="d135dc8f-6400-465a-a3dd-48dc4d6d184d" Title="TaskAwaiter Methods" Url="html/Methods_T_Microsoft_Runtime_CompilerServices_TaskAwaiter.htm">
+          <HelpTOCNode Title="GetResult Method " Url="html/M_Microsoft_Runtime_CompilerServices_TaskAwaiter_GetResult.htm" />
+          <HelpTOCNode Title="OnCompleted Method " Url="html/M_Microsoft_Runtime_CompilerServices_TaskAwaiter_OnCompleted.htm" />
+          <HelpTOCNode Title="UnsafeOnCompleted Method " Url="html/M_Microsoft_Runtime_CompilerServices_TaskAwaiter_UnsafeOnCompleted.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="b76b5ecb-28b3-446e-9425-a354b4436d23" Title="TaskAwaiter Properties" Url="html/Properties_T_Microsoft_Runtime_CompilerServices_TaskAwaiter.htm">
+          <HelpTOCNode Title="IsCompleted Property " Url="html/P_Microsoft_Runtime_CompilerServices_TaskAwaiter_IsCompleted.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="c87f3113-4184-4338-89b9-ad903607cdc3" Title="TaskAwaiter(TResult) Structure" Url="html/T_Microsoft_Runtime_CompilerServices_TaskAwaiter_1.htm">
+        <HelpTOCNode Id="b879d9e6-1bbc-4cb5-a618-f093d4deac22" Title="TaskAwaiter(TResult) Methods" Url="html/Methods_T_Microsoft_Runtime_CompilerServices_TaskAwaiter_1.htm">
+          <HelpTOCNode Title="GetResult Method " Url="html/M_Microsoft_Runtime_CompilerServices_TaskAwaiter_1_GetResult.htm" />
+          <HelpTOCNode Title="OnCompleted Method " Url="html/M_Microsoft_Runtime_CompilerServices_TaskAwaiter_1_OnCompleted.htm" />
+          <HelpTOCNode Title="UnsafeOnCompleted Method " Url="html/M_Microsoft_Runtime_CompilerServices_TaskAwaiter_1_UnsafeOnCompleted.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="f2c839f1-97b5-42af-9c85-7f4feaa98a29" Title="TaskAwaiter(TResult) Properties" Url="html/Properties_T_Microsoft_Runtime_CompilerServices_TaskAwaiter_1.htm">
+          <HelpTOCNode Title="IsCompleted Property " Url="html/P_Microsoft_Runtime_CompilerServices_TaskAwaiter_1_IsCompleted.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="b6803e26-0d76-46c0-8a75-d1470d7ca57e" Title="YieldAwaitable Structure" Url="html/T_Microsoft_Runtime_CompilerServices_YieldAwaitable.htm">
+        <HelpTOCNode Id="903e1376-9ea4-4a8d-ac46-73fbd2b32c80" Title="YieldAwaitable Methods" Url="html/Methods_T_Microsoft_Runtime_CompilerServices_YieldAwaitable.htm">
+          <HelpTOCNode Title="GetAwaiter Method " Url="html/M_Microsoft_Runtime_CompilerServices_YieldAwaitable_GetAwaiter.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="1c1b1fc8-9d5c-4760-ad11-6da6498b554a" Title="YieldAwaitable.YieldAwaiter Structure" Url="html/T_Microsoft_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter.htm">
+        <HelpTOCNode Id="1dd4b0cb-0947-403a-968e-271bddf949cb" Title="YieldAwaiter Methods" Url="html/Methods_T_Microsoft_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter.htm">
+          <HelpTOCNode Title="GetResult Method " Url="html/M_Microsoft_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_GetResult.htm" />
+          <HelpTOCNode Title="OnCompleted Method " Url="html/M_Microsoft_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_OnCompleted.htm" />
+          <HelpTOCNode Title="UnsafeOnCompleted Method " Url="html/M_Microsoft_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_UnsafeOnCompleted.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="728eaca4-9f1f-48e5-a83e-68e173961c35" Title="YieldAwaiter Properties" Url="html/Properties_T_Microsoft_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter.htm">
+          <HelpTOCNode Title="IsCompleted Property " Url="html/P_Microsoft_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_IsCompleted.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="079448b4-86d6-4c4a-b1c2-cdea785dc9f7" Title="Rackspace.Threading" Url="html/N_Rackspace_Threading.htm">
+      <HelpTOCNode Id="8127d78e-cc7b-4edd-857f-9f3809d43beb" Title="CancellationTokenSourceExtensions Class" Url="html/T_Rackspace_Threading_CancellationTokenSourceExtensions.htm">
+        <HelpTOCNode Id="528916d4-6eb3-4114-b1d9-658fbdbaee8b" Title="CancellationTokenSourceExtensions Methods" Url="html/Methods_T_Rackspace_Threading_CancellationTokenSourceExtensions.htm">
           <HelpTOCNode Title="CancelAfter Method " Url="html/M_Rackspace_Threading_CancellationTokenSourceExtensions_CancelAfter.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="91821b9d-56e6-46d9-aa10-f98e0e1b459d" Title="CompletedTask Class" Url="html/T_Rackspace_Threading_CompletedTask.htm">
-        <HelpTOCNode Id="ca239060-2a2d-4c97-a7fa-56f42469117c" Title="CompletedTask Methods" Url="html/Methods_T_Rackspace_Threading_CompletedTask.htm">
-          <HelpTOCNode Id="e31a6bd1-4a3d-4742-9b80-27ef645e25c1" Title="Canceled Method " Url="html/Overload_Rackspace_Threading_CompletedTask_Canceled.htm">
+      <HelpTOCNode Id="cf4d332f-367f-424a-8c59-0f476f15afbf" Title="CompletedTask Class" Url="html/T_Rackspace_Threading_CompletedTask.htm">
+        <HelpTOCNode Id="d9901dd7-ffb2-4d7d-95b2-ca39851a5c29" Title="CompletedTask Methods" Url="html/Methods_T_Rackspace_Threading_CompletedTask.htm">
+          <HelpTOCNode Id="d53ce0f0-b0a7-4f11-9e91-a07249d8dc2a" Title="Canceled Method " Url="html/Overload_Rackspace_Threading_CompletedTask_Canceled.htm">
             <HelpTOCNode Title="Canceled Method " Url="html/M_Rackspace_Threading_CompletedTask_Canceled.htm" />
             <HelpTOCNode Title="Canceled(TResult) Method " Url="html/M_Rackspace_Threading_CompletedTask_Canceled__1.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="FromResult(TResult) Method " Url="html/M_Rackspace_Threading_CompletedTask_FromResult__1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="6bb98e0d-8890-4064-bdb2-b71c60caab9a" Title="CompletedTask Properties" Url="html/Properties_T_Rackspace_Threading_CompletedTask.htm">
+        <HelpTOCNode Id="5535a47b-64e1-41d3-b0e3-46eb27cdd866" Title="CompletedTask Properties" Url="html/Properties_T_Rackspace_Threading_CompletedTask.htm">
           <HelpTOCNode Title="Default Property " Url="html/P_Rackspace_Threading_CompletedTask_Default.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="b81491eb-4f06-43ab-94ea-fe9c97e3c758" Title="CoreTaskExtensions Class" Url="html/T_Rackspace_Threading_CoreTaskExtensions.htm">
-        <HelpTOCNode Id="c466aae8-09a7-42d5-a967-c0d0c03c26ab" Title="CoreTaskExtensions Methods" Url="html/Methods_T_Rackspace_Threading_CoreTaskExtensions.htm">
-          <HelpTOCNode Id="cbda6887-18ac-42b1-a785-0abc9320e2e1" Title="Catch Method " Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Catch.htm">
+      <HelpTOCNode Id="1b0b8ee1-542b-46d9-bbab-81775ab780ff" Title="CoreTaskExtensions Class" Url="html/T_Rackspace_Threading_CoreTaskExtensions.htm">
+        <HelpTOCNode Id="efd31458-8814-4d0a-8113-12cd0e1b0a2a" Title="CoreTaskExtensions Methods" Url="html/Methods_T_Rackspace_Threading_CoreTaskExtensions.htm">
+          <HelpTOCNode Id="2686cefe-5f60-46e3-b6f1-46bde93b3fb6" Title="Catch Method " Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Catch.htm">
             <HelpTOCNode Title="Catch(TException) Method (Task, Action(Task, TException))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Catch__1.htm" />
             <HelpTOCNode Title="Catch(TException) Method (Task, Func(Task, TException, Task))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Catch__1_1.htm" />
             <HelpTOCNode Title="Catch(TException, TResult) Method (Task(TResult), Func(Task(TResult), TException, Task(TResult)))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Catch__2.htm" />
             <HelpTOCNode Title="Catch(TException, TResult) Method (Task(TResult), Func(Task(TResult), TException, TResult))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Catch__2_1.htm" />
+            <HelpTOCNode Title="Catch(TException) Method (Task, Predicate(TException), Action(Task, TException))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Catch__1_2.htm" />
+            <HelpTOCNode Title="Catch(TException) Method (Task, Predicate(TException), Func(Task, TException, Task))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Catch__1_3.htm" />
+            <HelpTOCNode Title="Catch(TException, TResult) Method (Task(TResult), Predicate(TException), Func(Task(TResult), TException, Task(TResult)))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Catch__2_2.htm" />
+            <HelpTOCNode Title="Catch(TException, TResult) Method (Task(TResult), Predicate(TException), Func(Task(TResult), TException, TResult))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Catch__2_3.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="a3665f3d-1d74-443d-93f9-ad465e322dda" Title="Finally Method " Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Finally.htm">
+          <HelpTOCNode Id="99b0f982-3bfe-42d5-af03-82a04a12f597" Title="Finally Method " Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Finally.htm">
             <HelpTOCNode Title="Finally Method (Task, Action(Task))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Finally.htm" />
             <HelpTOCNode Title="Finally Method (Task, Func(Task, Task))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Finally_1.htm" />
             <HelpTOCNode Title="Finally(TResult) Method (Task(TResult), Action(Task(TResult)))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Finally__1.htm" />
             <HelpTOCNode Title="Finally(TResult) Method (Task(TResult), Func(Task(TResult), Task))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Finally__1_1.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="ObserveExceptions(TTask) Method " Url="html/M_Rackspace_Threading_CoreTaskExtensions_ObserveExceptions__1.htm" />
-          <HelpTOCNode Id="f92b582e-89fe-4347-aa74-e16b38b71fb7" Title="Select Method " Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Select.htm">
+          <HelpTOCNode Id="97264ccf-529e-4c0c-9f5f-acbe53527b56" Title="Select Method " Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Select.htm">
             <HelpTOCNode Title="Select Method (Task, Action(Task))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Select.htm" />
             <HelpTOCNode Title="Select(TResult) Method (Task, Func(Task, TResult))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Select__1.htm" />
             <HelpTOCNode Title="Select(TSource) Method (Task(TSource), Action(Task(TSource)))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Select__1_2.htm" />
@@ -51,7 +122,7 @@
             <HelpTOCNode Title="Select(TSource) Method (Task(TSource), Action(Task(TSource)), Boolean)" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Select__1_3.htm" />
             <HelpTOCNode Title="Select(TSource, TResult) Method (Task(TSource), Func(Task(TSource), TResult), Boolean)" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Select__2_1.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="45b28b65-4ed7-43b1-a0a5-cf4044e05917" Title="Then Method " Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Then.htm">
+          <HelpTOCNode Id="884d4e79-3a59-4f3f-9d89-dc2af44465f0" Title="Then Method " Url="html/Overload_Rackspace_Threading_CoreTaskExtensions_Then.htm">
             <HelpTOCNode Title="Then(TResult) Method (Task, Func(Task, Task(TResult)))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Then__1.htm" />
             <HelpTOCNode Title="Then Method (Task, Func(Task, Task))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Then.htm" />
             <HelpTOCNode Title="Then(TSource, TResult) Method (Task(TSource), Func(Task(TSource), Task(TResult)))" Url="html/M_Rackspace_Threading_CoreTaskExtensions_Then__2.htm" />
@@ -63,101 +134,102 @@
           </HelpTOCNode>
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="1f692f5a-3849-4022-895b-253900a6e920" Title="DelayedTask Class" Url="html/T_Rackspace_Threading_DelayedTask.htm">
-        <HelpTOCNode Id="85154677-c579-4e95-81fa-f7a9373e4bd4" Title="DelayedTask Methods" Url="html/Methods_T_Rackspace_Threading_DelayedTask.htm">
-          <HelpTOCNode Id="41264624-8f10-4396-9d13-460b9eaf4c63" Title="Delay Method " Url="html/Overload_Rackspace_Threading_DelayedTask_Delay.htm">
+      <HelpTOCNode Id="325c8181-5bd3-411e-9400-5accfa8de2c5" Title="DelayedTask Class" Url="html/T_Rackspace_Threading_DelayedTask.htm">
+        <HelpTOCNode Id="ec5c3b85-0018-4c24-816c-d76d2770b8cf" Title="DelayedTask Methods" Url="html/Methods_T_Rackspace_Threading_DelayedTask.htm">
+          <HelpTOCNode Id="a7ebda8c-d69f-48ec-9e5f-02283b241b3e" Title="Delay Method " Url="html/Overload_Rackspace_Threading_DelayedTask_Delay.htm">
             <HelpTOCNode Title="Delay Method (TimeSpan)" Url="html/M_Rackspace_Threading_DelayedTask_Delay.htm" />
             <HelpTOCNode Title="Delay Method (TimeSpan, CancellationToken)" Url="html/M_Rackspace_Threading_DelayedTask_Delay_1.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="fb091b0c-fb84-4530-ab1b-04b6dcabd24d" Title="WhenAll Method " Url="html/Overload_Rackspace_Threading_DelayedTask_WhenAll.htm">
+          <HelpTOCNode Id="cf2ee3f0-740d-4bb8-b646-326c7781aa52" Title="WhenAll Method " Url="html/Overload_Rackspace_Threading_DelayedTask_WhenAll.htm">
             <HelpTOCNode Title="WhenAll(TResult) Method (IEnumerable(Task(TResult)))" Url="html/M_Rackspace_Threading_DelayedTask_WhenAll__1.htm" />
             <HelpTOCNode Title="WhenAll Method (IEnumerable(Task))" Url="html/M_Rackspace_Threading_DelayedTask_WhenAll.htm" />
             <HelpTOCNode Title="WhenAll Method (Task[])" Url="html/M_Rackspace_Threading_DelayedTask_WhenAll_1.htm" />
             <HelpTOCNode Title="WhenAll(TResult) Method (Task(TResult)[])" Url="html/M_Rackspace_Threading_DelayedTask_WhenAll__1_1.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="12821ee7-ee56-4ce1-b8fb-89877d4b4d9e" Title="WhenAny Method " Url="html/Overload_Rackspace_Threading_DelayedTask_WhenAny.htm">
+          <HelpTOCNode Id="04678d04-f69d-450f-9f4c-31e26a754d44" Title="WhenAny Method " Url="html/Overload_Rackspace_Threading_DelayedTask_WhenAny.htm">
             <HelpTOCNode Title="WhenAny(TResult) Method (IEnumerable(Task(TResult)))" Url="html/M_Rackspace_Threading_DelayedTask_WhenAny__1.htm" />
             <HelpTOCNode Title="WhenAny Method (IEnumerable(Task))" Url="html/M_Rackspace_Threading_DelayedTask_WhenAny.htm" />
             <HelpTOCNode Title="WhenAny Method (Task[])" Url="html/M_Rackspace_Threading_DelayedTask_WhenAny_1.htm" />
             <HelpTOCNode Title="WhenAny(TResult) Method (Task(TResult)[])" Url="html/M_Rackspace_Threading_DelayedTask_WhenAny__1_1.htm" />
           </HelpTOCNode>
+          <HelpTOCNode Title="Yield Method " Url="html/M_Rackspace_Threading_DelayedTask_Yield.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="da820a33-9448-453d-bf1c-d89f9ae0725c" Title="IAsyncDisposable Interface" Url="html/T_Rackspace_Threading_IAsyncDisposable.htm">
-        <HelpTOCNode Id="2ff6c7c7-7a7d-4e7a-bfa5-de9433c4d307" Title="IAsyncDisposable Methods" Url="html/Methods_T_Rackspace_Threading_IAsyncDisposable.htm">
+      <HelpTOCNode Id="363af078-e3c2-410b-aee0-3bc2fdf09df3" Title="IAsyncDisposable Interface" Url="html/T_Rackspace_Threading_IAsyncDisposable.htm">
+        <HelpTOCNode Id="1880b7a9-9652-4009-93fb-1181f54df647" Title="IAsyncDisposable Methods" Url="html/Methods_T_Rackspace_Threading_IAsyncDisposable.htm">
           <HelpTOCNode Title="DisposeAsync Method " Url="html/M_Rackspace_Threading_IAsyncDisposable_DisposeAsync.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="82220178-1658-4ef7-a717-5442f943aec9" Title="Progress(T) Class" Url="html/T_Rackspace_Threading_Progress_1.htm">
-        <HelpTOCNode Id="af85fa4f-b6c4-45a7-8bf0-79abd0b5f904" Title="Progress(T) Constructor " Url="html/Overload_Rackspace_Threading_Progress_1__ctor.htm">
+      <HelpTOCNode Id="95a20e67-f896-4653-8f66-e95adc7f4c36" Title="Progress(T) Class" Url="html/T_Rackspace_Threading_Progress_1.htm">
+        <HelpTOCNode Id="d2336332-129c-4e70-ae3a-614a64bab940" Title="Progress(T) Constructor " Url="html/Overload_Rackspace_Threading_Progress_1__ctor.htm">
           <HelpTOCNode Title="Progress(T) Constructor " Url="html/M_Rackspace_Threading_Progress_1__ctor.htm" />
           <HelpTOCNode Title="Progress(T) Constructor (Action(T))" Url="html/M_Rackspace_Threading_Progress_1__ctor_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="5b394e9d-3524-45b3-8514-0d8055eec5a6" Title="Progress(T) Methods" Url="html/Methods_T_Rackspace_Threading_Progress_1.htm">
+        <HelpTOCNode Id="64c17f17-140b-4c86-817e-b45aad228440" Title="Progress(T) Methods" Url="html/Methods_T_Rackspace_Threading_Progress_1.htm">
           <HelpTOCNode Title="IProgress(T).Report Method " Url="html/M_Rackspace_Threading_Progress_1_System_IProgress{T}_Report.htm" />
           <HelpTOCNode Title="OnReport Method " Url="html/M_Rackspace_Threading_Progress_1_OnReport.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="72cee37c-31ba-4ad6-9c23-2b01caa9de4b" Title="Progress(T) Events" Url="html/Events_T_Rackspace_Threading_Progress_1.htm">
+        <HelpTOCNode Id="d67bdda9-41d0-4f5d-911e-57739ed9498c" Title="Progress(T) Events" Url="html/Events_T_Rackspace_Threading_Progress_1.htm">
           <HelpTOCNode Title="ProgressChanged Event" Url="html/E_Rackspace_Threading_Progress_1_ProgressChanged.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="ccd4bba3-f09f-4701-aba6-67559cbd7f0d" Title="ProgressChangedEventArgs(T) Class" Url="html/T_Rackspace_Threading_ProgressChangedEventArgs_1.htm">
+      <HelpTOCNode Id="1a3d0d66-dd7d-4842-afef-1253191a2aac" Title="ProgressChangedEventArgs(T) Class" Url="html/T_Rackspace_Threading_ProgressChangedEventArgs_1.htm">
         <HelpTOCNode Title="ProgressChangedEventArgs(T) Constructor " Url="html/M_Rackspace_Threading_ProgressChangedEventArgs_1__ctor.htm" />
         <HelpTOCNode Title="ProgressChangedEventArgs(T) Methods" Url="html/Methods_T_Rackspace_Threading_ProgressChangedEventArgs_1.htm" />
-        <HelpTOCNode Id="c14cf26a-b4cc-48e1-b45e-5ac568407031" Title="ProgressChangedEventArgs(T) Properties" Url="html/Properties_T_Rackspace_Threading_ProgressChangedEventArgs_1.htm">
+        <HelpTOCNode Id="fb9b50f8-e4bf-492f-8e6e-1150f72dff0a" Title="ProgressChangedEventArgs(T) Properties" Url="html/Properties_T_Rackspace_Threading_ProgressChangedEventArgs_1.htm">
           <HelpTOCNode Title="Progress Property " Url="html/P_Rackspace_Threading_ProgressChangedEventArgs_1_Progress.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="2031b40b-bb0b-4568-9f95-3bed2d3a46c9" Title="StreamExtensions Class" Url="html/T_Rackspace_Threading_StreamExtensions.htm">
-        <HelpTOCNode Id="10ae143b-3dbf-40c5-b557-f73cdebfb93c" Title="StreamExtensions Methods" Url="html/Methods_T_Rackspace_Threading_StreamExtensions.htm">
-          <HelpTOCNode Id="e137eec0-0d47-421d-b126-0a7ecfba5928" Title="CopyToAsync Method " Url="html/Overload_Rackspace_Threading_StreamExtensions_CopyToAsync.htm">
+      <HelpTOCNode Id="e84ff31f-5345-419e-bccb-98b3121359ca" Title="StreamExtensions Class" Url="html/T_Rackspace_Threading_StreamExtensions.htm">
+        <HelpTOCNode Id="3727c8b1-6e1a-4bd5-8fd1-caf3b60a69e4" Title="StreamExtensions Methods" Url="html/Methods_T_Rackspace_Threading_StreamExtensions.htm">
+          <HelpTOCNode Id="732b8d1d-a66f-4f24-8071-3d93c7eb62b3" Title="CopyToAsync Method " Url="html/Overload_Rackspace_Threading_StreamExtensions_CopyToAsync.htm">
             <HelpTOCNode Title="CopyToAsync Method (Stream, Stream)" Url="html/M_Rackspace_Threading_StreamExtensions_CopyToAsync.htm" />
             <HelpTOCNode Title="CopyToAsync Method (Stream, Stream, Int32)" Url="html/M_Rackspace_Threading_StreamExtensions_CopyToAsync_1.htm" />
             <HelpTOCNode Title="CopyToAsync Method (Stream, Stream, Int32, CancellationToken)" Url="html/M_Rackspace_Threading_StreamExtensions_CopyToAsync_2.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="4ef94694-673b-4f1b-aa36-3717874975c1" Title="FlushAsync Method " Url="html/Overload_Rackspace_Threading_StreamExtensions_FlushAsync.htm">
+          <HelpTOCNode Id="af28b0e1-f6f9-4ef8-8488-18c2502ee078" Title="FlushAsync Method " Url="html/Overload_Rackspace_Threading_StreamExtensions_FlushAsync.htm">
             <HelpTOCNode Title="FlushAsync Method (Stream)" Url="html/M_Rackspace_Threading_StreamExtensions_FlushAsync.htm" />
             <HelpTOCNode Title="FlushAsync Method (Stream, CancellationToken)" Url="html/M_Rackspace_Threading_StreamExtensions_FlushAsync_1.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="c523d89c-95d8-4a36-a84d-20fa284c770c" Title="ReadAsync Method " Url="html/Overload_Rackspace_Threading_StreamExtensions_ReadAsync.htm">
+          <HelpTOCNode Id="c15e0eb4-6cf7-4b58-9f98-6c1c63545ac2" Title="ReadAsync Method " Url="html/Overload_Rackspace_Threading_StreamExtensions_ReadAsync.htm">
             <HelpTOCNode Title="ReadAsync Method (Stream, Byte[], Int32, Int32)" Url="html/M_Rackspace_Threading_StreamExtensions_ReadAsync.htm" />
             <HelpTOCNode Title="ReadAsync Method (Stream, Byte[], Int32, Int32, CancellationToken)" Url="html/M_Rackspace_Threading_StreamExtensions_ReadAsync_1.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="a56160b0-2086-421f-9591-d240bb43fcd9" Title="WriteAsync Method " Url="html/Overload_Rackspace_Threading_StreamExtensions_WriteAsync.htm">
+          <HelpTOCNode Id="3e0da92b-869c-4bc1-819c-ca54ed00262c" Title="WriteAsync Method " Url="html/Overload_Rackspace_Threading_StreamExtensions_WriteAsync.htm">
             <HelpTOCNode Title="WriteAsync Method (Stream, Byte[], Int32, Int32)" Url="html/M_Rackspace_Threading_StreamExtensions_WriteAsync.htm" />
             <HelpTOCNode Title="WriteAsync Method (Stream, Byte[], Int32, Int32, CancellationToken)" Url="html/M_Rackspace_Threading_StreamExtensions_WriteAsync_1.htm" />
           </HelpTOCNode>
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="9f00d6c8-b8bf-4926-8bfc-5b84d98fc738" Title="TaskBlocks Class" Url="html/T_Rackspace_Threading_TaskBlocks.htm">
-        <HelpTOCNode Id="aaf9c5ed-3baf-4cb0-aaf0-66a3b2caaadf" Title="TaskBlocks Methods" Url="html/Methods_T_Rackspace_Threading_TaskBlocks.htm">
-          <HelpTOCNode Id="835f61d2-f3d1-40cb-a8cc-d8a551cc4866" Title="Using Method " Url="html/Overload_Rackspace_Threading_TaskBlocks_Using.htm">
+      <HelpTOCNode Id="7af78b0d-e0fe-4dc6-a708-6e8f37e1aadb" Title="TaskBlocks Class" Url="html/T_Rackspace_Threading_TaskBlocks.htm">
+        <HelpTOCNode Id="ac074352-6959-4fbc-bf88-44a6dae22762" Title="TaskBlocks Methods" Url="html/Methods_T_Rackspace_Threading_TaskBlocks.htm">
+          <HelpTOCNode Id="307d4852-d590-4ee5-b2df-38522199b200" Title="Using Method " Url="html/Overload_Rackspace_Threading_TaskBlocks_Using.htm">
             <HelpTOCNode Title="Using(TResource, TResult) Method (Func(Task(TResource)), Func(Task(TResource), Task(TResult)))" Url="html/M_Rackspace_Threading_TaskBlocks_Using__2.htm" />
             <HelpTOCNode Title="Using(TResource) Method (Func(Task(TResource)), Func(Task(TResource), Task))" Url="html/M_Rackspace_Threading_TaskBlocks_Using__1.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="fce86ac3-4a0e-49c7-840b-55cfd7115d38" Title="While Method " Url="html/Overload_Rackspace_Threading_TaskBlocks_While.htm">
+          <HelpTOCNode Id="2a51ad2c-7253-4188-a611-98fda7b7aa7d" Title="While Method " Url="html/Overload_Rackspace_Threading_TaskBlocks_While.htm">
             <HelpTOCNode Title="While Method (Func(Boolean), Func(Task))" Url="html/M_Rackspace_Threading_TaskBlocks_While.htm" />
             <HelpTOCNode Title="While Method (Func(Task(Boolean)), Func(Task))" Url="html/M_Rackspace_Threading_TaskBlocks_While_1.htm" />
           </HelpTOCNode>
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="9c4edca2-e6d3-4e0e-940e-5509dc4166a6" Title="TaskCompletionSourceExtensions Class" Url="html/T_Rackspace_Threading_TaskCompletionSourceExtensions.htm">
-        <HelpTOCNode Id="a30e80f8-3187-4305-9ffa-f8049f2f6ee6" Title="TaskCompletionSourceExtensions Methods" Url="html/Methods_T_Rackspace_Threading_TaskCompletionSourceExtensions.htm">
+      <HelpTOCNode Id="61b8444a-c62a-4844-8c7f-a527a074d392" Title="TaskCompletionSourceExtensions Class" Url="html/T_Rackspace_Threading_TaskCompletionSourceExtensions.htm">
+        <HelpTOCNode Id="eb54bb46-cbee-4ee4-8eb3-9d0441b20a3b" Title="TaskCompletionSourceExtensions Methods" Url="html/Methods_T_Rackspace_Threading_TaskCompletionSourceExtensions.htm">
           <HelpTOCNode Title="SetFromFailedTask(TResult) Method " Url="html/M_Rackspace_Threading_TaskCompletionSourceExtensions_SetFromFailedTask__1.htm" />
-          <HelpTOCNode Id="961765e1-f0a1-4f3c-bebc-1a6b0a27a34d" Title="SetFromTask Method " Url="html/Overload_Rackspace_Threading_TaskCompletionSourceExtensions_SetFromTask.htm">
+          <HelpTOCNode Id="d10b2972-65a6-4753-9786-018c2097c64a" Title="SetFromTask Method " Url="html/Overload_Rackspace_Threading_TaskCompletionSourceExtensions_SetFromTask.htm">
             <HelpTOCNode Title="SetFromTask(TSource, TResult) Method (TaskCompletionSource(TResult), Task(TSource))" Url="html/M_Rackspace_Threading_TaskCompletionSourceExtensions_SetFromTask__2.htm" />
             <HelpTOCNode Title="SetFromTask(TResult) Method (TaskCompletionSource(TResult), Task, TResult)" Url="html/M_Rackspace_Threading_TaskCompletionSourceExtensions_SetFromTask__1.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="e0222e4c-4829-45fb-9d3a-5198b23688f2" Title="TrySetFromTask Method " Url="html/Overload_Rackspace_Threading_TaskCompletionSourceExtensions_TrySetFromTask.htm">
+          <HelpTOCNode Id="426122c9-68a3-44bd-af02-0298f539517c" Title="TrySetFromTask Method " Url="html/Overload_Rackspace_Threading_TaskCompletionSourceExtensions_TrySetFromTask.htm">
             <HelpTOCNode Title="TrySetFromTask(TSource, TResult) Method (TaskCompletionSource(TResult), Task(TSource))" Url="html/M_Rackspace_Threading_TaskCompletionSourceExtensions_TrySetFromTask__2.htm" />
             <HelpTOCNode Title="TrySetFromTask(TResult) Method (TaskCompletionSource(TResult), Task, TResult)" Url="html/M_Rackspace_Threading_TaskCompletionSourceExtensions_TrySetFromTask__1.htm" />
           </HelpTOCNode>
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="743efdf1-ed05-41e6-ba3e-33756634a3b0" Title="WebRequestExtensions Class" Url="html/T_Rackspace_Threading_WebRequestExtensions.htm">
-        <HelpTOCNode Id="c75a9a32-0f60-47de-bf31-254dba0e25fd" Title="WebRequestExtensions Methods" Url="html/Methods_T_Rackspace_Threading_WebRequestExtensions.htm">
+      <HelpTOCNode Id="8af15b06-3d09-434a-bff7-09724142a531" Title="WebRequestExtensions Class" Url="html/T_Rackspace_Threading_WebRequestExtensions.htm">
+        <HelpTOCNode Id="fee5d6ca-f0bc-4f26-9994-5cf36e966711" Title="WebRequestExtensions Methods" Url="html/Methods_T_Rackspace_Threading_WebRequestExtensions.htm">
           <HelpTOCNode Title="GetRequestStreamAsync Method " Url="html/M_Rackspace_Threading_WebRequestExtensions_GetRequestStreamAsync.htm" />
-          <HelpTOCNode Id="31b9c7c2-023d-45a4-b0fb-83d0ac2d16e1" Title="GetResponseAsync Method " Url="html/Overload_Rackspace_Threading_WebRequestExtensions_GetResponseAsync.htm">
+          <HelpTOCNode Id="44463e35-fc64-45a0-aab6-50282c6fda7f" Title="GetResponseAsync Method " Url="html/Overload_Rackspace_Threading_WebRequestExtensions_GetResponseAsync.htm">
             <HelpTOCNode Title="GetResponseAsync Method (WebRequest)" Url="html/M_Rackspace_Threading_WebRequestExtensions_GetResponseAsync.htm" />
             <HelpTOCNode Title="GetResponseAsync Method (WebRequest, CancellationToken)" Url="html/M_Rackspace_Threading_WebRequestExtensions_GetResponseAsync_2.htm" />
             <HelpTOCNode Title="GetResponseAsync Method (WebRequest, Boolean, CancellationToken)" Url="html/M_Rackspace_Threading_WebRequestExtensions_GetResponseAsync_1.htm" />
@@ -165,10 +237,84 @@
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="4246ec59-20b7-4c97-8024-6d99757cd05f" Title="System" Url="html/N_System.htm">
-      <HelpTOCNode Id="ac1e587a-4e71-46a0-aa02-9e41668ee4fa" Title="IProgress(T) Interface" Url="html/T_System_IProgress_1.htm">
-        <HelpTOCNode Id="3ac32267-1e2b-4c23-92d0-76635296ffdb" Title="IProgress(T) Methods" Url="html/Methods_T_System_IProgress_1.htm">
+    <HelpTOCNode Id="cac2fc37-f62a-407e-b7b4-7f85bd25ea8e" Title="System" Url="html/N_System.htm">
+      <HelpTOCNode Id="1b524262-cc6c-46e0-9d45-a055b66f5795" Title="IProgress(T) Interface" Url="html/T_System_IProgress_1.htm">
+        <HelpTOCNode Id="62579f6f-c36a-4758-bebf-5cb9505bf340" Title="IProgress(T) Methods" Url="html/Methods_T_System_IProgress_1.htm">
           <HelpTOCNode Title="Report Method " Url="html/M_System_IProgress_1_Report.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="212c0abf-8c26-4e49-8130-e5575f7374f9" Title="System.Runtime.CompilerServices" Url="html/N_System_Runtime_CompilerServices.htm">
+      <HelpTOCNode Id="0c3c6360-ee97-46fe-a4a3-fed78f6886da" Title="AsyncStateMachineAttribute Class" Url="html/T_System_Runtime_CompilerServices_AsyncStateMachineAttribute.htm">
+        <HelpTOCNode Title="AsyncStateMachineAttribute Constructor " Url="html/M_System_Runtime_CompilerServices_AsyncStateMachineAttribute__ctor.htm" />
+        <HelpTOCNode Title="AsyncStateMachineAttribute Methods" Url="html/Methods_T_System_Runtime_CompilerServices_AsyncStateMachineAttribute.htm" />
+        <HelpTOCNode Title="AsyncStateMachineAttribute Properties" Url="html/Properties_T_System_Runtime_CompilerServices_AsyncStateMachineAttribute.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="0f29cc57-ab04-4a41-913f-312b9119201b" Title="AsyncTaskMethodBuilder Structure" Url="html/T_System_Runtime_CompilerServices_AsyncTaskMethodBuilder.htm">
+        <HelpTOCNode Id="4f2ce549-6654-4516-aa5b-11232924eddb" Title="AsyncTaskMethodBuilder Methods" Url="html/Methods_T_System_Runtime_CompilerServices_AsyncTaskMethodBuilder.htm">
+          <HelpTOCNode Title="AwaitOnCompleted(TAwaiter, TStateMachine) Method " Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_AwaitOnCompleted__2.htm" />
+          <HelpTOCNode Title="AwaitUnsafeOnCompleted(TAwaiter, TStateMachine) Method " Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted__2.htm" />
+          <HelpTOCNode Title="Create Method " Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_Create.htm" />
+          <HelpTOCNode Title="SetException Method " Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_SetException.htm" />
+          <HelpTOCNode Title="SetResult Method " Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_SetResult.htm" />
+          <HelpTOCNode Title="SetStateMachine Method " Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_SetStateMachine.htm" />
+          <HelpTOCNode Title="Start(TStateMachine) Method " Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_Start__1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="6d2e4b3c-acd9-4471-a898-98a0b080cc91" Title="AsyncTaskMethodBuilder Properties" Url="html/Properties_T_System_Runtime_CompilerServices_AsyncTaskMethodBuilder.htm">
+          <HelpTOCNode Title="Task Property " Url="html/P_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_Task.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="0546999b-a7c8-45b6-ac39-a957e092d00e" Title="AsyncTaskMethodBuilder(TResult) Structure" Url="html/T_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1.htm">
+        <HelpTOCNode Id="da9774a9-47e9-4153-9b13-236ebe066fc2" Title="AsyncTaskMethodBuilder(TResult) Methods" Url="html/Methods_T_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1.htm">
+          <HelpTOCNode Title="AwaitOnCompleted(TAwaiter, TStateMachine) Method " Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_AwaitOnCompleted__2.htm" />
+          <HelpTOCNode Title="AwaitUnsafeOnCompleted(TAwaiter, TStateMachine) Method " Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_AwaitUnsafeOnCompleted__2.htm" />
+          <HelpTOCNode Title="Create Method " Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_Create.htm" />
+          <HelpTOCNode Title="SetException Method " Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_SetException.htm" />
+          <HelpTOCNode Title="SetResult Method " Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_SetResult.htm" />
+          <HelpTOCNode Title="SetStateMachine Method " Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_SetStateMachine.htm" />
+          <HelpTOCNode Title="Start(TStateMachine) Method " Url="html/M_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_Start__1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="5156b5a2-e214-4bba-a2a8-a0529a0d1040" Title="AsyncTaskMethodBuilder(TResult) Properties" Url="html/Properties_T_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1.htm">
+          <HelpTOCNode Title="Task Property " Url="html/P_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_Task.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="10338477-8542-4306-97d0-316905c46698" Title="AsyncVoidMethodBuilder Structure" Url="html/T_System_Runtime_CompilerServices_AsyncVoidMethodBuilder.htm">
+        <HelpTOCNode Id="a737089b-cc82-48cc-bb89-5114d57f93b9" Title="AsyncVoidMethodBuilder Methods" Url="html/Methods_T_System_Runtime_CompilerServices_AsyncVoidMethodBuilder.htm">
+          <HelpTOCNode Title="AwaitOnCompleted(TAwaiter, TStateMachine) Method " Url="html/M_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_AwaitOnCompleted__2.htm" />
+          <HelpTOCNode Title="AwaitUnsafeOnCompleted(TAwaiter, TStateMachine) Method " Url="html/M_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_AwaitUnsafeOnCompleted__2.htm" />
+          <HelpTOCNode Title="Create Method " Url="html/M_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_Create.htm" />
+          <HelpTOCNode Title="SetException Method " Url="html/M_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_SetException.htm" />
+          <HelpTOCNode Title="SetResult Method " Url="html/M_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_SetResult.htm" />
+          <HelpTOCNode Title="SetStateMachine Method " Url="html/M_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_SetStateMachine.htm" />
+          <HelpTOCNode Title="Start(TStateMachine) Method " Url="html/M_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_Start__1.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="72554c1a-e0f3-45bf-b5c3-6259a2258c66" Title="IAsyncStateMachine Interface" Url="html/T_System_Runtime_CompilerServices_IAsyncStateMachine.htm">
+        <HelpTOCNode Id="5092cc5d-d2af-4fc0-a7eb-f05214cedeaa" Title="IAsyncStateMachine Methods" Url="html/Methods_T_System_Runtime_CompilerServices_IAsyncStateMachine.htm">
+          <HelpTOCNode Title="MoveNext Method " Url="html/M_System_Runtime_CompilerServices_IAsyncStateMachine_MoveNext.htm" />
+          <HelpTOCNode Title="SetStateMachine Method " Url="html/M_System_Runtime_CompilerServices_IAsyncStateMachine_SetStateMachine.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="0b5fb8da-d52c-4f1f-92b4-e45a8df405a6" Title="ICriticalNotifyCompletion Interface" Url="html/T_System_Runtime_CompilerServices_ICriticalNotifyCompletion.htm">
+        <HelpTOCNode Id="f2ba428a-5d44-4105-b2e5-ff59af77d8da" Title="ICriticalNotifyCompletion Methods" Url="html/Methods_T_System_Runtime_CompilerServices_ICriticalNotifyCompletion.htm">
+          <HelpTOCNode Title="UnsafeOnCompleted Method " Url="html/M_System_Runtime_CompilerServices_ICriticalNotifyCompletion_UnsafeOnCompleted.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="923b1492-a1d4-4b2b-ae1b-3b022f53aa97" Title="INotifyCompletion Interface" Url="html/T_System_Runtime_CompilerServices_INotifyCompletion.htm">
+        <HelpTOCNode Id="49812f21-17f1-44ce-991f-c9c968423aed" Title="INotifyCompletion Methods" Url="html/Methods_T_System_Runtime_CompilerServices_INotifyCompletion.htm">
+          <HelpTOCNode Title="OnCompleted Method " Url="html/M_System_Runtime_CompilerServices_INotifyCompletion_OnCompleted.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="f73eb381-07ae-4113-94a7-7595bec62468" Title="IteratorStateMachineAttribute Class" Url="html/T_System_Runtime_CompilerServices_IteratorStateMachineAttribute.htm">
+        <HelpTOCNode Title="IteratorStateMachineAttribute Constructor " Url="html/M_System_Runtime_CompilerServices_IteratorStateMachineAttribute__ctor.htm" />
+        <HelpTOCNode Title="IteratorStateMachineAttribute Methods" Url="html/Methods_T_System_Runtime_CompilerServices_IteratorStateMachineAttribute.htm" />
+        <HelpTOCNode Title="IteratorStateMachineAttribute Properties" Url="html/Properties_T_System_Runtime_CompilerServices_IteratorStateMachineAttribute.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="82043539-130c-4701-ae8e-050332d81498" Title="StateMachineAttribute Class" Url="html/T_System_Runtime_CompilerServices_StateMachineAttribute.htm">
+        <HelpTOCNode Title="StateMachineAttribute Constructor " Url="html/M_System_Runtime_CompilerServices_StateMachineAttribute__ctor.htm" />
+        <HelpTOCNode Title="StateMachineAttribute Methods" Url="html/Methods_T_System_Runtime_CompilerServices_StateMachineAttribute.htm" />
+        <HelpTOCNode Id="8992e811-6762-4169-a89a-cec28fdf0d82" Title="StateMachineAttribute Properties" Url="html/Properties_T_System_Runtime_CompilerServices_StateMachineAttribute.htm">
+          <HelpTOCNode Title="StateMachineType Property " Url="html/P_System_Runtime_CompilerServices_StateMachineAttribute_StateMachineType.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
