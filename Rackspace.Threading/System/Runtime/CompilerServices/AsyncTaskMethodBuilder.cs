@@ -24,6 +24,7 @@ namespace System.Runtime.CompilerServices
     /// one of its <see cref="Task"/>, <see cref="SetResult"/>, or <see cref="SetException"/> members must be accessed,
     /// or else the copies may end up building distinct <see cref="Threading.Tasks.Task"/> instances.
     /// </remarks>
+    /// <preliminary/>
     public struct AsyncTaskMethodBuilder : IAsyncMethodBuilder
     {
         /// <summary>A cached <see cref="VoidResult"/> task used for builders that complete synchronously.</summary>

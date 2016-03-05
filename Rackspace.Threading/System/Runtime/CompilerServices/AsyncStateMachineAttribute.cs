@@ -14,6 +14,7 @@ namespace System.Runtime.CompilerServices
     /// <summary>
     /// Indicates whether a method is marked with the <see langword="async"/> modifier.
     /// </summary>
+    /// <preliminary/>
     [Serializable]
     [AttributeUsage(AttributeTargets.Method, Inherited = false, AllowMultiple = false)]
     public sealed class AsyncStateMachineAttribute : StateMachineAttribute

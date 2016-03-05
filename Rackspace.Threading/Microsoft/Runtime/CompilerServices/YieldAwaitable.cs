@@ -20,6 +20,7 @@ namespace Microsoft.Runtime.CompilerServices
 
     /// <summary>Provides an awaitable context for switching into a target environment.</summary>
     /// <remarks>This type is intended for compiler use only.</remarks>
+    /// <preliminary/>
     public struct YieldAwaitable
     {
         /// <summary>Gets an awaiter for this <see cref="YieldAwaitable"/>.</summary>

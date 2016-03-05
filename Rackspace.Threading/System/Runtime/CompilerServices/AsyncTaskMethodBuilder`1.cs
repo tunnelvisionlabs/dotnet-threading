@@ -26,6 +26,7 @@ namespace System.Runtime.CompilerServices
     /// <see cref="Threading.Tasks.Task"/> instances.
     /// </remarks>
     /// <typeparam name="TResult">The return type of the asynchronous method.</typeparam>
+    /// <preliminary/>
     public struct AsyncTaskMethodBuilder<TResult> : IAsyncMethodBuilder
     {
         /// <summary>A cached task for default(<typeparamref name="TResult"/>).</summary>

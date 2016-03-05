@@ -23,6 +23,7 @@ namespace Microsoft.Runtime.CompilerServices
     /// </summary>
     /// <remarks>This type is intended for compiler use only.</remarks>
     /// <typeparam name="TResult">The result type of the <see cref="Task{TResult}"/>.</typeparam>
+    /// <preliminary/>
     public struct ConfiguredTaskAwaitable<TResult>
     {
         /// <summary>The underlying awaitable on whose logic this awaitable relies.</summary>

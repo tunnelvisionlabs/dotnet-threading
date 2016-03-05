@@ -581,6 +581,7 @@ namespace Rackspace.Threading
         /// as the current context. Otherwise, the task scheduler that is associated with the currently executing task
         /// is treated as the current context.
         /// </returns>
+        /// <preliminary/>
         [CLSCompliant(
 #if NET40
             false)]

@@ -20,6 +20,7 @@ namespace Microsoft.Runtime.CompilerServices
 
     /// <summary>Provides an awaitable object that allows for configured awaits on <see cref="Task"/>.</summary>
     /// <remarks>This type is intended for compiler use only.</remarks>
+    /// <preliminary/>
     public struct ConfiguredTaskAwaitable
     {
         /// <summary>The task being awaited.</summary>

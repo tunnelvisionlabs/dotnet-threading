@@ -17,6 +17,7 @@ namespace System.Runtime.CompilerServices
     /// <summary>
     /// Represents an awaiter used to schedule continuations when an await operation completes.
     /// </summary>
+    /// <preliminary/>
     public interface ICriticalNotifyCompletion : INotifyCompletion
     {
         /// <summary>Schedules the continuation action to be invoked when the instance completes.</summary>
