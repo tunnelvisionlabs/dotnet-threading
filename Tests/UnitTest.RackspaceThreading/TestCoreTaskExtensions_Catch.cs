@@ -2761,6 +2761,38 @@ namespace UnitTest.RackspaceThreading
         /// method.
         /// </summary>
         [TestMethod]
+        public void TestCatch5_CompletedAntecedent_CompletedHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            Task<string> antecedent = CompletedTask.FromResult(AntecedentValue);
+            Predicate<Exception> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
+            Func<Task<string>, Exception, Task<string>> handlerFunction =
+                (task, ex) => Task.Factory.StartNew(
+                    () =>
+                    {
+                        executed = true;
+                        return HandlerValue;
+                    });
+
+            Task<string> combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerFunction);
+            combinedTask.Wait();
+            Assert.AreEqual(TaskStatus.RanToCompletion, combinedTask.Status);
+            Assert.AreSame(AntecedentValue, combinedTask.Result);
+            Assert.IsFalse(executed);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException, TResult}(Task{TResult}, Predicate{TException}, Func{Task{TResult}, TException, Task{TResult}})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
         public void TestCatch5_CompletedAntecedent_CanceledHandler()
         {
             bool executed = false;
@@ -2795,6 +2827,37 @@ namespace UnitTest.RackspaceThreading
             // declaring these makes it clear we are testing the correct overload
             Task<string> antecedent = CompletedTask.FromResult(AntecedentValue);
             Predicate<Exception> filter = ex => false;
+            Func<Task<string>, Exception, Task<string>> handlerFunction =
+                (task, ex) =>
+                {
+                    executed = true;
+                    return CompletedTask.Canceled<string>();
+                };
+
+            Task<string> combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerFunction);
+            combinedTask.Wait();
+            Assert.AreEqual(TaskStatus.RanToCompletion, combinedTask.Status);
+            Assert.AreSame(AntecedentValue, combinedTask.Result);
+            Assert.IsFalse(executed);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException, TResult}(Task{TResult}, Predicate{TException}, Func{Task{TResult}, TException, Task{TResult}})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestCatch5_CompletedAntecedent_CanceledHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            Task<string> antecedent = CompletedTask.FromResult(AntecedentValue);
+            Predicate<Exception> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
             Func<Task<string>, Exception, Task<string>> handlerFunction =
                 (task, ex) =>
                 {
@@ -2851,6 +2914,39 @@ namespace UnitTest.RackspaceThreading
             // declaring these makes it clear we are testing the correct overload
             Task<string> antecedent = CompletedTask.FromResult(AntecedentValue);
             Predicate<Exception> filter = ex => false;
+
+            Exception cleanupException = new InvalidOperationException();
+            Func<Task<string>, Exception, Task<string>> handlerFunction = (task, ex) =>
+                Task.Factory.StartNew<string>(() =>
+                {
+                    executed = true;
+                    throw cleanupException;
+                });
+
+            Task<string> combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerFunction);
+            combinedTask.Wait();
+            Assert.AreEqual(TaskStatus.RanToCompletion, combinedTask.Status);
+            Assert.AreSame(AntecedentValue, combinedTask.Result);
+            Assert.IsFalse(executed);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException, TResult}(Task{TResult}, Predicate{TException}, Func{Task{TResult}, TException, Task{TResult}})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestCatch5_CompletedAntecedent_FaultedHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            Task<string> antecedent = CompletedTask.FromResult(AntecedentValue);
+            Predicate<Exception> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
 
             Exception cleanupException = new InvalidOperationException();
             Func<Task<string>, Exception, Task<string>> handlerFunction = (task, ex) =>
@@ -2931,6 +3027,39 @@ namespace UnitTest.RackspaceThreading
         /// method.
         /// </summary>
         [TestMethod]
+        public void TestCatch5_CompletedAntecedent_SyncFaultedHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            Task<string> antecedent = CompletedTask.FromResult(AntecedentValue);
+            Predicate<Exception> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
+
+            Exception cleanupException = new InvalidOperationException();
+            Func<Task<string>, Exception, Task<string>> handlerFunction =
+                (task, ex) =>
+                {
+                    executed = true;
+                    throw cleanupException;
+                };
+
+            Task<string> combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerFunction);
+            combinedTask.Wait();
+            Assert.AreEqual(TaskStatus.RanToCompletion, combinedTask.Status);
+            Assert.AreSame(AntecedentValue, combinedTask.Result);
+            Assert.IsFalse(executed);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException, TResult}(Task{TResult}, Predicate{TException}, Func{Task{TResult}, TException, Task{TResult}})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
         public void TestCatch5_CompletedAntecedent_NullTaskHandler()
         {
             bool executed = false;
@@ -2965,6 +3094,37 @@ namespace UnitTest.RackspaceThreading
             // declaring these makes it clear we are testing the correct overload
             Task<string> antecedent = CompletedTask.FromResult(AntecedentValue);
             Predicate<Exception> filter = ex => false;
+            Func<Task<string>, Exception, Task<string>> handlerFunction =
+                (task, ex) =>
+                {
+                    executed = true;
+                    return null;
+                };
+
+            Task<string> combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerFunction);
+            combinedTask.Wait();
+            Assert.AreEqual(TaskStatus.RanToCompletion, combinedTask.Status);
+            Assert.AreSame(AntecedentValue, combinedTask.Result);
+            Assert.IsFalse(executed);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException, TResult}(Task{TResult}, Predicate{TException}, Func{Task{TResult}, TException, Task{TResult}})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestCatch5_CompletedAntecedent_NullTaskHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            Task<string> antecedent = CompletedTask.FromResult(AntecedentValue);
+            Predicate<Exception> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
             Func<Task<string>, Exception, Task<string>> handlerFunction =
                 (task, ex) =>
                 {
@@ -3549,6 +3709,221 @@ namespace UnitTest.RackspaceThreading
                 Assert.AreEqual(TaskStatus.Canceled, combinedTask.Status);
                 Assert.AreEqual(1, ex.InnerExceptions.Count);
                 Assert.IsInstanceOfType(ex.InnerExceptions[0], typeof(TaskCanceledException));
+                Assert.IsFalse(executed);
+            }
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException, TResult}(Task{TResult}, Predicate{TException}, Func{Task{TResult}, TException, Task{TResult}})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestCatch5_CanceledAntecedent_CompletedHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            Task<string> antecedent = CompletedTask.Canceled<string>();
+            Predicate<TaskCanceledException> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
+            Func<Task<string>, TaskCanceledException, Task<string>> handlerFunction =
+                (task, ex) => Task.Factory.StartNew(
+                    () =>
+                    {
+                        executed = true;
+                        return HandlerValue;
+                    });
+
+            Task<string> combinedTask = null;
+
+            try
+            {
+                combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerFunction);
+                combinedTask.Wait();
+                Assert.Fail("Expected an AggregateException");
+            }
+            catch (AggregateException ex)
+            {
+                Assert.IsNotNull(combinedTask, "Failed to create the combined task.");
+                Assert.AreEqual(TaskStatus.Faulted, combinedTask.Status);
+                Assert.AreEqual(1, ex.InnerExceptions.Count);
+                Assert.IsInstanceOfType(ex.InnerExceptions[0], typeof(ArithmeticException));
+                Assert.IsFalse(executed);
+            }
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException, TResult}(Task{TResult}, Predicate{TException}, Func{Task{TResult}, TException, Task{TResult}})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestCatch5_CanceledAntecedent_CanceledHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            Task<string> antecedent = CompletedTask.Canceled<string>();
+            Predicate<TaskCanceledException> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
+            Func<Task<string>, TaskCanceledException, Task<string>> handlerFunction =
+                (task, ex) =>
+                {
+                    executed = true;
+                    return CompletedTask.Canceled<string>();
+                };
+
+            Task<string> combinedTask = null;
+
+            try
+            {
+                combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerFunction);
+                combinedTask.Wait();
+                Assert.Fail("Expected an AggregateException");
+            }
+            catch (AggregateException ex)
+            {
+                Assert.IsNotNull(combinedTask, "Failed to create the combined task.");
+                Assert.AreEqual(TaskStatus.Faulted, combinedTask.Status);
+                Assert.AreEqual(1, ex.InnerExceptions.Count);
+                Assert.IsInstanceOfType(ex.InnerExceptions[0], typeof(ArithmeticException));
+                Assert.IsFalse(executed);
+            }
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException, TResult}(Task{TResult}, Predicate{TException}, Func{Task{TResult}, TException, Task{TResult}})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestCatch5_CanceledAntecedent_FaultedHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            Task<string> antecedent = CompletedTask.Canceled<string>();
+            Predicate<TaskCanceledException> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
+
+            Exception cleanupException = new InvalidOperationException();
+            Func<Task<string>, TaskCanceledException, Task<string>> handlerFunction = (task, ex) =>
+                Task.Factory.StartNew<string>(() =>
+                {
+                    executed = true;
+                    throw cleanupException;
+                });
+
+            Task<string> combinedTask = null;
+
+            try
+            {
+                combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerFunction);
+                combinedTask.Wait();
+                Assert.Fail("Expected an AggregateException");
+            }
+            catch (AggregateException ex)
+            {
+                Assert.IsNotNull(combinedTask, "Failed to create the combined task.");
+                Assert.AreEqual(TaskStatus.Faulted, combinedTask.Status);
+                Assert.AreEqual(1, ex.InnerExceptions.Count);
+                Assert.IsInstanceOfType(ex.InnerExceptions[0], typeof(ArithmeticException));
+                Assert.IsFalse(executed);
+            }
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException, TResult}(Task{TResult}, Predicate{TException}, Func{Task{TResult}, TException, Task{TResult}})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestCatch5_CanceledAntecedent_SyncFaultedHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            Task<string> antecedent = CompletedTask.Canceled<string>();
+            Predicate<TaskCanceledException> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
+
+            Exception cleanupException = new InvalidOperationException();
+            Func<Task<string>, TaskCanceledException, Task<string>> handlerFunction =
+                (task, ex) =>
+                {
+                    executed = true;
+                    throw cleanupException;
+                };
+
+            Task<string> combinedTask = null;
+
+            try
+            {
+                combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerFunction);
+                combinedTask.Wait();
+                Assert.Fail("Expected an AggregateException");
+            }
+            catch (AggregateException ex)
+            {
+                Assert.IsNotNull(combinedTask, "Failed to create the combined task.");
+                Assert.AreEqual(TaskStatus.Faulted, combinedTask.Status);
+                Assert.AreEqual(1, ex.InnerExceptions.Count);
+                Assert.IsInstanceOfType(ex.InnerExceptions[0], typeof(ArithmeticException));
+                Assert.IsFalse(executed);
+            }
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException, TResult}(Task{TResult}, Predicate{TException}, Func{Task{TResult}, TException, Task{TResult}})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestCatch5_CanceledAntecedent_NullTaskHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            Task<string> antecedent = CompletedTask.Canceled<string>();
+            Predicate<TaskCanceledException> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
+            Func<Task<string>, TaskCanceledException, Task<string>> handlerFunction =
+                (task, ex) =>
+                {
+                    executed = true;
+                    return null;
+                };
+
+            Task<string> combinedTask = null;
+
+            try
+            {
+                combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerFunction);
+                combinedTask.Wait();
+                Assert.Fail("Expected an AggregateException");
+            }
+            catch (AggregateException ex)
+            {
+                Assert.IsNotNull(combinedTask, "Failed to create the combined task.");
+                Assert.AreEqual(TaskStatus.Faulted, combinedTask.Status);
+                Assert.AreEqual(1, ex.InnerExceptions.Count);
+                Assert.IsInstanceOfType(ex.InnerExceptions[0], typeof(ArithmeticException));
                 Assert.IsFalse(executed);
             }
         }
@@ -4181,6 +4556,239 @@ namespace UnitTest.RackspaceThreading
             }
         }
 
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException, TResult}(Task{TResult}, Predicate{TException}, Func{Task{TResult}, TException, Task{TResult}})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestCatch5_FaultedAntecedent_CompletedHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            TaskCompletionSource<string> faultedCompletionSource = new TaskCompletionSource<string>();
+            Exception expectedException = new ArgumentException();
+            faultedCompletionSource.SetException(expectedException);
+            Task<string> antecedent = faultedCompletionSource.Task;
+            Predicate<ArgumentException> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
+
+            Func<Task<string>, ArgumentException, Task<string>> handlerFunction =
+                (task, ex) => Task.Factory.StartNew(
+                    () =>
+                    {
+                        executed = true;
+                        return HandlerValue;
+                    });
+
+            Task<string> combinedTask = null;
+
+            try
+            {
+                combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerFunction);
+                combinedTask.Wait();
+                Assert.Fail("Expected an AggregateException");
+            }
+            catch (AggregateException ex)
+            {
+                Assert.IsNotNull(combinedTask, "Failed to create the combined task.");
+                Assert.AreEqual(TaskStatus.Faulted, combinedTask.Status);
+                Assert.AreEqual(1, ex.InnerExceptions.Count);
+                Assert.IsInstanceOfType(ex.InnerExceptions[0], typeof(ArithmeticException));
+                Assert.IsFalse(executed);
+            }
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException, TResult}(Task{TResult}, Predicate{TException}, Func{Task{TResult}, TException, Task{TResult}})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestCatch5_FaultedAntecedent_CanceledHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            TaskCompletionSource<string> faultedCompletionSource = new TaskCompletionSource<string>();
+            Exception expectedException = new ArgumentException();
+            faultedCompletionSource.SetException(expectedException);
+            Task<string> antecedent = faultedCompletionSource.Task;
+            Predicate<ArgumentException> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
+
+            Func<Task<string>, ArgumentException, Task<string>> handlerFunction =
+                (task, ex) =>
+                {
+                    executed = true;
+                    return CompletedTask.Canceled<string>();
+                };
+
+            Task<string> combinedTask = null;
+
+            try
+            {
+                combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerFunction);
+                combinedTask.Wait();
+                Assert.Fail("Expected an AggregateException");
+            }
+            catch (AggregateException ex)
+            {
+                Assert.IsNotNull(combinedTask, "Failed to create the combined task.");
+                Assert.AreEqual(TaskStatus.Faulted, combinedTask.Status);
+                Assert.AreEqual(1, ex.InnerExceptions.Count);
+                Assert.IsInstanceOfType(ex.InnerExceptions[0], typeof(ArithmeticException));
+                Assert.IsFalse(executed);
+            }
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException, TResult}(Task{TResult}, Predicate{TException}, Func{Task{TResult}, TException, Task{TResult}})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestCatch5_FaultedAntecedent_FaultedHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            TaskCompletionSource<string> faultedCompletionSource = new TaskCompletionSource<string>();
+            Exception expectedException = new ArgumentException();
+            faultedCompletionSource.SetException(expectedException);
+            Task<string> antecedent = faultedCompletionSource.Task;
+            Predicate<ArgumentException> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
+
+            Exception cleanupException = new InvalidOperationException();
+            Func<Task<string>, ArgumentException, Task<string>> handlerFunction = (task, ex) =>
+                Task.Factory.StartNew<string>(() =>
+                {
+                    executed = true;
+                    throw cleanupException;
+                });
+
+            Task<string> combinedTask = null;
+
+            try
+            {
+                combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerFunction);
+                combinedTask.Wait();
+                Assert.Fail("Expected an AggregateException");
+            }
+            catch (AggregateException ex)
+            {
+                Assert.IsNotNull(combinedTask, "Failed to create the combined task.");
+                Assert.AreEqual(TaskStatus.Faulted, combinedTask.Status);
+                Assert.AreEqual(1, ex.InnerExceptions.Count);
+                Assert.IsInstanceOfType(ex.InnerExceptions[0], typeof(ArithmeticException));
+                Assert.IsFalse(executed);
+            }
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException, TResult}(Task{TResult}, Predicate{TException}, Func{Task{TResult}, TException, Task{TResult}})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestCatch5_FaultedAntecedent_SyncFaultedHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            TaskCompletionSource<string> faultedCompletionSource = new TaskCompletionSource<string>();
+            Exception expectedException = new ArgumentException();
+            faultedCompletionSource.SetException(expectedException);
+            Task<string> antecedent = faultedCompletionSource.Task;
+            Predicate<ArgumentException> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
+
+            Exception cleanupException = new InvalidOperationException();
+            Func<Task<string>, ArgumentException, Task<string>> handlerFunction =
+                (task, ex) =>
+                {
+                    executed = true;
+                    throw cleanupException;
+                };
+
+            Task<string> combinedTask = null;
+
+            try
+            {
+                combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerFunction);
+                combinedTask.Wait();
+                Assert.Fail("Expected an AggregateException");
+            }
+            catch (AggregateException ex)
+            {
+                Assert.IsNotNull(combinedTask, "Failed to create the combined task.");
+                Assert.AreEqual(TaskStatus.Faulted, combinedTask.Status);
+                Assert.AreEqual(1, ex.InnerExceptions.Count);
+                Assert.IsInstanceOfType(ex.InnerExceptions[0], typeof(ArithmeticException));
+                Assert.IsFalse(executed);
+            }
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException, TResult}(Task{TResult}, Predicate{TException}, Func{Task{TResult}, TException, Task{TResult}})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestCatch5_FaultedAntecedent_NullTaskHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            TaskCompletionSource<string> faultedCompletionSource = new TaskCompletionSource<string>();
+            Exception expectedException = new ArgumentException();
+            faultedCompletionSource.SetException(expectedException);
+            Task<string> antecedent = faultedCompletionSource.Task;
+            Predicate<ArgumentException> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
+
+            Func<Task<string>, ArgumentException, Task<string>> handlerFunction =
+                (task, ex) =>
+                {
+                    executed = true;
+                    return null;
+                };
+
+            Task<string> combinedTask = null;
+
+            try
+            {
+                combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerFunction);
+                combinedTask.Wait();
+                Assert.Fail("Expected an AggregateException");
+            }
+            catch (AggregateException ex)
+            {
+                Assert.IsNotNull(combinedTask, "Failed to create the combined task.");
+                Assert.AreEqual(TaskStatus.Faulted, combinedTask.Status);
+                Assert.AreEqual(1, ex.InnerExceptions.Count);
+                Assert.IsInstanceOfType(ex.InnerExceptions[0], typeof(ArithmeticException));
+                Assert.IsFalse(executed);
+            }
+        }
+
         #endregion
 
         #region Catch 6
@@ -4298,6 +4906,37 @@ namespace UnitTest.RackspaceThreading
         /// method.
         /// </summary>
         [TestMethod]
+        public void TestCatch6_CompletedAntecedent_CompletedHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            Task<string> antecedent = CompletedTask.FromResult(AntecedentValue);
+            Predicate<Exception> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
+            Func<Task<string>, Exception, string> handlerFunction =
+                (task, ex) =>
+                {
+                    executed = true;
+                    return HandlerValue;
+                };
+
+            Task<string> combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerFunction);
+            combinedTask.Wait();
+            Assert.AreEqual(TaskStatus.RanToCompletion, combinedTask.Status);
+            Assert.AreSame(AntecedentValue, combinedTask.Result);
+            Assert.IsFalse(executed);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException, TResult}(Task{TResult}, Func{Task{TResult}, TException, TResult})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
         public void TestCatch6_CompletedAntecedent_FaultedHandler()
         {
             bool executed = false;
@@ -4334,6 +4973,39 @@ namespace UnitTest.RackspaceThreading
             // declaring these makes it clear we are testing the correct overload
             Task<string> antecedent = CompletedTask.FromResult(AntecedentValue);
             Predicate<Exception> filter = ex => false;
+
+            Exception cleanupException = new InvalidOperationException();
+            Func<Task<string>, Exception, string> handlerFunction =
+                (task, ex) =>
+                {
+                    executed = true;
+                    throw cleanupException;
+                };
+
+            Task<string> combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerFunction);
+            combinedTask.Wait();
+            Assert.AreEqual(TaskStatus.RanToCompletion, combinedTask.Status);
+            Assert.AreSame(AntecedentValue, combinedTask.Result);
+            Assert.IsFalse(executed);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException, TResult}(Task{TResult}, Func{Task{TResult}, TException, TResult})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestCatch6_CompletedAntecedent_FaultedHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            Task<string> antecedent = CompletedTask.FromResult(AntecedentValue);
+            Predicate<Exception> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
 
             Exception cleanupException = new InvalidOperationException();
             Func<Task<string>, Exception, string> handlerFunction =
@@ -4569,6 +5241,92 @@ namespace UnitTest.RackspaceThreading
                 Assert.AreEqual(TaskStatus.Canceled, combinedTask.Status);
                 Assert.AreEqual(1, ex.InnerExceptions.Count);
                 Assert.IsInstanceOfType(ex.InnerExceptions[0], typeof(TaskCanceledException));
+                Assert.IsFalse(executed);
+            }
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException, TResult}(Task{TResult}, Func{Task{TResult}, TException, TResult})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestCatch6_CanceledAntecedent_CompletedHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            Task<string> antecedent = CompletedTask.Canceled<string>();
+            Predicate<TaskCanceledException> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
+            Func<Task<string>, TaskCanceledException, string> handlerFunction =
+                (task, ex) =>
+                {
+                    executed = true;
+                    return HandlerValue;
+                };
+
+            Task<string> combinedTask = null;
+
+            try
+            {
+                combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerFunction);
+                combinedTask.Wait();
+                Assert.Fail("Expected an AggregateException");
+            }
+            catch (AggregateException ex)
+            {
+                Assert.IsNotNull(combinedTask, "Failed to create the combined task.");
+                Assert.AreEqual(TaskStatus.Faulted, combinedTask.Status);
+                Assert.AreEqual(1, ex.InnerExceptions.Count);
+                Assert.IsInstanceOfType(ex.InnerExceptions[0], typeof(ArithmeticException));
+                Assert.IsFalse(executed);
+            }
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException, TResult}(Task{TResult}, Func{Task{TResult}, TException, TResult})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestCatch6_CanceledAntecedent_FaultedHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            Task<string> antecedent = CompletedTask.Canceled<string>();
+            Predicate<Exception> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
+
+            Exception cleanupException = new InvalidOperationException();
+            Func<Task<string>, Exception, string> handlerFunction =
+                (task, ex) =>
+                {
+                    executed = true;
+                    throw cleanupException;
+                };
+
+            Task<string> combinedTask = null;
+
+            try
+            {
+                combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerFunction);
+                combinedTask.Wait();
+                Assert.Fail("Expected an AggregateException");
+            }
+            catch (AggregateException ex)
+            {
+                Assert.IsNotNull(combinedTask, "Failed to create the combined task.");
+                Assert.AreEqual(TaskStatus.Faulted, combinedTask.Status);
+                Assert.AreEqual(1, ex.InnerExceptions.Count);
+                Assert.IsInstanceOfType(ex.InnerExceptions[0], typeof(ArithmeticException));
                 Assert.IsFalse(executed);
             }
         }
@@ -4817,6 +5575,99 @@ namespace UnitTest.RackspaceThreading
             }
         }
 
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException, TResult}(Task{TResult}, Func{Task{TResult}, TException, TResult})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestCatch6_FaultedAntecedent_CompletedHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            TaskCompletionSource<string> faultedCompletionSource = new TaskCompletionSource<string>();
+            Exception expectedException = new ArgumentException();
+            faultedCompletionSource.SetException(expectedException);
+            Task<string> antecedent = faultedCompletionSource.Task;
+            Predicate<ArgumentException> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
+
+            Func<Task<string>, ArgumentException, string> handlerFunction =
+                (task, ex) =>
+                {
+                    executed = true;
+                    return HandlerValue;
+                };
+
+            Task<string> combinedTask = null;
+
+            try
+            {
+                combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerFunction);
+                combinedTask.Wait();
+                Assert.Fail("Expected an AggregateException");
+            }
+            catch (AggregateException ex)
+            {
+                Assert.IsNotNull(combinedTask, "Failed to create the combined task.");
+                Assert.AreEqual(TaskStatus.Faulted, combinedTask.Status);
+                Assert.AreEqual(1, ex.InnerExceptions.Count);
+                Assert.IsInstanceOfType(ex.InnerExceptions[0], typeof(ArithmeticException));
+                Assert.IsFalse(executed);
+            }
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException, TResult}(Task{TResult}, Func{Task{TResult}, TException, TResult})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestCatch6_FaultedAntecedent_FaultedHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            TaskCompletionSource<string> faultedCompletionSource = new TaskCompletionSource<string>();
+            Exception expectedException = new ArgumentException();
+            faultedCompletionSource.SetException(expectedException);
+            Task<string> antecedent = faultedCompletionSource.Task;
+            Predicate<Exception> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
+
+            Exception cleanupException = new InvalidOperationException();
+            Func<Task<string>, Exception, string> handlerFunction =
+                (task, ex) =>
+                {
+                    executed = true;
+                    throw cleanupException;
+                };
+
+            Task<string> combinedTask = null;
+
+            try
+            {
+                combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerFunction);
+                combinedTask.Wait();
+                Assert.Fail("Expected an AggregateException");
+            }
+            catch (AggregateException ex)
+            {
+                Assert.IsNotNull(combinedTask, "Failed to create the combined task.");
+                Assert.AreEqual(TaskStatus.Faulted, combinedTask.Status);
+                Assert.AreEqual(1, ex.InnerExceptions.Count);
+                Assert.IsInstanceOfType(ex.InnerExceptions[0], typeof(ArithmeticException));
+                Assert.IsFalse(executed);
+            }
+        }
+
         #endregion
 
         #region Catch 7
@@ -4928,6 +5779,32 @@ namespace UnitTest.RackspaceThreading
         /// method.
         /// </summary>
         [TestMethod]
+        public void TestCatch7_CompletedAntecedent_CompletedHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = CompletedTask.Default;
+            Predicate<Exception> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
+            Action<Task, Exception> handlerAction =
+                (task, ex) => executed = true;
+
+            Task combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerAction);
+            combinedTask.Wait();
+            Assert.AreEqual(TaskStatus.RanToCompletion, combinedTask.Status);
+            Assert.IsFalse(executed);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException}(Task, Predicate{TException}, Action{Task, TException})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
         public void TestCatch7_CompletedAntecedent_FaultedHandler()
         {
             bool executed = false;
@@ -4963,6 +5840,38 @@ namespace UnitTest.RackspaceThreading
             // declaring these makes it clear we are testing the correct overload
             Task antecedent = CompletedTask.Default;
             Predicate<Exception> filter = ex => false;
+
+            Exception cleanupException = new InvalidOperationException();
+            Action<Task, Exception> handlerAction =
+                (task, ex) =>
+                {
+                    executed = true;
+                    throw cleanupException;
+                };
+
+            Task combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerAction);
+            combinedTask.Wait();
+            Assert.AreEqual(TaskStatus.RanToCompletion, combinedTask.Status);
+            Assert.IsFalse(executed);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException}(Task, Predicate{TException}, Action{Task, TException})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestCatch7_CompletedAntecedent_FaultedHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = CompletedTask.Default;
+            Predicate<Exception> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
 
             Exception cleanupException = new InvalidOperationException();
             Action<Task, Exception> handlerAction =
@@ -5184,6 +6093,88 @@ namespace UnitTest.RackspaceThreading
                 Assert.AreEqual(TaskStatus.Canceled, combinedTask.Status);
                 Assert.AreEqual(1, ex.InnerExceptions.Count);
                 Assert.IsInstanceOfType(ex.InnerExceptions[0], typeof(TaskCanceledException));
+                Assert.IsFalse(executed);
+            }
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException}(Task, Predicate{TException}, Action{Task, TException})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestCatch7_CanceledAntecedent_CompletedHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = CompletedTask.Canceled();
+            Predicate<TaskCanceledException> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
+            Action<Task, TaskCanceledException> handlerAction =
+                (task, ex) => executed = true;
+
+            Task combinedTask = null;
+
+            try
+            {
+                combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerAction);
+                combinedTask.Wait();
+                Assert.Fail("Expected an AggregateException");
+            }
+            catch (AggregateException ex)
+            {
+                Assert.IsNotNull(combinedTask, "Failed to create the combined task.");
+                Assert.AreEqual(TaskStatus.Faulted, combinedTask.Status);
+                Assert.AreEqual(1, ex.InnerExceptions.Count);
+                Assert.IsInstanceOfType(ex.InnerExceptions[0], typeof(ArithmeticException));
+                Assert.IsFalse(executed);
+            }
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException}(Task, Predicate{TException}, Action{Task, TException})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestCatch7_CanceledAntecedent_FaultedHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = CompletedTask.Canceled();
+            Predicate<Exception> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
+
+            Exception cleanupException = new InvalidOperationException();
+            Action<Task, Exception> handlerAction =
+                (task, ex) =>
+                {
+                    executed = true;
+                    throw cleanupException;
+                };
+
+            Task combinedTask = null;
+
+            try
+            {
+                combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerAction);
+                combinedTask.Wait();
+                Assert.Fail("Expected an AggregateException");
+            }
+            catch (AggregateException ex)
+            {
+                Assert.IsNotNull(combinedTask, "Failed to create the combined task.");
+                Assert.AreEqual(TaskStatus.Faulted, combinedTask.Status);
+                Assert.AreEqual(1, ex.InnerExceptions.Count);
+                Assert.IsInstanceOfType(ex.InnerExceptions[0], typeof(ArithmeticException));
                 Assert.IsFalse(executed);
             }
         }
@@ -5419,6 +6410,95 @@ namespace UnitTest.RackspaceThreading
             }
         }
 
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException}(Task, Predicate{TException}, Action{Task, TException})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestCatch7_FaultedAntecedent_CompletedHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            TaskCompletionSource<object> faultedCompletionSource = new TaskCompletionSource<object>();
+            Exception expectedException = new ArgumentException();
+            faultedCompletionSource.SetException(expectedException);
+            Task antecedent = faultedCompletionSource.Task;
+            Predicate<ArgumentException> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
+
+            Action<Task, ArgumentException> handlerAction =
+                (task, ex) => executed = true;
+
+            Task combinedTask = null;
+
+            try
+            {
+                combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerAction);
+                combinedTask.Wait();
+                Assert.Fail("Expected an AggregateException");
+            }
+            catch (AggregateException ex)
+            {
+                Assert.IsNotNull(combinedTask, "Failed to create the combined task.");
+                Assert.AreEqual(TaskStatus.Faulted, combinedTask.Status);
+                Assert.AreEqual(1, ex.InnerExceptions.Count);
+                Assert.IsInstanceOfType(ex.InnerExceptions[0], typeof(ArithmeticException));
+                Assert.IsFalse(executed);
+            }
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException}(Task, Predicate{TException}, Action{Task, TException})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestCatch7_FaultedAntecedent_FaultedHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            TaskCompletionSource<object> faultedCompletionSource = new TaskCompletionSource<object>();
+            Exception expectedException = new ArgumentException();
+            faultedCompletionSource.SetException(expectedException);
+            Task antecedent = faultedCompletionSource.Task;
+            Predicate<Exception> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
+
+            Exception cleanupException = new InvalidOperationException();
+            Action<Task, Exception> handlerAction =
+                (task, ex) =>
+                {
+                    executed = true;
+                    throw cleanupException;
+                };
+
+            Task combinedTask = null;
+
+            try
+            {
+                combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerAction);
+                combinedTask.Wait();
+                Assert.Fail("Expected an AggregateException");
+            }
+            catch (AggregateException ex)
+            {
+                Assert.IsNotNull(combinedTask, "Failed to create the combined task.");
+                Assert.AreEqual(TaskStatus.Faulted, combinedTask.Status);
+                Assert.AreEqual(1, ex.InnerExceptions.Count);
+                Assert.IsInstanceOfType(ex.InnerExceptions[0], typeof(ArithmeticException));
+                Assert.IsFalse(executed);
+            }
+        }
+
         #endregion
 
         #region Catch 8
@@ -5526,6 +6606,32 @@ namespace UnitTest.RackspaceThreading
         /// method.
         /// </summary>
         [TestMethod]
+        public void TestCatch8_CompletedAntecedent_CompletedHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = CompletedTask.Default;
+            Predicate<Exception> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
+            Func<Task, Exception, Task> handlerFunction =
+                (task, ex) => Task.Factory.StartNew(() => executed = true);
+
+            Task combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerFunction);
+            combinedTask.Wait();
+            Assert.AreEqual(TaskStatus.RanToCompletion, combinedTask.Status);
+            Assert.IsFalse(executed);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException}(Task, Predicate{TException}, Func{Task, TException, Task})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
         public void TestCatch8_CompletedAntecedent_CanceledHandler()
         {
             bool executed = false;
@@ -5559,6 +6665,36 @@ namespace UnitTest.RackspaceThreading
             // declaring these makes it clear we are testing the correct overload
             Task antecedent = CompletedTask.Default;
             Predicate<Exception> filter = ex => false;
+            Func<Task, Exception, Task> handlerFunction =
+                (task, ex) =>
+                {
+                    executed = true;
+                    return CompletedTask.Canceled();
+                };
+
+            Task combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerFunction);
+            combinedTask.Wait();
+            Assert.AreEqual(TaskStatus.RanToCompletion, combinedTask.Status);
+            Assert.IsFalse(executed);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException}(Task, Predicate{TException}, Func{Task, TException, Task})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestCatch8_CompletedAntecedent_CanceledHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = CompletedTask.Default;
+            Predicate<Exception> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
             Func<Task, Exception, Task> handlerFunction =
                 (task, ex) =>
                 {
@@ -5613,6 +6749,38 @@ namespace UnitTest.RackspaceThreading
             // declaring these makes it clear we are testing the correct overload
             Task antecedent = CompletedTask.Default;
             Predicate<Exception> filter = ex => false;
+
+            Exception cleanupException = new InvalidOperationException();
+            Func<Task, Exception, Task> handlerFunction = (task, ex) =>
+                Task.Factory.StartNew(() =>
+                {
+                    executed = true;
+                    throw cleanupException;
+                });
+
+            Task combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerFunction);
+            combinedTask.Wait();
+            Assert.AreEqual(TaskStatus.RanToCompletion, combinedTask.Status);
+            Assert.IsFalse(executed);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException}(Task, Predicate{TException}, Func{Task, TException, Task})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestCatch8_CompletedAntecedent_FaultedHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = CompletedTask.Default;
+            Predicate<Exception> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
 
             Exception cleanupException = new InvalidOperationException();
             Func<Task, Exception, Task> handlerFunction = (task, ex) =>
@@ -5690,6 +6858,38 @@ namespace UnitTest.RackspaceThreading
         /// method.
         /// </summary>
         [TestMethod]
+        public void TestCatch8_CompletedAntecedent_SyncFaultedHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = CompletedTask.Default;
+            Predicate<Exception> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
+
+            Exception cleanupException = new InvalidOperationException();
+            Func<Task, Exception, Task> handlerFunction =
+                (task, ex) =>
+                {
+                    executed = true;
+                    throw cleanupException;
+                };
+
+            Task combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerFunction);
+            combinedTask.Wait();
+            Assert.AreEqual(TaskStatus.RanToCompletion, combinedTask.Status);
+            Assert.IsFalse(executed);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException}(Task, Predicate{TException}, Func{Task, TException, Task})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
         public void TestCatch8_CompletedAntecedent_NullTaskHandler()
         {
             bool executed = false;
@@ -5723,6 +6923,36 @@ namespace UnitTest.RackspaceThreading
             // declaring these makes it clear we are testing the correct overload
             Task antecedent = CompletedTask.Default;
             Predicate<Exception> filter = ex => false;
+            Func<Task, Exception, Task> handlerFunction =
+                (task, ex) =>
+                {
+                    executed = true;
+                    return null;
+                };
+
+            Task combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerFunction);
+            combinedTask.Wait();
+            Assert.AreEqual(TaskStatus.RanToCompletion, combinedTask.Status);
+            Assert.IsFalse(executed);
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException}(Task, Predicate{TException}, Func{Task, TException, Task})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestCatch8_CompletedAntecedent_NullTaskHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = CompletedTask.Default;
+            Predicate<Exception> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
             Func<Task, Exception, Task> handlerFunction =
                 (task, ex) =>
                 {
@@ -6290,6 +7520,216 @@ namespace UnitTest.RackspaceThreading
                 Assert.AreEqual(TaskStatus.Canceled, combinedTask.Status);
                 Assert.AreEqual(1, ex.InnerExceptions.Count);
                 Assert.IsInstanceOfType(ex.InnerExceptions[0], typeof(TaskCanceledException));
+                Assert.IsFalse(executed);
+            }
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException}(Task, Predicate{TException}, Func{Task, TException, Task})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestCatch8_CanceledAntecedent_CompletedHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = CompletedTask.Canceled();
+            Predicate<TaskCanceledException> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
+            Func<Task, TaskCanceledException, Task> handlerFunction =
+                (task, ex) => Task.Factory.StartNew(() => executed = true);
+
+            Task combinedTask = null;
+
+            try
+            {
+                combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerFunction);
+                combinedTask.Wait();
+                Assert.Fail("Expected an AggregateException");
+            }
+            catch (AggregateException ex)
+            {
+                Assert.IsNotNull(combinedTask, "Failed to create the combined task.");
+                Assert.AreEqual(TaskStatus.Faulted, combinedTask.Status);
+                Assert.AreEqual(1, ex.InnerExceptions.Count);
+                Assert.IsInstanceOfType(ex.InnerExceptions[0], typeof(ArithmeticException));
+                Assert.IsFalse(executed);
+            }
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException}(Task, Predicate{TException}, Func{Task, TException, Task})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestCatch8_CanceledAntecedent_CanceledHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = CompletedTask.Canceled();
+            Predicate<TaskCanceledException> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
+            Func<Task, TaskCanceledException, Task> handlerFunction =
+                (task, ex) =>
+                {
+                    executed = true;
+                    return CompletedTask.Canceled();
+                };
+
+            Task combinedTask = null;
+
+            try
+            {
+                combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerFunction);
+                combinedTask.Wait();
+                Assert.Fail("Expected an AggregateException");
+            }
+            catch (AggregateException ex)
+            {
+                Assert.IsNotNull(combinedTask, "Failed to create the combined task.");
+                Assert.AreEqual(TaskStatus.Faulted, combinedTask.Status);
+                Assert.AreEqual(1, ex.InnerExceptions.Count);
+                Assert.IsInstanceOfType(ex.InnerExceptions[0], typeof(ArithmeticException));
+                Assert.IsFalse(executed);
+            }
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException}(Task, Predicate{TException}, Func{Task, TException, Task})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestCatch8_CanceledAntecedent_FaultedHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = CompletedTask.Canceled();
+            Predicate<TaskCanceledException> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
+
+            Exception cleanupException = new InvalidOperationException();
+            Func<Task, TaskCanceledException, Task> handlerFunction = (task, ex) =>
+                Task.Factory.StartNew(() =>
+                {
+                    executed = true;
+                    throw cleanupException;
+                });
+
+            Task combinedTask = null;
+
+            try
+            {
+                combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerFunction);
+                combinedTask.Wait();
+                Assert.Fail("Expected an AggregateException");
+            }
+            catch (AggregateException ex)
+            {
+                Assert.IsNotNull(combinedTask, "Failed to create the combined task.");
+                Assert.AreEqual(TaskStatus.Faulted, combinedTask.Status);
+                Assert.AreEqual(1, ex.InnerExceptions.Count);
+                Assert.IsInstanceOfType(ex.InnerExceptions[0], typeof(ArithmeticException));
+                Assert.IsFalse(executed);
+            }
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException}(Task, Predicate{TException}, Func{Task, TException, Task})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestCatch8_CanceledAntecedent_SyncFaultedHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = CompletedTask.Canceled();
+            Predicate<TaskCanceledException> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
+
+            Exception cleanupException = new InvalidOperationException();
+            Func<Task, TaskCanceledException, Task> handlerFunction =
+                (task, ex) =>
+                {
+                    executed = true;
+                    throw cleanupException;
+                };
+
+            Task combinedTask = null;
+
+            try
+            {
+                combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerFunction);
+                combinedTask.Wait();
+                Assert.Fail("Expected an AggregateException");
+            }
+            catch (AggregateException ex)
+            {
+                Assert.IsNotNull(combinedTask, "Failed to create the combined task.");
+                Assert.AreEqual(TaskStatus.Faulted, combinedTask.Status);
+                Assert.AreEqual(1, ex.InnerExceptions.Count);
+                Assert.IsInstanceOfType(ex.InnerExceptions[0], typeof(ArithmeticException));
+                Assert.IsFalse(executed);
+            }
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException}(Task, Predicate{TException}, Func{Task, TException, Task})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestCatch8_CanceledAntecedent_NullTaskHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            Task antecedent = CompletedTask.Canceled();
+            Predicate<TaskCanceledException> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
+            Func<Task, TaskCanceledException, Task> handlerFunction =
+                (task, ex) =>
+                {
+                    executed = true;
+                    return null;
+                };
+
+            Task combinedTask = null;
+
+            try
+            {
+                combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerFunction);
+                combinedTask.Wait();
+                Assert.Fail("Expected an AggregateException");
+            }
+            catch (AggregateException ex)
+            {
+                Assert.IsNotNull(combinedTask, "Failed to create the combined task.");
+                Assert.AreEqual(TaskStatus.Faulted, combinedTask.Status);
+                Assert.AreEqual(1, ex.InnerExceptions.Count);
+                Assert.IsInstanceOfType(ex.InnerExceptions[0], typeof(ArithmeticException));
                 Assert.IsFalse(executed);
             }
         }
@@ -6902,6 +8342,234 @@ namespace UnitTest.RackspaceThreading
                 Assert.AreEqual(TaskStatus.Faulted, combinedTask.Status);
                 Assert.AreEqual(1, ex.InnerExceptions.Count);
                 Assert.AreSame(expectedException, ex.InnerExceptions[0]);
+                Assert.IsFalse(executed);
+            }
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException}(Task, Predicate{TException}, Func{Task, TException, Task})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestCatch8_FaultedAntecedent_CompletedHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            TaskCompletionSource<object> faultedCompletionSource = new TaskCompletionSource<object>();
+            Exception expectedException = new ArgumentException();
+            faultedCompletionSource.SetException(expectedException);
+            Task antecedent = faultedCompletionSource.Task;
+            Predicate<ArgumentException> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
+
+            Func<Task, ArgumentException, Task> handlerFunction =
+                (task, ex) => Task.Factory.StartNew(() => executed = true);
+
+            Task combinedTask = null;
+
+            try
+            {
+                combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerFunction);
+                combinedTask.Wait();
+                Assert.Fail("Expected an AggregateException");
+            }
+            catch (AggregateException ex)
+            {
+                Assert.IsNotNull(combinedTask, "Failed to create the combined task.");
+                Assert.AreEqual(TaskStatus.Faulted, combinedTask.Status);
+                Assert.AreEqual(1, ex.InnerExceptions.Count);
+                Assert.IsInstanceOfType(ex.InnerExceptions[0], typeof(ArithmeticException));
+                Assert.IsFalse(executed);
+            }
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException}(Task, Predicate{TException}, Func{Task, TException, Task})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestCatch8_FaultedAntecedent_CanceledHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            TaskCompletionSource<object> faultedCompletionSource = new TaskCompletionSource<object>();
+            Exception expectedException = new ArgumentException();
+            faultedCompletionSource.SetException(expectedException);
+            Task antecedent = faultedCompletionSource.Task;
+            Predicate<ArgumentException> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
+
+            Func<Task, ArgumentException, Task> handlerFunction =
+                (task, ex) =>
+                {
+                    executed = true;
+                    return CompletedTask.Canceled();
+                };
+
+            Task combinedTask = null;
+
+            try
+            {
+                combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerFunction);
+                combinedTask.Wait();
+                Assert.Fail("Expected an AggregateException");
+            }
+            catch (AggregateException ex)
+            {
+                Assert.IsNotNull(combinedTask, "Failed to create the combined task.");
+                Assert.AreEqual(TaskStatus.Faulted, combinedTask.Status);
+                Assert.AreEqual(1, ex.InnerExceptions.Count);
+                Assert.IsInstanceOfType(ex.InnerExceptions[0], typeof(ArithmeticException));
+                Assert.IsFalse(executed);
+            }
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException}(Task, Predicate{TException}, Func{Task, TException, Task})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestCatch8_FaultedAntecedent_FaultedHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            TaskCompletionSource<object> faultedCompletionSource = new TaskCompletionSource<object>();
+            Exception expectedException = new ArgumentException();
+            faultedCompletionSource.SetException(expectedException);
+            Task antecedent = faultedCompletionSource.Task;
+            Predicate<ArgumentException> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
+
+            Exception cleanupException = new InvalidOperationException();
+            Func<Task, ArgumentException, Task> handlerFunction = (task, ex) =>
+                Task.Factory.StartNew(() =>
+                {
+                    executed = true;
+                    throw cleanupException;
+                });
+
+            Task combinedTask = null;
+
+            try
+            {
+                combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerFunction);
+                combinedTask.Wait();
+                Assert.Fail("Expected an AggregateException");
+            }
+            catch (AggregateException ex)
+            {
+                Assert.IsNotNull(combinedTask, "Failed to create the combined task.");
+                Assert.AreEqual(TaskStatus.Faulted, combinedTask.Status);
+                Assert.AreEqual(1, ex.InnerExceptions.Count);
+                Assert.IsInstanceOfType(ex.InnerExceptions[0], typeof(ArithmeticException));
+                Assert.IsFalse(executed);
+            }
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException}(Task, Predicate{TException}, Func{Task, TException, Task})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestCatch8_FaultedAntecedent_SyncFaultedHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            TaskCompletionSource<object> faultedCompletionSource = new TaskCompletionSource<object>();
+            Exception expectedException = new ArgumentException();
+            faultedCompletionSource.SetException(expectedException);
+            Task antecedent = faultedCompletionSource.Task;
+            Predicate<ArgumentException> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
+
+            Exception cleanupException = new InvalidOperationException();
+            Func<Task, ArgumentException, Task> handlerFunction =
+                (task, ex) =>
+                {
+                    executed = true;
+                    throw cleanupException;
+                };
+
+            Task combinedTask = null;
+
+            try
+            {
+                combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerFunction);
+                combinedTask.Wait();
+                Assert.Fail("Expected an AggregateException");
+            }
+            catch (AggregateException ex)
+            {
+                Assert.IsNotNull(combinedTask, "Failed to create the combined task.");
+                Assert.AreEqual(TaskStatus.Faulted, combinedTask.Status);
+                Assert.AreEqual(1, ex.InnerExceptions.Count);
+                Assert.IsInstanceOfType(ex.InnerExceptions[0], typeof(ArithmeticException));
+                Assert.IsFalse(executed);
+            }
+        }
+
+        /// <summary>
+        /// This method test the behavior of the
+        /// <see cref="CoreTaskExtensions.Catch{TException}(Task, Predicate{TException}, Func{Task, TException, Task})"/>
+        /// method.
+        /// </summary>
+        [TestMethod]
+        public void TestCatch8_FaultedAntecedent_NullTaskHandler_FaultedFilter()
+        {
+            bool executed = false;
+
+            // declaring these makes it clear we are testing the correct overload
+            TaskCompletionSource<object> faultedCompletionSource = new TaskCompletionSource<object>();
+            Exception expectedException = new ArgumentException();
+            faultedCompletionSource.SetException(expectedException);
+            Task antecedent = faultedCompletionSource.Task;
+            Predicate<ArgumentException> filter =
+                ex =>
+                {
+                    throw new ArithmeticException();
+                };
+
+            Func<Task, ArgumentException, Task> handlerFunction =
+                (task, ex) =>
+                {
+                    executed = true;
+                    return null;
+                };
+
+            Task combinedTask = null;
+
+            try
+            {
+                combinedTask = CoreTaskExtensions.Catch(antecedent, filter, handlerFunction);
+                combinedTask.Wait();
+                Assert.Fail("Expected an AggregateException");
+            }
+            catch (AggregateException ex)
+            {
+                Assert.IsNotNull(combinedTask, "Failed to create the combined task.");
+                Assert.AreEqual(TaskStatus.Faulted, combinedTask.Status);
+                Assert.AreEqual(1, ex.InnerExceptions.Count);
+                Assert.IsInstanceOfType(ex.InnerExceptions[0], typeof(ArithmeticException));
                 Assert.IsFalse(executed);
             }
         }

@@ -750,15 +750,20 @@ namespace Rackspace.Threading
 
             TaskCompletionSource<VoidResult> completionSource = new TaskCompletionSource<VoidResult>();
 
+            bool matchType = false;
             bool match = false;
             Action<Task> handlerWrapper =
                 t =>
                 {
                     TException exception = TryGetException<TException>(t);
-                    if (exception != null && filter(exception))
+                    if (exception != null)
                     {
-                        match = true;
-                        handler(task, exception);
+                        matchType = true;
+                        if (filter(exception))
+                        {
+                            match = true;
+                            handler(task, exception);
+                        }
                     }
                 };
 
@@ -771,6 +776,11 @@ namespace Rackspace.Threading
                         {
                             // this is the only case where the handler executes
                             completionSource.SetFromTask(t, default(VoidResult));
+                        }
+                        else if (matchType && t.Status != TaskStatus.RanToCompletion)
+                        {
+                            // an exception was thrown while evaluating the filter itself
+                            completionSource.SetFromFailedTask(t);
                         }
                         else
                         {
@@ -850,20 +860,23 @@ namespace Rackspace.Threading
 
             TaskCompletionSource<TResult> completionSource = new TaskCompletionSource<TResult>();
 
+            bool matchType = false;
             bool match = false;
             Func<Task<TResult>, TResult> handlerWrapper =
                 t =>
                 {
                     TException exception = TryGetException<TException>(t);
-                    if (exception != null && filter(exception))
+                    if (exception != null)
                     {
-                        match = true;
-                        return handler(task, exception);
+                        matchType = true;
+                        if (filter(exception))
+                        {
+                            match = true;
+                            return handler(task, exception);
+                        }
                     }
-                    else
-                    {
-                        return default(TResult);
-                    }
+
+                    return default(TResult);
                 };
 
             task
@@ -875,6 +888,11 @@ namespace Rackspace.Threading
                         {
                             // this is the only case where the handler executes
                             completionSource.SetFromTask(t);
+                        }
+                        else if (matchType && t.Status != TaskStatus.RanToCompletion)
+                        {
+                            // an exception was thrown while evaluating the filter itself
+                            completionSource.SetFromFailedTask(t);
                         }
                         else
                         {
@@ -947,20 +965,23 @@ namespace Rackspace.Threading
 
             TaskCompletionSource<VoidResult> completionSource = new TaskCompletionSource<VoidResult>();
 
+            bool matchType = false;
             bool match = false;
             Func<Task, Task> handlerWrapper =
                 t =>
                 {
                     TException exception = TryGetException<TException>(t);
-                    if (exception != null && filter(exception))
+                    if (exception != null)
                     {
-                        match = true;
-                        return handler(task, exception);
+                        matchType = true;
+                        if (filter(exception))
+                        {
+                            match = true;
+                            return handler(task, exception);
+                        }
                     }
-                    else
-                    {
-                        return CompletedTask.Default;
-                    }
+
+                    return CompletedTask.Default;
                 };
 
             task
@@ -973,6 +994,11 @@ namespace Rackspace.Threading
                         {
                             // this is the only case where the handler executes
                             completionSource.SetFromTask(t, default(VoidResult));
+                        }
+                        else if (matchType && t.Status != TaskStatus.RanToCompletion)
+                        {
+                            // an exception was thrown while evaluating the filter itself
+                            completionSource.SetFromFailedTask(t);
                         }
                         else
                         {
@@ -1049,20 +1075,23 @@ namespace Rackspace.Threading
 
             TaskCompletionSource<TResult> completionSource = new TaskCompletionSource<TResult>();
 
+            bool matchType = false;
             bool match = false;
             Func<Task<TResult>, Task<TResult>> handlerWrapper =
                 t =>
                 {
                     TException exception = TryGetException<TException>(t);
-                    if (exception != null && filter(exception))
+                    if (exception != null)
                     {
-                        match = true;
-                        return handler(task, exception);
+                        matchType = true;
+                        if (filter(exception))
+                        {
+                            match = true;
+                            return handler(task, exception);
+                        }
                     }
-                    else
-                    {
-                        return CompletedTask.FromResult(default(TResult));
-                    }
+
+                    return CompletedTask.FromResult(default(TResult));
                 };
 
             task
@@ -1075,6 +1104,11 @@ namespace Rackspace.Threading
                         {
                             // this is the only case where the handler executes
                             completionSource.SetFromTask(t);
+                        }
+                        else if (matchType && t.Status != TaskStatus.RanToCompletion)
+                        {
+                            // an exception was thrown while evaluating the filter itself
+                            completionSource.SetFromFailedTask(t);
                         }
                         else
                         {
